@@ -107,6 +107,18 @@ Useful flags:
 `-audit` is the tool for tuning a catalog entry whose search is pulling in the
 wrong sequel or a pile of empty cases.
 
+## What runs on GitHub Actions
+
+| Workflow | Trigger | Does |
+| --- | --- | --- |
+| `ci` | push, pull request | Go build, vet, race tests, lint, govulncheck; web typecheck, tests, build |
+| `scrape` | cron `23 9,21 * * *`, manual | Prices the catalog, commits changed data, asks `deploy` to run |
+| `deploy` | push to `web/**` or `data/**`, manual | Builds the site and publishes it to Pages |
+| `keepalive` | cron weekly | Re-enables scheduled workflows if GitHub disables them after 60 quiet days |
+
+The cron runs at an odd minute on purpose: GitHub's scheduler is best-effort
+and jobs queued on the hour are the ones most often delayed or dropped.
+
 ## How it stays free
 
 A scheduled workflow runs the collector twice a day and commits the JSON it
@@ -124,6 +136,11 @@ GitHub from disabling the schedule after 60 days of quiet.
 3. Settings → Pages → Source: **GitHub Actions**.
 4. Settings → Actions → Workflow permissions: **Read and write**.
 5. Run the `scrape` workflow manually once, then let the schedule take over.
+
+Until those secrets exist the scheduled run does not fail — it checks for
+credentials first, writes a summary saying which secrets are missing, and stops
+without touching the data. Adding the secrets is the only thing needed to start
+collecting; the workflow needs no edit.
 
 The scrape job pushes its data commit straight to the default branch. GitHub
 Actions bots are not exempt from branch protection, so if you protect that
