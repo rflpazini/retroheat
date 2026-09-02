@@ -30,9 +30,13 @@ var (
 		"lot of", "game lot", "strategy guide", "guide book",
 		"for parts", "not working", "demo disc", "not for resale", "kiosk",
 		"download code", "digital code", "digital download",
+		// Storefront listings that sell many titles under one item, and
+		// multi-game reproduction carts.
+		"pick your", "choose your", "you choose", "choose from", "multi cart",
+		"multicart", "in-1", "in 1 ", "options)",
 	}
 	junkWords = []string{
-		"repro", "console", "bundle", "poster", "graded", "wata",
+		"repro", "console", "bundle", "poster", "graded", "wata", "lot",
 	}
 
 	newPhrases = []string{
@@ -94,9 +98,11 @@ func match(text string, phrases []string, words []*regexp.Regexp) (string, bool)
 	return "", false
 }
 
-// Classify buckets a listing by its title, using the marketplace's own
-// condition string only when the title is inconclusive.
-func Classify(title, ebayCondition string) Result {
+// Classify buckets a listing by its title alone. The marketplace's own
+// condition field is deliberately ignored: reproduction cartridges and
+// merchandise are routinely listed as "New", so a copy only counts as sealed
+// when the seller says so in the title.
+func Classify(title string) Result {
 	t := strings.ToLower(strings.TrimSpace(title))
 
 	if reason, ok := match(t, junkPhrases, junkRe); ok {
@@ -122,11 +128,6 @@ func Classify(title, ebayCondition string) Result {
 	}
 	if reason, ok := match(t, nil, looseRe); ok {
 		return Result{Condition: Loose, Reason: reason}
-	}
-
-	switch strings.ToLower(strings.TrimSpace(ebayCondition)) {
-	case "new", "brand new":
-		return Result{Condition: New, Reason: "ebay-condition"}
 	}
 	return Result{Condition: Unknown, Reason: "no-match"}
 }

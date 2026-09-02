@@ -33,8 +33,9 @@ equal, so "Shenmue II", "Shenmue 2" and "3rd Strike" all match.
 Every surviving title is then read in a fixed order:
 
 1. **Rejected outright** — empty cases, box-only, manual-only, reproductions,
-   lots and bundles, consoles, strategy guides, posters, demo discs, download
-   codes, graded slabs, and anything for parts.
+   lots and bundles, multi-game carts, "pick your game" storefront listings,
+   consoles, strategy guides, posters, demo discs, download codes, graded
+   slabs, and anything for parts.
 2. **Sealed** — "factory sealed", "brand new", "still sealed", and similar.
 3. **Loose, stated explicitly** — "disc only", "cart only", "no manual", "no
    case". An explicit statement of what is missing outranks "complete": a
@@ -49,8 +50,9 @@ medians, and a smaller honest sample beats a larger invented one. Phrases where
 "complete" belongs to the product name, such as *Kingdom Hearts Complete
 Edition*, are stripped before the complete-in-box rules run.
 
-The eBay-supplied condition field is used only as a tiebreak, and only to
-recognise a new copy.
+The eBay-supplied condition field is ignored. Reproduction cartridges and
+merchandise are routinely listed as "New", so a copy only counts as sealed when
+the seller says so in the title.
 
 ## 4. Reducing a bucket to one price
 

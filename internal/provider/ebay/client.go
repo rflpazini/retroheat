@@ -107,7 +107,7 @@ func (c *Client) Quotes(ctx context.Context, g catalog.Game) ([]provider.Quote, 
 		if it.Price.Currency != "USD" || excluded(it.Title, g.Ebay.Negative) || !classify.Mentions(it.Title, g.Title) {
 			continue
 		}
-		res := classify.Classify(it.Title, it.Condition)
+		res := classify.Classify(it.Title)
 		if res.Rejected || res.Condition == classify.Unknown {
 			continue
 		}

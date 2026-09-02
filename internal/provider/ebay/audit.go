@@ -27,7 +27,7 @@ func (c *Client) Audit(ctx context.Context, g catalog.Game, w io.Writer) error {
 		case !classify.Mentions(it.Title, g.Title):
 			verdict = "skip:not-this-game"
 		default:
-			res := classify.Classify(it.Title, it.Condition)
+			res := classify.Classify(it.Title)
 			switch {
 			case res.Rejected:
 				verdict = "reject:" + res.Reason

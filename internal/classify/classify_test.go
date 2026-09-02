@@ -30,7 +30,7 @@ func TestClassifyRejectsJunk(t *testing.T) {
 		"Persona 4 Golden Vita Artwork Only No Game",
 	}
 	for _, title := range titles {
-		got := classify.Classify(title, "Used")
+		got := classify.Classify(title)
 		if !got.Rejected {
 			t.Errorf("Classify(%q) = %+v, want rejected", title, got)
 		}
@@ -49,7 +49,7 @@ func TestClassifyNew(t *testing.T) {
 		"Skies of Arcadia Legends GameCube Shrink Wrap Sealed",
 	}
 	for _, title := range titles {
-		got := classify.Classify(title, "New")
+		got := classify.Classify(title)
 		if got.Rejected || got.Condition != classify.New {
 			t.Errorf("Classify(%q) = %+v, want %q", title, got, classify.New)
 		}
@@ -69,7 +69,7 @@ func TestClassifyCIB(t *testing.T) {
 		"Persona 4 Golden Vita complete in box",
 	}
 	for _, title := range titles {
-		got := classify.Classify(title, "Used")
+		got := classify.Classify(title)
 		if got.Rejected || got.Condition != classify.CIB {
 			t.Errorf("Classify(%q) = %+v, want %q", title, got, classify.CIB)
 		}
@@ -90,7 +90,7 @@ func TestClassifyLoose(t *testing.T) {
 		"Skies of Arcadia Dreamcast disk only",
 	}
 	for _, title := range titles {
-		got := classify.Classify(title, "Used")
+		got := classify.Classify(title)
 		if got.Rejected || got.Condition != classify.Loose {
 			t.Errorf("Classify(%q) = %+v, want %q", title, got, classify.Loose)
 		}
@@ -106,7 +106,7 @@ func TestClassifyRecognisesSellerAbbreviations(t *testing.T) {
 		"Gotcha Force GameCube BNIB",
 		"Gotcha Force GameCube bnib sealed copy",
 	} {
-		if got := classify.Classify(title, "Used"); got.Condition != classify.New {
+		if got := classify.Classify(title); got.Condition != classify.New {
 			t.Errorf("Classify(%q) = %+v, want %q", title, got, classify.New)
 		}
 	}
@@ -114,7 +114,7 @@ func TestClassifyRecognisesSellerAbbreviations(t *testing.T) {
 
 func TestClassifyPrefersSealedOverComplete(t *testing.T) {
 	t.Parallel()
-	got := classify.Classify("Rule of Rose PS2 Factory Sealed Complete In Box", "New")
+	got := classify.Classify("Rule of Rose PS2 Factory Sealed Complete In Box")
 	if got.Condition != classify.New {
 		t.Errorf("Classify() = %+v, want %q (sealed outranks complete)", got, classify.New)
 	}
@@ -122,7 +122,7 @@ func TestClassifyPrefersSealedOverComplete(t *testing.T) {
 
 func TestClassifyRejectsJunkBeforeCondition(t *testing.T) {
 	t.Parallel()
-	got := classify.Classify("Silent Hill 2 PS2 Repro Sealed Complete In Box", "New")
+	got := classify.Classify("Silent Hill 2 PS2 Repro Sealed Complete In Box")
 	if !got.Rejected {
 		t.Errorf("Classify() = %+v, want rejected (junk outranks every condition)", got)
 	}
@@ -136,7 +136,7 @@ func TestClassifyTitleWordsAreNotConditions(t *testing.T) {
 		"Silent Hill 2 PS2 Resealed",
 	}
 	for _, title := range cases {
-		got := classify.Classify(title, "Used")
+		got := classify.Classify(title)
 		if got.Rejected {
 			continue
 		}
@@ -146,20 +146,36 @@ func TestClassifyTitleWordsAreNotConditions(t *testing.T) {
 	}
 }
 
-func TestClassifyFallsBackToEbayCondition(t *testing.T) {
+func TestClassifyIgnoresTheMarketplaceCondition(t *testing.T) {
 	t.Parallel()
-	if got := classify.Classify("Silent Hill 2 Sony PlayStation 2", "New"); got.Condition != classify.New {
-		t.Errorf("Classify() = %+v, want %q from eBay condition", got, classify.New)
+	// Reproduction carts and merchandise are listed as "New" on eBay. Only a
+	// title that says sealed counts, so a bare title is unknown, not new.
+	if got := classify.Classify("Super Smash Bros 64 Games For Nintendo N64 US Version USA Fast Shipping"); got.Condition != classify.Unknown {
+		t.Errorf("Classify() = %+v, want unknown", got)
 	}
-	if got := classify.Classify("Silent Hill 2 Sony PlayStation 2", "Used"); got.Condition != classify.Unknown {
-		t.Errorf("Classify() = %+v, want %q (used tells us nothing)", got, classify.Unknown)
+}
+
+func TestClassifyRejectsStorefrontAndMultiCartListings(t *testing.T) {
+	t.Parallel()
+	titles := []string{
+		"Nintendo 64 N64 Games Pick Your Game Cartridge Only Tested Working #1",
+		"7-in-1 Super Smash Bros 7 NES Games - Nintendo 64 (N64) Fast shipping",
+		"Mario Kart 64 Cart Games Mario Party For Nintendo N64 US Version (15 Options)",
+		"Genuine Authentic Nintendo 64 N64 Games Japan Japanese Imports Loose *CHOOSE FROM LIST",
+		"Sealed New Nintendo 64 Super Smash Bros Pokemon Stadium Mario Kart N64 Rare Lot",
+		"Silent Hill 2 PS2 Multicart 5 games",
+	}
+	for _, title := range titles {
+		if got := classify.Classify(title); !got.Rejected {
+			t.Errorf("Classify(%q) = %+v, want rejected", title, got)
+		}
 	}
 }
 
 func TestClassifyIsCaseInsensitive(t *testing.T) {
 	t.Parallel()
-	upper := classify.Classify("SILENT HILL 2 PS2 DISC ONLY", "Used")
-	lower := classify.Classify("silent hill 2 ps2 disc only", "Used")
+	upper := classify.Classify("SILENT HILL 2 PS2 DISC ONLY")
+	lower := classify.Classify("silent hill 2 ps2 disc only")
 	if upper != lower {
 		t.Errorf("case sensitivity: upper=%+v lower=%+v", upper, lower)
 	}
@@ -170,7 +186,7 @@ func TestClassifyIsCaseInsensitive(t *testing.T) {
 
 func TestClassifyReasonIsPopulated(t *testing.T) {
 	t.Parallel()
-	got := classify.Classify("Silent Hill 2 PS2 Case Only", "Used")
+	got := classify.Classify("Silent Hill 2 PS2 Case Only")
 	if got.Reason == "" {
 		t.Error("rejected result must carry a Reason for -audit output")
 	}
@@ -185,14 +201,14 @@ func TestExplicitlyMissingPartsBeatComplete(t *testing.T) {
 		"Bully PS2 PlayStation 2 Rockstar Games Black Label w Manual 2006":            classify.CIB,
 	}
 	for title, want := range cases {
-		got := classify.Classify(title, "Used")
+		got := classify.Classify(title)
 		if got.Rejected || got.Condition != want {
 			t.Errorf("Classify(%q) = %+v, want %q", title, got, want)
 		}
 	}
 
 	// "w manual" must not fire inside "new manual".
-	if got := classify.Classify("Silent Hill 2 PS2 disc and a like new manual", "Used"); got.Condition == classify.CIB {
+	if got := classify.Classify("Silent Hill 2 PS2 disc and a like new manual"); got.Condition == classify.CIB {
 		t.Errorf("Classify matched %q as CIB via %q", "like new manual", got.Reason)
 	}
 }
