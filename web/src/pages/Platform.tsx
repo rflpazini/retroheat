@@ -73,6 +73,11 @@ function PriceCell({ game, condition }: { game: LatestGame; condition: Condition
   return (
     <div className="flex flex-col items-end gap-1">
       <span className="tabular text-xs font-bold">{money(price.median_cents)}</span>
+      {price.mode_cents ? (
+        <span className="tabular text-[0.6rem] leading-none text-[var(--muted-foreground)]">
+          mode {money(price.mode_cents)}
+        </span>
+      ) : null}
       <Sparkline values={spark} color={conditionColor(condition)} width={84} height={24} />
     </div>
   )
@@ -122,7 +127,7 @@ export function Platform() {
       >
         <div className="flex flex-wrap items-center justify-between gap-3 border-b-2 border-[var(--border)] p-3">
           <p className="eyebrow">
-            {file.data.games.length} games · median asking price · as of {file.data.as_of}
+            {file.data.games.length} games · median and mode asking price · as of {file.data.as_of}
           </p>
           <div className="flex flex-wrap items-center gap-3">
             {CONDITIONS.map((c) => (

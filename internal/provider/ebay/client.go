@@ -124,6 +124,7 @@ func (c *Client) Quotes(ctx context.Context, g catalog.Game) ([]provider.Quote, 
 			quotes = append(quotes, provider.Quote{
 				Condition:   cond,
 				MedianCents: r.MedianCents,
+				ModeCents:   r.ModeCents,
 				SampleSize:  r.SampleSize,
 			})
 		}

@@ -57,9 +57,19 @@ describe.skipIf(!present)('collector output matches the frontend contract', () =
         if (price) {
           expect(typeof price.median_cents).toBe('number')
           expect(typeof price.n).toBe('number')
-          // Each priced condition charts its own column, so it needs a series.
-          expect(Array.isArray(g.sparks[c])).toBe(true)
-          expect(g.sparks[c]!.length).toBeGreaterThan(1)
+          // Mode is optional (single-figure providers omit it) but never null.
+          if ('mode_cents' in price) expect(typeof price.mode_cents).toBe('number')
+          // Each priced condition charts its own column once there is a line
+          // to draw. On the first day of real collection a game has one point
+          // and no sparkline, so the requirement follows the history.
+          const historyFile = path.join(dataDir, 'history', `${g.id}.json`)
+          if (fs.existsSync(historyFile)) {
+            const points = read<HistoryFile>(`history/${g.id}.json`).points.filter((p) => p[c] != null)
+            if (points.length > 1) {
+              expect(Array.isArray(g.sparks[c])).toBe(true)
+              expect(g.sparks[c]!.length).toBeGreaterThan(1)
+            }
+          }
         }
       }
     }

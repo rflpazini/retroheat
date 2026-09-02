@@ -31,6 +31,8 @@ export const CONDITION_LABELS: Record<Condition, string> = {
 
 export interface Price {
   median_cents: number
+  /** Most common whole-dollar price point. Absent when the provider supplies a single figure. */
+  mode_cents?: number
   n: number
 }
 

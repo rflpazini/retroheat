@@ -21,7 +21,10 @@ const (
 type Quote struct {
 	Condition   classify.Condition
 	MedianCents int64
-	SampleSize  int
+	// ModeCents is the most common whole-dollar price point, or 0 when the
+	// provider only supplies a single figure rather than a listing sample.
+	ModeCents  int64
+	SampleSize int
 }
 
 type Provider interface {

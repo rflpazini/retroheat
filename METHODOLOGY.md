@@ -43,9 +43,17 @@ recognise a new copy.
 
 Retro listings mix a tight cluster of real prices with a few fantasy prices.
 Each condition bucket is trimmed with the interquartile rule — values outside
-`[Q1 − 1.5 × IQR, Q3 + 1.5 × IQR]` are discarded — and the median of what
-survives is published. A bucket needs **at least four** surviving listings to
-be published at all.
+`[Q1 − 1.5 × IQR, Q3 + 1.5 × IQR]` are discarded — and two figures are taken
+from what survives:
+
+- **Median**: the middle asking price. This is the headline number, and the one
+  history and momentum are computed from.
+- **Mode**: the most common price point after rounding each listing to the
+  nearest dollar, so $29.99 and $30.00 count as the same point. Where the median
+  says what the middle seller asks, the mode says where sellers actually
+  cluster. Ties go to the point nearest the median, then to the lower price.
+
+A bucket needs **at least four** surviving listings to be published at all.
 
 ## 5. History
 

@@ -27,8 +27,9 @@ export function About() {
         <p>
           Each tracked game gets one eBay Browse API search per run. Listings are sorted into loose,
           complete-in-box and sealed; obvious non-games are discarded (empty cases, reproductions,
-          lots, strategy guides, graded slabs); and the rest are reduced to a median after an
-          interquartile trim, so a single fantasy price cannot move the figure.
+          lots, strategy guides, graded slabs); and the rest are reduced, after an interquartile
+          trim, to a median and a mode: the middle asking price, and the whole-dollar point most
+          sellers cluster on. A single fantasy price cannot move either figure.
         </p>
         <p className="font-semibold">
           These are <strong className="font-semibold">asking prices on active listings</strong>, not

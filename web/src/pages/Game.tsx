@@ -148,6 +148,11 @@ export function Game() {
               <span className="eyebrow">{CONDITION_LABELS[c]}</span>
             </div>
             <p className="tabular text-lg font-bold">{money(latest?.[c] ?? null)}</p>
+            {boardEntry?.prices[c]?.mode_cents ? (
+              <p className="tabular text-[0.65rem] text-[var(--muted-foreground)]">
+                mode {money(boardEntry.prices[c]!.mode_cents)}
+              </p>
+            ) : null}
           </div>
         ))}
         <div className="window p-3">

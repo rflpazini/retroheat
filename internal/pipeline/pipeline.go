@@ -257,7 +257,7 @@ func pointFrom(quotes []provider.Quote, date string) history.Point {
 func pricesFrom(quotes []provider.Quote) snapshot.Prices {
 	var out snapshot.Prices
 	for _, q := range quotes {
-		price := &snapshot.Price{MedianCents: q.MedianCents, N: q.SampleSize}
+		price := &snapshot.Price{MedianCents: q.MedianCents, ModeCents: q.ModeCents, N: q.SampleSize}
 		switch q.Condition {
 		case classify.Loose:
 			out.Loose = price

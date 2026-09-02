@@ -18,7 +18,10 @@ import (
 
 type Price struct {
 	MedianCents int64 `json:"median_cents"`
-	N           int   `json:"n"`
+	// ModeCents is omitted for providers that supply one figure per condition
+	// rather than a sample of listings.
+	ModeCents int64 `json:"mode_cents,omitempty"`
+	N         int   `json:"n"`
 }
 
 type Prices struct {

@@ -26,14 +26,18 @@ func (p *Provider) CostPerGame() int { return 0 }
 func (p *Provider) Quotes(_ context.Context, g catalog.Game) ([]provider.Quote, error) {
 	v := valuesOn(g.ID, p.now)
 	quotes := []provider.Quote{
-		{Condition: classify.Loose, MedianCents: v.loose, SampleSize: v.nl},
-		{Condition: classify.CIB, MedianCents: v.cib, SampleSize: v.nc},
+		{Condition: classify.Loose, MedianCents: v.loose, ModeCents: modeNear(v.loose), SampleSize: v.nl},
+		{Condition: classify.CIB, MedianCents: v.cib, ModeCents: modeNear(v.cib), SampleSize: v.nc},
 	}
 	if v.hasNew {
-		quotes = append(quotes, provider.Quote{Condition: classify.New, MedianCents: v.newp, SampleSize: v.nn})
+		quotes = append(quotes, provider.Quote{Condition: classify.New, MedianCents: v.newp, ModeCents: modeNear(v.newp), SampleSize: v.nn})
 	}
 	return quotes, nil
 }
+
+// modeNear stands in for the price point sellers cluster on: the median
+// rounded to the dollar, the same shape the live provider produces.
+func modeNear(median int64) int64 { return (median + 50) / 100 * 100 }
 
 // Backfill invents a history so that trend charts and the momentum boards have
 // something to show on a fresh checkout.

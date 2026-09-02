@@ -109,3 +109,40 @@ func TestAggregateRejectsWhenTrimDropsBelowMinimum(t *testing.T) {
 		t.Error("Aggregate(nil) = ok, want rejected")
 	}
 }
+
+func TestMode(t *testing.T) {
+	t.Parallel()
+	cases := []struct {
+		name string
+		in   []int64
+		want int64
+	}{
+		{"merges cents onto the dollar point", []int64{2999, 3000, 3049, 2400, 3200}, 3000},
+		{"rounds half up", []int64{2950, 2950, 2400}, 3000},
+		{"tie goes to the point nearest the median", []int64{2000, 2000, 4000, 4000, 3500}, 4000},
+		{"tie at equal distance goes to the lower price", []int64{2000, 2000, 4000, 4000, 3000}, 2000},
+		{"single", []int64{4199}, 4200},
+		{"empty", nil, 0},
+	}
+	for _, c := range cases {
+		t.Run(c.name, func(t *testing.T) {
+			t.Parallel()
+			if got := aggregate.Mode(c.in); got != c.want {
+				t.Errorf("Mode(%v) = %d, want %d", c.in, got, c.want)
+			}
+		})
+	}
+}
+
+func TestAggregateReportsMode(t *testing.T) {
+	t.Parallel()
+	// Four sellers at $30-ish, two at $24, one fantasy price the trim drops.
+	in := []int64{2999, 3000, 3049, 2950, 2400, 2400, 90000}
+	got, ok := aggregate.Aggregate(in)
+	if !ok {
+		t.Fatal("Aggregate rejected a healthy sample")
+	}
+	if got.ModeCents != 3000 {
+		t.Errorf("ModeCents = %d, want 3000", got.ModeCents)
+	}
+}
