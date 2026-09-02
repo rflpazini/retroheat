@@ -75,32 +75,17 @@ jobs:
             -budget 2000 \
             -platforms "$PLATFORMS"
 
+      # Two runs can overlap (a delayed cron landing seconds after a manual
+      # dispatch), and rebasing one data commit onto another always conflicts
+      # because both rewrite the same JSON lines. The script lets the newest
+      # run win instead; see .github/scripts/commit-data.sh.
       - name: Commit data if it changed
         id: commit
         if: steps.creds.outputs.ready == 'true'
         run: |
           git config user.name "retroheat-bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/
-          if git diff --cached --quiet; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "No data changes."
-            exit 0
-          fi
-          git commit -m "data: refresh $(date -u +%F)"
-          for attempt in 1 2 3; do
-            # A failed rebase leaves the tree mid-rebase, which would make
-            # every later attempt fail for a different reason.
-            git rebase --abort >/dev/null 2>&1 || true
-            if git pull --rebase --autostash && git push; then
-              echo "changed=true" >> "$GITHUB_OUTPUT"
-              exit 0
-            fi
-            echo "Push attempt $attempt failed; retrying."
-            sleep 5
-          done
-          echo "Could not push data commit." >&2
-          exit 1
+          .github/scripts/commit-data.sh data main
 
       # A push made with GITHUB_TOKEN does not trigger other workflows, so the
       # deploy has to be requested explicitly.
