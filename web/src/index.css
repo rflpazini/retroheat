@@ -333,18 +333,47 @@ body {
 }
 
 /*
-  A CRT: a dark phosphor screen behind glass, with scanlines, a vignette and a
-  corner glare. The effects are drawn over the image rather than filtered into
-  it, so the artwork underneath stays legible.
+  A CRT: a dark phosphor tube behind curved glass. The cover is shown whole,
+  never cropped, on a blurred blow-up of itself so the letterbox glows rather
+  than sitting in black bars. Scanlines, an aperture grille, a vignette, a
+  glass glare and a faint flicker are drawn over the art rather than filtered
+  into it, so the artwork underneath stays legible.
 */
 .crt {
   position: relative;
   overflow: hidden;
   background: #0c120f;
-  border-radius: 6px / 12px;
+  border-radius: 7% / 9%;
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 0.06),
+    inset 0 0 24px 4px rgb(0 0 0 / 0.75);
+  isolation: isolate;
 }
 
-.crt > img,
+/* The tube fill: the cover itself, oversized, blurred and dimmed. */
+.crt > .crt-bleed {
+  position: absolute;
+  inset: -12%;
+  width: 124%;
+  height: 124%;
+  object-fit: cover;
+  filter: blur(16px) saturate(1.5) brightness(0.4);
+}
+
+/* The cover, whole, with the phosphor glow a lit tube gives bright colours. */
+.crt > .crt-art {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 3% 4%;
+  object-fit: contain;
+  filter:
+    saturate(1.25) contrast(1.1) brightness(1.05)
+    drop-shadow(0 0 10px rgb(140 210 255 / 0.28));
+  animation: crt-flicker 4.2s steps(1, end) infinite;
+}
+
 .crt > .crt-content {
   display: block;
   width: 100%;
@@ -358,30 +387,45 @@ body {
   content: '';
   position: absolute;
   inset: 0;
+  z-index: 1;
   pointer-events: none;
   background:
     repeating-linear-gradient(
       to bottom,
-      rgb(0 0 0 / 0.28) 0 1px,
+      rgb(0 0 0 / 0.38) 0 1px,
       transparent 1px 3px
     ),
     repeating-linear-gradient(
       to right,
-      rgb(255 0 0 / 0.05) 0 1px,
-      rgb(0 255 0 / 0.04) 1px 2px,
-      rgb(0 0 255 / 0.05) 2px 3px
+      rgb(255 0 0 / 0.06) 0 1px,
+      rgb(0 255 0 / 0.05) 1px 2px,
+      rgb(0 0 255 / 0.06) 2px 3px
     );
+  mix-blend-mode: multiply;
 }
 
-/* Vignette plus a glare across the top-left of the glass. */
+/* Curved-glass shading: a vignette that darkens toward the tube's edge, plus
+   a glare across the top-left of the glass. */
 .crt::after {
   content: '';
   position: absolute;
   inset: 0;
+  z-index: 2;
   pointer-events: none;
   background:
-    radial-gradient(120% 120% at 50% 50%, transparent 55%, rgb(0 0 0 / 0.55) 100%),
-    linear-gradient(122deg, rgb(255 255 255 / 0.10) 0 22%, transparent 42%);
+    radial-gradient(115% 115% at 50% 50%, transparent 52%, rgb(0 0 0 / 0.62) 100%),
+    linear-gradient(122deg, rgb(255 255 255 / 0.12) 0 20%, transparent 40%);
+}
+
+@keyframes crt-flicker {
+  0%, 92%, 100% { opacity: 1; }
+  93% { opacity: 0.96; }
+  95% { opacity: 0.99; }
+  97% { opacity: 0.955; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crt > .crt-art { animation: none; }
 }
 
 /* The phosphor stand-in shown when a release has no cover art on file. */
