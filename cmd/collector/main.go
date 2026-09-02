@@ -118,7 +118,15 @@ func selectProvider(useFake bool, now time.Time) (provider.Provider, error) {
 	}
 	id, secret := os.Getenv("EBAY_CLIENT_ID"), os.Getenv("EBAY_CLIENT_SECRET")
 	if id != "" && secret != "" {
-		return ebay.New(id, secret), nil
+		var opts []ebay.Option
+		// EBAY_BASE_URL points the client at another host, in practice the
+		// sandbox (https://api.sandbox.ebay.com) with a Sandbox keyset. Sandbox
+		// listings are test data, so this is for exercising the pipeline end to
+		// end, not for prices worth publishing.
+		if base := os.Getenv("EBAY_BASE_URL"); base != "" {
+			opts = append(opts, ebay.WithBaseURL(base))
+		}
+		return ebay.New(id, secret, opts...), nil
 	}
 	return nil, fmt.Errorf("set EBAY_CLIENT_ID and EBAY_CLIENT_SECRET, or pass -fake")
 }

@@ -94,6 +94,11 @@ Start with one platform and `-audit` to see how real listings are being
 classified before running the whole catalog. The free tier allows 5,000 calls a
 day and the collector spends one per game.
 
+While a Production keyset is still pending, a Sandbox keyset plus
+`EBAY_BASE_URL=https://api.sandbox.ebay.com` runs the same pipeline against
+eBay's test listings. That proves the wiring, not the prices: sandbox data is
+synthetic and must not be committed.
+
 Useful flags:
 
 | Flag | Purpose |
