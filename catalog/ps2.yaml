@@ -1,0 +1,516 @@
+platform: ps2
+games:
+  - id: silent-hill-2-ps2
+    title: "Silent Hill 2"
+    info:
+      developer: "Team Silent"
+      publisher: "Konami"
+      year: 2001
+      genre: "Survival horror"
+      trivia: "Konami's in-house Team Silent built the fog and grain out of hardware limits, then kept them because they made the town feel wrong."
+      why: "Never given a faithful re-release — the HD Collection was widely criticised — so the original disc stayed the best way to play it, and the 2024 remake sent a wave of new players looking for it."
+    variant: black-label
+    ebay:
+      query: "Silent Hill 2 PS2"
+      negative: ["greatest hits", "hd collection", "silent hill 3", "silent hill 4", "xbox", "restless dreams"]
+  - id: silent-hill-3-ps2
+    title: "Silent Hill 3"
+    ebay:
+      query: "Silent Hill 3 PS2"
+      negative: ["hd collection", "silent hill 2", "soundtrack only"]
+  - id: silent-hill-4-the-room-ps2
+    title: "Silent Hill 4: The Room"
+    ebay:
+      query: "Silent Hill 4 The Room PS2"
+      negative: ["xbox", "silent hill 2", "silent hill 3"]
+  - id: rule-of-rose-ps2
+    title: "Rule of Rose"
+    info:
+      developer: "Punchline"
+      publisher: "Atlus"
+      year: 2006
+      genre: "Survival horror"
+      trivia: "European politicians campaigned against it on the strength of press reports that badly misdescribed its content, and it went unreleased in the UK."
+      why: "A very small Atlus print run in North America, plus the notoriety of the European controversy, on a game that has never been reissued."
+    ebay:
+      query: "Rule of Rose PS2"
+      negative: ["soundtrack only", "repro"]
+  - id: haunting-ground-ps2
+    title: "Haunting Ground"
+    info:
+      developer: "Capcom"
+      publisher: "Capcom"
+      year: 2005
+      genre: "Survival horror"
+      trivia: "Released as Demento in Japan. Your dog Hewie is commanded with the shoulder buttons and genuinely can be trained, or neglected."
+      why: "Capcom's last original PS2 survival horror, printed late in the generation and never re-released in any form."
+    ebay:
+      query: "Haunting Ground PS2"
+      negative: ["demento"]
+  - id: kuon-ps2
+    title: "Kuon"
+    info:
+      developer: "FromSoftware"
+      publisher: "Agetec"
+      year: 2004
+      genre: "Survival horror"
+      trivia: "A Heian-period Japanese horror game made by FromSoftware a decade before Dark Souls made the studio a household name."
+      why: "A tiny Agetec print run met a demand spike once FromSoftware became famous, and there has never been a reissue."
+    ebay:
+      query: "Kuon PS2"
+      negative: ["japan import", "ntsc-j"]
+  - id: obscure-ps2
+    title: "Obscure"
+    ebay:
+      query: "Obscure PS2"
+      negative: ["aftermath", "obscure 2", "obscure ii", "xbox"]
+  - id: obscure-the-aftermath-ps2
+    title: "Obscure: The Aftermath"
+    ebay:
+      query: "Obscure The Aftermath PS2"
+      negative: ["wii", "psp"]
+  - id: god-hand-ps2
+    title: "God Hand"
+    info:
+      developer: "Clover Studio"
+      publisher: "Capcom"
+      year: 2006
+      genre: "Beat 'em up"
+      trivia: "Directed by Shinji Mikami and released weeks before Capcom dissolved Clover Studio; the staff went on to found PlatinumGames."
+      why: "Panned by reviewers at launch and later reappraised as a cult classic. Clover's short catalogue gets collected as a set."
+    ebay:
+      query: "God Hand PS2"
+      negative: ["god of war", "godhand repro"]
+  - id: michigan-report-from-hell-ps2
+    title: "Michigan: Report from Hell"
+    region: PAL
+    info:
+      developer: "Grasshopper Manufacture"
+      publisher: "Spike"
+      year: 2004
+      genre: "Survival horror"
+      trivia: "You play entirely through a news camera. Point it at the wrong thing and your crew dies while you keep filming."
+      why: "Never released in North America, so US collectors import the PAL disc, which was itself a small run."
+    ebay:
+      query: "Michigan Report from Hell PS2"
+      negative: ["pal only"]
+  - id: fatal-frame-ps2
+    title: "Fatal Frame"
+    ebay:
+      query: "Fatal Frame PS2"
+      negative: ["fatal frame 2", "fatal frame 3", "crimson butterfly", "tormented", "xbox"]
+  - id: fatal-frame-2-crimson-butterfly-ps2
+    title: "Fatal Frame II: Crimson Butterfly"
+    ebay:
+      query: "Fatal Frame 2 Crimson Butterfly PS2"
+      negative: ["xbox", "director's cut", "fatal frame 3"]
+  - id: fatal-frame-3-the-tormented-ps2
+    title: "Fatal Frame III: The Tormented"
+    ebay:
+      query: "Fatal Frame 3 The Tormented PS2"
+      negative: ["fatal frame 2"]
+  - id: siren-ps2
+    title: "Siren"
+    ebay:
+      query: "Siren PS2 Forbidden"
+      negative: ["siren 2", "blood curse", "ps3"]
+  - id: shadow-of-the-colossus-ps2
+    title: "Shadow of the Colossus"
+    info:
+      developer: "Team Ico"
+      publisher: "Sony Computer Entertainment"
+      year: 2005
+      genre: "Action-adventure"
+      trivia: "There are no towns and no ordinary enemies. The entire game is sixteen boss fights and the ride between them."
+      why: "Black label first pressings sit well above the Greatest Hits reprint that followed."
+    variant: black-label
+    ebay:
+      query: "Shadow of the Colossus PS2"
+      negative: ["greatest hits", "ico bundle", "ps3", "hd collection"]
+  - id: ico-ps2
+    title: "Ico"
+    info:
+      developer: "Team Ico"
+      publisher: "Sony Computer Entertainment"
+      year: 2001
+      genre: "Puzzle-platformer"
+      trivia: "Fumito Ueda's design rule was subtraction: cut anything, including a HUD and music, that broke the feeling of two people alone."
+      why: "The first US pressing sold poorly on release and is scarce, while the game's reputation grew steadily for two decades."
+    ebay:
+      query: "Ico PS2"
+      negative: ["shadow of the colossus", "ps3", "hd collection", "greatest hits"]
+  - id: okami-ps2
+    title: "Okami"
+    info:
+      developer: "Clover Studio"
+      publisher: "Capcom"
+      year: 2006
+      genre: "Action-adventure"
+      trivia: "The sumi-e ink art style was chosen partly because it hid the PS2's limited draw distance inside a deliberate aesthetic."
+      why: "The original PS2 pressing predates every later port, and Clover's brief run of games is collected together."
+    ebay:
+      query: "Okami PS2"
+      negative: ["okamiden", "wii", "hd", "greatest hits"]
+  - id: gitaroo-man-ps2
+    title: "Gitaroo Man"
+    info:
+      developer: "iNiS"
+      publisher: "Koei"
+      year: 2002
+      genre: "Rhythm"
+      trivia: "Made by iNiS before the studio went on to Elite Beat Agents; the soundtrack was written first and the game built around it."
+      why: "A small print run for an unusual rhythm game that never found a mainstream audience at retail."
+    ebay:
+      query: "Gitaroo Man PS2"
+      negative: ["lives", "psp"]
+  - id: katamari-damacy-ps2
+    title: "Katamari Damacy"
+    ebay:
+      query: "Katamari Damacy PS2"
+      negative: ["we love katamari", "beautiful katamari", "greatest hits"]
+  - id: we-love-katamari-ps2
+    title: "We Love Katamari"
+    ebay:
+      query: "We Love Katamari PS2"
+      negative: ["katamari damacy original"]
+  - id: persona-3-fes-ps2
+    title: "Persona 3 FES"
+    info:
+      developer: "Atlus"
+      publisher: "Atlus"
+      year: 2008
+      genre: "RPG"
+      trivia: "FES added an epilogue campaign, The Answer, that is harder than the entire base game and has no social links."
+      why: "The Atlus print run was modest and the series' audience multiplied years later."
+    ebay:
+      query: "Persona 3 FES PS2"
+      negative: ["portable", "psp", "persona 4"]
+  - id: persona-4-ps2
+    title: "Persona 4"
+    ebay:
+      query: "Persona 4 PS2"
+      negative: ["golden", "vita", "arena", "dancing", "persona 3"]
+  - id: shin-megami-tensei-nocturne-ps2
+    title: "Shin Megami Tensei: Nocturne"
+    ebay:
+      query: "Shin Megami Tensei Nocturne PS2"
+      negative: ["digital devil saga", "persona"]
+  - id: digital-devil-saga-ps2
+    title: "Shin Megami Tensei: Digital Devil Saga"
+    ebay:
+      query: "Digital Devil Saga PS2"
+      negative: ["digital devil saga 2", "avatar tuner 2"]
+  - id: digital-devil-saga-2-ps2
+    title: "Shin Megami Tensei: Digital Devil Saga 2"
+    ebay:
+      query: "Digital Devil Saga 2 PS2"
+      negative: []
+  - id: devil-summoner-raidou-kuzunoha-ps2
+    title: "Devil Summoner: Raidou Kuzunoha vs. The Soulless Army"
+    ebay:
+      query: "Raidou Kuzunoha Soulless Army PS2"
+      negative: ["king abaddon"]
+  - id: suikoden-3-ps2
+    title: "Suikoden III"
+    ebay:
+      query: "Suikoden III PS2"
+      negative: ["suikoden iv", "suikoden v", "tactics"]
+  - id: suikoden-4-ps2
+    title: "Suikoden IV"
+    ebay:
+      query: "Suikoden IV PS2"
+      negative: ["suikoden iii", "suikoden v", "tactics"]
+  - id: suikoden-5-ps2
+    title: "Suikoden V"
+    info:
+      developer: "Konami"
+      publisher: "Konami"
+      year: 2006
+      genre: "RPG"
+      trivia: "108 recruitable characters, a series tradition, in the last mainline Suikoden Konami released."
+      why: "Released at the end of the PS2's life to a shrinking JRPG retail audience, and the series stayed dormant for years afterwards."
+    ebay:
+      query: "Suikoden V PS2"
+      negative: ["suikoden iii", "suikoden iv", "tactics"]
+  - id: suikoden-tactics-ps2
+    title: "Suikoden Tactics"
+    ebay:
+      query: "Suikoden Tactics PS2"
+      negative: []
+  - id: xenosaga-episode-1-ps2
+    title: "Xenosaga Episode I"
+    ebay:
+      query: "Xenosaga Episode I PS2"
+      negative: ["episode ii", "episode iii", "episode 2", "episode 3"]
+  - id: xenosaga-episode-2-ps2
+    title: "Xenosaga Episode II"
+    ebay:
+      query: "Xenosaga Episode II PS2"
+      negative: ["episode i ", "episode iii", "episode 3"]
+  - id: xenosaga-episode-3-ps2
+    title: "Xenosaga Episode III"
+    info:
+      developer: "Monolith Soft"
+      publisher: "Namco Bandai"
+      year: 2006
+      genre: "RPG"
+      trivia: "The trilogy was originally planned as six episodes; the story was compressed into three when the series was cut short."
+      why: "The lowest print run of the three episodes, and completing the trilogy is what collectors are usually trying to do."
+    ebay:
+      query: "Xenosaga Episode III PS2"
+      negative: ["episode i ", "episode ii"]
+  - id: shadow-hearts-ps2
+    title: "Shadow Hearts"
+    ebay:
+      query: "Shadow Hearts PS2"
+      negative: ["covenant", "new world", "koudelka"]
+  - id: shadow-hearts-covenant-ps2
+    title: "Shadow Hearts: Covenant"
+    ebay:
+      query: "Shadow Hearts Covenant PS2"
+      negative: ["new world"]
+  - id: shadow-hearts-from-the-new-world-ps2
+    title: "Shadow Hearts: From the New World"
+    ebay:
+      query: "Shadow Hearts From the New World PS2"
+      negative: ["covenant"]
+  - id: valkyrie-profile-2-silmeria-ps2
+    title: "Valkyrie Profile 2: Silmeria"
+    ebay:
+      query: "Valkyrie Profile 2 Silmeria PS2"
+      negative: ["lenneth", "psp", "covenant of the plume"]
+  - id: star-ocean-till-the-end-of-time-ps2
+    title: "Star Ocean: Till the End of Time"
+    ebay:
+      query: "Star Ocean Till the End of Time PS2"
+      negative: ["greatest hits", "first departure", "second evolution"]
+  - id: rogue-galaxy-ps2
+    title: "Rogue Galaxy"
+    ebay:
+      query: "Rogue Galaxy PS2"
+      negative: ["ps4"]
+  - id: dark-cloud-2-ps2
+    title: "Dark Cloud 2"
+    ebay:
+      query: "Dark Cloud 2 PS2"
+      negative: ["dark cloud 1", "greatest hits", "ps4"]
+  - id: odin-sphere-ps2
+    title: "Odin Sphere"
+    info:
+      developer: "Vanillaware"
+      publisher: "Atlus"
+      year: 2007
+      genre: "Action RPG"
+      trivia: "Every frame is hand-drawn. Vanillaware's art pipeline was so labour-intensive that the studio nearly folded during production."
+      why: "A late PS2 release from a studio with a devoted following, printed in modest numbers by Atlus."
+    ebay:
+      query: "Odin Sphere PS2"
+      negative: ["leifthrasir", "ps4", "vita"]
+  - id: grim-grimoire-ps2
+    title: "GrimGrimoire"
+    ebay:
+      query: "GrimGrimoire PS2"
+      negative: ["oncemore", "ps4"]
+  - id: disgaea-hour-of-darkness-ps2
+    title: "Disgaea: Hour of Darkness"
+    info:
+      developer: "Nippon Ichi Software"
+      publisher: "Atlus"
+      year: 2003
+      genre: "Tactical RPG"
+      trivia: "Damage numbers run into the millions and the level cap is 9999, which was the joke and the point."
+      why: "The first Atlus pressing was small; the series only became reliably popular from the sequels onwards."
+    ebay:
+      query: "Disgaea Hour of Darkness PS2"
+      negative: ["disgaea 2", "psp", "afternoon of darkness"]
+  - id: disgaea-2-cursed-memories-ps2
+    title: "Disgaea 2: Cursed Memories"
+    ebay:
+      query: "Disgaea 2 Cursed Memories PS2"
+      negative: ["dark hero days", "psp"]
+  - id: phantom-brave-ps2
+    title: "Phantom Brave"
+    ebay:
+      query: "Phantom Brave PS2"
+      negative: ["hermuda", "wii", "we meet again"]
+  - id: la-pucelle-tactics-ps2
+    title: "La Pucelle: Tactics"
+    ebay:
+      query: "La Pucelle Tactics PS2"
+      negative: ["ragnarok", "psp"]
+  - id: makai-kingdom-ps2
+    title: "Makai Kingdom: Chronicles of the Sacred Tome"
+    ebay:
+      query: "Makai Kingdom PS2"
+      negative: ["psp"]
+  - id: ar-tonelico-ps2
+    title: "Ar tonelico: Melody of Elemia"
+    ebay:
+      query: "Ar tonelico Melody of Elemia PS2"
+      negative: ["ar tonelico 2", "qoga"]
+  - id: ar-tonelico-2-ps2
+    title: "Ar tonelico II: Melody of Metafalica"
+    ebay:
+      query: "Ar tonelico II Melody of Metafalica PS2"
+      negative: ["melody of elemia"]
+  - id: mana-khemia-ps2
+    title: "Mana Khemia: Alchemists of Al-Revis"
+    ebay:
+      query: "Mana Khemia Alchemists of Al-Revis PS2"
+      negative: ["mana khemia 2", "psp"]
+  - id: steambot-chronicles-ps2
+    title: "Steambot Chronicles"
+    ebay:
+      query: "Steambot Chronicles PS2"
+      negative: ["psp"]
+  - id: growlanser-generations-ps2
+    title: "Growlanser Generations"
+    ebay:
+      query: "Growlanser Generations PS2"
+      negative: ["heritage of war", "wayfarer"]
+  - id: growlanser-heritage-of-war-ps2
+    title: "Growlanser: Heritage of War"
+    ebay:
+      query: "Growlanser Heritage of War PS2"
+      negative: ["generations"]
+  - id: metal-gear-solid-3-subsistence-ps2
+    title: "Metal Gear Solid 3: Subsistence"
+    ebay:
+      query: "Metal Gear Solid 3 Subsistence PS2"
+      negative: ["snake eater standard", "hd collection", "essential collection"]
+  - id: zone-of-the-enders-2nd-runner-ps2
+    title: "Zone of the Enders: The 2nd Runner"
+    ebay:
+      query: "Zone of the Enders 2nd Runner PS2"
+      negative: ["hd collection", "ps3"]
+  - id: devil-may-cry-3-special-edition-ps2
+    title: "Devil May Cry 3: Special Edition"
+    ebay:
+      query: "Devil May Cry 3 Special Edition PS2"
+      negative: ["hd collection", "greatest hits", "dante's awakening standard"]
+  - id: resident-evil-outbreak-ps2
+    title: "Resident Evil Outbreak"
+    ebay:
+      query: "Resident Evil Outbreak PS2"
+      negative: ["file 2", "file #2"]
+  - id: resident-evil-outbreak-file-2-ps2
+    title: "Resident Evil Outbreak File #2"
+    ebay:
+      query: "Resident Evil Outbreak File 2 PS2"
+      negative: []
+  - id: gradius-v-ps2
+    title: "Gradius V"
+    ebay:
+      query: "Gradius V PS2"
+      negative: ["gradius 3", "collection"]
+  - id: r-type-final-ps2
+    title: "R-Type Final"
+    ebay:
+      query: "R-Type Final PS2"
+      negative: ["r-type final 2", "ps4"]
+  - id: raiden-iii-ps2
+    title: "Raiden III"
+    ebay:
+      query: "Raiden III PS2"
+      negative: ["raiden iv", "raiden v"]
+  - id: castlevania-lament-of-innocence-ps2
+    title: "Castlevania: Lament of Innocence"
+    ebay:
+      query: "Castlevania Lament of Innocence PS2"
+      negative: ["curse of darkness"]
+  - id: castlevania-curse-of-darkness-ps2
+    title: "Castlevania: Curse of Darkness"
+    ebay:
+      query: "Castlevania Curse of Darkness PS2"
+      negative: ["lament of innocence", "xbox"]
+  - id: contra-shattered-soldier-ps2
+    title: "Contra: Shattered Soldier"
+    ebay:
+      query: "Contra Shattered Soldier PS2"
+      negative: ["neo contra"]
+  - id: marvel-vs-capcom-2-ps2
+    title: "Marvel vs. Capcom 2"
+    ebay:
+      query: "Marvel vs Capcom 2 PS2"
+      negative: ["dreamcast", "xbox", "ps3"]
+  - id: capcom-vs-snk-2-ps2
+    title: "Capcom vs. SNK 2"
+    ebay:
+      query: "Capcom vs SNK 2 PS2"
+      negative: ["dreamcast", "xbox"]
+  - id: guilty-gear-xx-accent-core-ps2
+    title: "Guilty Gear XX Accent Core"
+    ebay:
+      query: "Guilty Gear XX Accent Core PS2"
+      negative: ["plus r", "wii"]
+  - id: the-warriors-ps2
+    title: "The Warriors"
+    ebay:
+      query: "The Warriors PS2 Rockstar"
+      negative: ["psp", "xbox"]
+  - id: bully-ps2
+    title: "Bully"
+    ebay:
+      query: "Bully PS2"
+      negative: ["scholarship edition", "wii", "xbox"]
+  - id: def-jam-fight-for-ny-ps2
+    title: "Def Jam: Fight for NY"
+    ebay:
+      query: "Def Jam Fight for NY PS2"
+      negative: ["vendetta", "xbox", "gamecube", "takeover", "psp"]
+  - id: killer7-ps2
+    title: "killer7"
+    ebay:
+      query: "killer7 PS2"
+      negative: ["gamecube"]
+  - id: gungrave-ps2
+    title: "Gungrave"
+    ebay:
+      query: "Gungrave PS2"
+      negative: ["overdose", "gore", "ps4"]
+  - id: gungrave-overdose-ps2
+    title: "Gungrave: Overdose"
+    ebay:
+      query: "Gungrave Overdose PS2"
+      negative: []
+  - id: blood-will-tell-ps2
+    title: "Blood Will Tell: Tezuka Osamu's Dororo"
+    ebay:
+      query: "Blood Will Tell PS2 Dororo"
+      negative: []
+  - id: chulip-ps2
+    title: "Chulip"
+    ebay:
+      query: "Chulip PS2"
+      negative: []
+  - id: way-of-the-samurai-2-ps2
+    title: "Way of the Samurai 2"
+    ebay:
+      query: "Way of the Samurai 2 PS2"
+      negative: ["way of the samurai 1", "ps4"]
+  - id: front-mission-4-ps2
+    title: "Front Mission 4"
+    ebay:
+      query: "Front Mission 4 PS2"
+      negative: ["front mission 5", "evolved"]
+  - id: ring-of-red-ps2
+    title: "Ring of Red"
+    ebay:
+      query: "Ring of Red PS2"
+      negative: []
+  - id: klonoa-2-lunateas-veil-ps2
+    title: "Klonoa 2: Lunatea's Veil"
+    ebay:
+      query: "Klonoa 2 Lunatea's Veil PS2"
+      negative: ["door to phantomile", "wii", "switch"]
+  - id: timesplitters-future-perfect-ps2
+    title: "TimeSplitters: Future Perfect"
+    ebay:
+      query: "TimeSplitters Future Perfect PS2"
+      negative: ["timesplitters 2", "xbox", "gamecube"]
+  - id: dragon-quest-viii-ps2
+    title: "Dragon Quest VIII"
+    variant: black-label
+    ebay:
+      query: "Dragon Quest VIII PS2"
+      negative: ["greatest hits", "3ds", "android"]

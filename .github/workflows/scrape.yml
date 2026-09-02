@@ -1,0 +1,86 @@
+name: scrape
+
+on:
+  # Twice a day at an odd minute: GitHub's scheduler is best-effort and runs
+  # queued at the top of the hour are the ones most often delayed or dropped.
+  schedule:
+    - cron: "23 9,21 * * *"
+  workflow_dispatch:
+    inputs:
+      platforms:
+        description: "Comma-separated platforms to collect (blank = all)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: scrape
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Collect prices
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+          PRICECHARTING_TOKEN: ${{ secrets.PRICECHARTING_TOKEN }}
+          # Passed through the environment, never interpolated into the script.
+          # A ${{ }} expression is substituted before bash parses the block, so
+          # inlining a dispatch input here would let it run as shell code in a
+          # job that holds write permissions and every API secret.
+          PLATFORMS: ${{ github.event.inputs.platforms }}
+        run: |
+          go run ./cmd/collector \
+            -data ./data \
+            -catalog ./catalog \
+            -budget 2000 \
+            -platforms "$PLATFORMS"
+
+      - name: Commit data if it changed
+        id: commit
+        run: |
+          git config user.name "retroheat-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No data changes."
+            exit 0
+          fi
+          git commit -m "data: refresh $(date -u +%F)"
+          for attempt in 1 2 3; do
+            # A failed rebase leaves the tree mid-rebase, which would make
+            # every later attempt fail for a different reason.
+            git rebase --abort >/dev/null 2>&1 || true
+            if git pull --rebase --autostash && git push; then
+              echo "changed=true" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            echo "Push attempt $attempt failed; retrying."
+            sleep 5
+          done
+          echo "Could not push data commit." >&2
+          exit 1
+
+      # A push made with GITHUB_TOKEN does not trigger other workflows, so the
+      # deploy has to be requested explicitly.
+      - name: Trigger deploy
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml

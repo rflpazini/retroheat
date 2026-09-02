@@ -1,0 +1,417 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+  RetroHeat is dressed as a mid-90s desktop: cream application windows with
+  bevelled chrome, floating on a dark patterned desktop.
+
+  The nostalgia is in the chrome, never in the data. Prices stay in a legible
+  monospace with tabular figures, and the pixel face is reserved for labels
+  short enough to read at a glance.
+
+  Two colour systems, each with one job:
+    - condition colours identify a price column, so a sparkline's colour says
+      which price it charts;
+    - the heat ramp encodes direction and size of a move.
+*/
+
+:root {
+  /* The desktop behind the windows. */
+  --desktop: #1f4e4c;
+  --desktop-grid: #24605d;
+
+  --background: #1f4e4c;
+  --foreground: #241f31;
+
+  /* Application windows. */
+  --card: #f4ecdc;
+  --card-foreground: #241f31;
+  --popover: #f4ecdc;
+  --popover-foreground: #241f31;
+
+  --titlebar: #e4dac2;
+  --titlebar-foreground: #241f31;
+  --menubar: #f2ebdb;
+
+  --primary: #c14a1f;
+  --primary-foreground: #fdf6e8;
+
+  --secondary: #e2d6bd;
+  --secondary-foreground: #241f31;
+
+  --muted: #e7ddc7;
+  --muted-foreground: #564d47;
+
+  --accent: #f7e2c6;
+  --accent-foreground: #8a3410;
+
+  --destructive: #a8291f;
+  --border: #241f31;
+  --input: #cbbfa5;
+  --ring: #c14a1f;
+
+  /* Bevel highlights, the thing that makes a surface read as 3D. */
+  --bevel-light: #fffaf0;
+  --bevel-dark: #a4967a;
+
+  --sidebar: #efe5d1;
+  --sidebar-foreground: #241f31;
+  --sidebar-primary: #c14a1f;
+  --sidebar-primary-foreground: #fdf6e8;
+  --sidebar-accent: #f7e2c6;
+  --sidebar-accent-foreground: #8a3410;
+  --sidebar-border: #241f31;
+  --sidebar-ring: #c14a1f;
+
+  /* Direction and size of a price move. */
+  --heat-cold: #1d4f78;
+  --heat-cool: #3f5a6b;
+  --heat-flat: #56504a;
+  --heat-warm: #7b4b0d;
+  --heat-hot: #9a3a11;
+  --heat-blaze: #a5241d;
+
+  /* One colour per condition column. */
+  --cond-loose: #3c3494;
+  --cond-cib: #a8291f;
+  --cond-new: #7b4b0d;
+
+  /* The stripe, lifted from the arcade cabinet and poster references. */
+  --stripe-1: #2e7d7b;
+  --stripe-2: #5fb3b0;
+  --stripe-3: #e8a45c;
+  --stripe-4: #e8763a;
+  --stripe-5: #d4483b;
+
+  --radius: 0;
+  color-scheme: light;
+}
+
+.dark {
+  --desktop: #100f1c;
+  --desktop-grid: #1a1830;
+
+  --background: #100f1c;
+  --foreground: #ece3d0;
+
+  --card: #292338;
+  --card-foreground: #ece3d0;
+  --popover: #292338;
+  --popover-foreground: #ece3d0;
+
+  --titlebar: #363048;
+  --titlebar-foreground: #ece3d0;
+  --menubar: #2a2438;
+
+  --primary: #f0803f;
+  --primary-foreground: #241206;
+
+  --secondary: #37304a;
+  --secondary-foreground: #ece3d0;
+
+  --muted: #332c45;
+  --muted-foreground: #b3a9a0;
+
+  --accent: #3a2b2a;
+  --accent-foreground: #f3a874;
+
+  --destructive: #e8635a;
+  --border: #0c0b15;
+  --input: #443b5c;
+  --ring: #f0803f;
+
+  --bevel-light: #4b4266;
+  --bevel-dark: #14111f;
+
+  --sidebar: #241e33;
+  --sidebar-foreground: #ece3d0;
+  --sidebar-primary: #f0803f;
+  --sidebar-primary-foreground: #241206;
+  --sidebar-accent: #3a2b2a;
+  --sidebar-accent-foreground: #f3a874;
+  --sidebar-border: #0c0b15;
+  --sidebar-ring: #f0803f;
+
+  --heat-cold: #6fa8dc;
+  --heat-cool: #9db1c4;
+  --heat-flat: #b0a79e;
+  --heat-warm: #e8b45c;
+  --heat-hot: #f2874c;
+  --heat-blaze: #f3857e;
+
+  --cond-loose: #a399ff;
+  --cond-cib: #f1867f;
+  --cond-new: #e3ab55;
+
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-sans: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+  --font-pixel: 'Press Start 2P', 'IBM Plex Mono', monospace;
+}
+
+body {
+  margin: 0;
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  /* A faint grid, the way a desktop pattern used to look. */
+  background-color: var(--desktop);
+  /* A 50% dither, the classic desktop fill, over a faint grid. */
+  background-image:
+    radial-gradient(var(--desktop-grid) 1px, transparent 1px),
+    linear-gradient(var(--desktop-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--desktop-grid) 1px, transparent 1px);
+  background-size:
+    4px 4px,
+    32px 32px,
+    32px 32px;
+}
+
+/* Prices sit in columns and must not wobble between rows. */
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.pixel {
+  font-family: var(--font-pixel);
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
+
+.eyebrow {
+  font-family: var(--font-pixel);
+  font-size: 0.5rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+/* A raised surface: light on the top-left, shadow on the bottom-right. */
+.bevel {
+  box-shadow:
+    inset 1px 1px 0 0 var(--bevel-light),
+    inset -1px -1px 0 0 var(--bevel-dark);
+}
+
+/* The same trick inverted, for pressed controls and input wells. */
+.bevel-in {
+  box-shadow:
+    inset -1px -1px 0 0 var(--bevel-light),
+    inset 1px 1px 0 0 var(--bevel-dark);
+}
+
+/* Controls physically depress, the way every button did on these machines. */
+.press:active {
+  box-shadow:
+    inset -1px -1px 0 0 var(--bevel-light),
+    inset 1px 1px 0 0 var(--bevel-dark);
+  transform: translate(1px, 1px);
+}
+
+/* An application window: hard border, bevelled face, hard-edged drop shadow. */
+.window {
+  border: 2px solid var(--border);
+  background: var(--card);
+  box-shadow:
+    inset 1px 1px 0 0 var(--bevel-light),
+    inset -1px -1px 0 0 var(--bevel-dark),
+    3px 3px 0 0 rgb(0 0 0 / 0.4);
+}
+
+/*
+  System 7 drew an active window's title bar as horizontal pinstripes, with
+  the title punched out of them. That is the single detail that reads as
+  "classic Mac" before anything else does.
+*/
+.window-title {
+  background-color: var(--titlebar);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--border) 0 1px,
+    transparent 1px 3px
+  );
+  color: var(--titlebar-foreground);
+  border-bottom: 2px solid var(--border);
+}
+
+/* The title sits in a solid patch so the pinstripes never run behind text. */
+.window-title-text {
+  background: var(--titlebar);
+  padding: 0 0.5rem;
+}
+
+/* Close and zoom boxes, drawn rather than iconified. */
+.title-box {
+  width: 11px;
+  height: 11px;
+  border: 1px solid var(--border);
+  background: var(--titlebar);
+  box-shadow: inset 1px 1px 0 0 var(--bevel-light);
+}
+
+/* The arcade stripe, used as a rule rather than as decoration. */
+.stripe {
+  height: 6px;
+  background: linear-gradient(
+    90deg,
+    var(--stripe-1) 0 20%,
+    var(--stripe-2) 20% 40%,
+    var(--stripe-3) 40% 60%,
+    var(--stripe-4) 60% 80%,
+    var(--stripe-5) 80% 100%
+  );
+}
+
+/*
+  Motion, kept to what these machines actually did: windows zoomed open in a
+  few stepped frames, cursors blinked, and a progress bar filled. Nothing
+  eases smoothly, because nothing did.
+*/
+@keyframes window-zoom {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-window {
+  animation: window-zoom 160ms steps(5, end) backwards;
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.blink {
+  animation: blink 1s steps(1, end) infinite;
+}
+
+@keyframes draw-line {
+  from { stroke-dashoffset: var(--dash, 400); }
+  to { stroke-dashoffset: 0; }
+}
+
+.spark-line {
+  stroke-dasharray: var(--dash, 400);
+  animation: draw-line 700ms ease-out backwards;
+}
+
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.ticker-track {
+  animation: ticker-scroll 40s linear infinite;
+}
+
+.ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes progress-fill {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.progress-fill {
+  animation: progress-fill 1100ms steps(12, end) forwards;
+}
+
+@keyframes fade-out {
+  to { opacity: 0; visibility: hidden; }
+}
+
+/*
+  A CRT: a dark phosphor screen behind glass, with scanlines, a vignette and a
+  corner glare. The effects are drawn over the image rather than filtered into
+  it, so the artwork underneath stays legible.
+*/
+.crt {
+  position: relative;
+  overflow: hidden;
+  background: #0c120f;
+  border-radius: 6px / 12px;
+}
+
+.crt > img,
+.crt > .crt-content {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.1) contrast(1.05);
+}
+
+/* Scanlines and the aperture-grille tint. */
+.crt::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgb(0 0 0 / 0.28) 0 1px,
+      transparent 1px 3px
+    ),
+    repeating-linear-gradient(
+      to right,
+      rgb(255 0 0 / 0.05) 0 1px,
+      rgb(0 255 0 / 0.04) 1px 2px,
+      rgb(0 0 255 / 0.05) 2px 3px
+    );
+}
+
+/* Vignette plus a glare across the top-left of the glass. */
+.crt::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 120% at 50% 50%, transparent 55%, rgb(0 0 0 / 0.55) 100%),
+    linear-gradient(122deg, rgb(255 255 255 / 0.10) 0 22%, transparent 42%);
+}
+
+/* The phosphor stand-in shown when a release has no cover art on file. */
+.crt-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  color: #8ef2a8;
+  text-shadow: 0 0 6px rgb(142 242 168 / 0.55);
+}
+
+*:focus-visible {
+  outline: 2px dotted var(--foreground);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .spark-line {
+    stroke-dasharray: none;
+  }
+  .ticker-track {
+    animation: none;
+  }
+}

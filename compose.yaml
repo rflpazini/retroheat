@@ -1,0 +1,52 @@
+name: retroheat
+
+# Two ways to run this:
+#
+#   docker compose up --build
+#       Generates sample data, then serves the site on http://localhost:8080
+#
+#   docker compose --profile live run --rm collector-live
+#       Replaces that with real eBay prices. Needs EBAY_CLIENT_ID and
+#       EBAY_CLIENT_SECRET in a .env file next to this one.
+
+services:
+  # Runs once and exits. Its output is written into ./data on the host, the
+  # same directory the scheduled workflow commits.
+  collector:
+    build:
+      context: .
+      dockerfile: docker/collector.Dockerfile
+    volumes:
+      - ./data:/data
+      - ./catalog:/catalog:ro
+    command: ["-fake", "-data", "/data", "-catalog", "/catalog"]
+
+  collector-live:
+    profiles: ["live"]
+    build:
+      context: .
+      dockerfile: docker/collector.Dockerfile
+    volumes:
+      - ./data:/data
+      - ./catalog:/catalog:ro
+    # Left empty rather than required, so `docker compose up` still works
+    # without credentials. The collector reports the missing keys itself.
+    environment:
+      EBAY_CLIENT_ID: ${EBAY_CLIENT_ID:-}
+      EBAY_CLIENT_SECRET: ${EBAY_CLIENT_SECRET:-}
+      PRICECHARTING_TOKEN: ${PRICECHARTING_TOKEN:-}
+    # A smaller budget than production: enough to see real prices for a
+    # platform or two without spending the day's free quota on one test.
+    command: ["-data", "/data", "-catalog", "/catalog", "-budget", "600", "-v"]
+
+  web:
+    build:
+      context: .
+      dockerfile: docker/web.Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ./data:/usr/share/nginx/html/data:ro
+    depends_on:
+      collector:
+        condition: service_completed_successfully

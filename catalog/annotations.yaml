@@ -1,0 +1,38 @@
+# Curated context for why a game is moving. This is the thing no competing
+# price site offers, and it is the easiest way to contribute: open a pull
+# request adding an entry with a source link.
+#
+# Fields:
+#   game_id    - must match an id in one of the platform catalog files
+#   date       - YYYY-MM-DD, when the driver happened (not when you wrote it)
+#   note       - one sentence, plain language
+#   source_url - optional link backing the claim
+#
+# The most recent annotation per game is shown on the trending boards.
+
+- game_id: silent-hill-2-ps2
+  date: 2024-10-08
+  note: "The Bloober Team remake sent new players looking for the PS2 original, which has never been re-released digitally."
+  source_url: "https://comicbook.com/gaming/news/silent-hill-games-2-3-4-ps2-ps1-price-increase/"
+
+- game_id: kuon-ps2
+  date: 2022-02-25
+  note: "Elden Ring renewed interest in FromSoftware's back catalogue, and Kuon had a very small US print run."
+
+- game_id: rule-of-rose-ps2
+  date: 2023-01-01
+  note: "Low print run plus a persistent Atlus-adjacent collector following; sealed copies regularly clear four figures."
+
+- game_id: persona-4-golden-vita
+  date: 2021-03-29
+  note: "The PS Vita store closure announcement made physical carts the only lasting way to own Vita games."
+  source_url: "https://www.retrotechlab.com/ps-vita-price-guide-2026/"
+
+- game_id: zelda-twilight-princess-gamecube
+  date: 2025-04-01
+  note: "GameCube prices broadly inflated through 2025; the GameCube release is the rarer of the two versions."
+  source_url: "https://comicbook.com/gaming/news/gamecube-games-nintendo-zelda-twilight-princess-price/"
+
+- game_id: fire-emblem-path-of-radiance-gamecube
+  date: 2025-01-15
+  note: "Short print run and sustained Fire Emblem popularity keep complete copies in the $200-300 range."

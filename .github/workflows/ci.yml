@@ -1,0 +1,72 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - run: go build ./...
+      - run: go vet ./...
+
+      # Includes the catalog checks, which are what a pull request adding a
+      # game has to pass.
+      - run: go test ./... -race
+
+      # Both linters are pinned as go.mod tool dependencies, so CI and a
+      # contributor's laptop always run the same versions.
+      - run: go tool golangci-lint run ./...
+
+      - name: Check for vulnerable dependencies
+        run: go tool govulncheck ./...
+
+      - name: Collector runs end to end
+        run: |
+          go run ./cmd/collector -fake -data /tmp/rh-data -catalog ./catalog
+          test -s /tmp/rh-data/meta.json
+
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      # The TypeScript types are hand-written mirrors of Go structs. Generating
+      # real collector output here lets the contract tests compare the two, so
+      # a field renamed on either side fails the build instead of reaching
+      # production as an undefined value.
+      - name: Generate collector output for the contract tests
+        run: go run ./cmd/collector -fake -data ./data -catalog ./catalog
+
+      - run: npm ci
+        working-directory: web
+      - run: npm run typecheck
+        working-directory: web
+      - run: npm test
+        working-directory: web
+      - run: npm run build
+        working-directory: web
