@@ -5,5 +5,8 @@ web/*.tsbuildinfo
 *.tmp
 .DS_Store
 .env
-retroheat
-collector
+
+# Built binaries. These are anchored to the repository root on purpose: an
+# unanchored "collector" would also match the cmd/collector source directory.
+/retroheat
+/collector
