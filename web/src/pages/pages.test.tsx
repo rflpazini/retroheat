@@ -45,15 +45,32 @@ describe.skipIf(!present)('pages render against real collector output', () => {
     serveLocalData()
   })
 
-  it('the home board shows a ranked mover', async () => {
+  it('the home board shows a ranked mover, or says why there is none yet', async () => {
+    const trending = JSON.parse(fs.readFileSync(path.join(dataDir, 'trending/all.json'), 'utf8')) as {
+      entries: unknown[]
+    }
     renderAt('/', <Home />, '/')
-    await waitFor(() => expect(document.body.textContent).toMatch(/hottest game on the shelf/i))
-    expect(screen.getAllByText(/%/).length).toBeGreaterThan(0)
+    if (trending.entries.length > 0) {
+      await waitFor(() => expect(document.body.textContent).toMatch(/hottest game on the shelf/i))
+      expect(screen.getAllByText(/%/).length).toBeGreaterThan(0)
+    } else {
+      // Real collection starts with one point per game, so for the first week
+      // there is no momentum to rank. The board must say so, not sit empty.
+      await waitFor(() => expect(document.body.textContent).toMatch(/No movers yet/i))
+      expect(document.body.textContent).toMatch(/week of price history/i)
+    }
   })
 
   it('a platform board renders its games in a table', async () => {
     renderAt('/p/ps2', <Platform />, '/p/:platform')
     await waitFor(() => expect(document.querySelectorAll('tbody tr').length).toBeGreaterThan(0))
+  })
+
+  it('a platform board shows the mode next to the median', async () => {
+    renderAt('/p/ps2', <Platform />, '/p/:platform')
+    await waitFor(() => expect(document.querySelectorAll('tbody tr').length).toBeGreaterThan(0))
+    // Every eBay-priced bucket carries a mode; the board must surface it, not only the median.
+    expect(document.body.textContent).toMatch(/mode \$\d/)
   })
 
   it('a platform board marks the sorted column for assistive technology', async () => {
@@ -192,13 +209,39 @@ describe.skipIf(!present)('the game page explains the game, not just the price',
     expect(text).toMatch(/Why it costs what it costs/i)
   })
 
-  it('falls back to a phosphor screen when a release has no cover art', async () => {
+  it('shows the mode next to each condition price', async () => {
     const { Game } = await import('./Game')
     renderAt('/g/jet-force-gemini-n64', <Game />, '/g/:id')
 
     await waitFor(() => expect(document.body.textContent).toMatch(/Jet Force Gemini/))
-    // No cover on file yet, so the CRT must say so rather than render an empty box.
+    await waitFor(() => expect(document.body.textContent).toMatch(/mode \$\d/))
+  })
+
+  it('shows the cover art when a release has one on file', async () => {
+    const catalog = JSON.parse(fs.readFileSync(path.join(dataDir, 'catalog.json'), 'utf8')) as {
+      games: { id: string; title: string; info?: { cover_url?: string } }[]
+    }
+    const withCover = catalog.games.find((g) => g.info?.cover_url)
+    if (!withCover) return // nothing to assert against until the catalog carries covers
+
+    const { Game } = await import('./Game')
+    renderAt(`/g/${withCover.id}`, <Game />, '/g/:id')
+
+    const img = await screen.findByRole('img', { name: new RegExp(`${escapeRegExp(withCover.title)} cover art`) })
+    expect(img.getAttribute('src')).toBe(withCover.info!.cover_url)
+  })
+
+  it('falls back to a phosphor screen when a release has no cover art', async () => {
+    const { CRTScreen } = await import('../components/CRTScreen')
+    render(<CRTScreen title="Jet Force Gemini" platform="Nintendo 64" year={1999} />)
+
+    // No cover on file, so the CRT must say so rather than render an empty box.
     expect(document.body.textContent).toMatch(/NO COVER ON FILE/i)
     expect(document.querySelector('.crt')).not.toBeNull()
+    expect(document.querySelector('.crt img')).toBeNull()
   })
 })
+
+function escapeRegExp(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+}

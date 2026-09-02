@@ -3,6 +3,7 @@ games:
   - id: conkers-bad-fur-day-n64
     title: "Conker's Bad Fur Day"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/9/99/Conkersbfdbox.jpg"
       developer: "Rare"
       publisher: "Rare"
       year: 2001
@@ -15,6 +16,7 @@ games:
   - id: harvest-moon-64-n64
     title: "Harvest Moon 64"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/6/6a/Harvest_Moon_64_Coverart.png"
       developer: "Victor Interactive Software"
       publisher: "Natsume"
       year: 1999
@@ -27,6 +29,7 @@ games:
   - id: ogre-battle-64-n64
     title: "Ogre Battle 64: Person of Lordly Caliber"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/4/4c/OgreBattle64.jpg"
       developer: "Quest"
       publisher: "Atlus"
       year: 1999
@@ -39,6 +42,7 @@ games:
   - id: bomberman-64-second-attack-n64
     title: "Bomberman 64: The Second Attack"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/a/a3/Bomberman64sa_box.jpg"
       developer: "Hudson Soft"
       publisher: "Vatical Entertainment"
       year: 2000
@@ -51,6 +55,7 @@ games:
   - id: mischief-makers-n64
     title: "Mischief Makers"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/3/31/Mischief_Makers.jpg"
       developer: "Treasure"
       publisher: "Nintendo"
       year: 1997
@@ -62,142 +67,197 @@ games:
       negative: ["repro"]
   - id: snowboard-kids-2-n64
     title: "Snowboard Kids 2"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/2/23/Snowboard_Kids_2_cover.jpg"
     ebay:
       query: "Snowboard Kids 2 N64"
       negative: ["snowboard kids 1", "repro"]
   - id: mystical-ninja-starring-goemon-n64
     title: "Mystical Ninja Starring Goemon"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/9/9e/MysticalNinjaStarringGoemon.jpg"
     ebay:
       query: "Mystical Ninja Starring Goemon N64"
       negative: ["great adventure", "snes", "repro"]
   - id: goemons-great-adventure-n64
     title: "Goemon's Great Adventure"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/5/5b/Goemonsgreatadvbox.jpg"
     ebay:
       query: "Goemon's Great Adventure N64"
       negative: ["mystical ninja starring", "repro"]
   - id: rocket-robot-on-wheels-n64
     title: "Rocket: Robot on Wheels"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/9/90/Rocket_Robot_on_Wheels_Cover.jpg"
     ebay:
       query: "Rocket Robot on Wheels N64"
       negative: ["repro"]
   - id: space-station-silicon-valley-n64
     title: "Space Station Silicon Valley"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/0/04/Silicon_Valley_Artwork.jpg"
     ebay:
       query: "Space Station Silicon Valley N64"
       negative: ["repro"]
   - id: body-harvest-n64
     title: "Body Harvest"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/a/a3/Body_Harvest.jpg"
     ebay:
       query: "Body Harvest N64"
       negative: ["repro"]
   - id: banjo-kazooie-n64
     title: "Banjo-Kazooie"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/1/12/Banjo_Kazooie_Cover.png"
     ebay:
       query: "Banjo-Kazooie N64"
       negative: ["tooie", "grunty's revenge", "nuts and bolts", "repro"]
   - id: banjo-tooie-n64
     title: "Banjo-Tooie"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/4/41/Banjo-Tooie_Coverart.png"
     ebay:
       query: "Banjo-Tooie N64"
       negative: ["kazooie", "repro"]
   - id: paper-mario-n64
     title: "Paper Mario"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/6/61/Papermario.jpg"
     ebay:
       query: "Paper Mario N64"
       negative: ["thousand year door", "gamecube", "repro"]
   - id: super-mario-64-n64
     title: "Super Mario 64"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/e/e9/Super_Mario_64.png"
     ebay:
       query: "Super Mario 64 N64"
       negative: ["ds", "3d all stars", "shindou", "repro"]
   - id: zelda-ocarina-of-time-n64
     title: "The Legend of Zelda: Ocarina of Time"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/5/57/The_Legend_of_Zelda_Ocarina_of_Time.jpg"
     ebay:
       query: "Zelda Ocarina of Time N64"
       negative: ["master quest", "gamecube", "3ds", "collector's edition", "repro"]
   - id: zelda-majoras-mask-n64
     title: "The Legend of Zelda: Majora's Mask"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/6/60/The_Legend_of_Zelda_-_Majora%27s_Mask_Box_Art.jpg"
     ebay:
       query: "Zelda Majora's Mask N64"
       negative: ["3ds", "gamecube", "collector's edition", "repro"]
   - id: goldeneye-007-n64
     title: "GoldenEye 007"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/1/13/GoldenEye_007_N64_cover.jpg"
     ebay:
       query: "GoldenEye 007 N64"
       negative: ["wii", "xbox", "repro"]
   - id: perfect-dark-n64
     title: "Perfect Dark"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/3/32/Perfect_dark_box.jpg"
     ebay:
       query: "Perfect Dark N64"
       negative: ["zero", "xbox", "gameboy", "repro"]
   - id: star-fox-64-n64
     title: "Star Fox 64"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/6/63/StarFox64_N64_Game_Box.jpg"
     ebay:
       query: "Star Fox 64 N64"
       negative: ["3ds", "repro"]
   - id: f-zero-x-n64
     title: "F-Zero X"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/2/21/F-Zero_X_box_art.jpg"
     ebay:
       query: "F-Zero X N64"
       negative: ["gx", "gamecube", "snes", "repro"]
   - id: mario-kart-64-n64
     title: "Mario Kart 64"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/a/a1/Mario_Kart_64.jpg"
     ebay:
       query: "Mario Kart 64 N64"
       negative: ["players choice", "wii", "repro"]
   - id: super-smash-bros-n64
     title: "Super Smash Bros."
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/4/42/Supersmashbox.jpg"
     ebay:
       query: "Super Smash Bros N64"
       negative: ["melee", "brawl", "ultimate", "gamecube", "repro"]
   - id: donkey-kong-64-n64
     title: "Donkey Kong 64"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/a/ae/DonkeyKong64CoverArt.jpg"
     ebay:
       query: "Donkey Kong 64 N64"
       negative: ["expansion pak only", "country", "repro"]
   - id: kirby-64-the-crystal-shards-n64
     title: "Kirby 64: The Crystal Shards"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/c/c1/Kirby64_box.jpg"
     ebay:
       query: "Kirby 64 Crystal Shards N64"
       negative: ["repro"]
   - id: pokemon-stadium-n64
     title: "Pokémon Stadium"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/7/70/Pokemonstadiumbox.jpg"
     ebay:
       query: "Pokemon Stadium N64"
       negative: ["stadium 2", "transfer pak only", "repro"]
   - id: pokemon-snap-n64
     title: "Pokémon Snap"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/0/0a/Pok%C3%A9mon_Snap_Coverart.png"
     ebay:
       query: "Pokemon Snap N64"
       negative: ["new pokemon snap", "switch", "repro"]
   - id: pokemon-puzzle-league-n64
     title: "Pokémon Puzzle League"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/b/b6/Pok%C3%A9mon_Puzzle_League_Coverart.png"
     ebay:
       query: "Pokemon Puzzle League N64"
       negative: ["challenge", "gameboy", "repro"]
   - id: mario-party-3-n64
     title: "Mario Party 3"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/0/03/Mario_Party_3_Box_Art.png"
     ebay:
       query: "Mario Party 3 N64"
       negative: ["mario party 1", "mario party 2", "repro"]
   - id: mario-party-2-n64
     title: "Mario Party 2"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/2/23/Marioparty2.jpg"
     ebay:
       query: "Mario Party 2 N64"
       negative: ["mario party 3", "repro"]
   - id: castlevania-legacy-of-darkness-n64
     title: "Castlevania: Legacy of Darkness"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/3/37/Castlevania_Legacy_of_Darkness.jpg"
     ebay:
       query: "Castlevania Legacy of Darkness N64"
       negative: ["repro"]
   - id: turok-2-seeds-of-evil-n64
     title: "Turok 2: Seeds of Evil"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/f/f0/Turok2box.jpg"
     ebay:
       query: "Turok 2 Seeds of Evil N64"
       negative: ["turok 3", "rage wars", "repro"]
   - id: jet-force-gemini-n64
     title: "Jet Force Gemini"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/1/1a/Jet_Force_Gemini_box.jpg"
       developer: "Rare"
       publisher: "Nintendo"
       year: 1999
@@ -209,46 +269,64 @@ games:
       negative: ["repro"]
   - id: blast-corps-n64
     title: "Blast Corps"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/8/83/Blast_Corps_Coverart.png"
     ebay:
       query: "Blast Corps N64"
       negative: ["repro"]
   - id: wave-race-64-n64
     title: "Wave Race 64"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/e/e6/Wave_Race_64_Coverart.png"
     ebay:
       query: "Wave Race 64 N64"
       negative: ["blue storm", "gamecube", "repro"]
   - id: 1080-snowboarding-n64
     title: "1080° Snowboarding"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/0/04/1080snowboardingbox.jpg"
     ebay:
       query: "1080 Snowboarding N64"
       negative: ["avalanche", "gamecube", "repro"]
   - id: excitebike-64-n64
     title: "Excitebike 64"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/8/85/Excitebike64cover.jpg"
     ebay:
       query: "Excitebike 64 N64"
       negative: ["nes", "wii", "repro"]
   - id: hybrid-heaven-n64
     title: "Hybrid Heaven"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/d/db/Hybridheaven.jpg"
     ebay:
       query: "Hybrid Heaven N64"
       negative: ["repro"]
   - id: quest-64-n64
     title: "Quest 64"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/a/ae/Quest64_big.jpg"
     ebay:
       query: "Quest 64 N64"
       negative: ["repro"]
   - id: doom-64-n64
     title: "Doom 64"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/2/2b/Doom_64_box.jpg"
     ebay:
       query: "Doom 64 N64"
       negative: ["switch", "ps4", "xbox", "repro"]
   - id: resident-evil-2-n64
     title: "Resident Evil 2"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/4/40/NTSC_Resident_Evil_2_Cover.png"
     ebay:
       query: "Resident Evil 2 N64"
       negative: ["ps1", "gamecube", "dreamcast", "remake", "repro"]
   - id: worms-armageddon-n64
     title: "Worms Armageddon"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/e/e5/Wa-win-cover.jpg"
     ebay:
       query: "Worms Armageddon N64"
       negative: ["ps1", "dreamcast", "repro"]

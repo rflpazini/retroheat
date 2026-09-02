@@ -3,6 +3,7 @@ games:
   - id: skies-of-arcadia-dreamcast
     title: "Skies of Arcadia"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/6/65/ArcadiaDC.png"
       developer: "Overworks"
       publisher: "Sega"
       year: 2000
@@ -15,6 +16,7 @@ games:
   - id: marvel-vs-capcom-2-dreamcast
     title: "Marvel vs. Capcom 2"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/1/19/MVC2_Arcade_Flyer.jpg"
       developer: "Capcom"
       publisher: "Capcom"
       year: 2000
@@ -27,6 +29,7 @@ games:
   - id: bangai-o-dreamcast
     title: "Bangai-O"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/9/95/Bangai-ON64Box.jpg"
       developer: "Treasure"
       publisher: "Crave Entertainment"
       year: 2000
@@ -38,12 +41,15 @@ games:
       negative: ["spirits", "n64", "ds"]
   - id: cannon-spike-dreamcast
     title: "Cannon Spike"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/9/9f/Cannon_Spike.PNG"
     ebay:
       query: "Cannon Spike Dreamcast"
       negative: []
   - id: shenmue-dreamcast
     title: "Shenmue"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/e/e2/ShenmueDCbox.jpg"
       developer: "Sega AM2"
       publisher: "Sega"
       year: 1999
@@ -55,17 +61,22 @@ games:
       negative: ["shenmue ii", "shenmue 2", "shenmue 3", "hd", "xbox", "ps4"]
   - id: shenmue-2-dreamcast
     title: "Shenmue II"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/e/e1/Shenmue_II.jpg"
     ebay:
       query: "Shenmue II Dreamcast"
       negative: ["xbox", "hd", "ps4", "shenmue 1"]
   - id: grandia-2-dreamcast
     title: "Grandia II"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/5/5c/G2dcboxart.jpg"
     ebay:
       query: "Grandia II Dreamcast"
       negative: ["ps2", "pc", "hd remaster", "switch"]
   - id: record-of-lodoss-war-dreamcast
     title: "Record of Lodoss War"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/5/58/Dreamcast_Record_of_Lodoss_War_-_Advent_of_Cardice_cover_art.jpg"
       developer: "Neverland"
       publisher: "Conspiracy Entertainment"
       year: 2001
@@ -77,22 +88,29 @@ games:
       negative: ["deedlit", "wonder labyrinth"]
   - id: phantasy-star-online-ver-2-dreamcast
     title: "Phantasy Star Online Ver. 2"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/d/d3/Phantasy_Star_Online_cover_art_jp.png"
     ebay:
       query: "Phantasy Star Online Ver 2 Dreamcast"
       negative: ["episode i", "gamecube", "xbox"]
   - id: sonic-adventure-dreamcast
     title: "Sonic Adventure"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/6/60/Sonic_Adventure.PNG"
     ebay:
       query: "Sonic Adventure Dreamcast"
       negative: ["sonic adventure 2", "dx", "gamecube", "limited edition demo"]
   - id: sonic-adventure-2-dreamcast
     title: "Sonic Adventure 2"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/9/99/Sonic_Adventure_2_cover.png"
     ebay:
       query: "Sonic Adventure 2 Dreamcast"
       negative: ["battle", "gamecube", "sonic adventure 1"]
   - id: jet-grind-radio-dreamcast
     title: "Jet Grind Radio"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/7/7b/Jetsetradiopalboxart.jpg"
       developer: "Smilebit"
       publisher: "Sega"
       year: 2000
@@ -104,62 +122,85 @@ games:
       negative: ["future", "xbox", "hd"]
   - id: crazy-taxi-dreamcast
     title: "Crazy Taxi"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/7/75/CrazyTaxi_cover.png"
     ebay:
       query: "Crazy Taxi Dreamcast"
       negative: ["crazy taxi 2", "crazy taxi 3", "ps2", "gamecube"]
   - id: power-stone-dreamcast
     title: "Power Stone"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/c/cd/Power_Stone_Dreamcast.jpg"
     ebay:
       query: "Power Stone Dreamcast"
       negative: ["power stone 2", "collection", "psp"]
   - id: power-stone-2-dreamcast
     title: "Power Stone 2"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/3/3b/Power_Stone_2_J_Cover.jpg"
     ebay:
       query: "Power Stone 2 Dreamcast"
       negative: ["collection", "psp"]
   - id: project-justice-dreamcast
     title: "Project Justice"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/d/d0/Project_Justice_arcade_flyer.png"
     ebay:
       query: "Project Justice Dreamcast"
       negative: ["rival schools ps1"]
   - id: street-fighter-iii-3rd-strike-dreamcast
     title: "Street Fighter III: 3rd Strike"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/e/e6/Street_Fighter_III_3rd_Strike_%28flyer%29.png"
     ebay:
       query: "Street Fighter III 3rd Strike Dreamcast"
       negative: ["double impact", "online edition", "ps2", "xbox"]
   - id: street-fighter-iii-double-impact-dreamcast
     title: "Street Fighter III: Double Impact"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/d/d3/Street_Fighter_III_flyer.png"
     ebay:
       query: "Street Fighter III Double Impact Dreamcast"
       negative: ["3rd strike"]
   - id: garou-mark-of-the-wolves-dreamcast
     title: "Garou: Mark of the Wolves"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/3/3f/Garou_-_Mark_of_the_Wolves_arcade_flyer.png"
     ebay:
       query: "Garou Mark of the Wolves Dreamcast"
       negative: ["neo geo", "ps4", "switch"]
   - id: the-last-blade-2-dreamcast
     title: "The Last Blade 2"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/7/77/The_Last_Blade_2_arcade_flyer.jpg"
     ebay:
       query: "The Last Blade 2 Dreamcast"
       negative: ["neo geo", "switch"]
   - id: capcom-vs-snk-2-dreamcast
     title: "Capcom vs. SNK 2"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/2/22/Capcom_vs_SNK_2.png"
     ebay:
       query: "Capcom vs SNK 2 Dreamcast"
       negative: ["ps2", "xbox", "capcom vs snk 1"]
   - id: soulcalibur-dreamcast
     title: "Soulcalibur"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/4/45/Soulcalibur_flyer.png"
     ebay:
       query: "Soulcalibur Dreamcast"
       negative: ["soulcalibur ii", "soul blade", "xbox", "hd"]
   - id: resident-evil-code-veronica-dreamcast
     title: "Resident Evil Code: Veronica"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/4/44/RECV_boxart.jpg"
     ebay:
       query: "Resident Evil Code Veronica Dreamcast"
       negative: ["x ", "ps2", "gamecube", "hd"]
   - id: illbleed-dreamcast
     title: "Illbleed"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/e/e0/Illbleed_cover_art.png"
       developer: "Crazy Games"
       publisher: "Jaleco"
       year: 2001
@@ -171,52 +212,71 @@ games:
       negative: []
   - id: typing-of-the-dead-dreamcast
     title: "The Typing of the Dead"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/5/5a/TTOTD_Packshot.jpeg"
     ebay:
       query: "Typing of the Dead Dreamcast"
       negative: ["overkill", "pc", "keyboard only"]
   - id: house-of-the-dead-2-dreamcast
     title: "The House of the Dead 2"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/f/f7/House_Of_The_Dead_2%2C_Thelogo.png"
     ebay:
       query: "House of the Dead 2 Dreamcast"
       negative: ["typing", "gun only", "remake", "switch"]
   - id: seaman-dreamcast
     title: "Seaman"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/a/ab/Seaman_Coverart.png"
     ebay:
       query: "Seaman Dreamcast"
       negative: ["microphone only", "ps2"]
   - id: space-channel-5-dreamcast
     title: "Space Channel 5"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/f/fc/Space_Channel_5.PNG"
     ebay:
       query: "Space Channel 5 Dreamcast"
       negative: ["part 2", "ps2", "vr"]
   - id: samba-de-amigo-dreamcast
     title: "Samba de Amigo"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/9/91/SambaDeAmigo.jpg"
     ebay:
       query: "Samba de Amigo Dreamcast"
       negative: ["maracas only", "wii", "ver 2000"]
   - id: chuchu-rocket-dreamcast
     title: "ChuChu Rocket!"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/b/b6/ChuChu_Rocket%21_Artwork.jpg"
     ebay:
       query: "ChuChu Rocket Dreamcast"
       negative: ["gba"]
   - id: toy-commander-dreamcast
     title: "Toy Commander"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/6/69/Toy_Commander.PNG"
     ebay:
       query: "Toy Commander Dreamcast"
       negative: ["toy racer"]
   - id: mdk2-dreamcast
     title: "MDK2"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/4/4f/MDK2_Packshot.jpeg"
     ebay:
       query: "MDK2 Dreamcast"
       negative: ["pc", "hd", "wii"]
   - id: fur-fighters-dreamcast
     title: "Fur Fighters"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/8/8b/Fur_Fighters_Coverart.png"
     ebay:
       query: "Fur Fighters Dreamcast"
       negative: ["viggo's revenge", "ps2"]
   - id: sturmwind-dreamcast
     title: "Sturmwind"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/9/98/Dreamcast_Sturmwind_cover_art.jpg"
       developer: "Duranik"
       publisher: "redspotgames"
       year: 2013
@@ -228,21 +288,29 @@ games:
       negative: ["ex", "switch"]
   - id: gigawing-dreamcast
     title: "Giga Wing"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/e/ef/Giga_Wing_arcade_flyer.jpg"
     ebay:
       query: "Giga Wing Dreamcast"
       negative: ["giga wing 2", "generations"]
   - id: mars-matrix-dreamcast
     title: "Mars Matrix"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/5/51/Mars_Matrix_Promotional_Flyer.png"
     ebay:
       query: "Mars Matrix Dreamcast"
       negative: []
   - id: virtua-tennis-2-dreamcast
     title: "Virtua Tennis 2"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/f/f0/Vt2box.jpg"
     ebay:
       query: "Virtua Tennis 2 Dreamcast"
       negative: ["virtua tennis 1", "ps2"]
   - id: hydro-thunder-dreamcast
     title: "Hydro Thunder"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/e/e1/Hydro_Thunder_DC_cover.jpg"
     ebay:
       query: "Hydro Thunder Dreamcast"
       negative: ["hurricane", "n64", "ps1"]

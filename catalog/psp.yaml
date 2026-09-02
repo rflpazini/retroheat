@@ -3,6 +3,7 @@ games:
   - id: crisis-core-final-fantasy-vii-psp
     title: "Crisis Core: Final Fantasy VII"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/3/32/Crisis_Core.png"
       developer: "Square Enix"
       publisher: "Square Enix"
       year: 2007
@@ -14,32 +15,43 @@ games:
       negative: ["reunion", "ps4", "switch", "umd only lot"]
   - id: persona-3-portable-psp
     title: "Persona 3 Portable"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/4/47/Persona3cover.jpg"
     ebay:
       query: "Persona 3 Portable PSP"
       negative: ["fes", "ps2", "switch", "reload"]
   - id: persona-2-innocent-sin-psp
     title: "Persona 2: Innocent Sin"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/2/22/Persona_2_IS_Box_art.png"
     ebay:
       query: "Persona 2 Innocent Sin PSP"
       negative: ["eternal punishment", "ps1"]
   - id: tactics-ogre-let-us-cling-together-psp
     title: "Tactics Ogre: Let Us Cling Together"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/4/40/SFC_Tactics_Ogre_-_Let_Us_Cling_Together_cover_art.jpg"
     ebay:
       query: "Tactics Ogre Let Us Cling Together PSP"
       negative: ["reborn", "snes", "ps1", "switch"]
   - id: final-fantasy-tactics-war-of-the-lions-psp
     title: "Final Fantasy Tactics: The War of the Lions"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/0/04/Fftpsp3.jpg"
     ebay:
       query: "Final Fantasy Tactics War of the Lions PSP"
       negative: ["ps1", "ios", "advance"]
   - id: valkyria-chronicles-2-psp
     title: "Valkyria Chronicles II"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/b/b6/Valkyria_Chronicles_II.jpg"
     ebay:
       query: "Valkyria Chronicles II PSP"
       negative: ["ps3", "valkyria chronicles 1", "valkyria chronicles 4"]
   - id: jeanne-darc-psp
     title: "Jeanne d'Arc"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/4/4a/Jeanne_d%27Arc_Coverart.png"
       developer: "Level-5"
       publisher: "Sony Computer Entertainment"
       year: 2007
@@ -51,27 +63,36 @@ games:
       negative: []
   - id: ys-seven-psp
     title: "Ys Seven"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/a/a5/Ys_Seven_Cover.jpg"
     ebay:
       query: "Ys Seven PSP"
       negative: ["oath in felghana", "ys i ii", "pc", "steam"]
   - id: ys-the-oath-in-felghana-psp
     title: "Ys: The Oath in Felghana"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/f/f0/Ys_Oath_in_Felghana_Steam_artwork.jpg"
     ebay:
       query: "Ys The Oath in Felghana PSP"
       negative: ["ys seven", "chronicles", "pc"]
   - id: ys-i-ii-chronicles-psp
     title: "Ys I & II Chronicles"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/e/e1/Ys_Book_1_%26_2.jpg"
     ebay:
       query: "Ys I II Chronicles PSP"
       negative: ["ys seven", "oath in felghana"]
   - id: trails-in-the-sky-psp
     title: "The Legend of Heroes: Trails in the Sky"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/1/1c/Trails_in_the_Sky_artwork.jpg"
     ebay:
       query: "Legend of Heroes Trails in the Sky PSP"
       negative: ["second chapter", "sc", "pc", "steam"]
   - id: gurumin-psp
     title: "Gurumin: A Monstrous Adventure"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/c/c0/Gurumin_artwork.jpg"
       developer: "Nihon Falcom"
       publisher: "Mastiff"
       year: 2007
@@ -83,87 +104,120 @@ games:
       negative: ["3ds", "pc"]
   - id: half-minute-hero-psp
     title: "Half-Minute Hero"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/6/68/HalfMinuteHeroCover.png"
     ebay:
       query: "Half-Minute Hero PSP"
       negative: ["second coming", "xbox", "steam"]
   - id: castlevania-dracula-x-chronicles-psp
     title: "Castlevania: The Dracula X Chronicles"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/a/a4/Castlevania_Dracula_X_Chronicles.jpg"
     ebay:
       query: "Castlevania Dracula X Chronicles PSP"
       negative: ["rondo of blood pc engine", "requiem"]
   - id: metal-gear-solid-peace-walker-psp
     title: "Metal Gear Solid: Peace Walker"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/8/86/Metal_Gear_Solid_Peace_Walker_Cover_Art.jpg"
     ebay:
       query: "Metal Gear Solid Peace Walker PSP"
       negative: ["hd collection", "ps3", "xbox", "portable ops"]
   - id: metal-gear-solid-portable-ops-psp
     title: "Metal Gear Solid: Portable Ops"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/d/d2/Metal_Gear_Solid_Portable_Ops_cover.jpg"
     ebay:
       query: "Metal Gear Solid Portable Ops PSP"
       negative: ["peace walker", "plus"]
   - id: monster-hunter-freedom-unite-psp
     title: "Monster Hunter Freedom Unite"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/0/01/MonsterHunterFreedomUnite.jpg"
     ebay:
       query: "Monster Hunter Freedom Unite PSP"
       negative: ["freedom 2", "portable 3rd", "ios"]
   - id: patapon-3-psp
     title: "Patapon 3"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/c/cc/Patapon_3.jpg"
     ebay:
       query: "Patapon 3 PSP"
       negative: ["patapon 1", "patapon 2", "remastered", "ps4"]
   - id: patapon-2-psp
     title: "Patapon 2"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/a/a8/Patapon2Box.jpg"
     ebay:
       query: "Patapon 2 PSP"
       negative: ["patapon 3", "remastered", "ps4"]
   - id: locoroco-psp
     title: "LocoRoco"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/2/27/LocoRoco_Coverart.png"
     ebay:
       query: "LocoRoco PSP"
       negative: ["locoroco 2", "midnight carnival", "remastered", "ps4"]
   - id: lumines-psp
     title: "Lumines"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/2/2f/Lumines_Puzzle_Fusion.png"
     ebay:
       query: "Lumines PSP"
       negative: ["lumines ii", "remastered", "xbox", "switch"]
   - id: god-of-war-chains-of-olympus-psp
     title: "God of War: Chains of Olympus"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/3/3a/God_of_War_Chains_of_Olympus_NA_version_front_cover.jpg"
     ebay:
       query: "God of War Chains of Olympus PSP"
       negative: ["ghost of sparta", "ps3", "collection"]
   - id: god-of-war-ghost-of-sparta-psp
     title: "God of War: Ghost of Sparta"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/2/26/GOW_Ghost_of_Sparta_boxart.jpg"
     ebay:
       query: "God of War Ghost of Sparta PSP"
       negative: ["chains of olympus", "ps3", "collection"]
   - id: daxter-psp
     title: "Daxter"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/c/c9/Daxter_with_rating.jpg"
     ebay:
       query: "Daxter PSP"
       negative: ["jak", "ps2"]
   - id: syphon-filter-dark-mirror-psp
     title: "Syphon Filter: Dark Mirror"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/0/08/PSP-SyphonFilterDarkMirrorUSversion-FrontCover.jpg"
     ebay:
       query: "Syphon Filter Dark Mirror PSP"
       negative: ["logan's shadow", "ps2"]
   - id: wipeout-pure-psp
     title: "Wipeout Pure"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/8/8e/Wipeoutpure.jpg"
     ebay:
       query: "Wipeout Pure PSP"
       negative: ["pulse", "2048", "hd", "omega"]
   - id: kingdom-hearts-birth-by-sleep-psp
     title: "Kingdom Hearts: Birth by Sleep"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/9/9a/Kingdom_Hearts_Birth_by_Sleep_Boxart.jpg"
     ebay:
       query: "Kingdom Hearts Birth by Sleep PSP"
       negative: ["final mix", "ps3", "2.5 remix", "hd"]
   - id: dissidia-012-final-fantasy-psp
     title: "Dissidia 012 Final Fantasy"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/6/64/Dissidia_Duodecim_012_Final_Fantasy.png"
     ebay:
       query: "Dissidia 012 Final Fantasy PSP"
       negative: ["nt", "ps4", "arcade"]
   - id: class-of-heroes-psp
     title: "Class of Heroes"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/5/55/Classofheroes.jpg"
       developer: "Zerodiv"
       publisher: "Atlus"
       year: 2009
@@ -175,22 +229,29 @@ games:
       negative: ["class of heroes 2", "class of heroes 3"]
   - id: riviera-the-promised-land-psp
     title: "Riviera: The Promised Land"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/4/44/RivieraBox.jpg"
     ebay:
       query: "Riviera The Promised Land PSP"
       negative: ["gba", "wonderswan"]
   - id: knights-in-the-nightmare-psp
     title: "Knights in the Nightmare"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/9/9d/Knights_in_the_Nightmare_cover.jpg"
     ebay:
       query: "Knights in the Nightmare PSP"
       negative: ["ds"]
   - id: yggdra-union-psp
     title: "Yggdra Union"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/a/a1/Yggdra_Union_-_We%27ll_Never_Fight_Alone_Coverart.png"
     ebay:
       query: "Yggdra Union PSP"
       negative: ["gba"]
   - id: corpse-party-psp
     title: "Corpse Party"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/8/88/Corpse_Party_Game_Icon.png"
       developer: "Team GrisGris"
       publisher: "XSEED Games"
       year: 2011
@@ -202,46 +263,64 @@ games:
       negative: ["book of shadows", "blood drive", "3ds", "switch"]
   - id: silent-hill-shattered-memories-psp
     title: "Silent Hill: Shattered Memories"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/9/93/Silent_Hill_Shattered_Memories.jpg"
     ebay:
       query: "Silent Hill Shattered Memories PSP"
       negative: ["wii", "ps2", "origins"]
   - id: silent-hill-origins-psp
     title: "Silent Hill: Origins"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/8/86/Silent_Hill_Origins.jpg"
     ebay:
       query: "Silent Hill Origins PSP"
       negative: ["ps2", "shattered memories"]
   - id: gta-vice-city-stories-psp
     title: "Grand Theft Auto: Vice City Stories"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/3/3e/GTA_Vice_City_Stories_PSP_boxart.jpg"
     ebay:
       query: "Grand Theft Auto Vice City Stories PSP"
       negative: ["liberty city stories", "ps2", "ps3"]
   - id: gta-liberty-city-stories-psp
     title: "Grand Theft Auto: Liberty City Stories"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/e/ea/Grand_Theft_Auto_Liberty_City_Stories_box.jpg"
     ebay:
       query: "Grand Theft Auto Liberty City Stories PSP"
       negative: ["vice city stories", "ps2"]
   - id: prinny-can-i-really-be-the-hero-psp
     title: "Prinny: Can I Really Be the Hero?"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/1/14/Prinnygamebox.jpg"
     ebay:
       query: "Prinny Can I Really Be the Hero PSP"
       negative: ["prinny 2", "switch"]
   - id: disgaea-afternoon-of-darkness-psp
     title: "Disgaea: Afternoon of Darkness"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/d/d2/Disgaea_Hour_of_Darkness.jpg"
     ebay:
       query: "Disgaea Afternoon of Darkness PSP"
       negative: ["ps2", "hour of darkness", "disgaea 2"]
   - id: star-ocean-first-departure-psp
     title: "Star Ocean: First Departure"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/5/52/Star_Ocean_SFC.jpg"
     ebay:
       query: "Star Ocean First Departure PSP"
       negative: ["second evolution", "r ", "ps4", "switch"]
   - id: brave-story-new-traveler-psp
     title: "Brave Story: New Traveler"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/1/16/BraveStoryPSPCover.jpg"
     ebay:
       query: "Brave Story New Traveler PSP"
       negative: []
   - id: undead-knights-psp
     title: "Undead Knights"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/a/a6/Undead_Knights_cover.jpg"
     ebay:
       query: "Undead Knights PSP"
       negative: []

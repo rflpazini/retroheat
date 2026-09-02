@@ -25,7 +25,7 @@ games:
 | `title` | yes | Display name, proper capitalisation and punctuation |
 | `region` | no | `NTSC-U`, `NTSC-J` or `PAL` |
 | `variant` | no | `none`, `black-label`, `greatest-hits`, `players-choice`, `platinum` |
-| `igdb_id` | no | For cover art and release year later |
+| `igdb_id` | no | Reserved for a future IGDB link-up; cover art comes from `info.cover_url` |
 | `ebay.query` | yes | Search terms; **must name the platform** |
 | `ebay.negative` | no | Terms that disqualify a listing |
 
@@ -79,7 +79,17 @@ opinion about the game's quality. CI checks the release year is plausible, that
 `cover_url` is https, and that the notes are long enough to say something.
 
 Without a `cover_url`, the page draws the title on a CRT instead of showing an
-empty frame, so leaving it out is fine.
+empty frame, so leaving it out is fine. You do not normally need to hunt for
+one by hand:
+
+```bash
+go run ./cmd/coverart -catalog ./catalog
+```
+
+fills every missing `cover_url` from the game's English Wikipedia article. It
+edits only that line, leaves everything else in the file untouched, and lists
+the entries it could not match so you can fill those in manually. It needs no
+credentials.
 
 ## Print variants
 

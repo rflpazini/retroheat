@@ -3,6 +3,7 @@ games:
   - id: fire-emblem-path-of-radiance-gamecube
     title: "Fire Emblem: Path of Radiance"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/a/a5/Fire_Emblem_PoR_Boxart.JPG"
       developer: "Intelligent Systems"
       publisher: "Nintendo"
       year: 2005
@@ -15,6 +16,7 @@ games:
   - id: pokemon-xd-gale-of-darkness-gamecube
     title: "Pokémon XD: Gale of Darkness"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/b/b7/Pok%C3%A9mon_XD-_Gale_of_Darkness_Coverart.png"
       developer: "Genius Sonority"
       publisher: "Nintendo"
       year: 2005
@@ -26,12 +28,15 @@ games:
       negative: ["colosseum", "box only"]
   - id: pokemon-colosseum-gamecube
     title: "Pokémon Colosseum"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/d/d5/Pok%C3%A9mon_Colosseum_Coverart.png"
     ebay:
       query: "Pokemon Colosseum GameCube"
       negative: ["gale of darkness", "xd", "bonus disc only"]
   - id: skies-of-arcadia-legends-gamecube
     title: "Skies of Arcadia Legends"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/6/65/ArcadiaDC.png"
       developer: "Overworks"
       publisher: "Sega"
       year: 2003
@@ -43,22 +48,29 @@ games:
       negative: ["dreamcast"]
   - id: tales-of-symphonia-gamecube
     title: "Tales of Symphonia"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/6/6d/Tales_of_Symphonia_case_cover.jpg"
     ebay:
       query: "Tales of Symphonia GameCube"
       negative: ["dawn of the new world", "wii", "ps3", "chronicles"]
   - id: baten-kaitos-gamecube
     title: "Baten Kaitos: Eternal Wings and the Lost Ocean"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/4/40/BatenKaitosCover.jpg"
     ebay:
       query: "Baten Kaitos Eternal Wings GameCube"
       negative: ["origins", "switch"]
   - id: baten-kaitos-origins-gamecube
     title: "Baten Kaitos Origins"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/c/c9/Baten_Kaitos_Origins_box.jpg"
     ebay:
       query: "Baten Kaitos Origins GameCube"
       negative: ["eternal wings", "switch"]
   - id: metroid-prime-gamecube
     title: "Metroid Prime"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/b/ba/MetroidPrimebox.jpg"
       developer: "Retro Studios"
       publisher: "Nintendo"
       year: 2002
@@ -71,53 +83,71 @@ games:
       negative: ["players choice", "echoes", "prime 2", "trilogy", "remastered", "wii"]
   - id: metroid-prime-2-echoes-gamecube
     title: "Metroid Prime 2: Echoes"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/6/6e/Echoesboxart_%28Large%29.jpg"
     ebay:
       query: "Metroid Prime 2 Echoes GameCube"
       negative: ["trilogy", "wii", "prime 1"]
   - id: zelda-twilight-princess-gamecube
     title: "The Legend of Zelda: Twilight Princess"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/0/0e/The_Legend_of_Zelda_Twilight_Princess_Game_Cover.jpg"
     ebay:
       query: "Zelda Twilight Princess GameCube"
       negative: ["wii", "hd", "wii u", "switch"]
   - id: zelda-wind-waker-gamecube
     title: "The Legend of Zelda: The Wind Waker"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/7/79/The_Legend_of_Zelda_The_Wind_Waker.jpg"
     ebay:
       query: "Zelda Wind Waker GameCube"
       negative: ["hd", "wii u", "players choice", "bonus disc"]
   - id: zelda-collectors-edition-gamecube
     title: "The Legend of Zelda: Collector's Edition"
+    info:
     ebay:
       query: "Zelda Collector's Edition GameCube"
       negative: ["wind waker", "twilight princess", "master quest"]
   - id: zelda-ocarina-of-time-master-quest-gamecube
     title: "The Legend of Zelda: Ocarina of Time / Master Quest"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/5/57/The_Legend_of_Zelda_Ocarina_of_Time.jpg"
     ebay:
       query: "Zelda Ocarina of Time Master Quest GameCube"
       negative: ["collector's edition", "n64", "3ds"]
   - id: zelda-four-swords-adventures-gamecube
     title: "The Legend of Zelda: Four Swords Adventures"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/5/56/The_Legend_of_Zelda_Four_Swords_Adventures_Game_Cover.jpg"
     ebay:
       query: "Zelda Four Swords Adventures GameCube"
       negative: ["gba", "cable only"]
   - id: paper-mario-thousand-year-door-gamecube
     title: "Paper Mario: The Thousand-Year Door"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/1/18/Paper_Mario_The_Thousand-Year_Door_%28artwork%29.jpg"
     ebay:
       query: "Paper Mario Thousand Year Door GameCube"
       negative: ["switch", "players choice", "n64"]
   - id: super-mario-sunshine-gamecube
     title: "Super Mario Sunshine"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/0/05/Super_Mario_Sunshine_Box_Art.png"
     variant: black-label
     ebay:
       query: "Super Mario Sunshine GameCube"
       negative: ["players choice", "3d all stars", "switch"]
   - id: luigis-mansion-gamecube
     title: "Luigi's Mansion"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/5/5e/Lmbox.jpg"
     ebay:
       query: "Luigi's Mansion GameCube"
       negative: ["dark moon", "3ds", "players choice", "luigi's mansion 3"]
   - id: chibi-robo-gamecube
     title: "Chibi-Robo!"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/c/c6/Chibi_Robo.jpg"
       developer: "Skip Ltd"
       publisher: "Nintendo"
       year: 2005
@@ -130,6 +160,7 @@ games:
   - id: cubivore-gamecube
     title: "Cubivore: Survival of the Fittest"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/e/e6/Cubivorebox.jpg"
       developer: "Saru Brunei"
       publisher: "Atlus"
       year: 2002
@@ -142,6 +173,7 @@ games:
   - id: gotcha-force-gamecube
     title: "Gotcha Force"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/a/aa/Gotcha_Force_Coverart.png"
       developer: "Capcom"
       publisher: "Capcom"
       year: 2003
@@ -153,12 +185,15 @@ games:
       negative: []
   - id: custom-robo-gamecube
     title: "Custom Robo"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/2/2f/Crbox.jpg"
     ebay:
       query: "Custom Robo GameCube"
       negative: ["arena", "ds", "n64"]
   - id: killer7-gamecube
     title: "killer7"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/d/d4/Killer7boxnew.jpg"
       developer: "Grasshopper Manufacture"
       publisher: "Capcom"
       year: 2005
@@ -171,6 +206,7 @@ games:
   - id: eternal-darkness-gamecube
     title: "Eternal Darkness: Sanity's Requiem"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/8/8d/Eternal_Darkness_box.jpg"
       developer: "Silicon Knights"
       publisher: "Nintendo"
       year: 2002
@@ -182,22 +218,29 @@ games:
       negative: ["players choice"]
   - id: resident-evil-4-gamecube
     title: "Resident Evil 4"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/d/d9/Resi4-gc-cover.jpg"
     ebay:
       query: "Resident Evil 4 GameCube"
       negative: ["ps2", "wii", "premium edition", "players choice", "remake"]
   - id: resident-evil-remake-gamecube
     title: "Resident Evil (2002 Remake)"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/a/ab/Resident_Evil_2002_cover.jpg"
     ebay:
       query: "Resident Evil GameCube 2002"
       negative: ["resident evil 2", "resident evil 3", "resident evil 4", "zero", "code veronica"]
   - id: resident-evil-zero-gamecube
     title: "Resident Evil Zero"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/c/c6/Rezerobox.jpg"
     ebay:
       query: "Resident Evil Zero GameCube"
       negative: ["hd remaster", "players choice"]
   - id: pn03-gamecube
     title: "P.N.03"
     info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/2/25/PN03NTSCcover.jpg"
       developer: "Capcom"
       publisher: "Capcom"
       year: 2003
@@ -209,117 +252,163 @@ games:
       negative: []
   - id: viewtiful-joe-gamecube
     title: "Viewtiful Joe"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/9/9a/VJbox.jpg"
     ebay:
       query: "Viewtiful Joe GameCube"
       negative: ["viewtiful joe 2", "ps2", "double trouble", "red hot rumble"]
   - id: viewtiful-joe-2-gamecube
     title: "Viewtiful Joe 2"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/f/fd/Vj2box.jpg"
     ebay:
       query: "Viewtiful Joe 2 GameCube"
       negative: ["ps2"]
   - id: ikaruga-gamecube
     title: "Ikaruga"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/1/1a/Ikaruga_arcade_flyer.jpg"
     ebay:
       query: "Ikaruga GameCube"
       negative: ["dreamcast", "switch", "xbox"]
   - id: f-zero-gx-gamecube
     title: "F-Zero GX"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/6/66/F-Zero_GX_box_artwork.png"
     ebay:
       query: "F-Zero GX GameCube"
       negative: ["ax", "n64", "gba"]
   - id: star-fox-adventures-gamecube
     title: "Star Fox Adventures"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/3/31/Star_Fox_Adventures_GCN_Game_Box.jpg"
     ebay:
       query: "Star Fox Adventures GameCube"
       negative: ["assault", "players choice", "n64"]
   - id: star-fox-assault-gamecube
     title: "Star Fox Assault"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/c/c2/Assaultbox.jpg"
     ebay:
       query: "Star Fox Assault GameCube"
       negative: ["adventures", "n64"]
   - id: super-smash-bros-melee-gamecube
     title: "Super Smash Bros. Melee"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/7/75/Super_Smash_Bros_Melee_box_art.png"
     variant: black-label
     ebay:
       query: "Super Smash Bros Melee GameCube"
       negative: ["players choice", "brawl", "ultimate", "n64"]
   - id: mario-kart-double-dash-gamecube
     title: "Mario Kart: Double Dash!!"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/7/78/Mario_Kart_Double_Dash.jpg"
     ebay:
       query: "Mario Kart Double Dash GameCube"
       negative: ["players choice", "bonus disc", "wii"]
   - id: animal-crossing-gamecube
     title: "Animal Crossing"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/8/82/Animal_Crossing_Coverart.png"
     ebay:
       query: "Animal Crossing GameCube"
       negative: ["city folk", "wild world", "new leaf", "new horizons", "memory card only"]
   - id: harvest-moon-a-wonderful-life-gamecube
     title: "Harvest Moon: A Wonderful Life"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/5/59/Harvest_Moon_-_A_Wonderful_Life_Coverart.png"
     ebay:
       query: "Harvest Moon A Wonderful Life GameCube"
       negative: ["another wonderful life", "special edition ps2", "switch"]
   - id: harvest-moon-magical-melody-gamecube
     title: "Harvest Moon: Magical Melody"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/e/ef/Harvest_Moon_-_Magical_Melody_Coverart.png"
     ebay:
       query: "Harvest Moon Magical Melody GameCube"
       negative: ["wii"]
   - id: battalion-wars-gamecube
     title: "Battalion Wars"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/f/f9/Battalionwarsbox.jpg"
     ebay:
       query: "Battalion Wars GameCube"
       negative: ["battalion wars 2", "wii"]
   - id: odama-gamecube
     title: "Odama"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/9/9e/Odama.jpg"
     ebay:
       query: "Odama GameCube"
       negative: ["microphone only"]
   - id: wario-world-gamecube
     title: "Wario World"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/4/4c/Wario_World_game_cover.jpg"
     ebay:
       query: "Wario World GameCube"
       negative: ["wario land", "warioware"]
   - id: donkey-kong-jungle-beat-gamecube
     title: "Donkey Kong Jungle Beat"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/8/8e/Donkey_Kong_Jungle_Beat_Coverart.jpg"
     ebay:
       query: "Donkey Kong Jungle Beat GameCube"
       negative: ["bongos only", "wii", "players choice"]
   - id: phantasy-star-online-episode-1-2-gamecube
     title: "Phantasy Star Online Episode I & II"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/d/d3/Phantasy_Star_Online_cover_art_jp.png"
     ebay:
       query: "Phantasy Star Online Episode I II GameCube"
       negative: ["plus", "dreamcast", "xbox"]
   - id: metal-gear-solid-twin-snakes-gamecube
     title: "Metal Gear Solid: The Twin Snakes"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/8/8c/Ttsbox.jpg"
     ebay:
       query: "Metal Gear Solid Twin Snakes GameCube"
       negative: ["ps1", "ps2"]
   - id: soulcalibur-2-gamecube
     title: "SoulCalibur II"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/3/37/Soulcalibur_II_flyer.png"
     ebay:
       query: "SoulCalibur II GameCube"
       negative: ["ps2", "xbox", "hd online", "players choice"]
   - id: timesplitters-2-gamecube
     title: "TimeSplitters 2"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/6/6b/Timesplitters2.JPG"
     ebay:
       query: "TimeSplitters 2 GameCube"
       negative: ["future perfect", "ps2", "xbox"]
   - id: beyond-good-and-evil-gamecube
     title: "Beyond Good & Evil"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/c/ce/BGE-cover.jpg"
     ebay:
       query: "Beyond Good and Evil GameCube"
       negative: ["hd", "ps2", "xbox"]
   - id: geist-gamecube
     title: "Geist"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/e/e0/Geistbox.jpg"
     ebay:
       query: "Geist GameCube"
       negative: []
   - id: second-sight-gamecube
     title: "Second Sight"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/9/9b/Second_Sight_cover.png"
     ebay:
       query: "Second Sight GameCube"
       negative: ["ps2", "xbox"]
   - id: sonic-adventure-2-battle-gamecube
     title: "Sonic Adventure 2: Battle"
+    info:
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/9/99/Sonic_Adventure_2_cover.png"
     ebay:
       query: "Sonic Adventure 2 Battle GameCube"
       negative: ["dreamcast", "players choice", "sonic adventure dx"]
