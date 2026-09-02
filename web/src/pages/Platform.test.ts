@@ -10,6 +10,7 @@ function game(id: string, over: Partial<LatestGame> = {}): LatestGame {
     variant: 'none',
     prices: {},
     sparks: {},
+    pct_1d: null,
     pct_7d: null,
     pct_30d: null,
     stale: false,
@@ -23,6 +24,11 @@ describe('sortGames', () => {
     const games = [game('a', { pct_7d: 3 }), game('b', { pct_7d: 12 }), game('c', { pct_7d: -4 })]
     expect(sortGames(games, 'pct_7d', true).map((g) => g.id)).toEqual(['b', 'a', 'c'])
     expect(sortGames(games, 'pct_7d', false).map((g) => g.id)).toEqual(['c', 'a', 'b'])
+  })
+
+  it('sorts by the one-day move as well', () => {
+    const games = [game('a', { pct_1d: 3 }), game('b', { pct_1d: 12 }), game('c')]
+    expect(sortGames(games, 'pct_1d', true).map((g) => g.id)).toEqual(['b', 'a', 'c'])
   })
 
   it('keeps games without a value at the bottom in both directions', () => {

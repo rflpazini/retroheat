@@ -52,6 +52,8 @@ describe.skipIf(!present)('collector output matches the frontend contract', () =
       expect(typeof g.as_of).toBe('string')
       // Percentages are explicitly nullable until enough history exists.
       expect(['number', 'object']).toContain(typeof g.pct_7d)
+      // Data written before the one-day window existed lacks the key.
+      if ('pct_1d' in g) expect(['number', 'object']).toContain(typeof g.pct_1d)
       for (const c of ['loose', 'cib', 'new'] as const) {
         const price = g.prices[c]
         if (price) {

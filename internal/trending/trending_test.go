@@ -215,11 +215,75 @@ func TestComputeRejectsThinLiquidity(t *testing.T) {
 	}
 }
 
-func TestComputeRejectsWithoutSevenDayHistory(t *testing.T) {
+func TestComputeRejectsASinglePoint(t *testing.T) {
 	t.Parallel()
-	pts := series("2026-09-01", []int64{9000, 9800})
+	pts := series("2026-09-01", []int64{9000})
 	if _, ok := trending.Compute(trending.Input{ID: "a-ps2", Title: "A", Platform: catalog.PS2, Points: pts}, day("2026-09-01")); ok {
-		t.Error("Compute ok with 2 days of history, want gated out")
+		t.Error("Compute ok with one day of history and nothing to compare, want gated out")
+	}
+}
+
+func TestComputeRanksByDayChangeBeforeAWeekExists(t *testing.T) {
+	t.Parallel()
+	pts := series("2026-09-01", []int64{9000, 9900})
+	got, ok := trending.Compute(trending.Input{ID: "a-ps2", Title: "A", Platform: catalog.PS2, Points: pts}, day("2026-09-01"))
+	if !ok {
+		t.Fatal("Compute not ok with two days of history, want ranked by the one-day change")
+	}
+	if got.Pct7d != nil {
+		t.Errorf("Pct7d = %v, want nil with two days of history", *got.Pct7d)
+	}
+	if got.Pct1d == nil || *got.Pct1d < 9.9 || *got.Pct1d > 10.1 {
+		t.Fatalf("Pct1d = %v, want ~10", got.Pct1d)
+	}
+	if got.Score != *got.Pct1d {
+		t.Errorf("Score = %v, want the one-day change %v while no week exists", got.Score, *got.Pct1d)
+	}
+}
+
+func TestDayChangeUsesRawConsecutivePoints(t *testing.T) {
+	t.Parallel()
+	pct, ok := trending.DayChange([]trending.Sample{
+		{Date: "2026-08-30", Val: 5000},
+		{Date: "2026-08-31", Val: 8000},
+		{Date: "2026-09-01", Val: 8800},
+	}, trending.DayToleranceDays)
+	if !ok || pct < 9.9 || pct > 10.1 {
+		t.Errorf("DayChange = %v, %v; want ~10 from the raw previous point, not a smoothed one", pct, ok)
+	}
+}
+
+func TestDayChangeRejectsStalePreviousPoint(t *testing.T) {
+	t.Parallel()
+	cases := map[string][]trending.Sample{
+		"gap wider than tolerance": {{Date: "2026-08-20", Val: 5000}, {Date: "2026-09-01", Val: 8000}},
+		"same date":                {{Date: "2026-09-01", Val: 5000}, {Date: "2026-09-01", Val: 8000}},
+		"zero baseline":            {{Date: "2026-08-31", Val: 0}, {Date: "2026-09-01", Val: 8000}},
+		"single point":             {{Date: "2026-09-01", Val: 8000}},
+	}
+	for name, in := range cases {
+		if _, ok := trending.DayChange(in, trending.DayToleranceDays); ok {
+			t.Errorf("%s: DayChange ok, want not ok", name)
+		}
+	}
+}
+
+func TestRankKeepsTodaysMoversBesideTheWeeksLeaders(t *testing.T) {
+	t.Parallel()
+	up := 40.0
+	in := []trending.Entry{
+		{ID: "a", Score: 30},
+		{ID: "b", Score: 12},
+		{ID: "c", Score: 5, Pct1d: &up},
+		{ID: "d", Score: 1},
+	}
+	got := trending.Rank(in, 2)
+	ids := make([]string, len(got))
+	for i, e := range got {
+		ids[i] = e.ID
+	}
+	if len(ids) != 3 || ids[0] != "a" || ids[1] != "b" || ids[2] != "c" {
+		t.Errorf("Rank = %v, want a,b by score plus c for today's jump", ids)
 	}
 }
 

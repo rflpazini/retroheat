@@ -17,13 +17,14 @@ import { TrendPill, TrendStatus } from '@/components/TrendPill'
 import { Window } from '@/components/Window'
 import { LoadError, Message } from '@/components/States'
 
-type SortKey = 'title' | 'loose' | 'cib' | 'new' | 'pct_7d' | 'pct_30d'
+type SortKey = 'title' | 'loose' | 'cib' | 'new' | 'pct_1d' | 'pct_7d' | 'pct_30d'
 
 const columns: { key: SortKey; label: string; numeric: boolean }[] = [
   { key: 'title', label: 'Game', numeric: false },
   { key: 'loose', label: 'Loose', numeric: true },
   { key: 'cib', label: 'Complete', numeric: true },
   { key: 'new', label: 'Sealed', numeric: true },
+  { key: 'pct_1d', label: '1 day', numeric: true },
   { key: 'pct_7d', label: '7 days', numeric: true },
   { key: 'pct_30d', label: '30 days', numeric: true },
 ]
@@ -38,6 +39,8 @@ function valueOf(game: LatestGame, key: SortKey): number | string | null {
       return game.prices.cib?.median_cents ?? null
     case 'new':
       return game.prices.new?.median_cents ?? null
+    case 'pct_1d':
+      return game.pct_1d ?? null
     case 'pct_7d':
       return game.pct_7d
     case 'pct_30d':
@@ -198,6 +201,9 @@ export function Platform() {
                       </div>
                     </td>
                   ))}
+                  <td className="p-2 text-right">
+                    <TrendPill value={g.pct_1d ?? null} showIcon={false} />
+                  </td>
                   <td className="p-2 text-right">
                     <TrendPill value={g.pct_7d} showIcon={false} />
                   </td>

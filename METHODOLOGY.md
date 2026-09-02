@@ -84,8 +84,16 @@ of that week. A game's full history is therefore a few kilobytes a year.
 - **7-day** and **30-day** percentage changes are measured against the smoothed
   point closest to that date, within a three-day tolerance, so a missed
   scheduled run does not blank the number.
+- The **1-day** change is different on purpose: it compares today's raw point
+  with the previous day's raw point, no smoothing, provided that point is at
+  most three days old. It is the noisiest figure on the site, because asking
+  medians move as listings appear and sell, and it is shown so you can see what
+  moved today rather than what has been moving.
 - **Score = 0.6 × 7-day + 0.4 × 30-day**, measured on the complete-in-box price
-  where one exists, otherwise the loose price.
+  where one exists, otherwise the loose price. A game with only a 1-day change
+  is scored by that change until a week of points exists.
+- A board keeps the top entries by score plus the top entries by 1-day change,
+  so a game that jumped today is on the board even when its week is flat.
 
 Two gates apply to the trending boards:
 

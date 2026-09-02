@@ -26,6 +26,11 @@ const (
 	// point may sit, covering missed runs and weekly-rolled history.
 	ToleranceDays = 3
 
+	// DayToleranceDays bounds how old the previous point may be for the
+	// one-day change, so a game that went unpriced for a week does not report
+	// a week's move as a day's.
+	DayToleranceDays = 3
+
 	weight7d  = 0.6
 	weight30d = 0.4
 )
@@ -48,6 +53,7 @@ type Entry struct {
 	Platform          catalog.Platform    `json:"platform"`
 	HeadlineCondition classify.Condition  `json:"headline_condition"`
 	PriceCents        int64               `json:"price_cents"`
+	Pct1d             *float64            `json:"pct_1d"`
 	Pct7d             *float64            `json:"pct_7d"`
 	Pct30d            *float64            `json:"pct_30d"`
 	Score             float64             `json:"score"`
@@ -102,11 +108,36 @@ func PctChange(samples []Sample, asOf time.Time, days, tolDays int) (float64, bo
 	return float64(current-baseline) / float64(baseline) * 100, true
 }
 
+// DayChange compares the newest raw sample with the most recent earlier one,
+// provided it is no more than tolDays old. Unlike PctChange it works on the
+// unsmoothed series: a rolling median would flatten a one-day move to nothing,
+// and the point of this figure is to show today's jump, noise included.
+func DayChange(samples []Sample, tolDays int) (float64, bool) {
+	if len(samples) < 2 {
+		return 0, false
+	}
+	cur := samples[len(samples)-1]
+	prev := samples[len(samples)-2]
+	if prev.Date == cur.Date || prev.Val == 0 {
+		return 0, false
+	}
+	a, err1 := time.Parse(time.DateOnly, prev.Date)
+	b, err2 := time.Parse(time.DateOnly, cur.Date)
+	if err1 != nil || err2 != nil {
+		return 0, false
+	}
+	if days := int(b.Sub(a).Hours() / 24); days < 1 || days > tolDays {
+		return 0, false
+	}
+	return float64(cur.Val-prev.Val) / float64(prev.Val) * 100, true
+}
+
 // Metrics are the chart-facing numbers for one game, computed without any
 // ranking gates so that the platform boards can show every tracked title.
 type Metrics struct {
 	Condition  classify.Condition
 	PriceCents int64
+	Pct1d      *float64
 	Pct7d      *float64
 	Pct30d     *float64
 	Score      float64
@@ -128,6 +159,11 @@ func Measure(points []history.Point, asOf time.Time) (Metrics, bool) {
 	if len(samples) == 0 {
 		return Metrics{}, false
 	}
+	m := Metrics{Condition: cond, PriceCents: price}
+	if pct1, ok := DayChange(samples, DayToleranceDays); ok {
+		m.Pct1d = &pct1
+	}
+
 	vals := make([]int64, len(samples))
 	for i, s := range samples {
 		vals[i] = s.Val
@@ -136,8 +172,8 @@ func Measure(points []history.Point, asOf time.Time) (Metrics, bool) {
 	for i := range samples {
 		samples[i].Val = smoothed[i]
 	}
+	m.Spark = lastN(smoothed, SparkPoints)
 
-	m := Metrics{Condition: cond, PriceCents: price, Spark: lastN(smoothed, SparkPoints)}
 	if pct7, ok := PctChange(samples, asOf, 7, ToleranceDays); ok {
 		m.Pct7d = &pct7
 		m.Score = pct7
@@ -164,11 +200,16 @@ func SparkFor(points []history.Point, cond classify.Condition) []int64 {
 }
 
 // Compute ranks one game, or reports false when it fails a gate: too cheap,
-// too illiquid, or too new to have a week of history behind it.
+// too illiquid, or with a single day of history and nothing to compare. A
+// game with only a one-day change is ranked by that change until a week of
+// points exists; from then on the smoothed 7- and 30-day blend takes over.
 func Compute(in Input, asOf time.Time) (Entry, bool) {
 	m, ok := Measure(in.Points, asOf)
-	if !ok || m.PriceCents < MinPriceCents || m.Pct7d == nil {
+	if !ok || m.PriceCents < MinPriceCents || (m.Pct7d == nil && m.Pct1d == nil) {
 		return Entry{}, false
+	}
+	if m.Pct7d == nil {
+		m.Score = *m.Pct1d
 	}
 	return Entry{
 		ID:                in.ID,
@@ -176,6 +217,7 @@ func Compute(in Input, asOf time.Time) (Entry, bool) {
 		Platform:          in.Platform,
 		HeadlineCondition: m.Condition,
 		PriceCents:        m.PriceCents,
+		Pct1d:             m.Pct1d,
 		Pct7d:             m.Pct7d,
 		Pct30d:            m.Pct30d,
 		Score:             m.Score,
@@ -222,17 +264,41 @@ func lastN(vals []int64, n int) []int64 {
 }
 
 // Rank orders entries by momentum, breaking ties on id so that repeated runs
-// produce identical files.
+// produce identical files. The board keeps the top limit by score plus the
+// top limit by one-day change, so a game that jumped today is on the board
+// even when its week is flat; the site sorts by whichever window is chosen.
 func Rank(entries []Entry, limit int) []Entry {
-	out := slices.Clone(entries)
-	slices.SortFunc(out, func(a, b Entry) int {
+	byScore := slices.Clone(entries)
+	slices.SortFunc(byScore, func(a, b Entry) int {
 		if c := cmp.Compare(b.Score, a.Score); c != 0 {
 			return c
 		}
 		return cmp.Compare(a.ID, b.ID)
 	})
-	if limit > 0 && len(out) > limit {
-		out = out[:limit]
+	if limit <= 0 || len(byScore) <= limit {
+		return byScore
+	}
+
+	keep := map[string]bool{}
+	for _, e := range byScore[:limit] {
+		keep[e.ID] = true
+	}
+	byDay := slices.DeleteFunc(slices.Clone(entries), func(e Entry) bool { return e.Pct1d == nil })
+	slices.SortFunc(byDay, func(a, b Entry) int {
+		if c := cmp.Compare(*b.Pct1d, *a.Pct1d); c != 0 {
+			return c
+		}
+		return cmp.Compare(a.ID, b.ID)
+	})
+	for _, e := range byDay[:min(limit, len(byDay))] {
+		keep[e.ID] = true
+	}
+
+	out := make([]Entry, 0, len(keep))
+	for _, e := range byScore {
+		if keep[e.ID] {
+			out = append(out, e)
+		}
 	}
 	return out
 }

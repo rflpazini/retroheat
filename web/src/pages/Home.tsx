@@ -16,10 +16,20 @@ import { Window } from '@/components/Window'
 import { DiskWindow } from '@/components/DiskWindow'
 import { LoadError, Message } from '@/components/States'
 
-type MoveWindow = 'pct_7d' | 'pct_30d'
+type MoveWindow = 'pct_1d' | 'pct_7d' | 'pct_30d'
 
-function Hero({ entry }: { entry: TrendEntry }) {
-  const color = heat(entry.pct_7d)
+const WINDOWS: [MoveWindow, string, string][] = [
+  ['pct_1d', '1 day', 'over 1 day'],
+  ['pct_7d', '7 days', 'over 7 days'],
+  ['pct_30d', '30 days', 'over 30 days'],
+]
+
+/** How many movers the shelf lists after sorting by the chosen window. */
+const SHELF_SIZE = 20
+
+function Hero({ entry, move }: { entry: TrendEntry; move: MoveWindow }) {
+  const color = heat(entry[move])
+  const over = WINDOWS.find(([key]) => key === move)?.[2] ?? ''
 
   return (
     <Window title="Now playing — hottest game on the shelf" stripe order={1}>
@@ -35,8 +45,8 @@ function Hero({ entry }: { entry: TrendEntry }) {
           </Link>
           <div className="mt-4 flex flex-wrap items-center gap-3">
             <span className="tabular text-2xl font-bold">{money(entry.price_cents)}</span>
-            <TrendPill value={entry.pct_7d} />
-            <span className="text-xs">over 7 days</span>
+            <TrendPill value={entry[move]} />
+            <span className="text-xs">{over}</span>
           </div>
           {entry.annotation && (
             <p className="bevel-in mt-4 max-w-xl border-2 border-[var(--border)] p-2 text-xs">
@@ -99,13 +109,15 @@ export function Home() {
 
   const board = useJson<TrendingFile>(`trending/${platform}.json`)
 
+  // The file holds the week's leaders plus today's biggest movers; sorting
+  // by the chosen window and cutting to the shelf size gives each window its
+  // own board without a file per window.
   const entries = useMemo(() => {
     if (board.status !== 'ready') return []
-    const sorted = [...board.data.entries]
-    if (move === 'pct_30d') {
-      sorted.sort((a, b) => (b.pct_30d ?? -Infinity) - (a.pct_30d ?? -Infinity))
-    }
-    return sorted
+    return [...board.data.entries]
+      .filter((e) => e[move] != null)
+      .sort((a, b) => (b[move] ?? -Infinity) - (a[move] ?? -Infinity))
+      .slice(0, SHELF_SIZE)
   }, [board, move])
 
   if (board.status === 'loading') {
@@ -142,12 +154,7 @@ export function Home() {
           <div>
             <span className="eyebrow mb-1.5 block">Window</span>
             <div className="flex">
-              {(
-                [
-                  ['pct_7d', '7 days'],
-                  ['pct_30d', '30 days'],
-                ] as const
-              ).map(([key, label]) => (
+              {WINDOWS.map(([key, label]) => (
                 <button
                   key={key}
                   onClick={() => setMove(key)}
@@ -165,11 +172,15 @@ export function Home() {
       {entries.length === 0 ? (
         <Message
           title="No movers yet"
-          detail="Momentum needs at least a week of price history. Once the scheduled job has run for seven days, this board fills in."
+          detail={
+            move === 'pct_1d'
+              ? 'A one-day move needs two days of price history. The scheduled job runs twice a day, so this board fills in tomorrow.'
+              : `Momentum over ${move === 'pct_7d' ? 'a week' : 'a month'} needs that much price history. Until then, the 1 day window shows what moved today.`
+          }
         />
       ) : (
         <>
-          <Hero entry={top} />
+          <Hero entry={top} move={move} />
 
           <Window title="The shelf — ranked by momentum" bodyClassName="p-3" order={2}>
             <div className="mb-2 hidden grid-cols-[2.5rem_1fr_7rem_7rem_6.5rem] gap-3 px-2.5 sm:grid">

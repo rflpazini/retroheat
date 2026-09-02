@@ -55,6 +55,7 @@ export interface LatestGame {
   region: string
   variant: string
   prices: Prices
+  pct_1d: number | null
   pct_7d: number | null
   pct_30d: number | null
   sparks: Sparks
@@ -82,6 +83,8 @@ export interface TrendEntry {
   platform: Platform
   headline_condition: Condition
   price_cents: number
+  /** Raw change against the previous day's point; noisy by design. */
+  pct_1d: number | null
   pct_7d: number | null
   pct_30d: number | null
   score: number

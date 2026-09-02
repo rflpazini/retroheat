@@ -57,7 +57,7 @@ describe.skipIf(!present)('pages render against real collector output', () => {
       // Real collection starts with one point per game, so for the first week
       // there is no momentum to rank. The board must say so, not sit empty.
       await waitFor(() => expect(document.body.textContent).toMatch(/No movers yet/i))
-      expect(document.body.textContent).toMatch(/week of price history/i)
+      expect(document.body.textContent).toMatch(/price history/i)
     }
   })
 

@@ -44,6 +44,7 @@ type LatestGame struct {
 	Region  catalog.Region  `json:"region"`
 	Variant catalog.Variant `json:"variant"`
 	Prices  Prices          `json:"prices"`
+	Pct1d   *float64        `json:"pct_1d"`
 	Pct7d   *float64        `json:"pct_7d"`
 	Pct30d  *float64        `json:"pct_30d"`
 	Sparks  Sparks          `json:"sparks"`
@@ -105,6 +106,7 @@ type Catalog struct {
 
 func WriteLatest(dataDir string, l Latest) error {
 	for i := range l.Games {
+		l.Games[i].Pct1d = round2p(l.Games[i].Pct1d)
 		l.Games[i].Pct7d = round2p(l.Games[i].Pct7d)
 		l.Games[i].Pct30d = round2p(l.Games[i].Pct30d)
 	}
@@ -133,6 +135,7 @@ func ReadLatest(dataDir string, p catalog.Platform) (Latest, error) {
 func WriteTrending(dataDir string, t Trending) error {
 	for i := range t.Entries {
 		t.Entries[i].Score = round2(t.Entries[i].Score)
+		t.Entries[i].Pct1d = round2p(t.Entries[i].Pct1d)
 		t.Entries[i].Pct7d = round2p(t.Entries[i].Pct7d)
 		t.Entries[i].Pct30d = round2p(t.Entries[i].Pct30d)
 	}

@@ -175,7 +175,9 @@ export function Game() {
           </div>
         ))}
         <div className="window p-3">
-          <p className="eyebrow mb-2">7 day move</p>
+          <p className="eyebrow mb-2">1 day move</p>
+          <TrendPill value={boardEntry?.pct_1d ?? null} />
+          <p className="eyebrow mt-3 mb-2">7 day move</p>
           <TrendPill value={boardEntry?.pct_7d ?? null} />
         </div>
       </div>

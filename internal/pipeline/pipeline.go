@@ -149,7 +149,7 @@ func Run(ctx context.Context, o Options) (Result, error) {
 			AsOf:    today,
 		}
 		if m, ok := trending.Measure(hf.Points, o.Now.UTC()); ok {
-			board.Pct7d, board.Pct30d = m.Pct7d, m.Pct30d
+			board.Pct1d, board.Pct7d, board.Pct30d = m.Pct1d, m.Pct7d, m.Pct30d
 		}
 		board.Sparks = snapshot.Sparks{
 			Loose: trending.SparkFor(hf.Points, classify.Loose),
