@@ -74,12 +74,17 @@ func Run(ctx context.Context, o Options) (Result, error) {
 	}
 	latestAnn := catalog.Latest(anns)
 
+	// A run limited to some platforms must not shrink the site: the global
+	// board keeps the other platforms' entries and meta keeps listing every
+	// platform that has a board on disk.
+	allPlatforms := platformsOf(games)
 	if len(o.Platforms) > 0 {
 		games = slices.DeleteFunc(games, func(g catalog.Game) bool {
 			return !slices.Contains(o.Platforms, g.Platform)
 		})
 	}
 	platforms := platformsOf(games)
+	partial := len(platforms) < len(allPlatforms)
 
 	previous := map[catalog.Platform]snapshot.Latest{}
 	for _, p := range platforms {
@@ -196,10 +201,22 @@ func Run(ctx context.Context, o Options) (Result, error) {
 		}
 	}
 
+	globalEntries := allEntries
+	if partial {
+		prev, err := snapshot.ReadTrending(o.DataDir, "all")
+		if err != nil {
+			return Result{}, err
+		}
+		for _, e := range prev.Entries {
+			if !slices.Contains(platforms, e.Platform) {
+				globalEntries = append(globalEntries, e)
+			}
+		}
+	}
 	if err := snapshot.WriteTrending(o.DataDir, snapshot.Trending{
 		Board:   "all",
 		AsOf:    today,
-		Entries: trending.Rank(allEntries, GlobalBoardSize),
+		Entries: trending.Rank(globalEntries, GlobalBoardSize),
 	}); err != nil {
 		return Result{}, err
 	}
@@ -211,7 +228,7 @@ func Run(ctx context.Context, o Options) (Result, error) {
 		PriceKind:    o.Provider.Kind(),
 		Counts:       snapshot.Counts{Tracked: res.Tracked, OK: res.OK, Stale: res.Stale, Failed: res.Failed},
 		APICallsUsed: res.APICalls,
-		Platforms:    platforms,
+		Platforms:    allPlatforms,
 	}); err != nil {
 		return Result{}, err
 	}

@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"slices"
 	"sync/atomic"
 	"testing"
 	"time"
@@ -17,6 +18,7 @@ import (
 	"github.com/rflpazini/retroheat/internal/provider"
 	"github.com/rflpazini/retroheat/internal/provider/fake"
 	"github.com/rflpazini/retroheat/internal/snapshot"
+	"github.com/rflpazini/retroheat/internal/trending"
 )
 
 const ps2YAML = `platform: ps2
@@ -308,6 +310,46 @@ func TestRunFiltersByPlatform(t *testing.T) {
 	}
 	if _, err := os.Stat(filepath.Join(dataDir, "latest", "n64.json")); err == nil {
 		t.Error("wrote an n64 board despite the platform filter")
+	}
+}
+
+func TestPartialRunKeepsOtherPlatformsOnTheSite(t *testing.T) {
+	t.Parallel()
+	dataDir, catalogDir := setup(t)
+	if err := os.WriteFile(filepath.Join(catalogDir, "n64.yaml"),
+		[]byte("platform: n64\ngames:\n  - {id: conker-n64, title: \"Conker\", ebay: {query: \"Conker N64\"}}\n"), 0o600); err != nil {
+		t.Fatal(err)
+	}
+
+	// A full run first, then a run limited to PS2, as a manual dispatch with
+	// a platforms input would do.
+	if _, err := pipeline.Run(context.Background(), opts(dataDir, catalogDir, fake.New(runDay))); err != nil {
+		t.Fatal(err)
+	}
+	o := opts(dataDir, catalogDir, fake.New(runDay))
+	o.Platforms = []catalog.Platform{catalog.PS2}
+	if _, err := pipeline.Run(context.Background(), o); err != nil {
+		t.Fatal(err)
+	}
+
+	all, err := snapshot.ReadTrending(dataDir, "all")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !slices.ContainsFunc(all.Entries, func(e trending.Entry) bool { return e.Platform == catalog.N64 }) {
+		t.Error("the global board lost its N64 entry after a PS2-only run")
+	}
+
+	raw, err := os.ReadFile(filepath.Join(dataDir, "meta.json"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	var meta snapshot.Meta
+	if err := json.Unmarshal(raw, &meta); err != nil {
+		t.Fatal(err)
+	}
+	if !slices.Contains(meta.Platforms, catalog.N64) {
+		t.Errorf("meta.platforms = %v, want N64 still listed after a PS2-only run", meta.Platforms)
 	}
 }
 

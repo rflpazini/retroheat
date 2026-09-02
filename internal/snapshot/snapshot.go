@@ -132,6 +132,24 @@ func ReadLatest(dataDir string, p catalog.Platform) (Latest, error) {
 	return l, nil
 }
 
+// ReadTrending returns the board as last written, or an empty board when the
+// file does not exist yet.
+func ReadTrending(dataDir, board string) (Trending, error) {
+	path := filepath.Join(dataDir, "trending", board+".json")
+	data, err := os.ReadFile(path)
+	if errors.Is(err, os.ErrNotExist) {
+		return Trending{Board: board}, nil
+	}
+	if err != nil {
+		return Trending{}, fmt.Errorf("read trending %s: %w", board, err)
+	}
+	var t Trending
+	if err := json.Unmarshal(data, &t); err != nil {
+		return Trending{}, fmt.Errorf("parse trending %s: %w", board, err)
+	}
+	return t, nil
+}
+
 func WriteTrending(dataDir string, t Trending) error {
 	for i := range t.Entries {
 		t.Entries[i].Score = round2(t.Entries[i].Score)
