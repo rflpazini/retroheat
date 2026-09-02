@@ -127,6 +127,9 @@ export interface GameInfo {
   year?: number
   genre?: string
   cover_url?: string
+  /** Short factual description, normally the Wikipedia lead; about_url credits it. */
+  about?: string
+  about_url?: string
   trivia?: string
   why?: string
 }

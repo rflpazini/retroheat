@@ -78,8 +78,12 @@ type Info struct {
 	Year      int    `yaml:"year,omitempty" json:"year,omitempty"`
 	Genre     string `yaml:"genre,omitempty" json:"genre,omitempty"`
 	CoverURL  string `yaml:"cover_url,omitempty" json:"cover_url,omitempty"`
-	Trivia    string `yaml:"trivia,omitempty" json:"trivia,omitempty"`
-	Why       string `yaml:"why,omitempty" json:"why,omitempty"`
+	// About is a short factual description, normally the lead of the game's
+	// Wikipedia article (CC BY-SA), with AboutURL crediting the source.
+	About    string `yaml:"about,omitempty" json:"about,omitempty"`
+	AboutURL string `yaml:"about_url,omitempty" json:"about_url,omitempty"`
+	Trivia   string `yaml:"trivia,omitempty" json:"trivia,omitempty"`
+	Why      string `yaml:"why,omitempty" json:"why,omitempty"`
 }
 
 type EbayHints struct {

@@ -14,7 +14,7 @@ interface Props {
  */
 export function CRTScreen({ title, coverURL, platform, year }: Props) {
   return (
-    <div className="bevel border-2 border-[var(--border)] bg-[var(--secondary)] p-2">
+    <div className="bevel self-start border-2 border-[var(--border)] bg-[var(--secondary)] p-2">
       <div className="crt aspect-[4/3] w-full">
         {coverURL ? (
           <>

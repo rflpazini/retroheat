@@ -217,6 +217,21 @@ describe.skipIf(!present)('the game page explains the game, not just the price',
     await waitFor(() => expect(document.body.textContent).toMatch(/mode \$\d/))
   })
 
+  it('shows the about paragraph with its Wikipedia credit when one is on file', async () => {
+    const catalog = JSON.parse(fs.readFileSync(path.join(dataDir, 'catalog.json'), 'utf8')) as {
+      games: { id: string; info?: { about?: string; about_url?: string } }[]
+    }
+    const withAbout = catalog.games.find((g) => g.info?.about && g.info?.about_url)
+    if (!withAbout) return // nothing to assert against until the catalog carries about text
+
+    const { Game } = await import('./Game')
+    renderAt(`/g/${withAbout.id}`, <Game />, '/g/:id')
+
+    await waitFor(() => expect(document.body.textContent).toContain(withAbout.info!.about!.slice(0, 40)))
+    const credit = screen.getByRole('link', { name: /Wikipedia, CC BY-SA/ })
+    expect(credit.getAttribute('href')).toBe(withAbout.info!.about_url)
+  })
+
   it('shows the cover art when a release has one on file', async () => {
     const catalog = JSON.parse(fs.readFileSync(path.join(dataDir, 'catalog.json'), 'utf8')) as {
       games: { id: string; title: string; info?: { cover_url?: string } }[]

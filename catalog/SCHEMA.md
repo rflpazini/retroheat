@@ -66,6 +66,8 @@ The optional `info` block is what fills the game page: the specs table, the
       year: 1999
       genre: "Third-person shooter"
       cover_url: "https://…"   # optional; https only
+      about: "One or two factual sentences about the game."
+      about_url: "https://en.wikipedia.org/wiki/…"   # where `about` came from
       trivia: "One genuinely interesting fact about the release."
       why: "Why collectors chase it: print run, cancellation, licensing, hype."
     ebay:
@@ -80,16 +82,22 @@ opinion about the game's quality. CI checks the release year is plausible, that
 
 Without a `cover_url`, the page draws the title on a CRT instead of showing an
 empty frame, so leaving it out is fine. You do not normally need to hunt for
-one by hand:
+the factual fields by hand:
 
 ```bash
-go run ./cmd/coverart -catalog ./catalog
+go run ./cmd/enrich -catalog ./catalog
 ```
 
-fills every missing `cover_url` from the game's English Wikipedia article. It
-edits only that line, leaves everything else in the file untouched, and lists
-the entries it could not match so you can fill those in manually. It needs no
-credentials.
+fills every missing `developer`, `publisher`, `year`, `genre`, `cover_url`,
+`about` and `about_url` from the game's English Wikipedia article and its
+Wikidata item. It adds only the missing lines, leaves everything a contributor
+wrote untouched, never writes `trivia` or `why`, and lists the entries it could
+not match so you can fill those in manually. It needs no credentials. When the
+automatic match lands on the wrong game in a series, pin the article:
+`go run ./cmd/enrich -set dark-cloud-2-ps2="Dark Chronicle"`.
+
+`about` is the lead of the Wikipedia article and is shown with a link back to
+it, which satisfies the CC BY-SA attribution Wikipedia text requires.
 
 ## Print variants
 

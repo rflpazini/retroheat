@@ -17,7 +17,7 @@ typo fails the pull request rather than quietly producing bad data.
 go test ./...                                    # unit tests
 go tool golangci-lint run ./...                  # lint, same version as CI
 go run ./cmd/collector -fake -data ./data        # generate sample data
-go run ./cmd/coverart                            # fill missing cover art from Wikipedia
+go run ./cmd/enrich                              # fill covers, specs and about text from Wikipedia
 cd web && npm ci && npm run dev                  # the site, against that data
 ```
 

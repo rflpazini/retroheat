@@ -289,6 +289,27 @@ func platformsOf(games []catalog.Game) []catalog.Platform {
 	return out
 }
 
+// WriteCatalogOnly rewrites catalog.json from the YAML without pricing
+// anything, for when only the editorial layer changed and a full run would
+// spend the day's API budget to republish a paragraph.
+func WriteCatalogOnly(dataDir, catalogDir string, now time.Time) error {
+	games, err := catalog.Load(catalogDir)
+	if err != nil {
+		return err
+	}
+	if err := catalog.Validate(games); err != nil {
+		return fmt.Errorf("catalog validation failed: %w", err)
+	}
+	anns, err := catalog.LoadAnnotations(filepath.Join(catalogDir, catalog.AnnotationsFile), games)
+	if err != nil {
+		return err
+	}
+	return snapshot.WriteCatalog(dataDir, snapshot.Catalog{
+		AsOf:  now.UTC().Format(time.DateOnly),
+		Games: catalogEntries(games, catalog.Latest(anns)),
+	})
+}
+
 func catalogEntries(games []catalog.Game, anns map[string]catalog.Annotation) []snapshot.CatalogGame {
 	out := make([]snapshot.CatalogGame, 0, len(games))
 	for _, g := range games {

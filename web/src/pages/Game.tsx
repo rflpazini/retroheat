@@ -121,6 +121,25 @@ export function Game() {
               </dl>
             )}
 
+            {info?.about && (
+              <p className="mt-4 text-[0.8rem] leading-relaxed">
+                {info.about}
+                {info.about_url && (
+                  <>
+                    {' '}
+                    <a
+                      href={info.about_url}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="whitespace-nowrap text-[0.65rem] underline opacity-70"
+                    >
+                      Wikipedia, CC BY-SA
+                    </a>
+                  </>
+                )}
+              </p>
+            )}
+
             {info?.trivia && (
               <p className="bevel-in mt-4 border-2 border-[var(--border)] p-2.5 text-[0.75rem]">
                 <span className="eyebrow mr-1.5">Did you know</span>

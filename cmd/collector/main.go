@@ -40,6 +40,7 @@ func run() int {
 		callBudget = flag.Int("budget", 2000, "maximum upstream API calls for this run (0 = unlimited)")
 		backfill   = flag.Int("backfill", 60, "days of synthetic history to seed for newly tracked games (fake only)")
 		audit      = flag.Bool("audit", false, "print per-listing classification decisions and exit")
+		catOnly    = flag.Bool("catalog-only", false, "rewrite catalog.json from the YAML without pricing anything, then exit")
 		verbose    = flag.Bool("v", false, "verbose logging")
 		timeout    = flag.Duration("timeout", 30*time.Minute, "overall run timeout")
 	)
@@ -63,6 +64,14 @@ func run() int {
 	}
 
 	now := time.Now().UTC()
+	if *catOnly {
+		if err := pipeline.WriteCatalogOnly(*dataDir, *catalogDir, now); err != nil {
+			log.Error("catalog rewrite failed", slog.String("err", err.Error()))
+			return 1
+		}
+		log.Info("catalog.json rewritten", slog.String("data", *dataDir))
+		return 0
+	}
 	p, err := selectProvider(*useFake, now)
 	if err != nil {
 		log.Error("no price provider available", slog.String("err", err.Error()))
