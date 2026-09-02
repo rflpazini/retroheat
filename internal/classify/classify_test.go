@@ -175,3 +175,56 @@ func TestClassifyReasonIsPopulated(t *testing.T) {
 		t.Error("rejected result must carry a Reason for -audit output")
 	}
 }
+
+func TestExplicitlyMissingPartsBeatComplete(t *testing.T) {
+	t.Parallel()
+	cases := map[string]classify.Condition{
+		"Bully Greatest Hits PS2 Tested Complete Case Disc Only - No Manual / No Map": classify.Loose,
+		"Silent Hill 2 PS2 CIB no manual":                                             classify.Loose,
+		"Bully Sony PlayStation 2 PS2 Game W/ Manual - No Map":                        classify.CIB,
+		"Bully PS2 PlayStation 2 Rockstar Games Black Label w Manual 2006":            classify.CIB,
+	}
+	for title, want := range cases {
+		got := classify.Classify(title, "Used")
+		if got.Rejected || got.Condition != want {
+			t.Errorf("Classify(%q) = %+v, want %q", title, got, want)
+		}
+	}
+
+	// "w manual" must not fire inside "new manual".
+	if got := classify.Classify("Silent Hill 2 PS2 disc and a like new manual", "Used"); got.Condition == classify.CIB {
+		t.Errorf("Classify matched %q as CIB via %q", "like new manual", got.Reason)
+	}
+}
+
+func TestMentions(t *testing.T) {
+	t.Parallel()
+	cases := []struct {
+		listing, game string
+		want          bool
+	}{
+		{"Bully PS2 PlayStation 2 Disc Only Tested", "Bully", true},
+		{"The Ant Bully PS2 Complete", "Bully", true}, // caught by the catalog's negative terms, not here
+		{"PS2 Games NEW CIB LOOSE Professionally Cleaned Tested Authentic", "Bully", false},
+		{"A - C Cheap Games (Playstation 2) PS2 Disc Only TESTED", "Bully", false},
+		{"Sony PlayStation 2 PS2 Games: Disc Only A to L Buy 4 Get 1 FREE", "Bully", false},
+		{"Zelda Ocarina of Time N64 Cart Only", "The Legend of Zelda: Ocarina of Time", true},
+		{"Shenmue 2 Sega Dreamcast Complete", "Shenmue II", true},
+		{"Suikoden 3 PS2 CIB", "Suikoden III", true},
+		{"Killer 7 PS2 Complete Black Label", "killer7", true},
+		{"MDK 2 Dreamcast Disc Only", "MDK2", true},
+		{"Pokemon Snap N64 Cart", "Pokémon Snap", true},
+		{"Persona 3 FES PS2 CIB", "Persona 4", false},
+		{"Fatal Frame 2 Crimson Butterfly PS2", "Fatal Frame II: Crimson Butterfly", true},
+		{"Resident Evil 4 GameCube Complete", "Resident Evil Zero", false},
+		{"Resident Evil 0 GameCube Complete", "Resident Evil Zero", true},
+		{"Street Fighter 3rd Strike Dreamcast Disc Only", "Street Fighter III: 3rd Strike", true},
+		{"Silent Hill 3 PS2 2003 Complete", "Silent Hill 2", false},
+		{"Silent Hill II PS2 Black Label", "Silent Hill 2", true},
+	}
+	for _, c := range cases {
+		if got := classify.Mentions(c.listing, c.game); got != c.want {
+			t.Errorf("Mentions(%q, %q) = %v, want %v", c.listing, c.game, got, c.want)
+		}
+	}
+}

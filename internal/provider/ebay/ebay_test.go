@@ -133,9 +133,10 @@ func TestQuotesExcludesJunkAndForeignCurrency(t *testing.T) {
 	for _, q := range quotes {
 		total += q.SampleSize
 	}
-	// 18 listings: 2 junk, 1 EUR and 1 trimmed outlier never count.
+	// 19 listings: 2 junk, 1 EUR, 1 storefront listing that never names the
+	// game, and 1 trimmed outlier never count.
 	if total != 14 {
-		t.Errorf("counted %d listings, want 14 after junk, currency and outlier filtering", total)
+		t.Errorf("counted %d listings, want 14 after junk, currency, relevance and outlier filtering", total)
 	}
 }
 

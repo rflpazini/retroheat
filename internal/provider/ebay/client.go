@@ -104,7 +104,7 @@ func (c *Client) Quotes(ctx context.Context, g catalog.Game) ([]provider.Quote, 
 
 	buckets := map[classify.Condition][]int64{}
 	for _, it := range items {
-		if it.Price.Currency != "USD" || excluded(it.Title, g.Ebay.Negative) {
+		if it.Price.Currency != "USD" || excluded(it.Title, g.Ebay.Negative) || !classify.Mentions(it.Title, g.Title) {
 			continue
 		}
 		res := classify.Classify(it.Title, it.Condition)

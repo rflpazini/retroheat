@@ -24,6 +24,8 @@ func (c *Client) Audit(ctx context.Context, g catalog.Game, w io.Writer) error {
 		case it.Price.Currency != "USD":
 		case excluded(it.Title, g.Ebay.Negative):
 			verdict = "skip:negative"
+		case !classify.Mentions(it.Title, g.Title):
+			verdict = "skip:not-this-game"
 		default:
 			res := classify.Classify(it.Title, it.Condition)
 			switch {

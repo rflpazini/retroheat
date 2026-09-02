@@ -21,15 +21,28 @@ for very little accuracy, and the free tier allows 5,000 calls a day.
 
 ## 3. Sorting listings by condition
 
-Every listing title is read in a fixed order:
+A listing must first name the game. A keyword search also returns storefront
+listings ("PS2 Games A–C Disc Only, pick your title") and unrelated items that
+never mention it; those are dropped before anything else, since they would be
+bucketed by condition and drag a median toward whatever they cost. At least
+half of the title's words must appear, and any number in the title always must:
+half of "Persona 4" is in "Persona 3 FES", but the number is the whole
+difference. Roman numerals, ordinals and spelled-out numbers are treated as
+equal, so "Shenmue II", "Shenmue 2" and "3rd Strike" all match.
+
+Every surviving title is then read in a fixed order:
 
 1. **Rejected outright** — empty cases, box-only, manual-only, reproductions,
    lots and bundles, consoles, strategy guides, posters, demo discs, download
    codes, graded slabs, and anything for parts.
 2. **Sealed** — "factory sealed", "brand new", "still sealed", and similar.
-3. **Complete in box** — "CIB", "complete in box", "with manual".
-4. **Loose** — "disc only", "cart only", "no manual", "unboxed".
-5. **Unknown** — dropped.
+3. **Loose, stated explicitly** — "disc only", "cart only", "no manual", "no
+   case". An explicit statement of what is missing outranks "complete": a
+   seller who writes "Complete Case Disc Only - No Manual" is describing an
+   incomplete copy.
+4. **Complete in box** — "CIB", "complete in box", "with manual", "w manual".
+5. **Loose** — "loose", "unboxed".
+6. **Unknown** — dropped.
 
 Unknown listings are dropped rather than guessed. Guessing would bias the
 medians, and a smaller honest sample beats a larger invented one. Phrases where
