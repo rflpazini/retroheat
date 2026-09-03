@@ -87,7 +87,6 @@
   --stripe-5: #d4483b;
 
   --radius: 0;
-  color-scheme: light;
 }
 
 .dark {
@@ -146,7 +145,6 @@
   --cond-cib: #f1867f;
   --cond-new: #e3ab55;
 
-  color-scheme: dark;
 }
 
 @theme inline {
@@ -155,35 +153,75 @@
   --font-pixel: 'Press Start 2P', 'IBM Plex Mono', monospace;
 }
 
-body {
-  margin: 0;
-  color: var(--foreground);
-  font-family: var(--font-sans);
-  /* A faint grid, the way a desktop pattern used to look. */
-  background-color: var(--desktop);
-  /* A 50% dither, the classic desktop fill, over a faint grid. */
-  background-image:
-    radial-gradient(var(--desktop-grid) 1px, transparent 1px),
-    linear-gradient(var(--desktop-grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--desktop-grid) 1px, transparent 1px);
-  background-size:
-    4px 4px,
-    32px 32px,
-    32px 32px;
+/*
+  Everything below is the RetroOS look, shared with the shadcn registry at
+  /r/retro-os.json. Chrome is declared as Tailwind utilities so variants such
+  as hover:bevel-in and lg:window work, and so the site and the registry are
+  the same rules in the same shape. Edit here, then mirror in registry.json;
+  the registry test checks the two agree.
+*/
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+  .dark {
+    color-scheme: dark;
+  }
+
+  body {
+    margin: 0;
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    /* A 50% dither, the classic desktop fill, over a faint grid. */
+    background-color: var(--desktop);
+    background-image:
+      radial-gradient(var(--desktop-grid) 1px, transparent 1px),
+      linear-gradient(var(--desktop-grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--desktop-grid) 1px, transparent 1px);
+    background-size:
+      4px 4px,
+      32px 32px,
+      32px 32px;
+  }
+
+  *:focus-visible {
+    outline: 2px dotted var(--foreground);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    .spark-line {
+      stroke-dasharray: none;
+    }
+    .ticker-track {
+      animation: none;
+    }
+    .crt > .crt-art {
+      animation: none;
+    }
+  }
 }
 
 /* Prices sit in columns and must not wobble between rows. */
-.tabular {
+@utility tabular {
   font-variant-numeric: tabular-nums;
 }
 
-.pixel {
+@utility pixel {
   font-family: var(--font-pixel);
   letter-spacing: 0.02em;
   line-height: 1.6;
 }
 
-.eyebrow {
+@utility eyebrow {
   font-family: var(--font-pixel);
   font-size: 0.5rem;
   letter-spacing: 0.06em;
@@ -192,29 +230,31 @@ body {
 }
 
 /* A raised surface: light on the top-left, shadow on the bottom-right. */
-.bevel {
+@utility bevel {
   box-shadow:
     inset 1px 1px 0 0 var(--bevel-light),
     inset -1px -1px 0 0 var(--bevel-dark);
 }
 
 /* The same trick inverted, for pressed controls and input wells. */
-.bevel-in {
+@utility bevel-in {
   box-shadow:
     inset -1px -1px 0 0 var(--bevel-light),
     inset 1px 1px 0 0 var(--bevel-dark);
 }
 
 /* Controls physically depress, the way every button did on these machines. */
-.press:active {
-  box-shadow:
-    inset -1px -1px 0 0 var(--bevel-light),
-    inset 1px 1px 0 0 var(--bevel-dark);
-  transform: translate(1px, 1px);
+@utility press {
+  &:active {
+    box-shadow:
+      inset -1px -1px 0 0 var(--bevel-light),
+      inset 1px 1px 0 0 var(--bevel-dark);
+    transform: translate(1px, 1px);
+  }
 }
 
 /* An application window: hard border, bevelled face, hard-edged drop shadow. */
-.window {
+@utility window {
   border: 2px solid var(--border);
   background: var(--card);
   box-shadow:
@@ -228,25 +268,21 @@ body {
   the title punched out of them. That is the single detail that reads as
   "classic Mac" before anything else does.
 */
-.window-title {
+@utility window-title {
   background-color: var(--titlebar);
-  background-image: repeating-linear-gradient(
-    to bottom,
-    var(--border) 0 1px,
-    transparent 1px 3px
-  );
+  background-image: repeating-linear-gradient(to bottom, var(--border) 0 1px, transparent 1px 3px);
   color: var(--titlebar-foreground);
   border-bottom: 2px solid var(--border);
 }
 
 /* The title sits in a solid patch so the pinstripes never run behind text. */
-.window-title-text {
+@utility window-title-text {
   background: var(--titlebar);
   padding: 0 0.5rem;
 }
 
 /* Close and zoom boxes, drawn rather than iconified. */
-.title-box {
+@utility title-box {
   width: 11px;
   height: 11px;
   border: 1px solid var(--border);
@@ -255,7 +291,7 @@ body {
 }
 
 /* The arcade stripe, used as a rule rather than as decoration. */
-.stripe {
+@utility stripe {
   height: 6px;
   background: linear-gradient(
     90deg,
@@ -283,7 +319,7 @@ body {
   }
 }
 
-.animate-window {
+@utility animate-window {
   animation: window-zoom 160ms steps(5, end) backwards;
 }
 
@@ -292,7 +328,7 @@ body {
   50%, 100% { opacity: 0; }
 }
 
-.blink {
+@utility blink {
   animation: blink 1s steps(1, end) infinite;
 }
 
@@ -301,7 +337,7 @@ body {
   to { stroke-dashoffset: 0; }
 }
 
-.spark-line {
+@utility spark-line {
   stroke-dasharray: var(--dash, 400);
   animation: draw-line 700ms ease-out backwards;
 }
@@ -311,12 +347,14 @@ body {
   to { transform: translateX(-50%); }
 }
 
-.ticker-track {
+@utility ticker-track {
   animation: ticker-scroll 40s linear infinite;
 }
 
-.ticker:hover .ticker-track {
-  animation-play-state: paused;
+@utility ticker {
+  &:hover .ticker-track {
+    animation-play-state: paused;
+  }
 }
 
 @keyframes progress-fill {
@@ -324,22 +362,25 @@ body {
   to { width: 100%; }
 }
 
-.progress-fill {
+@utility progress-fill {
   animation: progress-fill 1100ms steps(12, end) forwards;
 }
 
-@keyframes fade-out {
-  to { opacity: 0; visibility: hidden; }
-}
-
 /*
-  A CRT: a dark phosphor tube behind curved glass. The cover is shown whole,
+  A CRT: a dark phosphor tube behind curved glass. The picture is shown whole,
   never cropped, on a blurred blow-up of itself so the letterbox glows rather
   than sitting in black bars. Scanlines, an aperture grille, a vignette, a
   glass glare and a faint flicker are drawn over the art rather than filtered
   into it, so the artwork underneath stays legible.
 */
-.crt {
+@keyframes crt-flicker {
+  0%, 92%, 100% { opacity: 1; }
+  93% { opacity: 0.96; }
+  95% { opacity: 0.99; }
+  97% { opacity: 0.955; }
+}
+
+@utility crt {
   position: relative;
   overflow: hidden;
   background: #0c120f;
@@ -348,114 +389,71 @@ body {
     inset 0 0 0 1px rgb(255 255 255 / 0.06),
     inset 0 0 24px 4px rgb(0 0 0 / 0.75);
   isolation: isolate;
+
+  /* The tube fill: the picture itself, oversized, blurred and dimmed. */
+  & > .crt-bleed {
+    position: absolute;
+    inset: -12%;
+    width: 124%;
+    height: 124%;
+    object-fit: cover;
+    filter: blur(16px) saturate(1.5) brightness(0.4);
+  }
+
+  /* The picture, whole, with the phosphor glow a lit tube gives bright colours. */
+  & > .crt-art {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 3% 4%;
+    object-fit: contain;
+    filter: saturate(1.25) contrast(1.1) brightness(1.05) drop-shadow(0 0 10px rgb(140 210 255 / 0.28));
+    animation: crt-flicker 4.2s steps(1, end) infinite;
+  }
+
+  /* Scanlines and the aperture-grille tint. */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+      repeating-linear-gradient(to bottom, rgb(0 0 0 / 0.38) 0 1px, transparent 1px 3px),
+      repeating-linear-gradient(
+        to right,
+        rgb(255 0 0 / 0.06) 0 1px,
+        rgb(0 255 0 / 0.05) 1px 2px,
+        rgb(0 0 255 / 0.06) 2px 3px
+      );
+    mix-blend-mode: multiply;
+  }
+
+  /* Curved-glass shading: a vignette toward the tube's edge, plus a glare
+     across the top-left of the glass. */
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background:
+      radial-gradient(115% 115% at 50% 50%, transparent 52%, rgb(0 0 0 / 0.62) 100%),
+      linear-gradient(122deg, rgb(255 255 255 / 0.12) 0 20%, transparent 40%);
+  }
 }
 
-/* The tube fill: the cover itself, oversized, blurred and dimmed. */
-.crt > .crt-bleed {
-  position: absolute;
-  inset: -12%;
-  width: 124%;
-  height: 124%;
-  object-fit: cover;
-  filter: blur(16px) saturate(1.5) brightness(0.4);
-}
-
-/* The cover, whole, with the phosphor glow a lit tube gives bright colours. */
-.crt > .crt-art {
+/* The phosphor stand-in shown when a screen has no picture to display. */
+@utility crt-content {
   position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding: 3% 4%;
-  object-fit: contain;
-  filter:
-    saturate(1.25) contrast(1.1) brightness(1.05)
-    drop-shadow(0 0 10px rgb(140 210 255 / 0.28));
-  animation: crt-flicker 4.2s steps(1, end) infinite;
-}
-
-.crt > .crt-content {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: saturate(1.1) contrast(1.05);
-}
-
-/* Scanlines and the aperture-grille tint. */
-.crt::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      rgb(0 0 0 / 0.38) 0 1px,
-      transparent 1px 3px
-    ),
-    repeating-linear-gradient(
-      to right,
-      rgb(255 0 0 / 0.06) 0 1px,
-      rgb(0 255 0 / 0.05) 1px 2px,
-      rgb(0 0 255 / 0.06) 2px 3px
-    );
-  mix-blend-mode: multiply;
-}
-
-/* Curved-glass shading: a vignette that darkens toward the tube's edge, plus
-   a glare across the top-left of the glass. */
-.crt::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  background:
-    radial-gradient(115% 115% at 50% 50%, transparent 52%, rgb(0 0 0 / 0.62) 100%),
-    linear-gradient(122deg, rgb(255 255 255 / 0.12) 0 20%, transparent 40%);
-}
-
-@keyframes crt-flicker {
-  0%, 92%, 100% { opacity: 1; }
-  93% { opacity: 0.96; }
-  95% { opacity: 0.99; }
-  97% { opacity: 0.955; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .crt > .crt-art { animation: none; }
-}
-
-/* The phosphor stand-in shown when a release has no cover art on file. */
-.crt-content {
   display: flex;
+  width: 100%;
+  height: 100%;
   flex-direction: column;
   justify-content: center;
   gap: 0.5rem;
   padding: 1rem;
   color: #8ef2a8;
   text-shadow: 0 0 6px rgb(142 242 168 / 0.55);
-}
-
-*:focus-visible {
-  outline: 2px dotted var(--foreground);
-  outline-offset: 2px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-  .spark-line {
-    stroke-dasharray: none;
-  }
-  .ticker-track {
-    animation: none;
-  }
 }

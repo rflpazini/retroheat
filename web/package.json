@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "npm run registry && tsc -b && vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "typecheck": "tsc -b --noEmit"
+    "typecheck": "tsc -b --noEmit",
+    "registry": "node scripts/update-registry.ts && shadcn build"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

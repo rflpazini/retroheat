@@ -1,0 +1,449 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "retro-os",
+  "homepage": "https://rflpazini.com/retroheat",
+  "items": [
+    {
+      "name": "retro-os",
+      "type": "registry:theme",
+      "title": "RetroOS",
+      "author": "Rafael Pazini (https://github.com/rflpazini)",
+      "description": "A mid-90s desktop for Tailwind and shadcn: cream windows with bevelled chrome and pinstriped title bars on a dithered desktop, a pixel face for labels, monospace for everything else, plus CRT glass, stepped motion and a night mode. Palette, fonts and chrome utilities.",
+      "docs": "Load the fonts once in your HTML head:\n<link href=\"https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Press+Start+2P&display=swap\" rel=\"stylesheet\" />\nFor the full look set --font-sans to var(--font-mono) in @theme inline; the theme leaves your body font alone.\nUtilities: window, window-title, window-title-text, title-box, stripe, bevel, bevel-in, press, pixel, eyebrow, tabular, crt, animate-window, blink. Night mode is the .dark class.",
+      "cssVars": {
+        "theme": {
+          "font-sans": "'IBM Plex Mono', ui-monospace, 'SF Mono', monospace",
+          "font-mono": "'IBM Plex Mono', ui-monospace, 'SF Mono', monospace",
+          "font-pixel": "'Press Start 2P', 'IBM Plex Mono', monospace",
+          "color-desktop": "var(--desktop)",
+          "color-desktop-grid": "var(--desktop-grid)",
+          "color-titlebar": "var(--titlebar)",
+          "color-titlebar-foreground": "var(--titlebar-foreground)",
+          "color-menubar": "var(--menubar)",
+          "color-bevel-light": "var(--bevel-light)",
+          "color-bevel-dark": "var(--bevel-dark)",
+          "color-stripe-1": "var(--stripe-1)",
+          "color-stripe-2": "var(--stripe-2)",
+          "color-stripe-3": "var(--stripe-3)",
+          "color-stripe-4": "var(--stripe-4)",
+          "color-stripe-5": "var(--stripe-5)"
+        },
+        "light": {
+          "desktop": "#1f4e4c",
+          "desktop-grid": "#24605d",
+          "background": "#1f4e4c",
+          "foreground": "#241f31",
+          "card": "#f4ecdc",
+          "card-foreground": "#241f31",
+          "popover": "#f4ecdc",
+          "popover-foreground": "#241f31",
+          "titlebar": "#e4dac2",
+          "titlebar-foreground": "#241f31",
+          "menubar": "#f2ebdb",
+          "primary": "#c14a1f",
+          "primary-foreground": "#fdf6e8",
+          "secondary": "#e2d6bd",
+          "secondary-foreground": "#241f31",
+          "muted": "#e7ddc7",
+          "muted-foreground": "#564d47",
+          "accent": "#f7e2c6",
+          "accent-foreground": "#8a3410",
+          "destructive": "#a8291f",
+          "border": "#241f31",
+          "input": "#cbbfa5",
+          "ring": "#c14a1f",
+          "bevel-light": "#fffaf0",
+          "bevel-dark": "#a4967a",
+          "sidebar": "#efe5d1",
+          "sidebar-foreground": "#241f31",
+          "sidebar-primary": "#c14a1f",
+          "sidebar-primary-foreground": "#fdf6e8",
+          "sidebar-accent": "#f7e2c6",
+          "sidebar-accent-foreground": "#8a3410",
+          "sidebar-border": "#241f31",
+          "sidebar-ring": "#c14a1f",
+          "stripe-1": "#2e7d7b",
+          "stripe-2": "#5fb3b0",
+          "stripe-3": "#e8a45c",
+          "stripe-4": "#e8763a",
+          "stripe-5": "#d4483b",
+          "radius": "0"
+        },
+        "dark": {
+          "desktop": "#100f1c",
+          "desktop-grid": "#1a1830",
+          "background": "#100f1c",
+          "foreground": "#ece3d0",
+          "card": "#292338",
+          "card-foreground": "#ece3d0",
+          "popover": "#292338",
+          "popover-foreground": "#ece3d0",
+          "titlebar": "#363048",
+          "titlebar-foreground": "#ece3d0",
+          "menubar": "#2a2438",
+          "primary": "#f0803f",
+          "primary-foreground": "#241206",
+          "secondary": "#37304a",
+          "secondary-foreground": "#ece3d0",
+          "muted": "#332c45",
+          "muted-foreground": "#b3a9a0",
+          "accent": "#3a2b2a",
+          "accent-foreground": "#f3a874",
+          "destructive": "#e8635a",
+          "border": "#0c0b15",
+          "input": "#443b5c",
+          "ring": "#f0803f",
+          "bevel-light": "#4b4266",
+          "bevel-dark": "#14111f",
+          "sidebar": "#241e33",
+          "sidebar-foreground": "#ece3d0",
+          "sidebar-primary": "#f0803f",
+          "sidebar-primary-foreground": "#241206",
+          "sidebar-accent": "#3a2b2a",
+          "sidebar-accent-foreground": "#f3a874",
+          "sidebar-border": "#0c0b15",
+          "sidebar-ring": "#f0803f"
+        }
+      },
+      "css": {
+        "@layer base": {
+          ":root": {
+            "color-scheme": "light"
+          },
+          ".dark": {
+            "color-scheme": "dark"
+          },
+          "body": {
+            "margin": "0",
+            "color": "var(--foreground)",
+            "font-family": "var(--font-sans)",
+            "background-color": "var(--desktop)",
+            "background-image": "radial-gradient(var(--desktop-grid) 1px, transparent 1px), linear-gradient(var(--desktop-grid) 1px, transparent 1px), linear-gradient(90deg, var(--desktop-grid) 1px, transparent 1px)",
+            "background-size": "4px 4px, 32px 32px, 32px 32px"
+          },
+          "*:focus-visible": {
+            "outline": "2px dotted var(--foreground)",
+            "outline-offset": "2px"
+          },
+          "@media (prefers-reduced-motion: reduce)": {
+            "*, *::before, *::after": {
+              "animation-duration": "0.01ms !important",
+              "animation-iteration-count": "1 !important",
+              "transition-duration": "0.01ms !important"
+            },
+            ".spark-line": {
+              "stroke-dasharray": "none"
+            },
+            ".ticker-track": {
+              "animation": "none"
+            },
+            ".crt > .crt-art": {
+              "animation": "none"
+            }
+          }
+        },
+        "@utility tabular": {
+          "font-variant-numeric": "tabular-nums"
+        },
+        "@utility pixel": {
+          "font-family": "var(--font-pixel)",
+          "letter-spacing": "0.02em",
+          "line-height": "1.6"
+        },
+        "@utility eyebrow": {
+          "font-family": "var(--font-pixel)",
+          "font-size": "0.5rem",
+          "letter-spacing": "0.06em",
+          "text-transform": "uppercase",
+          "color": "var(--muted-foreground)"
+        },
+        "@utility bevel": {
+          "box-shadow": "inset 1px 1px 0 0 var(--bevel-light), inset -1px -1px 0 0 var(--bevel-dark)"
+        },
+        "@utility bevel-in": {
+          "box-shadow": "inset -1px -1px 0 0 var(--bevel-light), inset 1px 1px 0 0 var(--bevel-dark)"
+        },
+        "@utility press": {
+          "&:active": {
+            "box-shadow": "inset -1px -1px 0 0 var(--bevel-light), inset 1px 1px 0 0 var(--bevel-dark)",
+            "transform": "translate(1px, 1px)"
+          }
+        },
+        "@utility window": {
+          "border": "2px solid var(--border)",
+          "background": "var(--card)",
+          "box-shadow": "inset 1px 1px 0 0 var(--bevel-light), inset -1px -1px 0 0 var(--bevel-dark), 3px 3px 0 0 rgb(0 0 0 / 0.4)"
+        },
+        "@utility window-title": {
+          "background-color": "var(--titlebar)",
+          "background-image": "repeating-linear-gradient(to bottom, var(--border) 0 1px, transparent 1px 3px)",
+          "color": "var(--titlebar-foreground)",
+          "border-bottom": "2px solid var(--border)"
+        },
+        "@utility window-title-text": {
+          "background": "var(--titlebar)",
+          "padding": "0 0.5rem"
+        },
+        "@utility title-box": {
+          "width": "11px",
+          "height": "11px",
+          "border": "1px solid var(--border)",
+          "background": "var(--titlebar)",
+          "box-shadow": "inset 1px 1px 0 0 var(--bevel-light)"
+        },
+        "@utility stripe": {
+          "height": "6px",
+          "background": "linear-gradient( 90deg, var(--stripe-1) 0 20%, var(--stripe-2) 20% 40%, var(--stripe-3) 40% 60%, var(--stripe-4) 60% 80%, var(--stripe-5) 80% 100% )"
+        },
+        "@keyframes window-zoom": {
+          "from": {
+            "opacity": "0",
+            "transform": "scale(0.94)"
+          },
+          "to": {
+            "opacity": "1",
+            "transform": "scale(1)"
+          }
+        },
+        "@utility animate-window": {
+          "animation": "window-zoom 160ms steps(5, end) backwards"
+        },
+        "@keyframes blink": {
+          "0%, 49%": {
+            "opacity": "1"
+          },
+          "50%, 100%": {
+            "opacity": "0"
+          }
+        },
+        "@utility blink": {
+          "animation": "blink 1s steps(1, end) infinite"
+        },
+        "@keyframes draw-line": {
+          "from": {
+            "stroke-dashoffset": "var(--dash, 400)"
+          },
+          "to": {
+            "stroke-dashoffset": "0"
+          }
+        },
+        "@utility spark-line": {
+          "stroke-dasharray": "var(--dash, 400)",
+          "animation": "draw-line 700ms ease-out backwards"
+        },
+        "@keyframes ticker-scroll": {
+          "from": {
+            "transform": "translateX(0)"
+          },
+          "to": {
+            "transform": "translateX(-50%)"
+          }
+        },
+        "@utility ticker-track": {
+          "animation": "ticker-scroll 40s linear infinite"
+        },
+        "@utility ticker": {
+          "&:hover .ticker-track": {
+            "animation-play-state": "paused"
+          }
+        },
+        "@keyframes progress-fill": {
+          "from": {
+            "width": "0%"
+          },
+          "to": {
+            "width": "100%"
+          }
+        },
+        "@utility progress-fill": {
+          "animation": "progress-fill 1100ms steps(12, end) forwards"
+        },
+        "@keyframes crt-flicker": {
+          "0%, 92%, 100%": {
+            "opacity": "1"
+          },
+          "93%": {
+            "opacity": "0.96"
+          },
+          "95%": {
+            "opacity": "0.99"
+          },
+          "97%": {
+            "opacity": "0.955"
+          }
+        },
+        "@utility crt": {
+          "position": "relative",
+          "overflow": "hidden",
+          "background": "#0c120f",
+          "border-radius": "7% / 9%",
+          "box-shadow": "inset 0 0 0 1px rgb(255 255 255 / 0.06), inset 0 0 24px 4px rgb(0 0 0 / 0.75)",
+          "isolation": "isolate",
+          "& > .crt-bleed": {
+            "position": "absolute",
+            "inset": "-12%",
+            "width": "124%",
+            "height": "124%",
+            "object-fit": "cover",
+            "filter": "blur(16px) saturate(1.5) brightness(0.4)"
+          },
+          "& > .crt-art": {
+            "position": "relative",
+            "display": "block",
+            "width": "100%",
+            "height": "100%",
+            "padding": "3% 4%",
+            "object-fit": "contain",
+            "filter": "saturate(1.25) contrast(1.1) brightness(1.05) drop-shadow(0 0 10px rgb(140 210 255 / 0.28))",
+            "animation": "crt-flicker 4.2s steps(1, end) infinite"
+          },
+          "&::before": {
+            "content": "''",
+            "position": "absolute",
+            "inset": "0",
+            "z-index": "1",
+            "pointer-events": "none",
+            "background": "repeating-linear-gradient(to bottom, rgb(0 0 0 / 0.38) 0 1px, transparent 1px 3px), repeating-linear-gradient( to right, rgb(255 0 0 / 0.06) 0 1px, rgb(0 255 0 / 0.05) 1px 2px, rgb(0 0 255 / 0.06) 2px 3px )",
+            "mix-blend-mode": "multiply"
+          },
+          "&::after": {
+            "content": "''",
+            "position": "absolute",
+            "inset": "0",
+            "z-index": "2",
+            "pointer-events": "none",
+            "background": "radial-gradient(115% 115% at 50% 50%, transparent 52%, rgb(0 0 0 / 0.62) 100%), linear-gradient(122deg, rgb(255 255 255 / 0.12) 0 20%, transparent 40%)"
+          }
+        },
+        "@utility crt-content": {
+          "position": "relative",
+          "display": "flex",
+          "width": "100%",
+          "height": "100%",
+          "flex-direction": "column",
+          "justify-content": "center",
+          "gap": "0.5rem",
+          "padding": "1rem",
+          "color": "#8ef2a8",
+          "text-shadow": "0 0 6px rgb(142 242 168 / 0.55)"
+        }
+      }
+    },
+    {
+      "name": "window",
+      "type": "registry:component",
+      "title": "Window",
+      "description": "An application window with a pinstriped title bar, close and zoom boxes, an optional arcade stripe and a stepped zoom-open animation. Also exports TitleBar for dialogs of your own.",
+      "registryDependencies": [
+        "https://rflpazini.com/retroheat/r/retro-os.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/retro-os/window.tsx",
+          "type": "registry:component",
+          "target": "@components/retro-os/window.tsx"
+        }
+      ]
+    },
+    {
+      "name": "menu-bar",
+      "type": "registry:component",
+      "title": "Menu bar",
+      "description": "The system menu bar: an apple menu, the application name in the pixel face, real dropdown menus with shortcuts and separators, and a right-hand slot with a live clock.",
+      "registryDependencies": [
+        "dropdown-menu",
+        "https://rflpazini.com/retroheat/r/retro-os.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/retro-os/menu-bar.tsx",
+          "type": "registry:component",
+          "target": "@components/retro-os/menu-bar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "boot-screen",
+      "type": "registry:component",
+      "title": "Boot screen",
+      "description": "A startup splash shown once per session: product name, tagline, a stepped progress bar and a blinking status line. Skipped for reduced motion, dismissed by any key or click.",
+      "registryDependencies": [
+        "https://rflpazini.com/retroheat/r/retro-os.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/retro-os/boot-screen.tsx",
+          "type": "registry:component",
+          "target": "@components/retro-os/boot-screen.tsx"
+        }
+      ]
+    },
+    {
+      "name": "crt-screen",
+      "type": "registry:component",
+      "title": "CRT screen",
+      "description": "A picture behind CRT glass: letterboxed on a glow of itself under scanlines, an aperture grille, a vignette and glare. Without a picture it shows your children in green phosphor.",
+      "registryDependencies": [
+        "https://rflpazini.com/retroheat/r/retro-os.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/retro-os/crt-screen.tsx",
+          "type": "registry:component",
+          "target": "@components/retro-os/crt-screen.tsx"
+        }
+      ]
+    },
+    {
+      "name": "status-bar",
+      "type": "registry:component",
+      "title": "Status bar",
+      "description": "The system status strip pinned to the bottom of the viewport, with bevelled wells on either side of a message that truncates rather than wraps.",
+      "registryDependencies": [
+        "https://rflpazini.com/retroheat/r/retro-os.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/retro-os/status-bar.tsx",
+          "type": "registry:component",
+          "target": "@components/retro-os/status-bar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "spotlight",
+      "type": "registry:component",
+      "title": "Spotlight",
+      "description": "A Cmd+K search palette in a System 7 window. Items carry a title, subtitle, image or icon, trailing content and a group; arrow keys move, Enter selects, Escape closes. Ships a predictable prefix ranking you can replace.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://rflpazini.com/retroheat/r/retro-os.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/retro-os/spotlight.tsx",
+          "type": "registry:component",
+          "target": "@components/retro-os/spotlight.tsx"
+        }
+      ]
+    },
+    {
+      "name": "retro-os-kit",
+      "type": "registry:item",
+      "title": "RetroOS kit",
+      "description": "Everything at once: the theme and all six components.",
+      "registryDependencies": [
+        "https://rflpazini.com/retroheat/r/retro-os.json",
+        "https://rflpazini.com/retroheat/r/window.json",
+        "https://rflpazini.com/retroheat/r/menu-bar.json",
+        "https://rflpazini.com/retroheat/r/boot-screen.json",
+        "https://rflpazini.com/retroheat/r/crt-screen.json",
+        "https://rflpazini.com/retroheat/r/status-bar.json",
+        "https://rflpazini.com/retroheat/r/spotlight.json"
+      ],
+      "files": []
+    }
+  ]
+}

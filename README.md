@@ -168,6 +168,44 @@ Publishing their data on a public site needs their written permission first, and
 their data should never be committed to a public repository without it. That is
 why eBay is the default.
 
+## Using the look in your own app
+
+The desktop chrome is published as a [shadcn](https://ui.shadcn.com) registry,
+so any React project with Tailwind v4 and shadcn set up can install it:
+
+```bash
+# the palette, fonts and chrome utilities (window, bevel, stripe, crt, pixel…)
+npx shadcn@latest add https://rflpazini.com/retroheat/r/retro-os.json
+
+# individual components; each pulls the theme in with it
+npx shadcn@latest add https://rflpazini.com/retroheat/r/window.json
+npx shadcn@latest add https://rflpazini.com/retroheat/r/menu-bar.json
+npx shadcn@latest add https://rflpazini.com/retroheat/r/spotlight.json
+
+# or everything at once
+npx shadcn@latest add https://rflpazini.com/retroheat/r/retro-os-kit.json
+```
+
+| Item | What you get |
+| --- | --- |
+| `retro-os` | Light and night palettes, `--font-pixel`, and utilities: `window`, `window-title`, `title-box`, `stripe`, `bevel`, `bevel-in`, `press`, `pixel`, `eyebrow`, `tabular`, `crt`, `animate-window`, `blink`. |
+| `window` | `Window` and `TitleBar`: pinstriped title bar, close and zoom boxes, stepped zoom-open. |
+| `menu-bar` | `MenuBar` with an apple menu, real dropdown menus with shortcuts, and `MenuBarClock`. |
+| `boot-screen` | A once-per-session startup splash with a stepped progress bar. |
+| `crt-screen` | A picture behind CRT glass, or your own text in green phosphor. |
+| `status-bar` | The bottom status strip with bevelled wells. |
+| `spotlight` | A Cmd+K palette: `Spotlight`, `useSpotlightShortcut`, `shortcutLabel`, `rankItems`. |
+
+Components land in `components/retro-os/`. The theme adds `IBM Plex Mono` and
+`Press Start 2P` as font variables but does not load them; add the Google Fonts
+link the installer prints to your HTML head. If your project already sets
+`--font-sans`, keep it or switch it to `var(--font-mono)` for the full look.
+
+The registry is generated from the site's own stylesheet: `web/src/index.css`
+is the source, `npm run registry` refreshes `web/registry.json` from it and
+builds the JSON into `web/public/r/`, and a test fails when the two disagree.
+The site itself is built from the same components it publishes.
+
 ## Contributing
 
 Adding a game, or explaining why one is moving, is a one-file pull request. See
