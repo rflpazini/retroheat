@@ -51,6 +51,8 @@ describe.skipIf(!present)('pages render against real collector output', () => {
     }
     renderAt('/', <Home />, '/')
     if (trending.entries.length > 0) {
+      // Every entry carries a move in at least one window, and the board
+      // opens on the longest window that has one.
       await waitFor(() => expect(document.body.textContent).toMatch(/hottest game on the shelf/i))
       expect(screen.getAllByText(/%/).length).toBeGreaterThan(0)
     } else {
@@ -59,6 +61,22 @@ describe.skipIf(!present)('pages render against real collector output', () => {
       await waitFor(() => expect(document.body.textContent).toMatch(/No movers yet/i))
       expect(document.body.textContent).toMatch(/price history/i)
     }
+  })
+
+  it('opens on the 1 day window while only one-day moves exist', async () => {
+    const trending = JSON.parse(fs.readFileSync(path.join(dataDir, 'trending/all.json'), 'utf8')) as {
+      entries: { pct_1d: number | null; pct_7d: number | null }[]
+    }
+    const onlyDay =
+      trending.entries.length > 0 &&
+      trending.entries.every((e) => e.pct_7d == null) &&
+      trending.entries.some((e) => e.pct_1d != null)
+    if (!onlyDay) return
+
+    renderAt('/', <Home />, '/')
+    await waitFor(() => expect(document.body.textContent).toMatch(/hottest game on the shelf/i))
+    expect(screen.getByRole('button', { name: '1 day' }).getAttribute('aria-pressed')).toBe('true')
+    expect(screen.getByRole('button', { name: '7 days' }).getAttribute('aria-pressed')).toBe('false')
   })
 
   it('a platform board renders its games in a table', async () => {

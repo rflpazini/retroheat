@@ -103,11 +103,25 @@ function MoverRow({ entry, rank, move }: { entry: TrendEntry; rank: number; move
   )
 }
 
+/** The longest window with at least one mover, or the week when nothing has moved. */
+export function defaultWindow(entries: TrendEntry[]): MoveWindow {
+  // A month never has data before a week does, so the week is the longest
+  // window worth checking first.
+  if (entries.some((e) => e.pct_7d != null)) return 'pct_7d'
+  if (entries.some((e) => e.pct_1d != null)) return 'pct_1d'
+  return 'pct_7d'
+}
+
 export function Home() {
   const [platform, setPlatform] = useState<string>('all')
-  const [move, setMove] = useState<MoveWindow>('pct_7d')
+  const [chosen, setMove] = useState<MoveWindow | null>(null)
 
   const board = useJson<TrendingFile>(`trending/${platform}.json`)
+
+  // Until the reader picks a window the board opens on the longest one that
+  // has movers. In the first week of collection only the 1 day window does,
+  // and opening on an empty week would hide the moves that exist.
+  const move: MoveWindow = chosen ?? defaultWindow(board.status === 'ready' ? board.data.entries : [])
 
   // The file holds the week's leaders plus today's biggest movers; sorting
   // by the chosen window and cutting to the shelf size gives each window its

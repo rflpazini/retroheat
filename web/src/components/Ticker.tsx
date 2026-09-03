@@ -21,17 +21,22 @@ export function Ticker() {
       <div className="ticker-track flex w-max gap-8 whitespace-nowrap">
         {[0, 1].map((copy) => (
           <div key={copy} className="flex gap-8">
-            {entries.map((e) => (
-              <span key={`${copy}-${e.id}`} className="flex items-center gap-2 text-[0.7rem]">
-                <span className="eyebrow">{PLATFORM_SHORT[e.platform]}</span>
-                <span className="font-semibold">{e.title}</span>
-                <span className="tabular">{money(e.price_cents)}</span>
-                <span className="tabular font-bold" style={{ color: heat(e.pct_7d) }}>
-                  {pct(e.pct_7d)}
+            {entries.map((e) => {
+              // The week's move when there is one; in the first week of
+              // collection only the day's move exists, and a dash says nothing.
+              const move = e.pct_7d ?? e.pct_1d
+              return (
+                <span key={`${copy}-${e.id}`} className="flex items-center gap-2 text-[0.7rem]">
+                  <span className="eyebrow">{PLATFORM_SHORT[e.platform]}</span>
+                  <span className="font-semibold">{e.title}</span>
+                  <span className="tabular">{money(e.price_cents)}</span>
+                  <span className="tabular font-bold" style={{ color: heat(move) }}>
+                    {pct(move)}
+                  </span>
+                  <span className="opacity-40">◆</span>
                 </span>
-                <span className="opacity-40">◆</span>
-              </span>
-            ))}
+              )
+            })}
           </div>
         ))}
       </div>
