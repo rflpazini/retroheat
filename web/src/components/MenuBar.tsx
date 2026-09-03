@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Search } from 'lucide-react'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
+  DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { AboutDialog } from '@/components/AboutDialog'
+import { shortcutLabel } from '@/components/Spotlight'
 import { PLATFORMS, PLATFORM_LABELS } from '@/lib/types'
 
 function Clock() {
@@ -38,8 +41,17 @@ const menuItem = 'rounded-none px-2 py-1 text-[0.75rem] focus:bg-[var(--border)]
  * switch the theme and open the About window, which is what makes the page read
  * as an operating system instead of an app wearing its chrome.
  */
-export function MenuBar({ dark, onToggleTheme }: { dark: boolean; onToggleTheme: () => void }) {
+export function MenuBar({
+  dark,
+  onToggleTheme,
+  onSearch,
+}: {
+  dark: boolean
+  onToggleTheme: () => void
+  onSearch: () => void
+}) {
   const navigate = useNavigate()
+  const keys = shortcutLabel()
   const [aboutOpen, setAboutOpen] = useState(false)
 
   function restart() {
@@ -78,6 +90,11 @@ export function MenuBar({ dark, onToggleTheme }: { dark: boolean; onToggleTheme:
           <DropdownMenu>
             <DropdownMenuTrigger className={trigger}>File</DropdownMenuTrigger>
             <DropdownMenuContent align="start" className={menuContent}>
+              <DropdownMenuItem className={menuItem} onClick={onSearch}>
+                Find Game…
+                <DropdownMenuShortcut className="pl-6 text-[0.65rem] tracking-normal">{keys}</DropdownMenuShortcut>
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
               <DropdownMenuItem className={menuItem} onClick={() => navigate('/')}>
                 Open Trending
               </DropdownMenuItem>
@@ -120,9 +137,21 @@ export function MenuBar({ dark, onToggleTheme }: { dark: boolean; onToggleTheme:
           </DropdownMenu>
         </div>
 
-        <span className="px-2 text-[0.7rem]">
-          <Clock />
-        </span>
+        <div className="flex items-center gap-1">
+          <button
+            type="button"
+            onClick={onSearch}
+            className="flex items-center gap-1.5 px-2 py-0.5 text-[0.7rem] outline-none hover:bg-[var(--border)] hover:text-[var(--card)] focus-visible:bg-[var(--border)] focus-visible:text-[var(--card)]"
+            aria-label={`Search games (${keys})`}
+            title={`Search games (${keys})`}
+          >
+            <Search className="size-3.5" aria-hidden />
+            <kbd className="hidden text-[0.65rem] sm:inline">{keys}</kbd>
+          </button>
+          <span className="px-2 text-[0.7rem]">
+            <Clock />
+          </span>
+        </div>
       </div>
 
       <AboutDialog open={aboutOpen} onOpenChange={setAboutOpen} />

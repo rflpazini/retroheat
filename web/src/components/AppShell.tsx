@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { Disc3, Gamepad2, HardDrive, Info, Menu, Monitor, TrendingUp } from 'lucide-react'
 import { MenuBar } from '@/components/MenuBar'
 import { BootScreen } from '@/components/BootScreen'
 import { Ticker } from '@/components/Ticker'
 import { StatusBar } from '@/components/StatusBar'
+import { Spotlight, useSpotlightShortcut } from '@/components/Spotlight'
 import { PLATFORMS, PLATFORM_LABELS, type Meta } from '@/lib/types'
 import { useJson } from '@/lib/data'
 import { relativeDay } from '@/lib/format'
@@ -118,6 +119,9 @@ const titles: Record<string, string> = {
 export function AppShell() {
   const { dark, toggle } = useTheme()
   const [menuOpen, setMenuOpen] = useState(false)
+  const [searchOpen, setSearchOpen] = useState(false)
+  const toggleSearch = useCallback(() => setSearchOpen((v) => !v), [])
+  useSpotlightShortcut(toggleSearch)
   const location = useLocation()
   const meta = useJson<Meta>('meta.json')
 
@@ -130,7 +134,7 @@ export function AppShell() {
   return (
     <>
       <BootScreen />
-      <MenuBar dark={dark} onToggleTheme={toggle} />
+      <MenuBar dark={dark} onToggleTheme={toggle} onSearch={() => setSearchOpen(true)} />
       <div className="min-h-screen p-3 sm:p-5 lg:grid lg:grid-cols-[15rem_1fr] lg:gap-5">
       <aside className="window hidden self-start lg:block">
         <SidebarContent />
@@ -192,6 +196,7 @@ export function AppShell() {
       </div>
       </div>
       <StatusBar />
+      <Spotlight open={searchOpen} onOpenChange={setSearchOpen} />
     </>
   )
 }
