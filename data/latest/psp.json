@@ -1,6 +1,6 @@
 {
  "platform": "psp",
- "as_of": "2026-09-03",
+ "as_of": "2026-09-04",
  "source": "ebay-browse",
  "price_kind": "asking",
  "games": [
@@ -11,19 +11,19 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1299,
+     "median_cents": 1291,
      "mode_cents": 1500,
-     "n": 47
+     "n": 48
     },
     "cib": {
      "median_cents": 2000,
-     "mode_cents": 2000,
-     "n": 38
+     "mode_cents": 1500,
+     "n": 45
     },
     "new": {
-     "median_cents": 6999,
+     "median_cents": 7000,
      "mode_cents": 7000,
-     "n": 9
+     "n": 10
     }
    },
    "pct_1d": 0,
@@ -32,19 +32,22 @@
    "sparks": {
     "loose": [
      1206,
-     1253
+     1253,
+     1291
     ],
     "cib": [
+     2000,
      2000,
      2000
     ],
     "new": [
      6000,
-     6500
+     6500,
+     6999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "persona-3-portable-psp",
@@ -68,25 +71,28 @@
      "n": 4
     }
    },
-   "pct_1d": 0.01,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      12500,
-     11750
+     11750,
+     11000
     ],
     "cib": [
      14999,
+     15000,
      15000
     ],
     "new": [
+     44997,
      44997,
      44997
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "persona-2-innocent-sin-psp",
@@ -135,19 +141,22 @@
    "sparks": {
     "loose": [
      1999,
+     1999,
      1999
     ],
     "cib": [
+     2989,
      2989,
      2989
     ],
     "new": [
      4450,
+     4450,
      4450
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "final-fantasy-tactics-war-of-the-lions-psp",
@@ -161,9 +170,9 @@
      "n": 38
     },
     "cib": {
-     "median_cents": 2525,
+     "median_cents": 2500,
      "mode_cents": 2500,
-     "n": 62
+     "n": 56
     },
     "new": {
      "median_cents": 6000,
@@ -171,25 +180,28 @@
      "n": 18
     }
    },
-   "pct_1d": 1,
+   "pct_1d": -0.99,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      1499,
+     1499,
      1499
     ],
     "cib": [
      2500,
-     2513
+     2513,
+     2500
     ],
     "new": [
      6047,
-     6024
+     6024,
+     6000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "jeanne-darc-psp",
@@ -203,9 +215,9 @@
      "n": 5
     },
     "cib": {
-     "median_cents": 5500,
+     "median_cents": 5750,
      "mode_cents": 5500,
-     "n": 13
+     "n": 12
     },
     "new": {
      "median_cents": 7997,
@@ -213,25 +225,28 @@
      "n": 12
     }
    },
-   "pct_1d": -4.35,
+   "pct_1d": 4.55,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      3299,
+     3299,
      3299
     ],
     "cib": [
      5750,
-     5625
+     5625,
+     5750
     ],
     "new": [
      6999,
-     7498
+     7498,
+     7997
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "ys-seven-psp",
@@ -245,8 +260,8 @@
      "n": 4
     },
     "cib": {
-     "median_cents": 10000,
-     "mode_cents": 10000,
+     "median_cents": 9000,
+     "mode_cents": 8000,
      "n": 8
     },
     "new": {
@@ -255,25 +270,28 @@
      "n": 10
     }
    },
-   "pct_1d": 0,
+   "pct_1d": -10,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      5700,
+     5700,
      5700
     ],
     "cib": [
+     10000,
      10000,
      10000
     ],
     "new": [
      12998,
+     12998,
      12998
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "ys-the-oath-in-felghana-psp",
@@ -303,19 +321,22 @@
    "sparks": {
     "loose": [
      5112,
+     5112,
      5112
     ],
     "cib": [
+     6499,
      6499,
      6499
     ],
     "new": [
      18500,
-     18250
+     18250,
+     18000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "ys-i-ii-chronicles-psp",
@@ -340,15 +361,17 @@
    "sparks": {
     "cib": [
      13500,
+     13500,
      13500
     ],
     "new": [
+     15000,
      15000,
      15000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "trails-in-the-sky-psp",
@@ -367,21 +390,23 @@
      "n": 4
     }
    },
-   "pct_1d": 25,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "cib": [
      2604,
-     2930
+     2930,
+     3255
     ],
     "new": [
+     16247,
      16247,
      16247
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "gurumin-psp",
@@ -401,11 +426,12 @@
    "sparks": {
     "loose": [
      2749,
+     2749,
      2749
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "half-minute-hero-psp",
@@ -430,15 +456,17 @@
    "sparks": {
     "cib": [
      2725,
+     2725,
      2725
     ],
     "new": [
+     3495,
      3495,
      3495
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "castlevania-dracula-x-chronicles-psp",
@@ -453,8 +481,8 @@
     },
     "cib": {
      "median_cents": 5999,
-     "mode_cents": 7000,
-     "n": 35
+     "mode_cents": 5000,
+     "n": 36
     },
     "new": {
      "median_cents": 14750,
@@ -462,25 +490,28 @@
      "n": 10
     }
    },
-   "pct_1d": 0.02,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      2999,
+     2999,
      2999
     ],
     "cib": [
      5998,
+     5999,
      5999
     ],
     "new": [
      14500,
-     14625
+     14625,
+     14750
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "metal-gear-solid-peace-walker-psp",
@@ -489,9 +520,9 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 3797,
+     "median_cents": 3995,
      "mode_cents": 4000,
-     "n": 16
+     "n": 17
     },
     "cib": {
      "median_cents": 6999,
@@ -510,19 +541,22 @@
    "sparks": {
     "loose": [
      3599,
-     3698
+     3698,
+     3797
     ],
     "cib": [
+     6999,
      6999,
      6999
     ],
     "new": [
      9950,
+     9950,
      9950
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "metal-gear-solid-portable-ops-psp",
@@ -536,26 +570,28 @@
      "n": 14
     },
     "cib": {
-     "median_cents": 2361,
-     "mode_cents": 2000,
+     "median_cents": 2750,
+     "mode_cents": 3000,
      "n": 10
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 16.48,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      1773,
+     1773,
      1773
     ],
     "cib": [
+     2361,
      2361,
      2361
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "monster-hunter-freedom-unite-psp",
@@ -564,22 +600,23 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 2239,
+     "median_cents": 2399,
      "mode_cents": 2500,
-     "n": 8
+     "n": 9
     }
    },
-   "pct_1d": -10.4,
+   "pct_1d": 7.15,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      2499,
-     2369
+     2369,
+     2399
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "patapon-3-psp",
@@ -609,19 +646,22 @@
    "sparks": {
     "loose": [
      2249,
+     2249,
      2249
     ],
     "cib": [
+     3775,
      3775,
      3775
     ],
     "new": [
      7249,
+     7249,
      7249
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "patapon-2-psp",
@@ -641,11 +681,12 @@
    "sparks": {
     "new": [
      2499,
+     2499,
      2499
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "locoroco-psp",
@@ -675,19 +716,22 @@
    "sparks": {
     "loose": [
      1400,
+     1400,
      1400
     ],
     "cib": [
+     2149,
      2149,
      2149
     ],
     "new": [
      7999,
+     7999,
      7999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "lumines-psp",
@@ -703,7 +747,7 @@
     "cib": {
      "median_cents": 1000,
      "mode_cents": 1000,
-     "n": 62
+     "n": 63
     },
     "new": {
      "median_cents": 1949,
@@ -717,19 +761,22 @@
    "sparks": {
     "loose": [
      800,
+     800,
      800
     ],
     "cib": [
+     1000,
      1000,
      1000
     ],
     "new": [
      1949,
+     1949,
      1949
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "god-of-war-chains-of-olympus-psp",
@@ -745,7 +792,7 @@
     "cib": {
      "median_cents": 3999,
      "mode_cents": 4000,
-     "n": 30
+     "n": 32
     },
     "new": {
      "median_cents": 6950,
@@ -759,19 +806,22 @@
    "sparks": {
     "loose": [
      2500,
+     2500,
      2500
     ],
     "cib": [
+     3999,
      3999,
      3999
     ],
     "new": [
      6950,
+     6950,
      6950
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "god-of-war-ghost-of-sparta-psp",
@@ -795,25 +845,28 @@
      "n": 5
     }
    },
-   "pct_1d": -9.99,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      5995,
-     5745
+     5745,
+     5495
     ],
     "cib": [
      9997,
-     9498
+     9498,
+     8998
     ],
     "new": [
+     14999,
      14999,
      14999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "daxter-psp",
@@ -824,11 +877,11 @@
     "loose": {
      "median_cents": 1000,
      "mode_cents": 1000,
-     "n": 75
+     "n": 70
     },
     "cib": {
      "median_cents": 2244,
-     "mode_cents": 2200,
+     "mode_cents": 2000,
      "n": 15
     },
     "new": {
@@ -837,25 +890,28 @@
      "n": 13
     }
    },
-   "pct_1d": 0.99,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      1098,
-     1049
+     1049,
+     1000
     ],
     "cib": [
      2222,
-     2233
+     2233,
+     2244
     ],
     "new": [
+     3995,
      3995,
      3995
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "syphon-filter-dark-mirror-psp",
@@ -866,7 +922,7 @@
     "loose": {
      "median_cents": 699,
      "mode_cents": 700,
-     "n": 15
+     "n": 14
     },
     "cib": {
      "median_cents": 1000,
@@ -874,7 +930,7 @@
      "n": 43
     },
     "new": {
-     "median_cents": 1299,
+     "median_cents": 1282,
      "mode_cents": 1000,
      "n": 45
     }
@@ -885,19 +941,22 @@
    "sparks": {
     "loose": [
      699,
+     699,
      699
     ],
     "cib": [
+     1000,
      1000,
      1000
     ],
     "new": [
      1299,
+     1299,
      1299
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "wipeout-pure-psp",
@@ -908,38 +967,41 @@
     "loose": {
      "median_cents": 799,
      "mode_cents": 600,
-     "n": 27
+     "n": 25
     },
     "cib": {
-     "median_cents": 1100,
+     "median_cents": 1200,
      "mode_cents": 1000,
-     "n": 64
+     "n": 65
     },
     "new": {
      "median_cents": 1500,
      "mode_cents": 1500,
-     "n": 22
+     "n": 21
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 9.09,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      799,
+     799,
      799
     ],
     "cib": [
+     1100,
      1100,
      1100
     ],
     "new": [
      1500,
+     1500,
      1500
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "kingdom-hearts-birth-by-sleep-psp",
@@ -969,19 +1031,22 @@
    "sparks": {
     "loose": [
      1748,
-     1773
+     1773,
+     1797
     ],
     "cib": [
+     2500,
      2500,
      2500
     ],
     "new": [
      4899,
+     4899,
      4899
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "dissidia-012-final-fantasy-psp",
@@ -1006,15 +1071,17 @@
    "sparks": {
     "loose": [
      1229,
+     1229,
      1229
     ],
     "cib": [
+     1349,
      1349,
      1349
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "class-of-heroes-psp",
@@ -1044,19 +1111,22 @@
    "sparks": {
     "loose": [
      1600,
+     1600,
      1600
     ],
     "cib": [
+     2899,
      2899,
      2899
     ],
     "new": [
      3999,
+     3999,
      3999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "riviera-the-promised-land-psp",
@@ -1081,15 +1151,17 @@
    "sparks": {
     "cib": [
      4200,
+     4200,
      4200
     ],
     "new": [
      4998,
-     4999
+     4999,
+     5000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "knights-in-the-nightmare-psp",
@@ -1119,19 +1191,22 @@
    "sparks": {
     "loose": [
      2035,
+     2035,
      2035
     ],
     "cib": [
+     5000,
      5000,
      5000
     ],
     "new": [
      13848,
+     13848,
      13848
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "yggdra-union-psp",
@@ -1161,19 +1236,22 @@
    "sparks": {
     "loose": [
      2300,
+     2300,
      2300
     ],
     "cib": [
+     4250,
      4250,
      4250
     ],
     "new": [
      6499,
+     6499,
      6499
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "silent-hill-shattered-memories-psp",
@@ -1187,17 +1265,18 @@
      "n": 6
     }
    },
-   "pct_1d": -2.5,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "cib": [
      19999,
-     19749
+     19749,
+     19499
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "silent-hill-origins-psp",
@@ -1227,19 +1306,22 @@
    "sparks": {
     "loose": [
      6400,
+     6400,
      6400
     ],
     "cib": [
+     9999,
      9999,
      9999
     ],
     "new": [
      20000,
+     20000,
      20000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "gta-vice-city-stories-psp",
@@ -1250,7 +1332,7 @@
     "loose": {
      "median_cents": 2999,
      "mode_cents": 3000,
-     "n": 27
+     "n": 26
     },
     "cib": {
      "median_cents": 5300,
@@ -1258,30 +1340,33 @@
      "n": 9
     },
     "new": {
-     "median_cents": 21299,
+     "median_cents": 22598,
      "mode_cents": 20000,
-     "n": 8
+     "n": 7
     }
    },
-   "pct_1d": 4.43,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      2999,
+     2999,
      2999
     ],
     "cib": [
      5075,
-     5188
+     5188,
+     5300
     ],
     "new": [
+     21299,
      21299,
      21299
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "gta-liberty-city-stories-psp",
@@ -1290,40 +1375,43 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1937,
-     "mode_cents": 2000,
-     "n": 38
+     "median_cents": 1899,
+     "mode_cents": 1500,
+     "n": 41
     },
     "cib": {
-     "median_cents": 3598,
-     "mode_cents": 4000,
+     "median_cents": 3549,
+     "mode_cents": 3000,
      "n": 50
     },
     "new": {
-     "median_cents": 9500,
+     "median_cents": 8998,
      "mode_cents": 9000,
-     "n": 12
+     "n": 10
     }
    },
-   "pct_1d": 0,
+   "pct_1d": -1.36,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      1999,
-     1968
+     1968,
+     1937
     ],
     "cib": [
+     3598,
      3598,
      3598
     ],
     "new": [
      9000,
-     9250
+     9250,
+     9000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "prinny-can-i-really-be-the-hero-psp",
@@ -1353,19 +1441,22 @@
    "sparks": {
     "loose": [
      1750,
+     1750,
      1750
     ],
     "cib": [
+     2999,
      2999,
      2999
     ],
     "new": [
      7995,
+     7995,
      7995
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "disgaea-afternoon-of-darkness-psp",
@@ -1389,25 +1480,28 @@
      "n": 7
     }
    },
-   "pct_1d": 0.89,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      1499,
+     1499,
      1499
     ],
     "cib": [
      2800,
-     2813
+     2813,
+     2825
     ],
     "new": [
+     5499,
      5499,
      5499
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "star-ocean-first-departure-psp",
@@ -1437,19 +1531,22 @@
    "sparks": {
     "loose": [
      1549,
+     1549,
      1549
     ],
     "cib": [
+     2497,
      2497,
      2497
     ],
     "new": [
      5748,
+     5748,
      5748
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   },
   {
    "id": "brave-story-new-traveler-psp",
@@ -1463,26 +1560,33 @@
      "n": 10
     },
     "cib": {
-     "median_cents": 4352,
-     "mode_cents": 4500,
-     "n": 8
+     "median_cents": 4208,
+     "mode_cents": 4000,
+     "n": 7
+    },
+    "new": {
+     "median_cents": 14998,
+     "mode_cents": 10000,
+     "n": 4
     }
    },
-   "pct_1d": 0,
+   "pct_1d": -3.31,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      2000,
+     2000,
      2000
     ],
     "cib": [
+     4352,
      4352,
      4352
     ]
    },
    "stale": false,
-   "as_of": "2026-09-03"
+   "as_of": "2026-09-04"
   }
  ]
 }
