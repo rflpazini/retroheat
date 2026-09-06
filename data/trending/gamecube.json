@@ -1,6 +1,6 @@
 {
  "board": "gamecube",
- "as_of": "2026-09-05",
+ "as_of": "2026-09-06",
  "entries": [
   {
    "id": "pn03-gamecube",
@@ -8,7 +8,7 @@
    "platform": "gamecube",
    "headline_condition": "cib",
    "price_cents": 15019,
-   "pct_1d": 0.21,
+   "pct_1d": 0,
    "pct_7d": 5.22,
    "pct_30d": null,
    "score": 5.22,
@@ -16,24 +16,8 @@
     14244,
     14616,
     14988,
+    14988,
     14988
-   ]
-  },
-  {
-   "id": "animal-crossing-gamecube",
-   "title": "Animal Crossing",
-   "platform": "gamecube",
-   "headline_condition": "cib",
-   "price_cents": 7950,
-   "pct_1d": 0.32,
-   "pct_7d": 1.79,
-   "pct_30d": null,
-   "score": 1.79,
-   "spark": [
-    7700,
-    7725,
-    7750,
-    7838
    ]
   },
   {
@@ -43,14 +27,15 @@
    "headline_condition": "cib",
    "price_cents": 8250,
    "pct_1d": 0,
-   "pct_7d": 1.56,
+   "pct_7d": 3.13,
    "pct_30d": null,
-   "score": 1.56,
+   "score": 3.13,
    "spark": [
     8000,
     8000,
     8000,
-    8125
+    8125,
+    8250
    ]
   },
   {
@@ -59,32 +44,34 @@
    "platform": "gamecube",
    "headline_condition": "cib",
    "price_cents": 10300,
-   "pct_1d": -1.9,
-   "pct_7d": 1.5,
+   "pct_1d": 0,
+   "pct_7d": 3,
    "pct_30d": null,
-   "score": 1.5,
+   "score": 3,
    "spark": [
     10000,
     10000,
     10000,
-    10150
+    10150,
+    10300
    ]
   },
   {
-   "id": "mario-kart-double-dash-gamecube",
-   "title": "Mario Kart: Double Dash!!",
+   "id": "animal-crossing-gamecube",
+   "title": "Animal Crossing",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 8495,
-   "pct_1d": 2.35,
-   "pct_7d": 1.25,
+   "price_cents": 8000,
+   "pct_1d": 0.63,
+   "pct_7d": 2.92,
    "pct_30d": null,
-   "score": 1.25,
+   "score": 2.92,
    "spark": [
-    8099,
-    8075,
-    8099,
-    8200
+    7700,
+    7725,
+    7750,
+    7838,
+    7925
    ]
   },
   {
@@ -101,6 +88,7 @@
     78500,
     78625,
     78750,
+    78750,
     78750
    ]
   },
@@ -111,14 +99,15 @@
    "headline_condition": "cib",
    "price_cents": 7999,
    "pct_1d": 0,
-   "pct_7d": 0.04,
+   "pct_7d": 0.06,
    "pct_30d": null,
-   "score": 0.04,
+   "score": 0.06,
    "spark": [
     7994,
     7995,
     7995,
-    7997
+    7997,
+    7999
    ]
   },
   {
@@ -135,6 +124,7 @@
     2899,
     2900,
     2900,
+    2900,
     2900
    ]
   },
@@ -143,14 +133,15 @@
    "title": "Metroid Prime",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 3000,
-   "pct_1d": 0,
+   "price_cents": 3200,
+   "pct_1d": 6.67,
    "pct_7d": 0.03,
    "pct_30d": null,
    "score": 0.03,
    "spark": [
     2999,
     3025,
+    3000,
     3000,
     3000
    ]
@@ -169,6 +160,7 @@
     2999,
     2999,
     2999,
+    3000,
     3000
    ]
   },
@@ -186,6 +178,7 @@
     4000,
     4000,
     4000,
+    4000,
     4000
    ]
   },
@@ -194,8 +187,8 @@
    "title": "Chibi-Robo!",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 23750,
-   "pct_1d": 1.06,
+   "price_cents": 24000,
+   "pct_1d": 1.05,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
@@ -203,7 +196,26 @@
     23500,
     23500,
     23500,
+    23500,
     23500
+   ]
+  },
+  {
+   "id": "custom-robo-gamecube",
+   "title": "Custom Robo",
+   "platform": "gamecube",
+   "headline_condition": "cib",
+   "price_cents": 8500,
+   "pct_1d": 0.06,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    8495,
+    8372,
+    8248,
+    8372,
+    8495
    ]
   },
   {
@@ -217,6 +229,7 @@
    "pct_30d": null,
    "score": 0,
    "spark": [
+    5000,
     5000,
     5000,
     5000,
@@ -237,6 +250,7 @@
     62450,
     60975,
     62450,
+    62450,
     62450
    ]
   },
@@ -254,6 +268,7 @@
     2999,
     2999,
     2999,
+    2999,
     2999
    ]
   },
@@ -262,12 +277,13 @@
    "title": "Harvest Moon: Magical Melody",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 3999,
-   "pct_1d": 0,
+   "price_cents": 4249,
+   "pct_1d": 6.25,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    3999,
     3999,
     3999,
     3999,
@@ -288,6 +304,7 @@
     7999,
     7999,
     7999,
+    7999,
     7999
    ]
   },
@@ -296,12 +313,13 @@
    "title": "killer7",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 10223,
-   "pct_1d": 2.23,
+   "price_cents": 10445,
+   "pct_1d": 2.17,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    10000,
     10000,
     10000,
     10000,
@@ -314,11 +332,12 @@
    "platform": "gamecube",
    "headline_condition": "cib",
    "price_cents": 7000,
-   "pct_1d": -3.11,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    7000,
     7000,
     7000,
     7000,
@@ -326,16 +345,35 @@
    ]
   },
   {
-   "id": "metal-gear-solid-twin-snakes-gamecube",
-   "title": "Metal Gear Solid: The Twin Snakes",
+   "id": "mario-kart-double-dash-gamecube",
+   "title": "Mario Kart: Double Dash!!",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 13000,
-   "pct_1d": 0.01,
+   "price_cents": 8099,
+   "pct_1d": -4.66,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    8099,
+    8075,
+    8099,
+    8200,
+    8099
+   ]
+  },
+  {
+   "id": "metal-gear-solid-twin-snakes-gamecube",
+   "title": "Metal Gear Solid: The Twin Snakes",
+   "platform": "gamecube",
+   "headline_condition": "cib",
+   "price_cents": 13245,
+   "pct_1d": 1.88,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    12999,
     12999,
     12999,
     12999,
@@ -356,6 +394,7 @@
     5999,
     5999,
     5999,
+    5999,
     5999
    ]
   },
@@ -365,11 +404,12 @@
    "platform": "gamecube",
    "headline_condition": "cib",
    "price_cents": 25000,
-   "pct_1d": -1.1,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    25000,
     25000,
     25000,
     25000,
@@ -381,12 +421,13 @@
    "title": "Resident Evil 4",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 5495,
-   "pct_1d": -0.07,
+   "price_cents": 5497,
+   "pct_1d": 0.04,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    5499,
     5499,
     5499,
     5499,
@@ -407,41 +448,80 @@
     3200,
     3200,
     3200,
+    3200,
     3200
    ]
   },
   {
-   "id": "sonic-adventure-2-battle-gamecube",
-   "title": "Sonic Adventure 2: Battle",
+   "id": "viewtiful-joe-2-gamecube",
+   "title": "Viewtiful Joe 2",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 9999,
-   "pct_1d": 0,
+   "price_cents": 6499,
+   "pct_1d": 4,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    9999,
-    9999,
-    9999,
-    9999
+    6249,
+    6124,
+    5999,
+    6124,
+    6249
    ]
   },
   {
-   "id": "star-fox-adventures-gamecube",
-   "title": "Star Fox Adventures",
+   "id": "wario-world-gamecube",
+   "title": "Wario World",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 7120,
-   "pct_1d": 1.73,
+   "price_cents": 10750,
+   "pct_1d": 2.38,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    7000,
-    7000,
-    6999,
-    7000
+    10500,
+    10250,
+    10196,
+    10348,
+    10500
+   ]
+  },
+  {
+   "id": "skies-of-arcadia-legends-gamecube",
+   "title": "Skies of Arcadia Legends",
+   "platform": "gamecube",
+   "headline_condition": "cib",
+   "price_cents": 21424,
+   "pct_1d": 3.44,
+   "pct_7d": -0,
+   "pct_30d": null,
+   "score": -0,
+   "spark": [
+    22000,
+    22000,
+    21999,
+    21999,
+    21999
+   ]
+  },
+  {
+   "id": "f-zero-gx-gamecube",
+   "title": "F-Zero GX",
+   "platform": "gamecube",
+   "headline_condition": "cib",
+   "price_cents": 9998,
+   "pct_1d": 0.01,
+   "pct_7d": -0.01,
+   "pct_30d": null,
+   "score": -0.01,
+   "spark": [
+    9999,
+    9998,
+    9998,
+    9998,
+    9998
    ]
   },
   {
@@ -458,119 +538,27 @@
     5000,
     5000,
     4999,
+    4999,
     4999
    ]
   },
   {
-   "id": "wario-world-gamecube",
-   "title": "Wario World",
+   "id": "metroid-prime-2-echoes-gamecube",
+   "title": "Metroid Prime 2: Echoes",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 10500,
-   "pct_1d": 2.98,
-   "pct_7d": -1.45,
+   "price_cents": 6799,
+   "pct_1d": 2.24,
+   "pct_7d": -2.86,
    "pct_30d": null,
-   "score": -1.45,
+   "score": -2.86,
    "spark": [
-    10500,
-    10250,
-    10196,
-    10348
+    6999,
+    6999,
+    6999,
+    6899,
+    6799
    ]
-  },
-  {
-   "id": "custom-robo-gamecube",
-   "title": "Custom Robo",
-   "platform": "gamecube",
-   "headline_condition": "cib",
-   "price_cents": 8495,
-   "pct_1d": 2.99,
-   "pct_7d": -1.45,
-   "pct_30d": null,
-   "score": -1.45,
-   "spark": [
-    8495,
-    8372,
-    8248,
-    8372
-   ]
-  },
-  {
-   "id": "star-fox-assault-gamecube",
-   "title": "Star Fox Assault",
-   "platform": "gamecube",
-   "headline_condition": "cib",
-   "price_cents": 11995,
-   "pct_1d": 4.3,
-   "pct_7d": -1.48,
-   "pct_30d": null,
-   "score": -1.48,
-   "spark": [
-    11995,
-    11817,
-    11639,
-    11817
-   ]
-  },
-  {
-   "id": "fire-emblem-path-of-radiance-gamecube",
-   "title": "Fire Emblem: Path of Radiance",
-   "platform": "gamecube",
-   "headline_condition": "cib",
-   "price_cents": 26999,
-   "pct_1d": 0,
-   "pct_7d": -1.78,
-   "pct_30d": null,
-   "score": -1.78,
-   "spark": [
-    27995,
-    27995,
-    27995,
-    27497
-   ],
-   "annotation": {
-    "date": "2025-01-15",
-    "note": "Short print run and sustained Fire Emblem popularity keep complete copies in the $200-300 range."
-   }
-  },
-  {
-   "id": "viewtiful-joe-2-gamecube",
-   "title": "Viewtiful Joe 2",
-   "platform": "gamecube",
-   "headline_condition": "cib",
-   "price_cents": 6249,
-   "pct_1d": 4.17,
-   "pct_7d": -2,
-   "pct_30d": null,
-   "score": -2,
-   "spark": [
-    6249,
-    6124,
-    5999,
-    6124
-   ]
-  },
-  {
-   "id": "zelda-twilight-princess-gamecube",
-   "title": "The Legend of Zelda: Twilight Princess",
-   "platform": "gamecube",
-   "headline_condition": "cib",
-   "price_cents": 23000,
-   "pct_1d": 0,
-   "pct_7d": -2.08,
-   "pct_30d": null,
-   "score": -2.08,
-   "spark": [
-    23999,
-    23999,
-    23999,
-    23500
-   ],
-   "annotation": {
-    "date": "2025-04-01",
-    "note": "GameCube prices broadly inflated through 2025; the GameCube release is the rarer of the two versions.",
-    "source_url": "https://comicbook.com/gaming/news/gamecube-games-nintendo-zelda-twilight-princess-price/"
-   }
   },
   {
    "id": "odama-gamecube",
@@ -586,8 +574,49 @@
     3101,
     3051,
     3001,
+    3001,
     3001
    ]
+  },
+  {
+   "id": "zelda-wind-waker-gamecube",
+   "title": "The Legend of Zelda: The Wind Waker",
+   "platform": "gamecube",
+   "headline_condition": "cib",
+   "price_cents": 9000,
+   "pct_1d": 0.01,
+   "pct_7d": -3.23,
+   "pct_30d": null,
+   "score": -3.23,
+   "spark": [
+    9300,
+    9375,
+    9300,
+    9150,
+    9000
+   ]
+  },
+  {
+   "id": "fire-emblem-path-of-radiance-gamecube",
+   "title": "Fire Emblem: Path of Radiance",
+   "platform": "gamecube",
+   "headline_condition": "cib",
+   "price_cents": 26999,
+   "pct_1d": 0,
+   "pct_7d": -3.56,
+   "pct_30d": null,
+   "score": -3.56,
+   "spark": [
+    27995,
+    27995,
+    27995,
+    27497,
+    26999
+   ],
+   "annotation": {
+    "date": "2025-01-15",
+    "note": "Short print run and sustained Fire Emblem popularity keep complete copies in the $200-300 range."
+   }
   }
  ]
 }
