@@ -51,6 +51,14 @@ export function UserMenu() {
             { label: 'My collection', onSelect: () => navigate('/collection') },
             'separator',
             { label: 'Sign out', onSelect: () => void account.signOut() },
+            {
+              label: 'Delete account…',
+              onSelect: () => {
+                if (window.confirm('Delete your account and everything saved with it? This cannot be undone.')) {
+                  void account.deleteAccount()
+                }
+              },
+            },
           ]}
         />
       </DropdownMenuContent>

@@ -117,3 +117,41 @@ describe('accounts', () => {
     expect(state.user).toBeNull()
   })
 })
+
+describe('account deletion', () => {
+  beforeEach(() => {
+    resetCache()
+    serveLocalData()
+    sessionStorage.setItem('retroheat-booted', '1')
+  })
+
+  it('asks first, then removes the account and signs out', async () => {
+    const { backend, state } = memoryBackend({ user: testUser, saved: ['bully-ps2'] })
+    renderShell(backend)
+    const user = userEvent.setup()
+    const confirm = vi.spyOn(window, 'confirm').mockReturnValue(true)
+
+    await user.click(await screen.findByRole('button', { name: /account menu/i }))
+    await user.click(within(await screen.findByRole('menu')).getByRole('menuitem', { name: /delete account/i }))
+
+    expect(confirm).toHaveBeenCalledOnce()
+    await waitFor(() => expect(state.deleted).toBe(true))
+    expect(state.saved.size).toBe(0)
+    expect(await screen.findByRole('button', { name: /sign in/i })).toBeDefined()
+    confirm.mockRestore()
+  })
+
+  it('does nothing when the confirmation is declined', async () => {
+    const { backend, state } = memoryBackend({ user: testUser })
+    renderShell(backend)
+    const user = userEvent.setup()
+    const confirm = vi.spyOn(window, 'confirm').mockReturnValue(false)
+
+    await user.click(await screen.findByRole('button', { name: /account menu/i }))
+    await user.click(within(await screen.findByRole('menu')).getByRole('menuitem', { name: /delete account/i }))
+
+    expect(state.deleted).toBe(false)
+    expect(state.user).toEqual(testUser)
+    confirm.mockRestore()
+  })
+})

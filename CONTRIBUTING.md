@@ -77,5 +77,6 @@ change that compiles is not a change that works.
 ## Scope
 
 Out of scope for now, and deliberately: graded copies, promo and demo discs,
-hardware, non-US regions, and user accounts or collection tracking. Plenty of
-tools already track a personal collection; none explain the market.
+hardware, and non-US regions. Accounts exist only to save games and record
+what you own; sharing collections, social features and price alerts stay out
+of scope. Plenty of tools already do those; none explain the market.

@@ -6,10 +6,16 @@ name: keepalive
 #
 # It runs in its own workflow, rather than inside `scrape`, so a third-party
 # action never shares a job with the marketplace API secrets.
+#
+# Supabase, when accounts are enabled, pauses a free project after a week
+# without traffic. The second job sends one query with the public anon key,
+# which is real database activity; row-level security answers with an empty
+# list. Twice a week, because a weekly cron is best-effort and one missed run
+# would be enough to pause the project.
 
 on:
   schedule:
-    - cron: "37 4 * * 1"
+    - cron: "37 4 * * 1,4"
   workflow_dispatch:
 
 permissions:
@@ -26,3 +32,19 @@ jobs:
       # Pinned to a commit rather than the mutable v1 tag.
       - uses: liskin/gh-workflow-keepalive@f72ff1a1336129f29bf0166c0fd0ca6cf1bcb38c # v1
         continue-on-error: true
+
+  # The values are repository variables, so a fork without accounts skips this.
+  supabase:
+    if: vars.SUPABASE_URL != ''
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
+      - name: Ping the database
+        env:
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ vars.SUPABASE_ANON_KEY }}
+        run: |
+          curl -fsS "$SUPABASE_URL/rest/v1/saved_games?select=game_id&limit=1" \
+            -H "apikey: $SUPABASE_ANON_KEY" \
+            -H "Authorization: Bearer $SUPABASE_ANON_KEY" > /dev/null
+          echo "Supabase answered; the project stays awake."
