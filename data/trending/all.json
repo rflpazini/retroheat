@@ -1,14 +1,18 @@
 {
  "board": "all",
- "as_of": "2026-09-06",
+ "as_of": "2026-09-07",
  "entries": [
   {
    "id": "conkers-bad-fur-day-n64",
    "title": "Conker's Bad Fur Day",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 55000,
-   "pct_1d": 0,
+   "price_cents": 65000,
+   "prices": {
+    "loose": 17900,
+    "cib": 65000
+   },
+   "pct_1d": 18.18,
    "pct_7d": 29.41,
    "pct_30d": null,
    "score": 29.41,
@@ -17,7 +21,32 @@
     43749,
     44999,
     50000,
+    55000,
     55000
+   ]
+  },
+  {
+   "id": "ico-ps2",
+   "title": "Ico",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 8198,
+   "prices": {
+    "loose": 1947,
+    "cib": 8198,
+    "new": 18247
+   },
+   "pct_1d": 42.67,
+   "pct_7d": 27.93,
+   "pct_30d": null,
+   "score": 27.93,
+   "spark": [
+    3322,
+    3322,
+    3322,
+    3660,
+    3997,
+    4250
    ]
   },
   {
@@ -25,8 +54,12 @@
    "title": "The Legend of Heroes: Trails in the Sky",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 3255,
-   "pct_1d": 0,
+   "price_cents": 10083,
+   "prices": {
+    "cib": 10083,
+    "new": 14999
+   },
+   "pct_1d": 209.77,
    "pct_7d": 25,
    "pct_30d": null,
    "score": 25,
@@ -35,25 +68,8 @@
     2930,
     3255,
     3255,
+    3255,
     3255
-   ]
-  },
-  {
-   "id": "ico-ps2",
-   "title": "Ico",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 5746,
-   "pct_1d": 35.2,
-   "pct_7d": 20.32,
-   "pct_30d": null,
-   "score": 20.32,
-   "spark": [
-    3322,
-    3322,
-    3322,
-    3660,
-    3997
    ]
   },
   {
@@ -62,6 +78,10 @@
    "platform": "n64",
    "headline_condition": "cib",
    "price_cents": 10000,
+   "prices": {
+    "loose": 2987,
+    "cib": 10000
+   },
    "pct_1d": 0,
    "pct_7d": 17.66,
    "pct_30d": null,
@@ -71,7 +91,55 @@
     9250,
     10000,
     10000,
+    10000,
     10000
+   ]
+  },
+  {
+   "id": "metal-gear-solid-portable-ops-psp",
+   "title": "Metal Gear Solid: Portable Ops",
+   "platform": "psp",
+   "headline_condition": "cib",
+   "price_cents": 3000,
+   "prices": {
+    "loose": 1895,
+    "cib": 3000
+   },
+   "pct_1d": 20,
+   "pct_7d": 16.48,
+   "pct_30d": null,
+   "score": 16.48,
+   "spark": [
+    2361,
+    2361,
+    2361,
+    2556,
+    2500,
+    2750
+   ]
+  },
+  {
+   "id": "bully-ps2",
+   "title": "Bully",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 5249,
+   "prices": {
+    "loose": 1776,
+    "cib": 5249,
+    "new": 22000
+   },
+   "pct_1d": 16.67,
+   "pct_7d": 14.29,
+   "pct_30d": null,
+   "score": 14.29,
+   "spark": [
+    3500,
+    3325,
+    3299,
+    3400,
+    3500,
+    4000
    ]
   },
   {
@@ -79,8 +147,12 @@
    "title": "Donkey Kong 64",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 12700,
-   "pct_1d": 1.61,
+   "price_cents": 15000,
+   "prices": {
+    "loose": 3698,
+    "cib": 15000
+   },
+   "pct_1d": 18.11,
    "pct_7d": 13.64,
    "pct_30d": null,
    "score": 13.64,
@@ -89,8 +161,38 @@
     9250,
     10999,
     11749,
+    12499,
     12499
    ]
+  },
+  {
+   "id": "persona-4-golden-vita",
+   "title": "Persona 4 Golden",
+   "platform": "vita",
+   "headline_condition": "cib",
+   "price_cents": 5248,
+   "prices": {
+    "loose": 2500,
+    "cib": 5248,
+    "new": 14498
+   },
+   "pct_1d": 31.2,
+   "pct_7d": 13.48,
+   "pct_30d": null,
+   "score": 13.48,
+   "spark": [
+    3525,
+    3525,
+    3525,
+    3525,
+    3525,
+    4000
+   ],
+   "annotation": {
+    "date": "2021-03-29",
+    "note": "The PS Vita store closure announcement made physical carts the only lasting way to own Vita games.",
+    "source_url": "https://www.retrotechlab.com/ps-vita-price-guide-2026/"
+   }
   },
   {
    "id": "ys-memories-of-celceta-vita",
@@ -98,6 +200,11 @@
    "platform": "vita",
    "headline_condition": "cib",
    "price_cents": 3949,
+   "prices": {
+    "loose": 2150,
+    "cib": 3949,
+    "new": 4500
+   },
    "pct_1d": 0,
    "pct_7d": 12.86,
    "pct_30d": null,
@@ -107,7 +214,54 @@
     3499,
     3499,
     3724,
+    3949,
     3949
+   ]
+  },
+  {
+   "id": "zelda-majoras-mask-n64",
+   "title": "The Legend of Zelda: Majora's Mask",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 29999,
+   "prices": {
+    "loose": 12450,
+    "cib": 29999
+   },
+   "pct_1d": 7.14,
+   "pct_7d": 12.25,
+   "pct_30d": null,
+   "score": 12.25,
+   "spark": [
+    24498,
+    25248,
+    25998,
+    25998,
+    25998,
+    27500
+   ]
+  },
+  {
+   "id": "phantasy-star-online-ver-2-dreamcast",
+   "title": "Phantasy Star Online Ver. 2",
+   "platform": "dreamcast",
+   "headline_condition": "loose",
+   "price_cents": 3650,
+   "prices": {
+    "loose": 3650,
+    "new": 14750
+   },
+   "pct_1d": 0,
+   "pct_7d": 10.61,
+   "pct_30d": null,
+   "score": 10.61,
+   "spark": [
+    3300,
+    3300,
+    3300,
+    3300,
+    3300,
+    3650
    ]
   },
   {
@@ -115,14 +269,19 @@
    "title": "Turok 2: Seeds of Evil",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 4175,
-   "pct_1d": -7.12,
+   "price_cents": 4499,
+   "prices": {
+    "loose": 1300,
+    "cib": 4499
+   },
+   "pct_1d": 7.76,
    "pct_7d": 10.2,
    "pct_30d": null,
    "score": 10.2,
    "spark": [
     4079,
     4287,
+    4495,
     4495,
     4495,
     4495
@@ -133,8 +292,12 @@
    "title": "Kirby 64: The Crystal Shards",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 5499,
-   "pct_1d": 0,
+   "price_cents": 21300,
+   "prices": {
+    "loose": 4900,
+    "cib": 21300
+   },
+   "pct_1d": 287.34,
    "pct_7d": 10,
    "pct_30d": null,
    "score": 10,
@@ -143,7 +306,30 @@
     5249,
     5499,
     5499,
+    5499,
     5499
+   ]
+  },
+  {
+   "id": "haunting-ground-ps2",
+   "title": "Haunting Ground",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 82500,
+   "prices": {
+    "cib": 82500
+   },
+   "pct_1d": 0,
+   "pct_7d": 8.93,
+   "pct_30d": null,
+   "score": 8.93,
+   "spark": [
+    69997,
+    69998,
+    69999,
+    69999,
+    69999,
+    76250
    ]
   },
   {
@@ -151,8 +337,11 @@
    "title": "Ar tonelico: Melody of Elemia",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 10749,
-   "pct_1d": 0,
+   "price_cents": 10000,
+   "prices": {
+    "cib": 10000
+   },
+   "pct_1d": -6.97,
    "pct_7d": 7.49,
    "pct_30d": null,
    "score": 7.49,
@@ -161,7 +350,54 @@
     10375,
     10749,
     10749,
+    10749,
     10749
+   ]
+  },
+  {
+   "id": "god-hand-ps2",
+   "title": "God Hand",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 28997,
+   "prices": {
+    "cib": 28997
+   },
+   "pct_1d": 0,
+   "pct_7d": 7.22,
+   "pct_30d": null,
+   "score": 7.22,
+   "spark": [
+    24248,
+    23874,
+    23500,
+    23874,
+    24248,
+    25998
+   ]
+  },
+  {
+   "id": "sonic-adventure-dreamcast",
+   "title": "Sonic Adventure",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 7997,
+   "prices": {
+    "loose": 4997,
+    "cib": 7997,
+    "new": 19000
+   },
+   "pct_1d": 6.51,
+   "pct_7d": 7.13,
+   "pct_30d": null,
+   "score": 7.13,
+   "spark": [
+    6999,
+    6999,
+    6999,
+    7099,
+    7199,
+    7498
    ]
   },
   {
@@ -170,6 +406,11 @@
    "platform": "ps2",
    "headline_condition": "cib",
    "price_cents": 2675,
+   "prices": {
+    "loose": 1499,
+    "cib": 2675,
+    "new": 6000
+   },
    "pct_1d": 0,
    "pct_7d": 7,
    "pct_30d": null,
@@ -179,6 +420,7 @@
     2622,
     2500,
     2588,
+    2675,
     2675
    ]
   },
@@ -187,8 +429,13 @@
    "title": "Wipeout Pure",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 1212,
-   "pct_1d": 1,
+   "price_cents": 1175,
+   "prices": {
+    "loose": 799,
+    "cib": 1175,
+    "new": 1499
+   },
+   "pct_1d": -3.05,
    "pct_7d": 6.82,
    "pct_30d": null,
    "score": 6.82,
@@ -197,115 +444,8 @@
     1100,
     1100,
     1138,
+    1175,
     1175
-   ]
-  },
-  {
-   "id": "zelda-majoras-mask-n64",
-   "title": "The Legend of Zelda: Majora's Mask",
-   "platform": "n64",
-   "headline_condition": "cib",
-   "price_cents": 27999,
-   "pct_1d": 1.81,
-   "pct_7d": 6.12,
-   "pct_30d": null,
-   "score": 6.12,
-   "spark": [
-    24498,
-    25248,
-    25998,
-    25998,
-    25998
-   ]
-  },
-  {
-   "id": "metal-gear-solid-portable-ops-psp",
-   "title": "Metal Gear Solid: Portable Ops",
-   "platform": "psp",
-   "headline_condition": "cib",
-   "price_cents": 2500,
-   "pct_1d": -9.09,
-   "pct_7d": 5.89,
-   "pct_30d": null,
-   "score": 5.89,
-   "spark": [
-    2361,
-    2361,
-    2361,
-    2556,
-    2500
-   ]
-  },
-  {
-   "id": "sonic-adventure-2-dreamcast",
-   "title": "Sonic Adventure 2",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 19799,
-   "pct_1d": 0,
-   "pct_7d": 5.59,
-   "pct_30d": null,
-   "score": 5.59,
-   "spark": [
-    18750,
-    19375,
-    19900,
-    19850,
-    19799
-   ]
-  },
-  {
-   "id": "record-of-lodoss-war-dreamcast",
-   "title": "Record of Lodoss War",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 9499,
-   "pct_1d": 0,
-   "pct_7d": 5.56,
-   "pct_30d": null,
-   "score": 5.56,
-   "spark": [
-    8999,
-    8999,
-    8999,
-    9249,
-    9499
-   ]
-  },
-  {
-   "id": "ring-of-red-ps2",
-   "title": "Ring of Red",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 5000,
-   "pct_1d": 5.26,
-   "pct_7d": 5.56,
-   "pct_30d": null,
-   "score": 5.56,
-   "spark": [
-    4500,
-    4625,
-    4750,
-    4750,
-    4750
-   ]
-  },
-  {
-   "id": "pn03-gamecube",
-   "title": "P.N.03",
-   "platform": "gamecube",
-   "headline_condition": "cib",
-   "price_cents": 14495,
-   "pct_1d": -3.49,
-   "pct_7d": 5.22,
-   "pct_30d": null,
-   "score": 5.22,
-   "spark": [
-    14244,
-    14616,
-    14988,
-    14988,
-    14988
    ]
   },
   {
@@ -313,143 +453,92 @@
    "title": "Suikoden IV",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 4200,
-   "pct_1d": 5,
-   "pct_7d": 5,
+   "price_cents": 4999,
+   "prices": {
+    "loose": 2399,
+    "cib": 4999,
+    "new": 13400
+   },
+   "pct_1d": 19.02,
+   "pct_7d": 6.25,
    "pct_30d": null,
-   "score": 5,
+   "score": 6.25,
    "spark": [
     4000,
     4125,
     4250,
     4125,
-    4200
+    4200,
+    4250
    ]
   },
   {
-   "id": "digital-devil-saga-2-ps2",
-   "title": "Shin Megami Tensei: Digital Devil Saga 2",
+   "id": "dark-cloud-2-ps2",
+   "title": "Dark Cloud 2",
    "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 5249,
-   "pct_1d": 0,
-   "pct_7d": 4.98,
+   "headline_condition": "loose",
+   "price_cents": 3945,
+   "prices": {
+    "loose": 3945,
+    "new": 14999
+   },
+   "pct_1d": 203.7,
+   "pct_7d": 3.75,
    "pct_30d": null,
-   "score": 4.98,
+   "score": 3.75,
    "spark": [
-    5000,
-    5000,
-    5000,
-    5125,
-    5249
+    1252,
+    1252,
+    1252,
+    1275,
+    1297,
+    1299
    ]
   },
   {
-   "id": "gta-vice-city-stories-psp",
-   "title": "Grand Theft Auto: Vice City Stories",
-   "platform": "psp",
-   "headline_condition": "cib",
-   "price_cents": 5148,
-   "pct_1d": -14.19,
-   "pct_7d": 4.43,
-   "pct_30d": null,
-   "score": 4.43,
-   "spark": [
-    5075,
-    5188,
-    5300,
-    5300,
-    5300
-   ]
-  },
-  {
-   "id": "siren-ps2",
-   "title": "Siren",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 12748,
-   "pct_1d": 6.23,
-   "pct_7d": 4.18,
-   "pct_30d": null,
-   "score": 4.18,
-   "spark": [
-    11997,
-    12248,
-    12499,
-    12250,
-    12499
-   ]
-  },
-  {
-   "id": "haunting-ground-ps2",
-   "title": "Haunting Ground",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 82500,
-   "pct_1d": 8.2,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    69997,
-    69998,
-    69999,
-    69999,
-    69999
-   ]
-  },
-  {
-   "id": "1080-snowboarding-n64",
-   "title": "1080° Snowboarding",
+   "id": "mario-party-3-n64",
+   "title": "Mario Party 3",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 5500,
-   "pct_1d": 10,
-   "pct_7d": 0,
+   "price_cents": 17500,
+   "prices": {
+    "loose": 5999,
+    "cib": 17500
+   },
+   "pct_1d": 483.33,
+   "pct_7d": 0.03,
    "pct_30d": null,
-   "score": 0,
+   "score": 0.03,
    "spark": [
-    5000,
-    5000,
-    5000,
-    5000,
-    5000
+    2999,
+    2999,
+    2999,
+    2999,
+    2999,
+    3000
    ]
   },
   {
-   "id": "bully-ps2",
-   "title": "Bully",
+   "id": "digital-devil-saga-ps2",
+   "title": "Shin Megami Tensei: Digital Devil Saga",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 4499,
-   "pct_1d": 12.48,
+   "price_cents": 9499,
+   "prices": {
+    "cib": 9499,
+    "new": 15000
+   },
+   "pct_1d": 72.74,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    3500,
-    3325,
-    3299,
-    3400,
-    3500
-   ]
-  },
-  {
-   "id": "daxter-psp",
-   "title": "Daxter",
-   "platform": "psp",
-   "headline_condition": "cib",
-   "price_cents": 2361,
-   "pct_1d": 6.26,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    2222,
-    2233,
-    2222,
-    2222,
-    2222
+    5499,
+    5499,
+    5499,
+    5499,
+    5499,
+    5499
    ]
   },
   {
@@ -457,12 +546,17 @@
    "title": "Dissidia 012 Final Fantasy",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 2850,
-   "pct_1d": 111.27,
+   "price_cents": 3995,
+   "prices": {
+    "loose": 1813,
+    "cib": 3995
+   },
+   "pct_1d": 40.18,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    1349,
     1349,
     1349,
     1349,
@@ -471,21 +565,51 @@
    ]
   },
   {
-   "id": "fatal-frame-ps2",
-   "title": "Fatal Frame",
+   "id": "dragon-quest-viii-ps2",
+   "title": "Dragon Quest VIII",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 15999,
-   "pct_1d": 6.66,
+   "price_cents": 5999,
+   "prices": {
+    "loose": 1999,
+    "cib": 5999,
+    "new": 15982
+   },
+   "pct_1d": 34.84,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    15999,
-    15500,
-    15999,
-    15500,
-    15999
+    4499,
+    4499,
+    4499,
+    4499,
+    4499,
+    4499
+   ]
+  },
+  {
+   "id": "freedom-wars-vita",
+   "title": "Freedom Wars",
+   "platform": "vita",
+   "headline_condition": "cib",
+   "price_cents": 2000,
+   "prices": {
+    "loose": 1299,
+    "cib": 2000,
+    "new": 2988
+   },
+   "pct_1d": 33.42,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    1500,
+    1500,
+    1500,
+    1500,
+    1500,
+    1500
    ]
   },
   {
@@ -493,12 +617,16 @@
    "title": "God Eater 2: Rage Burst",
    "platform": "vita",
    "headline_condition": "cib",
-   "price_cents": 2200,
-   "pct_1d": 10.06,
+   "price_cents": 3072,
+   "prices": {
+    "cib": 3072
+   },
+   "pct_1d": 39.64,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    1999,
     1999,
     1999,
     1999,
@@ -507,116 +635,142 @@
    ]
   },
   {
-   "id": "god-hand-ps2",
-   "title": "God Hand",
+   "id": "ogre-battle-64-n64",
+   "title": "Ogre Battle 64: Person of Lordly Caliber",
+   "platform": "n64",
+   "headline_condition": "loose",
+   "price_cents": 24249,
+   "prices": {
+    "loose": 24249
+   },
+   "pct_1d": 870.35,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    2499,
+    2499,
+    2499,
+    2499,
+    2499,
+    2499
+   ]
+  },
+  {
+   "id": "rogue-galaxy-ps2",
+   "title": "Rogue Galaxy",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 28997,
-   "pct_1d": 11.54,
+   "price_cents": 4000,
+   "prices": {
+    "loose": 2050,
+    "cib": 4000,
+    "new": 7499
+   },
+   "pct_1d": 172.29,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    24248,
-    23874,
-    23500,
-    23874,
-    24248
+    1499,
+    1499,
+    1499,
+    1499,
+    1499,
+    1499
    ]
   },
   {
-   "id": "harvest-moon-magical-melody-gamecube",
-   "title": "Harvest Moon: Magical Melody",
-   "platform": "gamecube",
+   "id": "super-smash-bros-n64",
+   "title": "Super Smash Bros.",
+   "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 4249,
-   "pct_1d": 6.25,
+   "price_cents": 27500,
+   "prices": {
+    "loose": 6000,
+    "cib": 27500,
+    "new": 575000
+   },
+   "pct_1d": 59.43,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    3999,
-    3999,
-    3999,
-    3999,
-    3999
+    17249,
+    17249,
+    17249,
+    17249,
+    17249,
+    17249
    ]
   },
   {
-   "id": "luigis-mansion-gamecube",
-   "title": "Luigi's Mansion",
-   "platform": "gamecube",
-   "headline_condition": "cib",
-   "price_cents": 7450,
-   "pct_1d": 6.43,
+   "id": "way-of-the-samurai-2-ps2",
+   "title": "Way of the Samurai 2",
+   "platform": "ps2",
+   "headline_condition": "loose",
+   "price_cents": 4125,
+   "prices": {
+    "loose": 4125
+   },
+   "pct_1d": 111.76,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    7000,
-    7000,
-    7000,
-    7000,
-    7000
+    1948,
+    1948,
+    1948,
+    1948,
+    1948,
+    1948
    ]
   },
   {
-   "id": "persona-4-golden-vita",
-   "title": "Persona 4 Golden",
+   "id": "demon-gaze-vita",
+   "title": "Demon Gaze",
    "platform": "vita",
    "headline_condition": "cib",
-   "price_cents": 4000,
-   "pct_1d": 14.29,
-   "pct_7d": 0,
+   "price_cents": 2795,
+   "prices": {
+    "loose": 1999,
+    "cib": 2795,
+    "new": 5950
+   },
+   "pct_1d": 31.53,
+   "pct_7d": -3.41,
    "pct_30d": null,
-   "score": 0,
+   "score": -3.41,
    "spark": [
-    3525,
-    3525,
-    3525,
-    3525,
-    3525
-   ],
-   "annotation": {
-    "date": "2021-03-29",
-    "note": "The PS Vita store closure announcement made physical carts the only lasting way to own Vita games.",
-    "source_url": "https://www.retrotechlab.com/ps-vita-price-guide-2026/"
-   }
-  },
-  {
-   "id": "soulcalibur-2-gamecube",
-   "title": "SoulCalibur II",
-   "platform": "gamecube",
-   "headline_condition": "cib",
-   "price_cents": 3800,
-   "pct_1d": 8.57,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    3650,
-    3650,
-    3650,
-    3650,
-    3650
+    2200,
+    2200,
+    2200,
+    2163,
+    2125,
+    2125
    ]
   },
   {
-   "id": "skies-of-arcadia-legends-gamecube",
-   "title": "Skies of Arcadia Legends",
-   "platform": "gamecube",
+   "id": "wave-race-64-n64",
+   "title": "Wave Race 64",
+   "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 21999,
-   "pct_1d": 6.21,
-   "pct_7d": -0,
+   "price_cents": 10500,
+   "prices": {
+    "loose": 1700,
+    "cib": 10500
+   },
+   "pct_1d": 75.09,
+   "pct_7d": -3.48,
    "pct_30d": null,
-   "score": -0,
+   "score": -3.48,
    "spark": [
-    22000,
-    22000,
-    21999,
-    21999,
-    21999
+    7247,
+    7121,
+    7247,
+    7121,
+    6995,
+    6995
    ]
   },
   {
@@ -624,8 +778,13 @@
    "title": "Space Channel 5",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 3499,
-   "pct_1d": 7.69,
+   "price_cents": 4800,
+   "prices": {
+    "loose": 2479,
+    "cib": 4800,
+    "new": 9750
+   },
+   "pct_1d": 37.18,
    "pct_7d": -6.67,
    "pct_30d": null,
    "score": -6.67,
@@ -634,61 +793,53 @@
     3624,
     3499,
     3374,
+    3499,
     3499
    ]
   },
   {
-   "id": "ys-seven-psp",
-   "title": "Ys Seven",
-   "platform": "psp",
+   "id": "star-fox-64-n64",
+   "title": "Star Fox 64",
+   "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 9000,
-   "pct_1d": 12.5,
-   "pct_7d": -10,
+   "price_cents": 24994,
+   "prices": {
+    "loose": 3499,
+    "cib": 24994
+   },
+   "pct_1d": 44.89,
+   "pct_7d": -7.69,
    "pct_30d": null,
-   "score": -10,
+   "score": -7.69,
    "spark": [
-    10000,
-    10000,
-    10000,
-    9500,
-    9000
+    19500,
+    18750,
+    18750,
+    18375,
+    18000,
+    18000
    ]
   },
   {
-   "id": "senran-kagura-shinovi-versus-vita",
-   "title": "Senran Kagura: Shinovi Versus",
-   "platform": "vita",
+   "id": "shenmue-2-dreamcast",
+   "title": "Shenmue II",
+   "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 6599,
-   "pct_1d": 30.67,
-   "pct_7d": -12.92,
+   "price_cents": 12199,
+   "prices": {
+    "cib": 12199
+   },
+   "pct_1d": 143.98,
+   "pct_7d": -16,
    "pct_30d": null,
-   "score": -12.92,
+   "score": -16,
    "spark": [
-    5799,
-    5425,
-    5050,
-    5050,
-    5050
-   ]
-  },
-  {
-   "id": "persona-3-fes-ps2",
-   "title": "Persona 3 FES",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 12500,
-   "pct_1d": 21.95,
-   "pct_7d": -18,
-   "pct_30d": null,
-   "score": -18,
-   "spark": [
-    12500,
-    11375,
-    10250,
-    10250,
-    10250
+    6250,
+    5875,
+    5500,
+    5375,
+    5250,
+    5250
    ]
   },
   {
@@ -696,14 +847,19 @@
    "title": "Persona 4",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 5500,
-   "pct_1d": 15.79,
+   "price_cents": 7999,
+   "prices": {
+    "cib": 7999,
+    "new": 8999
+   },
+   "pct_1d": 45.44,
    "pct_7d": -31.16,
    "pct_30d": null,
    "score": -31.16,
    "spark": [
     6900,
     5825,
+    4750,
     4750,
     4750,
     4750

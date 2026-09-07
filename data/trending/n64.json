@@ -1,14 +1,18 @@
 {
  "board": "n64",
- "as_of": "2026-09-06",
+ "as_of": "2026-09-07",
  "entries": [
   {
    "id": "conkers-bad-fur-day-n64",
    "title": "Conker's Bad Fur Day",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 55000,
-   "pct_1d": 0,
+   "price_cents": 65000,
+   "prices": {
+    "loose": 17900,
+    "cib": 65000
+   },
+   "pct_1d": 18.18,
    "pct_7d": 29.41,
    "pct_30d": null,
    "score": 29.41,
@@ -17,6 +21,7 @@
     43749,
     44999,
     50000,
+    55000,
     55000
    ]
   },
@@ -26,6 +31,10 @@
    "platform": "n64",
    "headline_condition": "cib",
    "price_cents": 10000,
+   "prices": {
+    "loose": 2987,
+    "cib": 10000
+   },
    "pct_1d": 0,
    "pct_7d": 17.66,
    "pct_30d": null,
@@ -33,6 +42,7 @@
    "spark": [
     8499,
     9250,
+    10000,
     10000,
     10000,
     10000
@@ -43,8 +53,12 @@
    "title": "Donkey Kong 64",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 12700,
-   "pct_1d": 1.61,
+   "price_cents": 15000,
+   "prices": {
+    "loose": 3698,
+    "cib": 15000
+   },
+   "pct_1d": 18.11,
    "pct_7d": 13.64,
    "pct_30d": null,
    "score": 13.64,
@@ -53,7 +67,31 @@
     9250,
     10999,
     11749,
+    12499,
     12499
+   ]
+  },
+  {
+   "id": "zelda-majoras-mask-n64",
+   "title": "The Legend of Zelda: Majora's Mask",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 29999,
+   "prices": {
+    "loose": 12450,
+    "cib": 29999
+   },
+   "pct_1d": 7.14,
+   "pct_7d": 12.25,
+   "pct_30d": null,
+   "score": 12.25,
+   "spark": [
+    24498,
+    25248,
+    25998,
+    25998,
+    25998,
+    27500
    ]
   },
   {
@@ -61,14 +99,19 @@
    "title": "Turok 2: Seeds of Evil",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 4175,
-   "pct_1d": -7.12,
+   "price_cents": 4499,
+   "prices": {
+    "loose": 1300,
+    "cib": 4499
+   },
+   "pct_1d": 7.76,
    "pct_7d": 10.2,
    "pct_30d": null,
    "score": 10.2,
    "spark": [
     4079,
     4287,
+    4495,
     4495,
     4495,
     4495
@@ -79,8 +122,12 @@
    "title": "Kirby 64: The Crystal Shards",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 5499,
-   "pct_1d": 0,
+   "price_cents": 21300,
+   "prices": {
+    "loose": 4900,
+    "cib": 21300
+   },
+   "pct_1d": 287.34,
    "pct_7d": 10,
    "pct_30d": null,
    "score": 10,
@@ -89,25 +136,8 @@
     5249,
     5499,
     5499,
+    5499,
     5499
-   ]
-  },
-  {
-   "id": "zelda-majoras-mask-n64",
-   "title": "The Legend of Zelda: Majora's Mask",
-   "platform": "n64",
-   "headline_condition": "cib",
-   "price_cents": 27999,
-   "pct_1d": 1.81,
-   "pct_7d": 6.12,
-   "pct_30d": null,
-   "score": 6.12,
-   "spark": [
-    24498,
-    25248,
-    25998,
-    25998,
-    25998
    ]
   },
   {
@@ -116,6 +146,10 @@
    "platform": "n64",
    "headline_condition": "cib",
    "price_cents": 6250,
+   "prices": {
+    "loose": 1699,
+    "cib": 6250
+   },
    "pct_1d": 0,
    "pct_7d": 4.17,
    "pct_30d": null,
@@ -123,6 +157,7 @@
    "spark": [
     6000,
     6125,
+    6250,
     6250,
     6250,
     6250
@@ -133,8 +168,12 @@
    "title": "Mario Kart 64",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 13964,
-   "pct_1d": 3.58,
+   "price_cents": 14000,
+   "prices": {
+    "loose": 4600,
+    "cib": 14000
+   },
+   "pct_1d": 0.26,
    "pct_7d": 4.11,
    "pct_30d": null,
    "score": 4.11,
@@ -143,7 +182,31 @@
     13216,
     12950,
     13216,
+    13482,
     13482
+   ]
+  },
+  {
+   "id": "pokemon-stadium-n64",
+   "title": "Pokémon Stadium",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 30000,
+   "prices": {
+    "loose": 3295,
+    "cib": 30000
+   },
+   "pct_1d": 1.69,
+   "pct_7d": 3.64,
+   "pct_30d": null,
+   "score": 3.64,
+   "spark": [
+    27499,
+    27500,
+    27500,
+    27500,
+    27500,
+    28500
    ]
   },
   {
@@ -152,6 +215,9 @@
    "platform": "n64",
    "headline_condition": "loose",
    "price_cents": 8700,
+   "prices": {
+    "loose": 8700
+   },
    "pct_1d": 0,
    "pct_7d": 2.35,
    "pct_30d": null,
@@ -161,7 +227,54 @@
     8600,
     8700,
     8700,
+    8700,
     8700
+   ]
+  },
+  {
+   "id": "mario-party-2-n64",
+   "title": "Mario Party 2",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 13997,
+   "prices": {
+    "loose": 5530,
+    "cib": 13997
+   },
+   "pct_1d": 14.74,
+   "pct_7d": 1.23,
+   "pct_30d": null,
+   "score": 1.23,
+   "spark": [
+    12199,
+    12274,
+    12199,
+    12274,
+    12199,
+    12349
+   ]
+  },
+  {
+   "id": "mario-party-3-n64",
+   "title": "Mario Party 3",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 17500,
+   "prices": {
+    "loose": 5999,
+    "cib": 17500
+   },
+   "pct_1d": 483.33,
+   "pct_7d": 0.03,
+   "pct_30d": null,
+   "score": 0.03,
+   "spark": [
+    2999,
+    2999,
+    2999,
+    2999,
+    2999,
+    3000
    ]
   },
   {
@@ -169,8 +282,12 @@
    "title": "Banjo-Tooie",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 13997,
-   "pct_1d": 0,
+   "price_cents": 13999,
+   "prices": {
+    "loose": 3799,
+    "cib": 13999
+   },
+   "pct_1d": 0.01,
    "pct_7d": 0.01,
    "pct_30d": null,
    "score": 0.01,
@@ -179,25 +296,8 @@
     13995,
     13995,
     13996,
+    13997,
     13997
-   ]
-  },
-  {
-   "id": "pokemon-stadium-n64",
-   "title": "Pokémon Stadium",
-   "platform": "n64",
-   "headline_condition": "cib",
-   "price_cents": 29500,
-   "pct_1d": 3.51,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    27499,
-    27500,
-    27500,
-    27500,
-    27500
    ]
   },
   {
@@ -206,12 +306,17 @@
    "platform": "n64",
    "headline_condition": "cib",
    "price_cents": 100000,
+   "prices": {
+    "loose": 29900,
+    "cib": 100000
+   },
    "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
     99999,
+    100000,
     100000,
     100000,
     100000,
@@ -223,12 +328,17 @@
    "title": "1080° Snowboarding",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 5500,
-   "pct_1d": 10,
+   "price_cents": 6494,
+   "prices": {
+    "loose": 1552,
+    "cib": 6494
+   },
+   "pct_1d": 18.07,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    5000,
     5000,
     5000,
     5000,
@@ -241,14 +351,19 @@
    "title": "Banjo-Kazooie",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 12749,
-   "pct_1d": 2,
+   "price_cents": 14999,
+   "prices": {
+    "loose": 3899,
+    "cib": 14999
+   },
+   "pct_1d": 17.65,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
     12749,
     12874,
+    12749,
     12749,
     12749,
     12749
@@ -259,12 +374,17 @@
    "title": "Blast Corps",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 6995,
-   "pct_1d": 0,
+   "price_cents": 6999,
+   "prices": {
+    "loose": 2500,
+    "cib": 6999
+   },
+   "pct_1d": 0.06,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    6995,
     6995,
     6995,
     6995,
@@ -273,34 +393,21 @@
    ]
   },
   {
-   "id": "body-harvest-n64",
-   "title": "Body Harvest",
-   "platform": "n64",
-   "headline_condition": "loose",
-   "price_cents": 3998,
-   "pct_1d": 0.08,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    3799,
-    3799,
-    3799,
-    3799,
-    3799
-   ]
-  },
-  {
    "id": "castlevania-legacy-of-darkness-n64",
    "title": "Castlevania: Legacy of Darkness",
    "platform": "n64",
    "headline_condition": "cib",
    "price_cents": 42499,
+   "prices": {
+    "loose": 18999,
+    "cib": 42499
+   },
    "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    42499,
     42499,
     42499,
     42499,
@@ -314,11 +421,15 @@
    "platform": "n64",
    "headline_condition": "loose",
    "price_cents": 5950,
+   "prices": {
+    "loose": 5950
+   },
    "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    5950,
     5950,
     5950,
     5950,
@@ -331,12 +442,17 @@
    "title": "GoldenEye 007",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 9999,
-   "pct_1d": 0,
+   "price_cents": 12000,
+   "prices": {
+    "loose": 3495,
+    "cib": 12000
+   },
+   "pct_1d": 20.01,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    9999,
     9999,
     9999,
     9999,
@@ -349,12 +465,17 @@
    "title": "Harvest Moon 64",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 25000,
-   "pct_1d": 0,
+   "price_cents": 27450,
+   "prices": {
+    "loose": 8997,
+    "cib": 27450
+   },
+   "pct_1d": 9.8,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    25000,
     25000,
     25000,
     25000,
@@ -367,12 +488,17 @@
    "title": "Hybrid Heaven",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 20899,
-   "pct_1d": 0,
+   "price_cents": 22450,
+   "prices": {
+    "loose": 3200,
+    "cib": 22450
+   },
+   "pct_1d": 7.42,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    20899,
     20899,
     20899,
     20899,
@@ -381,70 +507,20 @@
    ]
   },
   {
-   "id": "mario-party-2-n64",
-   "title": "Mario Party 2",
-   "platform": "n64",
-   "headline_condition": "cib",
-   "price_cents": 12199,
-   "pct_1d": -1.21,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    12199,
-    12274,
-    12199,
-    12274,
-    12199
-   ]
-  },
-  {
-   "id": "mario-party-3-n64",
-   "title": "Mario Party 3",
-   "platform": "n64",
-   "headline_condition": "cib",
-   "price_cents": 3000,
-   "pct_1d": 0,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    2999,
-    2999,
-    2999,
-    2999,
-    2999
-   ]
-  },
-  {
-   "id": "mischief-makers-n64",
-   "title": "Mischief Makers",
-   "platform": "n64",
-   "headline_condition": "cib",
-   "price_cents": 49999,
-   "pct_1d": 0,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    49999,
-    49999,
-    49999,
-    49999,
-    49999
-   ]
-  },
-  {
    "id": "mystical-ninja-starring-goemon-n64",
    "title": "Mystical Ninja Starring Goemon",
    "platform": "n64",
    "headline_condition": "loose",
-   "price_cents": 10999,
-   "pct_1d": 0,
+   "price_cents": 12499,
+   "prices": {
+    "loose": 12499
+   },
+   "pct_1d": 13.64,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    10999,
     10999,
     10999,
     10999,
@@ -456,18 +532,115 @@
    "id": "ogre-battle-64-n64",
    "title": "Ogre Battle 64: Person of Lordly Caliber",
    "platform": "n64",
-   "headline_condition": "cib",
-   "price_cents": 3362,
+   "headline_condition": "loose",
+   "price_cents": 24249,
+   "prices": {
+    "loose": 24249
+   },
+   "pct_1d": 870.35,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    2499,
+    2499,
+    2499,
+    2499,
+    2499,
+    2499
+   ]
+  },
+  {
+   "id": "pokemon-puzzle-league-n64",
+   "title": "Pokémon Puzzle League",
+   "platform": "n64",
+   "headline_condition": "loose",
+   "price_cents": 3549,
+   "prices": {
+    "loose": 3549,
+    "new": 54450
+   },
    "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    3362,
-    3362,
-    3362,
-    3362,
-    3362
+    3549,
+    3549,
+    3549,
+    3549,
+    3549,
+    3549
+   ]
+  },
+  {
+   "id": "pokemon-snap-n64",
+   "title": "Pokémon Snap",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 11499,
+   "prices": {
+    "loose": 2167,
+    "cib": 11499
+   },
+   "pct_1d": 9.51,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    11250,
+    11125,
+    11250,
+    11250,
+    11250,
+    11250
+   ]
+  },
+  {
+   "id": "super-mario-64-n64",
+   "title": "Super Mario 64",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 15981,
+   "prices": {
+    "loose": 4995,
+    "cib": 15981
+   },
+   "pct_1d": 15,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    14000,
+    14000,
+    14000,
+    14000,
+    14000,
+    14000
+   ]
+  },
+  {
+   "id": "super-smash-bros-n64",
+   "title": "Super Smash Bros.",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 27500,
+   "prices": {
+    "loose": 6000,
+    "cib": 27500,
+    "new": 575000
+   },
+   "pct_1d": 59.43,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    17249,
+    17249,
+    17249,
+    17249,
+    17249,
+    17249
    ]
   },
   {
@@ -475,8 +648,12 @@
    "title": "The Legend of Zelda: Ocarina of Time",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 17750,
-   "pct_1d": 1.43,
+   "price_cents": 18000,
+   "prices": {
+    "loose": 5040,
+    "cib": 18000
+   },
+   "pct_1d": 1.41,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
@@ -485,43 +662,124 @@
     17875,
     17750,
     17750,
+    17750,
     17750
    ]
   },
   {
-   "id": "doom-64-n64",
-   "title": "Doom 64",
+   "id": "paper-mario-n64",
+   "title": "Paper Mario",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 14995,
-   "pct_1d": 0,
-   "pct_7d": -0.01,
+   "price_cents": 29450,
+   "prices": {
+    "loose": 10999,
+    "cib": 29450,
+    "new": 147500
+   },
+   "pct_1d": 7.09,
+   "pct_7d": -2.49,
    "pct_30d": null,
-   "score": -0.01,
+   "score": -2.49,
    "spark": [
-    14997,
-    14996,
-    14995,
-    14995,
-    14995
+    28200,
+    28200,
+    28200,
+    27850,
+    27499,
+    27499
    ]
   },
   {
-   "id": "bomberman-64-second-attack-n64",
-   "title": "Bomberman 64: The Second Attack",
+   "id": "wave-race-64-n64",
+   "title": "Wave Race 64",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 10500,
+   "prices": {
+    "loose": 1700,
+    "cib": 10500
+   },
+   "pct_1d": 75.09,
+   "pct_7d": -3.48,
+   "pct_30d": null,
+   "score": -3.48,
+   "spark": [
+    7247,
+    7121,
+    7247,
+    7121,
+    6995,
+    6995
+   ]
+  },
+  {
+   "id": "resident-evil-2-n64",
+   "title": "Resident Evil 2",
    "platform": "n64",
    "headline_condition": "loose",
-   "price_cents": 40000,
-   "pct_1d": 0,
-   "pct_7d": -3.61,
+   "price_cents": 8199,
+   "prices": {
+    "loose": 8199
+   },
+   "pct_1d": 4.49,
+   "pct_7d": -3.54,
    "pct_30d": null,
-   "score": -3.61,
+   "score": -3.54,
    "spark": [
-    41500,
-    40750,
-    40000,
-    40000,
-    40000
+    8500,
+    8500,
+    8500,
+    8425,
+    8350,
+    8199
+   ]
+  },
+  {
+   "id": "perfect-dark-n64",
+   "title": "Perfect Dark",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 8250,
+   "prices": {
+    "loose": 2995,
+    "cib": 8250,
+    "new": 15995
+   },
+   "pct_1d": 3.14,
+   "pct_7d": -5.88,
+   "pct_30d": null,
+   "score": -5.88,
+   "spark": [
+    8499,
+    8249,
+    7999,
+    7999,
+    7999,
+    7999
+   ]
+  },
+  {
+   "id": "star-fox-64-n64",
+   "title": "Star Fox 64",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 24994,
+   "prices": {
+    "loose": 3499,
+    "cib": 24994
+   },
+   "pct_1d": 44.89,
+   "pct_7d": -7.69,
+   "pct_30d": null,
+   "score": -7.69,
+   "spark": [
+    19500,
+    18750,
+    18750,
+    18375,
+    18000,
+    18000
    ]
   },
   {
@@ -529,14 +787,19 @@
    "title": "Excitebike 64",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 5399,
-   "pct_1d": 0,
+   "price_cents": 5999,
+   "prices": {
+    "loose": 1999,
+    "cib": 5999
+   },
+   "pct_1d": 11.11,
    "pct_7d": -8.48,
    "pct_30d": null,
    "score": -8.48,
    "spark": [
     5899,
     5649,
+    5399,
     5399,
     5399,
     5399

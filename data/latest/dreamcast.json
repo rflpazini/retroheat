@@ -1,6 +1,6 @@
 {
  "platform": "dreamcast",
- "as_of": "2026-09-06",
+ "as_of": "2026-09-07",
  "source": "ebay-browse",
  "price_kind": "asking",
  "games": [
@@ -13,6 +13,8 @@
     "cib": {
      "median_cents": 19999,
      "mode_cents": 25000,
+     "q1_cents": 17700,
+     "q3_cents": 25000,
      "n": 25
     }
    },
@@ -25,11 +27,12 @@
      19906,
      19937,
      19968,
+     19999,
      19999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "marvel-vs-capcom-2-dreamcast",
@@ -38,21 +41,26 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 9999,
+     "median_cents": 10000,
      "mode_cents": 10000,
-     "n": 13
+     "q1_cents": 7999,
+     "q3_cents": 14000,
+     "n": 10
     },
     "cib": {
-     "median_cents": 15574,
+     "median_cents": 17999,
      "mode_cents": 18000,
-     "n": 46
+     "q1_cents": 13744,
+     "q3_cents": 21250,
+     "n": 33
     }
    },
-   "pct_1d": 3.83,
+   "pct_1d": 15.57,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     9999,
      9999,
      9999,
      9999,
@@ -64,11 +72,12 @@
      14800,
      14999,
      14999,
+     14999,
      14999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "bangai-o-dreamcast",
@@ -79,16 +88,14 @@
     "loose": {
      "median_cents": 7673,
      "mode_cents": 7500,
+     "q1_cents": 7499,
+     "q3_cents": 7995,
      "n": 6
     },
     "cib": {
      "median_cents": 16260,
-     "mode_cents": 16500,
-     "n": 4
-    },
-    "new": {
-     "median_cents": 23498,
-     "mode_cents": 23000,
+     "q1_cents": 12498,
+     "q3_cents": 16904,
      "n": 4
     }
    },
@@ -101,9 +108,11 @@
      7673,
      7673,
      7673,
+     7673,
      7673
     ],
     "cib": [
+     16260,
      16260,
      16260,
      16260,
@@ -119,7 +128,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "shenmue-dreamcast",
@@ -128,22 +137,27 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1500,
-     "mode_cents": 1000,
-     "n": 25
+     "median_cents": 4000,
+     "mode_cents": 4000,
+     "q1_cents": 3650,
+     "q3_cents": 4699,
+     "n": 13
     },
     "cib": {
-     "median_cents": 5000,
+     "median_cents": 5688,
      "mode_cents": 5000,
-     "n": 74
+     "q1_cents": 4999,
+     "q3_cents": 7000,
+     "n": 65
     },
     "new": {
-     "median_cents": 19000,
-     "mode_cents": 18000,
-     "n": 6
+     "median_cents": 19999,
+     "q1_cents": 14500,
+     "q3_cents": 23750,
+     "n": 5
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 13.76,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -152,9 +166,11 @@
      1271,
      1295,
      1347,
+     1398,
      1398
     ],
     "cib": [
+     5000,
      5000,
      5000,
      5000,
@@ -166,30 +182,27 @@
      19999,
      19999,
      19999,
+     19999,
      19999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "shenmue-2-dreamcast",
    "title": "Shenmue II",
-   "region": "NTSC-U",
+   "region": "PAL",
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 5000,
-     "mode_cents": 5000,
-     "n": 17
-    },
-    "new": {
-     "median_cents": 52500,
-     "mode_cents": 70000,
-     "n": 5
+     "median_cents": 12199,
+     "q1_cents": 8998,
+     "q3_cents": 13603,
+     "n": 6
     }
    },
-   "pct_1d": -4.76,
+   "pct_1d": 143.98,
    "pct_7d": -16,
    "pct_30d": null,
    "sparks": {
@@ -198,6 +211,7 @@
      5875,
      5500,
      5375,
+     5250,
      5250
     ],
     "new": [
@@ -209,7 +223,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "grandia-2-dreamcast",
@@ -220,20 +234,19 @@
     "loose": {
      "median_cents": 4200,
      "mode_cents": 5000,
-     "n": 13
+     "q1_cents": 3899,
+     "q3_cents": 4999,
+     "n": 15
     },
     "cib": {
-     "median_cents": 7124,
+     "median_cents": 7900,
      "mode_cents": 6500,
-     "n": 39
-    },
-    "new": {
-     "median_cents": 16799,
-     "mode_cents": 6100,
-     "n": 6
+     "q1_cents": 6999,
+     "q3_cents": 9423,
+     "n": 29
     }
    },
-   "pct_1d": 1.77,
+   "pct_1d": 10.89,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -242,9 +255,11 @@
      4200,
      4200,
      4200,
+     4200,
      4200
     ],
     "cib": [
+     7000,
      7000,
      7000,
      7000,
@@ -260,7 +275,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "record-of-lodoss-war-dreamcast",
@@ -270,18 +285,15 @@
    "prices": {
     "loose": {
      "median_cents": 5299,
-     "mode_cents": 5300,
+     "q1_cents": 4495,
+     "q3_cents": 5799,
      "n": 7
     },
     "cib": {
      "median_cents": 9499,
-     "mode_cents": 9000,
+     "q1_cents": 8600,
+     "q3_cents": 14995,
      "n": 6
-    },
-    "new": {
-     "median_cents": 16999,
-     "mode_cents": 17000,
-     "n": 5
     }
    },
    "pct_1d": 0,
@@ -293,13 +305,15 @@
      5399,
      5399,
      5399,
-     5399
+     5399,
+     5299
     ],
     "cib": [
      8999,
      8999,
      8999,
      9249,
+     9499,
      9499
     ],
     "new": [
@@ -311,7 +325,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "phantasy-star-online-ver-2-dreamcast",
@@ -322,16 +336,19 @@
     "loose": {
      "median_cents": 3650,
      "mode_cents": 3300,
+     "q1_cents": 3300,
+     "q3_cents": 4249,
      "n": 4
     },
     "new": {
-     "median_cents": 19899,
-     "mode_cents": 20000,
-     "n": 9
+     "median_cents": 14750,
+     "q1_cents": 9200,
+     "q3_cents": 22500,
+     "n": 4
     }
    },
    "pct_1d": 0,
-   "pct_7d": 0,
+   "pct_7d": 10.61,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -339,18 +356,20 @@
      3300,
      3300,
      3300,
-     3300
+     3300,
+     3650
     ],
     "new": [
      19949,
      19949,
      19949,
      19949,
-     19949
+     19949,
+     19899
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "sonic-adventure-dreamcast",
@@ -359,26 +378,32 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 4898,
+     "median_cents": 4997,
      "mode_cents": 5000,
-     "n": 34
+     "q1_cents": 4350,
+     "q3_cents": 5500,
+     "n": 32
     },
     "cib": {
-     "median_cents": 7508,
+     "median_cents": 7997,
      "mode_cents": 8000,
-     "n": 38
+     "q1_cents": 6999,
+     "q3_cents": 8795,
+     "n": 26
     },
     "new": {
-     "median_cents": 17750,
-     "mode_cents": 17800,
-     "n": 11
+     "median_cents": 19000,
+     "q1_cents": 15750,
+     "q3_cents": 22849,
+     "n": 9
     }
    },
-   "pct_1d": 0.13,
-   "pct_7d": 2.86,
+   "pct_1d": 6.51,
+   "pct_7d": 7.13,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     4995,
      4995,
      4995,
      4995,
@@ -390,9 +415,11 @@
      6999,
      6999,
      7099,
-     7199
+     7199,
+     7498
     ],
     "new": [
+     17750,
      17750,
      17750,
      17750,
@@ -401,7 +428,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "sonic-adventure-2-dreamcast",
@@ -410,18 +437,21 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 9700,
-     "mode_cents": 1900,
-     "n": 27
+     "median_cents": 11999,
+     "mode_cents": 10000,
+     "q1_cents": 9750,
+     "q3_cents": 16074,
+     "n": 17
     },
     "cib": {
-     "median_cents": 19799,
-     "mode_cents": 5000,
-     "n": 29
+     "median_cents": 23250,
+     "q1_cents": 18500,
+     "q3_cents": 26750,
+     "n": 17
     }
    },
-   "pct_1d": 0,
-   "pct_7d": 5.59,
+   "pct_1d": 17.43,
+   "pct_7d": 6.13,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -429,18 +459,20 @@
      9175,
      8850,
      9175,
-     9500
+     9500,
+     9700
     ],
     "cib": [
      18750,
      19375,
      19900,
      19850,
-     19799
+     19799,
+     19900
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "jet-grind-radio-dreamcast",
@@ -451,20 +483,25 @@
     "loose": {
      "median_cents": 5499,
      "mode_cents": 5000,
+     "q1_cents": 5000,
+     "q3_cents": 5998,
      "n": 13
     },
     "cib": {
-     "median_cents": 9999,
+     "median_cents": 10599,
      "mode_cents": 10000,
-     "n": 12
+     "q1_cents": 9900,
+     "q3_cents": 13999,
+     "n": 11
     },
     "new": {
-     "median_cents": 23110,
-     "mode_cents": 24000,
-     "n": 8
+     "median_cents": 21110,
+     "q1_cents": 14499,
+     "q3_cents": 23999,
+     "n": 6
     }
    },
-   "pct_1d": -12.29,
+   "pct_1d": 6,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -473,11 +510,13 @@
      5991,
      5991,
      5946,
-     5900
+     5900,
+     5499
     ],
     "cib": [
      9999,
      9998,
+     9999,
      9999,
      9999,
      9999
@@ -487,11 +526,12 @@
      23110,
      23110,
      23110,
+     23110,
      23110
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "crazy-taxi-dreamcast",
@@ -502,20 +542,26 @@
     "loose": {
      "median_cents": 2000,
      "mode_cents": 2000,
+     "q1_cents": 1995,
+     "q3_cents": 2497,
      "n": 26
     },
     "cib": {
-     "median_cents": 4150,
+     "median_cents": 4397,
      "mode_cents": 4000,
-     "n": 32
+     "q1_cents": 3995,
+     "q3_cents": 4995,
+     "n": 30
     },
     "new": {
      "median_cents": 12494,
      "mode_cents": 10000,
+     "q1_cents": 9995,
+     "q3_cents": 18900,
      "n": 14
     }
    },
-   "pct_1d": -5.62,
+   "pct_1d": 5.95,
    "pct_7d": -2.27,
    "pct_30d": null,
    "sparks": {
@@ -524,11 +570,13 @@
      1999,
      1999,
      2000,
+     2000,
      2000
     ],
     "cib": [
      4499,
      4374,
+     4397,
      4397,
      4397,
      4397
@@ -538,11 +586,12 @@
      12000,
      12000,
      12000,
-     12000
+     12000,
+     12494
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "power-stone-dreamcast",
@@ -553,26 +602,26 @@
     "loose": {
      "median_cents": 5250,
      "mode_cents": 5000,
+     "q1_cents": 4549,
+     "q3_cents": 7000,
      "n": 16
     },
     "cib": {
-     "median_cents": 9795,
+     "median_cents": 9999,
      "mode_cents": 10000,
-     "n": 17
-    },
-    "new": {
-     "median_cents": 23999,
-     "mode_cents": 18000,
-     "n": 4
+     "q1_cents": 9000,
+     "q3_cents": 11999,
+     "n": 15
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 2.08,
    "pct_7d": -0.03,
    "pct_30d": null,
    "sparks": {
     "loose": [
      5499,
      5550,
+     5499,
      5499,
      5499,
      5499
@@ -582,6 +631,7 @@
      9900,
      9900,
      9899,
+     9897,
      9897
     ],
     "new": [
@@ -593,7 +643,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "power-stone-2-dreamcast",
@@ -602,21 +652,26 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 8000,
+     "median_cents": 8700,
      "mode_cents": 8000,
-     "n": 9
+     "q1_cents": 8000,
+     "q3_cents": 10000,
+     "n": 8
     },
     "cib": {
-     "median_cents": 17394,
+     "median_cents": 17488,
      "mode_cents": 18000,
-     "n": 14
+     "q1_cents": 16000,
+     "q3_cents": 18499,
+     "n": 11
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 0.54,
    "pct_7d": 0.55,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     8000,
      8000,
      8000,
      8000,
@@ -628,11 +683,12 @@
      17299,
      17299,
      17347,
+     17394,
      17394
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "project-justice-dreamcast",
@@ -642,20 +698,24 @@
    "prices": {
     "loose": {
      "median_cents": 8498,
-     "mode_cents": 8000,
+     "q1_cents": 5250,
+     "q3_cents": 11797,
      "n": 4
     },
     "cib": {
-     "median_cents": 20500,
+     "median_cents": 22819,
      "mode_cents": 20000,
-     "n": 12
+     "q1_cents": 19999,
+     "q3_cents": 30000,
+     "n": 10
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 11.31,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     8498,
      8498,
      8498,
      8498,
@@ -667,11 +727,12 @@
      20250,
      20500,
      20500,
+     20500,
      20500
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "street-fighter-iii-3rd-strike-dreamcast",
@@ -680,21 +741,19 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 5397,
+     "median_cents": 6999,
      "mode_cents": 7000,
-     "n": 6
-    },
-    "cib": {
-     "median_cents": 4550,
-     "mode_cents": 3600,
-     "n": 6
+     "q1_cents": 4749,
+     "q3_cents": 9000,
+     "n": 5
     }
    },
-   "pct_1d": 0,
-   "pct_7d": -14.15,
+   "pct_1d": 29.68,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     5397,
      5397,
      5397,
      5397,
@@ -710,7 +769,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "street-fighter-iii-double-impact-dreamcast",
@@ -720,20 +779,24 @@
    "prices": {
     "loose": {
      "median_cents": 3950,
-     "mode_cents": 3900,
+     "q1_cents": 3798,
+     "q3_cents": 4100,
      "n": 4
     },
     "cib": {
-     "median_cents": 8499,
+     "median_cents": 8750,
      "mode_cents": 8500,
-     "n": 9
+     "q1_cents": 8499,
+     "q3_cents": 9999,
+     "n": 6
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 2.95,
    "pct_7d": 0.04,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     3950,
      3950,
      3950,
      3950,
@@ -745,11 +808,12 @@
      8496,
      8496,
      8498,
+     8499,
      8499
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "the-last-blade-2-dreamcast",
@@ -758,21 +822,26 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 7249,
+     "median_cents": 7500,
      "mode_cents": 7500,
-     "n": 10
+     "q1_cents": 6999,
+     "q3_cents": 8500,
+     "n": 7
     },
     "new": {
      "median_cents": 17248,
      "mode_cents": 17500,
+     "q1_cents": 14999,
+     "q3_cents": 17499,
      "n": 6
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 3.46,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
+     7249,
      7249,
      7249,
      7249,
@@ -784,11 +853,12 @@
      17248,
      17248,
      17248,
+     17248,
      17248
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "soulcalibur-dreamcast",
@@ -799,6 +869,8 @@
     "cib": {
      "median_cents": 5000,
      "mode_cents": 5000,
+     "q1_cents": 4500,
+     "q3_cents": 5700,
      "n": 7
     }
    },
@@ -811,11 +883,12 @@
      5000,
      5000,
      5000,
+     5000,
      5000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "resident-evil-code-veronica-dreamcast",
@@ -824,12 +897,14 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 8999,
+     "median_cents": 9497,
      "mode_cents": 10000,
-     "n": 19
+     "q1_cents": 8200,
+     "q3_cents": 11999,
+     "n": 18
     }
    },
-   "pct_1d": -9.96,
+   "pct_1d": 5.53,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -838,11 +913,12 @@
      8999,
      8999,
      8999,
+     8999,
      8999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "illbleed-dreamcast",
@@ -852,7 +928,8 @@
    "prices": {
     "cib": {
      "median_cents": 39499,
-     "mode_cents": 39000,
+     "q1_cents": 36999,
+     "q3_cents": 40999,
      "n": 4
     }
    },
@@ -865,11 +942,12 @@
      39249,
      39499,
      39499,
+     39499,
      39499
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "typing-of-the-dead-dreamcast",
@@ -877,19 +955,16 @@
    "region": "NTSC-U",
    "variant": "none",
    "prices": {
-    "cib": {
-     "median_cents": 14499,
-     "mode_cents": 14000,
-     "n": 4
-    },
     "new": {
      "median_cents": 17995,
      "mode_cents": 18000,
+     "q1_cents": 16994,
+     "q3_cents": 19999,
      "n": 5
     }
    },
-   "pct_1d": 0,
-   "pct_7d": 0,
+   "pct_1d": null,
+   "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "cib": [
@@ -904,11 +979,12 @@
      17995,
      17995,
      17995,
+     17995,
      17995
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "house-of-the-dead-2-dreamcast",
@@ -917,22 +993,21 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1922,
+     "median_cents": 1945,
      "mode_cents": 2000,
-     "n": 54
+     "q1_cents": 1499,
+     "q3_cents": 2099,
+     "n": 55
     },
     "cib": {
-     "median_cents": 3500,
+     "median_cents": 3699,
      "mode_cents": 3500,
-     "n": 52
-    },
-    "new": {
-     "median_cents": 26449,
-     "mode_cents": 23000,
-     "n": 4
+     "q1_cents": 3349,
+     "q3_cents": 4187,
+     "n": 41
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 5.69,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -941,9 +1016,11 @@
      1922,
      1922,
      1922,
+     1922,
      1922
     ],
     "cib": [
+     3500,
      3500,
      3500,
      3500,
@@ -959,7 +1036,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "seaman-dreamcast",
@@ -968,26 +1045,32 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 4049,
+     "median_cents": 4524,
      "mode_cents": 4000,
-     "n": 7
+     "q1_cents": 3999,
+     "q3_cents": 5999,
+     "n": 6
     },
     "cib": {
-     "median_cents": 6999,
-     "mode_cents": 7000,
-     "n": 13
+     "median_cents": 7644,
+     "mode_cents": 8000,
+     "q1_cents": 6999,
+     "q3_cents": 8999,
+     "n": 10
     },
     "new": {
      "median_cents": 29000,
-     "mode_cents": 29000,
+     "q1_cents": 18750,
+     "q3_cents": 33448,
      "n": 5
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 9.22,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     4024,
      4024,
      4024,
      4024,
@@ -999,9 +1082,11 @@
      6999,
      6999,
      6999,
+     6999,
      6999
     ],
     "new": [
+     29000,
      29000,
      29000,
      29000,
@@ -1010,7 +1095,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "space-channel-5-dreamcast",
@@ -1019,22 +1104,26 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 2450,
-     "mode_cents": 3000,
-     "n": 13
-    },
-    "cib": {
-     "median_cents": 3499,
-     "mode_cents": 3500,
+     "median_cents": 2479,
+     "mode_cents": 2500,
+     "q1_cents": 2299,
+     "q3_cents": 2999,
      "n": 11
     },
+    "cib": {
+     "median_cents": 4800,
+     "q1_cents": 3499,
+     "q3_cents": 6999,
+     "n": 7
+    },
     "new": {
-     "median_cents": 11000,
-     "mode_cents": 30000,
-     "n": 12
+     "median_cents": 9750,
+     "q1_cents": 6450,
+     "q3_cents": 12172,
+     "n": 8
     }
    },
-   "pct_1d": 7.69,
+   "pct_1d": 37.18,
    "pct_7d": -6.67,
    "pct_30d": null,
    "sparks": {
@@ -1043,16 +1132,19 @@
      2350,
      2350,
      2350,
-     2350
+     2350,
+     2450
     ],
     "cib": [
      3749,
      3624,
      3499,
      3374,
+     3499,
      3499
     ],
     "new": [
+     10750,
      10750,
      10750,
      10750,
@@ -1061,7 +1153,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "samba-de-amigo-dreamcast",
@@ -1070,12 +1162,13 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 4999,
-     "mode_cents": 5000,
-     "n": 13
+     "median_cents": 6295,
+     "q1_cents": 4999,
+     "q3_cents": 7999,
+     "n": 7
     }
    },
-   "pct_1d": -0.02,
+   "pct_1d": 25.93,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -1084,11 +1177,12 @@
      5000,
      5000,
      5000,
+     5000,
      5000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "chuchu-rocket-dreamcast",
@@ -1099,20 +1193,26 @@
     "loose": {
      "median_cents": 1999,
      "mode_cents": 2000,
+     "q1_cents": 1871,
+     "q3_cents": 3123,
      "n": 9
     },
     "cib": {
-     "median_cents": 3449,
-     "mode_cents": 3500,
-     "n": 18
+     "median_cents": 4000,
+     "mode_cents": 4000,
+     "q1_cents": 2999,
+     "q3_cents": 4500,
+     "n": 14
     },
     "new": {
      "median_cents": 4699,
      "mode_cents": 5000,
+     "q1_cents": 4242,
+     "q3_cents": 4993,
      "n": 9
     }
    },
-   "pct_1d": 1.47,
+   "pct_1d": 15.98,
    "pct_7d": -1.43,
    "pct_30d": null,
    "sparks": {
@@ -1121,6 +1221,7 @@
      1999,
      1999,
      2125,
+     1999,
      1999
     ],
     "cib": [
@@ -1128,9 +1229,11 @@
      3499,
      3499,
      3474,
+     3449,
      3449
     ],
     "new": [
+     4699,
      4699,
      4699,
      4699,
@@ -1139,7 +1242,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "toy-commander-dreamcast",
@@ -1150,16 +1253,22 @@
     "loose": {
      "median_cents": 1887,
      "mode_cents": 2000,
+     "q1_cents": 1799,
+     "q3_cents": 1999,
      "n": 18
     },
     "cib": {
      "median_cents": 2999,
      "mode_cents": 3000,
+     "q1_cents": 2500,
+     "q3_cents": 3995,
      "n": 19
     },
     "new": {
      "median_cents": 5994,
      "mode_cents": 6000,
+     "q1_cents": 5495,
+     "q3_cents": 6999,
      "n": 10
     }
    },
@@ -1172,9 +1281,11 @@
      1887,
      1887,
      1887,
+     1887,
      1887
     ],
     "cib": [
+     2999,
      2999,
      2999,
      2999,
@@ -1186,11 +1297,12 @@
      5869,
      5994,
      5994,
+     5994,
      5994
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "mdk2-dreamcast",
@@ -1201,19 +1313,24 @@
     "loose": {
      "median_cents": 1899,
      "mode_cents": 1900,
+     "q1_cents": 1799,
+     "q3_cents": 1899,
      "n": 6
     },
     "cib": {
      "median_cents": 3499,
      "mode_cents": 3500,
+     "q1_cents": 3200,
+     "q3_cents": 3816,
      "n": 7
     }
    },
-   "pct_1d": -4.92,
-   "pct_7d": -1.06,
+   "pct_1d": 0,
+   "pct_7d": -2.85,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     1899,
      1899,
      1899,
      1899,
@@ -1225,11 +1342,12 @@
      3788,
      3788,
      3768,
-     3748
+     3748,
+     3680
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "fur-fighters-dreamcast",
@@ -1240,6 +1358,8 @@
     "cib": {
      "median_cents": 4999,
      "mode_cents": 5000,
+     "q1_cents": 4499,
+     "q3_cents": 6495,
      "n": 15
     }
    },
@@ -1252,11 +1372,12 @@
      4999,
      4999,
      4999,
+     4999,
      4999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "sturmwind-dreamcast",
@@ -1266,12 +1387,14 @@
    "prices": {
     "cib": {
      "median_cents": 4500,
-     "mode_cents": 4400,
+     "q1_cents": 4200,
+     "q3_cents": 4794,
      "n": 4
     },
     "new": {
      "median_cents": 12599,
-     "mode_cents": 12600,
+     "q1_cents": 10250,
+     "q3_cents": 17077,
      "n": 5
     }
    },
@@ -1284,9 +1407,11 @@
      4500,
      4500,
      4500,
+     4500,
      4500
     ],
     "new": [
+     12599,
      12599,
      12599,
      12599,
@@ -1295,7 +1420,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   },
   {
    "id": "gigawing-dreamcast",
@@ -1324,7 +1449,8 @@
    "prices": {
     "cib": {
      "median_cents": 17275,
-     "mode_cents": 17000,
+     "q1_cents": 16470,
+     "q3_cents": 18598,
      "n": 4
     }
    },
@@ -1336,11 +1462,33 @@
      17275,
      17275,
      17275,
+     17275,
      17275
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
+  },
+  {
+   "id": "virtua-tennis-2-dreamcast",
+   "title": "Tennis 2K2",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "cib": {
+     "median_cents": 2495,
+     "mode_cents": 2500,
+     "q1_cents": 1879,
+     "q3_cents": 2500,
+     "n": 5
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-07"
   },
   {
    "id": "hydro-thunder-dreamcast",
@@ -1351,11 +1499,14 @@
     "loose": {
      "median_cents": 3038,
      "mode_cents": 3500,
+     "q1_cents": 1899,
+     "q3_cents": 3496,
      "n": 7
     },
     "new": {
      "median_cents": 14999,
-     "mode_cents": 15000,
+     "q1_cents": 7650,
+     "q3_cents": 18750,
      "n": 5
     }
    },
@@ -1368,6 +1519,7 @@
      3179,
      3179,
      3109,
+     3038,
      3038
     ],
     "cib": [
@@ -1380,11 +1532,12 @@
      14999,
      14999,
      14999,
+     14999,
      14999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-06"
+   "as_of": "2026-09-07"
   }
  ]
 }
