@@ -18,7 +18,9 @@ import (
 	"github.com/rflpazini/retroheat/internal/history"
 	"github.com/rflpazini/retroheat/internal/pipeline"
 	"github.com/rflpazini/retroheat/internal/provider"
+	"github.com/rflpazini/retroheat/internal/provider/ebay"
 	"github.com/rflpazini/retroheat/internal/provider/fake"
+	"github.com/rflpazini/retroheat/internal/rawarchive"
 	"github.com/rflpazini/retroheat/internal/snapshot"
 	"github.com/rflpazini/retroheat/internal/trending"
 )
@@ -446,5 +448,101 @@ func TestRunStampsNewAndBackfilledPointsWithTheSeriesVersion(t *testing.T) {
 	}
 	if meta.SeriesVersion != classify.SeriesVersion {
 		t.Errorf("meta.series_version = %d, want %d", meta.SeriesVersion, classify.SeriesVersion)
+	}
+}
+
+// listingProvider is the shape of the live eBay client: it exposes what it
+// saw and judges it with the real eBay rules, over synthetic titles.
+type listingProvider struct{ fail map[string]bool }
+
+func (listingProvider) Name() string     { return ebay.Name }
+func (listingProvider) Kind() string     { return provider.KindAsking }
+func (listingProvider) CostPerGame() int { return 1 }
+
+func (p listingProvider) Listings(_ context.Context, g catalog.Game) (provider.Sample, error) {
+	if p.fail[g.ID] {
+		return provider.Sample{}, errors.New("upstream down")
+	}
+	return provider.Sample{Query: g.Ebay.Query, Listings: syntheticListings(g)}, nil
+}
+
+func (listingProvider) QuotesFromListings(g catalog.Game, ls []provider.Listing) ([]provider.Quote, error) {
+	return ebay.QuotesFromListings(g, ls)
+}
+
+func (p listingProvider) Quotes(ctx context.Context, g catalog.Game) ([]provider.Quote, error) {
+	s, err := p.Listings(ctx, g)
+	if err != nil {
+		return nil, err
+	}
+	return ebay.QuotesFromListings(g, s.Listings)
+}
+
+func syntheticListings(g catalog.Game) []provider.Listing {
+	var out []provider.Listing
+	for i := range 5 {
+		out = append(out,
+			provider.Listing{ItemID: fmt.Sprintf("v1|c%d|0", i), Title: g.Title + " PS2 Complete CIB", PriceCents: 9000 + int64(i)*200, Currency: "USD"},
+			provider.Listing{ItemID: fmt.Sprintf("v1|l%d|0", i), Title: g.Title + " (PlayStation 2) Disc Only", PriceCents: 4000 + int64(i)*200, Currency: "USD"},
+		)
+	}
+	return out
+}
+
+func TestRunWritesARawArchiveForListingProviders(t *testing.T) {
+	t.Parallel()
+	dataDir, catalogDir := setup(t)
+	rawDir := t.TempDir()
+
+	o := opts(dataDir, catalogDir, listingProvider{fail: map[string]bool{"god-hand-ps2": true}})
+	o.RawDir = rawDir
+	res, err := pipeline.Run(context.Background(), o)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if res.OK != 1 || res.Failed != 1 {
+		t.Fatalf("result = %+v, want 1 ok and 1 failed", res)
+	}
+
+	files, _ := filepath.Glob(filepath.Join(rawDir, "raw-*.json.gz"))
+	if len(files) != 1 {
+		t.Fatalf("archives = %v, want exactly one", files)
+	}
+	run, err := rawarchive.Read(files[0])
+	if err != nil {
+		t.Fatal(err)
+	}
+	if run.Source != ebay.Name || run.SeriesVersion != classify.SeriesVersion || run.GeneratedAt != runDay.Format(time.RFC3339) {
+		t.Errorf("archive header = %+v, want the run's provider, version and time", run)
+	}
+	if len(run.Games) != 2 {
+		t.Fatalf("archive has %d games, want a record for every tracked game", len(run.Games))
+	}
+	byID := map[string]rawarchive.Game{}
+	for _, g := range run.Games {
+		byID[g.ID] = g
+	}
+	if got := byID["silent-hill-2-ps2"]; len(got.Listings) != 10 || got.Query != "Silent Hill 2 PS2" || got.Err != "" {
+		t.Errorf("priced game record = %+v, want its 10 listings and query", got)
+	}
+	if got := byID["god-hand-ps2"]; got.Err == "" || len(got.Listings) != 0 {
+		t.Errorf("failed game record = %+v, want the error and no listings", got)
+	}
+}
+
+func TestRunWithoutARawDirWritesNoArchive(t *testing.T) {
+	t.Parallel()
+	dataDir, catalogDir := setup(t)
+
+	res, err := pipeline.Run(context.Background(), opts(dataDir, catalogDir, listingProvider{}))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if res.OK != 2 {
+		t.Errorf("OK = %d, want 2: a listing provider prices normally without archiving", res.OK)
+	}
+	files, _ := filepath.Glob(filepath.Join(dataDir, "**", "raw-*.json.gz"))
+	if len(files) != 0 {
+		t.Errorf("an archive appeared under the data directory: %v", files)
 	}
 }

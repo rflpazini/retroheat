@@ -7,6 +7,7 @@ import (
 	"net/http/httptest"
 	"os"
 	"path/filepath"
+	"reflect"
 	"strings"
 	"sync/atomic"
 	"testing"
@@ -268,6 +269,54 @@ func TestQuotesKeepTheEntrysOwnRegionForAGameThatOnlyExistsAbroad(t *testing.T) 
 			if q.Condition == classify.CIB && q.SampleSize != c.cib {
 				t.Errorf("%s cib sample = %d, want %d", c.region, q.SampleSize, c.cib)
 			}
+		}
+	}
+}
+
+// A replay judges archived listings with QuotesFromListings. It must produce
+// exactly what the live path produced from the same search, or replayed
+// history would differ from collected history for no market reason.
+func TestQuotesFromListingsMatchesQuotes(t *testing.T) {
+	t.Parallel()
+	c := newClient(t, &stub{fixture: "search_silent_hill_2.json"})
+
+	live, err := c.Quotes(context.Background(), silentHill)
+	if err != nil {
+		t.Fatal(err)
+	}
+	sample, err := c.Listings(context.Background(), silentHill)
+	if err != nil {
+		t.Fatal(err)
+	}
+	replayed, err := ebay.QuotesFromListings(silentHill, sample.Listings)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !reflect.DeepEqual(live, replayed) {
+		t.Errorf("replayed quotes differ from live:\nlive     %+v\nreplayed %+v", live, replayed)
+	}
+}
+
+func TestListingsKeepEveryResultWithItsQuery(t *testing.T) {
+	t.Parallel()
+	c := newClient(t, &stub{fixture: "search_silent_hill_2.json"})
+	sample, err := c.Listings(context.Background(), silentHill)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if sample.Query != ebay.BuildQuery(silentHill) {
+		t.Errorf("Query = %q, want the query the search ran", sample.Query)
+	}
+	raw, err := os.ReadFile(filepath.Join("testdata", "search_silent_hill_2.json"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if want := strings.Count(string(raw), `"itemId"`); len(sample.Listings) != want {
+		t.Errorf("Listings = %d, want all %d results, judged or not", len(sample.Listings), want)
+	}
+	for _, l := range sample.Listings {
+		if l.Title == "" || l.ItemID == "" || l.Currency == "" {
+			t.Errorf("listing lost a field: %+v", l)
 		}
 	}
 }

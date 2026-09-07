@@ -72,8 +72,19 @@ jobs:
           go run ./cmd/collector \
             -data ./data \
             -catalog ./catalog \
+            -raw-dir ./raw \
             -budget 2000 \
             -platforms "$PLATFORMS"
+
+      # The raw listings make a classifier change a replay instead of a wipe.
+      # They are too large for the repository, so each run's file becomes an
+      # asset of a monthly prerelease; see .github/scripts/upload-raw.sh.
+      - name: Archive raw listings
+        if: steps.creds.outputs.ready == 'true'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: .github/scripts/upload-raw.sh raw
 
       # Two runs can overlap (a delayed cron landing seconds after a manual
       # dispatch), and rebasing one data commit onto another always conflicts

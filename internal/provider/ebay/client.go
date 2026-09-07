@@ -77,7 +77,10 @@ func New(clientID, clientSecret string, opts ...Option) *Client {
 	return c
 }
 
-func (c *Client) Name() string     { return "ebay-browse" }
+// Name is the provider's name as written into meta.json and the raw archive.
+const Name = "ebay-browse"
+
+func (c *Client) Name() string     { return Name }
 func (c *Client) Kind() string     { return provider.KindAsking }
 func (c *Client) CostPerGame() int { return 1 }
 
@@ -96,27 +99,54 @@ type searchResponse struct {
 	ItemSummaries []itemSummary `json:"itemSummaries"`
 }
 
+// Quotes fetches the game's listings and reduces them to one quote per
+// condition. It is Listings followed by QuotesFromListings, so a replay over
+// archived listings takes exactly the path a live run took.
 func (c *Client) Quotes(ctx context.Context, g catalog.Game) ([]provider.Quote, error) {
-	items, err := c.search(ctx, BuildQuery(g))
+	s, err := c.Listings(ctx, g)
 	if err != nil {
 		return nil, err
 	}
+	return QuotesFromListings(g, s.Listings)
+}
 
+// Listings runs the game's search and returns every result as the pipeline
+// archives it: id, title, price in cents and currency, nothing judged yet.
+func (c *Client) Listings(ctx context.Context, g catalog.Game) (provider.Sample, error) {
+	query := BuildQuery(g)
+	items, err := c.search(ctx, query)
+	if err != nil {
+		return provider.Sample{}, err
+	}
+	out := make([]provider.Listing, 0, len(items))
+	for _, it := range items {
+		// An unparseable price is recorded as zero and skipped when judged,
+		// rather than dropping the listing from the record.
+		cents, _ := parseCents(it.Price.Value)
+		out = append(out, provider.Listing{ItemID: it.ItemID, Title: it.Title, PriceCents: cents, Currency: it.Price.Currency})
+	}
+	return provider.Sample{Query: query, Listings: out}, nil
+}
+
+// QuotesFromListings satisfies provider.ListingProvider. The work lives in the
+// package-level function so a replay needs neither a client nor credentials.
+func (c *Client) QuotesFromListings(g catalog.Game, ls []provider.Listing) ([]provider.Quote, error) {
+	return QuotesFromListings(g, ls)
+}
+
+var _ provider.ListingProvider = (*Client)(nil)
+
+// QuotesFromListings judges every listing against the game with the rules in
+// force now and aggregates the survivors into one quote per condition.
+func QuotesFromListings(g catalog.Game, ls []provider.Listing) ([]provider.Quote, error) {
 	buckets := map[classify.Condition][]int64{}
 	media := mediaOf(g)
-	for _, it := range items {
-		if it.Price.Currency != "USD" || excluded(it.Title, g.Ebay.Negative) || foreign(it.Title, g) || !classify.Mentions(it.Title, g.Title) {
+	for _, l := range ls {
+		v := judge(l, g, media)
+		if !v.keep || l.PriceCents <= 0 {
 			continue
 		}
-		res := classify.ClassifyMedia(it.Title, media)
-		if res.Rejected || res.Condition == classify.Unknown {
-			continue
-		}
-		cents, ok := parseCents(it.Price.Value)
-		if !ok {
-			continue
-		}
-		buckets[res.Condition] = append(buckets[res.Condition], cents)
+		buckets[v.condition] = append(buckets[v.condition], l.PriceCents)
 	}
 
 	var quotes []provider.Quote
@@ -136,6 +166,35 @@ func (c *Client) Quotes(ctx context.Context, g catalog.Game) ([]provider.Quote, 
 		return nil, fmt.Errorf("%s: %w", g.ID, provider.ErrNoData)
 	}
 	return quotes, nil
+}
+
+// verdict is the whole judgement of one listing, in the words the audit
+// prints, so the live run and the audit can never disagree about a title.
+type verdict struct {
+	condition classify.Condition
+	label     string
+	keep      bool
+}
+
+func judge(l provider.Listing, g catalog.Game, media classify.Media) verdict {
+	switch {
+	case l.Currency != "USD":
+		return verdict{label: "skip:currency"}
+	case excluded(l.Title, g.Ebay.Negative):
+		return verdict{label: "skip:negative"}
+	case foreign(l.Title, g):
+		return verdict{label: "skip:region"}
+	case !classify.Mentions(l.Title, g.Title):
+		return verdict{label: "skip:not-this-game"}
+	}
+	res := classify.ClassifyMedia(l.Title, media)
+	switch {
+	case res.Rejected:
+		return verdict{label: "reject:" + res.Reason}
+	case res.Condition == classify.Unknown:
+		return verdict{label: "unknown"}
+	}
+	return verdict{condition: res.Condition, label: string(res.Condition) + ":" + res.Reason, keep: true}
 }
 
 func (c *Client) search(ctx context.Context, query string) ([]itemSummary, error) {

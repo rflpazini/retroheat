@@ -41,6 +41,7 @@ func run() int {
 		backfill   = flag.Int("backfill", 60, "days of synthetic history to seed for newly tracked games (fake only)")
 		audit      = flag.Bool("audit", false, "print per-listing classification decisions and exit")
 		catOnly    = flag.Bool("catalog-only", false, "rewrite catalog.json from the YAML without pricing anything, then exit")
+		rawDir     = flag.String("raw-dir", "", "write one compressed file with every listing the run saw, for replay (empty = off)")
 		verbose    = flag.Bool("v", false, "verbose logging")
 		timeout    = flag.Duration("timeout", 30*time.Minute, "overall run timeout")
 	)
@@ -96,6 +97,7 @@ func run() int {
 		Now:          now,
 		BackfillDays: *backfill,
 		Log:          log,
+		RawDir:       *rawDir,
 	})
 	if err != nil {
 		log.Error("run failed", slog.String("err", err.Error()))

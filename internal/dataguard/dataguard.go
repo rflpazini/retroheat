@@ -93,7 +93,7 @@ func compareHistory(beforeDir, afterDir string, rep *Report) error {
 			q, ok := byDate[p.Date]
 			switch {
 			case ok:
-				if !samePoint(p, q) {
+				if !p.Equal(q) {
 					rep.Replaced++
 				}
 			case p.Res == history.ResDaily && rolledUp(byDate, p.Date):
@@ -113,19 +113,6 @@ func compareHistory(beforeDir, afterDir string, rep *Report) error {
 func rolledUp(after map[string]history.Point, date string) bool {
 	w, ok := after[history.WeekStart(date)]
 	return ok && w.Res == history.ResWeekly
-}
-
-func samePoint(a, b history.Point) bool {
-	return a.Res == b.Res && a.V == b.V &&
-		sameCents(a.Loose, b.Loose) && sameCents(a.CIB, b.CIB) && sameCents(a.New, b.New) &&
-		a.NL == b.NL && a.NC == b.NC && a.NN == b.NN
-}
-
-func sameCents(a, b *int64) bool {
-	if a == nil || b == nil {
-		return a == nil && b == nil
-	}
-	return *a == *b
 }
 
 func historyIDs(dir string) ([]string, error) {

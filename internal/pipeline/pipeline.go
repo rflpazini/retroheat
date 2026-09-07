@@ -20,6 +20,7 @@ import (
 	"github.com/rflpazini/retroheat/internal/classify"
 	"github.com/rflpazini/retroheat/internal/history"
 	"github.com/rflpazini/retroheat/internal/provider"
+	"github.com/rflpazini/retroheat/internal/rawarchive"
 	"github.com/rflpazini/retroheat/internal/snapshot"
 	"github.com/rflpazini/retroheat/internal/trending"
 )
@@ -39,6 +40,10 @@ type Options struct {
 	BackfillDays int
 	Audit        io.Writer
 	Log          *slog.Logger
+	// RawDir, when set and the provider exposes its listings, receives one
+	// compressed file with everything the run saw, so a later classifier can
+	// be replayed over the same market instead of wiping history.
+	RawDir string
 }
 
 type Result struct {
@@ -110,6 +115,11 @@ func Run(ctx context.Context, o Options) (Result, error) {
 	// carries the rest over as stale.
 	rateLimited := false
 
+	var raw *rawarchive.Run
+	if lp, ok := o.Provider.(provider.ListingProvider); ok && o.RawDir != "" {
+		raw = &rawarchive.Run{Schema: rawarchive.Schema, GeneratedAt: generatedAt, Source: lp.Name(), SeriesVersion: classify.SeriesVersion}
+	}
+
 	for _, g := range games {
 		var (
 			quotes []provider.Quote
@@ -117,7 +127,8 @@ func Run(ctx context.Context, o Options) (Result, error) {
 		)
 		if rateLimited {
 			err = provider.ErrRateLimited
-		} else if quotes, err = priceOne(ctx, o, g); errors.Is(err, provider.ErrRateLimited) {
+			raw.Record(g.ID, "", nil, err)
+		} else if quotes, err = priceOne(ctx, o, g, raw); errors.Is(err, provider.ErrRateLimited) {
 			log.Error("provider rate limited; not calling it again this run", slog.String("game", g.ID))
 			rateLimited = true
 		}
@@ -180,6 +191,18 @@ func Run(ctx context.Context, o Options) (Result, error) {
 				e.Annotation = &ann
 			}
 			allEntries = append(allEntries, e)
+		}
+	}
+
+	if raw != nil {
+		path := filepath.Join(o.RawDir, rawarchive.FileName(o.Now))
+		if err := rawarchive.Write(path, raw); err != nil {
+			// The archive is the second-tier backup behind git history. A
+			// failure to write it must not cost the run its prices; the upload
+			// step notices the missing file and warns.
+			log.Error("raw archive not written", slog.String("path", path), slog.String("err", err.Error()))
+		} else {
+			log.Info("raw archive written", slog.String("path", path), slog.Int("games", len(raw.Games)))
 		}
 	}
 
@@ -250,11 +273,28 @@ func Run(ctx context.Context, o Options) (Result, error) {
 	return res, nil
 }
 
-func priceOne(ctx context.Context, o Options, g catalog.Game) ([]provider.Quote, error) {
+// priceOne prices a game and, when archiving, records exactly one entry for
+// it: the listings it saw, or the error that kept it from seeing any.
+func priceOne(ctx context.Context, o Options, g catalog.Game, raw *rawarchive.Run) ([]provider.Quote, error) {
 	if !o.Budget.Allow(o.Provider.CostPerGame()) {
-		return nil, fmt.Errorf("api budget exhausted")
+		err := fmt.Errorf("api budget exhausted")
+		raw.Record(g.ID, "", nil, err)
+		return nil, err
 	}
-	quotes, err := o.Provider.Quotes(ctx, g)
+	lp, ok := o.Provider.(provider.ListingProvider)
+	if !ok || raw == nil {
+		return nonEmpty(o.Provider.Quotes(ctx, g))
+	}
+	sample, err := lp.Listings(ctx, g)
+	if err != nil {
+		raw.Record(g.ID, "", nil, err)
+		return nil, err
+	}
+	raw.Record(g.ID, sample.Query, sample.Listings, nil)
+	return nonEmpty(lp.QuotesFromListings(g, sample.Listings))
+}
+
+func nonEmpty(quotes []provider.Quote, err error) ([]provider.Quote, error) {
 	if err != nil {
 		return nil, err
 	}

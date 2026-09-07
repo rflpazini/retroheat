@@ -44,6 +44,20 @@ type Point struct {
 	V int `json:"v,omitempty"`
 }
 
+// Equal reports whether two points carry the same values, pointers included.
+func (p Point) Equal(q Point) bool {
+	return p.Date == q.Date && p.Res == q.Res && p.V == q.V &&
+		sameCents(p.Loose, q.Loose) && sameCents(p.CIB, q.CIB) && sameCents(p.New, q.New) &&
+		p.NL == q.NL && p.NC == q.NC && p.NN == q.NN
+}
+
+func sameCents(a, b *int64) bool {
+	if a == nil || b == nil {
+		return a == nil && b == nil
+	}
+	return *a == *b
+}
+
 type File struct {
 	ID     string  `json:"id"`
 	Points []Point `json:"points"`
@@ -59,6 +73,32 @@ func Upsert(f *File, p Point) {
 	}
 	f.Points = append(f.Points, p)
 	sortByDate(f.Points)
+}
+
+// Remove drops the point stored for date and reports whether there was one.
+// Replay uses it when archived listings yield no publishable price under the
+// current rules; the collector itself never removes anything.
+func Remove(f *File, date string) bool {
+	for i, p := range f.Points {
+		if p.Date == date {
+			f.Points = slices.Delete(f.Points, i, i+1)
+			return true
+		}
+	}
+	return false
+}
+
+// RemoveWeekly drops the compacted weekly point covering date, if any, so a
+// replayed day can be stored at full resolution and folded again by Rollup.
+func RemoveWeekly(f *File, date string) bool {
+	monday := WeekStart(date)
+	for i, p := range f.Points {
+		if p.Date == monday && p.Res == ResWeekly {
+			f.Points = slices.Delete(f.Points, i, i+1)
+			return true
+		}
+	}
+	return false
 }
 
 func sortByDate(points []Point) {

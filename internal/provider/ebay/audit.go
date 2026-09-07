@@ -6,41 +6,21 @@ import (
 	"io"
 
 	"github.com/rflpazini/retroheat/internal/catalog"
-	"github.com/rflpazini/retroheat/internal/classify"
 )
 
 // Audit prints how every live listing for a game was bucketed. It is the tool
 // for spotting a catalog query that pulls in the wrong sequel or a title
-// phrasing the classifier does not yet understand.
+// phrasing the classifier does not yet understand. It judges each listing with
+// the same function the run uses, so what it prints is what the run did.
 func (c *Client) Audit(ctx context.Context, g catalog.Game, w io.Writer) error {
-	items, err := c.search(ctx, BuildQuery(g))
+	s, err := c.Listings(ctx, g)
 	if err != nil {
 		return err
 	}
-	fmt.Fprintf(w, "\n== %s (%s) — %d listings for %q\n", g.ID, g.Platform, len(items), BuildQuery(g))
+	fmt.Fprintf(w, "\n== %s (%s) — %d listings for %q\n", g.ID, g.Platform, len(s.Listings), s.Query)
 	media := mediaOf(g)
-	for _, it := range items {
-		verdict := "skip:currency"
-		switch {
-		case it.Price.Currency != "USD":
-		case excluded(it.Title, g.Ebay.Negative):
-			verdict = "skip:negative"
-		case foreign(it.Title, g):
-			verdict = "skip:region"
-		case !classify.Mentions(it.Title, g.Title):
-			verdict = "skip:not-this-game"
-		default:
-			res := classify.ClassifyMedia(it.Title, media)
-			switch {
-			case res.Rejected:
-				verdict = "reject:" + res.Reason
-			case res.Condition == classify.Unknown:
-				verdict = "unknown"
-			default:
-				verdict = string(res.Condition) + ":" + res.Reason
-			}
-		}
-		fmt.Fprintf(w, "  %-18s %8s %s\n", verdict, it.Price.Value, it.Title)
+	for _, l := range s.Listings {
+		fmt.Fprintf(w, "  %-18s %8.2f %s\n", judge(l, g, media).label, float64(l.PriceCents)/100, l.Title)
 	}
 	return nil
 }

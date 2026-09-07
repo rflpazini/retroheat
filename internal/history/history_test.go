@@ -366,3 +366,55 @@ func TestRollupKeepsDateOrderWithAMixedWeekBetweenFoldedWeeks(t *testing.T) {
 		}
 	}
 }
+
+func TestRemoveDropsTheDate(t *testing.T) {
+	t.Parallel()
+	f := &history.File{ID: "god-hand-ps2"}
+	history.Upsert(f, history.Point{Date: "2026-09-01", Res: "d", Loose: cents(1000)})
+	history.Upsert(f, history.Point{Date: "2026-09-02", Res: "d", Loose: cents(1100)})
+
+	if !history.Remove(f, "2026-09-01") {
+		t.Fatal("Remove reported no point for a date that exists")
+	}
+	if len(f.Points) != 1 || f.Points[0].Date != "2026-09-02" {
+		t.Errorf("points = %+v, want only 2026-09-02", f.Points)
+	}
+	if history.Remove(f, "2026-09-01") {
+		t.Error("Remove reported a point for a date already removed")
+	}
+}
+
+func TestRemoveWeeklyDropsTheCoveringWeekOnly(t *testing.T) {
+	t.Parallel()
+	f := &history.File{ID: "god-hand-ps2"}
+	history.Upsert(f, history.Point{Date: "2026-01-05", Res: "w", Loose: cents(1000)})
+	history.Upsert(f, history.Point{Date: "2026-01-12", Res: "w", Loose: cents(1000)})
+	history.Upsert(f, history.Point{Date: "2026-09-01", Res: "d", Loose: cents(1000)})
+
+	if !history.RemoveWeekly(f, "2026-01-08") {
+		t.Fatal("RemoveWeekly did not find the week of 2026-01-08")
+	}
+	if len(f.Points) != 2 || f.Points[0].Date != "2026-01-12" {
+		t.Errorf("points = %+v, want the other week and the daily kept", f.Points)
+	}
+	if history.RemoveWeekly(f, "2026-09-01") {
+		t.Error("RemoveWeekly removed something for a week that only has a daily point")
+	}
+}
+
+func TestEqualComparesValuesNotPointers(t *testing.T) {
+	t.Parallel()
+	a := history.Point{Date: "2026-09-01", Res: "d", Loose: cents(1000), NL: 5, V: 1}
+	b := history.Point{Date: "2026-09-01", Res: "d", Loose: cents(1000), NL: 5, V: 1}
+	if !a.Equal(b) {
+		t.Error("equal values with different pointers reported unequal")
+	}
+	b.V = 2
+	if a.Equal(b) {
+		t.Error("a different version reported equal")
+	}
+	b.V, b.Loose = 1, nil
+	if a.Equal(b) {
+		t.Error("a nil price reported equal to a value")
+	}
+}

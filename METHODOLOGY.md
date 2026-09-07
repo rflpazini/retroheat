@@ -185,3 +185,64 @@ workflow fails loudly instead of publishing a half-empty board.
 - Graded copies, promo and demo discs, regional imports and hardware are out of
   scope.
 - Annotations are hand-written by contributors and are editorial, not data.
+
+## 9. Never losing collected data
+
+The history is the one thing the project cannot re-download. Four things keep
+a rule change, a bad merge or an overlapping run from ever costing it again.
+
+**Series versions.** Every point carries the classifier version that produced
+it (§5). `classify.SeriesVersion` is bumped in the same commit as any change to
+the classifier, to the eBay listing filters, or to the aggregation that can
+move a published median; per-game catalog edits and refactors that leave every
+classification identical do not bump it. Momentum is measured only within the
+newest version, so the first run after a bump shows no moves and the boards
+stay quiet for up to a week, as in the first week of collection. `meta.json`
+carries `series_version` so a bump can be confirmed on the live site.
+
+**The raw archive.** Each scheduled run writes one compressed file holding
+every listing it saw, per game, before judging any of it: item id, title,
+price and currency, plus the query and, for games that failed, the error. At
+about 400 KB per run the files are published as assets of a monthly
+prerelease named `raw-YYYY-MM` rather than committed. The format (`schema` 1):
+
+```json
+{"schema":1,"generated_at":"2026-09-07T09:23:41Z","source":"ebay-browse","series_version":1,
+ "games":[{"id":"ogre-battle-64-n64","q":"Ogre Battle 64 N64 -...","err":"",
+           "listings":[{"i":"v1|123|0","t":"Ogre Battle 64 (Nintendo 64) ...","p":2499,"c":"USD"}]}]}
+```
+
+**Replay.** After a rule change, rebuild history under the new rules with zero
+API calls:
+
+```bash
+gh release download raw-2026-09 -D raw --pattern 'raw-*.json.gz'
+go run ./cmd/replay -archive ./raw -data ./data -catalog ./catalog -dry-run
+go run ./cmd/replay -archive ./raw -data ./data -catalog ./catalog
+```
+
+Replay judges the archived listings with the current rules and the current
+catalog entry, replaces the points for the days it covers, stamped with the
+current version, and leaves every other point alone; the next scheduled run
+rebuilds the boards. Two limits: it cannot recover listings a different search
+query would have returned, and once weeks have been compacted a range should
+be replayed whole, because a week is folded again from whatever days were
+replayed. A day whose listings yield no publishable price under the new rules
+is removed, and the summary says so, because that removal is the one change
+the data guard refuses without a trailer.
+
+**The data guard.** `cmd/dataguard` compares the data directory between two
+commits and fails when a history file, a point, a board, or a game still in
+the catalog has disappeared. A daily point may vanish only into its week's
+compacted point; a same-date value change, which twice-daily runs produce, is
+allowed. CI runs it on every push and pull request; the scrape job runs it on
+its own output before committing and has no way around it. A deliberate reset
+carries a `Data-Reset: <reason>` trailer in the commit message, so it is
+visible in `git log` forever.
+
+**Restoring.** Git history is the first-tier backup and the archive the
+second. To restore: find the last good data commit with
+`git log --oneline -- data/history`, then
+`git checkout <sha> -- data/history data/latest data/trending`, run the
+collector once, and commit. Such a commit only adds points, so it passes the
+guard without a trailer.

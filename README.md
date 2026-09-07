@@ -112,6 +112,7 @@ Useful flags:
 | `-audit` | Print how each live listing was classified, then exit |
 | `-budget 2000` | Cap API calls for the run (0 = unlimited) |
 | `-catalog-only` | Rewrite `catalog.json` from the YAML without pricing; for editorial edits |
+| `-raw-dir ./raw` | Also write one compressed file with every listing the run saw, for `cmd/replay` |
 | `-v` | Debug logging |
 
 `-audit` is the tool for tuning a catalog entry whose search is pulling in the
@@ -121,8 +122,8 @@ wrong sequel or a pile of empty cases.
 
 | Workflow | Trigger | Does |
 | --- | --- | --- |
-| `ci` | push, pull request | Go build, vet, race tests, lint, govulncheck; web typecheck, tests, build |
-| `scrape` | cron `23 9,21 * * *`, manual | Prices the catalog, commits changed data, asks `deploy` to run |
+| `ci` | push, pull request | Go build, vet, race tests, lint, govulncheck; web typecheck, tests, build; `data-guard` refuses any loss of collected data |
+| `scrape` | cron `23 9,21 * * *`, manual | Prices the catalog, uploads the raw listings to a monthly release, commits changed data (after the same guard), asks `deploy` to run |
 | `deploy` | push to `web/**` or `data/**`, manual | Builds the site and publishes it to Pages |
 | `keepalive` | cron weekly | Re-enables scheduled workflows if GitHub disables them after 60 quiet days |
 
@@ -137,7 +138,31 @@ GitHub Actions minutes, and the free eBay tier allows 5,000 calls a day against
 a catalog of a few hundred games.
 
 The daily data commit doubles as repository activity, which is what keeps
-GitHub from disabling the schedule after 60 days of quiet.
+GitHub from disabling the schedule after 60 days of quiet. The raw listing
+archives go to release assets, which cost nothing either.
+
+## Recovering data
+
+The price history is the one thing that cannot be re-downloaded, so nothing is
+allowed to delete it quietly. Every point records the classifier version that
+produced it, and a rule change starts a new series instead of a wipe. Every
+run's raw listings are archived, so `cmd/replay` can rebuild history under new
+rules with no API calls. `cmd/dataguard` compares the data tree before and
+after every push and pull request, and before every data commit the scrape job
+makes, and fails when a file, a point, or a tracked game has vanished; a
+deliberate reset needs a `Data-Reset: <reason>` trailer in the commit message.
+
+Git history is the first-tier backup. To restore:
+
+```bash
+git log --oneline -- data/history | head                      # find the last good data commit
+git checkout <sha> -- data/history data/latest data/trending
+go run ./cmd/collector -data ./data -catalog ./catalog        # or wait for the next scheduled run
+git commit -m "data: restore from <sha>"                      # adds points only, so the guard passes
+```
+
+The rules, the archive format and the replay command are in
+[METHODOLOGY.md](METHODOLOGY.md#9-never-losing-collected-data).
 
 ## Deploying your own
 

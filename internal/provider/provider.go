@@ -39,6 +39,33 @@ type Provider interface {
 	CostPerGame() int
 }
 
+// Listing is one raw search result: the smallest record from which a quote
+// can be rebuilt. A history point is a few numbers derived from listings by
+// rules that change; keeping the listings means a later rule can be replayed
+// over the same market instead of wiping what the old rule wrote.
+type Listing struct {
+	ItemID     string
+	Title      string
+	PriceCents int64
+	Currency   string
+}
+
+// Sample is everything one search returned for a game, with the query that
+// found it.
+type Sample struct {
+	Query    string
+	Listings []Listing
+}
+
+// ListingProvider is a Provider that separates fetching from judging, so the
+// pipeline can archive what it saw and a replay can judge it again later with
+// no network call and no credentials.
+type ListingProvider interface {
+	Provider
+	Listings(ctx context.Context, g catalog.Game) (Sample, error)
+	QuotesFromListings(g catalog.Game, ls []Listing) ([]Quote, error)
+}
+
 var (
 	ErrRateLimited = errors.New("provider rate limited")
 	ErrNoData      = errors.New("no usable listings")

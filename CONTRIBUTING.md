@@ -36,6 +36,9 @@ runs exactly what CI runs with no separate install.
 | `internal/trending` | Smoothing, percentage changes, momentum score, gates |
 | `internal/snapshot` | Writes the JSON the site reads |
 | `internal/pipeline` | One collection pass, wiring the above together |
+| `internal/rawarchive` | The per-run record of every listing seen, published as release assets |
+| `internal/replay` | Rebuilds history from archived listings under the current rules |
+| `internal/dataguard` | Compares two data trees and reports anything the newer one lost |
 
 ## Conventions
 
@@ -52,6 +55,12 @@ runs exactly what CI runs with no separate install.
   takes it as an argument so tests can pin it.
 - **Comments explain constraints, not mechanics.** Say why there is one API call
   per game, not what the next line does.
+- **Never delete under `data/`.** The history cannot be re-downloaded. A change
+  to `internal/classify`, to the eBay listing filters, or to `internal/aggregate`
+  that can move a published median bumps `classify.SeriesVersion` in the same
+  commit; the old points stay and start a dashed tail on the chart. CI and the
+  scrape job both refuse a commit that loses a file, a point, or a tracked
+  game. See METHODOLOGY §9.
 
 ## Before opening a pull request
 
