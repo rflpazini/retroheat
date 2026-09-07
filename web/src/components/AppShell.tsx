@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
-import { Disc3, Gamepad2, HardDrive, Info, Menu, Monitor, TrendingUp } from 'lucide-react'
+import { Bookmark, Disc3, Gamepad2, HardDrive, Info, Library, Menu, Monitor, TrendingUp } from 'lucide-react'
 import { MenuBar } from '@/components/MenuBar'
 import { BootScreen } from '@/components/BootScreen'
 import { Ticker } from '@/components/Ticker'
 import { StatusBar } from '@/components/StatusBar'
 import { Spotlight, useSpotlightShortcut } from '@/components/Spotlight'
 import { AccountSignIn } from '@/components/SignInDialog'
-import { AccountProvider } from '@/lib/account'
+import { AccountProvider, useAccount } from '@/lib/account'
 import { PLATFORMS, PLATFORM_LABELS, type Meta } from '@/lib/types'
 import { useJson } from '@/lib/data'
 import { relativeDay } from '@/lib/format'
@@ -37,6 +37,7 @@ const navLink = ({ isActive }: { isActive: boolean }) =>
   )
 
 function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
+  const account = useAccount()
   return (
     <div className="flex h-full flex-col">
       <div className="window-title flex items-center gap-2 px-2 py-1">
@@ -69,6 +70,20 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
             {PLATFORM_LABELS[p]}
           </NavLink>
         ))}
+
+        {account.status !== 'disabled' && (
+          <>
+            <p className="eyebrow px-1 pt-3 pb-1">C:\ My Shelf</p>
+            <NavLink to="/saved" className={navLink} onClick={onNavigate}>
+              <Bookmark className="size-4 shrink-0" aria-hidden />
+              Saved games
+            </NavLink>
+            <NavLink to="/collection" className={navLink} onClick={onNavigate}>
+              <Library className="size-4 shrink-0" aria-hidden />
+              My collection
+            </NavLink>
+          </>
+        )}
 
         <p className="eyebrow px-1 pt-3 pb-1">C:\ Help</p>
         <NavLink to="/about" className={navLink} onClick={onNavigate}>
@@ -116,6 +131,8 @@ function DataSourceNotice() {
 const titles: Record<string, string> = {
   '/': 'Trending',
   '/about': 'Methodology',
+  '/saved': 'Saved games',
+  '/collection': 'My collection',
 }
 
 /**

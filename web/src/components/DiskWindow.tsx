@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useAccount } from '@/lib/account'
 import { useJson } from '@/lib/data'
 import { PLATFORMS, PLATFORM_LABELS, type LatestFile, type Platform } from '@/lib/types'
 import { Window } from '@/components/Window'
@@ -32,9 +33,28 @@ function DiskIcon({ platform }: { platform: Platform }) {
   )
 }
 
+/** A folder, drawn like the diskette: the signed-in visitor's own shelves. */
+function FolderIcon({ to, label, count }: { to: string; label: string; count: number | null }) {
+  return (
+    <Link to={to} className="group flex flex-col items-center gap-1.5 p-2 text-center">
+      <span className="bevel flex size-12 items-center justify-center border-2 border-[var(--border)] bg-[var(--secondary)] group-hover:bg-[var(--accent)]">
+        <span className="flex size-full flex-col p-1">
+          <span className="h-2 w-4 border border-b-0 border-[var(--border)] bg-[var(--muted)]" aria-hidden />
+          <span className="flex-1 border border-[var(--border)] bg-[var(--card)]" aria-hidden />
+        </span>
+      </span>
+      <span className="px-1 text-[0.7rem] font-semibold group-hover:bg-[var(--border)] group-hover:text-[var(--card)]">
+        {label}
+      </span>
+      <span className="eyebrow">{count === null ? '—' : `${count} items`}</span>
+    </Link>
+  )
+}
+
 export function DiskWindow({ order }: { order?: number }) {
   const meta = useJson<{ counts: { tracked: number } }>('meta.json')
   const tracked = meta.status === 'ready' ? meta.data.counts.tracked : null
+  const account = useAccount()
 
   return (
     <Window title="RetroHeat HD" bodyClassName="p-0" order={order}>
@@ -49,6 +69,21 @@ export function DiskWindow({ order }: { order?: number }) {
           <DiskIcon key={p} platform={p} />
         ))}
       </div>
+
+      {account.status === 'signed-in' && (
+        <div className="grid grid-cols-3 gap-1 border-t-2 border-[var(--border)] p-3 sm:grid-cols-6">
+          <FolderIcon
+            to="/saved"
+            label="Saved"
+            count={account.saved.status === 'ready' ? account.saved.data.size : null}
+          />
+          <FolderIcon
+            to="/collection"
+            label="Collection"
+            count={account.collection.status === 'ready' ? account.collection.data.size : null}
+          />
+        </div>
+      )}
     </Window>
   )
 }

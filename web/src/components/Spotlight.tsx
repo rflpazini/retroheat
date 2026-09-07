@@ -1,49 +1,27 @@
 import { useCallback, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Gamepad2, Info, TrendingUp } from 'lucide-react'
+import { Bookmark, Gamepad2, Info, Library, TrendingUp } from 'lucide-react'
 import {
   Spotlight as Palette,
   shortcutLabel,
   useSpotlightShortcut,
   type SpotlightItem,
 } from '@/components/retro-os/spotlight'
+import { useAccount } from '@/lib/account'
 import { useJson } from '@/lib/data'
 import { headlinePrice, money, priceMap } from '@/lib/format'
-import { rank, rankBoards, BOARDS } from '@/lib/search'
-import {
-  CONDITION_LABELS,
-  PLATFORMS,
-  PLATFORM_SHORT,
-  type CatalogFile,
-  type CatalogGame,
-  type LatestFile,
-  type LatestGame,
-} from '@/lib/types'
+import { useLatestIndex } from '@/lib/latest'
+import { rank, rankBoards, BOARDS, SHELF_BOARDS } from '@/lib/search'
+import { CONDITION_LABELS, PLATFORM_SHORT, type CatalogFile, type CatalogGame, type LatestGame } from '@/lib/types'
 import { OtherPrices } from '@/components/OtherPrices'
 
 export { shortcutLabel, useSpotlightShortcut }
 
 const LIMIT = 10
 
-/**
- * Every platform's latest board, so a result can show its price. Six small
- * files; they are cached after the first open and shared with the boards.
- */
-function useLatestIndex(enabled: boolean): Map<string, LatestGame> {
-  // Fixed-length list of hooks: PLATFORMS is a constant.
-  const boards = PLATFORMS.map((p) => useJson<LatestFile>(enabled ? `latest/${p}.json` : null))
-  return useMemo(() => {
-    const m = new Map<string, LatestGame>()
-    for (const b of boards) {
-      if (b.status !== 'ready') continue
-      for (const g of b.data.games) m.set(g.id, g)
-    }
-    return m
-  }, boards)
-}
-
 function boardIcon(to: string) {
-  const Icon = to === '/' ? TrendingUp : to === '/about' ? Info : Gamepad2
+  const Icon =
+    to === '/' ? TrendingUp : to === '/about' ? Info : to === '/saved' ? Bookmark : to === '/collection' ? Library : Gamepad2
   return <Icon className="size-4" />
 }
 
@@ -76,14 +54,19 @@ function gameItem(game: CatalogGame, price: LatestGame | undefined): SpotlightIt
  */
 export function Spotlight({ open, onOpenChange }: { open: boolean; onOpenChange: (v: boolean) => void }) {
   const navigate = useNavigate()
+  const account = useAccount()
   const catalog = useJson<CatalogFile>(open ? 'catalog.json' : null)
-  const prices = useLatestIndex(open)
+  const { index: prices } = useLatestIndex(open)
 
   const games = catalog.status === 'ready' ? catalog.data.games : []
   const total = games.length
 
+  // The shelf's own pages join the destinations only when accounts are on.
+  const shelf = account.status !== 'disabled'
+  const destinations = useMemo(() => (shelf ? [...BOARDS, ...SHELF_BOARDS] : BOARDS), [shelf])
+
   const items = useMemo<SpotlightItem[]>(() => {
-    const boards: SpotlightItem[] = BOARDS.map((b) => ({
+    const boards: SpotlightItem[] = destinations.map((b) => ({
       id: `board:${b.to}`,
       title: b.label,
       group: 'Go to',
@@ -93,7 +76,7 @@ export function Spotlight({ open, onOpenChange }: { open: boolean; onOpenChange:
       data: { kind: 'board' },
     }))
     return [...games.map((g) => gameItem(g, prices.get(g.id))), ...boards]
-  }, [games, prices])
+  }, [games, prices, destinations])
 
   // Games first by the catalog ranking, then whichever boards the words name.
   const search = useCallback(
@@ -101,10 +84,10 @@ export function Spotlight({ open, onOpenChange }: { open: boolean; onOpenChange:
       if (!query) return all.filter((i) => i.pinned)
       const byId = new Map(all.map((i) => [i.id, i]))
       const hits = rank(query, games, LIMIT).map((h) => byId.get(h.item.id)!)
-      const boards = rankBoards(query).map((b) => byId.get(`board:${b.to}`)!)
+      const boards = rankBoards(query, destinations).map((b) => byId.get(`board:${b.to}`)!)
       return [...hits, ...boards]
     },
-    [games],
+    [games, destinations],
   )
 
   return (

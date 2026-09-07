@@ -5,6 +5,7 @@ import { MenuBar as Bar, MenuBarClock, type Menu, type MenuEntry } from '@/compo
 import { AboutDialog } from '@/components/AboutDialog'
 import { shortcutLabel } from '@/components/Spotlight'
 import { UserMenu, menuBarButton } from '@/components/UserMenu'
+import { useAccount } from '@/lib/account'
 import { PLATFORMS, PLATFORM_LABELS } from '@/lib/types'
 
 /**
@@ -21,6 +22,7 @@ export function MenuBar({
   onSearch: () => void
 }) {
   const navigate = useNavigate()
+  const account = useAccount()
   const [aboutOpen, setAboutOpen] = useState(false)
   const keys = shortcutLabel()
 
@@ -46,6 +48,12 @@ export function MenuBar({
         { label: 'Find Game…', shortcut: keys, onSelect: onSearch },
         'separator',
         { label: 'Open Trending', onSelect: () => navigate('/') },
+        ...(account.status !== 'disabled'
+          ? [
+              { label: 'Open Saved Games', onSelect: () => navigate('/saved') },
+              { label: 'Open My Collection', onSelect: () => navigate('/collection') },
+            ]
+          : []),
         'separator',
         ...PLATFORMS.map((p) => ({ label: `Open ${PLATFORM_LABELS[p]}`, onSelect: () => navigate(`/p/${p}`) })),
       ],

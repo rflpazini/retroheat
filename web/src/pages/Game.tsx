@@ -26,6 +26,7 @@ import {
 import { TrendPill } from '@/components/TrendPill'
 import { Window } from '@/components/Window'
 import { CRTScreen } from '@/components/CRTScreen'
+import { OwnControl, SaveButton } from '@/components/ShelfControls'
 import { LoadError, Message } from '@/components/States'
 
 const chip = 'bevel border-2 border-[var(--border)] bg-[var(--secondary)] px-2 py-1 text-[0.6rem]'
@@ -124,6 +125,7 @@ export function Game() {
               </div>
 
               <div className="flex flex-wrap gap-2">
+                <SaveButton gameId={id} />
                 {game?.ebay_url && (
                   <a href={game.ebay_url} target="_blank" rel="noreferrer noopener" className={btn}>
                     Listings on eBay
@@ -136,6 +138,8 @@ export function Game() {
                 </Link>
               </div>
             </div>
+
+            <OwnControl gameId={id} />
 
             {specs.length > 0 && (
               <dl className="mt-4 grid grid-cols-1 gap-x-6 sm:grid-cols-2">

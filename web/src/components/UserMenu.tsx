@@ -1,4 +1,5 @@
 import { UserRound } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 import { Entries, menuBarClasses } from '@/components/retro-os/menu-bar'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { useAccount } from '@/lib/account'
@@ -14,6 +15,7 @@ export const menuBarButton =
  */
 export function UserMenu() {
   const account = useAccount()
+  const navigate = useNavigate()
 
   if (account.status === 'disabled' || account.status === 'loading') return null
 
@@ -42,7 +44,15 @@ export function UserMenu() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className={menuBarClasses.content}>
         <p className="max-w-[16rem] truncate px-2 py-1 text-[0.65rem] opacity-70">{user.email ?? user.name}</p>
-        <Entries entries={['separator', { label: 'Sign out', onSelect: () => void account.signOut() }]} />
+        <Entries
+          entries={[
+            'separator',
+            { label: 'Saved games', onSelect: () => navigate('/saved') },
+            { label: 'My collection', onSelect: () => navigate('/collection') },
+            'separator',
+            { label: 'Sign out', onSelect: () => void account.signOut() },
+          ]}
+        />
       </DropdownMenuContent>
     </DropdownMenu>
   )

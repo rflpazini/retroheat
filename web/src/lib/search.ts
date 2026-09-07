@@ -187,6 +187,12 @@ export const BOARDS: Board[] = [
   { to: '/about', label: 'Methodology', keywords: ['about', 'help', 'how', 'method'] },
 ]
 
+/** The signed-in person's own boards; offered only when accounts are on. */
+export const SHELF_BOARDS: Board[] = [
+  { to: '/saved', label: 'Saved games', keywords: ['saved', 'wishlist', 'shelf', 'bookmarks', 'mine'] },
+  { to: '/collection', label: 'My collection', keywords: ['collection', 'owned', 'shelf', 'value', 'mine'] },
+]
+
 /** rankBoards matches destinations by label or keyword prefix. */
 export function rankBoards(query: string, boards: Board[] = BOARDS): Board[] {
   const words = fold(query).split(' ').filter(Boolean)
