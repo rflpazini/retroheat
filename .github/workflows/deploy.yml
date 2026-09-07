@@ -34,6 +34,11 @@ jobs:
         working-directory: web
         env:
           BASE_PATH: /${{ github.event.repository.name }}/
+          # Repository variables, not secrets: both are public by design and
+          # the anon key is meant to ship in the bundle. A fork without them
+          # builds a site with the account features hidden.
+          VITE_SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ vars.SUPABASE_ANON_KEY }}
         run: |
           npm ci
           npm run build

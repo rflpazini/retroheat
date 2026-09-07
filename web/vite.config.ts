@@ -49,5 +49,8 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     globals: true,
+    // Accounts stay off under test whatever a developer's web/.env says; the
+    // account tests inject an in-memory backend instead.
+    env: { VITE_SUPABASE_URL: '', VITE_SUPABASE_ANON_KEY: '' },
   },
 })

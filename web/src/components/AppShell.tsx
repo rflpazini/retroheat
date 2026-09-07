@@ -6,6 +6,8 @@ import { BootScreen } from '@/components/BootScreen'
 import { Ticker } from '@/components/Ticker'
 import { StatusBar } from '@/components/StatusBar'
 import { Spotlight, useSpotlightShortcut } from '@/components/Spotlight'
+import { AccountSignIn } from '@/components/SignInDialog'
+import { AccountProvider } from '@/lib/account'
 import { PLATFORMS, PLATFORM_LABELS, type Meta } from '@/lib/types'
 import { useJson } from '@/lib/data'
 import { relativeDay } from '@/lib/format'
@@ -116,7 +118,20 @@ const titles: Record<string, string> = {
   '/about': 'Methodology',
 }
 
+/**
+ * The layout route. The account provider sits inside the router so it can
+ * send a signed-in visitor back to the page they left, and wraps everything
+ * so the menu bar, the sidebar and the pages all see the same user.
+ */
 export function AppShell() {
+  return (
+    <AccountProvider>
+      <Shell />
+    </AccountProvider>
+  )
+}
+
+function Shell() {
   const { dark, toggle } = useTheme()
   const [menuOpen, setMenuOpen] = useState(false)
   const [searchOpen, setSearchOpen] = useState(false)
@@ -197,6 +212,7 @@ export function AppShell() {
       </div>
       <StatusBar />
       <Spotlight open={searchOpen} onOpenChange={setSearchOpen} />
+      <AccountSignIn />
     </>
   )
 }

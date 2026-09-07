@@ -45,7 +45,8 @@ const content = 'window min-w-[12rem] rounded-none border-2 p-1 font-[family-nam
 const item =
   'rounded-none px-2 py-1 text-[0.75rem] focus:bg-[var(--foreground)] focus:text-[var(--card)] data-[highlighted]:bg-[var(--foreground)] data-[highlighted]:text-[var(--card)]'
 
-function Entries({ entries }: { entries: MenuEntry[] }) {
+/** Renders a list of entries inside any DropdownMenuContent, in the bar's style. */
+export function Entries({ entries }: { entries: MenuEntry[] }) {
   return (
     <>
       {entries.map((e, i) =>
@@ -63,6 +64,9 @@ function Entries({ entries }: { entries: MenuEntry[] }) {
     </>
   )
 }
+
+/** The bar's classes, for a menu that lives in its right-hand slot. */
+export const menuBarClasses = { trigger, content, item }
 
 /**
  * The system menu bar, pinned to the top of the viewport. The menus are real:

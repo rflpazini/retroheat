@@ -4,6 +4,7 @@ import { Search } from 'lucide-react'
 import { MenuBar as Bar, MenuBarClock, type Menu, type MenuEntry } from '@/components/retro-os/menu-bar'
 import { AboutDialog } from '@/components/AboutDialog'
 import { shortcutLabel } from '@/components/Spotlight'
+import { UserMenu, menuBarButton } from '@/components/UserMenu'
 import { PLATFORMS, PLATFORM_LABELS } from '@/lib/types'
 
 /**
@@ -77,13 +78,14 @@ export function MenuBar({
             <button
               type="button"
               onClick={onSearch}
-              className="flex items-center gap-1.5 px-2 py-0.5 text-[0.7rem] outline-none hover:bg-[var(--foreground)] hover:text-[var(--card)] focus-visible:bg-[var(--foreground)] focus-visible:text-[var(--card)]"
+              className={menuBarButton}
               aria-label={`Search games (${keys})`}
               title={`Search games (${keys})`}
             >
               <Search className="size-3.5" aria-hidden />
               <kbd className="hidden text-[0.65rem] sm:inline">{keys}</kbd>
             </button>
+            <UserMenu />
             <MenuBarClock />
           </>
         }
