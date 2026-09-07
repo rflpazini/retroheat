@@ -2,6 +2,9 @@ export type Condition = 'loose' | 'cib' | 'new'
 
 export const CONDITIONS: Condition[] = ['loose', 'cib', 'new']
 
+/** Cents per condition, for files that carry one figure rather than a full Price. */
+export type PriceMap = Partial<Record<Condition, number>>
+
 export const PLATFORMS = ['ps2', 'gamecube', 'psp', 'vita', 'n64', 'dreamcast'] as const
 export type Platform = (typeof PLATFORMS)[number]
 
@@ -33,6 +36,9 @@ export interface Price {
   median_cents: number
   /** Most common whole-dollar price point. Absent when the provider supplies a single figure. */
   mode_cents?: number
+  /** Bounds of the middle half of the asking prices. Absent when the provider supplies a single figure. */
+  q1_cents?: number
+  q3_cents?: number
   n: number
 }
 
@@ -83,6 +89,8 @@ export interface TrendEntry {
   platform: Platform
   headline_condition: Condition
   price_cents: number
+  /** Latest median per condition with enough listings behind it. Absent in files written before it was recorded. */
+  prices?: PriceMap
   /** Raw change against the previous day's point; noisy by design. */
   pct_1d: number | null
   pct_7d: number | null

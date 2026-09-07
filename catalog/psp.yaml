@@ -29,7 +29,8 @@ games:
       why: "Popular and reprinted, so the UMD is affordable; the remaster gives most players a digital route."
     ebay:
       query: "Persona 3 Portable PSP"
-      negative: ["fes", "ps2", "switch", "reload"]
+      # The 2023 ports and their Limited Run discs are not the UMD.
+      negative: ["fes", "ps2", "switch", "reload", "ps4", "playstation 4", "xbox", "limited run", "lrg"]
   - id: persona-2-innocent-sin-psp
     title: "Persona 2: Innocent Sin"
     info:
@@ -161,7 +162,9 @@ games:
       why: "XSEED printed few copies of a very long RPG for a shrinking system, and the 2025 remake drove new interest in where the series began."
     ebay:
       query: "Legend of Heroes Trails in the Sky PSP"
-      negative: ["second chapter", "sc", "pc", "steam"]
+      # "the 3rd" is the third game; "the Best" and "Best Selection" are the
+      # Japanese budget reprints.
+      negative: ["second chapter", "sc", "the 3rd", "3rd", "pc", "steam", "the best", "best selection"]
   - id: gurumin-psp
     title: "Gurumin: A Monstrous Adventure"
     info:
@@ -310,7 +313,7 @@ games:
       why: "Very common and re-released many times, so the UMD is cheap."
     ebay:
       query: "Lumines PSP"
-      negative: ["lumines ii", "remastered", "xbox", "switch"]
+      negative: ["lumines ii", "lumines 2", "remastered", "xbox", "switch"]
   - id: god-of-war-chains-of-olympus-psp
     title: "God of War: Chains of Olympus"
     info:

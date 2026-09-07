@@ -121,7 +121,8 @@ func TestMode(t *testing.T) {
 		{"rounds half up", []int64{2950, 2950, 2400}, 3000},
 		{"tie goes to the point nearest the median", []int64{2000, 2000, 4000, 4000, 3500}, 4000},
 		{"tie at equal distance goes to the lower price", []int64{2000, 2000, 4000, 4000, 3000}, 2000},
-		{"single", []int64{4199}, 4200},
+		{"single listing is not a cluster", []int64{4199}, 0},
+		{"all different is not a cluster", []int64{4199, 5500, 6100, 7000}, 0},
 		{"empty", nil, 0},
 	}
 	for _, c := range cases {
@@ -144,5 +145,42 @@ func TestAggregateReportsMode(t *testing.T) {
 	}
 	if got.ModeCents != 3000 {
 		t.Errorf("ModeCents = %d, want 3000", got.ModeCents)
+	}
+}
+
+func TestAggregateReportsTheMiddleHalf(t *testing.T) {
+	t.Parallel()
+	// Eight complete copies from $98 to $279, plus one $10,000 fantasy price
+	// the trim drops. The middle half is where half the sellers sit.
+	in := []int64{9800, 11000, 12500, 14000, 14200, 15900, 20000, 27900, 1000000}
+	got, ok := aggregate.Aggregate(in)
+	if !ok {
+		t.Fatal("Aggregate rejected a healthy sample")
+	}
+	if got.SampleSize != 8 {
+		t.Fatalf("SampleSize = %d, want 8", got.SampleSize)
+	}
+	if got.Q1Cents != 11750 || got.Q3Cents != 17950 {
+		t.Errorf("middle half = %d..%d, want 11750..17950", got.Q1Cents, got.Q3Cents)
+	}
+	if got.MedianCents != 14100 {
+		t.Errorf("MedianCents = %d, want 14100", got.MedianCents)
+	}
+}
+
+func TestAggregateOmitsTheModeWhenNoTwoSellersAgree(t *testing.T) {
+	t.Parallel()
+	// Seven complete copies, every one at its own price. The median is real;
+	// a "mode" would only be one of them rounded, so it is left out.
+	in := []int64{15885, 17700, 18500, 19975, 21000, 22499, 24000}
+	got, ok := aggregate.Aggregate(in)
+	if !ok {
+		t.Fatal("Aggregate rejected a healthy sample")
+	}
+	if got.ModeCents != 0 {
+		t.Errorf("ModeCents = %d, want 0 when no price point repeats", got.ModeCents)
+	}
+	if got.MedianCents != 19975 {
+		t.Errorf("MedianCents = %d, want 19975", got.MedianCents)
 	}
 }

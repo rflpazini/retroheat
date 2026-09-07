@@ -18,16 +18,19 @@ func (c *Client) Audit(ctx context.Context, g catalog.Game, w io.Writer) error {
 		return err
 	}
 	fmt.Fprintf(w, "\n== %s (%s) — %d listings for %q\n", g.ID, g.Platform, len(items), BuildQuery(g))
+	media := mediaOf(g)
 	for _, it := range items {
 		verdict := "skip:currency"
 		switch {
 		case it.Price.Currency != "USD":
 		case excluded(it.Title, g.Ebay.Negative):
 			verdict = "skip:negative"
+		case foreign(it.Title, g):
+			verdict = "skip:region"
 		case !classify.Mentions(it.Title, g.Title):
 			verdict = "skip:not-this-game"
 		default:
-			res := classify.Classify(it.Title)
+			res := classify.ClassifyMedia(it.Title, media)
 			switch {
 			case res.Rejected:
 				verdict = "reject:" + res.Reason

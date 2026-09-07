@@ -628,4 +628,6 @@ games:
       why: "A small print run and no other way to own this version make it one of the pricier third-party carts."
     ebay:
       query: "Worms Armageddon N64"
-      negative: ["ps1", "dreamcast", "repro"]
+      # Limited Run Games reissued the cartridge in 2022; the reprint sells
+      # sealed for a tenth of an original complete copy and is its own market.
+      negative: ["ps1", "dreamcast", "repro", "limited run", "lrg", "collectors edition"]

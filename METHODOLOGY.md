@@ -30,25 +30,69 @@ half of "Persona 4" is in "Persona 3 FES", but the number is the whole
 difference. Roman numerals, ordinals and spelled-out numbers are treated as
 equal, so "Shenmue II", "Shenmue 2" and "3rd Strike" all match.
 
+A number in the listing has to be the game's number. "Dark Cloud (Sony
+PlayStation 2)" is not Dark Cloud 2 and "Silent Hill Origins PlayStation 2" is
+not Silent Hill 2, so the platform's own name is set aside before the check;
+Nintendo 64 is left alone because its games carry the 64 in their titles. A
+two-word title needs both words, since half of "Suikoden Tactics" is how "La
+Pucelle Tactics" would get counted.
+
+It must also be the release the catalog tracks. Entries are the North American
+release unless they say otherwise, so for those a title that says Japan, JPN,
+JP, NTSC-J, PAL, European, Korean, Asian, Russian or import is skipped: a
+Japanese Mario Kart 64 complete in box asks a quarter of what the US one does,
+and counting it is as wrong as counting a different game. "Made in Japan" is
+not an import; it is printed on North American cartridges. An entry marked
+`region: PAL` keeps its PAL copies and drops the Japanese ones, which are
+cheaper and sold with exactly those words; an entry marked `region: NTSC-J`,
+for a game that only shipped in Japan, drops PAL copies. The catalog's own
+exclusions are matched with apostrophes removed, so "players choice" also
+catches "Player's Choice" and the curly "Player’s Choice" that eBay's search
+leaves through.
+
 Every surviving title is then read in a fixed order:
 
 1. **Rejected outright** — empty cases, box-only, manual-only, reproductions,
    lots and bundles, multi-game carts, "pick your game" storefront listings,
-   consoles, strategy guides, posters, demo discs, download codes, graded
-   slabs, and anything for parts.
+   consoles, strategy guides, flags and banners, demo, trial and preview
+   discs, soundtrack-only and art-book listings, skins and decals, display
+   cases and box protectors sold on their own, download codes, graded slabs
+   (PSA, CGC, VGA, WATA, "graded"), and anything for parts. One numbered disc
+   of a multi-disc set ("Disc 2 only", "missing disc 1") is also rejected,
+   unless the title names the other discs. A listing that says "poster" is
+   kept: Pokémon XD and Turok 2 shipped with one, and "CIB with poster" is a
+   complete copy.
 2. **Sealed** — "factory sealed", "brand new", "still sealed", and similar.
+   Two tells override it: a sealed copy that was "tested" was opened, and
+   "Brand New Factory Sealed US Version" at a third of the complete price is
+   the template bootleg sellers use. Both are rejected rather than counted.
 3. **Loose, stated explicitly** — "disc only", "cart only", "no manual", "no
    case". An explicit statement of what is missing outranks "complete": a
    seller who writes "Complete Case Disc Only - No Manual" is describing an
    incomplete copy.
-4. **Complete in box** — "CIB", "complete in box", "with manual", "w manual".
-5. **Loose** — "loose", "unboxed".
-6. **Unknown** — dropped.
+4. **Complete in box** — "CIB", "complete in box", "complete with", or the
+   parts listed out: "box, manual and cart", "w/ box & manual".
+5. **With manual** — "with manual", "w manual", "manual included". On a disc
+   platform the disc is in its case, so this is a complete copy. On a
+   cartridge platform (N64) the cardboard box is the part collectors pay for,
+   so a cartridge "with manual" only counts as complete when the title also
+   names the box; otherwise it is dropped, since it is worth more than a bare
+   cartridge and much less than a boxed one and belongs in neither bucket.
+   "No box" and "box protector" do not name a box. On a disc platform "no
+   box" means no case, and is read as loose.
+6. **Loose** — "loose", "unboxed".
+7. **Unknown** — dropped.
 
 Unknown listings are dropped rather than guessed. Guessing would bias the
 medians, and a smaller honest sample beats a larger invented one. Phrases where
 "complete" belongs to the product name, such as *Kingdom Hearts Complete
 Edition*, are stripped before the complete-in-box rules run.
+
+Most dropped listings are bare cartridges whose seller wrote nothing about
+condition ("Mario Kart 64 (Nintendo 64, 1997) Authentic Tested"). For Mario
+Kart 64 on 3 September 2026 that was 108 of 200 listings. They price like the
+"cartridge only" listings that are counted, so dropping them narrows the sample
+without moving the figure.
 
 The eBay-supplied condition field is ignored. Reproduction cartridges and
 merchandise are routinely listed as "New", so a copy only counts as sealed when
@@ -58,7 +102,7 @@ the seller says so in the title.
 
 Retro listings mix a tight cluster of real prices with a few fantasy prices.
 Each condition bucket is trimmed with the interquartile rule — values outside
-`[Q1 − 1.5 × IQR, Q3 + 1.5 × IQR]` are discarded — and two figures are taken
+`[Q1 − 1.5 × IQR, Q3 + 1.5 × IQR]` are discarded — and three figures are taken
 from what survives:
 
 - **Median**: the middle asking price. This is the headline number, and the one
@@ -67,6 +111,17 @@ from what survives:
   nearest dollar, so $29.99 and $30.00 count as the same point. Where the median
   says what the middle seller asks, the mode says where sellers actually
   cluster. Ties go to the point nearest the median, then to the lower price.
+  When no two sellers share a point there is no cluster, and no mode is
+  published rather than a single listing dressed up as one.
+- **Middle half**: the first and third quartile of the trimmed bucket. A quarter
+  of sellers ask less than the low end, a quarter ask more than the high end.
+  One median cannot say whether a $279 complete Mario Kart 64 is a fantasy
+  price or the top of a wide market; a middle half of $110–$170 can.
+
+The site leads with the complete-in-box figure where one exists and prints the
+loose figure beside it, because the two markets differ by a factor of three
+for a common cartridge and a reader who has only seen loose copies would
+otherwise take the headline for an error.
 
 A bucket needs **at least four** surviving listings to be published at all.
 

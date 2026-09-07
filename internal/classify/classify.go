@@ -4,6 +4,7 @@ package classify
 
 import (
 	"regexp"
+	"slices"
 	"strings"
 )
 
@@ -22,6 +23,20 @@ type Result struct {
 	Reason    string
 }
 
+// Media is how a platform packaged its games, which changes what a manual
+// implies. A disc "with manual" sits in its case, so the copy is complete; a
+// cartridge "with manual" is usually missing the cardboard box, which is the
+// part collectors pay for.
+type Media int
+
+const (
+	// Cased media is a disc or card in a plastic case: PS2, GameCube, PSP,
+	// Vita, Dreamcast.
+	Cased Media = iota
+	// Boxed media is a cartridge in a cardboard box: N64.
+	Boxed
+)
+
 var (
 	junkPhrases = []string{
 		"case only", "box only", "manual only", "insert only", "cover art",
@@ -30,13 +45,38 @@ var (
 		"lot of", "game lot", "strategy guide", "guide book",
 		"for parts", "not working", "demo disc", "not for resale", "kiosk",
 		"download code", "digital code", "digital download",
+		"replacement box", "custom box",
+		// Cartridges are never "cards"; the phrase is a reproduction tell.
+		"game card", "cartridge card", "cart games for",
 		// Storefront listings that sell many titles under one item, and
 		// multi-game reproduction carts.
 		"pick your", "choose your", "you choose", "choose from", "multi cart",
 		"multicart", "in-1", "in 1 ", "options)",
+		// Part of a multi-disc set, or a set with a disc missing, is not a
+		// copy of the game in any condition.
+		"missing disc", "missing disk", "replacement disc", "replacement disk",
+		"disc 1 only", "disc 2 only", "disc one only", "disc two only",
+		"disk 1 only", "disk 2 only", "only disc 1", "only disc 2",
+		// Retail multipacks and merchandise sold under the game's name.
+		"dual pack", "twin pack", "double pack", "cd only", "art book",
+		"artbook", "poster only", "promo poster",
+		"promotional poster", "protector for", "display case", "acrylic",
+		"clear case cases",
 	}
+	// "poster" is deliberately absent: games shipped with posters, and a
+	// listing that says "CIB with poster" or "no poster" is a copy of the
+	// game. The poster-as-product listings say "flag" or "banner".
 	junkWords = []string{
-		"repro", "console", "bundle", "poster", "graded", "wata", "lot",
+		"repro", "console", "bundle", "graded", "wata", "lot",
+		// Graded slabs trade in their own market, at several times the
+		// price of the same sealed copy without a plastic case and a number.
+		// VGA is matched with its grade (vgaGradeRe): on Dreamcast the word
+		// also means the 480p output a "VGA compatible" game supports.
+		"psa", "cgc", "ukg",
+		// Demo, trial and preview discs carry the game's name and none of
+		// its value; so do skins, decals and reprinted boxes.
+		"demo", "trial", "preview", "sampler", "skin", "decal", "reprint",
+		"bootleg", "flag", "banner", "protectors",
 	}
 
 	newPhrases = []string{
@@ -47,17 +87,28 @@ var (
 	// own entry: a word boundary will not find "nib" inside it.
 	newWords = []string{"sealed", "nib", "bnib"}
 
+	// Listing the parts is the other way sellers say complete: "Box, Manual
+	// and Cart", "w/ Box & Manual".
 	cibPhrases = []string{
 		"complete in box", "complete w/", "complete with",
-		"with manual", "w/ manual", "w/manual", "manual included",
+		"box and manual", "box & manual", "box, manual", "box/manual",
+		"box manual", "box + manual", "box+manual", "manual and box",
+		"manual & box", "box+cart+manual", "box, cart", "box and cart",
 	}
-	// "w manual" (no slash) is common; as a word-bounded pattern it cannot
-	// fire inside "new manual".
-	cibWords = []string{"cib", "complete", "w manual"}
+	cibWords = []string{"cib", "complete"}
+
+	// A manual on its own only implies the rest of the package for Cased
+	// media; for Boxed media the title must also name the box. "w manual"
+	// (no slash) is common; as a word-bounded pattern it cannot fire inside
+	// "new manual".
+	manualPhrases = []string{"with manual", "w/ manual", "w/manual", "manual included"}
+	manualWords   = []string{"w manual"}
+	boxWords      = []string{"box", "boxed"}
 
 	loosePhrases = []string{
 		"disc only", "disk only", "cart only", "cartridge only",
-		"game only", "umd only", "no manual", "no case", "cartridge alone",
+		"game only", "umd only", "no manual", "missing manual", "no case",
+		"cartridge alone",
 	}
 	looseWords = []string{"loose", "unboxed"}
 
@@ -70,10 +121,35 @@ var (
 )
 
 var (
-	junkRe  = compileWords(junkWords)
-	newRe   = compileWords(newWords)
-	cibRe   = compileWords(cibWords)
-	looseRe = compileWords(looseWords)
+	// A numbered disc on its own ("Disc 2 only", "Disk 1 won't load") is part
+	// of a set, unless the title goes on to name the other discs ("Disc 1 &
+	// Disc 2", "Discs 1-2").
+	partialDiscRe = regexp.MustCompile(`\bdis[ck]s? ?(1|2|3|4|one|two|three|four)\b`)
+	discRangeRe   = regexp.MustCompile(`\b(1|2|3|one|two|three) ?(&|and|,|-|\+|/|to) ?(dis[ck] )?(2|3|4|two|three|four)\b`)
+	// A VGA slab always carries its grade: "VGA 85+", "VGA Gold 90".
+	vgaGradeRe = regexp.MustCompile(`\bvga (gold |graded? )?\d`)
+
+	// A sealed copy that was tested was opened, and "US Version" on a
+	// sealed listing is the bootleg sellers' template. Both are read as
+	// whole words, with the honest "untested" set aside first.
+	testedRe     = regexp.MustCompile(`\btested\b`)
+	usVersionRe  = regexp.MustCompile(`\bu\.?s\.? version\b`)
+	negatedTests = strings.NewReplacer("untested", " ", "not tested", " ", "never tested", " ", "cannot test", " ", "can't test", " ")
+
+	// Ways a title names the box only to say it is absent, or names an
+	// accessory rather than the box, so that neither can stand in for one.
+	boxNegations = strings.NewReplacer(
+		"no original box", " ", "no box", " ", "without box", " ", "missing box", " ",
+		"not boxed", " ", "box protectors", " ", "box protector", " ",
+	)
+	// For disc media the box is the case, so saying it is missing says loose.
+	casedLoosePhrases = append(slices.Clone(loosePhrases), "no box", "without box", "missing box")
+	junkRe            = compileWords(junkWords)
+	newRe             = compileWords(newWords)
+	cibRe             = compileWords(cibWords)
+	manualRe          = compileWords(manualWords)
+	boxRe             = compileWords(boxWords)
+	looseRe           = compileWords(looseWords)
 )
 
 func compileWords(words []string) []*regexp.Regexp {
@@ -98,32 +174,63 @@ func match(text string, phrases []string, words []*regexp.Regexp) (string, bool)
 	return "", false
 }
 
-// Classify buckets a listing by its title alone. The marketplace's own
+// Classify buckets a listing for Cased media by its title alone. See
+// ClassifyMedia.
+func Classify(title string) Result { return ClassifyMedia(title, Cased) }
+
+// ClassifyMedia buckets a listing by its title alone. The marketplace's own
 // condition field is deliberately ignored: reproduction cartridges and
 // merchandise are routinely listed as "New", so a copy only counts as sealed
 // when the seller says so in the title.
-func Classify(title string) Result {
+func ClassifyMedia(title string, media Media) Result {
 	t := strings.ToLower(strings.TrimSpace(title))
 
 	if reason, ok := match(t, junkPhrases, junkRe); ok {
 		return Result{Rejected: true, Reason: reason}
 	}
+	if partialDiscRe.MatchString(t) && !discRangeRe.MatchString(t) {
+		return Result{Rejected: true, Reason: "partial-set"}
+	}
+	if vgaGradeRe.MatchString(t) {
+		return Result{Rejected: true, Reason: "vga-graded"}
+	}
 	if reason, ok := match(t, newPhrases, newRe); ok {
+		// A sealed copy cannot have been tested, and "Factory Sealed US
+		// Version" at a fraction of the complete-in-box price is the
+		// template bootleg sellers use. Both describe something other than
+		// a factory-sealed retail copy, and neither belongs in any bucket.
+		if testedRe.MatchString(negatedTests.Replace(t)) || usVersionRe.MatchString(t) {
+			return Result{Rejected: true, Reason: "sealed-" + reason + "-doubtful"}
+		}
 		return Result{Condition: New, Reason: reason}
 	}
 
 	// An explicit statement of what is missing ("disc only", "no manual")
 	// outranks "complete": a seller who writes "Complete Case Disc Only - No
 	// Manual" is describing an incomplete copy, whatever else the title says.
-	if reason, ok := match(t, loosePhrases, nil); ok {
+	loose := loosePhrases
+	if media == Cased {
+		loose = casedLoosePhrases
+	}
+	if reason, ok := match(t, loose, nil); ok {
 		return Result{Condition: Loose, Reason: reason}
 	}
 
-	cibText := t
+	cibText := boxNegations.Replace(t)
 	for _, p := range titlePhrases {
 		cibText = strings.ReplaceAll(cibText, p, " ")
 	}
 	if reason, ok := match(cibText, cibPhrases, cibRe); ok {
+		return Result{Condition: CIB, Reason: reason}
+	}
+	if reason, ok := match(cibText, manualPhrases, manualRe); ok {
+		if media == Boxed {
+			if _, boxed := match(cibText, nil, boxRe); !boxed {
+				// Cartridge and manual, no box: worth more than loose and
+				// much less than complete, so it belongs in neither bucket.
+				return Result{Condition: Unknown, Reason: "manual-no-box"}
+			}
+		}
 		return Result{Condition: CIB, Reason: reason}
 	}
 	if reason, ok := match(t, nil, looseRe); ok {
@@ -158,7 +265,7 @@ func Mentions(listingTitle, gameTitle string) bool {
 	if len(game) == 0 {
 		return true
 	}
-	listing := tokens(listingTitle)
+	listing := tokens(platformNumbersRe.ReplaceAllString(strings.ToLower(listingTitle), " "))
 	have := make(map[string]bool, len(listing))
 	for _, w := range listing {
 		have[w] = true
@@ -169,11 +276,44 @@ func Mentions(listingTitle, gameTitle string) bool {
 			shared++
 		}
 	}
-	if shared*2 >= len(game) && numbersPresent(game, listing) {
+	// Half of a two-word title is one word, and one word is how "La Pucelle
+	// Tactics" gets counted as Suikoden Tactics; a two-word title needs both.
+	need := (len(game) + 1) / 2
+	if len(game) == 2 {
+		need = 2
+	}
+	if shared >= need && numbersPresent(game, listing) {
 		return true
 	}
-	return strings.Contains(strings.Join(listing, ""), strings.Join(game, ""))
+	return containsRunTogether(strings.Join(listing, ""), strings.Join(game, ""))
 }
+
+// containsRunTogether is the "killer7"/"Killer 7" fallback, with one guard:
+// a title that ends in a digit must not match inside a longer number, or
+// "Dark Cloud 2001" would be Dark Cloud 2.
+func containsRunTogether(listing, game string) bool {
+	if game == "" {
+		return false
+	}
+	endsInDigit := game[len(game)-1] >= '0' && game[len(game)-1] <= '9'
+	for from := 0; ; {
+		i := strings.Index(listing[from:], game)
+		if i < 0 {
+			return false
+		}
+		end := from + i + len(game)
+		if !endsInDigit || end == len(listing) || listing[end] < '0' || listing[end] > '9' {
+			return true
+		}
+		from = end
+	}
+}
+
+// platformNumbers strips platform names whose number would otherwise stand in
+// for a sequel number: "Dark Cloud (Sony PlayStation 2)" is not Dark Cloud 2,
+// and "Silent Hill Origins PlayStation 2" is not Silent Hill 2. Nintendo 64 is
+// left alone because its games carry the 64 in their own titles.
+var platformNumbersRe = regexp.MustCompile(`\b(play ?station ?(2|two)|ps 2)\b`)
 
 // numbersPresent requires every number in the game's title to appear in the
 // listing. Half the words of "Persona 4" are in "Persona 3 FES", but a sequel

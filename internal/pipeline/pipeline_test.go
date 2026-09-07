@@ -351,6 +351,20 @@ func TestPartialRunKeepsOtherPlatformsOnTheSite(t *testing.T) {
 	if !slices.Contains(meta.Platforms, catalog.N64) {
 		t.Errorf("meta.platforms = %v, want N64 still listed after a PS2-only run", meta.Platforms)
 	}
+
+	// The search palette and the game pages read catalog.json, so it must
+	// keep every game, not only the platforms that were priced.
+	rawCat, err := os.ReadFile(filepath.Join(dataDir, "catalog.json"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	var cat snapshot.Catalog
+	if err := json.Unmarshal(rawCat, &cat); err != nil {
+		t.Fatal(err)
+	}
+	if !slices.ContainsFunc(cat.Games, func(g snapshot.CatalogGame) bool { return g.ID == "conker-n64" }) {
+		t.Error("catalog.json lost the N64 game after a PS2-only run")
+	}
 }
 
 func TestRunRejectsAnInvalidCatalog(t *testing.T) {

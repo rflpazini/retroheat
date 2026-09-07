@@ -8,7 +8,7 @@ import {
   type SpotlightItem,
 } from '@/components/retro-os/spotlight'
 import { useJson } from '@/lib/data'
-import { headlinePrice, money } from '@/lib/format'
+import { headlinePrice, money, priceMap } from '@/lib/format'
 import { rank, rankBoards, BOARDS } from '@/lib/search'
 import {
   CONDITION_LABELS,
@@ -19,6 +19,7 @@ import {
   type LatestFile,
   type LatestGame,
 } from '@/lib/types'
+import { OtherPrices } from '@/components/OtherPrices'
 
 export { shortcutLabel, useSpotlightShortcut }
 
@@ -59,6 +60,7 @@ function gameItem(game: CatalogGame, price: LatestGame | undefined): SpotlightIt
       <>
         <span className="tabular block text-sm font-semibold">{money(headline.cents)}</span>
         <span className="eyebrow block">{CONDITION_LABELS[headline.condition]}</span>
+        {price && <OtherPrices prices={priceMap(price.prices)} headline={headline.condition} />}
       </>
     ) : (
       <span className="eyebrow block">{price ? 'unpriced' : ''}</span>

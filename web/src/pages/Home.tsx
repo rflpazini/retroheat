@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useJson } from '@/lib/data'
-import { conditionColor, heat, money } from '@/lib/format'
+import { companions, conditionColor, heat, money } from '@/lib/format'
 import {
   CONDITION_LABELS,
   PLATFORMS,
@@ -15,6 +15,7 @@ import { TrendPill, TrendStatus } from '@/components/TrendPill'
 import { Window } from '@/components/Window'
 import { DiskWindow } from '@/components/DiskWindow'
 import { LoadError, Message } from '@/components/States'
+import { OtherPrices } from '@/components/OtherPrices'
 
 type MoveWindow = 'pct_1d' | 'pct_7d' | 'pct_30d'
 
@@ -35,9 +36,7 @@ function Hero({ entry, move }: { entry: TrendEntry; move: MoveWindow }) {
     <Window title="Now playing — hottest game on the shelf" stripe order={1}>
       <div className="flex flex-wrap items-center justify-between gap-6">
         <div className="min-w-0">
-          <p className="eyebrow mb-2">
-            {PLATFORM_LABELS[entry.platform]} · {CONDITION_LABELS[entry.headline_condition]}
-          </p>
+          <p className="eyebrow mb-2">{PLATFORM_LABELS[entry.platform]}</p>
           <Link to={`/g/${entry.id}`}>
             <h2 className="pixel text-lg leading-snug hover:text-[var(--primary)] sm:text-2xl">
               {entry.title}
@@ -45,9 +44,11 @@ function Hero({ entry, move }: { entry: TrendEntry; move: MoveWindow }) {
           </Link>
           <div className="mt-4 flex flex-wrap items-center gap-3">
             <span className="tabular text-2xl font-bold">{money(entry.price_cents)}</span>
+            <span className="eyebrow">{CONDITION_LABELS[entry.headline_condition]} copy</span>
             <TrendPill value={entry[move]} />
             <span className="text-xs">{over}</span>
           </div>
+          <OtherPrices prices={entry.prices} headline={entry.headline_condition} className="mt-2" />
           {entry.annotation && (
             <p className="bevel-in mt-4 max-w-xl border-2 border-[var(--border)] p-2 text-xs">
               <span className="eyebrow mr-1">Why:</span>
@@ -78,7 +79,10 @@ function MoverRow({ entry, rank, move }: { entry: TrendEntry; rank: number; move
           <span className="line-clamp-1">{entry.title}</span>
         </Link>
         <p className="eyebrow mt-0.5">
-          {PLATFORM_SHORT[entry.platform]} · {CONDITION_LABELS[entry.headline_condition]}
+          {PLATFORM_SHORT[entry.platform]}
+          {companions(entry.prices, entry.headline_condition).map(
+            (o) => ` · ${CONDITION_LABELS[o.condition]} ${money(o.cents)}`,
+          )}
           {entry.annotation && ' · has context'}
         </p>
       </div>
@@ -97,6 +101,7 @@ function MoverRow({ entry, rank, move }: { entry: TrendEntry; rank: number; move
 
       <div className="text-right">
         <p className="tabular text-sm font-bold">{money(entry.price_cents)}</p>
+        <p className="eyebrow">{CONDITION_LABELS[entry.headline_condition]}</p>
         <TrendPill value={change} showIcon={false} className="mt-1" />
       </div>
     </div>

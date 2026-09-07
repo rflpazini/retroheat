@@ -103,11 +103,12 @@ func (c *Client) Quotes(ctx context.Context, g catalog.Game) ([]provider.Quote, 
 	}
 
 	buckets := map[classify.Condition][]int64{}
+	media := mediaOf(g)
 	for _, it := range items {
-		if it.Price.Currency != "USD" || excluded(it.Title, g.Ebay.Negative) || !classify.Mentions(it.Title, g.Title) {
+		if it.Price.Currency != "USD" || excluded(it.Title, g.Ebay.Negative) || foreign(it.Title, g) || !classify.Mentions(it.Title, g.Title) {
 			continue
 		}
-		res := classify.Classify(it.Title)
+		res := classify.ClassifyMedia(it.Title, media)
 		if res.Rejected || res.Condition == classify.Unknown {
 			continue
 		}
@@ -125,6 +126,8 @@ func (c *Client) Quotes(ctx context.Context, g catalog.Game) ([]provider.Quote, 
 				Condition:   cond,
 				MedianCents: r.MedianCents,
 				ModeCents:   r.ModeCents,
+				Q1Cents:     r.Q1Cents,
+				Q3Cents:     r.Q3Cents,
 				SampleSize:  r.SampleSize,
 			})
 		}

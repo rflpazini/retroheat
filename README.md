@@ -15,8 +15,11 @@ on GitHub Pages that reads it. No server, no database, no hosting bill.
 ## What the numbers mean
 
 Prices are the **median asking price of active eBay listings**, shown alongside
-the **mode** (the whole-dollar price point most sellers cluster on), not realized
-sale prices. eBay retired public access to sold-listing data (the Finding API
+the **mode** (the whole-dollar price point most sellers cluster on) and the
+**middle half** (the range a quarter of sellers ask below and a quarter above),
+not realized sale prices. Each game carries a figure per condition: a complete
+Mario Kart 64 with box and manual and a bare cartridge are different markets,
+and the site shows both rather than one number. eBay retired public access to sold-listing data (the Finding API
 was decommissioned in February 2025, and Marketplace Insights is closed to new
 applications), so no free source of true sale prices exists.
 

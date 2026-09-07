@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { headlinePrice, heat, money, pct } from './format'
+import { companions, headlinePrice, heat, middleHalf, money, pct, priceMap } from './format'
 
 describe('money', () => {
   it('shows cents below a thousand dollars', () => {
@@ -67,5 +67,39 @@ describe('headlinePrice', () => {
 
   it('returns null when there is nothing to show', () => {
     expect(headlinePrice({})).toBeNull()
+  })
+})
+
+describe('companions', () => {
+  it('lists the other priced conditions in shelf order', () => {
+    expect(companions({ loose: 4500, cib: 13482, new: 274799 }, 'cib')).toEqual([
+      { condition: 'loose', cents: 4500 },
+      { condition: 'new', cents: 274799 },
+    ])
+  })
+
+  it('is empty when the headline is the only price, or the file predates prices', () => {
+    expect(companions({ cib: 13482 }, 'cib')).toEqual([])
+    expect(companions(undefined, 'cib')).toEqual([])
+  })
+})
+
+describe('priceMap', () => {
+  it('flattens a Prices block to medians', () => {
+    expect(priceMap({ loose: { median_cents: 4500, n: 29 }, cib: { median_cents: 13482, n: 36 } })).toEqual({
+      loose: 4500,
+      cib: 13482,
+    })
+  })
+})
+
+describe('middleHalf', () => {
+  it('prints the quartiles as a range', () => {
+    expect(middleHalf({ median_cents: 13482, q1_cents: 11000, q3_cents: 17000, n: 36 })).toBe('$110.00–$170.00')
+  })
+
+  it('is null when the file carries no quartiles', () => {
+    expect(middleHalf({ median_cents: 13482, n: 36 })).toBeNull()
+    expect(middleHalf(undefined)).toBeNull()
   })
 })

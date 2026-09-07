@@ -74,9 +74,12 @@ games:
       why: "A three-disc set that is hard to find complete, on a console with a short commercial life."
     ebay:
       query: "Shenmue Dreamcast"
-      negative: ["shenmue ii", "shenmue 2", "shenmue 3", "hd", "xbox", "ps4"]
+      # The Passport disc is the fourth disc of the set, sold on its own for
+      # ten dollars; on its own it is not a copy of the game.
+      negative: ["shenmue ii", "shenmue 2", "shenmue 3", "hd", "xbox", "ps4", "shenmue passport", "passport2", "passport disc only"]
   - id: shenmue-2-dreamcast
     title: "Shenmue II"
+    region: PAL
     info:
       developer: "Sega AM2"
       publisher: "Sega"
@@ -271,6 +274,8 @@ games:
       negative: ["3rd strike"]
   - id: garou-mark-of-the-wolves-dreamcast
     title: "Garou: Mark of the Wolves"
+    # Japan-only on Dreamcast.
+    region: NTSC-J
     info:
       developer: "SNK"
       publisher: "SNK"
@@ -301,6 +306,8 @@ games:
       negative: ["neo geo", "switch"]
   - id: capcom-vs-snk-2-dreamcast
     title: "Capcom vs. SNK 2"
+    # Never released in North America on Dreamcast; every copy is Japanese.
+    region: NTSC-J
     info:
       developer: "Capcom"
       publisher: "Capcom"
@@ -540,7 +547,8 @@ games:
       query: "Mars Matrix Dreamcast"
       negative: []
   - id: virtua-tennis-2-dreamcast
-    title: "Virtua Tennis 2"
+    # Sold in North America as Tennis 2K2; listings use that name.
+    title: "Tennis 2K2"
     info:
       developer: "Sega AM3"
       publisher: "Sega"
@@ -552,8 +560,8 @@ games:
       trivia: "Sold in North America as Tennis 2K2 under the Sega Sports label, released as the console was being discontinued."
       why: "A late release in small numbers under a different name, so complete US copies are scarce."
     ebay:
-      query: "Virtua Tennis 2 Dreamcast"
-      negative: ["virtua tennis 1", "ps2"]
+      query: "Tennis 2K2 Dreamcast"
+      negative: ["virtua tennis 1", "ps2", "2k1"]
   - id: hydro-thunder-dreamcast
     title: "Hydro Thunder"
     info:

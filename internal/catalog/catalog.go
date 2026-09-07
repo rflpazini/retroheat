@@ -38,6 +38,12 @@ var platformLabels = map[Platform]string{
 	Dreamcast: "Dreamcast",
 }
 
+// Boxed reports whether the platform sold games as a cartridge in a cardboard
+// box. The box is the fragile, valuable part of a complete copy, so a
+// "cartridge with manual" is not complete the way a disc with its manual in
+// the original case is.
+func (p Platform) Boxed() bool { return p == N64 }
+
 func (p Platform) Label() string {
 	if l, ok := platformLabels[p]; ok {
 		return l

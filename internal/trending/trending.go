@@ -48,17 +48,43 @@ type Input struct {
 }
 
 type Entry struct {
-	ID                string              `json:"id"`
-	Title             string              `json:"title"`
-	Platform          catalog.Platform    `json:"platform"`
-	HeadlineCondition classify.Condition  `json:"headline_condition"`
-	PriceCents        int64               `json:"price_cents"`
-	Pct1d             *float64            `json:"pct_1d"`
-	Pct7d             *float64            `json:"pct_7d"`
-	Pct30d            *float64            `json:"pct_30d"`
-	Score             float64             `json:"score"`
-	Spark             []int64             `json:"spark"`
-	Annotation        *catalog.Annotation `json:"annotation,omitempty"`
+	ID                string             `json:"id"`
+	Title             string             `json:"title"`
+	Platform          catalog.Platform   `json:"platform"`
+	HeadlineCondition classify.Condition `json:"headline_condition"`
+	PriceCents        int64              `json:"price_cents"`
+	// Prices carries every condition with enough listings behind it, so a
+	// board can print the loose figure beside a complete-copy headline
+	// instead of leaving readers to guess which market the number describes.
+	Prices     Prices              `json:"prices"`
+	Pct1d      *float64            `json:"pct_1d"`
+	Pct7d      *float64            `json:"pct_7d"`
+	Pct30d     *float64            `json:"pct_30d"`
+	Score      float64             `json:"score"`
+	Spark      []int64             `json:"spark"`
+	Annotation *catalog.Annotation `json:"annotation,omitempty"`
+}
+
+// Prices holds the latest median per condition, in cents; a condition is
+// absent when fewer than MinSample listings stood behind it.
+type Prices struct {
+	Loose *int64 `json:"loose,omitempty"`
+	CIB   *int64 `json:"cib,omitempty"`
+	New   *int64 `json:"new,omitempty"`
+}
+
+func pricesOf(p history.Point) Prices {
+	var out Prices
+	if p.Loose != nil && p.NL >= aggregate.MinSample {
+		out.Loose = p.Loose
+	}
+	if p.CIB != nil && p.NC >= aggregate.MinSample {
+		out.CIB = p.CIB
+	}
+	if p.New != nil && p.NN >= aggregate.MinSample {
+		out.New = p.New
+	}
+	return out
 }
 
 // Smooth replaces each value with the median of itself and the preceding
@@ -217,6 +243,7 @@ func Compute(in Input, asOf time.Time) (Entry, bool) {
 		Platform:          in.Platform,
 		HeadlineCondition: m.Condition,
 		PriceCents:        m.PriceCents,
+		Prices:            pricesOf(in.Points[len(in.Points)-1]),
 		Pct1d:             m.Pct1d,
 		Pct7d:             m.Pct7d,
 		Pct30d:            m.Pct30d,

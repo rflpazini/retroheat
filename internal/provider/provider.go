@@ -23,7 +23,11 @@ type Quote struct {
 	MedianCents int64
 	// ModeCents is the most common whole-dollar price point, or 0 when the
 	// provider only supplies a single figure rather than a listing sample.
-	ModeCents  int64
+	ModeCents int64
+	// Q1Cents and Q3Cents bound the middle half of the sample, zero when the
+	// provider supplies a single figure.
+	Q1Cents    int64
+	Q3Cents    int64
 	SampleSize int
 }
 

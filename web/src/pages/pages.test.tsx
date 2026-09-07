@@ -84,6 +84,25 @@ describe.skipIf(!present)('pages render against real collector output', () => {
     await waitFor(() => expect(document.querySelectorAll('tbody tr').length).toBeGreaterThan(0))
   })
 
+  it('a mover row labels its headline condition and shows the loose price beside it', async () => {
+    const trending = JSON.parse(fs.readFileSync(path.join(dataDir, 'trending/all.json'), 'utf8')) as {
+      entries: { id: string; title: string; headline_condition: string; prices?: { loose?: number; cib?: number } }[]
+    }
+    renderAt('/', <Home />, '/')
+    await waitFor(() => expect(document.body.textContent).toMatch(/Complete|Loose|Nothing has moved|No .* yet/i))
+
+    const text = document.body.textContent ?? ''
+    // A complete-copy headline reads as a mistake to someone who has only seen
+    // loose carts; the row must print the loose figure next to it.
+    const shown = trending.entries.find(
+      (e) => e.headline_condition === 'cib' && e.prices?.loose && text.includes(e.title),
+    )
+    if (!shown) return // no complete-and-loose mover on today's shelf
+    const loose = shown.prices!.loose! / 100
+    expect(text).toContain(`Loose $${loose.toFixed(2)}`)
+    expect(text).toMatch(/Complete/)
+  })
+
   it('a platform board shows the mode next to the median', async () => {
     renderAt('/p/ps2', <Platform />, '/p/:platform')
     await waitFor(() => expect(document.querySelectorAll('tbody tr').length).toBeGreaterThan(0))
@@ -233,6 +252,21 @@ describe.skipIf(!present)('the game page explains the game, not just the price',
 
     await waitFor(() => expect(document.body.textContent).toMatch(/Jet Force Gemini/))
     await waitFor(() => expect(document.body.textContent).toMatch(/mode \$\d/))
+  })
+
+  it('shows the middle half and the listing count behind each price', async () => {
+    const latest = JSON.parse(fs.readFileSync(path.join(dataDir, 'latest/n64.json'), 'utf8')) as {
+      games: { id: string; prices: Record<string, { q1_cents?: number; q3_cents?: number; n: number } | undefined> }[]
+    }
+    const withRange = latest.games.find((g) => Object.values(g.prices).some((p) => p?.q1_cents && p?.q3_cents))
+    if (!withRange) return // data written before quartiles were recorded
+
+    const { Game } = await import('./Game')
+    renderAt(`/g/${withRange.id}`, <Game />, '/g/:id')
+
+    await waitFor(() => expect(document.body.textContent).toMatch(/middle half \$\d/))
+    expect(document.body.textContent).toMatch(/\d+ asking prices/)
+    expect(document.body.textContent).toMatch(/a quarter of sellers ask less/)
   })
 
   it('shows the about paragraph with its Wikipedia credit when one is on file', async () => {

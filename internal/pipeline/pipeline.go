@@ -75,11 +75,13 @@ func Run(ctx context.Context, o Options) (Result, error) {
 	latestAnn := catalog.Latest(anns)
 
 	// A run limited to some platforms must not shrink the site: the global
-	// board keeps the other platforms' entries and meta keeps listing every
-	// platform that has a board on disk.
+	// board keeps the other platforms' entries, meta keeps listing every
+	// platform that has a board on disk, and catalog.json keeps every game,
+	// since the search palette and the game pages read it.
+	allGames := games
 	allPlatforms := platformsOf(games)
 	if len(o.Platforms) > 0 {
-		games = slices.DeleteFunc(games, func(g catalog.Game) bool {
+		games = slices.DeleteFunc(slices.Clone(games), func(g catalog.Game) bool {
 			return !slices.Contains(o.Platforms, g.Platform)
 		})
 	}
@@ -234,7 +236,7 @@ func Run(ctx context.Context, o Options) (Result, error) {
 	}
 	if err := snapshot.WriteCatalog(o.DataDir, snapshot.Catalog{
 		AsOf:  today,
-		Games: catalogEntries(games, latestAnn),
+		Games: catalogEntries(allGames, latestAnn),
 	}); err != nil {
 		return Result{}, err
 	}
@@ -274,7 +276,13 @@ func pointFrom(quotes []provider.Quote, date string) history.Point {
 func pricesFrom(quotes []provider.Quote) snapshot.Prices {
 	var out snapshot.Prices
 	for _, q := range quotes {
-		price := &snapshot.Price{MedianCents: q.MedianCents, ModeCents: q.ModeCents, N: q.SampleSize}
+		price := &snapshot.Price{
+			MedianCents: q.MedianCents,
+			ModeCents:   q.ModeCents,
+			Q1Cents:     q.Q1Cents,
+			Q3Cents:     q.Q3Cents,
+			N:           q.SampleSize,
+		}
 		switch q.Condition {
 		case classify.Loose:
 			out.Loose = price

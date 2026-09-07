@@ -11,7 +11,7 @@ import {
   YAxis,
 } from 'recharts'
 import { useJson } from '@/lib/data'
-import { conditionColor, formatDate, money } from '@/lib/format'
+import { conditionColor, formatDate, middleHalf, money } from '@/lib/format'
 import {
   CONDITIONS,
   CONDITION_LABELS,
@@ -20,6 +20,7 @@ import {
   type Condition,
   type HistoryFile,
   type LatestFile,
+  type Price,
 } from '@/lib/types'
 import { TrendPill } from '@/components/TrendPill'
 import { Window } from '@/components/Window'
@@ -28,6 +29,23 @@ import { LoadError, Message } from '@/components/States'
 
 const chip = 'bevel border-2 border-[var(--border)] bg-[var(--secondary)] px-2 py-1 text-[0.6rem]'
 const btn = 'press bevel border-2 border-[var(--border)] bg-[var(--secondary)] px-3 py-1.5 text-xs font-semibold inline-flex items-center gap-1.5'
+
+/**
+ * What stands behind a median: how many sellers, where they cluster, and how
+ * wide the middle half is. A single figure cannot say whether a $279 listing
+ * is a fantasy or the top of a real range; the middle half can.
+ */
+function PriceFootnotes({ price }: { price: Price | undefined }) {
+  if (!price) return null
+  const half = middleHalf(price)
+  return (
+    <div className="tabular text-[0.65rem] text-[var(--muted-foreground)]">
+      {price.mode_cents ? <p>mode {money(price.mode_cents)}</p> : null}
+      {half && <p>middle half {half}</p>}
+      <p>{price.n} asking prices</p>
+    </div>
+  )
+}
 
 export function Game() {
   const { id } = useParams()
@@ -167,11 +185,7 @@ export function Game() {
               <span className="eyebrow">{CONDITION_LABELS[c]}</span>
             </div>
             <p className="tabular text-lg font-bold">{money(latest?.[c] ?? null)}</p>
-            {boardEntry?.prices[c]?.mode_cents ? (
-              <p className="tabular text-[0.65rem] text-[var(--muted-foreground)]">
-                mode {money(boardEntry.prices[c]!.mode_cents)}
-              </p>
-            ) : null}
+            <PriceFootnotes price={boardEntry?.prices[c]} />
           </div>
         ))}
         <div className="window p-3">
@@ -181,6 +195,12 @@ export function Game() {
           <TrendPill value={boardEntry?.pct_7d ?? null} />
         </div>
       </div>
+      {boardEntry && CONDITIONS.some((c) => middleHalf(boardEntry.prices[c])) && (
+        <p className="eyebrow">
+          Asking prices from live eBay listings, not sales. Middle half: a quarter of sellers ask
+          less, a quarter ask more.
+        </p>
+      )}
 
       {annotation && (
         <Window title="Why it is moving — recent event" order={2}>

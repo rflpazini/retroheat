@@ -326,3 +326,32 @@ func TestRankIsStableForEqualScores(t *testing.T) {
 		t.Errorf("ties must break on id for reproducible output, got %q first", got[0].ID)
 	}
 }
+
+func TestComputeCarriesEveryPricedCondition(t *testing.T) {
+	t.Parallel()
+	// Mario Kart 64: complete copies lead, but most listings are loose carts
+	// and the board must be able to show that figure beside the headline.
+	pts := series("2026-08-31", []int64{13000, 13100, 13200, 13300, 13400, 13500, 13482})
+	for i := range pts {
+		loose := int64(4500)
+		pts[i].Loose, pts[i].NL = &loose, 29
+		thin := int64(99900)
+		pts[i].New, pts[i].NN = &thin, 2 // below MinSample, so not published
+	}
+	got, ok := trending.Compute(trending.Input{ID: "mario-kart-64-n64", Title: "Mario Kart 64", Platform: catalog.N64, Points: pts}, day("2026-08-31"))
+	if !ok {
+		t.Fatal("Compute rejected a healthy series")
+	}
+	if got.HeadlineCondition != classify.CIB || got.PriceCents != 13482 {
+		t.Errorf("headline = %s %d, want cib 13482", got.HeadlineCondition, got.PriceCents)
+	}
+	if got.Prices.CIB == nil || *got.Prices.CIB != 13482 {
+		t.Errorf("Prices.CIB = %v, want 13482", got.Prices.CIB)
+	}
+	if got.Prices.Loose == nil || *got.Prices.Loose != 4500 {
+		t.Errorf("Prices.Loose = %v, want 4500", got.Prices.Loose)
+	}
+	if got.Prices.New != nil {
+		t.Errorf("Prices.New = %d, want omitted below MinSample", *got.Prices.New)
+	}
+}

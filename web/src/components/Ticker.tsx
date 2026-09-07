@@ -1,6 +1,6 @@
 import { useJson } from '@/lib/data'
 import { heat, money, pct } from '@/lib/format'
-import { PLATFORM_SHORT, type TrendingFile } from '@/lib/types'
+import { CONDITION_LABELS, PLATFORM_SHORT, type TrendingFile } from '@/lib/types'
 
 /**
  * A scrolling band of the day's biggest movers. It duplicates its contents so
@@ -30,6 +30,7 @@ export function Ticker() {
                   <span className="eyebrow">{PLATFORM_SHORT[e.platform]}</span>
                   <span className="font-semibold">{e.title}</span>
                   <span className="tabular">{money(e.price_cents)}</span>
+                  <span className="eyebrow">{CONDITION_LABELS[e.headline_condition]}</span>
                   <span className="tabular font-bold" style={{ color: heat(move) }}>
                     {pct(move)}
                   </span>

@@ -1,4 +1,4 @@
-import type { Prices, Condition } from './types'
+import { CONDITIONS, type Condition, type Price, type PriceMap, type Prices } from './types'
 
 export function money(cents: number | null | undefined): string {
   if (cents == null) return '—'
@@ -51,6 +51,39 @@ export function headlinePrice(prices: Prices): { condition: Condition; cents: nu
   if (prices.loose) return { condition: 'loose', cents: prices.loose.median_cents }
   if (prices.new) return { condition: 'new', cents: prices.new.median_cents }
   return null
+}
+
+/** The medians of a Prices block as a flat map, so boards and files agree on one shape. */
+export function priceMap(prices: Prices): PriceMap {
+  const out: PriceMap = {}
+  for (const c of CONDITIONS) {
+    const p = prices[c]
+    if (p) out[c] = p.median_cents
+  }
+  return out
+}
+
+/**
+ * companions lists every priced condition except the one leading, in shelf
+ * order. A complete-copy headline of $134.82 reads as a mistake to someone who
+ * has only seen loose carts at $45; printing "Loose $45.00" beside it settles
+ * which market each number describes.
+ */
+export function companions(
+  prices: PriceMap | undefined,
+  headline: Condition,
+): { condition: Condition; cents: number }[] {
+  if (!prices) return []
+  return CONDITIONS.filter((c) => c !== headline && prices[c] != null).map((c) => ({
+    condition: c,
+    cents: prices[c] as number,
+  }))
+}
+
+/** "$110.00–$170.00": where the middle half of sellers sit, or null when the file has no quartiles. */
+export function middleHalf(price: Price | undefined): string | null {
+  if (price?.q1_cents == null || price.q3_cents == null) return null
+  return `${money(price.q1_cents)}–${money(price.q3_cents)}`
 }
 
 export function relativeDay(iso: string): string {

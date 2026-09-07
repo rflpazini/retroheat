@@ -202,3 +202,72 @@ func TestClientSatisfiesTheProviderInterface(t *testing.T) {
 		t.Errorf("CostPerGame = %d, want 1", p.CostPerGame())
 	}
 }
+
+var marioKart = catalog.Game{
+	ID:       "mario-kart-64-n64",
+	Title:    "Mario Kart 64",
+	Platform: catalog.N64,
+	Region:   catalog.RegionNTSCU,
+	Ebay:     catalog.EbayHints{Query: "Mario Kart 64 N64", Negative: []string{"players choice", "wii", "repro"}},
+}
+
+func TestQuotesReadTitlesForTheGamesRegionAndMedia(t *testing.T) {
+	t.Parallel()
+	c := newClient(t, &stub{fixture: "search_mario_kart_64.json"})
+
+	quotes, err := c.Quotes(context.Background(), marioKart)
+	if err != nil {
+		t.Fatalf("Quotes: %v", err)
+	}
+	got := map[classify.Condition]provider.Quote{}
+	for _, q := range quotes {
+		got[q.Condition] = q
+	}
+
+	// 6 complete copies. The 4 "with manual" cartridges have no box, the 3
+	// imports are other regions, the Player’s Choice reprint is excluded by
+	// the catalog despite its curly apostrophe, and the repro card is junk.
+	cib := got[classify.CIB]
+	if cib.SampleSize != 6 {
+		t.Errorf("cib sample = %d, want 6", cib.SampleSize)
+	}
+	if cib.MedianCents != 13450 {
+		t.Errorf("cib median = %d, want 13450 (midpoint of $129 and $140)", cib.MedianCents)
+	}
+	if cib.Q1Cents != 12438 || cib.Q3Cents != 15900 {
+		t.Errorf("cib middle half = %d..%d, want 12438..15900", cib.Q1Cents, cib.Q3Cents)
+	}
+	if loose := got[classify.Loose]; loose.SampleSize != 5 || loose.MedianCents != 4495 {
+		t.Errorf("loose = %+v, want 5 cartridges at a $44.95 median", loose)
+	}
+	if _, ok := got[classify.New]; ok {
+		t.Error("the reproduction card was counted as a sealed copy")
+	}
+}
+
+func TestQuotesKeepTheEntrysOwnRegionForAGameThatOnlyExistsAbroad(t *testing.T) {
+	t.Parallel()
+	// The fixture holds six US complete copies, one PAL, and two Japanese of
+	// which one says "with Box and Manual" and is read as complete.
+	cases := []struct {
+		region catalog.Region
+		cib    int
+	}{
+		{catalog.RegionPAL, 7},   // the PAL copy counts; Japanese copies are still imports
+		{catalog.RegionNTSCJ, 8}, // the Japanese copies count; the PAL copy does not
+	}
+	for _, c := range cases {
+		client := newClient(t, &stub{fixture: "search_mario_kart_64.json"})
+		g := marioKart
+		g.Region = c.region
+		quotes, err := client.Quotes(context.Background(), g)
+		if err != nil {
+			t.Fatalf("Quotes(%s): %v", c.region, err)
+		}
+		for _, q := range quotes {
+			if q.Condition == classify.CIB && q.SampleSize != c.cib {
+				t.Errorf("%s cib sample = %d, want %d", c.region, q.SampleSize, c.cib)
+			}
+		}
+	}
+}

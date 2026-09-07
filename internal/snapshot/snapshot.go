@@ -21,7 +21,12 @@ type Price struct {
 	// ModeCents is omitted for providers that supply one figure per condition
 	// rather than a sample of listings.
 	ModeCents int64 `json:"mode_cents,omitempty"`
-	N         int   `json:"n"`
+	// Q1Cents and Q3Cents bound the middle half of the asking prices, so a
+	// reader can tell whether one high listing is the top of the market or a
+	// fantasy. Omitted for single-figure providers.
+	Q1Cents int64 `json:"q1_cents,omitempty"`
+	Q3Cents int64 `json:"q3_cents,omitempty"`
+	N       int   `json:"n"`
 }
 
 type Prices struct {
