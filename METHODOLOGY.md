@@ -132,6 +132,15 @@ point rather than appending, so the file never grows twice in a day. Points
 older than 90 days are compacted to one point per ISO week, holding the median
 of that week. A game's full history is therefore a few kilobytes a year.
 
+Each point also records the version of the classification rules that produced
+it (`v`; points written before the field existed count as version 0). When the
+rules change in a way that moves medians, the version is bumped in the same
+commit and the new points start a new series: momentum is never measured across
+the change, a week that straddles it is never compacted, and the game page
+draws the older points as a dashed tail. Nothing is deleted. A rule change
+costs the boards about a week of quiet, the same as the first week of
+collection, instead of a history wipe.
+
 ## 6. Momentum
 
 - The series is smoothed with a **five-point rolling median**, which removes

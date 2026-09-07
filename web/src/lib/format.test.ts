@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { companions, headlinePrice, heat, middleHalf, money, pct, priceMap } from './format'
+import { companions, formatDate, headlinePrice, heat, middleHalf, money, pct, priceMap } from './format'
 
 describe('money', () => {
   it('shows cents below a thousand dollars', () => {
@@ -101,5 +101,19 @@ describe('middleHalf', () => {
   it('is null when the file carries no quartiles', () => {
     expect(middleHalf({ median_cents: 13482, n: 36 })).toBeNull()
     expect(middleHalf(undefined)).toBeNull()
+  })
+})
+
+describe('formatDate', () => {
+  it('shows a calendar date on the day it names, whatever the local zone', () => {
+    expect(formatDate('2026-09-03')).toBe('Sep 3, 2026')
+  })
+
+  it('still reads a full timestamp', () => {
+    expect(formatDate('2026-09-07T18:51:01Z')).toMatch(/Sep [78], 2026/)
+  })
+
+  it('passes through text it cannot parse', () => {
+    expect(formatDate('unknown')).toBe('unknown')
   })
 })

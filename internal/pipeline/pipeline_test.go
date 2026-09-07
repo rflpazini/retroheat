@@ -14,6 +14,8 @@ import (
 
 	"github.com/rflpazini/retroheat/internal/budget"
 	"github.com/rflpazini/retroheat/internal/catalog"
+	"github.com/rflpazini/retroheat/internal/classify"
+	"github.com/rflpazini/retroheat/internal/history"
 	"github.com/rflpazini/retroheat/internal/pipeline"
 	"github.com/rflpazini/retroheat/internal/provider"
 	"github.com/rflpazini/retroheat/internal/provider/fake"
@@ -399,4 +401,50 @@ func snapshotTree(t *testing.T, dir string) map[string]string {
 		t.Fatal(err)
 	}
 	return out
+}
+
+func TestPointFromStampsTheGivenVersion(t *testing.T) {
+	t.Parallel()
+	p := pipeline.PointFrom([]provider.Quote{{Condition: "cib", MedianCents: 5000, SampleSize: 9}}, "2026-09-01", 7)
+	if p.V != 7 {
+		t.Errorf("v = %d, want 7", p.V)
+	}
+	if p.CIB == nil || *p.CIB != 5000 || p.NC != 9 {
+		t.Errorf("point = %+v, want cib 5000 from 9 listings", p)
+	}
+}
+
+// Every point a run writes, live or backfilled, belongs to the current series.
+// An unstamped backfill would sit at version 0 and the boards it exists to
+// populate would stay empty.
+func TestRunStampsNewAndBackfilledPointsWithTheSeriesVersion(t *testing.T) {
+	t.Parallel()
+	dataDir, catalogDir := setup(t)
+	if _, err := pipeline.Run(context.Background(), opts(dataDir, catalogDir, fake.New(runDay))); err != nil {
+		t.Fatal(err)
+	}
+	hf, err := history.Read(filepath.Join(dataDir, "history"), "god-hand-ps2")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(hf.Points) < 2 {
+		t.Fatalf("points = %d, want the backfill plus today", len(hf.Points))
+	}
+	for _, p := range hf.Points {
+		if p.V != classify.SeriesVersion {
+			t.Errorf("point %s has v=%d, want %d", p.Date, p.V, classify.SeriesVersion)
+		}
+	}
+
+	raw, err := os.ReadFile(filepath.Join(dataDir, "meta.json"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	var meta snapshot.Meta
+	if err := json.Unmarshal(raw, &meta); err != nil {
+		t.Fatal(err)
+	}
+	if meta.SeriesVersion != classify.SeriesVersion {
+		t.Errorf("meta.series_version = %d, want %d", meta.SeriesVersion, classify.SeriesVersion)
+	}
 }

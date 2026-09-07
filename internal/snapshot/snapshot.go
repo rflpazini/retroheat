@@ -79,12 +79,15 @@ type Counts struct {
 }
 
 type Meta struct {
-	GeneratedAt  string             `json:"generated_at"`
-	Source       string             `json:"source"`
-	PriceKind    string             `json:"price_kind"`
-	Counts       Counts             `json:"counts"`
-	APICallsUsed int                `json:"api_calls_used"`
-	Platforms    []catalog.Platform `json:"platforms"`
+	GeneratedAt string `json:"generated_at"`
+	Source      string `json:"source"`
+	PriceKind   string `json:"price_kind"`
+	// SeriesVersion is the classifier version this run wrote, so a bump can
+	// be confirmed on the live site without reading a history file.
+	SeriesVersion int                `json:"series_version"`
+	Counts        Counts             `json:"counts"`
+	APICallsUsed  int                `json:"api_calls_used"`
+	Platforms     []catalog.Platform `json:"platforms"`
 }
 
 type CatalogGame struct {

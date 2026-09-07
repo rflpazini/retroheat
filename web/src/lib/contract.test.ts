@@ -26,6 +26,7 @@ describe.skipIf(!present)('collector output matches the frontend contract', () =
     expect(typeof meta.counts.stale).toBe('number')
     expect(typeof meta.counts.failed).toBe('number')
     expect(Array.isArray(meta.platforms)).toBe(true)
+    if ('series_version' in meta) expect(typeof meta.series_version).toBe('number')
   })
 
   it('every platform named in meta has a board', () => {
@@ -110,6 +111,7 @@ describe.skipIf(!present)('collector output matches the frontend contract', () =
     for (const p of history.points) {
       expect(typeof p.d).toBe('string')
       expect(['d', 'w']).toContain(p.r)
+      if ('v' in p) expect(typeof p.v).toBe('number')
     }
   })
 

@@ -23,6 +23,15 @@ type Result struct {
 	Reason    string
 }
 
+// SeriesVersion identifies the rules that produced a history point. Bump it in
+// the same commit as any change to this package, to the eBay listing filters
+// in internal/provider/ebay/query.go, or to internal/aggregate that can move a
+// published median. Trending never compares points across versions, so a bump
+// reads as a fresh series rather than as a market move; the boards go quiet
+// for a week instead of leading with a rule change. Per-game catalog edits
+// and refactors that leave every classification identical do not bump it.
+const SeriesVersion = 1
+
 // Media is how a platform packaged its games, which changes what a manual
 // implies. A disc "with manual" sits in its case, so the copy is complete; a
 // cartridge "with manual" is usually missing the cardboard box, which is the

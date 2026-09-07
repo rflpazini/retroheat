@@ -355,3 +355,83 @@ func TestComputeCarriesEveryPricedCondition(t *testing.T) {
 		t.Errorf("Prices.New = %d, want omitted below MinSample", *got.Prices.New)
 	}
 }
+
+// versioned stamps the last n points of a series with version v, leaving the
+// earlier ones at the legacy version 0, which is what a classifier bump looks
+// like in a real history file.
+func versioned(pts []history.Point, lastN, v int) []history.Point {
+	for i := len(pts) - lastN; i < len(pts); i++ {
+		pts[i].V = v
+	}
+	return pts
+}
+
+// The first run after a classifier change has one point in the new series.
+// It must not compare that point with the old series: that comparison is the
+// +870% "move" a history wipe used to be the only cure for.
+func TestMeasureStopsAtASeriesBreak(t *testing.T) {
+	t.Parallel()
+	pts := versioned(series("2026-09-08", []int64{2499, 2499, 2499, 2499, 2499, 2499, 2499, 24249}), 1, 1)
+	m, ok := trending.Measure(pts, day("2026-09-08"))
+	if !ok {
+		t.Fatal("Measure not ok; the newest point alone still yields a headline price")
+	}
+	if m.PriceCents != 24249 {
+		t.Errorf("price = %d, want the newest point 24249", m.PriceCents)
+	}
+	if m.Pct1d != nil {
+		t.Errorf("Pct1d = %v, want nil: the previous point belongs to an older classifier", *m.Pct1d)
+	}
+	if m.Pct7d != nil {
+		t.Errorf("Pct7d = %v, want nil across a series break", *m.Pct7d)
+	}
+	if len(m.Spark) != 1 {
+		t.Errorf("spark = %v, want the single new-series point", m.Spark)
+	}
+}
+
+func TestComputeGatesOutAGameWithOneCurrentVersionPoint(t *testing.T) {
+	t.Parallel()
+	pts := versioned(series("2026-09-08", []int64{2499, 2499, 2499, 2499, 2499, 2499, 2499, 24249}), 1, 1)
+	if _, ok := trending.Compute(trending.Input{ID: "a-n64", Title: "A", Platform: catalog.N64, Points: pts}, day("2026-09-08")); ok {
+		t.Error("Compute ranked a game whose only comparable point is itself")
+	}
+}
+
+func TestSparkForRestartsAtASeriesBreak(t *testing.T) {
+	t.Parallel()
+	pts := versioned(series("2026-09-13", []int64{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}), 3, 1)
+	got := trending.SparkFor(pts, classify.CIB)
+	if len(got) != 3 {
+		t.Errorf("spark length = %d, want 3 points of the new series only: %v", len(got), got)
+	}
+}
+
+func TestDayChangeResumesWithTwoPointsOfTheNewVersion(t *testing.T) {
+	t.Parallel()
+	pts := versioned(series("2026-09-09", []int64{2499, 2499, 2499, 2499, 2499, 2499, 2499, 24000, 26400}), 2, 1)
+	m, ok := trending.Measure(pts, day("2026-09-09"))
+	if !ok {
+		t.Fatal("Measure not ok")
+	}
+	if m.Pct1d == nil || *m.Pct1d < 9.9 || *m.Pct1d > 10.1 {
+		t.Errorf("Pct1d = %v, want ~10 from the two new-series points", m.Pct1d)
+	}
+}
+
+// Replay can stamp older dates with the current version while a range in the
+// middle stays at an older one, so membership is by version, not by position.
+func TestOlderVersionPointsAreIgnoredEvenWhenInterleaved(t *testing.T) {
+	t.Parallel()
+	pts := series("2026-09-04", []int64{1000, 1000, 5000, 1000})
+	pts[0].V, pts[1].V, pts[2].V, pts[3].V = 1, 1, 0, 1
+	got := trending.SparkFor(pts, classify.CIB)
+	if len(got) != 3 {
+		t.Fatalf("spark length = %d, want 3 (the v0 point skipped): %v", len(got), got)
+	}
+	for _, v := range got {
+		if v == 5000 {
+			t.Errorf("the older-version point leaked into the spark: %v", got)
+		}
+	}
+}

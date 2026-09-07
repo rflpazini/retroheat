@@ -113,6 +113,8 @@ export interface Meta {
   counts: { tracked: number; ok: number; stale: number; failed: number }
   api_calls_used: number
   platforms: Platform[]
+  /** Classifier series version the run wrote; absent from runs before versioning. */
+  series_version?: number
 }
 
 export interface HistoryPoint {
@@ -124,6 +126,13 @@ export interface HistoryPoint {
   nl: number
   nc: number
   nn: number
+  /**
+   * Classifier series version that produced the point. Absent on points
+   * written before versioning existed, which the site treats as version 0.
+   * Points of different versions are different series: the chart draws the
+   * older ones dashed and nothing is measured across the change.
+   */
+  v?: number
 }
 
 export interface HistoryFile {

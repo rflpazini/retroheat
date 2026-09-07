@@ -3,6 +3,7 @@ package history_test
 import (
 	"os"
 	"path/filepath"
+	"strings"
 	"testing"
 	"time"
 
@@ -246,6 +247,122 @@ func TestRollupSurvivesTheWindowSweepingAcrossAWeek(t *testing.T) {
 	for i, v := range seen {
 		if v != 1300 {
 			t.Fatalf("weekly median was %d at sweep step %d; want the true week median 1300 at every step (sequence: %v)", v, i, seen)
+		}
+	}
+}
+
+// Files written before points carried a version must not change bytes when
+// they are rewritten, or the first run after the field appears would commit a
+// diff across every history file.
+func TestWriteOmitsZeroVersionSoLegacyFilesDoNotChurn(t *testing.T) {
+	t.Parallel()
+	dir := t.TempDir()
+	f := &history.File{ID: "god-hand-ps2"}
+	history.Upsert(f, history.Point{Date: "2026-09-01", Res: "d", Loose: cents(4200), NL: 7})
+	if err := history.Write(dir, f); err != nil {
+		t.Fatal(err)
+	}
+	body, err := os.ReadFile(filepath.Join(dir, "god-hand-ps2.json"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if strings.Contains(string(body), `"v"`) {
+		t.Errorf("an unversioned point serialized a v field:\n%s", body)
+	}
+}
+
+func TestVersionRoundTrips(t *testing.T) {
+	t.Parallel()
+	dir := t.TempDir()
+	f := &history.File{ID: "god-hand-ps2"}
+	history.Upsert(f, history.Point{Date: "2026-09-01", Res: "d", Loose: cents(4200), NL: 7, V: 2})
+	if err := history.Write(dir, f); err != nil {
+		t.Fatal(err)
+	}
+	got, err := history.Read(dir, "god-hand-ps2")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if got.Points[0].V != 2 {
+		t.Errorf("v = %d after a round trip, want 2", got.Points[0].V)
+	}
+}
+
+// A week in which the classifier changed holds two different series. Folding
+// it into one median would blend them, so it stays at daily resolution, and
+// because the set of versions in a past week never changes, doing so is
+// stable across runs.
+func TestRollupNeverCompactsAWeekSpanningTwoVersions(t *testing.T) {
+	t.Parallel()
+	build := func() *history.File {
+		f := &history.File{ID: "god-hand-ps2"}
+		for i, d := range []string{"2026-01-05", "2026-01-06", "2026-01-07", "2026-01-08", "2026-01-09", "2026-01-10", "2026-01-11"} {
+			v := 0
+			if i >= 3 {
+				v = 1
+			}
+			history.Upsert(f, history.Point{Date: d, Res: "d", Loose: cents(1000), NL: 5, V: v})
+		}
+		return f
+	}
+	once, twice := build(), build()
+	history.Rollup(once, day("2026-09-01"), 90*24*time.Hour)
+	history.Rollup(twice, day("2026-09-01"), 90*24*time.Hour)
+	history.Rollup(twice, day("2026-09-01"), 90*24*time.Hour)
+
+	if len(once.Points) != 7 {
+		t.Fatalf("points = %d, want all 7 dailies kept across the version boundary: %+v", len(once.Points), once.Points)
+	}
+	for _, p := range once.Points {
+		if p.Res != "d" {
+			t.Errorf("point %s was compacted to %q inside a mixed-version week", p.Date, p.Res)
+		}
+	}
+	if len(twice.Points) != len(once.Points) {
+		t.Fatalf("a second rollup changed the point count: %d then %d", len(once.Points), len(twice.Points))
+	}
+	for i := range once.Points {
+		a, b := once.Points[i], twice.Points[i]
+		if a.Date != b.Date || a.Res != b.Res || a.V != b.V || *a.Loose != *b.Loose {
+			t.Fatalf("rollup not idempotent at %d: %+v vs %+v", i, a, b)
+		}
+	}
+}
+
+func TestRollupWeeklyPointCarriesTheWeeksVersion(t *testing.T) {
+	t.Parallel()
+	f := &history.File{ID: "god-hand-ps2"}
+	for _, d := range []string{"2026-01-05", "2026-01-06", "2026-01-07"} {
+		history.Upsert(f, history.Point{Date: d, Res: "d", Loose: cents(1000), NL: 5, V: 3})
+	}
+	history.Rollup(f, day("2026-09-01"), 90*24*time.Hour)
+
+	if len(f.Points) != 1 || f.Points[0].Res != "w" {
+		t.Fatalf("points = %+v, want one weekly point", f.Points)
+	}
+	if f.Points[0].V != 3 {
+		t.Errorf("weekly v = %d, want the dailies' version 3", f.Points[0].V)
+	}
+}
+
+func TestRollupKeepsDateOrderWithAMixedWeekBetweenFoldedWeeks(t *testing.T) {
+	t.Parallel()
+	f := &history.File{ID: "god-hand-ps2"}
+	history.Upsert(f, history.Point{Date: "2026-01-05", Res: "d", Loose: cents(1000), V: 1})
+	history.Upsert(f, history.Point{Date: "2026-01-06", Res: "d", Loose: cents(1000), V: 1})
+	history.Upsert(f, history.Point{Date: "2026-01-12", Res: "d", Loose: cents(1000), V: 1})
+	history.Upsert(f, history.Point{Date: "2026-01-13", Res: "d", Loose: cents(1000), V: 2})
+	history.Upsert(f, history.Point{Date: "2026-01-19", Res: "d", Loose: cents(1000), V: 2})
+	history.Upsert(f, history.Point{Date: "2026-01-20", Res: "d", Loose: cents(1000), V: 2})
+	history.Rollup(f, day("2026-09-01"), 90*24*time.Hour)
+
+	want := []string{"2026-01-05 w", "2026-01-12 d", "2026-01-13 d", "2026-01-19 w"}
+	if len(f.Points) != len(want) {
+		t.Fatalf("points = %+v, want %v", f.Points, want)
+	}
+	for i, p := range f.Points {
+		if got := p.Date + " " + p.Res; got != want[i] {
+			t.Errorf("points[%d] = %q, want %q", i, got, want[i])
 		}
 	}
 }

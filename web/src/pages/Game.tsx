@@ -5,6 +5,7 @@ import {
   CartesianGrid,
   Line,
   LineChart,
+  ReferenceLine,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -60,9 +61,18 @@ export function Game() {
 
   const series = useMemo(() => {
     if (history.status !== 'ready') return []
-    return history.data.points
+    const points = history.data.points
+    // Points written by an older classifier are a different series. They stay
+    // on the chart as a dashed tail so the change is visible, but they are
+    // never joined to the current line as if the market had moved.
+    const currentV = points.at(-1)?.v ?? 0
+    return points
       .filter((p) => p[condition] != null)
-      .map((p) => ({ date: p.d, cents: p[condition] as number }))
+      .map((p) => {
+        const cents = p[condition] as number
+        const current = (p.v ?? 0) === currentV
+        return { date: p.d, current: current ? cents : null, older: current ? null : cents }
+      })
   }, [history, condition])
 
   if (!id) return <Message title="No game selected" detail="Pick a game from any board." />
@@ -87,6 +97,8 @@ export function Game() {
   const latest = history.data.points.at(-1)
   const available = CONDITIONS.filter((c) => history.data.points.some((p) => p[c] != null))
   const color = conditionColor(condition)
+  const hasOlder = series.some((p) => p.older != null)
+  const boundary = series.find((p) => p.current != null)?.date
 
   return (
     <div className="space-y-4">
@@ -247,48 +259,72 @@ export function Game() {
               detail="This game needs a few more daily snapshots before a chart is meaningful."
             />
           ) : (
-            <div className="h-72">
-              <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={series} margin={{ top: 4, right: 24, bottom: 0, left: 4 }}>
-                  <CartesianGrid stroke="var(--border)" vertical={false} />
-                  <XAxis
-                    dataKey="date"
-                    tick={{ fill: 'var(--muted-foreground)', fontSize: 11 }}
-                    tickLine={false}
-                    axisLine={{ stroke: 'var(--border)' }}
-                    minTickGap={44}
-                  />
-                  <YAxis
-                    tick={{ fill: 'var(--muted-foreground)', fontSize: 11 }}
-                    tickLine={false}
-                    axisLine={false}
-                    width={62}
-                    tickFormatter={(v: number) => money(v)}
-                    domain={['auto', 'auto']}
-                  />
-                  <Tooltip
-                    contentStyle={{
-                      background: 'var(--popover)',
-                      border: '1px solid var(--border)',
-                      borderRadius: 'var(--radius)',
-                      fontSize: 12,
-                      color: 'var(--popover-foreground)',
-                    }}
-                    labelStyle={{ color: 'var(--muted-foreground)' }}
-                    formatter={(v) => [money(Number(v)), CONDITION_LABELS[condition]]}
-                  />
-                  <Line
-                    type="monotone"
-                    dataKey="cents"
-                    stroke={color}
-                    strokeWidth={2}
-                    dot={false}
-                    activeDot={{ r: 3, fill: color }}
-                    isAnimationActive={false}
-                  />
-                </LineChart>
-              </ResponsiveContainer>
-            </div>
+            <>
+              <div className="h-72">
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={series} margin={{ top: 4, right: 24, bottom: 0, left: 4 }}>
+                    <CartesianGrid stroke="var(--border)" vertical={false} />
+                    <XAxis
+                      dataKey="date"
+                      tick={{ fill: 'var(--muted-foreground)', fontSize: 11 }}
+                      tickLine={false}
+                      axisLine={{ stroke: 'var(--border)' }}
+                      minTickGap={44}
+                    />
+                    <YAxis
+                      tick={{ fill: 'var(--muted-foreground)', fontSize: 11 }}
+                      tickLine={false}
+                      axisLine={false}
+                      width={62}
+                      tickFormatter={(v: number) => money(v)}
+                      domain={['auto', 'auto']}
+                    />
+                    <Tooltip
+                      contentStyle={{
+                        background: 'var(--popover)',
+                        border: '1px solid var(--border)',
+                        borderRadius: 'var(--radius)',
+                        fontSize: 12,
+                        color: 'var(--popover-foreground)',
+                      }}
+                      labelStyle={{ color: 'var(--muted-foreground)' }}
+                      formatter={(v) => [money(Number(v)), CONDITION_LABELS[condition]]}
+                    />
+                    {hasOlder && (
+                      <Line
+                        type="monotone"
+                        dataKey="older"
+                        stroke={color}
+                        strokeWidth={2}
+                        strokeDasharray="4 4"
+                        strokeOpacity={0.45}
+                        dot={false}
+                        activeDot={{ r: 3, fill: color }}
+                        isAnimationActive={false}
+                      />
+                    )}
+                    {hasOlder && boundary && (
+                      <ReferenceLine x={boundary} stroke="var(--muted-foreground)" strokeDasharray="3 3" />
+                    )}
+                    <Line
+                      type="monotone"
+                      dataKey="current"
+                      stroke={color}
+                      strokeWidth={2}
+                      dot={false}
+                      activeDot={{ r: 3, fill: color }}
+                      isAnimationActive={false}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+              {hasOlder && boundary && (
+                <p className="mt-2 text-[0.65rem] text-[var(--muted-foreground)]">
+                  Dashed points before {formatDate(boundary)} were produced by an older classifier. Moves
+                  are not measured across the change.
+                </p>
+              )}
+            </>
           )}
       </Window>
     </div>

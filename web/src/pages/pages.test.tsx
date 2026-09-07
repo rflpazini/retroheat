@@ -312,3 +312,52 @@ describe.skipIf(!present)('the game page explains the game, not just the price',
 function escapeRegExp(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
+
+// A classifier change starts a new series. The chart must keep the older
+// points visible but distinct, and say why, so a reader never takes a rule
+// change for a market move.
+describe('the game page marks a classifier change', () => {
+  function serveSynthetic(points: unknown[]) {
+    const files: Record<string, unknown> = {
+      'catalog.json': {
+        as_of: '2026-09-04',
+        games: [{ id: 'x-ps2', title: 'X', platform: 'ps2', region: 'NTSC-U', variant: 'none' }],
+      },
+      'history/x-ps2.json': { id: 'x-ps2', points },
+    }
+    vi.stubGlobal('fetch', async (input: RequestInfo | URL) => {
+      const url = String(input)
+      const rel = url.slice(url.indexOf('/data/') + '/data/'.length)
+      const body = files[rel]
+      return body
+        ? new Response(JSON.stringify(body), { status: 200 })
+        : new Response('{}', { status: 404 })
+    })
+  }
+  const point = (d: string, cib: number, v?: number) => ({
+    d, r: 'd', loose: null, cib, new: null, nl: 0, nc: 5, nn: 0, ...(v === undefined ? {} : { v }),
+  })
+
+  beforeEach(() => resetCache())
+
+  it('draws points from an older classifier as a dashed tail and says so', async () => {
+    serveSynthetic([
+      point('2026-09-01', 2000),
+      point('2026-09-02', 2000),
+      point('2026-09-03', 12000, 1),
+      point('2026-09-04', 12100, 1),
+    ])
+    const { Game } = await import('./Game')
+    renderAt('/g/x-ps2', <Game />, '/g/:id')
+    await waitFor(() => expect(document.body.textContent).toMatch(/older classifier/i))
+    expect(document.body.textContent).toMatch(/before Sep 3, 2026/)
+  })
+
+  it('says nothing about versions when every point belongs to the same series', async () => {
+    serveSynthetic([point('2026-09-03', 12000, 1), point('2026-09-04', 12100, 1)])
+    const { Game } = await import('./Game')
+    renderAt('/g/x-ps2', <Game />, '/g/:id')
+    await waitFor(() => expect(document.body.textContent).toMatch(/details/i))
+    expect(document.body.textContent).not.toMatch(/older classifier/i)
+  })
+})

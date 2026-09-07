@@ -97,7 +97,11 @@ export function relativeDay(iso: string): string {
 }
 
 export function formatDate(iso: string): string {
-  const d = new Date(iso)
+  // A bare calendar date carries no zone. Date would read it as UTC midnight
+  // and print the previous day anywhere west of Greenwich, so build it as a
+  // local date instead; full timestamps keep their own zone.
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso)
+  const d = m ? new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3])) : new Date(iso)
   if (Number.isNaN(d.getTime())) return iso
   return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
 }

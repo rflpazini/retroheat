@@ -139,9 +139,15 @@ func Run(ctx context.Context, o Options) (Result, error) {
 		if len(hf.Points) == 0 && o.BackfillDays > 0 {
 			if bf, ok := o.Provider.(backfiller); ok {
 				hf.Points = bf.Backfill(g, o.BackfillDays, o.Now.UTC())
+				// Synthetic history stands in for today's rules, so it
+				// belongs to the current series or the boards it exists
+				// to populate would stay empty.
+				for i := range hf.Points {
+					hf.Points[i].V = classify.SeriesVersion
+				}
 			}
 		}
-		history.Upsert(hf, pointFrom(quotes, today))
+		history.Upsert(hf, PointFrom(quotes, today, classify.SeriesVersion))
 		history.Rollup(hf, o.Now.UTC(), history.DailyWindow)
 		if err := history.Write(historyDir, hf); err != nil {
 			return Result{}, err
@@ -225,12 +231,13 @@ func Run(ctx context.Context, o Options) (Result, error) {
 
 	res.APICalls = o.Budget.Used()
 	if err := snapshot.WriteMeta(o.DataDir, snapshot.Meta{
-		GeneratedAt:  generatedAt,
-		Source:       o.Provider.Name(),
-		PriceKind:    o.Provider.Kind(),
-		Counts:       snapshot.Counts{Tracked: res.Tracked, OK: res.OK, Stale: res.Stale, Failed: res.Failed},
-		APICallsUsed: res.APICalls,
-		Platforms:    allPlatforms,
+		GeneratedAt:   generatedAt,
+		Source:        o.Provider.Name(),
+		PriceKind:     o.Provider.Kind(),
+		SeriesVersion: classify.SeriesVersion,
+		Counts:        snapshot.Counts{Tracked: res.Tracked, OK: res.OK, Stale: res.Stale, Failed: res.Failed},
+		APICallsUsed:  res.APICalls,
+		Platforms:     allPlatforms,
 	}); err != nil {
 		return Result{}, err
 	}
@@ -257,8 +264,11 @@ func priceOne(ctx context.Context, o Options, g catalog.Game) ([]provider.Quote,
 	return quotes, nil
 }
 
-func pointFrom(quotes []provider.Quote, date string) history.Point {
-	p := history.Point{Date: date, Res: history.ResDaily}
+// PointFrom folds one run's quotes into the day's history point, stamped with
+// the classifier version that produced them. Replay uses it too, so a point
+// rebuilt from archived listings is built the same way as a live one.
+func PointFrom(quotes []provider.Quote, date string, version int) history.Point {
+	p := history.Point{Date: date, Res: history.ResDaily, V: version}
 	for _, q := range quotes {
 		cents := q.MedianCents
 		switch q.Condition {

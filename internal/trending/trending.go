@@ -1,6 +1,8 @@
 // Package trending turns a game's price history into a momentum ranking.
 // Percentage change beats absolute change here: a $4 move on a $12 game is
-// news, the same move on a $400 game is noise.
+// news, the same move on a $400 game is noise. A change of classifier version
+// is a series break: nothing is measured across it, so a rule change reads as
+// a quiet week rather than as the biggest move on the board.
 package trending
 
 import (
@@ -264,9 +266,19 @@ func headline(p history.Point) (classify.Condition, int64) {
 	return classify.Unknown, 0
 }
 
+// seriesFor extracts one condition's samples. Only points written by the same
+// classifier version as the newest point take part; older versions are a
+// different series and are never compared with it.
 func seriesFor(points []history.Point, cond classify.Condition) []Sample {
+	if len(points) == 0 {
+		return nil
+	}
+	current := points[len(points)-1].V
 	out := make([]Sample, 0, len(points))
 	for _, p := range points {
+		if p.V != current {
+			continue
+		}
 		var v *int64
 		switch cond {
 		case classify.CIB:

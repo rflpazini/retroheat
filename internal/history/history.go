@@ -1,7 +1,9 @@
 // Package history maintains the append-only price series that the site charts.
-// Two properties matter more than anything else here: re-running the collector
-// on the same day must not grow the file, and identical data must serialize to
-// identical bytes, or every scheduled run would commit a spurious diff.
+// Three properties matter more than anything else here: re-running the
+// collector on the same day must not grow the file, identical data must
+// serialize to identical bytes, or every scheduled run would commit a spurious
+// diff, and a point records the classifier version that produced it, so a rule
+// change never has to delete what an older rule collected.
 package history
 
 import (
@@ -35,6 +37,11 @@ type Point struct {
 	NL    int    `json:"nl"`
 	NC    int    `json:"nc"`
 	NN    int    `json:"nn"`
+	// V is the classify.SeriesVersion in force when the point was written.
+	// Zero means the point predates versioning. It is omitted from the JSON
+	// so files written before it existed keep their bytes until a point is
+	// replaced.
+	V int `json:"v,omitempty"`
 }
 
 type File struct {
@@ -51,7 +58,11 @@ func Upsert(f *File, p Point) {
 		}
 	}
 	f.Points = append(f.Points, p)
-	slices.SortFunc(f.Points, func(a, b Point) int {
+	sortByDate(f.Points)
+}
+
+func sortByDate(points []Point) {
+	slices.SortFunc(points, func(a, b Point) int {
 		switch {
 		case a.Date < b.Date:
 			return -1
@@ -71,7 +82,7 @@ func Rollup(f *File, now time.Time, window time.Duration) {
 	weeks := map[string][]Point{}
 	var order []string
 	for _, p := range f.Points {
-		key := weekStart(p.Date)
+		key := WeekStart(p.Date)
 		// A week is folded only once all seven of its days are behind the
 		// cutoff. The window advances a day at a time, so folding a week the
 		// moment its Monday ages out would rebuild that week from a smaller
@@ -90,10 +101,29 @@ func Rollup(f *File, now time.Time, window time.Duration) {
 
 	out := make([]Point, 0, len(order)+len(recent))
 	for _, key := range order {
-		out = append(out, compactWeek(key, weeks[key]))
+		pts := weeks[key]
+		// A week that straddles a classifier change stays at full
+		// resolution. Folding it would blend two series into one number,
+		// and since the set of versions in a past week never changes, the
+		// decision is the same on every run.
+		if mixedVersions(pts) {
+			out = append(out, pts...)
+			continue
+		}
+		out = append(out, compactWeek(key, pts))
 	}
 	out = append(out, recent...)
+	sortByDate(out)
 	f.Points = out
+}
+
+func mixedVersions(points []Point) bool {
+	for _, p := range points[1:] {
+		if p.V != points[0].V {
+			return true
+		}
+	}
+	return false
 }
 
 func compactWeek(weekStartDate string, points []Point) Point {
@@ -113,6 +143,7 @@ func compactWeek(weekStartDate string, points []Point) Point {
 	return Point{
 		Date:  weekStartDate,
 		Res:   ResWeekly,
+		V:     dailies[0].V,
 		Loose: medianPtr(dailies, func(p Point) *int64 { return p.Loose }),
 		CIB:   medianPtr(dailies, func(p Point) *int64 { return p.CIB }),
 		New:   medianPtr(dailies, func(p Point) *int64 { return p.New }),
@@ -144,7 +175,9 @@ func medianInt(points []Point, pick func(Point) int) int {
 	return int(aggregate.Median(vals))
 }
 
-func weekStart(date string) string {
+// WeekStart returns the ISO week's Monday for a date, which is the date a
+// compacted week is stored under.
+func WeekStart(date string) string {
 	t, err := time.Parse(time.DateOnly, date)
 	if err != nil {
 		return date
