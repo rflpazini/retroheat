@@ -8,6 +8,10 @@ web/*.tsbuildinfo
 .DS_Store
 .env
 
+# Raw listing archives written by `collector -raw-dir`; they are published as
+# release assets, not committed.
+/raw/
+
 # Built binaries. These are anchored to the repository root on purpose: an
 # unanchored "collector" would also match the cmd/collector source directory.
 /retroheat

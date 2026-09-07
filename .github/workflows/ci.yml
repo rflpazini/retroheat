@@ -70,3 +70,27 @@ jobs:
         working-directory: web
       - run: npm run build
         working-directory: web
+
+  # The collector only adds or replaces points, so a history file or a date
+  # that vanishes between two commits is a wipe or a bad merge. This job
+  # compares the data tree before and after the change and fails on loss unless
+  # a commit in the range carries a `Data-Reset: <reason>` trailer. Pushes made
+  # by the scrape job never trigger CI, so commit-data.sh runs the same check
+  # on its own output before committing.
+  data-guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # The guard needs the base commit's data tree, not only HEAD's.
+          fetch-depth: 0
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+
+      - name: Refuse to lose collected data
+        env:
+          BEFORE: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.event.before }}
+          AFTER: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
+        run: go run ./cmd/dataguard -before "$BEFORE" -after "$AFTER"
