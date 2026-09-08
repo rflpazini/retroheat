@@ -11,6 +11,10 @@ on:
         description: "Comma-separated platforms to collect (blank = all)"
         required: false
         default: ""
+      resync:
+        description: "Also push the whole history to the Supabase copy, as the Sunday run does"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -91,10 +95,11 @@ jobs:
         env:
           SUPABASE_URL: ${{ vars.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          RESYNC: ${{ github.event.inputs.resync }}
         run: |
           if [ -z "$SUPABASE_SERVICE_ROLE_KEY" ]; then
             echo "::warning title=Supabase copy not written::SUPABASE_SERVICE_ROLE_KEY is not set, so neither the collector nor the resync can write the copy."
-          elif [ "$(date -u +%u)" = "7" ]; then
+          elif [ "$(date -u +%u)" = "7" ] || [ "$RESYNC" = "true" ]; then
             go run ./cmd/mirror -data ./data
           else
             echo "Full resync runs on Sundays; today's points were mirrored by the collector."
