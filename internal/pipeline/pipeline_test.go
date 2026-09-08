@@ -8,6 +8,7 @@ import (
 	"os"
 	"path/filepath"
 	"slices"
+	"strings"
 	"sync/atomic"
 	"testing"
 	"time"
@@ -153,7 +154,7 @@ func TestRunPopulatesTrendingFromBackfilledHistory(t *testing.T) {
 
 // The curated "why it moved" note is the thing no competitor publishes, so it
 // has to reach every game page, not only the games currently on a board.
-func TestAnnotationsReachTheCatalogRegardlessOfRanking(t *testing.T) {
+func TestAnnotationsReachEveryGameFileRegardlessOfRanking(t *testing.T) {
 	t.Parallel()
 	dataDir, catalogDir := setup(t)
 	if err := os.WriteFile(filepath.Join(catalogDir, "annotations.yaml"),
@@ -165,31 +166,17 @@ func TestAnnotationsReachTheCatalogRegardlessOfRanking(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	body, err := os.ReadFile(filepath.Join(dataDir, "catalog.json"))
+	body, err := os.ReadFile(filepath.Join(dataDir, "games", "god-hand-ps2.json"))
 	if err != nil {
 		t.Fatal(err)
 	}
-	var cat struct {
-		Games []struct {
-			ID         string `json:"id"`
-			Annotation *struct {
-				Note string `json:"note"`
-			} `json:"annotation"`
-		} `json:"games"`
-	}
-	if err := json.Unmarshal(body, &cat); err != nil {
+	var detail snapshot.GameDetail
+	if err := json.Unmarshal(body, &detail); err != nil {
 		t.Fatal(err)
 	}
-	for _, g := range cat.Games {
-		if g.ID != "god-hand-ps2" {
-			continue
-		}
-		if g.Annotation == nil || g.Annotation.Note != "Clover nostalgia" {
-			t.Fatalf("catalog.json lost the annotation for %s: %+v", g.ID, g.Annotation)
-		}
-		return
+	if detail.Annotation == nil || detail.Annotation.Note != "Clover nostalgia" {
+		t.Fatalf("games/god-hand-ps2.json lost the annotation: %+v", detail.Annotation)
 	}
-	t.Fatal("god-hand-ps2 missing from catalog.json")
 }
 
 type failingProvider struct{}
@@ -639,6 +626,88 @@ func TestMirroringDoesNotChangeWhatIsWrittenToDisk(t *testing.T) {
 	for path, body := range plain {
 		if mirrored[path] != body {
 			t.Errorf("%s differs when a mirror is configured", path)
+		}
+	}
+}
+
+// The site loads catalog.json to search and to list, so it carries only what a
+// list shows. Everything a game page needs on top of that lives in its own
+// small file, and the prices every list needs live in one compact index.
+func TestRunSplitsTheCatalogAndWritesAPriceIndex(t *testing.T) {
+	t.Parallel()
+	dataDir, catalogDir := setup(t)
+	if err := os.WriteFile(filepath.Join(catalogDir, "annotations.yaml"),
+		[]byte("- game_id: god-hand-ps2\n  date: 2026-08-20\n  note: \"Clover nostalgia\"\n"), 0o600); err != nil {
+		t.Fatal(err)
+	}
+	if _, err := pipeline.Run(context.Background(), opts(dataDir, catalogDir, fake.New(runDay))); err != nil {
+		t.Fatal(err)
+	}
+
+	cat, err := os.ReadFile(filepath.Join(dataDir, "catalog.json"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, heavy := range []string{`"about"`, `"why"`, `"trivia"`, `"ebay_url"`, `"annotation"`} {
+		if strings.Contains(string(cat), heavy) {
+			t.Errorf("catalog.json still carries %s; that belongs in games/<id>.json", heavy)
+		}
+	}
+	if !strings.Contains(string(cat), `"title"`) || !strings.Contains(string(cat), `"platform"`) {
+		t.Error("catalog.json lost the fields a list needs")
+	}
+
+	detail, err := os.ReadFile(filepath.Join(dataDir, "games", "god-hand-ps2.json"))
+	if err != nil {
+		t.Fatalf("no per-game file: %v", err)
+	}
+	if !strings.Contains(string(detail), "Clover nostalgia") || !strings.Contains(string(detail), `"ebay_url"`) {
+		t.Errorf("games/god-hand-ps2.json lacks the annotation or the eBay link:\n%s", detail)
+	}
+
+	raw, err := os.ReadFile(filepath.Join(dataDir, "prices.json"))
+	if err != nil {
+		t.Fatalf("no price index: %v", err)
+	}
+	var idx snapshot.PriceIndex
+	if err := json.Unmarshal(raw, &idx); err != nil {
+		t.Fatal(err)
+	}
+	if len(idx.Games) != 2 {
+		t.Fatalf("index has %d games, want both priced games", len(idx.Games))
+	}
+	if e := idx.Games["god-hand-ps2"]; e.Prices[classify.CIB] == 0 || e.Pct7d == nil {
+		t.Errorf("index entry = %+v, want a cib median and a 7-day move from the backfilled history", e)
+	}
+
+	rawMeta, _ := os.ReadFile(filepath.Join(dataDir, "meta.json"))
+	var meta snapshot.Meta
+	if err := json.Unmarshal(rawMeta, &meta); err != nil {
+		t.Fatal(err)
+	}
+	if meta.Counts.PerPlatform[catalog.PS2] != 2 {
+		t.Errorf("meta.counts.per_platform = %v, want ps2: 2 so the disk window need not load every board", meta.Counts.PerPlatform)
+	}
+}
+
+func TestCatalogOnlyAlsoRewritesTheGameFilesAndThePriceIndex(t *testing.T) {
+	t.Parallel()
+	dataDir, catalogDir := setup(t)
+	if _, err := pipeline.Run(context.Background(), opts(dataDir, catalogDir, fake.New(runDay))); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.Remove(filepath.Join(dataDir, "prices.json")); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.RemoveAll(filepath.Join(dataDir, "games")); err != nil {
+		t.Fatal(err)
+	}
+	if err := pipeline.WriteCatalogOnly(dataDir, catalogDir, runDay); err != nil {
+		t.Fatal(err)
+	}
+	for _, rel := range []string{"prices.json", filepath.Join("games", "god-hand-ps2.json")} {
+		if _, err := os.Stat(filepath.Join(dataDir, rel)); err != nil {
+			t.Errorf("catalog-only did not rewrite %s: %v", rel, err)
 		}
 	}
 }

@@ -110,7 +110,14 @@ export interface Meta {
   generated_at: string
   source: string
   price_kind: string
-  counts: { tracked: number; ok: number; stale: number; failed: number }
+  counts: {
+    tracked: number
+    ok: number
+    stale: number
+    failed: number
+    /** Games per board, so a page that only needs the number never downloads the board. */
+    per_platform?: Partial<Record<Platform, number>>
+  }
   api_calls_used: number
   platforms: Platform[]
   /** Classifier series version the run wrote; absent from runs before versioning. */
@@ -140,13 +147,17 @@ export interface HistoryFile {
   points: HistoryPoint[]
 }
 
-/** Editorial facts a contributor wrote about a release. */
-export interface GameInfo {
+/** The editorial facts a list or a search result shows. */
+export interface CatalogInfo {
   developer?: string
   publisher?: string
   year?: number
   genre?: string
   cover_url?: string
+}
+
+/** Everything a contributor wrote about a release; the paragraphs live in games/<id>.json. */
+export interface GameInfo extends CatalogInfo {
   /** Short factual description, normally the Wikipedia lead; about_url credits it. */
   about?: string
   about_url?: string
@@ -154,7 +165,27 @@ export interface GameInfo {
   why?: string
 }
 
+/**
+ * One row of catalog.json. The file is fetched on every search and every
+ * shelf, so it carries only what a list needs to name a game.
+ */
 export interface CatalogGame {
+  id: string
+  title: string
+  platform: Platform
+  region: string
+  variant: string
+  igdb_id?: number
+  info?: CatalogInfo
+}
+
+export interface CatalogFile {
+  as_of: string
+  games: CatalogGame[]
+}
+
+/** games/<id>.json: what a game page shows beyond the prices. */
+export interface GameDetail {
   id: string
   title: string
   platform: Platform
@@ -166,7 +197,14 @@ export interface CatalogGame {
   annotation?: Annotation
 }
 
-export interface CatalogFile {
+/** One game in prices.json: latest medians, the week's move, staleness. */
+export interface PriceEntry {
+  prices: PriceMap
+  pct_7d: number | null
+  stale?: boolean
+}
+
+export interface PriceIndexFile {
   as_of: string
-  games: CatalogGame[]
+  games: Record<string, PriceEntry>
 }

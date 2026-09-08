@@ -9,10 +9,10 @@ import {
 } from '@/components/retro-os/spotlight'
 import { useAccount } from '@/lib/account'
 import { useJson } from '@/lib/data'
-import { headlinePrice, money, priceMap } from '@/lib/format'
-import { useLatestIndex } from '@/lib/latest'
+import { headlineFromMap, money } from '@/lib/format'
+import { usePriceIndex } from '@/lib/prices'
 import { rank, rankBoards, BOARDS, SHELF_BOARDS } from '@/lib/search'
-import { CONDITION_LABELS, PLATFORM_SHORT, type CatalogFile, type CatalogGame, type LatestGame } from '@/lib/types'
+import { CONDITION_LABELS, PLATFORM_SHORT, type CatalogFile, type CatalogGame, type PriceEntry } from '@/lib/types'
 import { OtherPrices } from '@/components/OtherPrices'
 
 export { shortcutLabel, useSpotlightShortcut }
@@ -25,8 +25,8 @@ function boardIcon(to: string) {
   return <Icon className="size-4" />
 }
 
-function gameItem(game: CatalogGame, price: LatestGame | undefined): SpotlightItem {
-  const headline = price ? headlinePrice(price.prices) : null
+function gameItem(game: CatalogGame, price: PriceEntry | undefined): SpotlightItem {
+  const headline = headlineFromMap(price?.prices)
   return {
     id: game.id,
     title: game.title,
@@ -38,7 +38,7 @@ function gameItem(game: CatalogGame, price: LatestGame | undefined): SpotlightIt
       <>
         <span className="tabular block text-sm font-semibold">{money(headline.cents)}</span>
         <span className="eyebrow block">{CONDITION_LABELS[headline.condition]}</span>
-        {price && <OtherPrices prices={priceMap(price.prices)} headline={headline.condition} />}
+        {price && <OtherPrices prices={price.prices} headline={headline.condition} />}
       </>
     ) : (
       <span className="eyebrow block">{price ? 'unpriced' : ''}</span>
@@ -56,7 +56,7 @@ export function Spotlight({ open, onOpenChange }: { open: boolean; onOpenChange:
   const navigate = useNavigate()
   const account = useAccount()
   const catalog = useJson<CatalogFile>(open ? 'catalog.json' : null)
-  const { index: prices } = useLatestIndex(open)
+  const { index: prices } = usePriceIndex(open)
 
   const games = catalog.status === 'ready' ? catalog.data.games : []
   const total = games.length

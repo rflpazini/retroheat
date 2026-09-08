@@ -155,3 +155,38 @@ describe('account deletion', () => {
     confirm.mockRestore()
   })
 })
+
+describe('the Supabase SDK is a cost of signing in, not of reading prices', () => {
+  beforeEach(() => {
+    resetCache()
+    serveLocalData()
+    sessionStorage.setItem('retroheat-booted', '1')
+  })
+
+  it('does not load the backend for an anonymous visitor until they click Sign in', async () => {
+    const { backend } = memoryBackend({ user: null })
+    let loads = 0
+    const loader = () => {
+      loads++
+      return Promise.resolve(backend)
+    }
+    render(
+      <MemoryRouter initialEntries={['/']}>
+        <AccountProvider backend={loader} eager={false}>
+          <Routes>
+            <Route path="/" element={<AppShell />}>
+              <Route index element={<p>home</p>} />
+            </Route>
+          </Routes>
+        </AccountProvider>
+      </MemoryRouter>,
+    )
+    const user = userEvent.setup()
+    const button = await screen.findByRole('button', { name: /sign in/i })
+    expect(loads).toBe(0)
+
+    await user.click(button)
+    await screen.findByRole('dialog', { name: /sign in/i })
+    await waitFor(() => expect(loads).toBe(1))
+  })
+})

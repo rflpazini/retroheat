@@ -1,4 +1,4 @@
-import type { Condition, LatestGame } from '@/lib/types'
+import type { Condition, PriceEntry } from '@/lib/types'
 
 /** The signed-in person, reduced to what the menu bar shows. */
 export interface AuthUser {
@@ -39,7 +39,7 @@ export interface ShelfBackend {
 
 export interface ShelfLine {
   item: CollectionItem
-  latest?: LatestGame
+  entry?: PriceEntry
   /** Today's asking median for the copy's own condition, or null when unpriced. */
   price_cents: number | null
 }
@@ -48,7 +48,7 @@ export interface ShelfValue {
   total_cents: number
   priced: number
   unpriced: number
-  /** Priced first by value descending, then unpriced by title. */
+  /** Priced first by value descending, then unpriced by id. */
   lines: ShelfLine[]
   /** The owned games that moved most this week, largest absolute move first. */
   movers: ShelfLine[]
@@ -58,23 +58,21 @@ export interface ShelfValue {
  * What a shelf is asking today: the sum of each owned game's median at the
  * condition owned. Asking prices, not appraisals, and the page says so.
  */
-export function shelfValue(items: CollectionItem[], index: Map<string, LatestGame>, moverLimit = 5): ShelfValue {
+export function shelfValue(items: CollectionItem[], index: Map<string, PriceEntry>, moverLimit = 5): ShelfValue {
   const lines: ShelfLine[] = items.map((item) => {
-    const latest = index.get(item.game_id)
-    return { item, latest, price_cents: latest?.prices[item.condition]?.median_cents ?? null }
+    const entry = index.get(item.game_id)
+    return { item, entry, price_cents: entry?.prices[item.condition] ?? null }
   })
   lines.sort((a, b) => {
-    if (a.price_cents === null && b.price_cents === null) {
-      return (a.latest?.title ?? a.item.game_id).localeCompare(b.latest?.title ?? b.item.game_id)
-    }
+    if (a.price_cents === null && b.price_cents === null) return a.item.game_id.localeCompare(b.item.game_id)
     if (a.price_cents === null) return 1
     if (b.price_cents === null) return -1
     return b.price_cents - a.price_cents
   })
   const priced = lines.filter((l) => l.price_cents !== null)
   const movers = lines
-    .filter((l) => l.latest?.pct_7d != null)
-    .sort((a, b) => Math.abs(b.latest!.pct_7d!) - Math.abs(a.latest!.pct_7d!))
+    .filter((l) => l.entry?.pct_7d != null)
+    .sort((a, b) => Math.abs(b.entry!.pct_7d!) - Math.abs(a.entry!.pct_7d!))
     .slice(0, moverLimit)
   return {
     total_cents: priced.reduce((sum, l) => sum + (l.price_cents ?? 0), 0),

@@ -1,20 +1,18 @@
 import { describe, expect, it } from 'vitest'
 import { shelfValue, type CollectionItem } from './shelf'
-import type { LatestGame } from './types'
+import type { PriceEntry } from './types'
 
-function game(id: string, title: string, prices: Partial<Record<'loose' | 'cib' | 'new', number>>, pct7: number | null): LatestGame {
-  const p: LatestGame['prices'] = {}
-  for (const [c, cents] of Object.entries(prices)) p[c as 'loose' | 'cib' | 'new'] = { median_cents: cents, n: 5 }
-  return { id, title, region: 'NTSC-U', variant: 'none', prices: p, pct_1d: null, pct_7d: pct7, pct_30d: null, sparks: {}, stale: false, as_of: '2026-09-07' }
+function entry(prices: Partial<Record<'loose' | 'cib' | 'new', number>>, pct7: number | null): PriceEntry {
+  return { prices, pct_7d: pct7 }
 }
 
 const owned = (game_id: string, condition: CollectionItem['condition']): CollectionItem => ({ game_id, condition, added_at: '2026-09-07T00:00:00Z' })
 
 describe('shelfValue', () => {
   const index = new Map([
-    ['bully-ps2', game('bully-ps2', 'Bully', { loose: 1500, cib: 3000 }, 12)],
-    ['okami-ps2', game('okami-ps2', 'Okami', { loose: 1000, cib: 2000, new: 9000 }, -4)],
-    ['gitaroo-man-ps2', game('gitaroo-man-ps2', 'Gitaroo Man', { loose: 8000 }, null)],
+    ['bully-ps2', entry({ loose: 1500, cib: 3000 }, 12)],
+    ['okami-ps2', entry({ loose: 1000, cib: 2000, new: 9000 }, -4)],
+    ['gitaroo-man-ps2', entry({ loose: 8000 }, null)],
   ])
 
   it('sums each copy at the condition owned, not the headline', () => {
@@ -36,7 +34,7 @@ describe('shelfValue', () => {
     const v = shelfValue([owned('vanished-ps2', 'cib')], index)
     expect(v.total_cents).toBe(0)
     expect(v.unpriced).toBe(1)
-    expect(v.lines[0].latest).toBeUndefined()
+    expect(v.lines[0].entry).toBeUndefined()
   })
 
   it('orders movers by the size of the move, either direction, and skips games without one', () => {

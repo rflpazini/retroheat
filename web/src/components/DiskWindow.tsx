@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useAccount } from '@/lib/account'
 import { useJson } from '@/lib/data'
-import { PLATFORMS, PLATFORM_LABELS, type LatestFile, type Platform } from '@/lib/types'
+import { PLATFORMS, PLATFORM_LABELS, type LatestFile, type Meta, type Platform } from '@/lib/types'
 import { Window } from '@/components/Window'
 
 /**
@@ -9,9 +9,11 @@ import { Window } from '@/components/Window'
  * status line above them. This is the folder-of-folders an operating system
  * would show, rather than a list of links.
  */
-function DiskIcon({ platform }: { platform: Platform }) {
-  const board = useJson<LatestFile>(`latest/${platform}.json`)
-  const count = board.status === 'ready' ? board.data.games.length : null
+function DiskIcon({ platform, count, fetchBoard }: { platform: Platform; count: number | null; fetchBoard: boolean }) {
+  // meta.json normally carries the count; the board itself is only fetched
+  // when the data predates that field.
+  const board = useJson<LatestFile>(fetchBoard ? `latest/${platform}.json` : null)
+  const shown = count ?? (board.status === 'ready' ? board.data.games.length : null)
 
   return (
     <Link
@@ -28,7 +30,7 @@ function DiskIcon({ platform }: { platform: Platform }) {
       <span className="px-1 text-[0.7rem] font-semibold group-hover:bg-[var(--border)] group-hover:text-[var(--card)]">
         {PLATFORM_LABELS[platform]}
       </span>
-      <span className="eyebrow">{count === null ? '—' : `${count} items`}</span>
+      <span className="eyebrow">{shown === null ? '—' : `${shown} items`}</span>
     </Link>
   )
 }
@@ -52,8 +54,9 @@ function FolderIcon({ to, label, count }: { to: string; label: string; count: nu
 }
 
 export function DiskWindow({ order }: { order?: number }) {
-  const meta = useJson<{ counts: { tracked: number } }>('meta.json')
+  const meta = useJson<Meta>('meta.json')
   const tracked = meta.status === 'ready' ? meta.data.counts.tracked : null
+  const perPlatform = meta.status === 'ready' ? meta.data.counts.per_platform : undefined
   const account = useAccount()
 
   return (
@@ -66,7 +69,12 @@ export function DiskWindow({ order }: { order?: number }) {
 
       <div className="grid grid-cols-3 gap-1 p-3 sm:grid-cols-6">
         {PLATFORMS.map((p) => (
-          <DiskIcon key={p} platform={p} />
+          <DiskIcon
+            key={p}
+            platform={p}
+            count={perPlatform?.[p] ?? null}
+            fetchBoard={meta.status === 'ready' && perPlatform?.[p] === undefined}
+          />
         ))}
       </div>
 

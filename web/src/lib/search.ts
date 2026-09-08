@@ -102,6 +102,30 @@ function initials(title: string): string {
     .join('')
 }
 
+interface Prepared {
+  title: string
+  titleTokens: string[]
+  initials: string
+  wide: string[]
+}
+
+// Folding and tokenising every title again on each keystroke is wasted work
+// that grows with the catalog; a game's words never change while it is loaded.
+const prepared = new WeakMap<Searchable, Prepared>()
+
+function prepare(game: Searchable): Prepared {
+  let p = prepared.get(game)
+  if (!p) {
+    const titleTokens = tokens(game.title)
+    const extra = tokens(
+      [game.info?.developer, game.info?.publisher, game.info?.year?.toString()].filter(Boolean).join(' '),
+    )
+    p = { title: fold(game.title), titleTokens, initials: initials(game.title), wide: [...titleTokens, ...extra] }
+    prepared.set(game, p)
+  }
+  return p
+}
+
 function prefixed(word: string, haystack: string[]): boolean {
   return haystack.some((t) => t.startsWith(word))
 }
@@ -115,8 +139,7 @@ function prefixed(word: string, haystack: string[]): boolean {
  */
 export function score(words: string[], game: Searchable): number {
   if (words.length === 0) return 1
-  const title = fold(game.title)
-  const titleTokens = tokens(game.title)
+  const { title, titleTokens, initials: init, wide } = prepare(game)
   const phrase = words.join(' ')
 
   if (title === phrase) return 100
@@ -131,15 +154,9 @@ export function score(words: string[], game: Searchable): number {
     return inOrder ? 72 : 70
   }
 
-  if (words.length === 1 && phrase.length >= 3 && initials(game.title).startsWith(phrase)) return 60
+  if (words.length === 1 && phrase.length >= 3 && init.startsWith(phrase)) return 60
   if (title.includes(phrase)) return 50
 
-  const extra = tokens(
-    [game.info?.developer, game.info?.publisher, game.info?.year?.toString()]
-      .filter(Boolean)
-      .join(' '),
-  )
-  const wide = [...titleTokens, ...extra]
   if (words.every((w) => prefixed(w, wide))) return 40
 
   return 0

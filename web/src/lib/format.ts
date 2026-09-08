@@ -54,6 +54,16 @@ export function headlinePrice(prices: Prices): { condition: Condition; cents: nu
 }
 
 /** The medians of a Prices block as a flat map, so boards and files agree on one shape. */
+/** The condition a list leads with when only medians are known: complete, else loose, else sealed. */
+export function headlineFromMap(m: PriceMap | undefined): { condition: Condition; cents: number } | null {
+  if (!m) return null
+  for (const c of ['cib', 'loose', 'new'] as const) {
+    const cents = m[c]
+    if (cents != null) return { condition: c, cents }
+  }
+  return null
+}
+
 export function priceMap(prices: Prices): PriceMap {
   const out: PriceMap = {}
   for (const c of CONDITIONS) {

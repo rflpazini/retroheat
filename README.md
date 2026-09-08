@@ -113,7 +113,7 @@ Useful flags:
 | `-platforms ps2,n64` | Collect a subset |
 | `-audit` | Print how each live listing was classified, then exit |
 | `-budget 2000` | Cap API calls for the run (0 = unlimited) |
-| `-catalog-only` | Rewrite `catalog.json` from the YAML without pricing; for editorial edits |
+| `-catalog-only` | Rewrite `catalog.json`, `games/<id>.json` and `prices.json` from the YAML and the boards on disk, without pricing; for editorial edits |
 | `-raw-dir ./raw` | Also write one compressed file with every listing the run saw, for `cmd/replay` |
 | `-v` | Debug logging |
 

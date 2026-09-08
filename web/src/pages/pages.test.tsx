@@ -270,10 +270,11 @@ describe.skipIf(!present)('the game page explains the game, not just the price',
   })
 
   it('shows the about paragraph with its Wikipedia credit when one is on file', async () => {
-    const catalog = JSON.parse(fs.readFileSync(path.join(dataDir, 'catalog.json'), 'utf8')) as {
-      games: { id: string; info?: { about?: string; about_url?: string } }[]
-    }
-    const withAbout = catalog.games.find((g) => g.info?.about && g.info?.about_url)
+    const gamesDir = path.join(dataDir, 'games')
+    const details = fs
+      .readdirSync(gamesDir)
+      .map((f) => JSON.parse(fs.readFileSync(path.join(gamesDir, f), 'utf8')) as { id: string; info?: { about?: string; about_url?: string } })
+    const withAbout = details.find((g) => g.info?.about && g.info?.about_url)
     if (!withAbout) return // nothing to assert against until the catalog carries about text
 
     const { Game } = await import('./Game')
@@ -319,10 +320,7 @@ function escapeRegExp(s: string): string {
 describe('the game page marks a classifier change', () => {
   function serveSynthetic(points: unknown[]) {
     const files: Record<string, unknown> = {
-      'catalog.json': {
-        as_of: '2026-09-04',
-        games: [{ id: 'x-ps2', title: 'X', platform: 'ps2', region: 'NTSC-U', variant: 'none' }],
-      },
+      'games/x-ps2.json': { id: 'x-ps2', title: 'X', platform: 'ps2', region: 'NTSC-U', variant: 'none' },
       'history/x-ps2.json': { id: 'x-ps2', points },
     }
     vi.stubGlobal('fetch', async (input: RequestInfo | URL) => {

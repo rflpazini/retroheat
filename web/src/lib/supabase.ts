@@ -13,9 +13,11 @@ export function isAuthEnabled(): boolean {
 }
 
 /**
- * The only module that touches the Supabase SDK, and it loads it on demand.
- * The boards never pay for it, and a build without the environment never
- * even requests the chunk.
+ * The only module that touches the Supabase SDK, and it loads it on demand:
+ * the account provider calls this when a stored session may exist, when the
+ * browser returns from the provider, or on the first click on Sign in. An
+ * anonymous visitor reading prices never downloads the chunk, and a build
+ * without the environment never even references it.
  */
 export async function loadSupabaseBackend(): Promise<ShelfBackend> {
   const env = supabaseEnv()

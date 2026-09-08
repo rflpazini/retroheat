@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import { useAccount } from '@/lib/account'
 import { useJson } from '@/lib/data'
-import { headlinePrice, money, priceMap } from '@/lib/format'
-import { useLatestIndex } from '@/lib/latest'
+import { headlineFromMap, money } from '@/lib/format'
+import { usePriceIndex } from '@/lib/prices'
 import { CONDITION_LABELS, PLATFORM_SHORT, type CatalogFile, type CatalogGame } from '@/lib/types'
 import { OtherPrices } from '@/components/OtherPrices'
 import { QuickAdd } from '@/components/QuickAdd'
@@ -22,7 +22,7 @@ export function Saved() {
 function SavedList() {
   const account = useAccount()
   const catalog = useJson<CatalogFile>('catalog.json')
-  const { index, loading } = useLatestIndex(true)
+  const { index, loading } = usePriceIndex()
 
   if (account.saved.status === 'loading' || loading || catalog.status === 'loading') {
     return (
@@ -85,18 +85,18 @@ function SavedList() {
             <tbody>
               {ids.map((id) => {
                 const game = byId.get(id)
-                const latest = index.get(id)
-                const headline = latest ? headlinePrice(latest.prices) : null
+                const entry = index.get(id)
+                const headline = headlineFromMap(entry?.prices)
                 const owned = account.owned(id)
                 return (
                   <tr key={id} className="border-b border-[var(--input)] last:border-0 hover:bg-[var(--secondary)]">
                     <td className="p-2">
                       <Link to={`/g/${id}`} className="text-xs font-semibold hover:text-[var(--primary)]">
-                        {game?.title ?? latest?.title ?? id}
+                        {game?.title ?? id}
                       </Link>
                       <p className="eyebrow mt-0.5">
                         {game ? PLATFORM_SHORT[game.platform] : 'no longer tracked'}
-                        {latest?.stale && ' · stale'}
+                        {entry?.stale && ' · stale'}
                       </p>
                     </td>
                     <td className="p-2 text-right">
@@ -104,14 +104,14 @@ function SavedList() {
                         <div className="flex flex-col items-end">
                           <span className="tabular text-xs font-bold">{money(headline.cents)}</span>
                           <span className="eyebrow">{CONDITION_LABELS[headline.condition]}</span>
-                          {latest && <OtherPrices prices={priceMap(latest.prices)} headline={headline.condition} />}
+                          {entry && <OtherPrices prices={entry.prices} headline={headline.condition} />}
                         </div>
                       ) : (
                         <span className="text-xs text-[var(--muted-foreground)]">—</span>
                       )}
                     </td>
                     <td className="p-2 text-right">
-                      <TrendPill value={latest?.pct_7d ?? null} showIcon={false} />
+                      <TrendPill value={entry?.pct_7d ?? null} showIcon={false} />
                     </td>
                     <td className="p-2 text-right">
                       <div className="flex items-center justify-end gap-2">

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import fs from 'node:fs'
 import path from 'node:path'
-import type { CatalogFile, HistoryFile, LatestFile, Meta, TrendingFile } from './types'
+import type { CatalogFile, GameDetail, HistoryFile, LatestFile, Meta, PriceIndexFile, TrendingFile } from './types'
 
 // The TypeScript types here are hand-written mirrors of Go structs. Nothing in
 // the compiler connects the two, so a field renamed on the Go side would reach
@@ -27,6 +27,26 @@ describe.skipIf(!present)('collector output matches the frontend contract', () =
     expect(typeof meta.counts.failed).toBe('number')
     expect(Array.isArray(meta.platforms)).toBe(true)
     if ('series_version' in meta) expect(typeof meta.series_version).toBe('number')
+    if (meta.counts.per_platform) {
+      for (const p of meta.platforms) expect(typeof meta.counts.per_platform[p]).toBe('number')
+    }
+  })
+
+  it('prices.json indexes every game on a board with medians the shelves can sum', () => {
+    const meta = read<Meta>('meta.json')
+    const idx = read<PriceIndexFile>('prices.json')
+    expect(typeof idx.as_of).toBe('string')
+    for (const p of meta.platforms) {
+      for (const g of read<LatestFile>(`latest/${p}.json`).games) {
+        const e = idx.games[g.id]
+        expect(e, `${g.id} missing from prices.json`).toBeDefined()
+        for (const c of ['loose', 'cib', 'new'] as const) {
+          if (g.prices[c]) expect(e.prices[c]).toBe(g.prices[c]!.median_cents)
+          else expect(e.prices[c]).toBeUndefined()
+        }
+        if (e.pct_7d !== null) expect(typeof e.pct_7d).toBe('number')
+      }
+    }
   })
 
   it('every platform named in meta has a board', () => {
@@ -97,14 +117,19 @@ describe.skipIf(!present)('collector output matches the frontend contract', () =
     }
   })
 
-  it('catalog entries resolve to a real history file', () => {
+  it('catalog entries resolve to a game file and a history file', () => {
     const catalog = read<CatalogFile>('catalog.json')
     expect(catalog.games.length).toBeGreaterThan(0)
 
     const sample = catalog.games[0]
     expect(typeof sample.id).toBe('string')
     expect(typeof sample.platform).toBe('string')
-    expect(typeof sample.ebay_url).toBe('string')
+    // The id names the platform; the game page relies on it to fetch in parallel.
+    expect(sample.id.endsWith(`-${sample.platform}`)).toBe(true)
+
+    const detail = read<GameDetail>(`games/${sample.id}.json`)
+    expect(detail.id).toBe(sample.id)
+    expect(typeof detail.ebay_url).toBe('string')
 
     const history = read<HistoryFile>(`history/${sample.id}.json`)
     expect(history.id).toBe(sample.id)
@@ -115,13 +140,20 @@ describe.skipIf(!present)('collector output matches the frontend contract', () =
     }
   })
 
-  it('annotations survive the trip from YAML to the catalog', () => {
-    const catalog = read<CatalogFile>('catalog.json')
-    const annotated = catalog.games.filter((g) => g.annotation)
+  it('the catalog carries only what a list needs; the rest is in the game files', () => {
+    const raw = fs.readFileSync(path.join(dataDir, 'catalog.json'), 'utf8')
+    for (const heavy of ['"about"', '"why"', '"trivia"', '"ebay_url"', '"annotation"']) {
+      expect(raw, `catalog.json carries ${heavy}`).not.toContain(heavy)
+    }
+  })
+
+  it('annotations survive the trip from YAML to the game files', () => {
+    const details = read<CatalogFile>('catalog.json').games.map((g) => read<GameDetail>(`games/${g.id}.json`))
+    const annotated = details.filter((d) => d.annotation)
     expect(annotated.length).toBeGreaterThan(0)
-    for (const g of annotated) {
-      expect(g.annotation!.note.length).toBeGreaterThan(0)
-      expect(g.annotation!.date).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+    for (const d of annotated) {
+      expect(d.annotation!.note.length).toBeGreaterThan(0)
+      expect(d.annotation!.date).toMatch(/^\d{4}-\d{2}-\d{2}$/)
     }
   })
 
@@ -141,7 +173,8 @@ describe.skipIf(!present)('editorial content reaches the site', () => {
       if (g.info!.year !== undefined) expect(typeof g.info!.year).toBe('number')
       if (g.info!.cover_url) expect(g.info!.cover_url.startsWith('https://')).toBe(true)
     }
-    expect(withInfo.some((g) => g.info!.why)).toBe(true)
-    expect(withInfo.some((g) => g.info!.trivia)).toBe(true)
+    const details = withInfo.map((g) => read<GameDetail>(`games/${g.id}.json`))
+    expect(details.some((d) => d.info?.why)).toBe(true)
+    expect(details.some((d) => d.info?.trivia)).toBe(true)
   })
 })

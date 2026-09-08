@@ -13,6 +13,7 @@ import (
 	"path/filepath"
 
 	"github.com/rflpazini/retroheat/internal/catalog"
+	"github.com/rflpazini/retroheat/internal/classify"
 	"github.com/rflpazini/retroheat/internal/trending"
 )
 
@@ -76,6 +77,9 @@ type Counts struct {
 	OK      int `json:"ok"`
 	Stale   int `json:"stale"`
 	Failed  int `json:"failed"`
+	// PerPlatform is how many games each board holds, so a page that only
+	// needs the number does not have to download the board.
+	PerPlatform map[catalog.Platform]int `json:"per_platform,omitempty"`
 }
 
 type Meta struct {
@@ -90,6 +94,20 @@ type Meta struct {
 	Platforms     []catalog.Platform `json:"platforms"`
 }
 
+// CatalogInfo is the part of a game's editorial info that a list or a search
+// result shows. The paragraphs live in the game's own file.
+type CatalogInfo struct {
+	Developer string `json:"developer,omitempty"`
+	Publisher string `json:"publisher,omitempty"`
+	Year      int    `json:"year,omitempty"`
+	Genre     string `json:"genre,omitempty"`
+	CoverURL  string `json:"cover_url,omitempty"`
+}
+
+// CatalogGame is one row of catalog.json: what search, boards and shelves
+// need to name a game, and nothing a game page alone would read. With
+// several hundred games the file is fetched on every search and every shelf,
+// so every byte here is paid for many times over.
 type CatalogGame struct {
 	ID       string           `json:"id"`
 	Title    string           `json:"title"`
@@ -97,19 +115,65 @@ type CatalogGame struct {
 	Region   catalog.Region   `json:"region"`
 	Variant  catalog.Variant  `json:"variant"`
 	IGDBID   int              `json:"igdb_id,omitempty"`
-	EbayURL  string           `json:"ebay_url,omitempty"`
-
-	// Editorial facts about the release, when a contributor has written them.
-	Info *catalog.Info `json:"info,omitempty"`
-
-	// Annotation travels with the catalog so a game page can always explain
-	// why a price moved, not only while the game sits on a trending board.
-	Annotation *catalog.Annotation `json:"annotation,omitempty"`
+	Info     *CatalogInfo     `json:"info,omitempty"`
 }
 
 type Catalog struct {
 	AsOf  string        `json:"as_of"`
 	Games []CatalogGame `json:"games"`
+}
+
+// GameDetail is games/<id>.json: everything a game page shows beyond the
+// prices, fetched by the one page that needs it.
+type GameDetail struct {
+	ID       string           `json:"id"`
+	Title    string           `json:"title"`
+	Platform catalog.Platform `json:"platform"`
+	Region   catalog.Region   `json:"region"`
+	Variant  catalog.Variant  `json:"variant"`
+	IGDBID   int              `json:"igdb_id,omitempty"`
+	EbayURL  string           `json:"ebay_url,omitempty"`
+	// Editorial facts about the release, when a contributor has written them.
+	Info *catalog.Info `json:"info,omitempty"`
+	// Annotation travels with the game so its page can always explain why a
+	// price moved, not only while the game sits on a trending board.
+	Annotation *catalog.Annotation `json:"annotation,omitempty"`
+}
+
+// PriceEntry is one game in prices.json: the latest median per priced
+// condition, the week's move and staleness. It is what a search result or a
+// shelf line prints, in a tenth of the bytes of the boards.
+type PriceEntry struct {
+	Prices map[classify.Condition]int64 `json:"prices"`
+	Pct7d  *float64                     `json:"pct_7d"`
+	Stale  bool                         `json:"stale,omitempty"`
+}
+
+type PriceIndex struct {
+	AsOf  string                `json:"as_of"`
+	Games map[string]PriceEntry `json:"games"`
+}
+
+// PriceIndexFrom reduces the boards to the index. Conditions without a price
+// are absent rather than zero.
+func PriceIndexFrom(asOf string, boards []Latest) PriceIndex {
+	idx := PriceIndex{AsOf: asOf, Games: map[string]PriceEntry{}}
+	for _, b := range boards {
+		for _, g := range b.Games {
+			e := PriceEntry{Prices: map[classify.Condition]int64{}, Pct7d: round2p(g.Pct7d), Stale: g.Stale}
+			if g.Prices.Loose != nil {
+				e.Prices[classify.Loose] = g.Prices.Loose.MedianCents
+			}
+			if g.Prices.CIB != nil {
+				e.Prices[classify.CIB] = g.Prices.CIB.MedianCents
+			}
+			if g.Prices.New != nil {
+				e.Prices[classify.New] = g.Prices.New.MedianCents
+			}
+			idx.Games[g.ID] = e
+		}
+	}
+	return idx
 }
 
 func WriteLatest(dataDir string, l Latest) error {
@@ -175,6 +239,22 @@ func WriteMeta(dataDir string, m Meta) error {
 	return writeJSON(filepath.Join(dataDir, "meta.json"), m)
 }
 
+func WriteGame(dataDir string, g GameDetail) error {
+	return writeJSON(filepath.Join(dataDir, "games", g.ID+".json"), g)
+}
+
+// WritePrices stores the index compactly: it is fetched far more often than
+// it is read by a person.
+func WritePrices(dataDir string, p PriceIndex) error {
+	games := make(map[string]PriceEntry, len(p.Games))
+	for id, e := range p.Games {
+		e.Pct7d = round2p(e.Pct7d)
+		games[id] = e
+	}
+	p.Games = games
+	return writeJSONWith(filepath.Join(dataDir, "prices.json"), p, false)
+}
+
 func WriteCatalog(dataDir string, c Catalog) error {
 	if c.Games == nil {
 		c.Games = []CatalogGame{}
@@ -185,11 +265,13 @@ func WriteCatalog(dataDir string, c Catalog) error {
 // encode writes indented JSON without HTML escaping, so a title like
 // "Beyond Good & Evil" stays readable in the committed diff instead of
 // becoming "Beyond Good & Evil".
-func encode(v any) ([]byte, error) {
+func encodeWith(v any, indent bool) ([]byte, error) {
 	var buf bytes.Buffer
 	enc := json.NewEncoder(&buf)
 	enc.SetEscapeHTML(false)
-	enc.SetIndent("", " ")
+	if indent {
+		enc.SetIndent("", " ")
+	}
 	if err := enc.Encode(v); err != nil {
 		return nil, err
 	}
@@ -206,8 +288,10 @@ func round2p(f *float64) *float64 {
 	return &r
 }
 
-func writeJSON(path string, v any) error {
-	data, err := encode(v)
+func writeJSON(path string, v any) error { return writeJSONWith(path, v, true) }
+
+func writeJSONWith(path string, v any, indent bool) error {
+	data, err := encodeWith(v, indent)
 	if err != nil {
 		return fmt.Errorf("encode %s: %w", path, err)
 	}

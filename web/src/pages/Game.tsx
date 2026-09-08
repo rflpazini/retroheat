@@ -16,9 +16,10 @@ import { conditionColor, formatDate, middleHalf, money } from '@/lib/format'
 import {
   CONDITIONS,
   CONDITION_LABELS,
+  PLATFORMS,
   PLATFORM_LABELS,
-  type CatalogFile,
   type Condition,
+  type GameDetail,
   type HistoryFile,
   type LatestFile,
   type Price,
@@ -53,11 +54,14 @@ export function Game() {
   const { id } = useParams()
   const [condition, setCondition] = useState<Condition>('cib')
 
+  // Every id ends in its platform (the catalog loader enforces it), so the
+  // three files a page needs are fetched at once instead of one after another.
+  const platform = PLATFORMS.find((p) => id?.endsWith(`-${p}`))
   const history = useJson<HistoryFile>(id ? `history/${id}.json` : null)
-  const catalog = useJson<CatalogFile>('catalog.json')
+  const detail = useJson<GameDetail>(id ? `games/${id}.json` : null)
+  const board = useJson<LatestFile>(platform ? `latest/${platform}.json` : null)
 
-  const game = catalog.status === 'ready' ? catalog.data.games.find((g) => g.id === id) : undefined
-  const board = useJson<LatestFile>(game ? `latest/${game.platform}.json` : null)
+  const game = detail.status === 'ready' ? detail.data : undefined
   const boardEntry = board.status === 'ready' ? board.data.games.find((g) => g.id === id) : undefined
 
   const series = useMemo(() => {

@@ -7,6 +7,7 @@ import (
 	"testing"
 
 	"github.com/rflpazini/retroheat/internal/catalog"
+	"github.com/rflpazini/retroheat/internal/classify"
 	"github.com/rflpazini/retroheat/internal/snapshot"
 	"github.com/rflpazini/retroheat/internal/trending"
 )
@@ -198,5 +199,76 @@ func TestWriteDoesNotHTMLEscapeTitles(t *testing.T) {
 	}
 	if !strings.Contains(string(body), "Beyond Good & Evil") {
 		t.Errorf("title not written verbatim:\n%s", body)
+	}
+}
+
+func TestWritePricesIsCompactAndByteStable(t *testing.T) {
+	t.Parallel()
+	dir := t.TempDir()
+	idx := snapshot.PriceIndex{AsOf: "2026-09-01", Games: map[string]snapshot.PriceEntry{
+		"silent-hill-2-ps2": {Prices: map[classify.Condition]int64{classify.Loose: 4500, classify.CIB: 9800}, Pct7d: pct(12.345678)},
+		"god-hand-ps2":      {Prices: map[classify.Condition]int64{classify.CIB: 5000}, Stale: true},
+	}}
+	if err := snapshot.WritePrices(dir, idx); err != nil {
+		t.Fatal(err)
+	}
+	first, err := os.ReadFile(filepath.Join(dir, "prices.json"))
+	if err != nil {
+		t.Fatalf("expected data/prices.json: %v", err)
+	}
+	body := string(first)
+	for _, want := range []string{`"cib":9800`, `"loose":4500`, `"pct_7d":12.35`, `"stale":true`, `"as_of":"2026-09-01"`} {
+		if !strings.Contains(body, want) {
+			t.Errorf("prices.json lacks %s:\n%s", want, body)
+		}
+	}
+	if strings.Contains(body, "mode_cents") || strings.Contains(body, "sparks") || strings.Contains(body, "  ") {
+		t.Errorf("prices.json must be the compact index, not a copy of the boards:\n%s", body)
+	}
+	if err := snapshot.WritePrices(dir, idx); err != nil {
+		t.Fatal(err)
+	}
+	second, _ := os.ReadFile(filepath.Join(dir, "prices.json"))
+	if string(second) != body {
+		t.Error("rewriting the same index produced different bytes")
+	}
+}
+
+func TestPriceIndexFromBoardsKeepsOnlyWhatSearchAndShelvesNeed(t *testing.T) {
+	t.Parallel()
+	l := sampleLatest()
+	l.Games[0].Stale = true
+	idx := snapshot.PriceIndexFrom("2026-09-01", []snapshot.Latest{l})
+	e, ok := idx.Games["silent-hill-2-ps2"]
+	if !ok {
+		t.Fatal("the priced game is missing from the index")
+	}
+	if e.Prices[classify.Loose] != 4500 || e.Prices[classify.CIB] != 9800 || e.Pct7d == nil || !e.Stale {
+		t.Errorf("entry = %+v, want medians, the 7-day move and staleness", e)
+	}
+	if _, has := e.Prices[classify.New]; has {
+		t.Error("a condition without a price must be absent, not zero")
+	}
+}
+
+func TestWriteGameLandsUnderGames(t *testing.T) {
+	t.Parallel()
+	dir := t.TempDir()
+	g := snapshot.GameDetail{
+		ID: "silent-hill-2-ps2", Title: "Silent Hill 2", Platform: catalog.PS2,
+		EbayURL: "https://www.ebay.com/sch/i.html?_nkw=Silent+Hill+2+PS2",
+		Info:    &catalog.Info{About: "A 2001 survival horror game.", Why: "Never re-released faithfully."},
+	}
+	if err := snapshot.WriteGame(dir, g); err != nil {
+		t.Fatal(err)
+	}
+	body, err := os.ReadFile(filepath.Join(dir, "games", "silent-hill-2-ps2.json"))
+	if err != nil {
+		t.Fatalf("expected data/games/silent-hill-2-ps2.json: %v", err)
+	}
+	for _, want := range []string{`"about"`, `"why"`, `"ebay_url"`} {
+		if !strings.Contains(string(body), want) {
+			t.Errorf("game file lacks %s:\n%s", want, body)
+		}
 	}
 }

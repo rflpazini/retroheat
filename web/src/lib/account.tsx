@@ -70,7 +70,23 @@ export function messageOf(e: unknown): string {
 }
 
 const RETURN_KEY = 'retroheat-auth-return'
+const SESSION_KEY = 'retroheat-auth'
 const AUTH_PARAMS = ['code', 'error', 'error_code', 'error_description']
+
+/**
+ * Whether the SDK must load on arrival: only when a session may exist or the
+ * provider just sent the browser back. An anonymous visitor reading prices
+ * never downloads it; the first click on Sign in does.
+ */
+function needsBackendNow(): boolean {
+  try {
+    if (localStorage.getItem(SESSION_KEY)) return true
+  } catch {
+    // Private browsing; no stored session to resume.
+  }
+  const params = new URL(window.location.href).searchParams
+  return AUTH_PARAMS.some((k) => params.has(k))
+}
 
 /** Where the provider sends the browser back to: the site root, hash and all. */
 function redirectTarget(): string {
@@ -117,6 +133,8 @@ function consumeAuthParams(): { errorDescription: string | null } {
  */
 export function AccountProvider(props: {
   backend?: (() => Promise<ShelfBackend>) | null
+  /** Load the backend on mount rather than on the first sign-in; defaults to when a session may exist. */
+  eager?: boolean
   children: React.ReactNode
 }) {
   // The shell mounts a provider of its own. When a test, or a future host,
@@ -132,14 +150,19 @@ export function AccountProvider(props: {
 
 function AccountState({
   backend,
+  eager,
   children,
 }: {
   backend?: (() => Promise<ShelfBackend>) | null
+  eager?: boolean
   children: React.ReactNode
 }) {
   // Fixed for the provider's life, so an inline loader in a test does not
   // restart the sign-in machinery on every render.
   const [load] = useState(() => (backend === undefined ? (isAuthEnabled() ? loadSupabaseBackend : null) : backend))
+  // A backend handed in explicitly (tests) is wanted at once; the real one
+  // only when a visitor may be signed in or is returning from the provider.
+  const [loadNow] = useState(() => eager ?? (backend !== undefined || needsBackendNow()))
   const navigate = useNavigate()
   const location = useLocation()
   const navigateRef = useRef(navigate)
@@ -148,7 +171,10 @@ function AccountState({
   locationRef.current = location
 
   const ref = useRef<ShelfBackend | null>(null)
-  const [status, setStatus] = useState<AccountStatus>(load ? 'loading' : 'disabled')
+  const pending = useRef<Promise<ShelfBackend> | null>(null)
+  const cancelled = useRef(false)
+  const unsubscribe = useRef<() => void>(() => {})
+  const [status, setStatus] = useState<AccountStatus>(!load ? 'disabled' : loadNow ? 'loading' : 'signed-out')
   const [user, setUser] = useState<AuthUser | null>(null)
   const [signInOpen, setSignInOpen] = useState(false)
   const [saved, setSaved] = useState<Loadable<Set<string>>>({ status: 'ready', data: new Set() })
@@ -163,19 +189,18 @@ function AccountState({
   const collectionRef = useRef(collection)
   collectionRef.current = collection
 
-  useEffect(() => {
-    if (!load) return
-    let cancelled = false
-    let unsubscribe = () => {}
-    ;(async () => {
-      try {
+  // ensure loads the backend once and wires it up; every action goes through
+  // it, so the SDK arrives on the first click when it did not arrive on load.
+  const ensure = useCallback((): Promise<ShelfBackend> => {
+    if (!load) return Promise.reject(new Error('Accounts are not available right now'))
+    if (!pending.current) {
+      pending.current = (async () => {
         const b = await load()
-        if (cancelled) return
         ref.current = b
         // getUser waits for the SDK to finish reading any ?code= from the
         // URL, which is why the parameters are only stripped afterwards.
         const u = await b.getUser()
-        if (cancelled) return
+        if (cancelled.current) return b
         const { errorDescription } = consumeAuthParams()
         if (errorDescription) {
           setSignInError(errorDescription)
@@ -183,7 +208,7 @@ function AccountState({
         }
         setUser(u)
         setStatus(u ? 'signed-in' : 'signed-out')
-        unsubscribe = b.onAuthChange((next, event) => {
+        unsubscribe.current = b.onAuthChange((next, event) => {
           setUser(next)
           setStatus(next ? 'signed-in' : 'signed-out')
           if (event === 'signed-in') {
@@ -194,17 +219,27 @@ function AccountState({
             if (back) navigateRef.current(back, { replace: true })
           }
         })
-      } catch (e) {
-        if (cancelled) return
-        setStatus('signed-out')
-        setSignInError(messageOf(e))
-      }
-    })()
-    return () => {
-      cancelled = true
-      unsubscribe()
+        return b
+      })().catch((e: unknown) => {
+        pending.current = null
+        if (!cancelled.current) {
+          setStatus('signed-out')
+          setSignInError(messageOf(e))
+        }
+        throw e
+      })
     }
+    return pending.current
   }, [load])
+
+  useEffect(() => {
+    cancelled.current = false
+    if (load && loadNow) void ensure().catch(() => {})
+    return () => {
+      cancelled.current = true
+      unsubscribe.current()
+    }
+  }, [load, loadNow, ensure])
 
   // Lists follow the user. They are fetched here, never inside the auth
   // callback, which the SDK documents as a deadlock.
@@ -235,32 +270,33 @@ function AccountState({
     }
   }, [userId])
 
-  const backendOrThrow = () => {
-    const b = ref.current
-    if (!b) throw new Error('Accounts are not available right now')
-    return b
-  }
-
   const signInWithGoogle = useCallback(async () => {
     stashReturn(locationRef.current.pathname)
-    await backendOrThrow().signInWithGoogle(redirectTarget())
-  }, [])
+    const b = await ensure()
+    await b.signInWithGoogle(redirectTarget())
+  }, [ensure])
 
-  const signInWithEmail = useCallback(async (email: string) => {
-    stashReturn(locationRef.current.pathname)
-    await backendOrThrow().signInWithEmail(email, redirectTarget())
-  }, [])
+  const signInWithEmail = useCallback(
+    async (email: string) => {
+      stashReturn(locationRef.current.pathname)
+      const b = await ensure()
+      await b.signInWithEmail(email, redirectTarget())
+    },
+    [ensure],
+  )
 
   const signOut = useCallback(async () => {
-    await backendOrThrow().signOut()
-  }, [])
+    const b = await ensure()
+    await b.signOut()
+  }, [ensure])
 
   const deleteAccount = useCallback(async () => {
-    await backendOrThrow().deleteAccount()
-  }, [])
+    const b = await ensure()
+    await b.deleteAccount()
+  }, [ensure])
 
   const toggleSaved = useCallback(async (id: string) => {
-    const b = backendOrThrow()
+    const b = await ensure()
     const cur = savedRef.current
     if (cur.status !== 'ready') return
     const was = cur.data.has(id)
@@ -279,7 +315,7 @@ function AccountState({
   }, [])
 
   const setOwned = useCallback(async (id: string, condition: Condition | null) => {
-    const b = backendOrThrow()
+    const b = await ensure()
     const cur = collectionRef.current
     if (cur.status !== 'ready') return
     const next = new Map(cur.data)
@@ -301,7 +337,11 @@ function AccountState({
       status,
       user,
       signInOpen,
-      openSignIn: () => setSignInOpen(true),
+      openSignIn: () => {
+        // The first click is when an anonymous visitor's SDK download starts.
+        void ensure().catch(() => {})
+        setSignInOpen(true)
+      },
       closeSignIn: () => {
         setSignInOpen(false)
         setSignInError(null)
@@ -319,7 +359,7 @@ function AccountState({
       error,
       signInError,
     }),
-    [status, user, signInOpen, signInWithGoogle, signInWithEmail, signOut, deleteAccount, saved, toggleSaved, collection, setOwned, error, signInError],
+    [status, user, signInOpen, ensure, signInWithGoogle, signInWithEmail, signOut, deleteAccount, saved, toggleSaved, collection, setOwned, error, signInError],
   )
 
   return <AccountContext.Provider value={value}>{children}</AccountContext.Provider>

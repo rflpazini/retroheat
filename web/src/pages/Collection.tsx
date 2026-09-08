@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useAccount } from '@/lib/account'
 import { useJson } from '@/lib/data'
 import { conditionColor, money } from '@/lib/format'
-import { useLatestIndex } from '@/lib/latest'
+import { usePriceIndex } from '@/lib/prices'
 import { shelfValue, type ShelfLine } from '@/lib/shelf'
 import { CONDITION_LABELS, PLATFORM_SHORT, type CatalogFile, type CatalogGame } from '@/lib/types'
 import { QuickAdd } from '@/components/QuickAdd'
@@ -22,7 +22,7 @@ export function Collection() {
 function Shelf() {
   const account = useAccount()
   const catalog = useJson<CatalogFile>('catalog.json')
-  const { index, loading } = useLatestIndex(true)
+  const { index, loading } = usePriceIndex()
 
   if (account.collection.status === 'loading' || loading || catalog.status === 'loading') {
     return (
@@ -55,7 +55,7 @@ function Shelf() {
 
   const byId = new Map<string, CatalogGame>(catalog.status === 'ready' ? catalog.data.games.map((g) => [g.id, g]) : [])
   const value = shelfValue(items, index)
-  const nameOf = (l: ShelfLine) => l.latest?.title ?? byId.get(l.item.game_id)?.title ?? l.item.game_id
+  const nameOf = (l: ShelfLine) => byId.get(l.item.game_id)?.title ?? l.item.game_id
 
   return (
     <div className="space-y-4">
@@ -79,7 +79,7 @@ function Shelf() {
                 </Link>
                 <span className="flex items-center gap-3">
                   <span className="tabular">{money(l.price_cents)}</span>
-                  <TrendPill value={l.latest?.pct_7d ?? null} showIcon={false} />
+                  <TrendPill value={l.entry?.pct_7d ?? null} showIcon={false} />
                 </span>
               </li>
             ))}
@@ -122,7 +122,7 @@ function Shelf() {
                       </Link>
                       <p className="eyebrow mt-0.5">
                         {game ? PLATFORM_SHORT[game.platform] : 'no longer tracked'}
-                        {l.latest?.stale && ' · stale'}
+                        {l.entry?.stale && ' · stale'}
                       </p>
                     </td>
                     <td className="p-2">
@@ -133,7 +133,7 @@ function Shelf() {
                     </td>
                     <td className="tabular p-2 text-right text-xs font-bold">{money(l.price_cents)}</td>
                     <td className="p-2 text-right">
-                      <TrendPill value={l.latest?.pct_7d ?? null} showIcon={false} />
+                      <TrendPill value={l.entry?.pct_7d ?? null} showIcon={false} />
                     </td>
                     <td className="p-2 text-right">
                       <div className="flex items-center justify-end gap-2">

@@ -262,13 +262,23 @@ func Run(ctx context.Context, o Options) (Result, error) {
 		return Result{}, err
 	}
 
+	// The index and the per-platform counts describe every board on disk,
+	// including the ones a partial run did not touch.
+	onDisk, err := boardsOnDisk(o.DataDir, allPlatforms)
+	if err != nil {
+		return Result{}, err
+	}
+	if err := snapshot.WritePrices(o.DataDir, snapshot.PriceIndexFrom(today, onDisk)); err != nil {
+		return Result{}, err
+	}
+
 	res.APICalls = o.Budget.Used()
 	meta := snapshot.Meta{
 		GeneratedAt:   generatedAt,
 		Source:        o.Provider.Name(),
 		PriceKind:     o.Provider.Kind(),
 		SeriesVersion: classify.SeriesVersion,
-		Counts:        snapshot.Counts{Tracked: res.Tracked, OK: res.OK, Stale: res.Stale, Failed: res.Failed},
+		Counts:        snapshot.Counts{Tracked: res.Tracked, OK: res.OK, Stale: res.Stale, Failed: res.Failed, PerPlatform: countsOf(onDisk)},
 		APICallsUsed:  res.APICalls,
 		Platforms:     allPlatforms,
 	}
@@ -284,13 +294,43 @@ func Run(ctx context.Context, o Options) (Result, error) {
 			log.Info("mirrored", slog.Int("points", len(mirrored)))
 		}
 	}
-	if err := snapshot.WriteCatalog(o.DataDir, snapshot.Catalog{
-		AsOf:  today,
-		Games: catalogEntries(allGames, latestAnn),
-	}); err != nil {
+	if err := writeCatalogFiles(o.DataDir, today, allGames, latestAnn); err != nil {
 		return Result{}, err
 	}
 	return res, nil
+}
+
+func boardsOnDisk(dataDir string, platforms []catalog.Platform) ([]snapshot.Latest, error) {
+	out := make([]snapshot.Latest, 0, len(platforms))
+	for _, p := range platforms {
+		l, err := snapshot.ReadLatest(dataDir, p)
+		if err != nil {
+			return nil, err
+		}
+		out = append(out, l)
+	}
+	return out, nil
+}
+
+func countsOf(boards []snapshot.Latest) map[catalog.Platform]int {
+	out := make(map[catalog.Platform]int, len(boards))
+	for _, b := range boards {
+		out[b.Platform] = len(b.Games)
+	}
+	return out
+}
+
+// writeCatalogFiles rewrites catalog.json and every games/<id>.json.
+func writeCatalogFiles(dataDir, asOf string, games []catalog.Game, anns map[string]catalog.Annotation) error {
+	if err := snapshot.WriteCatalog(dataDir, snapshot.Catalog{AsOf: asOf, Games: catalogEntries(games)}); err != nil {
+		return err
+	}
+	for _, g := range gameDetails(games, anns) {
+		if err := snapshot.WriteGame(dataDir, g); err != nil {
+			return err
+		}
+	}
+	return nil
 }
 
 // priceOne prices a game and, when archiving, records exactly one entry for
@@ -399,16 +439,45 @@ func WriteCatalogOnly(dataDir, catalogDir string, now time.Time) error {
 	if err != nil {
 		return err
 	}
-	return snapshot.WriteCatalog(dataDir, snapshot.Catalog{
-		AsOf:  now.UTC().Format(time.DateOnly),
-		Games: catalogEntries(games, catalog.Latest(anns)),
-	})
+	today := now.UTC().Format(time.DateOnly)
+	if err := writeCatalogFiles(dataDir, today, games, catalog.Latest(anns)); err != nil {
+		return err
+	}
+	// The price index is derived from the boards already on disk, so it can
+	// be rebuilt here too, without spending a call.
+	onDisk, err := boardsOnDisk(dataDir, platformsOf(games))
+	if err != nil {
+		return err
+	}
+	return snapshot.WritePrices(dataDir, snapshot.PriceIndexFrom(today, onDisk))
 }
 
-func catalogEntries(games []catalog.Game, anns map[string]catalog.Annotation) []snapshot.CatalogGame {
+func catalogEntries(games []catalog.Game) []snapshot.CatalogGame {
 	out := make([]snapshot.CatalogGame, 0, len(games))
 	for _, g := range games {
 		entry := snapshot.CatalogGame{
+			ID:       g.ID,
+			Title:    g.Title,
+			Platform: g.Platform,
+			Region:   g.Region,
+			Variant:  g.Variant,
+			IGDBID:   g.IGDBID,
+		}
+		if g.Info != nil {
+			entry.Info = &snapshot.CatalogInfo{
+				Developer: g.Info.Developer, Publisher: g.Info.Publisher, Year: g.Info.Year,
+				Genre: g.Info.Genre, CoverURL: g.Info.CoverURL,
+			}
+		}
+		out = append(out, entry)
+	}
+	return out
+}
+
+func gameDetails(games []catalog.Game, anns map[string]catalog.Annotation) []snapshot.GameDetail {
+	out := make([]snapshot.GameDetail, 0, len(games))
+	for _, g := range games {
+		d := snapshot.GameDetail{
 			ID:       g.ID,
 			Title:    g.Title,
 			Platform: g.Platform,
@@ -420,9 +489,9 @@ func catalogEntries(games []catalog.Game, anns map[string]catalog.Annotation) []
 		}
 		if a, ok := anns[g.ID]; ok {
 			ann := a
-			entry.Annotation = &ann
+			d.Annotation = &ann
 		}
-		out = append(out, entry)
+		out = append(out, d)
 	}
 	return out
 }
