@@ -92,7 +92,9 @@ jobs:
           SUPABASE_URL: ${{ vars.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: |
-          if [ "$(date -u +%u)" = "7" ]; then
+          if [ -z "$SUPABASE_SERVICE_ROLE_KEY" ]; then
+            echo "::warning title=Supabase copy not written::SUPABASE_SERVICE_ROLE_KEY is not set, so neither the collector nor the resync can write the copy."
+          elif [ "$(date -u +%u)" = "7" ]; then
             go run ./cmd/mirror -data ./data
           else
             echo "Full resync runs on Sundays; today's points were mirrored by the collector."
