@@ -26,7 +26,7 @@ import {
 import { TrendPill } from '@/components/TrendPill'
 import { Window } from '@/components/Window'
 import { CRTScreen } from '@/components/CRTScreen'
-import { OwnControl, SaveButton } from '@/components/ShelfControls'
+import { OwnControl, SaveButton, ShelfInvite } from '@/components/ShelfControls'
 import { LoadError, Message } from '@/components/States'
 
 const chip = 'bevel border-2 border-[var(--border)] bg-[var(--secondary)] px-2 py-1 text-[0.6rem]'
@@ -183,6 +183,8 @@ export function Game() {
           </div>
         </div>
       </Window>
+
+      <ShelfInvite />
 
       {info?.why && (
         <Window title="Why it costs what it costs" order={1}>

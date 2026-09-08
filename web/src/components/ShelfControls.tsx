@@ -146,3 +146,74 @@ export function ShelfGate({ what, children }: { what: string; children: React.Re
       return <>{children}</>
   }
 }
+
+const iconButton =
+  'press bevel inline-flex size-7 shrink-0 items-center justify-center border-2 border-[var(--border)] bg-[var(--secondary)] aria-pressed:bevel-in aria-pressed:bg-[var(--accent)] aria-pressed:text-[var(--accent-foreground)]'
+
+/**
+ * The compact form for a board row: a bookmark toggle and an "own as" picker,
+ * so a collection can be filled by scanning a board instead of opening every
+ * game. Signed out, the bookmark opens the sign-in window.
+ */
+export function ShelfRowControls({ gameId, title }: { gameId: string; title: string }) {
+  const account = useAccount()
+  if (account.status === 'disabled' || account.status === 'loading') return null
+  if (account.status === 'signed-out') {
+    return (
+      <button
+        type="button"
+        className={iconButton}
+        onClick={account.openSignIn}
+        aria-label={`Sign in to save ${title}`}
+        title="Sign in to save"
+      >
+        <Bookmark className="size-3.5" aria-hidden />
+      </button>
+    )
+  }
+  const saved = account.isSaved(gameId)
+  const owned = account.owned(gameId)
+  return (
+    <span className="inline-flex items-center gap-1.5">
+      <button
+        type="button"
+        className={iconButton}
+        aria-pressed={saved}
+        aria-label={saved ? `Saved ${title}` : `Save ${title}`}
+        title={saved ? 'Saved' : 'Save'}
+        onClick={() => void account.toggleSaved(gameId)}
+      >
+        {saved ? <BookmarkCheck className="size-3.5" aria-hidden /> : <Bookmark className="size-3.5" aria-hidden />}
+      </button>
+      <ConditionSelect
+        value={owned?.condition ?? ''}
+        label={`Own ${title} as`}
+        placeholder="Own as…"
+        onChange={(c) => void account.setOwned(gameId, c)}
+      />
+    </span>
+  )
+}
+
+/** The nudge on a game page for a visitor who is not signed in. Nothing is blocked. */
+export function ShelfInvite() {
+  const account = useAccount()
+  if (account.status !== 'signed-out') return null
+  return (
+    <Window title="Your shelf" order={1}>
+      <div className="flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <p className="pixel text-[0.6rem]">Building a collection?</p>
+          <p className="mt-2 max-w-md text-xs">
+            Sign in to save games and mark the ones you own. Your shelf adds up what your copies are asking
+            today and shows which ones moved this week.
+          </p>
+        </div>
+        <button type="button" className={shelfButton} onClick={account.openSignIn}>
+          <Library className="size-3.5" aria-hidden />
+          Sign in and start saving
+        </button>
+      </div>
+    </Window>
+  )
+}

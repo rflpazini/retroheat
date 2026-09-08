@@ -88,9 +88,10 @@ export function SignInDialog({ open, onOpenChange }: { open: boolean; onOpenChan
         <div className="stripe" aria-hidden />
 
         <div className="space-y-4 p-5">
+          <p className="pixel text-[0.6rem]">Building a collection?</p>
           <p className="text-xs">
-            Save games and keep track of what you own. RetroHeat stores your e-mail address and the
-            ids of the games you save, nothing else.
+            Sign in to save games and keep track of what you own. RetroHeat stores your e-mail
+            address and the ids of the games you save, nothing else.
           </p>
 
           {phase.kind === 'sent' ? (

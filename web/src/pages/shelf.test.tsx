@@ -135,6 +135,61 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     expect(document.body.textContent).toMatch(/in my collection as/i)
   })
 
+  it('a signed-in visitor saves and marks a game straight from a board row', async () => {
+    if (!priced) return
+    const { backend, state } = memoryBackend({ user: testUser })
+    const { Platform } = await import('./Platform')
+    renderAt('/p/ps2', <Platform />, '/p/:platform', backend)
+    const user = userEvent.setup()
+
+    const save = await screen.findByRole('button', { name: `Save ${priced.title}` })
+    await user.click(save)
+    await waitFor(() => expect(screen.getByRole('button', { name: `Saved ${priced.title}` }).getAttribute('aria-pressed')).toBe('true'))
+    expect(state.saved.has(priced.id)).toBe(true)
+
+    await user.selectOptions(screen.getByLabelText(`Own ${priced.title} as`), 'loose')
+    await waitFor(() => expect(state.collection.get(priced.id)?.condition).toBe('loose'))
+  })
+
+  it('a signed-out visitor gets a bookmark on board rows that asks to sign in', async () => {
+    if (!priced) return
+    const { backend } = memoryBackend({ user: null })
+    const { Platform } = await import('./Platform')
+    renderAt('/p/ps2', <Platform />, '/p/:platform', backend)
+    expect(await screen.findByRole('button', { name: `Sign in to save ${priced.title}` })).toBeDefined()
+    expect(screen.queryByLabelText(`Own ${priced.title} as`)).toBeNull()
+  })
+
+  it('the game page invites a signed-out visitor to build a collection, and not a signed-in one', async () => {
+    const signedOut = memoryBackend({ user: null })
+    const { Game } = await import('./Game')
+    const first = renderAt('/g/jet-force-gemini-n64', <Game />, '/g/:id', signedOut.backend)
+    await waitFor(() => expect(document.body.textContent).toMatch(/building a collection\?/i))
+    expect(screen.getByRole('button', { name: /sign in and start saving/i })).toBeDefined()
+    first.unmount()
+
+    const signedIn = memoryBackend({ user: testUser })
+    renderAt('/g/jet-force-gemini-n64', <Game />, '/g/:id', signedIn.backend)
+    await waitFor(() => expect(document.body.textContent).toMatch(/details/i))
+    expect(document.body.textContent).not.toMatch(/building a collection\?/i)
+  })
+
+  it('quick-add fills the collection from a title search', async () => {
+    const { backend, state } = memoryBackend({ user: testUser })
+    renderAt('/collection', <Collection />, '/collection', backend)
+    const user = userEvent.setup()
+
+    const box = await screen.findByLabelText(/add a game you own/i)
+    await user.type(box, 'bully ps2')
+    const group = await screen.findByRole('group', { name: /add bully as/i })
+    await user.click(within(group).getByRole('button', { name: /loose/i }))
+
+    await waitFor(() => expect(state.collection.get('bully-ps2')?.condition).toBe('loose'))
+    await waitFor(() => expect(screen.getByRole('status').textContent).toMatch(/added bully to your collection/i))
+    expect(document.body.textContent).toMatch(/shelf value/i)
+    expect((box as HTMLInputElement).value).toBe('')
+  })
+
   it('the game page asks a signed-out visitor to sign in before saving', async () => {
     const { backend } = memoryBackend({ user: null })
     const { Game } = await import('./Game')

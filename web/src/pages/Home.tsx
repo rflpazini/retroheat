@@ -16,6 +16,7 @@ import { Window } from '@/components/Window'
 import { DiskWindow } from '@/components/DiskWindow'
 import { LoadError, Message } from '@/components/States'
 import { OtherPrices } from '@/components/OtherPrices'
+import { ShelfRowControls } from '@/components/ShelfControls'
 
 type MoveWindow = 'pct_1d' | 'pct_7d' | 'pct_30d'
 
@@ -47,6 +48,7 @@ function Hero({ entry, move }: { entry: TrendEntry; move: MoveWindow }) {
             <span className="eyebrow">{CONDITION_LABELS[entry.headline_condition]} copy</span>
             <TrendPill value={entry[move]} />
             <span className="text-xs">{over}</span>
+            <ShelfRowControls gameId={entry.id} title={entry.title} />
           </div>
           <OtherPrices prices={entry.prices} headline={entry.headline_condition} className="mt-2" />
           {entry.annotation && (
@@ -75,9 +77,12 @@ function MoverRow({ entry, rank, move }: { entry: TrendEntry; rank: number; move
       </span>
 
       <div className="min-w-0">
-        <Link to={`/g/${entry.id}`} className="text-sm font-semibold hover:text-[var(--primary)]">
-          <span className="line-clamp-1">{entry.title}</span>
-        </Link>
+        <div className="flex flex-wrap items-center gap-2">
+          <Link to={`/g/${entry.id}`} className="text-sm font-semibold hover:text-[var(--primary)]">
+            <span className="line-clamp-1">{entry.title}</span>
+          </Link>
+          <ShelfRowControls gameId={entry.id} title={entry.title} />
+        </div>
         <p className="eyebrow mt-0.5">
           {PLATFORM_SHORT[entry.platform]}
           {companions(entry.prices, entry.headline_condition).map(

@@ -5,6 +5,7 @@ import { conditionColor, money } from '@/lib/format'
 import { useLatestIndex } from '@/lib/latest'
 import { shelfValue, type ShelfLine } from '@/lib/shelf'
 import { CONDITION_LABELS, PLATFORM_SHORT, type CatalogFile, type CatalogGame } from '@/lib/types'
+import { QuickAdd } from '@/components/QuickAdd'
 import { ConditionSelect, ShelfGate, shelfButton } from '@/components/ShelfControls'
 import { Message } from '@/components/States'
 import { TrendPill } from '@/components/TrendPill'
@@ -37,15 +38,18 @@ function Shelf() {
   const items = [...account.collection.data.values()]
   if (items.length === 0) {
     return (
-      <Message
-        title="Nothing on the shelf yet"
-        detail="Open a game and mark it as owned, with the condition of your copy. The shelf value adds up what those copies are asking today."
-        action={
-          <Link to="/" className={shelfButton}>
-            Browse the boards
-          </Link>
-        }
-      />
+      <div className="space-y-4">
+        <QuickAdd mode="own" />
+        <Message
+          title="Nothing on the shelf yet"
+          detail="Search above, or open a game and mark it as owned with the condition of your copy. The shelf value adds up what those copies are asking today."
+          action={
+            <Link to="/" className={shelfButton}>
+              Browse the boards
+            </Link>
+          }
+        />
+      </div>
     )
   }
 
@@ -55,7 +59,8 @@ function Shelf() {
 
   return (
     <div className="space-y-4">
-      <Window title="My collection — shelf value" stripe order={0}>
+      <QuickAdd mode="own" />
+      <Window title="My collection — shelf value" stripe order={1}>
         <p className="eyebrow">Shelf value</p>
         <p className="tabular text-3xl font-bold">{money(value.total_cents)}</p>
         <p className="eyebrow mt-2">

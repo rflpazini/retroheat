@@ -5,6 +5,7 @@ import { headlinePrice, money, priceMap } from '@/lib/format'
 import { useLatestIndex } from '@/lib/latest'
 import { CONDITION_LABELS, PLATFORM_SHORT, type CatalogFile, type CatalogGame } from '@/lib/types'
 import { OtherPrices } from '@/components/OtherPrices'
+import { QuickAdd } from '@/components/QuickAdd'
 import { ConditionSelect, ShelfGate, shelfButton } from '@/components/ShelfControls'
 import { Message } from '@/components/States'
 import { TrendPill } from '@/components/TrendPill'
@@ -41,21 +42,25 @@ function SavedList() {
 
   if (ids.length === 0) {
     return (
-      <Message
-        title="Nothing saved yet"
-        detail="Open any game and press Save to keep it here, with today's price beside it."
-        action={
-          <Link to="/" className={shelfButton}>
-            Browse the boards
-          </Link>
-        }
-      />
+      <div className="space-y-4">
+        <QuickAdd mode="save" />
+        <Message
+          title="Nothing saved yet"
+          detail="Search above, or open any game and press Save to keep it here with today's price beside it."
+          action={
+            <Link to="/" className={shelfButton}>
+              Browse the boards
+            </Link>
+          }
+        />
+      </div>
     )
   }
 
   return (
     <div className="space-y-4">
-      <Window title="Saved games" bodyClassName="p-0" stripe order={0}>
+      <QuickAdd mode="save" />
+      <Window title="Saved games" bodyClassName="p-0" stripe order={1}>
         <div className="flex flex-wrap items-center justify-between gap-3 border-b-2 border-[var(--border)] p-3">
           <p className="eyebrow">{ids.length} saved · asking prices, not appraisals</p>
         </div>

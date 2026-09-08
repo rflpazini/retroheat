@@ -16,6 +16,8 @@ import { Sparkline } from '@/components/Sparkline'
 import { TrendPill, TrendStatus } from '@/components/TrendPill'
 import { Window } from '@/components/Window'
 import { LoadError, Message } from '@/components/States'
+import { ShelfRowControls } from '@/components/ShelfControls'
+import { useAccount } from '@/lib/account'
 
 type SortKey = 'title' | 'loose' | 'cib' | 'new' | 'pct_1d' | 'pct_7d' | 'pct_30d'
 
@@ -93,6 +95,7 @@ export function Platform() {
 
   const valid = isPlatform(platform)
   const file = useJson<LatestFile>(valid ? `latest/${platform}.json` : null)
+  const shelf = useAccount().status !== 'disabled'
 
   const games = useMemo(
     () => (file.status === 'ready' ? sortGames(file.data.games, sort, desc) : []),
@@ -174,6 +177,11 @@ export function Platform() {
                 <th scope="col" className="p-2 text-right">
                   <span className="eyebrow">Status</span>
                 </th>
+                {shelf && (
+                  <th scope="col" className="p-2 text-right">
+                    <span className="eyebrow">Shelf</span>
+                  </th>
+                )}
               </tr>
             </thead>
             <tbody>
@@ -213,6 +221,11 @@ export function Platform() {
                   <td className="p-2 text-right">
                     <TrendStatus value={g.pct_7d} />
                   </td>
+                  {shelf && (
+                    <td className="p-2 text-right">
+                      <ShelfRowControls gameId={g.id} title={g.title} />
+                    </td>
+                  )}
                 </tr>
               ))}
             </tbody>
