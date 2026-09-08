@@ -23,7 +23,8 @@ concurrency:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    # 642 games at the API's slow moments (5 s a call) need most of an hour.
+    timeout-minutes: 75
     steps:
       - uses: actions/checkout@v4
         with:
@@ -77,6 +78,7 @@ jobs:
             -data ./data \
             -catalog ./catalog \
             -raw-dir ./raw \
+            -timeout 70m \
             -budget 2000 \
             -platforms "$PLATFORMS"
 
