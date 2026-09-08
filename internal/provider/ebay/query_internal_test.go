@@ -4,6 +4,7 @@ import (
 	"testing"
 
 	"github.com/rflpazini/retroheat/internal/catalog"
+	"github.com/rflpazini/retroheat/internal/classify"
 )
 
 func TestExcludedMatchesWholeWordsOnly(t *testing.T) {
@@ -59,6 +60,20 @@ func TestForeignReadsTheListingAgainstTheEntrysRegion(t *testing.T) {
 	for _, c := range cases {
 		if got := foreign(c.title, c.g); got != c.want {
 			t.Errorf("foreign(%q, %s) = %v, want %v", c.title, c.g.Region, got, c.want)
+		}
+	}
+}
+
+func TestMediaOfTellsCartridgesCardsAndDiscsApart(t *testing.T) {
+	t.Parallel()
+	cases := map[catalog.Platform]classify.Media{
+		catalog.N64:  classify.Boxed,
+		catalog.Vita: classify.Carded,
+		catalog.PS2:  classify.Cased,
+	}
+	for p, want := range cases {
+		if got := mediaOf(catalog.Game{Platform: p}); got != want {
+			t.Errorf("mediaOf(%s) = %v, want %v", p, got, want)
 		}
 	}
 }

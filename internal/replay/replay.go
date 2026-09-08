@@ -27,9 +27,14 @@ type Options struct {
 	// From and To bound the run days replayed, inclusive, as YYYY-MM-DD;
 	// empty means unbounded.
 	From, To string
-	DryRun   bool
-	Now      time.Time
-	Log      *slog.Logger
+	// Prune removes a day's point when no archived run can price it. Off by
+	// default: the archive does not cover every run that ever wrote a point,
+	// so an unpriceable day is more likely a gap in the archive than a market
+	// that offered nothing.
+	Prune  bool
+	DryRun bool
+	Now    time.Time
+	Log    *slog.Logger
 }
 
 type Summary struct {
@@ -39,10 +44,12 @@ type Summary struct {
 	Games    int
 	Replaced int
 	Added    int
-	// Removed counts dates whose archived listings yield no publishable price
-	// under the current rules. Removing a point is the one thing the data
-	// guard refuses, so a commit carrying removals needs a Data-Reset trailer.
-	Removed int
+	// Unpriceable counts dates the archive could not price that were left
+	// standing; Removed counts those pruned. Removing a point is the one thing
+	// the data guard refuses, so a commit carrying removals needs a Data-Reset
+	// trailer.
+	Unpriceable int
+	Removed     int
 	// Skipped counts records for games that have since left the catalog.
 	Skipped int
 }
@@ -105,7 +112,12 @@ func Run(o Options) (Summary, error) {
 			}
 			quotes, err := ebay.QuotesFromListings(g, rawarchive.ToListings(rec.Listings))
 			if err != nil {
-				desired[rec.ID][day] = nil
+				// Nothing publishable in this run. Live, that run would have
+				// failed the game and left an earlier run's point standing,
+				// so only mark the day for removal if no run priced it.
+				if _, priced := desired[rec.ID][day]; !priced {
+					desired[rec.ID][day] = nil
+				}
 				continue
 			}
 			pt := pipeline.PointFrom(quotes, day, classify.SeriesVersion)
@@ -138,6 +150,14 @@ func Run(o Options) (Summary, error) {
 		for _, day := range days {
 			pt := desired[id][day]
 			if pt == nil {
+				if _, had := before[day]; !had {
+					continue
+				}
+				if !o.Prune {
+					sum.Unpriceable++
+					log.Info("point kept: the archive cannot price this day", slog.String("game", id), slog.String("date", day))
+					continue
+				}
 				if history.Remove(hf, day) {
 					sum.Removed++
 					changed = true

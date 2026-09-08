@@ -93,10 +93,14 @@ func foreign(title string, g catalog.Game) bool {
 
 // mediaOf tells the classifier how the platform packaged its games.
 func mediaOf(g catalog.Game) classify.Media {
-	if g.Platform.Boxed() {
+	switch {
+	case g.Platform.Boxed():
 		return classify.Boxed
+	case g.Platform.Carded():
+		return classify.Carded
+	default:
+		return classify.Cased
 	}
-	return classify.Cased
 }
 
 var (

@@ -185,7 +185,11 @@ func TestDryRunWritesNothing(t *testing.T) {
 	}
 }
 
-func TestReplayRemovesADateWithNoPublishablePriceAndCountsIt(t *testing.T) {
+// The archive does not cover every run: archiving started after some points
+// were written, and a run can fail to upload. A day the archive cannot price
+// therefore stands by default and is only counted; removing it is a deliberate
+// choice made with -prune.
+func TestReplayKeepsADateTheArchiveCannotPriceUnlessPruning(t *testing.T) {
 	t.Parallel()
 	dataDir, catalogDir, rawDir := setup(t)
 	liveRun(t, dataDir, catalogDir, rawDir, runDay)
@@ -199,15 +203,27 @@ func TestReplayRemovesADateWithNoPublishablePriceAndCountsIt(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if sum.Removed != 1 || sum.Games != 1 {
-		t.Errorf("summary = %+v, want one point removed from one file", sum)
+	if sum.Removed != 0 || sum.Unpriceable != 1 || sum.Games != 0 {
+		t.Errorf("summary = %+v, want the day kept and counted as unpriceable", sum)
 	}
 	hf, err := history.Read(filepath.Join(dataDir, "history"), "god-hand-ps2")
 	if err != nil {
 		t.Fatal(err)
 	}
+	if len(hf.Points) != 1 {
+		t.Fatalf("points = %+v, want the live point still standing", hf.Points)
+	}
+
+	sum, err = replay.Run(replay.Options{ArchiveDir: rawDir, DataDir: dataDir, CatalogDir: catalogDir, Now: runDay, Prune: true})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if sum.Removed != 1 || sum.Games != 1 {
+		t.Errorf("summary with Prune = %+v, want one point removed from one file", sum)
+	}
+	hf, _ = history.Read(filepath.Join(dataDir, "history"), "god-hand-ps2")
 	if len(hf.Points) != 0 {
-		t.Errorf("points = %+v, want the unpublishable day gone", hf.Points)
+		t.Errorf("points = %+v, want the unpriceable day gone when pruning", hf.Points)
 	}
 }
 
@@ -263,5 +279,32 @@ func TestReplayHonoursTheDateBounds(t *testing.T) {
 	}
 	if sum.Runs != 1 || sum.Added != 2 {
 		t.Errorf("summary = %+v, want only the second day replayed", sum)
+	}
+}
+
+// Two runs on one day: the first prices the game, the second sees only junk.
+// Live, the second run would have failed the game and kept the morning's
+// point, so a replay must keep it too rather than erase the day.
+func TestALaterRunWithNothingPublishableDoesNotEraseTheEarlierOne(t *testing.T) {
+	t.Parallel()
+	dataDir, catalogDir, rawDir := setup(t)
+	g := catalog.Game{ID: "god-hand-ps2", Title: "God Hand"}
+	morning := time.Date(2026, 9, 1, 9, 0, 0, 0, time.UTC)
+	writeArchive(t, rawDir, morning, map[string][]provider.Listing{"god-hand-ps2": goodListings(g)})
+	writeArchive(t, rawDir, morning.Add(12*time.Hour), map[string][]provider.Listing{"god-hand-ps2": junkListings(g)})
+
+	sum, err := replay.Run(replay.Options{ArchiveDir: rawDir, DataDir: dataDir, CatalogDir: catalogDir, Now: morning})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if sum.Removed != 0 || sum.Added != 1 {
+		t.Errorf("summary = %+v, want the morning point added and nothing removed", sum)
+	}
+	hf, err := history.Read(filepath.Join(dataDir, "history"), "god-hand-ps2")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(hf.Points) != 1 || hf.Points[0].CIB == nil || *hf.Points[0].CIB != 9400 {
+		t.Errorf("points = %+v, want the morning's cib 9400 kept", hf.Points)
 	}
 }

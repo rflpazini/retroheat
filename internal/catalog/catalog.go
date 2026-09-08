@@ -44,6 +44,11 @@ var platformLabels = map[Platform]string{
 // the original case is.
 func (p Platform) Boxed() bool { return p == N64 }
 
+// Carded reports whether the platform sold games as a small card in a plastic
+// case. Like a cartridge, a card listed with no word about its case or
+// inserts is a loose one.
+func (p Platform) Carded() bool { return p == Vita }
+
 func (p Platform) Label() string {
 	if l, ok := platformLabels[p]; ok {
 		return l

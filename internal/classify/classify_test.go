@@ -1,6 +1,7 @@
 package classify_test
 
 import (
+	"strings"
 	"testing"
 
 	"github.com/rflpazini/retroheat/internal/classify"
@@ -563,5 +564,83 @@ func TestMentionsKeepsScanningPastALongerNumber(t *testing.T) {
 	// skipped; the second is the real thing.
 	if !classify.Mentions("dark cloud 2001 and dark cloud 2 ps2", "Dark Cloud 2") {
 		t.Error("Mentions stopped at the first, rejected occurrence")
+	}
+}
+
+// Most cartridge and card listings say nothing about completeness. A seller
+// who has the box or the manual says so, because that is where the value is,
+// so a bare title is a loose copy on those platforms. A bare disc listing is
+// usually a disc in its case, sometimes with the manual, and stays unknown.
+func TestABareCartridgeOrCardIsLoose(t *testing.T) {
+	t.Parallel()
+	cases := []struct {
+		title string
+		media classify.Media
+	}{
+		{"Conker's Bad Fur Day (Nintendo 64, 2001) N64", classify.Boxed},
+		{"Conker's Bad Fur Day - Nintendo 64 (N64)", classify.Boxed},
+		{"Mario Golf Nintendo 64 N64 Game Cleaned Tested Authentic Warranty", classify.Boxed},
+		{"Rayman Origins - PlayStation Vita (PS Vita) - PERFECT!!", classify.Carded},
+		{"Superbeat: XONiC for PlayStation Vita™", classify.Carded},
+	}
+	for _, c := range cases {
+		got := classify.ClassifyMedia(c.title, c.media)
+		if got.Rejected || got.Condition != classify.Loose {
+			t.Errorf("%q: %+v, want loose", c.title, got)
+		}
+	}
+}
+
+func TestABareDiscStaysUnknown(t *testing.T) {
+	t.Parallel()
+	for _, title := range []string{
+		"Devil May Cry PS2",
+		"Superbeat: XONiC for PlayStation Vita™", // when judged as a disc it is still unknown
+	} {
+		got := classify.ClassifyMedia(title, classify.Cased)
+		if got.Rejected || got.Condition != classify.Unknown {
+			t.Errorf("%q as cased media: %+v, want unknown", title, got)
+		}
+	}
+}
+
+// The bare rule is the last word, never the first: everything the title does
+// say still wins.
+func TestBareOnlyAppliesWhenNothingElseDoes(t *testing.T) {
+	t.Parallel()
+	cases := map[string]classify.Result{
+		"Conker's Bad Fur Day N64 with manual":      {Condition: classify.Unknown, Reason: "manual-no-box"},
+		"Conker's Bad Fur Day N64 CIB":              {Condition: classify.CIB},
+		"Conker's Bad Fur Day N64 factory sealed":   {Condition: classify.New},
+		"Conker's Bad Fur Day N64 lot of 3 games":   {Rejected: true},
+		"Conker's Bad Fur Day N64 box only no game": {Rejected: true},
+		"Rayman Origins PS Vita complete with case": {Condition: classify.CIB},
+		"Rayman Origins PS Vita cartridge only":     {Condition: classify.Loose},
+	}
+	for title, want := range cases {
+		media := classify.Boxed
+		if strings.Contains(title, "Vita") {
+			media = classify.Carded
+		}
+		got := classify.ClassifyMedia(title, media)
+		if got.Rejected != want.Rejected || (!want.Rejected && got.Condition != want.Condition) || (want.Reason != "" && got.Reason != want.Reason) {
+			t.Errorf("%q: %+v, want %+v", title, got, want)
+		}
+	}
+}
+
+// Naming a manual, box, case or insert without fitting a rule is ambiguity,
+// not bareness; those titles keep being dropped.
+func TestATitleThatNamesAPartIsNotBare(t *testing.T) {
+	t.Parallel()
+	cases := map[string]classify.Media{
+		"Donkey Kong 64 N64 Cartridge Instruction Manual Booklet No Box": classify.Boxed,
+		"Rayman Origins PS Vita game and case, no inserts":               classify.Carded,
+		"Mario Golf N64 with original artwork":                           classify.Boxed,
+	}
+	for title, media := range cases {
+		if got := classify.ClassifyMedia(title, media); got.Rejected || got.Condition != classify.Unknown {
+			t.Errorf("%q: %+v, want unknown", title, got)
+		}
 	}
 }

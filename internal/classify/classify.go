@@ -30,7 +30,9 @@ type Result struct {
 // reads as a fresh series rather than as a market move; the boards go quiet
 // for a week instead of leading with a rule change. Per-game catalog edits
 // and refactors that leave every classification identical do not bump it.
-const SeriesVersion = 1
+//
+// 2 (2026-09-08): a bare cartridge or card listing counts as loose.
+const SeriesVersion = 2
 
 // Media is how a platform packaged its games, which changes what a manual
 // implies. A disc "with manual" sits in its case, so the copy is complete; a
@@ -44,6 +46,9 @@ const (
 	Cased Media = iota
 	// Boxed media is a cartridge in a cardboard box: N64.
 	Boxed
+	// Carded media is a game card in a small plastic case: PS Vita. It reads
+	// like cased media, except that a bare listing is a loose card.
+	Carded
 )
 
 var (
@@ -218,7 +223,7 @@ func ClassifyMedia(title string, media Media) Result {
 	// outranks "complete": a seller who writes "Complete Case Disc Only - No
 	// Manual" is describing an incomplete copy, whatever else the title says.
 	loose := loosePhrases
-	if media == Cased {
+	if media != Boxed {
 		loose = casedLoosePhrases
 	}
 	if reason, ok := match(t, loose, nil); ok {
@@ -244,6 +249,14 @@ func ClassifyMedia(title string, media Media) Result {
 	}
 	if reason, ok := match(t, nil, looseRe); ok {
 		return Result{Condition: Loose, Reason: reason}
+	}
+	// A cartridge or card whose seller wrote nothing at all about completeness
+	// is a loose one: the box and the manual are where the value is, and a
+	// seller who has them says so. A title that names a manual, box or case
+	// without fitting a rule above is ambiguous and stays unknown, as does any
+	// bare disc listing, which is usually the disc in its case.
+	if (media == Boxed || media == Carded) && !completenessRe.MatchString(t) {
+		return Result{Condition: Loose, Reason: "bare"}
 	}
 	return Result{Condition: Unknown, Reason: "no-match"}
 }
@@ -323,6 +336,11 @@ func containsRunTogether(listing, game string) bool {
 // and "Silent Hill Origins PlayStation 2" is not Silent Hill 2. Nintendo 64 is
 // left alone because its games carry the 64 in their own titles.
 var platformNumbersRe = regexp.MustCompile(`\b(play ?station ?(2|two)|ps 2)\b`)
+
+// completenessRe is any word about what came with the game. A cartridge or
+// card title that uses one and still reached the end of the rules is
+// ambiguous, not bare.
+var completenessRe = regexp.MustCompile(`\b(manuals?|booklets?|instructions?|box|boxed|cases?|cased|inserts?|map|poster|complete|cib|sleeve|artwork|cover)\b`)
 
 // numbersPresent requires every number in the game's title to appear in the
 // listing. Half the words of "Persona 4" are in "Persona 3 FES", but a sequel

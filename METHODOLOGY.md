@@ -81,18 +81,20 @@ Every surviving title is then read in a fixed order:
    "No box" and "box protector" do not name a box. On a disc platform "no
    box" means no case, and is read as loose.
 6. **Loose** — "loose", "unboxed".
-7. **Unknown** — dropped.
+7. **Bare cartridge or card** — a title that says nothing about completeness
+   on a cartridge platform (N64) or a card platform (PS Vita) is a loose copy.
+   The box, the case and the manual are where the value is, and a seller who
+   has them says so; on 8 September 2026, 90% of N64 listings and 82% of Vita
+   listings were bare, and a third of the N64 catalog could not be priced
+   without them. Bare disc listings are not read this way: a disc with no
+   words is usually the disc in its case, sometimes with the manual, and the
+   two markets differ.
+8. **Unknown** — dropped.
 
 Unknown listings are dropped rather than guessed. Guessing would bias the
 medians, and a smaller honest sample beats a larger invented one. Phrases where
 "complete" belongs to the product name, such as *Kingdom Hearts Complete
 Edition*, are stripped before the complete-in-box rules run.
-
-Most dropped listings are bare cartridges whose seller wrote nothing about
-condition ("Mario Kart 64 (Nintendo 64, 1997) Authentic Tested"). For Mario
-Kart 64 on 3 September 2026 that was 108 of 200 listings. They price like the
-"cartridge only" listings that are counted, so dropping them narrows the sample
-without moving the figure.
 
 The eBay-supplied condition field is ignored. Reproduction cartridges and
 merchandise are routinely listed as "New", so a copy only counts as sealed when
@@ -227,9 +229,10 @@ current version, and leaves every other point alone; the next scheduled run
 rebuilds the boards. Two limits: it cannot recover listings a different search
 query would have returned, and once weeks have been compacted a range should
 be replayed whole, because a week is folded again from whatever days were
-replayed. A day whose listings yield no publishable price under the new rules
-is removed, and the summary says so, because that removal is the one change
-the data guard refuses without a trailer.
+replayed. A day the archive cannot price is left as it was and counted,
+because the archive does not cover every run that ever wrote a point;
+`-prune` removes such days instead, and that removal is the one change the
+data guard refuses without a trailer.
 
 **The data guard.** `cmd/dataguard` compares the data directory between two
 commits and fails when a history file, a point, a board, or a game still in

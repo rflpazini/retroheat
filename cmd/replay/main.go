@@ -24,6 +24,7 @@ func run() int {
 		from       = flag.String("from", "", "first run day to replay, YYYY-MM-DD (default: all)")
 		to         = flag.String("to", "", "last run day to replay, YYYY-MM-DD (default: all)")
 		dryRun     = flag.Bool("dry-run", false, "report what would change without writing")
+		prune      = flag.Bool("prune", false, "remove a day's point when no archived run can price it (default: keep it; needs a Data-Reset trailer)")
 		verbose    = flag.Bool("v", false, "verbose logging")
 	)
 	flag.Parse()
@@ -41,6 +42,7 @@ func run() int {
 		From:       *from,
 		To:         *to,
 		DryRun:     *dryRun,
+		Prune:      *prune,
 		Now:        time.Now().UTC(),
 		Log:        log,
 	})
@@ -53,8 +55,11 @@ func run() int {
 	if *dryRun {
 		verb = "would change"
 	}
-	fmt.Printf("replay: %d archives read; %d history files %s: %d points replaced, %d added, %d removed; %d records for games no longer tracked\n",
-		sum.Runs, sum.Games, verb, sum.Replaced, sum.Added, sum.Removed, sum.Skipped)
+	fmt.Printf("replay: %d archives read; %d history files %s: %d points replaced, %d added, %d removed, %d unpriceable days kept; %d records for games no longer tracked\n",
+		sum.Runs, sum.Games, verb, sum.Replaced, sum.Added, sum.Removed, sum.Unpriceable, sum.Skipped)
+	if sum.Unpriceable > 0 && !*prune {
+		fmt.Println("replay: some days could not be priced from the archive and were left as they were; rerun with -prune to remove them (the commit then needs a `Data-Reset: <reason>` trailer).")
+	}
 	if sum.Removed > 0 {
 		fmt.Println("replay: points were removed because their listings yield no publishable price under the current rules." +
 			" The data guard refuses removals, so the commit needs a `Data-Reset: <reason>` trailer.")
