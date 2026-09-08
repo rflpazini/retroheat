@@ -63,6 +63,10 @@ jobs:
           EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
           PRICECHARTING_TOKEN: ${{ secrets.PRICECHARTING_TOKEN }}
+          # The Supabase copy of the history. Both empty in a fork without it,
+          # and the collector then keeps one copy as before.
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           # Passed through the environment, never interpolated into the script.
           # A ${{ }} expression is substituted before bash parses the block, so
           # inlining a dispatch input here would let it run as shell code in a
@@ -75,6 +79,22 @@ jobs:
             -raw-dir ./raw \
             -budget 2000 \
             -platforms "$PLATFORMS"
+
+      # Each run only adds today's points to the Supabase copy. Rollups and
+      # replays also remove points from the files, so once a week the whole
+      # history is pushed and the copy converges to the files exactly.
+      - name: Resync the Supabase copy
+        if: steps.creds.outputs.ready == 'true' && vars.SUPABASE_URL != ''
+        continue-on-error: true
+        env:
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          if [ "$(date -u +%u)" = "7" ]; then
+            go run ./cmd/mirror -data ./data
+          else
+            echo "Full resync runs on Sundays; today's points were mirrored by the collector."
+          fi
 
       # The raw listings make a classifier change a replay instead of a wipe.
       # They are too large for the repository, so each run's file becomes an

@@ -16,6 +16,7 @@ import (
 	"github.com/rflpazini/retroheat/internal/catalog"
 	"github.com/rflpazini/retroheat/internal/classify"
 	"github.com/rflpazini/retroheat/internal/history"
+	"github.com/rflpazini/retroheat/internal/mirror"
 	"github.com/rflpazini/retroheat/internal/pipeline"
 	"github.com/rflpazini/retroheat/internal/provider"
 	"github.com/rflpazini/retroheat/internal/provider/ebay"
@@ -544,5 +545,100 @@ func TestRunWithoutARawDirWritesNoArchive(t *testing.T) {
 	files, _ := filepath.Glob(filepath.Join(dataDir, "**", "raw-*.json.gz"))
 	if len(files) != 0 {
 		t.Errorf("an archive appeared under the data directory: %v", files)
+	}
+}
+
+// recordingMirror stands in for Supabase: it keeps what the run sent.
+type recordingMirror struct {
+	rows []mirror.Row
+	runs []snapshot.Meta
+	fail bool
+}
+
+func (m *recordingMirror) UpsertPoints(_ context.Context, rows []mirror.Row) error {
+	if m.fail {
+		return errors.New("supabase down")
+	}
+	m.rows = append(m.rows, rows...)
+	return nil
+}
+
+func (m *recordingMirror) RecordRun(_ context.Context, meta snapshot.Meta) error {
+	if m.fail {
+		return errors.New("supabase down")
+	}
+	m.runs = append(m.runs, meta)
+	return nil
+}
+
+func (m *recordingMirror) Points(context.Context) ([]mirror.Row, error) { return m.rows, nil }
+
+func TestRunMirrorsTodaysPointsAndTheRunSummary(t *testing.T) {
+	t.Parallel()
+	dataDir, catalogDir := setup(t)
+	m := &recordingMirror{}
+	o := opts(dataDir, catalogDir, countingProvider{})
+	o.BackfillDays = 0
+	o.Mirror = m
+	if _, err := pipeline.Run(context.Background(), o); err != nil {
+		t.Fatal(err)
+	}
+
+	if len(m.rows) != 2 {
+		t.Fatalf("mirrored rows = %d, want one point per priced game: %+v", len(m.rows), m.rows)
+	}
+	for _, r := range m.rows {
+		if r.Date != "2026-09-01" || r.CIB == nil || *r.CIB != 5000 || r.V != classify.SeriesVersion {
+			t.Errorf("row = %+v, want today's cib 5000 stamped with the series version", r)
+		}
+	}
+	if len(m.runs) != 1 || m.runs[0].Counts.OK != 2 || m.runs[0].SeriesVersion != classify.SeriesVersion {
+		t.Errorf("runs = %+v, want the run summary recorded once", m.runs)
+	}
+}
+
+// The mirror is a copy, never the source. A Supabase outage must cost the run
+// nothing: the JSON is written, the run succeeds, the failure is only logged.
+func TestRunSurvivesAMirrorOutage(t *testing.T) {
+	t.Parallel()
+	dataDir, catalogDir := setup(t)
+	o := opts(dataDir, catalogDir, countingProvider{})
+	o.Mirror = &recordingMirror{fail: true}
+	res, err := pipeline.Run(context.Background(), o)
+	if err != nil {
+		t.Fatalf("a mirror failure failed the run: %v", err)
+	}
+	if res.OK != 2 {
+		t.Errorf("OK = %d, want 2", res.OK)
+	}
+	if _, err := os.Stat(filepath.Join(dataDir, "history", "god-hand-ps2.json")); err != nil {
+		t.Error("history was not written when the mirror failed")
+	}
+}
+
+// The mirror is a copy. Whether or not one is configured, the files the site
+// reads must come out byte for byte the same.
+func TestMirroringDoesNotChangeWhatIsWrittenToDisk(t *testing.T) {
+	t.Parallel()
+	plainDir, catalogDir := setup(t)
+	mirroredDir := t.TempDir()
+
+	if _, err := pipeline.Run(context.Background(), opts(plainDir, catalogDir, countingProvider{})); err != nil {
+		t.Fatal(err)
+	}
+	o := opts(mirroredDir, catalogDir, countingProvider{})
+	o.Mirror = &recordingMirror{}
+	if _, err := pipeline.Run(context.Background(), o); err != nil {
+		t.Fatal(err)
+	}
+
+	plain, mirrored := snapshotTree(t, plainDir), snapshotTree(t, mirroredDir)
+	if len(plain) != len(mirrored) {
+		t.Fatalf("file count differs: %d without a mirror, %d with", len(plain), len(mirrored))
+	}
+	for path, body := range plain {
+		if mirrored[path] != body {
+			t.Errorf("%s differs when a mirror is configured", path)
+		}
 	}
 }

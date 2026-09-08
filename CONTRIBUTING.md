@@ -39,6 +39,7 @@ runs exactly what CI runs with no separate install.
 | `internal/rawarchive` | The per-run record of every listing seen, published as release assets |
 | `internal/replay` | Rebuilds history from archived listings under the current rules |
 | `internal/dataguard` | Compares two data trees and reports anything the newer one lost |
+| `internal/mirror` | The Supabase copy of the history: push after each run, pull to restore |
 
 ## Conventions
 

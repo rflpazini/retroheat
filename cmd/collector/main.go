@@ -17,6 +17,7 @@ import (
 
 	"github.com/rflpazini/retroheat/internal/budget"
 	"github.com/rflpazini/retroheat/internal/catalog"
+	"github.com/rflpazini/retroheat/internal/mirror"
 	"github.com/rflpazini/retroheat/internal/pipeline"
 	"github.com/rflpazini/retroheat/internal/provider"
 	"github.com/rflpazini/retroheat/internal/provider/ebay"
@@ -79,6 +80,10 @@ func run() int {
 		return 2
 	}
 	log.Info("collecting", slog.String("provider", p.Name()), slog.String("kind", p.Kind()))
+	store := selectMirror()
+	if store != nil {
+		log.Info("mirroring points to supabase")
+	}
 
 	if *audit {
 		if err := runAudit(ctx, p, *catalogDir, selected); err != nil {
@@ -98,6 +103,7 @@ func run() int {
 		BackfillDays: *backfill,
 		Log:          log,
 		RawDir:       *rawDir,
+		Mirror:       store,
 	})
 	if err != nil {
 		log.Error("run failed", slog.String("err", err.Error()))
@@ -140,6 +146,17 @@ func selectProvider(useFake bool, now time.Time) (provider.Provider, error) {
 		return ebay.New(id, secret, opts...), nil
 	}
 	return nil, fmt.Errorf("set EBAY_CLIENT_ID and EBAY_CLIENT_SECRET, or pass -fake")
+}
+
+// selectMirror turns on the Supabase copy when the service role key is
+// present. The scheduled workflow has it; a contributor's laptop usually does
+// not, and then the run simply keeps one copy, as it always did.
+func selectMirror() mirror.Writer {
+	url, key := os.Getenv("SUPABASE_URL"), os.Getenv("SUPABASE_SERVICE_ROLE_KEY")
+	if url == "" || key == "" {
+		return nil
+	}
+	return mirror.NewSupabase(url, key)
 }
 
 func parsePlatforms(s string) ([]catalog.Platform, error) {

@@ -240,9 +240,21 @@ its own output before committing and has no way around it. A deliberate reset
 carries a `Data-Reset: <reason>` trailer in the commit message, so it is
 visible in `git log` forever.
 
-**Restoring.** Git history is the first-tier backup and the archive the
-second. To restore: find the last good data commit with
-`git log --oneline -- data/history`, then
+**The Supabase copy.** When the scheduled run holds the project's service
+role key, it also writes each run's points to a `price_points` table and the
+run's summary to `collector_runs`, so the history exists somewhere other than
+this repository and can be read as a timeline per game. The anon key the site
+ships with may only read those tables. `go run ./cmd/mirror` makes the copy
+match the files exactly, adding, replacing and removing points as needed: it
+is the one-time backfill, the weekly resync the scheduled run performs (a
+rollup removes dailies the per-run push never sees), and the step after a
+replay. `go run ./cmd/mirror -pull` rebuilds `data/history` from the copy byte
+for byte.
+
+**Restoring.** Git history is the first-tier backup, the archive the second
+and the Supabase copy the third. To restore from git: find the last good data
+commit with `git log --oneline -- data/history`, then
 `git checkout <sha> -- data/history data/latest data/trending`, run the
-collector once, and commit. Such a commit only adds points, so it passes the
-guard without a trailer.
+collector once, and commit. To restore from Supabase:
+`go run ./cmd/mirror -pull`, then the same collector run and commit. Either
+commit only adds points, so it passes the guard without a trailer.

@@ -177,7 +177,10 @@ after every push and pull request, and before every data commit the scrape job
 makes, and fails when a file, a point, or a tracked game has vanished; a
 deliberate reset needs a `Data-Reset: <reason>` trailer in the commit message.
 
-Git history is the first-tier backup. To restore:
+Git history is the first-tier backup. When the scheduled run holds a Supabase
+service role key, every point is also written to the project's `price_points`
+table, and `go run ./cmd/mirror -pull` rebuilds `data/history` from it. To
+restore from git:
 
 ```bash
 git log --oneline -- data/history | head                      # find the last good data commit

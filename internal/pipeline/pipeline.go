@@ -19,6 +19,7 @@ import (
 	"github.com/rflpazini/retroheat/internal/catalog"
 	"github.com/rflpazini/retroheat/internal/classify"
 	"github.com/rflpazini/retroheat/internal/history"
+	"github.com/rflpazini/retroheat/internal/mirror"
 	"github.com/rflpazini/retroheat/internal/provider"
 	"github.com/rflpazini/retroheat/internal/rawarchive"
 	"github.com/rflpazini/retroheat/internal/snapshot"
@@ -44,6 +45,10 @@ type Options struct {
 	// compressed file with everything the run saw, so a later classifier can
 	// be replayed over the same market instead of wiping history.
 	RawDir string
+	// Mirror, when set, receives each run's points and summary as a second
+	// copy of the history. It is a copy, never the source: a failure is
+	// logged and the run still succeeds.
+	Mirror mirror.Writer
 }
 
 type Result struct {
@@ -119,6 +124,7 @@ func Run(ctx context.Context, o Options) (Result, error) {
 	if lp, ok := o.Provider.(provider.ListingProvider); ok && o.RawDir != "" {
 		raw = &rawarchive.Run{Schema: rawarchive.Schema, GeneratedAt: generatedAt, Source: lp.Name(), SeriesVersion: classify.SeriesVersion}
 	}
+	var mirrored []mirror.Row
 
 	for _, g := range games {
 		var (
@@ -158,7 +164,11 @@ func Run(ctx context.Context, o Options) (Result, error) {
 				}
 			}
 		}
-		history.Upsert(hf, PointFrom(quotes, today, classify.SeriesVersion))
+		point := PointFrom(quotes, today, classify.SeriesVersion)
+		history.Upsert(hf, point)
+		if o.Mirror != nil {
+			mirrored = append(mirrored, mirror.RowFrom(g.ID, point))
+		}
 		history.Rollup(hf, o.Now.UTC(), history.DailyWindow)
 		if err := history.Write(historyDir, hf); err != nil {
 			return Result{}, err
@@ -253,7 +263,7 @@ func Run(ctx context.Context, o Options) (Result, error) {
 	}
 
 	res.APICalls = o.Budget.Used()
-	if err := snapshot.WriteMeta(o.DataDir, snapshot.Meta{
+	meta := snapshot.Meta{
 		GeneratedAt:   generatedAt,
 		Source:        o.Provider.Name(),
 		PriceKind:     o.Provider.Kind(),
@@ -261,8 +271,18 @@ func Run(ctx context.Context, o Options) (Result, error) {
 		Counts:        snapshot.Counts{Tracked: res.Tracked, OK: res.OK, Stale: res.Stale, Failed: res.Failed},
 		APICallsUsed:  res.APICalls,
 		Platforms:     allPlatforms,
-	}); err != nil {
+	}
+	if err := snapshot.WriteMeta(o.DataDir, meta); err != nil {
 		return Result{}, err
+	}
+	if o.Mirror != nil {
+		if err := o.Mirror.UpsertPoints(ctx, mirrored); err != nil {
+			log.Error("mirror not updated", slog.String("err", err.Error()))
+		} else if err := o.Mirror.RecordRun(ctx, meta); err != nil {
+			log.Error("mirror run summary not recorded", slog.String("err", err.Error()))
+		} else {
+			log.Info("mirrored", slog.Int("points", len(mirrored)))
+		}
 	}
 	if err := snapshot.WriteCatalog(o.DataDir, snapshot.Catalog{
 		AsOf:  today,
