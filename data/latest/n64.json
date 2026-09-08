@@ -1,6 +1,6 @@
 {
  "platform": "n64",
- "as_of": "2026-09-07",
+ "as_of": "2026-09-08",
  "source": "ebay-browse",
  "price_kind": "asking",
  "games": [
@@ -11,10 +11,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 18450,
-     "q1_cents": 17700,
-     "q3_cents": 19975,
-     "n": 6
+     "median_cents": 19995,
+     "mode_cents": 20000,
+     "q1_cents": 17800,
+     "q3_cents": 21323,
+     "n": 21
     },
     "cib": {
      "median_cents": 65000,
@@ -24,12 +25,21 @@
      "n": 7
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     19999,
+     19997
+    ],
+    "cib": [
+     65000,
+     65000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "harvest-moon-64-n64",
@@ -40,9 +50,9 @@
     "loose": {
      "median_cents": 8997,
      "mode_cents": 9000,
-     "q1_cents": 8248,
-     "q3_cents": 9249,
-     "n": 4
+     "q1_cents": 7500,
+     "q3_cents": 9999,
+     "n": 22
     },
     "cib": {
      "median_cents": 27450,
@@ -52,12 +62,21 @@
      "n": 10
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     8997,
+     8997
+    ],
+    "cib": [
+     27450,
+     27450
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "ogre-battle-64-n64",
@@ -66,19 +85,24 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 24249,
+     "median_cents": 20499,
      "mode_cents": 28000,
-     "q1_cents": 20109,
-     "q3_cents": 28000,
-     "n": 4
+     "q1_cents": 16499,
+     "q3_cents": 25720,
+     "n": 11
     }
    },
-   "pct_1d": null,
+   "pct_1d": -2.37,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     20997,
+     20748
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "bomberman-64-second-attack-n64",
@@ -87,18 +111,24 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 40000,
+     "median_cents": 40499,
+     "mode_cents": 110000,
      "q1_cents": 32800,
-     "q3_cents": 43999,
-     "n": 5
+     "q3_cents": 76500,
+     "n": 9
     }
    },
-   "pct_1d": null,
+   "pct_1d": -2.41,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     41500,
+     41000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "mischief-makers-n64",
@@ -107,19 +137,24 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 8600,
-     "mode_cents": 9000,
-     "q1_cents": 7499,
-     "q3_cents": 8999,
-     "n": 7
+     "median_cents": 7999,
+     "mode_cents": 8000,
+     "q1_cents": 7500,
+     "q3_cents": 8997,
+     "n": 23
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     7999,
+     7999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "snowboard-kids-2-n64",
@@ -128,10 +163,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 11350,
-     "q1_cents": 11050,
-     "q3_cents": 11800,
-     "n": 4
+     "median_cents": 11200,
+     "mode_cents": 11200,
+     "q1_cents": 10995,
+     "q3_cents": 12099,
+     "n": 11
     },
     "cib": {
      "median_cents": 43999,
@@ -140,12 +176,21 @@
      "n": 5
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     11200,
+     11200
+    ],
+    "cib": [
+     43999,
+     43999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "mystical-ninja-starring-goemon-n64",
@@ -155,17 +200,23 @@
    "prices": {
     "loose": {
      "median_cents": 12499,
-     "q1_cents": 10750,
-     "q3_cents": 13394,
-     "n": 5
+     "mode_cents": 12500,
+     "q1_cents": 11995,
+     "q3_cents": 13000,
+     "n": 15
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     12499,
+     12499
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "goemons-great-adventure-n64",
@@ -173,6 +224,12 @@
    "region": "NTSC-U",
    "variant": "none",
    "prices": {
+    "loose": {
+     "median_cents": 16000,
+     "q1_cents": 13900,
+     "q3_cents": 39999,
+     "n": 7
+    },
     "cib": {
      "median_cents": 47247,
      "q1_cents": 43698,
@@ -180,12 +237,46 @@
      "n": 4
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     15750,
+     15875
+    ],
+    "cib": [
+     47247,
+     47247
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "rocket-robot-on-wheels-n64",
+   "title": "Rocket: Robot on Wheels",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 9995,
+     "q1_cents": 7999,
+     "q3_cents": 20249,
+     "n": 5
+    }
+   },
+   "pct_1d": 0,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {
+    "loose": [
+     9995,
+     9995
+    ]
+   },
+   "stale": false,
+   "as_of": "2026-09-08"
   },
   {
    "id": "space-station-silicon-valley-n64",
@@ -194,19 +285,50 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 8700,
-     "mode_cents": 8500,
-     "q1_cents": 8495,
-     "q3_cents": 9500,
-     "n": 10
+     "median_cents": 9000,
+     "mode_cents": 9000,
+     "q1_cents": 8498,
+     "q3_cents": 10000,
+     "n": 21
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     9000,
+     9000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "body-harvest-n64",
+   "title": "Body Harvest",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 3995,
+     "mode_cents": 4000,
+     "q1_cents": 3200,
+     "q3_cents": 5995,
+     "n": 11
+    }
+   },
+   "pct_1d": -0.08,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {
+    "loose": [
+     3998,
+     3997
+    ]
+   },
+   "stale": false,
+   "as_of": "2026-09-08"
   },
   {
    "id": "banjo-kazooie-n64",
@@ -215,26 +337,35 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 3799,
+     "median_cents": 3999,
      "mode_cents": 4000,
-     "q1_cents": 3448,
-     "q3_cents": 4150,
-     "n": 33
+     "q1_cents": 3499,
+     "q3_cents": 4495,
+     "n": 91
     },
     "cib": {
-     "median_cents": 14999,
+     "median_cents": 14248,
      "mode_cents": 15000,
-     "q1_cents": 12499,
-     "q3_cents": 15999,
-     "n": 19
+     "q1_cents": 12249,
+     "q3_cents": 15900,
+     "n": 20
     }
    },
-   "pct_1d": null,
+   "pct_1d": -5.01,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     3999,
+     3999
+    ],
+    "cib": [
+     14999,
+     14624
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "banjo-tooie-n64",
@@ -243,11 +374,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 3799,
-     "mode_cents": 3500,
-     "q1_cents": 3397,
-     "q3_cents": 4350,
-     "n": 13
+     "median_cents": 3999,
+     "mode_cents": 4000,
+     "q1_cents": 3499,
+     "q3_cents": 5500,
+     "n": 39
     },
     "cib": {
      "median_cents": 13999,
@@ -257,12 +388,21 @@
      "n": 13
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     3999,
+     3999
+    ],
+    "cib": [
+     13999,
+     13999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "paper-mario-n64",
@@ -271,11 +411,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 10999,
-     "mode_cents": 11000,
-     "q1_cents": 9999,
-     "q3_cents": 20500,
-     "n": 8
+     "median_cents": 9500,
+     "mode_cents": 9000,
+     "q1_cents": 8500,
+     "q3_cents": 11497,
+     "n": 33
     },
     "cib": {
      "median_cents": 29450,
@@ -292,12 +432,25 @@
      "n": 6
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     9250,
+     9375
+    ],
+    "cib": [
+     29450,
+     29450
+    ],
+    "new": [
+     147500,
+     147500
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "super-mario-64-n64",
@@ -306,26 +459,35 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 4948,
-     "mode_cents": 4500,
-     "q1_cents": 4500,
-     "q3_cents": 5599,
-     "n": 18
+     "median_cents": 4999,
+     "mode_cents": 5000,
+     "q1_cents": 3999,
+     "q3_cents": 5549,
+     "n": 88
     },
     "cib": {
-     "median_cents": 15998,
+     "median_cents": 15981,
      "mode_cents": 16000,
-     "q1_cents": 13397,
-     "q3_cents": 20687,
-     "n": 33
+     "q1_cents": 12999,
+     "q3_cents": 19999,
+     "n": 34
     }
    },
-   "pct_1d": null,
+   "pct_1d": -0.11,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     4995,
+     4997
+    ],
+    "cib": [
+     15998,
+     15990
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "zelda-ocarina-of-time-n64",
@@ -334,11 +496,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 5170,
+     "median_cents": 5999,
      "mode_cents": 5000,
-     "q1_cents": 4950,
-     "q3_cents": 5725,
-     "n": 8
+     "q1_cents": 4999,
+     "q3_cents": 8487,
+     "n": 95
     },
     "cib": {
      "median_cents": 18000,
@@ -348,12 +510,21 @@
      "n": 19
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     5999,
+     5999
+    ],
+    "cib": [
+     18000,
+     18000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "zelda-majoras-mask-n64",
@@ -362,10 +533,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 12450,
-     "q1_cents": 11700,
-     "q3_cents": 17250,
-     "n": 4
+     "median_cents": 12000,
+     "mode_cents": 12000,
+     "q1_cents": 10999,
+     "q3_cents": 14999,
+     "n": 38
     },
     "cib": {
      "median_cents": 29999,
@@ -375,12 +547,21 @@
      "n": 11
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     12000,
+     12000
+    ],
+    "cib": [
+     29999,
+     29999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "goldeneye-007-n64",
@@ -389,26 +570,35 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 3324,
+     "median_cents": 3499,
      "mode_cents": 3500,
      "q1_cents": 2999,
-     "q3_cents": 3505,
-     "n": 25
+     "q3_cents": 3999,
+     "n": 108
     },
     "cib": {
-     "median_cents": 12000,
+     "median_cents": 11443,
      "mode_cents": 10000,
-     "q1_cents": 8996,
-     "q3_cents": 14999,
-     "n": 27
+     "q1_cents": 8998,
+     "q3_cents": 14750,
+     "n": 28
     }
    },
-   "pct_1d": null,
+   "pct_1d": -4.64,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     3499,
+     3499
+    ],
+    "cib": [
+     12000,
+     11722
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "perfect-dark-n64",
@@ -417,18 +607,18 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 2997,
-     "mode_cents": 2500,
+     "median_cents": 2999,
+     "mode_cents": 3000,
      "q1_cents": 2500,
-     "q3_cents": 3500,
-     "n": 32
+     "q3_cents": 3797,
+     "n": 101
     },
     "cib": {
-     "median_cents": 8650,
+     "median_cents": 8500,
      "mode_cents": 10000,
      "q1_cents": 6999,
      "q3_cents": 9999,
-     "n": 30
+     "n": 31
     },
     "new": {
      "median_cents": 15995,
@@ -438,12 +628,25 @@
      "n": 9
     }
    },
-   "pct_1d": null,
+   "pct_1d": -1.73,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     2999,
+     2999
+    ],
+    "cib": [
+     8650,
+     8575
+    ],
+    "new": [
+     15995,
+     15995
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "star-fox-64-n64",
@@ -452,11 +655,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 3499,
-     "mode_cents": 3300,
-     "q1_cents": 3239,
-     "q3_cents": 4495,
-     "n": 36
+     "median_cents": 3500,
+     "mode_cents": 3500,
+     "q1_cents": 3000,
+     "q3_cents": 4000,
+     "n": 102
     },
     "cib": {
      "median_cents": 24994,
@@ -466,12 +669,21 @@
      "n": 22
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     3500,
+     3500
+    ],
+    "cib": [
+     24994,
+     24994
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "f-zero-x-n64",
@@ -480,18 +692,24 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 5950,
-     "q1_cents": 4500,
-     "q3_cents": 7194,
-     "n": 4
+     "median_cents": 5495,
+     "mode_cents": 5500,
+     "q1_cents": 4848,
+     "q3_cents": 6298,
+     "n": 16
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     5495,
+     5495
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "mario-kart-64-n64",
@@ -500,11 +718,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 4599,
-     "mode_cents": 4000,
-     "q1_cents": 4049,
-     "q3_cents": 5497,
-     "n": 29
+     "median_cents": 4999,
+     "mode_cents": 5000,
+     "q1_cents": 4200,
+     "q3_cents": 5632,
+     "n": 112
     },
     "cib": {
      "median_cents": 13982,
@@ -514,12 +732,21 @@
      "n": 24
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     4998,
+     4999
+    ],
+    "cib": [
+     13982,
+     13982
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "super-smash-bros-n64",
@@ -528,11 +755,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 6500,
+     "median_cents": 6000,
      "mode_cents": 6000,
-     "q1_cents": 5238,
-     "q3_cents": 7697,
-     "n": 12
+     "q1_cents": 5000,
+     "q3_cents": 8999,
+     "n": 56
     },
     "cib": {
      "median_cents": 27500,
@@ -548,12 +775,25 @@
      "n": 4
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     6000,
+     6000
+    ],
+    "cib": [
+     27500,
+     27500
+    ],
+    "new": [
+     487500,
+     487500
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "donkey-kong-64-n64",
@@ -562,11 +802,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 3698,
+     "median_cents": 3500,
      "mode_cents": 4000,
-     "q1_cents": 3300,
-     "q3_cents": 4000,
-     "n": 32
+     "q1_cents": 3149,
+     "q3_cents": 3999,
+     "n": 110
     },
     "cib": {
      "median_cents": 14999,
@@ -576,12 +816,21 @@
      "n": 11
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     3500,
+     3500
+    ],
+    "cib": [
+     14999,
+     14999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "kirby-64-the-crystal-shards-n64",
@@ -590,11 +839,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 4900,
-     "mode_cents": 4500,
+     "median_cents": 5000,
+     "mode_cents": 5000,
      "q1_cents": 4500,
-     "q3_cents": 5749,
-     "n": 12
+     "q3_cents": 5800,
+     "n": 42
     },
     "cib": {
      "median_cents": 21300,
@@ -603,12 +852,21 @@
      "n": 7
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     4999,
+     5000
+    ],
+    "cib": [
+     21300,
+     21300
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "pokemon-stadium-n64",
@@ -617,11 +875,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 3250,
-     "mode_cents": 3000,
+     "median_cents": 3499,
+     "mode_cents": 3500,
      "q1_cents": 2999,
-     "q3_cents": 3549,
-     "n": 42
+     "q3_cents": 3999,
+     "n": 130
     },
     "cib": {
      "median_cents": 30000,
@@ -631,12 +889,21 @@
      "n": 20
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     3499,
+     3499
+    ],
+    "cib": [
+     30000,
+     30000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "pokemon-snap-n64",
@@ -645,11 +912,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 2184,
+     "median_cents": 2199,
      "mode_cents": 2000,
      "q1_cents": 1999,
      "q3_cents": 2500,
-     "n": 61
+     "n": 155
     },
     "cib": {
      "median_cents": 11499,
@@ -659,12 +926,21 @@
      "n": 7
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     2199,
+     2199
+    ],
+    "cib": [
+     11499,
+     11499
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "pokemon-puzzle-league-n64",
@@ -673,11 +949,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 3549,
+     "median_cents": 3500,
      "mode_cents": 3500,
      "q1_cents": 3399,
-     "q3_cents": 4299,
-     "n": 14
+     "q3_cents": 4000,
+     "n": 39
     },
     "new": {
      "median_cents": 54450,
@@ -686,12 +962,21 @@
      "n": 6
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     3500,
+     3500
+    ],
+    "new": [
+     54450,
+     54450
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "mario-party-3-n64",
@@ -700,11 +985,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 5825,
-     "mode_cents": 6000,
+     "median_cents": 5999,
+     "mode_cents": 5000,
      "q1_cents": 4999,
-     "q3_cents": 7000,
-     "n": 20
+     "q3_cents": 7597,
+     "n": 71
     },
     "cib": {
      "median_cents": 17500,
@@ -714,12 +999,21 @@
      "n": 14
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     5990,
+     5995
+    ],
+    "cib": [
+     17500,
+     17500
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "mario-party-2-n64",
@@ -728,26 +1022,35 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 5499,
-     "mode_cents": 6500,
-     "q1_cents": 4999,
-     "q3_cents": 6499,
-     "n": 7
+     "median_cents": 4999,
+     "mode_cents": 5000,
+     "q1_cents": 4000,
+     "q3_cents": 5500,
+     "n": 68
     },
     "cib": {
-     "median_cents": 15950,
+     "median_cents": 15899,
      "mode_cents": 16500,
-     "q1_cents": 12500,
+     "q1_cents": 12495,
      "q3_cents": 18997,
-     "n": 14
+     "n": 15
     }
    },
-   "pct_1d": null,
+   "pct_1d": -0.32,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     4999,
+     4999
+    ],
+    "cib": [
+     15950,
+     15925
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "castlevania-legacy-of-darkness-n64",
@@ -756,10 +1059,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 18999,
-     "q1_cents": 13949,
-     "q3_cents": 20999,
-     "n": 4
+     "median_cents": 19999,
+     "mode_cents": 20000,
+     "q1_cents": 17000,
+     "q3_cents": 23495,
+     "n": 11
     },
     "cib": {
      "median_cents": 42499,
@@ -769,12 +1073,21 @@
      "n": 5
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     17999,
+     18999
+    ],
+    "cib": [
+     42499,
+     42499
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "turok-2-seeds-of-evil-n64",
@@ -783,11 +1096,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1389,
+     "median_cents": 1499,
      "mode_cents": 1500,
-     "q1_cents": 1199,
-     "q3_cents": 1500,
-     "n": 36
+     "q1_cents": 1200,
+     "q3_cents": 1799,
+     "n": 138
     },
     "cib": {
      "median_cents": 4499,
@@ -797,12 +1110,21 @@
      "n": 16
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1499,
+     1499
+    ],
+    "cib": [
+     4499,
+     4499
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "jet-force-gemini-n64",
@@ -811,11 +1133,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1699,
+     "median_cents": 1725,
      "mode_cents": 1500,
      "q1_cents": 1500,
      "q3_cents": 2000,
-     "n": 56
+     "n": 146
     },
     "cib": {
      "median_cents": 6250,
@@ -825,12 +1147,21 @@
      "n": 14
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1725,
+     1725
+    ],
+    "cib": [
+     6250,
+     6250
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "blast-corps-n64",
@@ -839,11 +1170,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 2499,
+     "median_cents": 2100,
      "mode_cents": 2000,
-     "q1_cents": 1999,
-     "q3_cents": 3000,
-     "n": 15
+     "q1_cents": 1800,
+     "q3_cents": 2550,
+     "n": 36
     },
     "cib": {
      "median_cents": 6999,
@@ -853,12 +1184,21 @@
      "n": 11
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     2100,
+     2100
+    ],
+    "cib": [
+     6999,
+     6999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "wave-race-64-n64",
@@ -867,11 +1207,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1700,
+     "median_cents": 1799,
      "mode_cents": 2000,
      "q1_cents": 1499,
-     "q3_cents": 1997,
-     "n": 48
+     "q3_cents": 1999,
+     "n": 110
     },
     "cib": {
      "median_cents": 9448,
@@ -881,12 +1221,21 @@
      "n": 14
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1799,
+     1799
+    ],
+    "cib": [
+     9448,
+     9448
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "1080-snowboarding-n64",
@@ -895,11 +1244,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1600,
+     "median_cents": 1599,
      "mode_cents": 1500,
-     "q1_cents": 1475,
-     "q3_cents": 1800,
-     "n": 30
+     "q1_cents": 1497,
+     "q3_cents": 1999,
+     "n": 126
     },
     "cib": {
      "median_cents": 6494,
@@ -909,12 +1258,21 @@
      "n": 10
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1599,
+     1599
+    ],
+    "cib": [
+     6494,
+     6494
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "excitebike-64-n64",
@@ -923,11 +1281,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1999,
+     "median_cents": 1875,
      "mode_cents": 2500,
-     "q1_cents": 1649,
+     "q1_cents": 1694,
      "q3_cents": 2499,
-     "n": 29
+     "n": 64
     },
     "cib": {
      "median_cents": 5999,
@@ -937,12 +1295,21 @@
      "n": 7
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1899,
+     1887
+    ],
+    "cib": [
+     5999,
+     5999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "hybrid-heaven-n64",
@@ -951,10 +1318,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 3200,
-     "q1_cents": 2439,
-     "q3_cents": 3750,
-     "n": 5
+     "median_cents": 3350,
+     "mode_cents": 3000,
+     "q1_cents": 2999,
+     "q3_cents": 4500,
+     "n": 10
     },
     "cib": {
      "median_cents": 22450,
@@ -963,12 +1331,21 @@
      "n": 4
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     3350,
+     3350
+    ],
+    "cib": [
+     22450,
+     22450
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "quest-64-n64",
@@ -977,11 +1354,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 2900,
+     "median_cents": 3000,
      "mode_cents": 3000,
-     "q1_cents": 2500,
-     "q3_cents": 3000,
-     "n": 11
+     "q1_cents": 2899,
+     "q3_cents": 3648,
+     "n": 40
     },
     "cib": {
      "median_cents": 10000,
@@ -991,12 +1368,21 @@
      "n": 8
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     3000,
+     3000
+    ],
+    "cib": [
+     10000,
+     10000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "doom-64-n64",
@@ -1004,6 +1390,13 @@
    "region": "NTSC-U",
    "variant": "none",
    "prices": {
+    "loose": {
+     "median_cents": 5197,
+     "mode_cents": 5500,
+     "q1_cents": 3499,
+     "q3_cents": 6495,
+     "n": 18
+    },
     "cib": {
      "median_cents": 14995,
      "mode_cents": 15000,
@@ -1012,12 +1405,21 @@
      "n": 11
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     5197,
+     5197
+    ],
+    "cib": [
+     14995,
+     14995
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "resident-evil-2-n64",
@@ -1026,19 +1428,24 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 7725,
-     "mode_cents": 7000,
-     "q1_cents": 6995,
-     "q3_cents": 8500,
-     "n": 10
+     "median_cents": 8399,
+     "mode_cents": 10000,
+     "q1_cents": 6998,
+     "q3_cents": 9298,
+     "n": 33
     }
    },
-   "pct_1d": null,
+   "pct_1d": -0.6,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     8450,
+     8425
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "worms-armageddon-n64",
@@ -1047,10 +1454,10 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 29900,
-     "q1_cents": 23748,
-     "q3_cents": 36700,
-     "n": 5
+     "median_cents": 27245,
+     "q1_cents": 20000,
+     "q3_cents": 31995,
+     "n": 10
     },
     "cib": {
      "median_cents": 100000,
@@ -1060,12 +1467,1278 @@
      "n": 4
     }
    },
+   "pct_1d": 0,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {
+    "loose": [
+     27245,
+     27245
+    ],
+    "cib": [
+     100000,
+     100000
+    ]
+   },
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "pokemon-stadium-2-n64",
+   "title": "Pokemon Stadium 2",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 10000,
+     "mode_cents": 9500,
+     "q1_cents": 9495,
+     "q3_cents": 11949,
+     "n": 44
+    },
+    "cib": {
+     "median_cents": 45999,
+     "q1_cents": 35749,
+     "q3_cents": 68599,
+     "n": 9
+    }
+   },
    "pct_1d": null,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {},
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "mario-party-n64",
+   "title": "Mario Party",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 4000,
+     "mode_cents": 4000,
+     "q1_cents": 3499,
+     "q3_cents": 4500,
+     "n": 110
+    },
+    "cib": {
+     "median_cents": 16000,
+     "mode_cents": 14000,
+     "q1_cents": 12999,
+     "q3_cents": 21548,
+     "n": 13
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "mario-tennis-n64",
+   "title": "Mario Tennis",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 3499,
+     "mode_cents": 3500,
+     "q1_cents": 2999,
+     "q3_cents": 3999,
+     "n": 77
+    },
+    "cib": {
+     "median_cents": 9950,
+     "mode_cents": 10000,
+     "q1_cents": 8750,
+     "q3_cents": 12099,
+     "n": 12
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "mario-golf-n64",
+   "title": "Mario Golf",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 4995,
+     "mode_cents": 5000,
+     "q1_cents": 4000,
+     "q3_cents": 5499,
+     "n": 35
+    },
+    "cib": {
+     "median_cents": 20549,
+     "q1_cents": 14499,
+     "q3_cents": 26299,
+     "n": 8
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "yoshis-story-n64",
+   "title": "Yoshi's Story",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 2999,
+     "mode_cents": 3000,
+     "q1_cents": 2695,
+     "q3_cents": 3497,
+     "n": 115
+    },
+    "cib": {
+     "median_cents": 13500,
+     "mode_cents": 13500,
+     "q1_cents": 12900,
+     "q3_cents": 14499,
+     "n": 14
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "diddy-kong-racing-n64",
+   "title": "Diddy Kong Racing",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 3300,
+     "mode_cents": 3000,
+     "q1_cents": 2999,
+     "q3_cents": 3833,
+     "n": 124
+    },
+    "cib": {
+     "median_cents": 12497,
+     "mode_cents": 12000,
+     "q1_cents": 11498,
+     "q3_cents": 14500,
+     "n": 22
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "pilotwings-64-n64",
+   "title": "Pilotwings 64",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 2499,
+     "mode_cents": 2500,
+     "q1_cents": 2299,
+     "q3_cents": 3000,
+     "n": 35
+    },
+    "cib": {
+     "median_cents": 8750,
+     "mode_cents": 8500,
+     "q1_cents": 7899,
+     "q3_cents": 15249,
+     "n": 8
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "star-wars-shadows-of-the-empire-n64",
+   "title": "Star Wars: Shadows of the Empire",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1799,
+     "mode_cents": 1500,
+     "q1_cents": 1499,
+     "q3_cents": 2149,
+     "n": 144
+    },
+    "cib": {
+     "median_cents": 6999,
+     "mode_cents": 6000,
+     "q1_cents": 5748,
+     "q3_cents": 8750,
+     "n": 21
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "star-wars-rogue-squadron-n64",
+   "title": "Star Wars: Rogue Squadron",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1900,
+     "mode_cents": 2000,
+     "q1_cents": 1548,
+     "q3_cents": 2100,
+     "n": 132
+    },
+    "cib": {
+     "median_cents": 7450,
+     "mode_cents": 8000,
+     "q1_cents": 5999,
+     "q3_cents": 9250,
+     "n": 24
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "star-wars-episode-i-racer-n64",
+   "title": "Star Wars Episode I: Racer",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1399,
+     "mode_cents": 1000,
+     "q1_cents": 1000,
+     "q3_cents": 1799,
+     "n": 155
+    },
+    "cib": {
+     "median_cents": 4349,
+     "q1_cents": 3300,
+     "q3_cents": 5250,
+     "n": 8
+    },
+    "new": {
+     "median_cents": 9499,
+     "q1_cents": 8610,
+     "q3_cents": 22500,
+     "n": 7
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "star-wars-episode-i-battle-for-naboo-n64",
+   "title": "Star Wars Episode I: Battle for Naboo",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 3196,
+     "mode_cents": 3000,
+     "q1_cents": 3000,
+     "q3_cents": 3749,
+     "n": 16
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "turok-dinosaur-hunter-n64",
+   "title": "Turok: Dinosaur Hunter",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1995,
+     "mode_cents": 2000,
+     "q1_cents": 1773,
+     "q3_cents": 2499,
+     "n": 126
+    },
+    "cib": {
+     "median_cents": 7999,
+     "mode_cents": 8000,
+     "q1_cents": 6650,
+     "q3_cents": 10499,
+     "n": 24
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "turok-3-shadow-of-oblivion-n64",
+   "title": "Turok 3: Shadow of Oblivion",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 5099,
+     "mode_cents": 4500,
+     "q1_cents": 4623,
+     "q3_cents": 5450,
+     "n": 12
+    },
+    "cib": {
+     "median_cents": 14999,
+     "mode_cents": 15000,
+     "q1_cents": 11995,
+     "q3_cents": 16278,
+     "n": 11
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "killer-instinct-gold-n64",
+   "title": "Killer Instinct Gold",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 3700,
+     "mode_cents": 3500,
+     "q1_cents": 3499,
+     "q3_cents": 3999,
+     "n": 38
+    },
+    "cib": {
+     "median_cents": 13100,
+     "q1_cents": 11750,
+     "q3_cents": 16247,
+     "n": 8
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "mortal-kombat-trilogy-n64",
+   "title": "Mortal Kombat Trilogy",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 3900,
+     "mode_cents": 4000,
+     "q1_cents": 3199,
+     "q3_cents": 4550,
+     "n": 34
+    },
+    "cib": {
+     "median_cents": 14475,
+     "q1_cents": 10498,
+     "q3_cents": 17625,
+     "n": 8
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "mortal-kombat-4-n64",
+   "title": "Mortal Kombat 4",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 2966,
+     "mode_cents": 3000,
+     "q1_cents": 2499,
+     "q3_cents": 3348,
+     "n": 32
+    },
+    "cib": {
+     "median_cents": 12059,
+     "mode_cents": 11000,
+     "q1_cents": 10998,
+     "q3_cents": 14500,
+     "n": 10
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "wcw-nwo-revenge-n64",
+   "title": "WCW/nWo Revenge",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1399,
+     "mode_cents": 1300,
+     "q1_cents": 1099,
+     "q3_cents": 1869,
+     "n": 161
+    },
+    "cib": {
+     "median_cents": 6500,
+     "mode_cents": 5000,
+     "q1_cents": 5019,
+     "q3_cents": 7250,
+     "n": 5
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "wwf-no-mercy-n64",
+   "title": "WWF No Mercy",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 3899,
+     "mode_cents": 3500,
+     "q1_cents": 3250,
+     "q3_cents": 4772,
+     "n": 65
+    },
+    "new": {
+     "median_cents": 42450,
+     "q1_cents": 34950,
+     "q3_cents": 47450,
+     "n": 4
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "wwf-wrestlemania-2000-n64",
+   "title": "WWF WrestleMania 2000",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1813,
+     "mode_cents": 2000,
+     "q1_cents": 1500,
+     "q3_cents": 2000,
+     "n": 134
+    },
+    "cib": {
+     "median_cents": 6999,
+     "mode_cents": 7500,
+     "q1_cents": 5499,
+     "q3_cents": 7499,
+     "n": 11
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "tony-hawks-pro-skater-n64",
+   "title": "Tony Hawk's Pro Skater",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1500,
+     "mode_cents": 1500,
+     "q1_cents": 1299,
+     "q3_cents": 1995,
+     "n": 167
+    },
+    "cib": {
+     "median_cents": 5271,
+     "mode_cents": 6500,
+     "q1_cents": 4780,
+     "q3_cents": 6249,
+     "n": 8
+    },
+    "new": {
+     "median_cents": 38999,
+     "q1_cents": 29743,
+     "q3_cents": 45000,
+     "n": 5
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "tony-hawks-pro-skater-2-n64",
+   "title": "Tony Hawk's Pro Skater 2",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 2500,
+     "mode_cents": 2500,
+     "q1_cents": 2200,
+     "q3_cents": 3000,
+     "n": 42
+    },
+    "cib": {
+     "median_cents": 7288,
+     "q1_cents": 6174,
+     "q3_cents": 8000,
+     "n": 7
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "rayman-2-the-great-escape-n64",
+   "title": "Rayman 2: The Great Escape",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 3299,
+     "mode_cents": 3000,
+     "q1_cents": 2999,
+     "q3_cents": 3947,
+     "n": 53
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "mega-man-64-n64",
+   "title": "Mega Man 64",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 11999,
+     "mode_cents": 12000,
+     "q1_cents": 11115,
+     "q3_cents": 15500,
+     "n": 21
+    },
+    "cib": {
+     "median_cents": 31328,
+     "q1_cents": 27500,
+     "q3_cents": 32999,
+     "n": 6
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "castlevania-n64",
+   "title": "Castlevania",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 3500,
+     "mode_cents": 3500,
+     "q1_cents": 3299,
+     "q3_cents": 4096,
+     "n": 65
+    },
+    "cib": {
+     "median_cents": 11099,
+     "mode_cents": 11000,
+     "q1_cents": 10000,
+     "q3_cents": 12349,
+     "n": 11
+    },
+    "new": {
+     "median_cents": 32450,
+     "q1_cents": 27983,
+     "q3_cents": 42450,
+     "n": 4
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "duke-nukem-64-n64",
+   "title": "Duke Nukem 64",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 4000,
+     "mode_cents": 4000,
+     "q1_cents": 3038,
+     "q3_cents": 5147,
+     "n": 14
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "duke-nukem-zero-hour-n64",
+   "title": "Duke Nukem: Zero Hour",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 3000,
+     "mode_cents": 4000,
+     "q1_cents": 2499,
+     "q3_cents": 3999,
+     "n": 30
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "bomberman-64-n64",
+   "title": "Bomberman 64",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 3999,
+     "mode_cents": 4000,
+     "q1_cents": 3000,
+     "q3_cents": 4744,
+     "n": 21
+    },
+    "cib": {
+     "median_cents": 14248,
+     "mode_cents": 12500,
+     "q1_cents": 12500,
+     "q3_cents": 22000,
+     "n": 8
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "bomberman-hero-n64",
+   "title": "Bomberman Hero",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 3000,
+     "mode_cents": 3000,
+     "q1_cents": 2699,
+     "q3_cents": 3609,
+     "n": 42
+    },
+    "cib": {
+     "median_cents": 13999,
+     "q1_cents": 10750,
+     "q3_cents": 16498,
+     "n": 5
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "snowboard-kids-n64",
+   "title": "Snowboard Kids",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 6995,
+     "mode_cents": 7500,
+     "q1_cents": 5250,
+     "q3_cents": 7500,
+     "n": 23
+    },
+    "cib": {
+     "median_cents": 27499,
+     "q1_cents": 21747,
+     "q3_cents": 32750,
+     "n": 8
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "aidyn-chronicles-the-first-mage-n64",
+   "title": "Aidyn Chronicles: The First Mage",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 5500,
+     "mode_cents": 5000,
+     "q1_cents": 4650,
+     "q3_cents": 7495,
+     "n": 14
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "gauntlet-legends-n64",
+   "title": "Gauntlet Legends",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 7000,
+     "mode_cents": 7000,
+     "q1_cents": 6650,
+     "q3_cents": 7819,
+     "n": 32
+    },
+    "cib": {
+     "median_cents": 19799,
+     "mode_cents": 30000,
+     "q1_cents": 14500,
+     "q3_cents": 29999,
+     "n": 11
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "cruisn-usa-n64",
+   "title": "Cruis'n USA",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1999,
+     "mode_cents": 2000,
+     "q1_cents": 1730,
+     "q3_cents": 2245,
+     "n": 139
+    },
+    "cib": {
+     "median_cents": 7999,
+     "mode_cents": 8000,
+     "q1_cents": 5999,
+     "q3_cents": 9999,
+     "n": 27
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "cruisn-world-n64",
+   "title": "Cruis'n World",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 2300,
+     "mode_cents": 2000,
+     "q1_cents": 2000,
+     "q3_cents": 2999,
+     "n": 55
+    },
+    "cib": {
+     "median_cents": 12525,
+     "q1_cents": 7999,
+     "q3_cents": 24999,
+     "n": 6
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "san-francisco-rush-extreme-racing-n64",
+   "title": "San Francisco Rush: Extreme Racing",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1708,
+     "mode_cents": 1500,
+     "q1_cents": 1496,
+     "q3_cents": 2000,
+     "n": 124
+    },
+    "cib": {
+     "median_cents": 5500,
+     "mode_cents": 5500,
+     "q1_cents": 4897,
+     "q3_cents": 9150,
+     "n": 17
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "rush-2-extreme-racing-usa-n64",
+   "title": "Rush 2: Extreme Racing USA",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 2500,
+     "mode_cents": 2500,
+     "q1_cents": 2000,
+     "q3_cents": 3000,
+     "n": 18
+    },
+    "cib": {
+     "median_cents": 6999,
+     "mode_cents": 7500,
+     "q1_cents": 6109,
+     "q3_cents": 7497,
+     "n": 5
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "san-francisco-rush-2049-n64",
+   "title": "San Francisco Rush 2049",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 4697,
+     "mode_cents": 5500,
+     "q1_cents": 4199,
+     "q3_cents": 5495,
+     "n": 10
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "beetle-adventure-racing-n64",
+   "title": "Beetle Adventure Racing!",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 3499,
+     "mode_cents": 3000,
+     "q1_cents": 2997,
+     "q3_cents": 4497,
+     "n": 41
+    },
+    "cib": {
+     "median_cents": 14499,
+     "q1_cents": 11000,
+     "q3_cents": 19999,
+     "n": 6
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "hydro-thunder-n64",
+   "title": "Hydro Thunder",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 9400,
+     "mode_cents": 8600,
+     "q1_cents": 8600,
+     "q3_cents": 14278,
+     "n": 9
+    },
+    "cib": {
+     "median_cents": 18882,
+     "q1_cents": 10300,
+     "q3_cents": 22132,
+     "n": 4
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "nfl-blitz-n64",
+   "title": "NFL Blitz",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 2500,
+     "mode_cents": 3000,
+     "q1_cents": 2199,
+     "q3_cents": 2999,
+     "n": 83
+    },
+    "cib": {
+     "median_cents": 6000,
+     "mode_cents": 6000,
+     "q1_cents": 5175,
+     "q3_cents": 7750,
+     "n": 12
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "wipeout-64-n64",
+   "title": "Wipeout 64",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1500,
+     "mode_cents": 1500,
+     "q1_cents": 1300,
+     "q3_cents": 1999,
+     "n": 94
+    },
+    "cib": {
+     "median_cents": 5099,
+     "mode_cents": 4000,
+     "q1_cents": 3999,
+     "q3_cents": 6999,
+     "n": 6
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "extreme-g-n64",
+   "title": "Extreme-G",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1299,
+     "mode_cents": 1000,
+     "q1_cents": 1000,
+     "q3_cents": 1500,
+     "n": 114
+    },
+    "cib": {
+     "median_cents": 5999,
+     "mode_cents": 6000,
+     "q1_cents": 5750,
+     "q3_cents": 7999,
+     "n": 7
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "glover-n64",
+   "title": "Glover",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1699,
+     "mode_cents": 1500,
+     "q1_cents": 1500,
+     "q3_cents": 1999,
+     "n": 135
+    },
+    "cib": {
+     "median_cents": 8150,
+     "mode_cents": 7500,
+     "q1_cents": 7247,
+     "q3_cents": 9099,
+     "n": 12
+    },
+    "new": {
+     "median_cents": 10298,
+     "mode_cents": 10000,
+     "q1_cents": 9999,
+     "q3_cents": 11928,
+     "n": 8
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "chameleon-twist-n64",
+   "title": "Chameleon Twist",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 4049,
+     "mode_cents": 4000,
+     "q1_cents": 3975,
+     "q3_cents": 4914,
+     "n": 18
+    },
+    "cib": {
+     "median_cents": 16000,
+     "q1_cents": 12499,
+     "q3_cents": 22500,
+     "n": 6
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "tetrisphere-n64",
+   "title": "Tetrisphere",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1500,
+     "mode_cents": 1500,
+     "q1_cents": 1399,
+     "q3_cents": 1999,
+     "n": 104
+    },
+    "cib": {
+     "median_cents": 4999,
+     "mode_cents": 4500,
+     "q1_cents": 4499,
+     "q3_cents": 6440,
+     "n": 21
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "dr-mario-64-n64",
+   "title": "Dr. Mario 64",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 3600,
+     "mode_cents": 3500,
+     "q1_cents": 3259,
+     "q3_cents": 4000,
+     "n": 28
+    },
+    "cib": {
+     "median_cents": 8000,
+     "mode_cents": 8000,
+     "q1_cents": 7119,
+     "q3_cents": 8500,
+     "n": 12
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "hey-you-pikachu-n64",
+   "title": "Hey You, Pikachu!",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1329,
+     "mode_cents": 1500,
+     "q1_cents": 996,
+     "q3_cents": 1500,
+     "n": 141
+    },
+    "cib": {
+     "median_cents": 19964,
+     "mode_cents": 20000,
+     "q1_cents": 13724,
+     "q3_cents": 20500,
+     "n": 5
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
   }
  ]
 }

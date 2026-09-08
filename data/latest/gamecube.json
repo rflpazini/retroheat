@@ -1,6 +1,6 @@
 {
  "platform": "gamecube",
- "as_of": "2026-09-07",
+ "as_of": "2026-09-08",
  "source": "ebay-browse",
  "price_kind": "asking",
  "games": [
@@ -11,11 +11,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 19999,
+     "median_cents": 20000,
      "mode_cents": 20000,
-     "q1_cents": 17599,
+     "q1_cents": 17999,
      "q3_cents": 21995,
-     "n": 23
+     "n": 22
     },
     "cib": {
      "median_cents": 26999,
@@ -25,12 +25,21 @@
      "n": 39
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     19999,
+     20000
+    ],
+    "cib": [
+     26999,
+     26999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "pokemon-xd-gale-of-darkness-gamecube",
@@ -42,8 +51,8 @@
      "median_cents": 19999,
      "mode_cents": 20000,
      "q1_cents": 17999,
-     "q3_cents": 21623,
-     "n": 28
+     "q3_cents": 21750,
+     "n": 27
     },
     "cib": {
      "median_cents": 25000,
@@ -51,20 +60,23 @@
      "q1_cents": 23999,
      "q3_cents": 30000,
      "n": 42
-    },
-    "new": {
-     "median_cents": 109950,
-     "q1_cents": 90325,
-     "q3_cents": 135000,
-     "n": 4
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     19999,
+     19999
+    ],
+    "cib": [
+     25000,
+     25000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "pokemon-colosseum-gamecube",
@@ -75,24 +87,33 @@
     "loose": {
      "median_cents": 15000,
      "mode_cents": 15000,
-     "q1_cents": 11999,
+     "q1_cents": 11998,
      "q3_cents": 17500,
      "n": 27
     },
     "cib": {
      "median_cents": 20000,
      "mode_cents": 18000,
-     "q1_cents": 18000,
-     "q3_cents": 24495,
-     "n": 35
+     "q1_cents": 18025,
+     "q3_cents": 24745,
+     "n": 36
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     15000,
+     15000
+    ],
+    "cib": [
+     20000,
+     20000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "skies-of-arcadia-legends-gamecube",
@@ -109,8 +130,8 @@
     },
     "cib": {
      "median_cents": 21999,
-     "mode_cents": 20000,
-     "q1_cents": 19988,
+     "mode_cents": 23000,
+     "q1_cents": 19895,
      "q3_cents": 23999,
      "n": 19
     },
@@ -122,12 +143,25 @@
      "n": 5
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     13200,
+     13200
+    ],
+    "cib": [
+     21999,
+     21999
+    ],
+    "new": [
+     39999,
+     39999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "tales-of-symphonia-gamecube",
@@ -138,9 +172,9 @@
     "loose": {
      "median_cents": 2499,
      "mode_cents": 2500,
-     "q1_cents": 2150,
-     "q3_cents": 2525,
-     "n": 21
+     "q1_cents": 2299,
+     "q3_cents": 2500,
+     "n": 22
     },
     "cib": {
      "median_cents": 3895,
@@ -150,12 +184,21 @@
      "n": 63
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     2499,
+     2499
+    ],
+    "cib": [
+     3895,
+     3895
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "baten-kaitos-gamecube",
@@ -174,8 +217,8 @@
      "median_cents": 4999,
      "mode_cents": 5000,
      "q1_cents": 3999,
-     "q3_cents": 5999,
-     "n": 57
+     "q3_cents": 5998,
+     "n": 58
     },
     "new": {
      "median_cents": 16250,
@@ -185,12 +228,25 @@
      "n": 10
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     3062,
+     3062
+    ],
+    "cib": [
+     4999,
+     4999
+    ],
+    "new": [
+     16250,
+     16250
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "baten-kaitos-origins-gamecube",
@@ -206,11 +262,11 @@
      "n": 6
     },
     "cib": {
-     "median_cents": 8000,
+     "median_cents": 7950,
      "mode_cents": 7500,
-     "q1_cents": 7448,
-     "q3_cents": 9248,
-     "n": 17
+     "q1_cents": 7495,
+     "q3_cents": 8997,
+     "n": 18
     },
     "new": {
      "median_cents": 14900,
@@ -220,12 +276,25 @@
      "n": 13
     }
    },
-   "pct_1d": null,
+   "pct_1d": -0.63,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     6300,
+     6300
+    ],
+    "cib": [
+     8000,
+     7975
+    ],
+    "new": [
+     14900,
+     14900
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "metroid-prime-gamecube",
@@ -236,30 +305,33 @@
     "loose": {
      "median_cents": 1999,
      "mode_cents": 2000,
-     "q1_cents": 1799,
+     "q1_cents": 1599,
      "q3_cents": 2495,
-     "n": 26
+     "n": 25
     },
     "cib": {
      "median_cents": 3000,
-     "mode_cents": 2500,
+     "mode_cents": 3000,
      "q1_cents": 2500,
-     "q3_cents": 3699,
+     "q3_cents": 3838,
      "n": 90
-    },
-    "new": {
-     "median_cents": 20250,
-     "q1_cents": 18438,
-     "q3_cents": 24847,
-     "n": 4
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1999,
+     1999
+    ],
+    "cib": [
+     3000,
+     3000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "metroid-prime-2-echoes-gamecube",
@@ -272,7 +344,7 @@
      "mode_cents": 4000,
      "q1_cents": 3100,
      "q3_cents": 5298,
-     "n": 40
+     "n": 41
     },
     "cib": {
      "median_cents": 6799,
@@ -282,19 +354,32 @@
      "n": 93
     },
     "new": {
-     "median_cents": 17249,
+     "median_cents": 17499,
      "mode_cents": 17000,
-     "q1_cents": 14499,
-     "q3_cents": 19998,
-     "n": 12
+     "q1_cents": 14999,
+     "q3_cents": 19995,
+     "n": 11
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     3999,
+     3999
+    ],
+    "cib": [
+     6799,
+     6799
+    ],
+    "new": [
+     17249,
+     17374
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "zelda-twilight-princess-gamecube",
@@ -303,18 +388,18 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 16750,
+     "median_cents": 16500,
      "mode_cents": 15000,
      "q1_cents": 15150,
      "q3_cents": 19950,
-     "n": 24
+     "n": 25
     },
     "cib": {
      "median_cents": 22999,
      "mode_cents": 25000,
      "q1_cents": 21548,
      "q3_cents": 25000,
-     "n": 44
+     "n": 45
     },
     "new": {
      "median_cents": 49999,
@@ -324,12 +409,25 @@
      "n": 11
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     16750,
+     16625
+    ],
+    "cib": [
+     22999,
+     22999
+    ],
+    "new": [
+     49999,
+     49999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "zelda-wind-waker-gamecube",
@@ -338,26 +436,35 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 6999,
+     "median_cents": 7000,
      "mode_cents": 7000,
      "q1_cents": 6500,
-     "q3_cents": 7500,
-     "n": 29
+     "q3_cents": 7999,
+     "n": 27
     },
     "cib": {
      "median_cents": 9000,
      "mode_cents": 8000,
      "q1_cents": 8000,
      "q3_cents": 11495,
-     "n": 79
+     "n": 80
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     6999,
+     7000
+    ],
+    "cib": [
+     9000,
+     9000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "zelda-collectors-edition-gamecube",
@@ -369,15 +476,15 @@
      "median_cents": 6999,
      "mode_cents": 7000,
      "q1_cents": 6499,
-     "q3_cents": 7999,
-     "n": 25
+     "q3_cents": 7998,
+     "n": 26
     },
     "cib": {
      "median_cents": 9999,
      "mode_cents": 9000,
      "q1_cents": 8995,
      "q3_cents": 12000,
-     "n": 63
+     "n": 62
     },
     "new": {
      "median_cents": 25000,
@@ -387,12 +494,25 @@
      "n": 13
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     6999,
+     6999
+    ],
+    "cib": [
+     9999,
+     9999
+    ],
+    "new": [
+     25000,
+     25000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "zelda-ocarina-of-time-master-quest-gamecube",
@@ -421,12 +541,25 @@
      "n": 6
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     6500,
+     6500
+    ],
+    "cib": [
+     9399,
+     9399
+    ],
+    "new": [
+     21250,
+     21250
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "zelda-four-swords-adventures-gamecube",
@@ -442,11 +575,11 @@
      "n": 15
     },
     "cib": {
-     "median_cents": 10499,
+     "median_cents": 10750,
      "mode_cents": 9000,
-     "q1_cents": 8999,
+     "q1_cents": 9000,
      "q3_cents": 18999,
-     "n": 31
+     "n": 30
     },
     "new": {
      "median_cents": 45000,
@@ -456,12 +589,25 @@
      "n": 11
     }
    },
-   "pct_1d": null,
+   "pct_1d": 2.39,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     6049,
+     6049
+    ],
+    "cib": [
+     10499,
+     10625
+    ],
+    "new": [
+     45000,
+     45000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "paper-mario-thousand-year-door-gamecube",
@@ -470,18 +616,18 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 4000,
+     "median_cents": 4149,
      "mode_cents": 4500,
      "q1_cents": 3499,
-     "q3_cents": 4999,
-     "n": 37
+     "q3_cents": 4672,
+     "n": 40
     },
     "cib": {
-     "median_cents": 5899,
+     "median_cents": 5999,
      "mode_cents": 5000,
      "q1_cents": 5000,
      "q3_cents": 7495,
-     "n": 85
+     "n": 80
     },
     "new": {
      "median_cents": 13998,
@@ -490,12 +636,25 @@
      "n": 4
     }
    },
-   "pct_1d": null,
+   "pct_1d": 1.7,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     4000,
+     4075
+    ],
+    "cib": [
+     5899,
+     5949
+    ],
+    "new": [
+     13998,
+     13998
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "super-mario-sunshine-gamecube",
@@ -504,26 +663,35 @@
    "variant": "black-label",
    "prices": {
     "loose": {
-     "median_cents": 4000,
+     "median_cents": 3999,
      "mode_cents": 4000,
-     "q1_cents": 3747,
-     "q3_cents": 4497,
-     "n": 36
+     "q1_cents": 3500,
+     "q3_cents": 4495,
+     "n": 39
     },
     "cib": {
-     "median_cents": 6000,
+     "median_cents": 5997,
      "mode_cents": 5500,
-     "q1_cents": 5400,
+     "q1_cents": 5395,
      "q3_cents": 8000,
      "n": 54
     }
    },
-   "pct_1d": null,
+   "pct_1d": -0.05,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     4000,
+     4000
+    ],
+    "cib": [
+     6000,
+     5999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "luigis-mansion-gamecube",
@@ -546,12 +714,21 @@
      "n": 58
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     5000,
+     5000
+    ],
+    "cib": [
+     7833,
+     7833
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "chibi-robo-gamecube",
@@ -567,11 +744,11 @@
      "n": 11
     },
     "cib": {
-     "median_cents": 27249,
+     "median_cents": 26950,
      "mode_cents": 35000,
-     "q1_cents": 24750,
-     "q3_cents": 33998,
-     "n": 16
+     "q1_cents": 24000,
+     "q3_cents": 32995,
+     "n": 18
     },
     "new": {
      "median_cents": 47500,
@@ -581,12 +758,25 @@
      "n": 4
     }
    },
-   "pct_1d": null,
+   "pct_1d": -1.1,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     17999,
+     17999
+    ],
+    "cib": [
+     27249,
+     27100
+    ],
+    "new": [
+     47500,
+     47500
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "cubivore-gamecube",
@@ -601,12 +791,17 @@
      "n": 5
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "cib": [
+     78999,
+     78999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "gotcha-force-gamecube",
@@ -627,12 +822,21 @@
      "n": 6
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     37000,
+     37000
+    ],
+    "cib": [
+     67450,
+     67450
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "custom-robo-gamecube",
@@ -662,12 +866,25 @@
      "n": 4
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     5950,
+     5950
+    ],
+    "cib": [
+     8790,
+     8790
+    ],
+    "new": [
+     24995,
+     24995
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "killer7-gamecube",
@@ -682,12 +899,17 @@
      "n": 7
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "cib": [
+     10445,
+     10445
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "eternal-darkness-gamecube",
@@ -698,16 +920,16 @@
     "loose": {
      "median_cents": 8500,
      "mode_cents": 8000,
-     "q1_cents": 8000,
-     "q3_cents": 10250,
-     "n": 17
+     "q1_cents": 7999,
+     "q3_cents": 10000,
+     "n": 18
     },
     "cib": {
-     "median_cents": 13500,
+     "median_cents": 13550,
      "mode_cents": 12000,
      "q1_cents": 12000,
      "q3_cents": 15000,
-     "n": 29
+     "n": 28
     },
     "new": {
      "median_cents": 50000,
@@ -717,12 +939,25 @@
      "n": 4
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0.37,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     8500,
+     8500
+    ],
+    "cib": [
+     13500,
+     13525
+    ],
+    "new": [
+     50000,
+     50000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "resident-evil-4-gamecube",
@@ -738,11 +973,11 @@
      "n": 11
     },
     "cib": {
-     "median_cents": 5500,
+     "median_cents": 5600,
      "mode_cents": 6000,
      "q1_cents": 4999,
-     "q3_cents": 6499,
-     "n": 75
+     "q3_cents": 6749,
+     "n": 76
     },
     "new": {
      "median_cents": 26899,
@@ -751,12 +986,25 @@
      "n": 4
     }
    },
-   "pct_1d": null,
+   "pct_1d": 1.82,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     3795,
+     3795
+    ],
+    "cib": [
+     5500,
+     5550
+    ],
+    "new": [
+     26899,
+     26899
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "resident-evil-remake-gamecube",
@@ -779,12 +1027,21 @@
      "n": 36
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     4499,
+     4499
+    ],
+    "cib": [
+     6000,
+     6000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "resident-evil-zero-gamecube",
@@ -807,12 +1064,21 @@
      "n": 73
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     2200,
+     2200
+    ],
+    "cib": [
+     3000,
+     3000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "pn03-gamecube",
@@ -835,12 +1101,21 @@
      "n": 22
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     8950,
+     8950
+    ],
+    "cib": [
+     14742,
+     14742
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "viewtiful-joe-gamecube",
@@ -856,26 +1131,39 @@
      "n": 19
     },
     "cib": {
-     "median_cents": 5999,
-     "mode_cents": 8000,
+     "median_cents": 6250,
+     "mode_cents": 5500,
      "q1_cents": 5150,
      "q3_cents": 7999,
-     "n": 21
+     "n": 20
     },
     "new": {
-     "median_cents": 11000,
+     "median_cents": 10500,
      "mode_cents": 10000,
      "q1_cents": 9999,
-     "q3_cents": 22275,
+     "q3_cents": 14000,
      "n": 5
     }
    },
-   "pct_1d": null,
+   "pct_1d": 4.18,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     2999,
+     2999
+    ],
+    "cib": [
+     5999,
+     6125
+    ],
+    "new": [
+     11000,
+     10750
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "viewtiful-joe-2-gamecube",
@@ -905,12 +1193,25 @@
      "n": 13
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     3495,
+     3495
+    ],
+    "cib": [
+     6500,
+     6500
+    ],
+    "new": [
+     9900,
+     9900
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "ikaruga-gamecube",
@@ -932,12 +1233,21 @@
      "n": 5
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "cib": [
+     8000,
+     8000
+    ],
+    "new": [
+     50000,
+     50000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "f-zero-gx-gamecube",
@@ -946,32 +1256,45 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 6499,
+     "median_cents": 6449,
      "mode_cents": 6500,
      "q1_cents": 5999,
      "q3_cents": 6999,
-     "n": 23
+     "n": 24
     },
     "cib": {
-     "median_cents": 9999,
+     "median_cents": 9998,
      "mode_cents": 10000,
-     "q1_cents": 8762,
-     "q3_cents": 11700,
-     "n": 45
+     "q1_cents": 8528,
+     "q3_cents": 11500,
+     "n": 46
     },
     "new": {
-     "median_cents": 26999,
-     "q1_cents": 22497,
+     "median_cents": 23999,
+     "q1_cents": 16497,
      "q3_cents": 31250,
-     "n": 4
+     "n": 5
     }
    },
-   "pct_1d": null,
+   "pct_1d": -0.01,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     6499,
+     6474
+    ],
+    "cib": [
+     9999,
+     9999
+    ],
+    "new": [
+     26999,
+     25499
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "star-fox-adventures-gamecube",
@@ -987,19 +1310,28 @@
      "n": 26
     },
     "cib": {
-     "median_cents": 7548,
+     "median_cents": 7499,
      "mode_cents": 10000,
-     "q1_cents": 6200,
+     "q1_cents": 6099,
      "q3_cents": 10000,
-     "n": 30
+     "n": 31
     }
    },
-   "pct_1d": null,
+   "pct_1d": -0.65,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     4498,
+     4498
+    ],
+    "cib": [
+     7548,
+     7524
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "star-fox-assault-gamecube",
@@ -1028,12 +1360,25 @@
      "n": 4
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     8000,
+     8000
+    ],
+    "cib": [
+     11995,
+     11995
+    ],
+    "new": [
+     30497,
+     30497
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "super-smash-bros-melee-gamecube",
@@ -1042,26 +1387,35 @@
    "variant": "black-label",
    "prices": {
     "loose": {
-     "median_cents": 5374,
+     "median_cents": 5500,
      "mode_cents": 5000,
      "q1_cents": 4999,
-     "q3_cents": 5995,
-     "n": 42
+     "q3_cents": 5999,
+     "n": 39
     },
     "cib": {
-     "median_cents": 8350,
+     "median_cents": 7999,
      "mode_cents": 7500,
-     "q1_cents": 7495,
-     "q3_cents": 11995,
+     "q1_cents": 7450,
+     "q3_cents": 10499,
      "n": 70
     }
    },
-   "pct_1d": null,
+   "pct_1d": -4.2,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     5374,
+     5437
+    ],
+    "cib": [
+     8350,
+     8175
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "mario-kart-double-dash-gamecube",
@@ -1072,24 +1426,33 @@
     "loose": {
      "median_cents": 6999,
      "mode_cents": 7000,
-     "q1_cents": 6500,
-     "q3_cents": 7497,
-     "n": 32
+     "q1_cents": 6499,
+     "q3_cents": 7495,
+     "n": 31
     },
     "cib": {
-     "median_cents": 8499,
+     "median_cents": 8300,
      "mode_cents": 8500,
-     "q1_cents": 7500,
-     "q3_cents": 10710,
+     "q1_cents": 7499,
+     "q3_cents": 9000,
      "n": 87
     }
    },
-   "pct_1d": null,
+   "pct_1d": -2.34,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     6999,
+     6999
+    ],
+    "cib": [
+     8499,
+     8400
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "animal-crossing-gamecube",
@@ -1098,17 +1461,17 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 5499,
+     "median_cents": 5497,
      "mode_cents": 5000,
-     "q1_cents": 4999,
+     "q1_cents": 4997,
      "q3_cents": 6000,
-     "n": 47
+     "n": 48
     },
     "cib": {
-     "median_cents": 8499,
+     "median_cents": 8495,
      "mode_cents": 7000,
-     "q1_cents": 6948,
-     "q3_cents": 10495,
+     "q1_cents": 6875,
+     "q3_cents": 10648,
      "n": 77
     },
     "new": {
@@ -1118,12 +1481,25 @@
      "n": 4
     }
    },
-   "pct_1d": null,
+   "pct_1d": -0.05,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     5499,
+     5498
+    ],
+    "cib": [
+     8499,
+     8497
+    ],
+    "new": [
+     31350,
+     31350
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "harvest-moon-a-wonderful-life-gamecube",
@@ -1135,15 +1511,15 @@
      "median_cents": 1999,
      "mode_cents": 2000,
      "q1_cents": 1699,
-     "q3_cents": 2266,
-     "n": 51
+     "q3_cents": 2233,
+     "n": 48
     },
     "cib": {
      "median_cents": 2999,
      "mode_cents": 3000,
      "q1_cents": 2499,
      "q3_cents": 3799,
-     "n": 54
+     "n": 55
     },
     "new": {
      "median_cents": 10999,
@@ -1152,12 +1528,25 @@
      "n": 5
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1999,
+     1999
+    ],
+    "cib": [
+     2999,
+     2999
+    ],
+    "new": [
+     10999,
+     10999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "harvest-moon-magical-melody-gamecube",
@@ -1166,11 +1555,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 2248,
+     "median_cents": 2200,
      "mode_cents": 2000,
      "q1_cents": 1999,
      "q3_cents": 2999,
-     "n": 14
+     "n": 15
     },
     "cib": {
      "median_cents": 4499,
@@ -1187,12 +1576,25 @@
      "n": 10
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     2248,
+     2224
+    ],
+    "cib": [
+     4499,
+     4499
+    ],
+    "new": [
+     8499,
+     8499
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "battalion-wars-gamecube",
@@ -1210,9 +1612,9 @@
     "cib": {
      "median_cents": 4000,
      "mode_cents": 4000,
-     "q1_cents": 3200,
+     "q1_cents": 3300,
      "q3_cents": 4300,
-     "n": 16
+     "n": 15
     },
     "new": {
      "median_cents": 8500,
@@ -1221,12 +1623,25 @@
      "n": 5
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     2790,
+     2790
+    ],
+    "cib": [
+     4000,
+     4000
+    ],
+    "new": [
+     8500,
+     8500
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "odama-gamecube",
@@ -1248,12 +1663,21 @@
      "n": 14
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     2397,
+     2397
+    ],
+    "cib": [
+     3101,
+     3101
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "wario-world-gamecube",
@@ -1276,12 +1700,21 @@
      "n": 18
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     6999,
+     6999
+    ],
+    "cib": [
+     11500,
+     11500
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "donkey-kong-jungle-beat-gamecube",
@@ -1311,12 +1744,25 @@
      "n": 12
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     2450,
+     2450
+    ],
+    "cib": [
+     3799,
+     3799
+    ],
+    "new": [
+     8999,
+     8999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "phantasy-star-online-episode-1-2-gamecube",
@@ -1332,12 +1778,17 @@
      "n": 23
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "cib": [
+     10000,
+     10000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "metal-gear-solid-twin-snakes-gamecube",
@@ -1360,12 +1811,21 @@
      "n": 40
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     10249,
+     10249
+    ],
+    "cib": [
+     12997,
+     12997
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "soulcalibur-2-gamecube",
@@ -1388,12 +1848,21 @@
      "n": 11
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     2499,
+     2499
+    ],
+    "cib": [
+     3500,
+     3500
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "timesplitters-2-gamecube",
@@ -1416,12 +1885,21 @@
      "n": 33
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1949,
+     1949
+    ],
+    "cib": [
+     2999,
+     2999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "geist-gamecube",
@@ -1450,12 +1928,25 @@
      "n": 8
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     4397,
+     4397
+    ],
+    "cib": [
+     5000,
+     5000
+    ],
+    "new": [
+     8497,
+     8497
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "second-sight-gamecube",
@@ -1485,12 +1976,25 @@
      "n": 6
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1685,
+     1685
+    ],
+    "cib": [
+     3200,
+     3200
+    ],
+    "new": [
+     5996,
+     5996
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
   },
   {
    "id": "sonic-adventure-2-battle-gamecube",
@@ -1513,12 +2017,1583 @@
      "n": 36
     }
    },
+   "pct_1d": 0,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {
+    "loose": [
+     5000,
+     5000
+    ],
+    "cib": [
+     10000,
+     10000
+    ]
+   },
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "pikmin-gamecube",
+   "title": "Pikmin",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 3800,
+     "mode_cents": 4000,
+     "q1_cents": 3000,
+     "q3_cents": 4299,
+     "n": 46
+    },
+    "cib": {
+     "median_cents": 5595,
+     "mode_cents": 5500,
+     "q1_cents": 5000,
+     "q3_cents": 6800,
+     "n": 54
+    }
+   },
    "pct_1d": null,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {},
    "stale": false,
-   "as_of": "2026-09-07"
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "pikmin-2-gamecube",
+   "title": "Pikmin 2",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 4599,
+     "mode_cents": 4000,
+     "q1_cents": 4000,
+     "q3_cents": 5499,
+     "n": 37
+    },
+    "cib": {
+     "median_cents": 7425,
+     "mode_cents": 7000,
+     "q1_cents": 6800,
+     "q3_cents": 9019,
+     "n": 23
+    },
+    "new": {
+     "median_cents": 27500,
+     "mode_cents": 27500,
+     "q1_cents": 24999,
+     "q3_cents": 27500,
+     "n": 5
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "super-monkey-ball-gamecube",
+   "title": "Super Monkey Ball",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 2499,
+     "mode_cents": 2500,
+     "q1_cents": 1999,
+     "q3_cents": 3200,
+     "n": 31
+    },
+    "cib": {
+     "median_cents": 4499,
+     "mode_cents": 4000,
+     "q1_cents": 3995,
+     "q3_cents": 4999,
+     "n": 38
+    },
+    "new": {
+     "median_cents": 9500,
+     "mode_cents": 9000,
+     "q1_cents": 8500,
+     "q3_cents": 28925,
+     "n": 10
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "super-monkey-ball-2-gamecube",
+   "title": "Super Monkey Ball 2",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 2499,
+     "mode_cents": 2500,
+     "q1_cents": 2000,
+     "q3_cents": 2799,
+     "n": 34
+    },
+    "cib": {
+     "median_cents": 3599,
+     "mode_cents": 3500,
+     "q1_cents": 3399,
+     "q3_cents": 4500,
+     "n": 71
+    },
+    "new": {
+     "median_cents": 9999,
+     "q1_cents": 6850,
+     "q3_cents": 15500,
+     "n": 9
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "mario-party-4-gamecube",
+   "title": "Mario Party 4",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 4999,
+     "mode_cents": 5000,
+     "q1_cents": 4499,
+     "q3_cents": 5499,
+     "n": 46
+    },
+    "cib": {
+     "median_cents": 7500,
+     "mode_cents": 7000,
+     "q1_cents": 6500,
+     "q3_cents": 9360,
+     "n": 67
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "mario-party-5-gamecube",
+   "title": "Mario Party 5",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 5345,
+     "mode_cents": 5000,
+     "q1_cents": 4850,
+     "q3_cents": 5999,
+     "n": 44
+    },
+    "cib": {
+     "median_cents": 7999,
+     "mode_cents": 7000,
+     "q1_cents": 6999,
+     "q3_cents": 10199,
+     "n": 59
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "mario-party-6-gamecube",
+   "title": "Mario Party 6",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 8247,
+     "mode_cents": 8500,
+     "q1_cents": 7250,
+     "q3_cents": 9649,
+     "n": 12
+    },
+    "cib": {
+     "median_cents": 12995,
+     "mode_cents": 13000,
+     "q1_cents": 11499,
+     "q3_cents": 14495,
+     "n": 25
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "mario-party-7-gamecube",
+   "title": "Mario Party 7",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 4025,
+     "mode_cents": 4000,
+     "q1_cents": 3899,
+     "q3_cents": 4999,
+     "n": 42
+    },
+    "cib": {
+     "median_cents": 6499,
+     "mode_cents": 6000,
+     "q1_cents": 5999,
+     "q3_cents": 7995,
+     "n": 74
+    },
+    "new": {
+     "median_cents": 27248,
+     "q1_cents": 22998,
+     "q3_cents": 44000,
+     "n": 4
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "mario-golf-toadstool-tour-gamecube",
+   "title": "Mario Golf: Toadstool Tour",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 2053,
+     "mode_cents": 2000,
+     "q1_cents": 1999,
+     "q3_cents": 2699,
+     "n": 48
+    },
+    "cib": {
+     "median_cents": 3499,
+     "mode_cents": 3500,
+     "q1_cents": 3000,
+     "q3_cents": 3999,
+     "n": 64
+    },
+    "new": {
+     "median_cents": 13750,
+     "q1_cents": 8999,
+     "q3_cents": 15299,
+     "n": 6
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "mario-power-tennis-gamecube",
+   "title": "Mario Power Tennis",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 3000,
+     "mode_cents": 3000,
+     "q1_cents": 2500,
+     "q3_cents": 3499,
+     "n": 50
+    },
+    "cib": {
+     "median_cents": 5000,
+     "mode_cents": 5000,
+     "q1_cents": 4625,
+     "q3_cents": 5877,
+     "n": 36
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "mario-superstar-baseball-gamecube",
+   "title": "Mario Superstar Baseball",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "cib": {
+     "median_cents": 11977,
+     "mode_cents": 10000,
+     "q1_cents": 9249,
+     "q3_cents": 13997,
+     "n": 13
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "super-mario-strikers-gamecube",
+   "title": "Super Mario Strikers",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 5499,
+     "mode_cents": 6000,
+     "q1_cents": 5000,
+     "q3_cents": 5999,
+     "n": 31
+    },
+    "cib": {
+     "median_cents": 7499,
+     "mode_cents": 7000,
+     "q1_cents": 6795,
+     "q3_cents": 8250,
+     "n": 68
+    },
+    "new": {
+     "median_cents": 29999,
+     "mode_cents": 30000,
+     "q1_cents": 24899,
+     "q3_cents": 39997,
+     "n": 5
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "kirby-air-ride-gamecube",
+   "title": "Kirby Air Ride",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 6500,
+     "mode_cents": 6500,
+     "q1_cents": 6349,
+     "q3_cents": 7500,
+     "n": 53
+    },
+    "cib": {
+     "median_cents": 10000,
+     "mode_cents": 8500,
+     "q1_cents": 8499,
+     "q3_cents": 12999,
+     "n": 35
+    },
+    "new": {
+     "median_cents": 47500,
+     "mode_cents": 50000,
+     "q1_cents": 34075,
+     "q3_cents": 49999,
+     "n": 5
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "wario-ware-mega-party-games-gamecube",
+   "title": "WarioWare, Inc.: Mega Party Game$!",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 5157,
+     "q1_cents": 4600,
+     "q3_cents": 5407,
+     "n": 4
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "donkey-konga-gamecube",
+   "title": "Donkey Konga",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1899,
+     "mode_cents": 1500,
+     "q1_cents": 1499,
+     "q3_cents": 2234,
+     "n": 30
+    },
+    "cib": {
+     "median_cents": 2499,
+     "mode_cents": 2500,
+     "q1_cents": 2000,
+     "q3_cents": 2995,
+     "n": 48
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "sonic-adventure-dx-gamecube",
+   "title": "Sonic Adventure DX: Director's Cut",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 4050,
+     "mode_cents": 5000,
+     "q1_cents": 3500,
+     "q3_cents": 4948,
+     "n": 52
+    },
+    "cib": {
+     "median_cents": 6000,
+     "mode_cents": 6000,
+     "q1_cents": 5100,
+     "q3_cents": 7999,
+     "n": 28
+    },
+    "new": {
+     "median_cents": 16499,
+     "q1_cents": 12199,
+     "q3_cents": 29124,
+     "n": 9
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "sonic-heroes-gamecube",
+   "title": "Sonic Heroes",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 2995,
+     "mode_cents": 3000,
+     "q1_cents": 2399,
+     "q3_cents": 3500,
+     "n": 63
+    },
+    "cib": {
+     "median_cents": 4347,
+     "mode_cents": 4000,
+     "q1_cents": 3900,
+     "q3_cents": 5488,
+     "n": 50
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "sonic-mega-collection-gamecube",
+   "title": "Sonic Mega Collection",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1275,
+     "mode_cents": 1500,
+     "q1_cents": 999,
+     "q3_cents": 1524,
+     "n": 41
+    },
+    "cib": {
+     "median_cents": 1800,
+     "mode_cents": 1500,
+     "q1_cents": 1497,
+     "q3_cents": 2200,
+     "n": 96
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "sonic-gems-collection-gamecube",
+   "title": "Sonic Gems Collection",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 4599,
+     "mode_cents": 5000,
+     "q1_cents": 3999,
+     "q3_cents": 5248,
+     "n": 17
+    },
+    "cib": {
+     "median_cents": 7350,
+     "mode_cents": 7000,
+     "q1_cents": 6250,
+     "q3_cents": 8720,
+     "n": 16
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "billy-hatcher-and-the-giant-egg-gamecube",
+   "title": "Billy Hatcher and the Giant Egg",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 6500,
+     "mode_cents": 6500,
+     "q1_cents": 6149,
+     "q3_cents": 7997,
+     "n": 16
+    },
+    "cib": {
+     "median_cents": 11999,
+     "mode_cents": 9000,
+     "q1_cents": 9000,
+     "q3_cents": 14545,
+     "n": 7
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "resident-evil-2-gamecube",
+   "title": "Resident Evil 2",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 4445,
+     "mode_cents": 10000,
+     "q1_cents": 2384,
+     "q3_cents": 9999,
+     "n": 24
+    },
+    "cib": {
+     "median_cents": 5849,
+     "mode_cents": 4000,
+     "q1_cents": 4085,
+     "q3_cents": 17500,
+     "n": 82
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "resident-evil-3-nemesis-gamecube",
+   "title": "Resident Evil 3: Nemesis",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 9999,
+     "q1_cents": 9150,
+     "q3_cents": 11250,
+     "n": 5
+    },
+    "cib": {
+     "median_cents": 18000,
+     "mode_cents": 18000,
+     "q1_cents": 17283,
+     "q3_cents": 19995,
+     "n": 42
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "resident-evil-code-veronica-x-gamecube",
+   "title": "Resident Evil Code: Veronica X",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 30500,
+     "mode_cents": 33000,
+     "q1_cents": 27750,
+     "q3_cents": 32999,
+     "n": 4
+    },
+    "cib": {
+     "median_cents": 37495,
+     "mode_cents": 40000,
+     "q1_cents": 34500,
+     "q3_cents": 39250,
+     "n": 13
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "prince-of-persia-the-sands-of-time-gamecube",
+   "title": "Prince of Persia: The Sands of Time",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1499,
+     "mode_cents": 1500,
+     "q1_cents": 1300,
+     "q3_cents": 1899,
+     "n": 19
+    },
+    "cib": {
+     "median_cents": 2495,
+     "mode_cents": 2000,
+     "q1_cents": 2000,
+     "q3_cents": 3100,
+     "n": 16
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "bloody-roar-primal-fury-gamecube",
+   "title": "Bloody Roar: Primal Fury",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 4499,
+     "mode_cents": 4500,
+     "q1_cents": 3897,
+     "q3_cents": 4998,
+     "n": 12
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "naruto-clash-of-ninja-gamecube",
+   "title": "Naruto: Clash of Ninja",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1025,
+     "mode_cents": 1000,
+     "q1_cents": 800,
+     "q3_cents": 1395,
+     "n": 34
+    },
+    "cib": {
+     "median_cents": 1553,
+     "mode_cents": 2000,
+     "q1_cents": 1299,
+     "q3_cents": 1999,
+     "n": 61
+    },
+    "new": {
+     "median_cents": 5049,
+     "mode_cents": 4500,
+     "q1_cents": 4495,
+     "q3_cents": 5499,
+     "n": 6
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "naruto-clash-of-ninja-2-gamecube",
+   "title": "Naruto: Clash of Ninja 2",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1392,
+     "mode_cents": 1500,
+     "q1_cents": 1099,
+     "q3_cents": 1500,
+     "n": 39
+    },
+    "cib": {
+     "median_cents": 2000,
+     "mode_cents": 2000,
+     "q1_cents": 1650,
+     "q3_cents": 2499,
+     "n": 47
+    },
+    "new": {
+     "median_cents": 7749,
+     "mode_cents": 10000,
+     "q1_cents": 4999,
+     "q3_cents": 10000,
+     "n": 4
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "dragon-ball-z-budokai-2-gamecube",
+   "title": "Dragon Ball Z: Budokai 2",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 3499,
+     "mode_cents": 4200,
+     "q1_cents": 2950,
+     "q3_cents": 4175,
+     "n": 13
+    },
+    "cib": {
+     "median_cents": 6248,
+     "mode_cents": 5000,
+     "q1_cents": 5365,
+     "q3_cents": 7216,
+     "n": 8
+    },
+    "new": {
+     "median_cents": 12998,
+     "mode_cents": 13000,
+     "q1_cents": 12297,
+     "q3_cents": 13500,
+     "n": 4
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "mega-man-x-collection-gamecube",
+   "title": "Mega Man X Collection",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 2998,
+     "q1_cents": 2047,
+     "q3_cents": 3798,
+     "n": 8
+    },
+    "cib": {
+     "median_cents": 4499,
+     "mode_cents": 4000,
+     "q1_cents": 4000,
+     "q3_cents": 4999,
+     "n": 7
+    },
+    "new": {
+     "median_cents": 18425,
+     "q1_cents": 14700,
+     "q3_cents": 45000,
+     "n": 5
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "mega-man-anniversary-collection-gamecube",
+   "title": "Mega Man Anniversary Collection",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1448,
+     "mode_cents": 1000,
+     "q1_cents": 1099,
+     "q3_cents": 1700,
+     "n": 42
+    },
+    "cib": {
+     "median_cents": 2199,
+     "mode_cents": 2000,
+     "q1_cents": 1906,
+     "q3_cents": 2500,
+     "n": 65
+    },
+    "new": {
+     "median_cents": 9950,
+     "q1_cents": 7497,
+     "q3_cents": 15750,
+     "n": 8
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "mega-man-network-transmission-gamecube",
+   "title": "Mega Man Network Transmission",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 2725,
+     "mode_cents": 3000,
+     "q1_cents": 1999,
+     "q3_cents": 3000,
+     "n": 30
+    },
+    "cib": {
+     "median_cents": 4100,
+     "mode_cents": 4000,
+     "q1_cents": 3697,
+     "q3_cents": 5000,
+     "n": 12
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "mega-man-x-command-mission-gamecube",
+   "title": "Mega Man X: Command Mission",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 5249,
+     "mode_cents": 5500,
+     "q1_cents": 3999,
+     "q3_cents": 5500,
+     "n": 6
+    },
+    "cib": {
+     "median_cents": 11599,
+     "q1_cents": 9500,
+     "q3_cents": 13999,
+     "n": 6
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "spider-man-2-gamecube",
+   "title": "Spider-Man 2",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1497,
+     "mode_cents": 1500,
+     "q1_cents": 1178,
+     "q3_cents": 1675,
+     "n": 32
+    },
+    "cib": {
+     "median_cents": 2350,
+     "mode_cents": 2000,
+     "q1_cents": 2000,
+     "q3_cents": 3324,
+     "n": 24
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "the-simpsons-hit-and-run-gamecube",
+   "title": "The Simpsons: Hit & Run",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 8000,
+     "mode_cents": 8000,
+     "q1_cents": 6999,
+     "q3_cents": 9900,
+     "n": 19
+    },
+    "cib": {
+     "median_cents": 11998,
+     "mode_cents": 10000,
+     "q1_cents": 10000,
+     "q3_cents": 14950,
+     "n": 33
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "need-for-speed-most-wanted-gamecube",
+   "title": "Need for Speed: Most Wanted",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 3000,
+     "mode_cents": 3000,
+     "q1_cents": 2999,
+     "q3_cents": 4045,
+     "n": 12
+    },
+    "cib": {
+     "median_cents": 4048,
+     "mode_cents": 4000,
+     "q1_cents": 3923,
+     "q3_cents": 4348,
+     "n": 12
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "def-jam-fight-for-ny-gamecube",
+   "title": "Def Jam: Fight for NY",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 14300,
+     "mode_cents": 14000,
+     "q1_cents": 13999,
+     "q3_cents": 15999,
+     "n": 7
+    },
+    "cib": {
+     "median_cents": 24500,
+     "mode_cents": 26000,
+     "q1_cents": 20995,
+     "q3_cents": 25973,
+     "n": 9
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "x-men-legends-gamecube",
+   "title": "X-Men Legends",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1988,
+     "mode_cents": 2000,
+     "q1_cents": 1638,
+     "q3_cents": 2472,
+     "n": 17
+    },
+    "cib": {
+     "median_cents": 2800,
+     "mode_cents": 2900,
+     "q1_cents": 2050,
+     "q3_cents": 2995,
+     "n": 14
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "tony-hawks-pro-skater-4-gamecube",
+   "title": "Tony Hawk's Pro Skater 4",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1000,
+     "mode_cents": 1000,
+     "q1_cents": 899,
+     "q3_cents": 1495,
+     "n": 48
+    },
+    "cib": {
+     "median_cents": 1710,
+     "mode_cents": 1500,
+     "q1_cents": 1499,
+     "q3_cents": 1999,
+     "n": 69
+    },
+    "new": {
+     "median_cents": 6997,
+     "mode_cents": 7000,
+     "q1_cents": 6995,
+     "q3_cents": 7000,
+     "n": 6
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "tony-hawks-underground-gamecube",
+   "title": "Tony Hawk's Underground",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1699,
+     "mode_cents": 1700,
+     "q1_cents": 1450,
+     "q3_cents": 1999,
+     "n": 25
+    },
+    "cib": {
+     "median_cents": 2599,
+     "mode_cents": 2500,
+     "q1_cents": 2200,
+     "q3_cents": 3495,
+     "n": 43
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "ssx-tricky-gamecube",
+   "title": "SSX Tricky",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 3200,
+     "mode_cents": 3000,
+     "q1_cents": 3000,
+     "q3_cents": 3950,
+     "n": 14
+    },
+    "cib": {
+     "median_cents": 4000,
+     "mode_cents": 4000,
+     "q1_cents": 3649,
+     "q3_cents": 5110,
+     "n": 24
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "ssx-3-gamecube",
+   "title": "SSX 3",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1895,
+     "mode_cents": 1500,
+     "q1_cents": 1510,
+     "q3_cents": 2247,
+     "n": 37
+    },
+    "cib": {
+     "median_cents": 2625,
+     "mode_cents": 2500,
+     "q1_cents": 2447,
+     "q3_cents": 3299,
+     "n": 36
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "star-wars-rogue-squadron-ii-rogue-leader-gamecube",
+   "title": "Star Wars Rogue Squadron II: Rogue Leader",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1499,
+     "mode_cents": 1500,
+     "q1_cents": 1300,
+     "q3_cents": 1799,
+     "n": 19
+    },
+    "cib": {
+     "median_cents": 2297,
+     "mode_cents": 2000,
+     "q1_cents": 1999,
+     "q3_cents": 2649,
+     "n": 72
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "star-wars-rogue-squadron-iii-rebel-strike-gamecube",
+   "title": "Star Wars Rogue Squadron III: Rebel Strike",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1675,
+     "mode_cents": 2000,
+     "q1_cents": 1450,
+     "q3_cents": 1999,
+     "n": 36
+    },
+    "cib": {
+     "median_cents": 2500,
+     "mode_cents": 3000,
+     "q1_cents": 2250,
+     "q3_cents": 3000,
+     "n": 43
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "crazy-taxi-gamecube",
+   "title": "Crazy Taxi",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 2500,
+     "mode_cents": 2500,
+     "q1_cents": 2300,
+     "q3_cents": 3000,
+     "n": 9
+    },
+    "cib": {
+     "median_cents": 4485,
+     "mode_cents": 5000,
+     "q1_cents": 3550,
+     "q3_cents": 4999,
+     "n": 21
+    },
+    "new": {
+     "median_cents": 19997,
+     "mode_cents": 20000,
+     "q1_cents": 19497,
+     "q3_cents": 29997,
+     "n": 4
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "ribbit-king-gamecube",
+   "title": "Ribbit King",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 8999,
+     "q1_cents": 4450,
+     "q3_cents": 17249,
+     "n": 5
+    },
+    "cib": {
+     "median_cents": 24995,
+     "mode_cents": 25000,
+     "q1_cents": 22500,
+     "q3_cents": 25000,
+     "n": 5
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "go-go-hypergrind-gamecube",
+   "title": "Go! Go! Hypergrind",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 30750,
+     "q1_cents": 25250,
+     "q3_cents": 37500,
+     "n": 8
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "lost-kingdoms-gamecube",
+   "title": "Lost Kingdoms",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 5598,
+     "mode_cents": 6000,
+     "q1_cents": 3736,
+     "q3_cents": 5999,
+     "n": 9
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "evolution-worlds-gamecube",
+   "title": "Evolution Worlds",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 2500,
+     "mode_cents": 2500,
+     "q1_cents": 2100,
+     "q3_cents": 2799,
+     "n": 22
+    },
+    "cib": {
+     "median_cents": 4500,
+     "mode_cents": 4500,
+     "q1_cents": 3495,
+     "q3_cents": 4999,
+     "n": 10
+    },
+    "new": {
+     "median_cents": 7999,
+     "mode_cents": 8000,
+     "q1_cents": 7795,
+     "q3_cents": 9000,
+     "n": 5
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "sphinx-and-the-cursed-mummy-gamecube",
+   "title": "Sphinx and the Cursed Mummy",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 977,
+     "mode_cents": 900,
+     "q1_cents": 851,
+     "q3_cents": 1299,
+     "n": 14
+    },
+    "cib": {
+     "median_cents": 1799,
+     "mode_cents": 2000,
+     "q1_cents": 1349,
+     "q3_cents": 2349,
+     "n": 21
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "beach-spikers-gamecube",
+   "title": "Beach Spikers",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 2448,
+     "mode_cents": 2400,
+     "q1_cents": 2397,
+     "q3_cents": 2500,
+     "n": 8
+    },
+    "cib": {
+     "median_cents": 3500,
+     "mode_cents": 3500,
+     "q1_cents": 3499,
+     "q3_cents": 3890,
+     "n": 6
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "wave-race-blue-storm-gamecube",
+   "title": "Wave Race: Blue Storm",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1499,
+     "mode_cents": 1500,
+     "q1_cents": 1247,
+     "q3_cents": 1700,
+     "n": 40
+    },
+    "cib": {
+     "median_cents": 2500,
+     "mode_cents": 2500,
+     "q1_cents": 2249,
+     "q3_cents": 3000,
+     "n": 60
+    },
+    "new": {
+     "median_cents": 13399,
+     "mode_cents": 13400,
+     "q1_cents": 13399,
+     "q3_cents": 18999,
+     "n": 7
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "1080-avalanche-gamecube",
+   "title": "1080° Avalanche",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1999,
+     "mode_cents": 2000,
+     "q1_cents": 1550,
+     "q3_cents": 2281,
+     "n": 29
+    },
+    "cib": {
+     "median_cents": 3509,
+     "mode_cents": 3500,
+     "q1_cents": 3000,
+     "q3_cents": 4495,
+     "n": 27
+    },
+    "new": {
+     "median_cents": 17500,
+     "q1_cents": 14250,
+     "q3_cents": 22500,
+     "n": 4
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
+  },
+  {
+   "id": "spongebob-squarepants-battle-for-bikini-bottom-gamecube",
+   "title": "SpongeBob SquarePants: Battle for Bikini Bottom",
+   "region": "NTSC-U",
+   "variant": "none",
+   "prices": {
+    "loose": {
+     "median_cents": 1800,
+     "mode_cents": 1500,
+     "q1_cents": 1500,
+     "q3_cents": 1999,
+     "n": 33
+    },
+    "cib": {
+     "median_cents": 2999,
+     "mode_cents": 3500,
+     "q1_cents": 2500,
+     "q3_cents": 3500,
+     "n": 16
+    }
+   },
+   "pct_1d": null,
+   "pct_7d": null,
+   "pct_30d": null,
+   "sparks": {},
+   "stale": false,
+   "as_of": "2026-09-08"
   }
  ]
 }
