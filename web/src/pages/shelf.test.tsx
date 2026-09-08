@@ -26,6 +26,24 @@ function serveLocalData() {
   })
 }
 
+// A board with a handful of rows exercises the row controls the same way as
+// the full 180-row board, without the DOM weight that made the click time out
+// on the CI runner.
+function serveTrimmedBoard(platform: string, keep: string[]) {
+  vi.stubGlobal('fetch', async (input: RequestInfo | URL) => {
+    const url = String(input)
+    const rel = url.slice(url.indexOf('/data/') + '/data/'.length)
+    const file = path.join(dataDir, rel)
+    if (!fs.existsSync(file)) return new Response('{}', { status: 404 })
+    if (rel === `latest/${platform}.json`) {
+      const board = JSON.parse(fs.readFileSync(file, 'utf8')) as LatestFile
+      board.games = board.games.filter((g) => keep.includes(g.id))
+      return new Response(JSON.stringify(board), { status: 200 })
+    }
+    return new Response(fs.readFileSync(file, 'utf8'), { status: 200 })
+  })
+}
+
 // No backend argument renders without a provider, which is what a build
 // without Supabase does; null-free backends render inside one.
 function renderAt(route: string, element: React.ReactNode, pattern: string, backend?: ShelfBackend) {
@@ -139,6 +157,7 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     if (!priced) return
     const { backend, state } = memoryBackend({ user: testUser })
     const { Platform } = await import('./Platform')
+    serveTrimmedBoard('ps2', [priced.id, ...ps2.games.slice(0, 4).map((g) => g.id)])
     renderAt('/p/ps2', <Platform />, '/p/:platform', backend)
     const user = userEvent.setup()
 
@@ -155,6 +174,7 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     if (!priced) return
     const { backend } = memoryBackend({ user: null })
     const { Platform } = await import('./Platform')
+    serveTrimmedBoard('ps2', [priced.id, ...ps2.games.slice(0, 4).map((g) => g.id)])
     renderAt('/p/ps2', <Platform />, '/p/:platform', backend)
     expect(await screen.findByRole('button', { name: `Sign in to save ${priced.title}` })).toBeDefined()
     expect(screen.queryByLabelText(`Own ${priced.title} as`)).toBeNull()
