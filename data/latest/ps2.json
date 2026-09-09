@@ -1,6 +1,6 @@
 {
  "platform": "ps2",
- "as_of": "2026-09-08",
+ "as_of": "2026-09-09",
  "source": "ebay-browse",
  "price_kind": "asking",
  "games": [
@@ -13,16 +13,16 @@
     "loose": {
      "median_cents": 16000,
      "mode_cents": 15000,
-     "q1_cents": 13999,
-     "q3_cents": 17500,
-     "n": 17
+     "q1_cents": 14999,
+     "q3_cents": 17599,
+     "n": 15
     },
     "cib": {
      "median_cents": 24999,
      "mode_cents": 25000,
-     "q1_cents": 22350,
-     "q3_cents": 27250,
-     "n": 44
+     "q1_cents": 22099,
+     "q3_cents": 27000,
+     "n": 47
     }
    },
    "pct_1d": 0,
@@ -31,15 +31,17 @@
    "sparks": {
     "loose": [
      16000,
+     16000,
      16000
     ],
     "cib": [
+     24999,
      24999,
      24999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "silent-hill-3-ps2",
@@ -48,9 +50,9 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 29498,
+     "median_cents": 27998,
      "mode_cents": 30000,
-     "q1_cents": 26000,
+     "q1_cents": 24999,
      "q3_cents": 30000,
      "n": 6
     },
@@ -62,21 +64,23 @@
      "n": 19
     }
    },
-   "pct_1d": 1.25,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      29498,
+     29498,
      29498
     ],
     "cib": [
      40000,
-     40250
+     40250,
+     40500
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "silent-hill-4-the-room-ps2",
@@ -85,35 +89,30 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 17200,
-     "q1_cents": 15998,
-     "q3_cents": 24897,
+     "median_cents": 16199,
+     "q1_cents": 15599,
+     "q3_cents": 18500,
      "n": 7
     },
     "cib": {
-     "median_cents": 23400,
-     "mode_cents": 25000,
-     "q1_cents": 21599,
+     "median_cents": 23189,
+     "mode_cents": 22500,
+     "q1_cents": 21899,
      "q3_cents": 25000,
-     "n": 23
-    },
-    "new": {
-     "median_cents": 46747,
-     "mode_cents": 43500,
-     "q1_cents": 43495,
-     "q3_cents": 50479,
-     "n": 4
+     "n": 24
     }
    },
-   "pct_1d": 0,
+   "pct_1d": -0.9,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      16199,
-     16700
+     16700,
+     16199
     ],
     "cib": [
+     23400,
      23400,
      23400
     ],
@@ -123,7 +122,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "rule-of-rose-ps2",
@@ -145,11 +144,12 @@
    "sparks": {
     "cib": [
      139999,
+     140000,
      140000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "haunting-ground-ps2",
@@ -161,8 +161,8 @@
      "median_cents": 82500,
      "mode_cents": 70000,
      "q1_cents": 69995,
-     "q3_cents": 84914,
-     "n": 12
+     "q3_cents": 84828,
+     "n": 11
     }
    },
    "pct_1d": 0,
@@ -171,11 +171,12 @@
    "sparks": {
     "cib": [
      82500,
+     82500,
      82500
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "kuon-ps2",
@@ -197,11 +198,12 @@
    "sparks": {
     "loose": [
      85000,
+     85000,
      85000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "god-hand-ps2",
@@ -217,17 +219,18 @@
      "n": 6
     }
    },
-   "pct_1d": -10.34,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "cib": [
      28997,
-     27498
+     27498,
+     25998
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "fatal-frame-ps2",
@@ -256,25 +259,28 @@
      "n": 4
     }
    },
-   "pct_1d": -6.67,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      9500,
+     9500,
      9500
     ],
     "cib": [
      15000,
-     14500
+     14500,
+     14000
     ],
     "new": [
+     18250,
      18250,
      18250
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "fatal-frame-2-crimson-butterfly-ps2",
@@ -290,17 +296,18 @@
      "n": 11
     }
    },
-   "pct_1d": 2.59,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "cib": [
      16500,
-     16714
+     16714,
+     16927
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "siren-ps2",
@@ -323,21 +330,23 @@
      "n": 9
     }
    },
-   "pct_1d": -9.01,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      5500,
+     5500,
      5500
     ],
     "cib": [
      12748,
-     12174
+     12174,
+     11599
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "shadow-of-the-colossus-ps2",
@@ -353,11 +362,11 @@
      "n": 30
     },
     "cib": {
-     "median_cents": 3797,
+     "median_cents": 3545,
      "mode_cents": 3000,
      "q1_cents": 2999,
-     "q3_cents": 4976,
-     "n": 34
+     "q3_cents": 4738,
+     "n": 32
     },
     "new": {
      "median_cents": 7599,
@@ -366,25 +375,28 @@
      "n": 4
     }
    },
-   "pct_1d": 8.52,
+   "pct_1d": -6.64,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      1440,
-     1450
+     1450,
+     1460
     ],
     "cib": [
      3499,
-     3648
+     3648,
+     3545
     ],
     "new": [
+     7599,
      7599,
      7599
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "ico-ps2",
@@ -403,7 +415,7 @@
      "median_cents": 4997,
      "mode_cents": 5000,
      "q1_cents": 4995,
-     "q3_cents": 8198,
+     "q3_cents": 15950,
      "n": 5
     },
     "new": {
@@ -413,25 +425,28 @@
      "n": 4
     }
    },
-   "pct_1d": -23.06,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      1895,
-     1947
+     1947,
+     1999
     ],
     "cib": [
      6495,
-     5746
+     5746,
+     4997
     ],
     "new": [
+     18247,
      18247,
      18247
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "okami-ps2",
@@ -459,25 +474,28 @@
      "n": 5
     }
    },
-   "pct_1d": 4.65,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      2028,
+     2028,
      2028
     ],
     "cib": [
      4299,
-     4399
+     4399,
+     4499
     ],
     "new": [
+     7879,
      7879,
      7879
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "katamari-damacy-ps2",
@@ -486,46 +504,49 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1437,
-     "mode_cents": 1500,
-     "q1_cents": 1250,
-     "q3_cents": 1795,
-     "n": 22
+     "median_cents": 1374,
+     "mode_cents": 1300,
+     "q1_cents": 1213,
+     "q3_cents": 1897,
+     "n": 21
     },
     "cib": {
-     "median_cents": 2249,
+     "median_cents": 2225,
      "mode_cents": 2000,
      "q1_cents": 1999,
-     "q3_cents": 2797,
-     "n": 97
+     "q3_cents": 2799,
+     "n": 98
     },
     "new": {
-     "median_cents": 3495,
+     "median_cents": 3248,
      "mode_cents": 3000,
      "q1_cents": 2995,
-     "q3_cents": 6999,
-     "n": 15
+     "q3_cents": 4999,
+     "n": 14
     }
    },
-   "pct_1d": 2.27,
+   "pct_1d": -1.07,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      1437,
+     1437,
      1437
     ],
     "cib": [
      2199,
-     2224
+     2224,
+     2225
     ],
     "new": [
      3248,
-     3372
+     3372,
+     3248
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "we-love-katamari-ps2",
@@ -560,19 +581,22 @@
    "sparks": {
     "loose": [
      1299,
+     1299,
      1299
     ],
     "cib": [
+     2499,
      2499,
      2499
     ],
     "new": [
      4499,
+     4499,
      4499
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "persona-3-fes-ps2",
@@ -601,15 +625,17 @@
    "sparks": {
     "cib": [
      10250,
+     10250,
      10250
     ],
     "new": [
+     22499,
      22499,
      22499
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "persona-4-ps2",
@@ -618,11 +644,11 @@
    "variant": "none",
    "prices": {
     "new": {
-     "median_cents": 9200,
+     "median_cents": 9900,
      "mode_cents": 9900,
      "q1_cents": 8351,
-     "q3_cents": 9900,
-     "n": 6
+     "q3_cents": 10000,
+     "n": 7
     }
    },
    "pct_1d": null,
@@ -631,11 +657,12 @@
    "sparks": {
     "new": [
      9450,
-     9325
+     9325,
+     9450
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "shin-megami-tensei-nocturne-ps2",
@@ -651,11 +678,11 @@
      "n": 18
     },
     "cib": {
-     "median_cents": 3500,
+     "median_cents": 3750,
      "mode_cents": 3500,
      "q1_cents": 3000,
      "q3_cents": 4399,
-     "n": 25
+     "n": 24
     },
     "new": {
      "median_cents": 4000,
@@ -665,25 +692,28 @@
      "n": 9
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 7.14,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      1790,
-     1746
+     1746,
+     1702
     ],
     "cib": [
+     3500,
      3500,
      3500
     ],
     "new": [
      4000,
+     4000,
      4000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "digital-devil-saga-ps2",
@@ -711,15 +741,17 @@
    "sparks": {
     "cib": [
      9499,
+     9499,
      9499
     ],
     "new": [
+     15000,
      15000,
      15000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "digital-devil-saga-2-ps2",
@@ -742,21 +774,23 @@
      "n": 23
     }
    },
-   "pct_1d": 2.6,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "cib": [
      4277,
-     4333
+     4333,
+     4388
     ],
     "new": [
      8498,
-     8249
+     8249,
+     8000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "suikoden-3-ps2",
@@ -765,14 +799,14 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 2250,
-     "mode_cents": 2000,
+     "median_cents": 2499,
+     "mode_cents": 2500,
      "q1_cents": 1900,
-     "q3_cents": 2625,
-     "n": 8
+     "q3_cents": 2750,
+     "n": 9
     },
     "cib": {
-     "median_cents": 4497,
+     "median_cents": 4500,
      "mode_cents": 4000,
      "q1_cents": 3999,
      "q3_cents": 5732,
@@ -785,25 +819,28 @@
      "n": 8
     }
    },
-   "pct_1d": 0.04,
+   "pct_1d": 0.07,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      2499,
-     2375
+     2375,
+     2499
     ],
     "cib": [
      4495,
-     4496
+     4496,
+     4497
     ],
     "new": [
+     16499,
      16499,
      16499
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "suikoden-4-ps2",
@@ -839,19 +876,22 @@
    "sparks": {
     "loose": [
      2499,
+     2499,
      2499
     ],
     "cib": [
+     4999,
      4999,
      4999
     ],
     "new": [
      13400,
+     13400,
      13400
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "suikoden-5-ps2",
@@ -873,21 +913,23 @@
      "n": 4
     }
    },
-   "pct_1d": 5.26,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "cib": [
      14250,
-     14625
+     14625,
+     15000
     ],
     "new": [
+     21250,
      21250,
      21250
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "suikoden-tactics-ps2",
@@ -923,19 +965,22 @@
    "sparks": {
     "loose": [
      2999,
+     2999,
      2999
     ],
     "cib": [
+     4000,
      4000,
      4000
     ],
     "new": [
      6999,
+     6999,
      6999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "xenosaga-episode-1-ps2",
@@ -951,28 +996,30 @@
      "n": 27
     },
     "cib": {
-     "median_cents": 4498,
+     "median_cents": 4495,
      "mode_cents": 5000,
      "q1_cents": 3899,
      "q3_cents": 4999,
-     "n": 40
+     "n": 41
     }
    },
-   "pct_1d": 0.07,
+   "pct_1d": -0.07,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      2499,
+     2499,
      2499
     ],
     "cib": [
      4495,
-     4497
+     4497,
+     4495
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "xenosaga-episode-2-ps2",
@@ -987,9 +1034,9 @@
      "n": 5
     },
     "cib": {
-     "median_cents": 6250,
+     "median_cents": 6000,
      "mode_cents": 6000,
-     "q1_cents": 5899,
+     "q1_cents": 5799,
      "q3_cents": 7499,
      "n": 18
     },
@@ -1001,25 +1048,28 @@
      "n": 10
     }
    },
-   "pct_1d": 4.17,
+   "pct_1d": -4,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      3795,
+     3795,
      3795
     ],
     "cib": [
      6000,
-     6125
+     6125,
+     6000
     ],
     "new": [
+     10500,
      10500,
      10500
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "xenosaga-episode-3-ps2",
@@ -1035,17 +1085,18 @@
      "n": 7
     }
    },
-   "pct_1d": 5.71,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "cib": [
      35000,
-     35999
+     35999,
+     36998
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "shadow-hearts-covenant-ps2",
@@ -1070,7 +1121,7 @@
      15247
     ]
    },
-   "stale": false,
+   "stale": true,
    "as_of": "2026-09-08"
   },
   {
@@ -1092,11 +1143,12 @@
    "sparks": {
     "loose": [
      6745,
+     6745,
      6745
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "valkyrie-profile-2-silmeria-ps2",
@@ -1112,11 +1164,11 @@
      "n": 9
     },
     "cib": {
-     "median_cents": 5900,
+     "median_cents": 5899,
      "mode_cents": 6000,
-     "q1_cents": 4999,
+     "q1_cents": 4900,
      "q3_cents": 6248,
-     "n": 20
+     "n": 21
     },
     "new": {
      "median_cents": 10997,
@@ -1126,25 +1178,28 @@
      "n": 8
     }
    },
-   "pct_1d": 0,
+   "pct_1d": -0.02,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      3695,
+     3695,
      3695
     ],
     "cib": [
+     5900,
      5900,
      5900
     ],
     "new": [
      10997,
+     10997,
      10997
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "star-ocean-till-the-end-of-time-ps2",
@@ -1153,18 +1208,18 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1224,
+     "median_cents": 1249,
      "mode_cents": 1000,
-     "q1_cents": 995,
-     "q3_cents": 1492,
-     "n": 24
+     "q1_cents": 989,
+     "q3_cents": 1495,
+     "n": 23
     },
     "cib": {
-     "median_cents": 1600,
+     "median_cents": 1800,
      "mode_cents": 1200,
      "q1_cents": 1200,
-     "q3_cents": 2597,
-     "n": 85
+     "q3_cents": 2698,
+     "n": 83
     },
     "new": {
      "median_cents": 8636,
@@ -1173,25 +1228,28 @@
      "n": 4
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 12.5,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      1224,
+     1224,
      1224
     ],
     "cib": [
+     1600,
      1600,
      1600
     ],
     "new": [
      8636,
+     8636,
      8636
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "rogue-galaxy-ps2",
@@ -1227,19 +1285,22 @@
    "sparks": {
     "loose": [
      2050,
+     2050,
      2050
     ],
     "cib": [
+     4000,
      4000,
      4000
     ],
     "new": [
      7499,
+     7499,
      7499
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "dark-cloud-2-ps2",
@@ -1269,25 +1330,28 @@
      "n": 5
     }
    },
-   "pct_1d": -9.09,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      3945,
-     3823
+     3823,
+     3700
     ],
     "cib": [
      5499,
-     5249
+     5249,
+     4999
     ],
     "new": [
+     14999,
      14999,
      14999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "odin-sphere-ps2",
@@ -1305,9 +1369,9 @@
     "cib": {
      "median_cents": 2999,
      "mode_cents": 3000,
-     "q1_cents": 2499,
+     "q1_cents": 2500,
      "q3_cents": 4247,
-     "n": 41
+     "n": 40
     },
     "new": {
      "median_cents": 6888,
@@ -1323,19 +1387,22 @@
    "sparks": {
     "loose": [
      1913,
+     1913,
      1913
     ],
     "cib": [
+     2999,
      2999,
      2999
     ],
     "new": [
      6888,
+     6888,
      6888
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "grim-grimoire-ps2",
@@ -1369,19 +1436,22 @@
    "sparks": {
     "loose": [
      1500,
+     1500,
      1500
     ],
     "cib": [
+     2962,
      2962,
      2962
     ],
     "new": [
      6499,
-     6474
+     6474,
+     6449
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "disgaea-hour-of-darkness-ps2",
@@ -1397,11 +1467,11 @@
      "n": 15
     },
     "cib": {
-     "median_cents": 2000,
+     "median_cents": 1995,
      "mode_cents": 2000,
-     "q1_cents": 1800,
-     "q3_cents": 2500,
-     "n": 24
+     "q1_cents": 1799,
+     "q3_cents": 2499,
+     "n": 23
     },
     "new": {
      "median_cents": 4499,
@@ -1411,25 +1481,28 @@
      "n": 17
     }
    },
-   "pct_1d": 0.05,
+   "pct_1d": -0.25,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      1115,
+     1115,
      1115
     ],
     "cib": [
      1999,
-     2000
+     2000,
+     1999
     ],
     "new": [
+     4499,
      4499,
      4499
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "disgaea-2-cursed-memories-ps2",
@@ -1465,19 +1538,22 @@
    "sparks": {
     "loose": [
      1297,
+     1298,
      1298
     ],
     "cib": [
+     2000,
      2000,
      2000
     ],
     "new": [
      3850,
+     3850,
      3850
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "phantom-brave-ps2",
@@ -1506,15 +1582,17 @@
    "sparks": {
     "loose": [
      1399,
+     1399,
      1399
     ],
     "cib": [
+     1995,
      1995,
      1995
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "la-pucelle-tactics-ps2",
@@ -1550,19 +1628,22 @@
    "sparks": {
     "loose": [
      1295,
+     1295,
      1295
     ],
     "cib": [
+     2675,
      2675,
      2675
     ],
     "new": [
      5999,
+     5999,
      5999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "makai-kingdom-ps2",
@@ -1598,19 +1679,22 @@
    "sparks": {
     "loose": [
      1222,
+     1222,
      1222
     ],
     "cib": [
+     1999,
      1999,
      1999
     ],
     "new": [
      7495,
+     7495,
      7495
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "ar-tonelico-ps2",
@@ -1619,24 +1703,25 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 10000,
+     "median_cents": 10749,
      "mode_cents": 10000,
-     "q1_cents": 9000,
+     "q1_cents": 9995,
      "q3_cents": 11995,
-     "n": 7
+     "n": 6
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 7.49,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "cib": [
      10000,
+     10000,
      10000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "ar-tonelico-2-ps2",
@@ -1657,11 +1742,12 @@
    "sparks": {
     "new": [
      19050,
+     19050,
      19050
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "mana-khemia-ps2",
@@ -1690,15 +1776,17 @@
    "sparks": {
     "cib": [
      5995,
+     5995,
      5995
     ],
     "new": [
+     10750,
      10750,
      10750
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "steambot-chronicles-ps2",
@@ -1714,12 +1802,17 @@
      "n": 4
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "cib": [
+     24000,
+     24000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "growlanser-generations-ps2",
@@ -1728,11 +1821,11 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 9638,
+     "median_cents": 9997,
      "mode_cents": 10000,
-     "q1_cents": 6999,
-     "q3_cents": 9999,
-     "n": 11
+     "q1_cents": 7998,
+     "q3_cents": 10750,
+     "n": 12
     },
     "new": {
      "median_cents": 29995,
@@ -1741,21 +1834,23 @@
      "n": 5
     }
    },
-   "pct_1d": -3.59,
+   "pct_1d": 3.72,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "cib": [
      9997,
-     9818
+     9818,
+     9997
     ],
     "new": [
+     29995,
      29995,
      29995
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "growlanser-heritage-of-war-ps2",
@@ -1763,12 +1858,6 @@
    "region": "NTSC-U",
    "variant": "none",
    "prices": {
-    "cib": {
-     "median_cents": 8950,
-     "q1_cents": 7100,
-     "q3_cents": 17449,
-     "n": 4
-    },
     "new": {
      "median_cents": 15000,
      "mode_cents": 15000,
@@ -1777,7 +1866,7 @@
      "n": 5
     }
    },
-   "pct_1d": 0,
+   "pct_1d": null,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
@@ -1787,11 +1876,12 @@
     ],
     "new": [
      15000,
+     15000,
      15000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "metal-gear-solid-3-subsistence-ps2",
@@ -1820,15 +1910,17 @@
    "sparks": {
     "loose": [
      2099,
-     2149
+     2149,
+     2199
     ],
     "cib": [
+     5999,
      5999,
      5999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "zone-of-the-enders-2nd-runner-ps2",
@@ -1850,11 +1942,12 @@
    "sparks": {
     "loose": [
      1499,
+     1499,
      1499
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "devil-may-cry-3-special-edition-ps2",
@@ -1863,18 +1956,18 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1047,
+     "median_cents": 999,
      "mode_cents": 1000,
-     "q1_cents": 942,
+     "q1_cents": 900,
      "q3_cents": 1397,
-     "n": 24
+     "n": 25
     },
     "cib": {
-     "median_cents": 1679,
+     "median_cents": 1759,
      "mode_cents": 2000,
-     "q1_cents": 1347,
+     "q1_cents": 1299,
      "q3_cents": 1999,
-     "n": 28
+     "n": 27
     },
     "new": {
      "median_cents": 4275,
@@ -1884,25 +1977,28 @@
      "n": 20
     }
    },
-   "pct_1d": 5,
+   "pct_1d": 4.76,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      999,
-     1023
+     1023,
+     999
     ],
     "cib": [
      1599,
-     1639
+     1639,
+     1679
     ],
     "new": [
      4500,
-     4388
+     4388,
+     4275
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "resident-evil-outbreak-ps2",
@@ -1911,10 +2007,10 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 3000,
+     "median_cents": 2999,
      "mode_cents": 3000,
-     "q1_cents": 2699,
-     "q3_cents": 3999,
+     "q1_cents": 2725,
+     "q3_cents": 3849,
      "n": 37
     },
     "cib": {
@@ -1932,25 +2028,28 @@
      "n": 4
     }
    },
-   "pct_1d": -0.37,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      3098,
-     3049
+     3049,
+     3000
     ],
     "cib": [
      5995,
-     5984
+     5984,
+     5973
     ],
     "new": [
+     17999,
      17999,
      17999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "resident-evil-outbreak-file-2-ps2",
@@ -1980,21 +2079,27 @@
      "n": 4
     }
    },
-   "pct_1d": 2.77,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      10000,
+     10000,
      10000
     ],
     "cib": [
      17999,
-     18248
+     18248,
+     18497
+    ],
+    "new": [
+     26497,
+     26497
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "gradius-v-ps2",
@@ -2003,24 +2108,25 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 6999,
+     "median_cents": 7499,
      "mode_cents": 7500,
-     "q1_cents": 5900,
-     "q3_cents": 7499,
-     "n": 6
+     "q1_cents": 6000,
+     "q3_cents": 7500,
+     "n": 5
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 7.14,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "cib": [
      6999,
+     6999,
      6999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "r-type-final-ps2",
@@ -2029,11 +2135,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1447,
+     "median_cents": 1400,
      "mode_cents": 1900,
-     "q1_cents": 1248,
+     "q1_cents": 1100,
      "q3_cents": 1875,
-     "n": 8
+     "n": 9
     },
     "cib": {
      "median_cents": 2112,
@@ -2049,25 +2155,28 @@
      "n": 12
     }
    },
-   "pct_1d": -1.77,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      1447,
+     1447,
      1447
     ],
     "cib": [
      2150,
-     2131
+     2131,
+     2112
     ],
     "new": [
      6500,
-     6125
+     6125,
+     5750
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "raiden-iii-ps2",
@@ -2097,25 +2206,28 @@
      "n": 5
     }
    },
-   "pct_1d": 11.93,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      1499,
+     1499,
      1499
     ],
     "cib": [
      2675,
-     2835
+     2835,
+     2994
     ],
     "new": [
+     6000,
      6000,
      6000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "castlevania-lament-of-innocence-ps2",
@@ -2127,8 +2239,8 @@
      "median_cents": 2100,
      "mode_cents": 2000,
      "q1_cents": 1999,
-     "q3_cents": 2750,
-     "n": 24
+     "q3_cents": 2999,
+     "n": 23
     },
     "cib": {
      "median_cents": 4499,
@@ -2145,25 +2257,28 @@
      "n": 12
     }
    },
-   "pct_1d": -0.02,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      2099,
+     2100,
      2100
     ],
     "cib": [
      4500,
-     4500
+     4500,
+     4499
     ],
     "new": [
+     17000,
      17000,
      17000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "castlevania-curse-of-darkness-ps2",
@@ -2185,11 +2300,12 @@
    "sparks": {
     "cib": [
      8999,
+     8999,
      8999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "contra-shattered-soldier-ps2",
@@ -2218,15 +2334,17 @@
    "sparks": {
     "loose": [
      1425,
+     1425,
      1425
     ],
     "cib": [
+     2499,
      2499,
      2499
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "marvel-vs-capcom-2-ps2",
@@ -2239,7 +2357,7 @@
      "mode_cents": 8000,
      "q1_cents": 7299,
      "q3_cents": 10812,
-     "n": 20
+     "n": 21
     },
     "cib": {
      "median_cents": 12999,
@@ -2255,15 +2373,17 @@
    "sparks": {
     "loose": [
      8000,
+     8000,
      8000
     ],
     "cib": [
+     12999,
      12999,
      12999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "capcom-vs-snk-2-ps2",
@@ -2292,15 +2412,17 @@
    "sparks": {
     "loose": [
      2500,
+     2500,
      2500
     ],
     "cib": [
+     3999,
      3999,
      3999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "guilty-gear-xx-accent-core-ps2",
@@ -2327,15 +2449,17 @@
    "sparks": {
     "loose": [
      2432,
+     2432,
      2432
     ],
     "new": [
+     13500,
      13500,
      13500
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "bully-ps2",
@@ -2344,7 +2468,7 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1799,
+     "median_cents": 1756,
      "mode_cents": 2000,
      "q1_cents": 1499,
      "q3_cents": 1999,
@@ -2353,7 +2477,7 @@
     "cib": {
      "median_cents": 5499,
      "mode_cents": 7000,
-     "q1_cents": 3400,
+     "q1_cents": 3275,
      "q3_cents": 6875,
      "n": 13
     },
@@ -2364,25 +2488,28 @@
      "n": 4
     }
    },
-   "pct_1d": 4.76,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      1776,
-     1788
+     1788,
+     1776
     ],
     "cib": [
      5249,
-     5374
+     5374,
+     5499
     ],
     "new": [
+     22000,
      22000,
      22000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "def-jam-fight-for-ny-ps2",
@@ -2391,35 +2518,37 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 20999,
+     "median_cents": 22247,
      "mode_cents": 17000,
-     "q1_cents": 16499,
+     "q1_cents": 16999,
      "q3_cents": 25498,
-     "n": 9
+     "n": 8
     },
     "cib": {
      "median_cents": 29950,
      "mode_cents": 25000,
-     "q1_cents": 25000,
+     "q1_cents": 24999,
      "q3_cents": 33747,
      "n": 32
     }
    },
-   "pct_1d": 0.96,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      20999,
+     20999,
      20999
     ],
     "cib": [
      29665,
-     29808
+     29808,
+     29950
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "killer7-ps2",
@@ -2447,15 +2576,17 @@
    "sparks": {
     "loose": [
      2937,
+     2937,
      2937
     ],
     "cib": [
+     4699,
      4699,
      4699
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "gungrave-overdose-ps2",
@@ -2474,8 +2605,8 @@
      "median_cents": 4495,
      "mode_cents": 4500,
      "q1_cents": 4000,
-     "q3_cents": 5247,
-     "n": 12
+     "q3_cents": 5495,
+     "n": 11
     },
     "new": {
      "median_cents": 11200,
@@ -2490,19 +2621,22 @@
    "sparks": {
     "loose": [
      2076,
-     2136
+     2136,
+     2196
     ],
     "cib": [
+     4495,
      4495,
      4495
     ],
     "new": [
      11200,
+     11200,
      11200
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "chulip-ps2",
@@ -2537,19 +2671,22 @@
    "sparks": {
     "loose": [
      20847,
-     20797
+     20797,
+     20747
     ],
     "cib": [
+     34999,
      34999,
      34999
     ],
     "new": [
      69999,
+     69999,
      69999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "way-of-the-samurai-2-ps2",
@@ -2570,11 +2707,12 @@
    "sparks": {
     "loose": [
      4125,
+     4125,
      4125
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "front-mission-4-ps2",
@@ -2604,25 +2742,28 @@
      "n": 7
     }
    },
-   "pct_1d": 4.05,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      1099,
+     1099,
      1099
     ],
     "cib": [
      1850,
-     1888
+     1888,
+     1925
     ],
     "new": [
+     5000,
      5000,
      5000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "ring-of-red-ps2",
@@ -2632,7 +2773,7 @@
    "prices": {
     "cib": {
      "median_cents": 5000,
-     "mode_cents": 5000,
+     "mode_cents": 4500,
      "q1_cents": 4498,
      "q3_cents": 6450,
      "n": 13
@@ -2644,11 +2785,12 @@
    "sparks": {
     "cib": [
      5000,
+     5000,
      5000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "klonoa-2-lunateas-veil-ps2",
@@ -2657,11 +2799,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 4225,
+     "median_cents": 4450,
      "mode_cents": 4000,
      "q1_cents": 2998,
-     "q3_cents": 4999,
-     "n": 12
+     "q3_cents": 5249,
+     "n": 13
     },
     "cib": {
      "median_cents": 7298,
@@ -2677,15 +2819,17 @@
    "sparks": {
     "loose": [
      3999,
-     4112
+     4112,
+     4225
     ],
     "cib": [
+     7298,
      7298,
      7298
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "dragon-quest-viii-ps2",
@@ -2694,46 +2838,49 @@
    "variant": "black-label",
    "prices": {
     "loose": {
-     "median_cents": 2299,
+     "median_cents": 1999,
      "mode_cents": 2000,
      "q1_cents": 1960,
-     "q3_cents": 2999,
+     "q3_cents": 2499,
      "n": 11
     },
     "cib": {
-     "median_cents": 5999,
+     "median_cents": 5934,
      "mode_cents": 5000,
      "q1_cents": 4472,
      "q3_cents": 7698,
-     "n": 17
+     "n": 16
     },
     "new": {
      "median_cents": 14999,
      "mode_cents": 15000,
-     "q1_cents": 13750,
-     "q3_cents": 21981,
-     "n": 8
+     "q1_cents": 12500,
+     "q3_cents": 26997,
+     "n": 7
     }
    },
-   "pct_1d": 0,
+   "pct_1d": -1.08,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "loose": [
      1999,
-     2149
+     2149,
+     1999
     ],
     "cib": [
+     5999,
      5999,
      5999
     ],
     "new": [
      14999,
+     14999,
      14999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "gta-san-andreas-ps2",
@@ -2742,32 +2889,45 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1235,
-     "mode_cents": 1000,
-     "q1_cents": 931,
-     "q3_cents": 1600,
-     "n": 30
+     "median_cents": 1195,
+     "mode_cents": 700,
+     "q1_cents": 899,
+     "q3_cents": 1650,
+     "n": 29
     },
     "cib": {
-     "median_cents": 1999,
+     "median_cents": 1995,
      "mode_cents": 2000,
-     "q1_cents": 1500,
-     "q3_cents": 3000,
-     "n": 89
+     "q1_cents": 1499,
+     "q3_cents": 2897,
+     "n": 85
     },
     "new": {
-     "median_cents": 11499,
+     "median_cents": 12999,
      "q1_cents": 6500,
-     "q3_cents": 59000,
-     "n": 4
+     "q3_cents": 87500,
+     "n": 5
     }
    },
-   "pct_1d": null,
+   "pct_1d": -0.2,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1235,
+     1215
+    ],
+    "cib": [
+     1999,
+     1997
+    ],
+    "new": [
+     11499,
+     12249
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "gta-vice-city-ps2",
@@ -2776,26 +2936,35 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 800,
+     "median_cents": 895,
      "mode_cents": 700,
-     "q1_cents": 700,
-     "q3_cents": 1291,
+     "q1_cents": 664,
+     "q3_cents": 1298,
      "n": 21
     },
     "cib": {
-     "median_cents": 1799,
+     "median_cents": 1800,
      "mode_cents": 1500,
-     "q1_cents": 1100,
-     "q3_cents": 2799,
-     "n": 78
+     "q1_cents": 1200,
+     "q3_cents": 2995,
+     "n": 79
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0.06,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     800,
+     848
+    ],
+    "cib": [
+     1799,
+     1800
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "gta-iii-ps2",
@@ -2804,32 +2973,45 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 823,
-     "mode_cents": 800,
-     "q1_cents": 763,
-     "q3_cents": 998,
-     "n": 13
+     "median_cents": 998,
+     "mode_cents": 1000,
+     "q1_cents": 879,
+     "q3_cents": 1347,
+     "n": 12
     },
     "cib": {
-     "median_cents": 1399,
-     "mode_cents": 1300,
+     "median_cents": 1495,
+     "mode_cents": 1500,
      "q1_cents": 1099,
-     "q3_cents": 1995,
-     "n": 98
+     "q3_cents": 1998,
+     "n": 103
     },
     "new": {
-     "median_cents": 6599,
-     "q1_cents": 4050,
-     "q3_cents": 17249,
-     "n": 5
+     "median_cents": 4050,
+     "q1_cents": 3500,
+     "q3_cents": 4999,
+     "n": 6
     }
    },
-   "pct_1d": null,
+   "pct_1d": 6.86,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     823,
+     911
+    ],
+    "cib": [
+     1399,
+     1447
+    ],
+    "new": [
+     6599,
+     5325
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "kingdom-hearts-ps2",
@@ -2838,18 +3020,18 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1095,
+     "median_cents": 1050,
      "mode_cents": 1000,
-     "q1_cents": 899,
+     "q1_cents": 850,
      "q3_cents": 1405,
-     "n": 19
+     "n": 18
     },
     "cib": {
-     "median_cents": 1849,
+     "median_cents": 1648,
      "mode_cents": 1500,
-     "q1_cents": 1325,
-     "q3_cents": 2498,
-     "n": 72
+     "q1_cents": 1299,
+     "q3_cents": 2495,
+     "n": 78
     },
     "new": {
      "median_cents": 3999,
@@ -2859,12 +3041,25 @@
      "n": 5
     }
    },
-   "pct_1d": null,
+   "pct_1d": -10.87,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1095,
+     1073
+    ],
+    "cib": [
+     1849,
+     1749
+    ],
+    "new": [
+     3999,
+     3999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "kingdom-hearts-2-ps2",
@@ -2873,33 +3068,46 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1442,
-     "mode_cents": 1500,
-     "q1_cents": 1147,
-     "q3_cents": 1990,
+     "median_cents": 1374,
+     "mode_cents": 1300,
+     "q1_cents": 999,
+     "q3_cents": 1799,
      "n": 18
     },
     "cib": {
-     "median_cents": 1895,
+     "median_cents": 1998,
      "mode_cents": 1500,
-     "q1_cents": 1299,
-     "q3_cents": 2650,
-     "n": 100
+     "q1_cents": 1456,
+     "q3_cents": 2751,
+     "n": 102
     },
     "new": {
-     "median_cents": 3000,
+     "median_cents": 2999,
      "mode_cents": 3000,
-     "q1_cents": 2397,
+     "q1_cents": 2550,
      "q3_cents": 16499,
-     "n": 4
+     "n": 5
     }
    },
-   "pct_1d": null,
+   "pct_1d": 5.44,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1442,
+     1408
+    ],
+    "cib": [
+     1895,
+     1947
+    ],
+    "new": [
+     3000,
+     3000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "kingdom-hearts-re-chain-of-memories-ps2",
@@ -2908,11 +3116,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1122,
+     "median_cents": 1048,
      "mode_cents": 1000,
      "q1_cents": 999,
-     "q3_cents": 1949,
-     "n": 16
+     "q3_cents": 1899,
+     "n": 15
     },
     "cib": {
      "median_cents": 1699,
@@ -2929,12 +3137,25 @@
      "n": 39
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1122,
+     1085
+    ],
+    "cib": [
+     1699,
+     1699
+    ],
+    "new": [
+     2499,
+     2499
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "final-fantasy-x-ps2",
@@ -2945,16 +3166,16 @@
     "loose": {
      "median_cents": 1188,
      "mode_cents": 1200,
-     "q1_cents": 750,
-     "q3_cents": 1250,
-     "n": 21
+     "q1_cents": 799,
+     "q3_cents": 1299,
+     "n": 23
     },
     "cib": {
-     "median_cents": 1399,
-     "mode_cents": 1000,
+     "median_cents": 1349,
+     "mode_cents": 1300,
      "q1_cents": 1000,
-     "q3_cents": 1995,
-     "n": 99
+     "q3_cents": 1893,
+     "n": 97
     },
     "new": {
      "median_cents": 2999,
@@ -2964,12 +3185,25 @@
      "n": 5
     }
    },
-   "pct_1d": null,
+   "pct_1d": -3.57,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1188,
+     1188
+    ],
+    "cib": [
+     1399,
+     1374
+    ],
+    "new": [
+     2999,
+     2999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "final-fantasy-x-2-ps2",
@@ -2980,31 +3214,44 @@
     "loose": {
      "median_cents": 799,
      "mode_cents": 800,
-     "q1_cents": 650,
-     "q3_cents": 1047,
-     "n": 12
+     "q1_cents": 649,
+     "q3_cents": 949,
+     "n": 17
     },
     "cib": {
-     "median_cents": 1231,
+     "median_cents": 1204,
      "mode_cents": 1000,
-     "q1_cents": 910,
+     "q1_cents": 920,
      "q3_cents": 1799,
-     "n": 92
+     "n": 91
     },
     "new": {
-     "median_cents": 2500,
-     "mode_cents": 2000,
-     "q1_cents": 1949,
+     "median_cents": 2750,
+     "mode_cents": 3500,
+     "q1_cents": 1999,
      "q3_cents": 3500,
-     "n": 13
+     "n": 14
     }
    },
-   "pct_1d": null,
+   "pct_1d": -2.19,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     799,
+     799
+    ],
+    "cib": [
+     1231,
+     1218
+    ],
+    "new": [
+     2500,
+     2625
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "final-fantasy-xii-ps2",
@@ -3013,33 +3260,46 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 999,
+     "median_cents": 995,
      "mode_cents": 1000,
-     "q1_cents": 589,
+     "q1_cents": 619,
      "q3_cents": 1000,
-     "n": 7
+     "n": 9
     },
     "cib": {
      "median_cents": 1200,
      "mode_cents": 1200,
-     "q1_cents": 900,
-     "q3_cents": 1607,
-     "n": 100
+     "q1_cents": 899,
+     "q3_cents": 1600,
+     "n": 99
     },
     "new": {
-     "median_cents": 2299,
+     "median_cents": 2249,
      "mode_cents": 2200,
-     "q1_cents": 2224,
-     "q3_cents": 2497,
-     "n": 5
+     "q1_cents": 2000,
+     "q3_cents": 2499,
+     "n": 7
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     999,
+     997
+    ],
+    "cib": [
+     1200,
+     1200
+    ],
+    "new": [
+     2299,
+     2274
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "metal-gear-solid-2-sons-of-liberty-ps2",
@@ -3048,18 +3308,18 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1099,
-     "mode_cents": 1000,
-     "q1_cents": 665,
-     "q3_cents": 1290,
-     "n": 13
+     "median_cents": 1147,
+     "mode_cents": 1200,
+     "q1_cents": 725,
+     "q3_cents": 1499,
+     "n": 14
     },
     "cib": {
-     "median_cents": 1897,
+     "median_cents": 1799,
      "mode_cents": 2000,
-     "q1_cents": 1295,
+     "q1_cents": 1288,
      "q3_cents": 2499,
-     "n": 114
+     "n": 117
     },
     "new": {
      "median_cents": 9750,
@@ -3068,12 +3328,25 @@
      "n": 4
     }
    },
-   "pct_1d": null,
+   "pct_1d": -5.17,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1099,
+     1123
+    ],
+    "cib": [
+     1897,
+     1848
+    ],
+    "new": [
+     9750,
+     9750
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "metal-gear-solid-3-snake-eater-ps2",
@@ -3082,32 +3355,35 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1100,
+     "median_cents": 1150,
      "mode_cents": 1400,
-     "q1_cents": 899,
+     "q1_cents": 990,
      "q3_cents": 1399,
-     "n": 23
+     "n": 22
     },
     "cib": {
      "median_cents": 2199,
      "mode_cents": 2000,
-     "q1_cents": 1872,
-     "q3_cents": 2895,
-     "n": 85
-    },
-    "new": {
-     "median_cents": 14500,
-     "q1_cents": 12000,
-     "q3_cents": 19999,
-     "n": 4
+     "q1_cents": 1844,
+     "q3_cents": 2795,
+     "n": 86
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1100,
+     1125
+    ],
+    "cib": [
+     2199,
+     2199
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "resident-evil-4-ps2",
@@ -3125,23 +3401,36 @@
     "cib": {
      "median_cents": 2599,
      "mode_cents": 2500,
-     "q1_cents": 2224,
-     "q3_cents": 3749,
-     "n": 57
+     "q1_cents": 2200,
+     "q3_cents": 3499,
+     "n": 56
     },
     "new": {
-     "median_cents": 8000,
-     "q1_cents": 7450,
-     "q3_cents": 35800,
-     "n": 5
+     "median_cents": 17300,
+     "q1_cents": 7900,
+     "q3_cents": 45000,
+     "n": 6
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1499,
+     1499
+    ],
+    "cib": [
+     2599,
+     2599
+    ],
+    "new": [
+     8000,
+     12650
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "resident-evil-code-veronica-x-ps2",
@@ -3157,19 +3446,28 @@
      "n": 16
     },
     "cib": {
-     "median_cents": 4748,
-     "mode_cents": 4000,
+     "median_cents": 4995,
+     "mode_cents": 5000,
      "q1_cents": 3999,
-     "q3_cents": 6450,
-     "n": 20
+     "q3_cents": 6900,
+     "n": 19
     }
    },
-   "pct_1d": null,
+   "pct_1d": 5.2,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1899,
+     1899
+    ],
+    "cib": [
+     4748,
+     4872
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "devil-may-cry-ps2",
@@ -3178,33 +3476,46 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 993,
+     "median_cents": 996,
      "mode_cents": 1000,
-     "q1_cents": 797,
-     "q3_cents": 1099,
-     "n": 20
+     "q1_cents": 899,
+     "q3_cents": 1103,
+     "n": 18
     },
     "cib": {
      "median_cents": 1445,
-     "mode_cents": 1000,
-     "q1_cents": 1131,
+     "mode_cents": 1500,
+     "q1_cents": 1165,
      "q3_cents": 1800,
-     "n": 82
+     "n": 84
     },
     "new": {
-     "median_cents": 2700,
+     "median_cents": 2411,
      "mode_cents": 1800,
-     "q1_cents": 1786,
-     "q3_cents": 3449,
-     "n": 8
+     "q1_cents": 1750,
+     "q3_cents": 3299,
+     "n": 6
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     993,
+     995
+    ],
+    "cib": [
+     1445,
+     1445
+    ],
+    "new": [
+     2700,
+     2556
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "god-of-war-ps2",
@@ -3213,18 +3524,18 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1395,
+     "median_cents": 1400,
      "mode_cents": 1400,
-     "q1_cents": 1148,
+     "q1_cents": 1247,
      "q3_cents": 1900,
-     "n": 16
+     "n": 17
     },
     "cib": {
      "median_cents": 2000,
      "mode_cents": 2000,
      "q1_cents": 1800,
      "q3_cents": 2948,
-     "n": 96
+     "n": 97
     },
     "new": {
      "median_cents": 6999,
@@ -3233,12 +3544,25 @@
      "n": 8
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1395,
+     1398
+    ],
+    "cib": [
+     2000,
+     2000
+    ],
+    "new": [
+     6999,
+     6999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "god-of-war-2-ps2",
@@ -3247,32 +3571,45 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1499,
-     "mode_cents": 1500,
+     "median_cents": 1449,
+     "mode_cents": 1200,
      "q1_cents": 1200,
      "q3_cents": 1599,
-     "n": 7
+     "n": 6
     },
     "cib": {
      "median_cents": 1999,
      "mode_cents": 2000,
-     "q1_cents": 1795,
+     "q1_cents": 1799,
      "q3_cents": 2499,
-     "n": 101
+     "n": 100
     },
     "new": {
-     "median_cents": 5499,
-     "q1_cents": 3749,
-     "q3_cents": 9249,
-     "n": 5
+     "median_cents": 6249,
+     "q1_cents": 4999,
+     "q3_cents": 8999,
+     "n": 6
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1499,
+     1474
+    ],
+    "cib": [
+     1999,
+     1999
+    ],
+    "new": [
+     5499,
+     5874
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "jak-and-daxter-the-precursor-legacy-ps2",
@@ -3281,18 +3618,18 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 999,
+     "median_cents": 995,
      "mode_cents": 1000,
-     "q1_cents": 771,
-     "q3_cents": 1499,
-     "n": 33
+     "q1_cents": 743,
+     "q3_cents": 1449,
+     "n": 37
     },
     "cib": {
      "median_cents": 1599,
      "mode_cents": 1500,
-     "q1_cents": 1299,
+     "q1_cents": 1310,
      "q3_cents": 1997,
-     "n": 41
+     "n": 40
     },
     "new": {
      "median_cents": 5080,
@@ -3302,12 +3639,25 @@
      "n": 5
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     999,
+     997
+    ],
+    "cib": [
+     1599,
+     1599
+    ],
+    "new": [
+     5080,
+     5080
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "jak-ii-ps2",
@@ -3318,31 +3668,44 @@
     "loose": {
      "median_cents": 1020,
      "mode_cents": 900,
-     "q1_cents": 823,
-     "q3_cents": 1299,
-     "n": 34
+     "q1_cents": 857,
+     "q3_cents": 1249,
+     "n": 36
     },
     "cib": {
      "median_cents": 1499,
      "mode_cents": 1500,
-     "q1_cents": 1199,
+     "q1_cents": 1200,
      "q3_cents": 2499,
-     "n": 90
+     "n": 93
     },
     "new": {
      "median_cents": 5000,
      "mode_cents": 5000,
-     "q1_cents": 2500,
+     "q1_cents": 3295,
      "q3_cents": 11899,
-     "n": 15
+     "n": 14
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1020,
+     1020
+    ],
+    "cib": [
+     1499,
+     1499
+    ],
+    "new": [
+     5000,
+     5000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "jak-3-ps2",
@@ -3353,31 +3716,43 @@
     "loose": {
      "median_cents": 999,
      "mode_cents": 1000,
-     "q1_cents": 924,
-     "q3_cents": 1299,
-     "n": 25
+     "q1_cents": 949,
+     "q3_cents": 1199,
+     "n": 26
     },
     "cib": {
      "median_cents": 1499,
      "mode_cents": 1500,
      "q1_cents": 1199,
-     "q3_cents": 1995,
-     "n": 79
+     "q3_cents": 1989,
+     "n": 83
     },
     "new": {
-     "median_cents": 4500,
-     "mode_cents": 3000,
-     "q1_cents": 2995,
-     "q3_cents": 9999,
-     "n": 11
+     "median_cents": 6827,
+     "q1_cents": 2798,
+     "q3_cents": 10499,
+     "n": 8
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     999,
+     999
+    ],
+    "cib": [
+     1499,
+     1499
+    ],
+    "new": [
+     4500,
+     5664
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "ratchet-and-clank-ps2",
@@ -3386,33 +3761,46 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1400,
+     "median_cents": 1300,
      "mode_cents": 1300,
-     "q1_cents": 1278,
-     "q3_cents": 1750,
-     "n": 39
+     "q1_cents": 1236,
+     "q3_cents": 1600,
+     "n": 37
     },
     "cib": {
-     "median_cents": 3395,
+     "median_cents": 3289,
      "mode_cents": 2000,
      "q1_cents": 1995,
      "q3_cents": 4995,
-     "n": 10
+     "n": 11
     },
     "new": {
      "median_cents": 8999,
      "mode_cents": 9000,
      "q1_cents": 7500,
      "q3_cents": 10499,
-     "n": 7
+     "n": 6
     }
    },
-   "pct_1d": null,
+   "pct_1d": -3.12,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1400,
+     1350
+    ],
+    "cib": [
+     3395,
+     3342
+    ],
+    "new": [
+     8999,
+     8999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "ratchet-and-clank-going-commando-ps2",
@@ -3428,11 +3816,11 @@
      "n": 37
     },
     "cib": {
-     "median_cents": 1850,
+     "median_cents": 1900,
      "mode_cents": 1500,
      "q1_cents": 1499,
-     "q3_cents": 2499,
-     "n": 66
+     "q3_cents": 2599,
+     "n": 68
     },
     "new": {
      "median_cents": 5499,
@@ -3442,12 +3830,25 @@
      "n": 6
     }
    },
-   "pct_1d": null,
+   "pct_1d": 2.7,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1119,
+     1119
+    ],
+    "cib": [
+     1850,
+     1875
+    ],
+    "new": [
+     5499,
+     5499
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "ratchet-and-clank-up-your-arsenal-ps2",
@@ -3456,26 +3857,35 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1243,
-     "mode_cents": 1300,
-     "q1_cents": 1044,
+     "median_cents": 1199,
+     "mode_cents": 1100,
+     "q1_cents": 1000,
      "q3_cents": 1399,
-     "n": 34
+     "n": 35
     },
     "cib": {
      "median_cents": 1999,
      "mode_cents": 1500,
      "q1_cents": 1499,
-     "q3_cents": 2996,
-     "n": 76
+     "q3_cents": 2995,
+     "n": 74
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1243,
+     1221
+    ],
+    "cib": [
+     1999,
+     1999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "ratchet-deadlocked-ps2",
@@ -3486,30 +3896,33 @@
     "loose": {
      "median_cents": 1200,
      "mode_cents": 1500,
-     "q1_cents": 872,
+     "q1_cents": 895,
      "q3_cents": 1499,
-     "n": 41
+     "n": 42
     },
     "cib": {
-     "median_cents": 1599,
+     "median_cents": 1695,
      "mode_cents": 2000,
-     "q1_cents": 1399,
+     "q1_cents": 1420,
      "q3_cents": 1999,
-     "n": 76
-    },
-    "new": {
-     "median_cents": 4698,
-     "q1_cents": 4247,
-     "q3_cents": 6450,
-     "n": 4
+     "n": 74
     }
    },
-   "pct_1d": null,
+   "pct_1d": 6,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1200,
+     1200
+    ],
+    "cib": [
+     1599,
+     1647
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "sly-cooper-and-the-thievius-raccoonus-ps2",
@@ -3518,16 +3931,16 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1599,
+     "median_cents": 1500,
      "mode_cents": 1500,
      "q1_cents": 1399,
-     "q3_cents": 1899,
-     "n": 38
+     "q3_cents": 1836,
+     "n": 37
     },
     "cib": {
      "median_cents": 2499,
      "mode_cents": 2500,
-     "q1_cents": 2243,
+     "q1_cents": 2293,
      "q3_cents": 2700,
      "n": 24
     },
@@ -3539,12 +3952,25 @@
      "n": 7
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1599,
+     1550
+    ],
+    "cib": [
+     2499,
+     2499
+    ],
+    "new": [
+     6500,
+     6500
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "sly-2-band-of-thieves-ps2",
@@ -3555,16 +3981,16 @@
     "loose": {
      "median_cents": 1659,
      "mode_cents": 1500,
-     "q1_cents": 1449,
+     "q1_cents": 1399,
      "q3_cents": 1999,
      "n": 48
     },
     "cib": {
-     "median_cents": 3997,
+     "median_cents": 3995,
      "mode_cents": 4000,
-     "q1_cents": 3497,
+     "q1_cents": 3297,
      "q3_cents": 4825,
-     "n": 36
+     "n": 37
     },
     "new": {
      "median_cents": 8973,
@@ -3573,12 +3999,25 @@
      "n": 6
     }
    },
-   "pct_1d": null,
+   "pct_1d": -0.05,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1659,
+     1659
+    ],
+    "cib": [
+     3997,
+     3996
+    ],
+    "new": [
+     8973,
+     8973
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "sly-3-honor-among-thieves-ps2",
@@ -3591,29 +4030,42 @@
      "mode_cents": 1400,
      "q1_cents": 1199,
      "q3_cents": 1699,
-     "n": 63
+     "n": 62
     },
     "cib": {
      "median_cents": 2500,
      "mode_cents": 2500,
-     "q1_cents": 1950,
+     "q1_cents": 1899,
      "q3_cents": 3195,
-     "n": 34
+     "n": 35
     },
     "new": {
-     "median_cents": 2799,
+     "median_cents": 2750,
      "mode_cents": 2500,
      "q1_cents": 2499,
-     "q3_cents": 3700,
-     "n": 25
+     "q3_cents": 3200,
+     "n": 24
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1400,
+     1400
+    ],
+    "cib": [
+     2500,
+     2500
+    ],
+    "new": [
+     2799,
+     2775
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "dark-cloud-ps2",
@@ -3622,18 +4074,18 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1220,
+     "median_cents": 1223,
      "mode_cents": 1000,
-     "q1_cents": 999,
+     "q1_cents": 1000,
      "q3_cents": 1495,
-     "n": 47
+     "n": 48
     },
     "cib": {
      "median_cents": 2000,
      "mode_cents": 2000,
-     "q1_cents": 1599,
+     "q1_cents": 1600,
      "q3_cents": 2499,
-     "n": 74
+     "n": 71
     },
     "new": {
      "median_cents": 15000,
@@ -3642,12 +4094,25 @@
      "n": 8
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1220,
+     1222
+    ],
+    "cib": [
+     2000,
+     2000
+    ],
+    "new": [
+     15000,
+     15000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "gran-turismo-3-a-spec-ps2",
@@ -3659,23 +4124,32 @@
      "median_cents": 795,
      "mode_cents": 800,
      "q1_cents": 599,
-     "q3_cents": 949,
-     "n": 13
+     "q3_cents": 999,
+     "n": 11
     },
     "cib": {
      "median_cents": 1000,
      "mode_cents": 1000,
      "q1_cents": 800,
-     "q3_cents": 1495,
-     "n": 134
+     "q3_cents": 1499,
+     "n": 135
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     795,
+     795
+    ],
+    "cib": [
+     1000,
+     1000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "gran-turismo-4-ps2",
@@ -3684,18 +4158,18 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 999,
+     "median_cents": 1000,
      "mode_cents": 1000,
-     "q1_cents": 699,
-     "q3_cents": 1299,
-     "n": 23
+     "q1_cents": 700,
+     "q3_cents": 1399,
+     "n": 24
     },
     "cib": {
-     "median_cents": 1599,
+     "median_cents": 1570,
      "mode_cents": 1500,
-     "q1_cents": 1295,
-     "q3_cents": 2495,
-     "n": 106
+     "q1_cents": 1273,
+     "q3_cents": 2735,
+     "n": 108
     },
     "new": {
      "median_cents": 4999,
@@ -3705,12 +4179,25 @@
      "n": 10
     }
    },
-   "pct_1d": null,
+   "pct_1d": -1.81,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     999,
+     1000
+    ],
+    "cib": [
+     1599,
+     1585
+    ],
+    "new": [
+     4999,
+     4999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "tekken-5-ps2",
@@ -3739,12 +4226,25 @@
      "n": 7
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1800,
+     1800
+    ],
+    "cib": [
+     3399,
+     3399
+    ],
+    "new": [
+     19500,
+     19500
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "tekken-tag-tournament-ps2",
@@ -3753,26 +4253,35 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 899,
+     "median_cents": 953,
      "mode_cents": 1000,
-     "q1_cents": 765,
-     "q3_cents": 999,
-     "n": 17
+     "q1_cents": 718,
+     "q3_cents": 1000,
+     "n": 20
     },
     "cib": {
-     "median_cents": 1525,
+     "median_cents": 1595,
      "mode_cents": 2000,
-     "q1_cents": 1100,
-     "q3_cents": 1999,
-     "n": 102
+     "q1_cents": 1113,
+     "q3_cents": 2000,
+     "n": 101
     }
    },
-   "pct_1d": null,
+   "pct_1d": 4.59,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     899,
+     926
+    ],
+    "cib": [
+     1525,
+     1560
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "soulcalibur-iii-ps2",
@@ -3781,11 +4290,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 955,
+     "median_cents": 999,
      "mode_cents": 1200,
      "q1_cents": 775,
      "q3_cents": 1200,
-     "n": 16
+     "n": 17
     },
     "cib": {
      "median_cents": 1500,
@@ -3795,12 +4304,21 @@
      "n": 25
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     955,
+     977
+    ],
+    "cib": [
+     1500,
+     1500
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "virtua-fighter-4-evolution-ps2",
@@ -3819,7 +4337,7 @@
      "median_cents": 1299,
      "mode_cents": 1000,
      "q1_cents": 1000,
-     "q3_cents": 1799,
+     "q3_cents": 1788,
      "n": 57
     },
     "new": {
@@ -3830,12 +4348,25 @@
      "n": 6
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     800,
+     800
+    ],
+    "cib": [
+     1299,
+     1299
+    ],
+    "new": [
+     3700,
+     3700
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "burnout-3-takedown-ps2",
@@ -3851,19 +4382,28 @@
      "n": 19
     },
     "cib": {
-     "median_cents": 2362,
+     "median_cents": 2295,
      "mode_cents": 2500,
-     "q1_cents": 1995,
-     "q3_cents": 2599,
-     "n": 50
+     "q1_cents": 1988,
+     "q3_cents": 2632,
+     "n": 49
     }
    },
-   "pct_1d": null,
+   "pct_1d": -2.84,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1499,
+     1499
+    ],
+    "cib": [
+     2362,
+     2329
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "need-for-speed-most-wanted-ps2",
@@ -3875,7 +4415,7 @@
      "median_cents": 2595,
      "mode_cents": 2500,
      "q1_cents": 2490,
-     "q3_cents": 2998,
+     "q3_cents": 2995,
      "n": 19
     },
     "cib": {
@@ -3886,12 +4426,21 @@
      "n": 41
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     2595,
+     2595
+    ],
+    "cib": [
+     4995,
+     4995
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "ssx-3-ps2",
@@ -3900,10 +4449,10 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1218,
+     "median_cents": 1250,
      "mode_cents": 1500,
      "q1_cents": 849,
-     "q3_cents": 1499,
+     "q3_cents": 1500,
      "n": 29
     },
     "cib": {
@@ -3921,12 +4470,25 @@
      "n": 4
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1218,
+     1234
+    ],
+    "cib": [
+     1671,
+     1671
+    ],
+    "new": [
+     10249,
+     10249
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "ssx-tricky-ps2",
@@ -3942,19 +4504,28 @@
      "n": 13
     },
     "cib": {
-     "median_cents": 3699,
+     "median_cents": 3749,
      "mode_cents": 4500,
      "q1_cents": 2799,
      "q3_cents": 4995,
-     "n": 31
+     "n": 30
     }
    },
-   "pct_1d": null,
+   "pct_1d": 1.35,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     2499,
+     2499
+    ],
+    "cib": [
+     3699,
+     3724
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "tony-hawks-pro-skater-3-ps2",
@@ -3977,12 +4548,21 @@
      "n": 104
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1000,
+     1000
+    ],
+    "cib": [
+     1399,
+     1399
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "tony-hawks-pro-skater-4-ps2",
@@ -3995,14 +4575,14 @@
      "mode_cents": 900,
      "q1_cents": 599,
      "q3_cents": 1169,
-     "n": 27
+     "n": 26
     },
     "cib": {
      "median_cents": 1400,
      "mode_cents": 1500,
      "q1_cents": 1100,
-     "q3_cents": 1797,
-     "n": 116
+     "q3_cents": 1799,
+     "n": 115
     },
     "new": {
      "median_cents": 7597,
@@ -4011,12 +4591,25 @@
      "n": 6
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     899,
+     899
+    ],
+    "cib": [
+     1400,
+     1400
+    ],
+    "new": [
+     7597,
+     7597
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "tony-hawks-underground-ps2",
@@ -4032,11 +4625,11 @@
      "n": 38
     },
     "cib": {
-     "median_cents": 2000,
+     "median_cents": 2050,
      "mode_cents": 2000,
-     "q1_cents": 1755,
-     "q3_cents": 2775,
-     "n": 81
+     "q1_cents": 1759,
+     "q3_cents": 2800,
+     "n": 82
     },
     "new": {
      "median_cents": 18000,
@@ -4045,12 +4638,25 @@
      "n": 5
     }
    },
-   "pct_1d": null,
+   "pct_1d": 2.5,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1312,
+     1312
+    ],
+    "cib": [
+     2000,
+     2025
+    ],
+    "new": [
+     18000,
+     18000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "star-wars-battlefront-ps2",
@@ -4070,15 +4676,24 @@
      "mode_cents": 1000,
      "q1_cents": 999,
      "q3_cents": 1999,
-     "n": 91
+     "n": 89
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     895,
+     895
+    ],
+    "cib": [
+     1299,
+     1299
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "star-wars-battlefront-ii-ps2",
@@ -4089,30 +4704,43 @@
     "loose": {
      "median_cents": 999,
      "mode_cents": 1000,
-     "q1_cents": 825,
-     "q3_cents": 1134,
-     "n": 20
+     "q1_cents": 800,
+     "q3_cents": 1287,
+     "n": 27
     },
     "cib": {
      "median_cents": 1499,
      "mode_cents": 1500,
-     "q1_cents": 1150,
-     "q3_cents": 2295,
-     "n": 95
+     "q1_cents": 1124,
+     "q3_cents": 2095,
+     "n": 90
     },
     "new": {
-     "median_cents": 6999,
-     "q1_cents": 4500,
-     "q3_cents": 7999,
-     "n": 7
+     "median_cents": 7250,
+     "q1_cents": 5250,
+     "q3_cents": 11500,
+     "n": 8
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     999,
+     999
+    ],
+    "cib": [
+     1499,
+     1499
+    ],
+    "new": [
+     6999,
+     7125
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "ace-combat-04-shattered-skies-ps2",
@@ -4121,32 +4749,45 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 799,
+     "median_cents": 800,
      "mode_cents": 800,
      "q1_cents": 599,
-     "q3_cents": 892,
-     "n": 16
+     "q3_cents": 885,
+     "n": 18
     },
     "cib": {
      "median_cents": 999,
      "mode_cents": 1000,
-     "q1_cents": 800,
-     "q3_cents": 1324,
-     "n": 84
+     "q1_cents": 799,
+     "q3_cents": 1349,
+     "n": 85
     },
     "new": {
-     "median_cents": 3399,
+     "median_cents": 2998,
      "q1_cents": 2400,
      "q3_cents": 3747,
-     "n": 5
+     "n": 4
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     799,
+     800
+    ],
+    "cib": [
+     999,
+     999
+    ],
+    "new": [
+     3399,
+     3199
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "ace-combat-5-the-unsung-war-ps2",
@@ -4162,26 +4803,39 @@
      "n": 13
     },
     "cib": {
-     "median_cents": 1199,
+     "median_cents": 1200,
      "mode_cents": 1000,
-     "q1_cents": 950,
-     "q3_cents": 1499,
-     "n": 90
+     "q1_cents": 995,
+     "q3_cents": 1500,
+     "n": 99
     },
     "new": {
      "median_cents": 3499,
      "mode_cents": 3500,
      "q1_cents": 3157,
-     "q3_cents": 3975,
-     "n": 7
+     "q3_cents": 3850,
+     "n": 6
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0.08,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1079,
+     1079
+    ],
+    "cib": [
+     1199,
+     1200
+    ],
+    "new": [
+     3499,
+     3499
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "ace-combat-zero-the-belkan-war-ps2",
@@ -4197,19 +4851,28 @@
      "n": 5
     },
     "cib": {
-     "median_cents": 6500,
-     "mode_cents": 5500,
-     "q1_cents": 5497,
-     "q3_cents": 7897,
-     "n": 21
+     "median_cents": 6995,
+     "mode_cents": 8000,
+     "q1_cents": 5500,
+     "q3_cents": 7995,
+     "n": 19
     }
    },
-   "pct_1d": null,
+   "pct_1d": 7.62,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     3599,
+     3599
+    ],
+    "cib": [
+     6500,
+     6748
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "onimusha-warlords-ps2",
@@ -4220,30 +4883,44 @@
     "loose": {
      "median_cents": 998,
      "mode_cents": 1000,
-     "q1_cents": 800,
-     "q3_cents": 1197,
-     "n": 29
+     "q1_cents": 798,
+     "q3_cents": 1195,
+     "n": 31
     },
     "cib": {
-     "median_cents": 1495,
-     "mode_cents": 1500,
-     "q1_cents": 1099,
+     "median_cents": 1439,
+     "mode_cents": 1000,
+     "q1_cents": 1000,
      "q3_cents": 1899,
-     "n": 79
+     "n": 77
     },
     "new": {
-     "median_cents": 12599,
-     "q1_cents": 9499,
-     "q3_cents": 39999,
-     "n": 7
+     "median_cents": 11298,
+     "mode_cents": 10000,
+     "q1_cents": 9748,
+     "q3_cents": 13496,
+     "n": 8
     }
    },
-   "pct_1d": null,
+   "pct_1d": -3.75,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     998,
+     998
+    ],
+    "cib": [
+     1495,
+     1467
+    ],
+    "new": [
+     12599,
+     11949
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "onimusha-2-samurais-destiny-ps2",
@@ -4256,14 +4933,14 @@
      "mode_cents": 1000,
      "q1_cents": 799,
      "q3_cents": 1295,
-     "n": 49
+     "n": 48
     },
     "cib": {
      "median_cents": 1800,
      "mode_cents": 1500,
      "q1_cents": 1500,
-     "q3_cents": 2395,
-     "n": 71
+     "q3_cents": 2391,
+     "n": 72
     },
     "new": {
      "median_cents": 3999,
@@ -4273,12 +4950,25 @@
      "n": 11
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     999,
+     999
+    ],
+    "cib": [
+     1800,
+     1800
+    ],
+    "new": [
+     3999,
+     3999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "onimusha-3-demon-siege-ps2",
@@ -4293,12 +4983,17 @@
      "n": 6
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1798,
+     1798
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "maximo-ghosts-to-glory-ps2",
@@ -4316,17 +5011,26 @@
     "cib": {
      "median_cents": 2500,
      "mode_cents": 2000,
-     "q1_cents": 1999,
+     "q1_cents": 2000,
      "q3_cents": 3000,
-     "n": 54
+     "n": 53
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1398,
+     1398
+    ],
+    "cib": [
+     2500,
+     2500
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "dragon-ball-z-budokai-3-ps2",
@@ -4342,19 +5046,28 @@
      "n": 24
     },
     "cib": {
-     "median_cents": 4987,
+     "median_cents": 4965,
      "mode_cents": 5000,
-     "q1_cents": 4000,
-     "q3_cents": 6247,
+     "q1_cents": 3999,
+     "q3_cents": 5999,
      "n": 33
     }
    },
-   "pct_1d": null,
+   "pct_1d": -0.44,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     2548,
+     2548
+    ],
+    "cib": [
+     4987,
+     4976
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "dragon-ball-z-budokai-tenkaichi-3-ps2",
@@ -4364,24 +5077,34 @@
    "prices": {
     "loose": {
      "median_cents": 11999,
+     "mode_cents": 12000,
      "q1_cents": 8750,
      "q3_cents": 16500,
      "n": 9
     },
     "cib": {
-     "median_cents": 19999,
+     "median_cents": 20497,
      "mode_cents": 20000,
      "q1_cents": 17999,
      "q3_cents": 24371,
-     "n": 27
+     "n": 26
     }
    },
-   "pct_1d": null,
+   "pct_1d": 2.49,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     11999,
+     11999
+    ],
+    "cib": [
+     19999,
+     20248
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "yakuza-ps2",
@@ -4397,12 +5120,17 @@
      "n": 5
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "cib": [
+     8995,
+     8995
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "tales-of-the-abyss-ps2",
@@ -4413,17 +5141,22 @@
     "cib": {
      "median_cents": 4999,
      "mode_cents": 5000,
-     "q1_cents": 4999,
+     "q1_cents": 4500,
      "q3_cents": 4999,
-     "n": 6
+     "n": 9
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "cib": [
+     4999,
+     4999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "tales-of-legendia-ps2",
@@ -4445,12 +5178,21 @@
      "n": 16
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     2400,
+     2400
+    ],
+    "cib": [
+     4000,
+     4000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "wild-arms-3-ps2",
@@ -4480,12 +5222,25 @@
      "n": 8
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1200,
+     1200
+    ],
+    "cib": [
+     3000,
+     3000
+    ],
+    "new": [
+     5600,
+     5600
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "wild-arms-4-ps2",
@@ -4496,9 +5251,9 @@
     "loose": {
      "median_cents": 3800,
      "mode_cents": 3800,
-     "q1_cents": 3498,
-     "q3_cents": 3900,
-     "n": 5
+     "q1_cents": 3500,
+     "q3_cents": 4599,
+     "n": 7
     },
     "new": {
      "median_cents": 14120,
@@ -4507,12 +5262,21 @@
      "n": 6
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     3800,
+     3800
+    ],
+    "new": [
+     14120,
+     14120
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "wild-arms-5-ps2",
@@ -4530,9 +5294,14 @@
    "pct_1d": null,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "new": [
+     33196,
+     33196
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "wild-arms-alter-code-f-ps2",
@@ -4543,16 +5312,21 @@
     "cib": {
      "median_cents": 16499,
      "q1_cents": 15249,
-     "q3_cents": 20999,
+     "q3_cents": 17249,
      "n": 5
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "cib": [
+     16499,
+     16499
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "grandia-iii-ps2",
@@ -4567,19 +5341,28 @@
      "n": 6
     },
     "cib": {
-     "median_cents": 4500,
+     "median_cents": 4499,
      "mode_cents": 4500,
      "q1_cents": 3800,
      "q3_cents": 4883,
-     "n": 16
+     "n": 17
     }
    },
-   "pct_1d": null,
+   "pct_1d": -0.02,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     3250,
+     3250
+    ],
+    "cib": [
+     4500,
+     4500
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "grandia-xtreme-ps2",
@@ -4588,19 +5371,24 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 7995,
+     "median_cents": 7898,
      "mode_cents": 6500,
      "q1_cents": 6500,
      "q3_cents": 10000,
-     "n": 9
+     "n": 10
     }
    },
-   "pct_1d": null,
+   "pct_1d": -1.21,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "cib": [
+     7995,
+     7947
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "breath-of-fire-dragon-quarter-ps2",
@@ -4618,7 +5406,7 @@
     "cib": {
      "median_cents": 2298,
      "mode_cents": 2000,
-     "q1_cents": 2000,
+     "q1_cents": 1999,
      "q3_cents": 2749,
      "n": 26
     },
@@ -4630,12 +5418,25 @@
      "n": 10
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1546,
+     1546
+    ],
+    "cib": [
+     2298,
+     2298
+    ],
+    "new": [
+     3499,
+     3499
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "dot-hack-infection-ps2",
@@ -4644,26 +5445,35 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1649,
+     "median_cents": 1699,
      "mode_cents": 2000,
      "q1_cents": 1199,
-     "q3_cents": 1999,
-     "n": 26
+     "q3_cents": 2175,
+     "n": 27
     },
     "cib": {
      "median_cents": 4495,
      "mode_cents": 4500,
-     "q1_cents": 3299,
+     "q1_cents": 3400,
      "q3_cents": 4961,
-     "n": 39
+     "n": 38
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1649,
+     1674
+    ],
+    "cib": [
+     4495,
+     4495
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "magna-carta-tears-of-blood-ps2",
@@ -4686,12 +5496,21 @@
      "n": 8
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     3999,
+     3999
+    ],
+    "cib": [
+     11500,
+     11500
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "radiata-stories-ps2",
@@ -4720,12 +5539,25 @@
      "n": 4
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     3499,
+     3499
+    ],
+    "cib": [
+     7000,
+     7000
+    ],
+    "new": [
+     13500,
+     13500
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "okage-shadow-king-ps2",
@@ -4734,18 +5566,23 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1995,
+     "median_cents": 1756,
      "q1_cents": 1434,
      "q3_cents": 2499,
      "n": 7
     }
    },
-   "pct_1d": null,
+   "pct_1d": -11.98,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1995,
+     1876
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "shinobi-ps2",
@@ -4761,19 +5598,28 @@
      "n": 24
     },
     "cib": {
-     "median_cents": 3599,
+     "median_cents": 4049,
      "mode_cents": 5000,
      "q1_cents": 2947,
      "q3_cents": 4997,
-     "n": 13
+     "n": 12
     }
    },
-   "pct_1d": null,
+   "pct_1d": 12.5,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1248,
+     1248
+    ],
+    "cib": [
+     3599,
+     3824
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "manhunt-ps2",
@@ -4782,11 +5628,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 5899,
+     "median_cents": 5700,
      "mode_cents": 5500,
      "q1_cents": 5499,
-     "q3_cents": 8798,
-     "n": 7
+     "q3_cents": 6159,
+     "n": 6
     },
     "cib": {
      "median_cents": 9747,
@@ -4803,12 +5649,25 @@
      "n": 4
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     5899,
+     5800
+    ],
+    "cib": [
+     9747,
+     9747
+    ],
+    "new": [
+     30000,
+     30000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "red-dead-revolver-ps2",
@@ -4827,16 +5686,25 @@
      "median_cents": 2800,
      "mode_cents": 3000,
      "q1_cents": 2299,
-     "q3_cents": 3410,
+     "q3_cents": 3496,
      "n": 33
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1500,
+     1500
+    ],
+    "cib": [
+     2800,
+     2800
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "killzone-ps2",
@@ -4845,17 +5713,17 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 825,
+     "median_cents": 850,
      "mode_cents": 1000,
-     "q1_cents": 606,
+     "q1_cents": 600,
      "q3_cents": 1099,
-     "n": 32
+     "n": 31
     },
     "cib": {
      "median_cents": 1500,
-     "mode_cents": 1200,
-     "q1_cents": 1195,
-     "q3_cents": 2195,
+     "mode_cents": 1300,
+     "q1_cents": 1199,
+     "q3_cents": 2298,
      "n": 79
     },
     "new": {
@@ -4865,12 +5733,25 @@
      "n": 13
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     825,
+     838
+    ],
+    "cib": [
+     1500,
+     1500
+    ],
+    "new": [
+     8499,
+     8499
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "twisted-metal-black-ps2",
@@ -4879,18 +5760,18 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1374,
+     "median_cents": 1399,
      "mode_cents": 900,
      "q1_cents": 999,
-     "q3_cents": 1825,
-     "n": 36
+     "q3_cents": 1860,
+     "n": 35
     },
     "cib": {
-     "median_cents": 2337,
+     "median_cents": 2399,
      "mode_cents": 2000,
-     "q1_cents": 1999,
-     "q3_cents": 2995,
-     "n": 86
+     "q1_cents": 1997,
+     "q3_cents": 2999,
+     "n": 85
     },
     "new": {
      "median_cents": 3844,
@@ -4900,12 +5781,25 @@
      "n": 9
     }
    },
-   "pct_1d": null,
+   "pct_1d": 2.65,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1374,
+     1387
+    ],
+    "cib": [
+     2337,
+     2368
+    ],
+    "new": [
+     3844,
+     3844
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "midnight-club-3-dub-edition-ps2",
@@ -4914,26 +5808,35 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 2995,
-     "mode_cents": 2500,
-     "q1_cents": 2499,
-     "q3_cents": 3750,
-     "n": 11
+     "median_cents": 3495,
+     "mode_cents": 3500,
+     "q1_cents": 2747,
+     "q3_cents": 4123,
+     "n": 9
     },
     "cib": {
-     "median_cents": 4599,
-     "mode_cents": 5000,
+     "median_cents": 4699,
+     "mode_cents": 6000,
      "q1_cents": 3999,
-     "q3_cents": 5499,
-     "n": 22
+     "q3_cents": 5949,
+     "n": 23
     }
    },
-   "pct_1d": null,
+   "pct_1d": 2.17,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     2995,
+     3245
+    ],
+    "cib": [
+     4599,
+     4649
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "mortal-kombat-deception-ps2",
@@ -4944,15 +5847,15 @@
     "loose": {
      "median_cents": 1199,
      "mode_cents": 1000,
-     "q1_cents": 994,
+     "q1_cents": 999,
      "q3_cents": 1600,
      "n": 33
     },
     "cib": {
      "median_cents": 1999,
      "mode_cents": 2000,
-     "q1_cents": 1699,
-     "q3_cents": 2500,
+     "q1_cents": 1600,
+     "q3_cents": 2499,
      "n": 94
     },
     "new": {
@@ -4962,12 +5865,25 @@
      "n": 6
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1199,
+     1199
+    ],
+    "cib": [
+     1999,
+     1999
+    ],
+    "new": [
+     16250,
+     16250
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "mortal-kombat-armageddon-ps2",
@@ -4976,7 +5892,7 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1501,
+     "median_cents": 1499,
      "mode_cents": 1500,
      "q1_cents": 1299,
      "q3_cents": 1999,
@@ -4987,7 +5903,7 @@
      "mode_cents": 2000,
      "q1_cents": 1999,
      "q3_cents": 3000,
-     "n": 78
+     "n": 79
     },
     "new": {
      "median_cents": 4000,
@@ -4997,12 +5913,25 @@
      "n": 9
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1501,
+     1500
+    ],
+    "cib": [
+     2200,
+     2200
+    ],
+    "new": [
+     4000,
+     4000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "mortal-kombat-shaolin-monks-ps2",
@@ -5011,11 +5940,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 2999,
+     "median_cents": 3149,
      "mode_cents": 3000,
-     "q1_cents": 2819,
+     "q1_cents": 2999,
      "q3_cents": 3648,
-     "n": 9
+     "n": 8
     },
     "cib": {
      "median_cents": 4995,
@@ -5025,12 +5954,21 @@
      "n": 29
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     2999,
+     3074
+    ],
+    "cib": [
+     4995,
+     4995
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "spider-man-2-ps2",
@@ -5039,25 +5977,35 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1619,
+     "median_cents": 1799,
+     "mode_cents": 2500,
      "q1_cents": 1291,
      "q3_cents": 2598,
      "n": 9
     },
     "cib": {
-     "median_cents": 1997,
+     "median_cents": 1923,
      "mode_cents": 2000,
-     "q1_cents": 1399,
-     "q3_cents": 2550,
-     "n": 16
+     "q1_cents": 1249,
+     "q3_cents": 2275,
+     "n": 12
     }
    },
-   "pct_1d": null,
+   "pct_1d": -3.71,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1619,
+     1709
+    ],
+    "cib": [
+     1997,
+     1960
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "the-simpsons-hit-and-run-ps2",
@@ -5073,10 +6021,10 @@
      "n": 13
     },
     "cib": {
-     "median_cents": 9995,
+     "median_cents": 9500,
      "mode_cents": 10000,
-     "q1_cents": 8199,
-     "q3_cents": 10997,
+     "q1_cents": 7999,
+     "q3_cents": 10992,
      "n": 49
     },
     "new": {
@@ -5087,12 +6035,25 @@
      "n": 4
     }
    },
-   "pct_1d": null,
+   "pct_1d": -4.95,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     6499,
+     6499
+    ],
+    "cib": [
+     9995,
+     9748
+    ],
+    "new": [
+     30000,
+     30000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "prince-of-persia-the-sands-of-time-ps2",
@@ -5101,33 +6062,46 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 879,
+     "median_cents": 840,
      "mode_cents": 800,
      "q1_cents": 730,
-     "q3_cents": 1199,
-     "n": 21
+     "q3_cents": 1146,
+     "n": 20
     },
     "cib": {
-     "median_cents": 1340,
+     "median_cents": 1399,
      "mode_cents": 1000,
      "q1_cents": 999,
      "q3_cents": 1800,
-     "n": 92
+     "n": 91
     },
     "new": {
-     "median_cents": 3999,
+     "median_cents": 4423,
      "mode_cents": 4000,
-     "q1_cents": 3499,
-     "q3_cents": 5995,
-     "n": 11
+     "q1_cents": 3744,
+     "q3_cents": 5745,
+     "n": 12
     }
    },
-   "pct_1d": null,
+   "pct_1d": 4.4,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     879,
+     860
+    ],
+    "cib": [
+     1340,
+     1370
+    ],
+    "new": [
+     3999,
+     4211
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "crash-bandicoot-the-wrath-of-cortex-ps2",
@@ -5136,26 +6110,35 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1015,
+     "median_cents": 1044,
      "mode_cents": 1000,
-     "q1_cents": 825,
-     "q3_cents": 1500,
-     "n": 33
+     "q1_cents": 849,
+     "q3_cents": 1499,
+     "n": 34
     },
     "cib": {
      "median_cents": 1500,
      "mode_cents": 1500,
      "q1_cents": 1299,
-     "q3_cents": 1949,
-     "n": 85
+     "q3_cents": 1999,
+     "n": 83
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1015,
+     1030
+    ],
+    "cib": [
+     1500,
+     1500
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "champions-of-norrath-ps2",
@@ -5166,16 +6149,16 @@
     "loose": {
      "median_cents": 4499,
      "mode_cents": 4500,
-     "q1_cents": 3500,
+     "q1_cents": 3999,
      "q3_cents": 4523,
-     "n": 7
+     "n": 6
     },
     "cib": {
-     "median_cents": 4995,
+     "median_cents": 4996,
      "mode_cents": 4500,
      "q1_cents": 4499,
-     "q3_cents": 5998,
-     "n": 29
+     "q3_cents": 5999,
+     "n": 30
     },
     "new": {
      "median_cents": 12148,
@@ -5184,12 +6167,25 @@
      "n": 4
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0.02,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     4499,
+     4499
+    ],
+    "cib": [
+     4995,
+     4996
+    ],
+    "new": [
+     12148,
+     12148
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "champions-return-to-arms-ps2",
@@ -5198,7 +6194,7 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 4500,
+     "median_cents": 4396,
      "mode_cents": 4000,
      "q1_cents": 3875,
      "q3_cents": 5147,
@@ -5212,12 +6208,21 @@
      "n": 18
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     4500,
+     4448
+    ],
+    "cib": [
+     6000,
+     6000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "baldurs-gate-dark-alliance-ps2",
@@ -5226,32 +6231,45 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1495,
+     "median_cents": 1497,
      "mode_cents": 1500,
-     "q1_cents": 1041,
-     "q3_cents": 1897,
-     "n": 29
+     "q1_cents": 1062,
+     "q3_cents": 1994,
+     "n": 30
     },
     "cib": {
-     "median_cents": 1899,
+     "median_cents": 1850,
      "mode_cents": 2000,
-     "q1_cents": 1499,
-     "q3_cents": 2285,
-     "n": 103
+     "q1_cents": 1495,
+     "q3_cents": 2175,
+     "n": 98
     },
     "new": {
-     "median_cents": 6162,
+     "median_cents": 4999,
      "q1_cents": 4250,
      "q3_cents": 9412,
-     "n": 4
+     "n": 5
     }
    },
-   "pct_1d": null,
+   "pct_1d": -2.58,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1495,
+     1496
+    ],
+    "cib": [
+     1899,
+     1875
+    ],
+    "new": [
+     6162,
+     5581
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "baldurs-gate-dark-alliance-ii-ps2",
@@ -5267,19 +6285,28 @@
      "n": 16
     },
     "cib": {
-     "median_cents": 4850,
+     "median_cents": 4800,
      "mode_cents": 5000,
-     "q1_cents": 3722,
-     "q3_cents": 5250,
-     "n": 17
+     "q1_cents": 3945,
+     "q3_cents": 5000,
+     "n": 18
     }
    },
-   "pct_1d": null,
+   "pct_1d": -1.03,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     2500,
+     2500
+    ],
+    "cib": [
+     4850,
+     4825
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "x-men-legends-ii-rise-of-apocalypse-ps2",
@@ -5287,6 +6314,12 @@
    "region": "NTSC-U",
    "variant": "none",
    "prices": {
+    "loose": {
+     "median_cents": 2199,
+     "q1_cents": 1872,
+     "q3_cents": 3199,
+     "n": 4
+    },
     "cib": {
      "median_cents": 3500,
      "mode_cents": 3500,
@@ -5295,12 +6328,17 @@
      "n": 10
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "cib": [
+     3500,
+     3500
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "marvel-ultimate-alliance-ps2",
@@ -5323,12 +6361,21 @@
      "n": 91
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1158,
+     1158
+    ],
+    "cib": [
+     1789,
+     1789
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "def-jam-vendetta-ps2",
@@ -5337,11 +6384,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 3150,
-     "mode_cents": 3000,
-     "q1_cents": 2575,
-     "q3_cents": 3999,
-     "n": 18
+     "median_cents": 3399,
+     "mode_cents": 3500,
+     "q1_cents": 2847,
+     "q3_cents": 4249,
+     "n": 16
     },
     "cib": {
      "median_cents": 6090,
@@ -5351,12 +6398,21 @@
      "n": 28
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     3150,
+     3275
+    ],
+    "cib": [
+     6090,
+     6090
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "nba-street-vol-2-ps2",
@@ -5379,12 +6435,21 @@
      "n": 13
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     3500,
+     3500
+    ],
+    "cib": [
+     4500,
+     4500
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "rez-ps2",
@@ -5395,17 +6460,22 @@
     "cib": {
      "median_cents": 4999,
      "mode_cents": 5000,
-     "q1_cents": 4250,
+     "q1_cents": 4025,
      "q3_cents": 5498,
      "n": 9
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "cib": [
+     4999,
+     4999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "amplitude-ps2",
@@ -5421,12 +6491,17 @@
      "n": 5
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "cib": [
+     2500,
+     2500
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "sky-odyssey-ps2",
@@ -5449,12 +6524,21 @@
      "n": 72
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     748,
+     748
+    ],
+    "cib": [
+     1000,
+     1000
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "clock-tower-3-ps2",
@@ -5466,7 +6550,7 @@
      "median_cents": 8000,
      "mode_cents": 8000,
      "q1_cents": 7199,
-     "q3_cents": 8999,
+     "q3_cents": 10000,
      "n": 7
     },
     "cib": {
@@ -5477,12 +6561,21 @@
      "n": 19
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     8000,
+     8000
+    ],
+    "cib": [
+     15999,
+     15999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "echo-night-beyond-ps2",
@@ -5498,12 +6591,17 @@
      "n": 4
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "cib": [
+     22500,
+     22500
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "ape-escape-2-ps2",
@@ -5526,12 +6624,21 @@
      "n": 11
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     7897,
+     7897
+    ],
+    "cib": [
+     13911,
+     13911
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "ape-escape-3-ps2",
@@ -5539,26 +6646,25 @@
    "region": "NTSC-U",
    "variant": "none",
    "prices": {
-    "loose": {
-     "median_cents": 4750,
-     "q1_cents": 4249,
-     "q3_cents": 5247,
-     "n": 4
-    },
     "cib": {
      "median_cents": 8999,
      "mode_cents": 9000,
-     "q1_cents": 8998,
+     "q1_cents": 8724,
      "q3_cents": 9249,
-     "n": 4
+     "n": 5
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "cib": [
+     8999,
+     8999
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "timesplitters-2-ps2",
@@ -5581,12 +6687,21 @@
      "n": 21
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1800,
+     1800
+    ],
+    "cib": [
+     2700,
+     2700
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   },
   {
    "id": "zone-of-the-enders-ps2",
@@ -5596,24 +6711,33 @@
    "prices": {
     "loose": {
      "median_cents": 1169,
-     "mode_cents": 1000,
+     "mode_cents": 1100,
      "q1_cents": 999,
      "q3_cents": 1499,
      "n": 34
     },
     "cib": {
-     "median_cents": 2499,
-     "q1_cents": 1850,
-     "q3_cents": 3247,
-     "n": 5
+     "median_cents": 2350,
+     "q1_cents": 1699,
+     "q3_cents": 2995,
+     "n": 6
     }
    },
-   "pct_1d": null,
+   "pct_1d": -5.96,
    "pct_7d": null,
    "pct_30d": null,
-   "sparks": {},
+   "sparks": {
+    "loose": [
+     1169,
+     1169
+    ],
+    "cib": [
+     2499,
+     2425
+    ]
+   },
    "stale": false,
-   "as_of": "2026-09-08"
+   "as_of": "2026-09-09"
   }
  ]
 }
