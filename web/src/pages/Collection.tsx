@@ -7,6 +7,7 @@ import { shelfValue, type ShelfLine } from '@/lib/shelf'
 import { CONDITION_LABELS, PLATFORM_SHORT, type CatalogFile, type CatalogGame } from '@/lib/types'
 import { PaidField } from '@/components/PaidField'
 import { QuickAdd } from '@/components/QuickAdd'
+import { ShelfTimeline } from '@/components/ShelfTimeline'
 import { ShelfGate, ShelfRowControls, shelfButton } from '@/components/ShelfControls'
 import { Message } from '@/components/States'
 import { TrendPill } from '@/components/TrendPill'
@@ -107,6 +108,8 @@ function Shelf() {
           )}
         </div>
       </Window>
+
+      <ShelfTimeline items={items} />
 
       {value.movers.length > 0 && (
         <Window title="What moved this week" order={1}>

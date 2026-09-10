@@ -169,6 +169,44 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     await waitFor(() => expect(document.activeElement).toBe(within(table).getByRole('link', { name: survivor.title })))
   })
 
+  it('charts the shelf over time and counts the copies with a history', async () => {
+    if (!priced) return
+    const { backend } = memoryBackend({
+      user: testUser,
+      collection: [
+        { game_id: priced.id, condition: 'loose', added_at: '2026-09-07T00:00:00Z', paid_cents: 100 },
+        // A copy the collector no longer tracks: its history file is a 404 and must not sink the line.
+        { game_id: 'vanished-ps2', condition: 'cib', added_at: '2026-09-07T00:00:00Z' },
+      ],
+    })
+    renderAt('/collection', <Collection />, '/collection', backend)
+    await waitFor(() => expect(document.body.textContent).toMatch(/shelf value over time/i))
+    await waitFor(() => expect(document.body.textContent).toMatch(/1 of 2 copies have a price history/i))
+    expect(document.body.textContent).toMatch(/the paid line covers 1 of those 1/i)
+    // The history has more than one day, so the line has a start and today's figure.
+    const history = JSON.parse(fs.readFileSync(path.join(dataDir, `history/${priced.id}.json`), 'utf8')) as { points: { d: string }[] }
+    if (history.points.length >= 2) {
+      expect(document.body.textContent).toMatch(/since /i)
+      expect(document.body.textContent).toContain(money(priced.prices.loose!.median_cents))
+    }
+  })
+
+  it('says so when no history at all could be loaded, instead of calling the shelf new', async () => {
+    if (!priced) return
+    const { backend } = memoryBackend({
+      user: testUser,
+      collection: [{ game_id: priced.id, condition: 'loose', added_at: '2026-09-07T00:00:00Z' }],
+    })
+    // Everything but the history files loads as usual.
+    const serve = globalThis.fetch
+    vi.stubGlobal('fetch', async (input: RequestInfo | URL) =>
+      String(input).includes('/data/history/') ? new Response('down', { status: 503 }) : serve(input),
+    )
+    renderAt('/collection', <Collection />, '/collection', backend)
+    await waitFor(() => expect(document.body.textContent).toMatch(/price history could not be loaded/i))
+    expect(document.body.textContent).not.toMatch(/draws itself as days go by/i)
+  })
+
   it('records what was paid for a copy and shows the gain against today', async () => {
     if (!priced) return
     const { backend, state } = memoryBackend({

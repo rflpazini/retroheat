@@ -52,28 +52,86 @@ export function useJson<T>(rel: string | null): Loadable<T> {
     }
 
     let active = true
-    let promise = inflight.get(url)
-    if (!promise) {
-      promise = load<T>(url)
-      inflight.set(url, promise)
-    }
-
     setState({ status: 'loading' })
-    promise
-      .then((data) => {
-        cache.set(url, data)
-        inflight.delete(url)
-        if (active) setState({ status: 'ready', data: data as T })
-      })
-      .catch((err: unknown) => {
-        inflight.delete(url)
-        if (active) setState({ status: 'error', error: err instanceof Error ? err.message : 'failed' })
-      })
+    loadCached<T>(url).then(
+      (data) => {
+        if (active) setState({ status: 'ready', data })
+      },
+      (err: unknown) => {
+        if (active) setState({ status: 'error', error: messageOf(err) })
+      },
+    )
 
     return () => {
       active = false
     }
   }, [url])
+
+  return state
+}
+
+const messageOf = (err: unknown) => (err instanceof Error ? err.message : 'failed')
+
+/** One fetch per file, shared: the cache answers repeats and the in-flight map joins concurrent asks. */
+function loadCached<T>(url: string): Promise<T> {
+  if (cache.has(url)) return Promise.resolve(cache.get(url) as T)
+  let promise = inflight.get(url) as Promise<T> | undefined
+  if (!promise) {
+    promise = load<T>(url).then(
+      (data) => {
+        cache.set(url, data)
+        inflight.delete(url)
+        return data
+      },
+      (err: unknown) => {
+        inflight.delete(url)
+        throw err
+      },
+    )
+    inflight.set(url, promise)
+  }
+  return promise
+}
+
+/**
+ * useJsonMany fetches a set of files at once, through the same cache, and
+ * resolves when every request has settled. A file that fails to load is left
+ * out of the map rather than failing the set: a shelf's timeline should not
+ * vanish because one game is no longer tracked. When every file fails, that
+ * is an error, not an empty result, and the caller can say so.
+ */
+export function useJsonMany<T>(rels: string[]): Loadable<Map<string, T>> {
+  // The list is compared by content, so a caller may build it inline.
+  const key = rels.join('\n')
+  const [state, setState] = useState<Loadable<Map<string, T>>>(() =>
+    key ? { status: 'loading' } : { status: 'ready', data: new Map() },
+  )
+
+  useEffect(() => {
+    const list = key ? key.split('\n') : []
+    if (list.length === 0) {
+      setState({ status: 'ready', data: new Map() })
+      return
+    }
+    let active = true
+    setState({ status: 'loading' })
+    void Promise.allSettled(list.map((rel) => loadCached<T>(dataURL(rel)))).then((results) => {
+      if (!active) return
+      const data = new Map<string, T>()
+      results.forEach((r, i) => {
+        if (r.status === 'fulfilled') data.set(list[i], r.value)
+      })
+      if (data.size === 0) {
+        const first = results.find((r) => r.status === 'rejected') as PromiseRejectedResult | undefined
+        setState({ status: 'error', error: `none of ${list.length} files could be loaded (${messageOf(first?.reason)})` })
+        return
+      }
+      setState({ status: 'ready', data })
+    })
+    return () => {
+      active = false
+    }
+  }, [key])
 
   return state
 }
