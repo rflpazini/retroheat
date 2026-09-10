@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { Bookmark, BookmarkCheck, ChevronDown, Library } from 'lucide-react'
 import { useAccount, type Account } from '@/lib/account'
+import { returnFocusTo } from '@/lib/focus'
 import { conditionColor } from '@/lib/format'
 import { CONDITIONS, CONDITION_LABELS, type Condition } from '@/lib/types'
 import { cn } from '@/lib/utils'
@@ -252,7 +253,11 @@ function OwnKey({ account, gameId, title }: KeyProps) {
       <DropdownMenuContent align="end" className={menuBarClasses.content}>
         <DropdownMenuRadioGroup
           value={owned ?? ''}
-          onValueChange={(value) => void account.setOwned(gameId, value as Condition)}
+          onValueChange={(value) => {
+            // A first pick opens the "on the shelf" window; it should hand focus back here.
+            returnFocusTo(trigger.current)
+            void account.setOwned(gameId, value as Condition)
+          }}
         >
           {CONDITIONS.map((c) => (
             <DropdownMenuRadioItem key={c} value={c} closeOnClick className={cn(menuBarClasses.item, 'gap-2 pr-7')}>

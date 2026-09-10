@@ -6,12 +6,13 @@ import userEvent from '@testing-library/user-event'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import { AccountProvider } from '../lib/account'
 import { resetCache } from '../lib/data'
-import { money, signedMoney } from '../lib/format'
+import { money, moneyExact, signedMoney } from '../lib/format'
 import type { ShelfBackend } from '../lib/shelf'
 import { memoryBackend, testUser } from '../lib/shelf-memory'
 import type { LatestFile, TrendingFile } from '../lib/types'
 import { Collection } from './Collection'
 import { Saved } from './Saved'
+import { AppShell as AppShellLazy } from '../components/AppShell'
 
 const dataDir = path.resolve(__dirname, '../../../data')
 const present = fs.existsSync(path.join(dataDir, 'meta.json'))
@@ -371,6 +372,130 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     await waitFor(() => expect(state.collection.get(priced.id)?.condition).toBe('loose'))
     // The row now reads the condition back, so a board doubles as a checklist.
     expect(screen.getByRole('button', { name: ownAs(priced.title, 'Loose') })).toBeDefined()
+  })
+
+  function renderShell(route: string, routes: React.ReactNode, backend: ShelfBackend) {
+    return render(
+      <MemoryRouter initialEntries={[route]}>
+        <AccountProvider backend={() => Promise.resolve(backend)}>
+          <Routes>
+            <Route path="/" element={<AppShellLazy />}>
+              <Route index element={<p>home page</p>} />
+              {routes}
+            </Route>
+          </Routes>
+        </AccountProvider>
+      </MemoryRouter>,
+    )
+  }
+
+  it('asks what a copy cost the moment it joins the shelf, shows what it asks today, and saves the answer', async () => {
+    if (!priced) return
+    const { backend, state } = memoryBackend({ user: testUser })
+    const { Platform } = await import('./Platform')
+    serveTrimmedBoard('ps2', [priced.id, ...ps2.games.slice(0, 4).map((g) => g.id)])
+    renderShell('/p/ps2', <Route path="p/:platform" element={<Platform />} />, backend)
+    const user = userEvent.setup()
+
+    await user.click(await screen.findByRole('button', { name: ownAs(priced.title) }))
+    await user.click(await screen.findByRole('menuitemradio', { name: /complete/i }))
+    const dialog = await screen.findByRole('dialog', { name: /on the shelf/i })
+    await waitFor(() => expect(dialog.textContent).toContain(priced.title))
+    await waitFor(() => expect(dialog.textContent).toContain(moneyExact(priced.prices.cib!.median_cents)))
+    expect(dialog.textContent).toMatch(/complete copy/i)
+
+    const field = within(dialog).getByRole('textbox', { name: paidFor(priced.title) })
+    await waitFor(() => expect(document.activeElement).toBe(field))
+    const paid = Math.round(priced.prices.cib!.median_cents / 2)
+    await user.type(field, (paid / 100).toFixed(2))
+    // The gain is previewed while typing, before anything is saved.
+    expect(dialog.textContent).toContain(signedMoney(priced.prices.cib!.median_cents - paid))
+    await user.click(within(dialog).getByRole('button', { name: /^save$/i }))
+    await waitFor(() => expect(screen.queryByRole('dialog', { name: /on the shelf/i })).toBeNull())
+    await waitFor(() => expect(state.collection.get(priced.id)?.paid_cents).toBe(paid))
+    expect(state.collection.get(priced.id)?.condition).toBe('cib')
+  })
+
+  it('lets the window be skipped, keeps the copy, and does not ask again for a change of condition', async () => {
+    if (!priced) return
+    const { backend, state } = memoryBackend({ user: testUser })
+    const { Platform } = await import('./Platform')
+    serveTrimmedBoard('ps2', [priced.id, ...ps2.games.slice(0, 4).map((g) => g.id)])
+    renderShell('/p/ps2', <Route path="p/:platform" element={<Platform />} />, backend)
+    const user = userEvent.setup()
+
+    await user.click(await screen.findByRole('button', { name: ownAs(priced.title) }))
+    await user.click(await screen.findByRole('menuitemradio', { name: /loose/i }))
+    const dialog = await screen.findByRole('dialog', { name: /on the shelf/i })
+    await user.click(within(dialog).getByRole('button', { name: /skip/i }))
+    await waitFor(() => expect(screen.queryByRole('dialog', { name: /on the shelf/i })).toBeNull())
+    expect(state.collection.get(priced.id)?.condition).toBe('loose')
+    expect(state.collection.get(priced.id)?.paid_cents).toBeNull()
+
+    await user.click(screen.getByRole('button', { name: ownAs(priced.title, 'Loose') }))
+    await user.click(await screen.findByRole('menuitemradio', { name: /sealed/i }))
+    await waitFor(() => expect(state.collection.get(priced.id)?.condition).toBe('new'))
+    expect(screen.queryByRole('dialog', { name: /on the shelf/i })).toBeNull()
+  })
+
+  it('refuses a paid price that is not one, and keeps the window open to fix it', async () => {
+    if (!priced) return
+    const { backend, state } = memoryBackend({ user: testUser })
+    const { Platform } = await import('./Platform')
+    serveTrimmedBoard('ps2', [priced.id, ...ps2.games.slice(0, 4).map((g) => g.id)])
+    renderShell('/p/ps2', <Route path="p/:platform" element={<Platform />} />, backend)
+    const user = userEvent.setup()
+
+    await user.click(await screen.findByRole('button', { name: ownAs(priced.title) }))
+    await user.click(await screen.findByRole('menuitemradio', { name: /complete/i }))
+    const dialog = await screen.findByRole('dialog', { name: /on the shelf/i })
+    await user.type(within(dialog).getByRole('textbox', { name: paidFor(priced.title) }), 'abc{Enter}')
+    expect((await within(dialog).findByRole('alert')).textContent).toMatch(/type a price/i)
+    expect(screen.getByRole('dialog', { name: /on the shelf/i })).toBeDefined()
+    expect(state.collection.get(priced.id)?.paid_cents).toBeNull()
+  })
+
+  it('opens the same window from the game page', async () => {
+    const { backend, state } = memoryBackend({ user: testUser })
+    const { Game } = await import('./Game')
+    renderShell('/g/jet-force-gemini-n64', <Route path="g/:id" element={<Game />} />, backend)
+    const user = userEvent.setup()
+    const group = await screen.findByRole('group', { name: /condition owned/i })
+    await user.click(within(group).getByRole('button', { name: /loose/i }))
+    const dialog = await screen.findByRole('dialog', { name: /on the shelf/i })
+    await waitFor(() => expect(dialog.textContent).toMatch(/jet force gemini/i))
+    await user.type(within(dialog).getByRole('textbox', { name: /paid for/i }), '15{Enter}')
+    await waitFor(() => expect(state.collection.get('jet-force-gemini-n64')?.paid_cents).toBe(1500))
+  })
+
+  it('opens the same window from quick-add on the collection page', async () => {
+    const { backend, state } = memoryBackend({ user: testUser })
+    renderShell('/collection', <Route path="collection" element={<Collection />} />, backend)
+    const user = userEvent.setup()
+    await user.type(await screen.findByLabelText(/add a game you own/i), 'bully ps2')
+    const group = await screen.findByRole('group', { name: /add bully as/i })
+    await user.click(within(group).getByRole('button', { name: /complete/i }))
+    const dialog = await screen.findByRole('dialog', { name: /on the shelf/i })
+    await waitFor(() => expect(dialog.textContent).toMatch(/bully/i))
+    await user.type(within(dialog).getByRole('textbox', { name: /paid for/i }), '22{Enter}')
+    await waitFor(() => expect(state.collection.get('bully-ps2')?.paid_cents).toBe(2200))
+  })
+
+  it('never opens the window when the add itself failed', async () => {
+    if (!priced) return
+    const { backend } = memoryBackend({ user: testUser })
+    backend.own = async () => {
+      throw new Error('new row violates row-level security policy')
+    }
+    const { Platform } = await import('./Platform')
+    serveTrimmedBoard('ps2', [priced.id, ...ps2.games.slice(0, 4).map((g) => g.id)])
+    renderShell('/p/ps2', <Route path="p/:platform" element={<Platform />} />, backend)
+    const user = userEvent.setup()
+    await user.click(await screen.findByRole('button', { name: ownAs(priced.title) }))
+    await user.click(await screen.findByRole('menuitemradio', { name: /complete/i }))
+    await screen.findByRole('alert')
+    await new Promise((r) => setTimeout(r, 30))
+    expect(screen.queryByRole('dialog', { name: /on the shelf/i })).toBeNull()
   })
 
   it('reports a failed shelf write on the status strip and rolls the row back', async () => {

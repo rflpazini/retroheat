@@ -25,6 +25,9 @@ export interface Account {
   setOwned: (id: string, condition: Condition | null) => Promise<void>
   /** Records what an owned copy cost, or forgets it with null. */
   setPaid: (id: string, cents: number | null) => Promise<void>
+  /** The copy just added to the shelf, for the window that asks what it cost; null when none. */
+  pendingAdd: { game_id: string; condition: Condition } | null
+  dismissAdd: () => void
   /** The last failed write, in the backend's words; cleared by the next success. */
   error: string | null
   /** Why the last sign-in redirect failed, e.g. a magic link opened in another browser. */
@@ -55,6 +58,8 @@ const disabled: Account = {
   owned: () => undefined,
   setOwned: noop,
   setPaid: noop,
+  pendingAdd: null,
+  dismissAdd: () => {},
   error: null,
   signInError: null,
 }
@@ -186,10 +191,13 @@ function AccountState({
     data: new Map(),
   })
   const [error, setError] = useState<string | null>(null)
+  const [pendingAdd, setPendingAdd] = useState<Account['pendingAdd']>(null)
   // A failed write's message belongs to the page it happened on; leaving the
-  // page gives the status strip back to the price caveat.
+  // page gives the status strip back to the price caveat. The same goes for
+  // the window asking what a copy cost.
   useEffect(() => {
     setError(null)
+    setPendingAdd(null)
   }, [location.pathname])
   const [signInError, setSignInError] = useState<string | null>(null)
   const savedRef = useRef(saved)
@@ -340,10 +348,15 @@ function AccountState({
       next.delete(id)
     }
     setCollection({ status: 'ready', data: next })
+    const from = locationRef.current.pathname
     try {
       if (condition) await b.own(id, condition)
       else await b.disown(id)
       setError(null)
+      // A copy new to the shelf gets the window asking what it cost, once the
+      // write has landed and only if the visitor is still on the same page; a
+      // change of condition does not.
+      if (condition && !before && locationRef.current.pathname === from) setPendingAdd({ game_id: id, condition })
     } catch (e) {
       setCollection(cur)
       setError(messageOf(e))
@@ -356,7 +369,13 @@ function AccountState({
   const setPaid = useCallback(async (id: string, cents: number | null) => {
     const seq = (paidSeq.current.get(id) ?? 0) + 1
     paidSeq.current.set(id, seq)
-    const b = await ensure()
+    let b: ShelfBackend
+    try {
+      b = await ensure()
+    } catch (e) {
+      setError(messageOf(e))
+      return
+    }
     const cur = collectionRef.current
     if (cur.status !== 'ready') return
     const before = cur.data.get(id)
@@ -375,6 +394,9 @@ function AccountState({
       setError(messageOf(e))
     }
   }, [])
+
+  // Stable, so the window's mount effect does not re-run on every provider render.
+  const dismissAdd = useCallback(() => setPendingAdd(null), [])
 
   const value = useMemo<Account>(
     () => ({
@@ -401,10 +423,12 @@ function AccountState({
       owned: (id) => (collection.status === 'ready' ? collection.data.get(id) : undefined),
       setOwned,
       setPaid,
+      pendingAdd,
+      dismissAdd,
       error,
       signInError,
     }),
-    [status, user, signInOpen, ensure, signInWithGoogle, signInWithEmail, signOut, deleteAccount, saved, toggleSaved, collection, setOwned, setPaid, error, signInError],
+    [status, user, signInOpen, ensure, signInWithGoogle, signInWithEmail, signOut, deleteAccount, saved, toggleSaved, collection, setOwned, setPaid, pendingAdd, dismissAdd, error, signInError],
   )
 
   return <AccountContext.Provider value={value}>{children}</AccountContext.Provider>
