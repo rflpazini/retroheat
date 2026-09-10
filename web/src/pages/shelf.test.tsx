@@ -223,6 +223,37 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     expect(screen.getByRole('button', { name: ownAs(priced.title, 'Loose') })).toBeDefined()
   })
 
+  it('reports a failed shelf write on the status strip and rolls the row back', async () => {
+    if (!priced) return
+    const { backend } = memoryBackend({ user: testUser })
+    backend.own = async () => {
+      throw new Error('new row violates row-level security policy')
+    }
+    const { Platform } = await import('./Platform')
+    const { AppShell } = await import('../components/AppShell')
+    serveTrimmedBoard('ps2', [priced.id, ...ps2.games.slice(0, 4).map((g) => g.id)])
+    render(
+      <MemoryRouter initialEntries={['/p/ps2']}>
+        <AccountProvider backend={() => Promise.resolve(backend)}>
+          <Routes>
+            <Route path="/" element={<AppShell />}>
+              <Route path="p/:platform" element={<Platform />} />
+            </Route>
+          </Routes>
+        </AccountProvider>
+      </MemoryRouter>,
+    )
+    const user = userEvent.setup()
+
+    await user.click(await screen.findByRole('button', { name: ownAs(priced.title) }))
+    await user.click(await screen.findByRole('menuitemradio', { name: /loose/i }))
+    const alert = await screen.findByRole('alert')
+    expect(alert.textContent).toMatch(/your shelf was not saved: new row violates row-level security policy/i)
+    // The optimistic "Loose" is gone again; the key is back to unowned.
+    await waitFor(() => expect(screen.getByRole('button', { name: ownAs(priced.title) })).toBeDefined())
+    expect(screen.queryByRole('button', { name: ownAs(priced.title, 'Loose') })).toBeNull()
+  })
+
   it('a signed-out visitor gets the same two controls on board rows, and both ask to sign in', async () => {
     if (!priced) return
     const { backend } = memoryBackend({ user: null })

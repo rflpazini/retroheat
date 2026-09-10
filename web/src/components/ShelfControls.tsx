@@ -260,7 +260,7 @@ function OwnKey({ account, gameId, title }: KeyProps) {
           onValueChange={(value) => void account.setOwned(gameId, value as Condition)}
         >
           {CONDITIONS.map((c) => (
-            <DropdownMenuRadioItem key={c} value={c} className={cn(menuBarClasses.item, 'gap-2 pr-7')}>
+            <DropdownMenuRadioItem key={c} value={c} closeOnClick className={cn(menuBarClasses.item, 'gap-2 pr-7')}>
               <Swatch condition={c} />
               {CONDITION_LABELS[c]}
             </DropdownMenuRadioItem>
