@@ -165,7 +165,8 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     await user.click(screen.getByRole('button', { name: ownAs(firstTitle, 'Loose') }))
     await user.click(await screen.findByRole('menuitem', { name: /remove from collection/i }))
     await waitFor(() => expect(screen.queryByRole('button', { name: ownAs(firstTitle, 'Loose') })).toBeNull())
-    await waitFor(() => expect(document.activeElement).toBe(screen.getByRole('link', { name: survivor.title })))
+    // The movers window may name the survivor too, so look for the link in the table.
+    await waitFor(() => expect(document.activeElement).toBe(within(table).getByRole('link', { name: survivor.title })))
   })
 
   it('lists saved games with their price and removes one', async () => {
@@ -240,10 +241,10 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     const { Home } = await import('./Home')
     renderAt('/', <Home />, '/', backend)
 
-    const first = await screen.findByRole('button', { name: `Save ${trending.entries[0].title}` })
-    expect(first).toBeDefined()
-    // Every row carries the pair, and the header names the column.
-    const saves = screen.getAllByRole('button', { name: /^Save / })
+    // Which entries show depends on the window the board opens on, so count
+    // rather than name them: the hero and every row carry the pair, and the
+    // header names the column.
+    const saves = await screen.findAllByRole('button', { name: /^Save / })
     const owns = screen.getAllByRole('button', { name: /^Own .* as$/ })
     expect(saves.length).toBeGreaterThan(1)
     expect(owns.length).toBe(saves.length)
