@@ -1,3 +1,4 @@
+import { retryOnClockSkew, skewMessage, type ApiError } from '@/lib/retry'
 import type { AuthEvent, AuthUser, CollectionItem, ShelfBackend } from '@/lib/shelf'
 import type { Condition } from '@/lib/types'
 
@@ -55,8 +56,8 @@ export async function loadSupabaseBackend(): Promise<ShelfBackend> {
     return id
   }
 
-  const check = (error: { message: string } | null) => {
-    if (error) throw new Error(error.message)
+  const check = (error: ApiError | null) => {
+    if (error) throw new Error(skewMessage(error))
   }
 
   return {
@@ -92,48 +93,54 @@ export async function loadSupabaseBackend(): Promise<ShelfBackend> {
       const { error } = await client.auth.signOut()
       check(error)
     },
+    // Every database call goes through retryOnClockSkew: a token minted a
+    // moment ago can be refused as "issued at future" and pass seconds later.
     async listSaved() {
-      const { data, error } = await client
-        .from('saved_games')
-        .select('game_id')
-        .order('created_at', { ascending: false })
+      const { data, error } = await retryOnClockSkew(() =>
+        client.from('saved_games').select('game_id').order('created_at', { ascending: false }),
+      )
       check(error)
       return ((data ?? []) as { game_id: string }[]).map((r) => r.game_id)
     },
     async save(gameId) {
-      const { error } = await client
-        .from('saved_games')
-        .upsert({ user_id: await uid(), game_id: gameId }, { onConflict: 'user_id,game_id', ignoreDuplicates: true })
+      const user_id = await uid()
+      const { error } = await retryOnClockSkew(() =>
+        client
+          .from('saved_games')
+          .upsert({ user_id, game_id: gameId }, { onConflict: 'user_id,game_id', ignoreDuplicates: true }),
+      )
       check(error)
     },
     async unsave(gameId) {
-      const { error } = await client.from('saved_games').delete().eq('user_id', await uid()).eq('game_id', gameId)
+      const user_id = await uid()
+      const { error } = await retryOnClockSkew(() =>
+        client.from('saved_games').delete().eq('user_id', user_id).eq('game_id', gameId),
+      )
       check(error)
     },
     async listCollection() {
-      const { data, error } = await client
-        .from('collection_items')
-        .select('game_id, condition, added_at')
-        .order('added_at', { ascending: false })
+      const { data, error } = await retryOnClockSkew(() =>
+        client.from('collection_items').select('game_id, condition, added_at').order('added_at', { ascending: false }),
+      )
       check(error)
       return (data ?? []) as CollectionItem[]
     },
     async own(gameId, condition: Condition) {
-      const { error } = await client
-        .from('collection_items')
-        .upsert({ user_id: await uid(), game_id: gameId, condition }, { onConflict: 'user_id,game_id' })
+      const user_id = await uid()
+      const { error } = await retryOnClockSkew(() =>
+        client.from('collection_items').upsert({ user_id, game_id: gameId, condition }, { onConflict: 'user_id,game_id' }),
+      )
       check(error)
     },
     async disown(gameId) {
-      const { error } = await client
-        .from('collection_items')
-        .delete()
-        .eq('user_id', await uid())
-        .eq('game_id', gameId)
+      const user_id = await uid()
+      const { error } = await retryOnClockSkew(() =>
+        client.from('collection_items').delete().eq('user_id', user_id).eq('game_id', gameId),
+      )
       check(error)
     },
     async deleteAccount() {
-      const { error } = await client.rpc('delete_my_account')
+      const { error } = await retryOnClockSkew(() => client.rpc('delete_my_account'))
       check(error)
       await client.auth.signOut()
     },
