@@ -155,11 +155,6 @@ function Shelf() {
           A dash means no listing in that condition cleared the four-listing minimum today.
         </span>
       </p>
-      {account.error && (
-        <p role="alert" className="text-xs font-semibold text-[var(--destructive)]">
-          {account.error}
-        </p>
-      )}
     </div>
   )
 }

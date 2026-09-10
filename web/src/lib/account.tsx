@@ -183,6 +183,11 @@ function AccountState({
     data: new Map(),
   })
   const [error, setError] = useState<string | null>(null)
+  // A failed write's message belongs to the page it happened on; leaving the
+  // page gives the status strip back to the price caveat.
+  useEffect(() => {
+    setError(null)
+  }, [location.pathname])
   const [signInError, setSignInError] = useState<string | null>(null)
   const savedRef = useRef(saved)
   savedRef.current = saved

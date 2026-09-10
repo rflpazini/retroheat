@@ -28,7 +28,7 @@ function browserDeps(): ReloadDeps {
 /** True when a dynamic import failed because the file behind it is gone or unreachable. */
 export function isStaleChunkError(error: unknown): boolean {
   const message = error instanceof Error ? error.message : typeof error === 'string' ? error : ''
-  return /Failed to fetch dynamically imported module|Importing a module script failed|error loading dynamically imported module|Unable to preload CSS|Loading (CSS )?chunk/i.test(
+  return /Failed to fetch dynamically imported module|Importing a module script failed|error loading dynamically imported module|Unable to preload CSS/i.test(
     message,
   )
 }

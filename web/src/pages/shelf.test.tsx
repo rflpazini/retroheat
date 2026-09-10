@@ -237,6 +237,7 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
         <AccountProvider backend={() => Promise.resolve(backend)}>
           <Routes>
             <Route path="/" element={<AppShell />}>
+              <Route index element={<p>home page</p>} />
               <Route path="p/:platform" element={<Platform />} />
             </Route>
           </Routes>
@@ -249,9 +250,17 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     await user.click(await screen.findByRole('menuitemradio', { name: /loose/i }))
     const alert = await screen.findByRole('alert')
     expect(alert.textContent).toMatch(/your shelf was not saved: new row violates row-level security policy/i)
+    // Said once, on the strip: the page itself does not repeat it.
+    expect(screen.getAllByRole('alert')).toHaveLength(1)
     // The optimistic "Loose" is gone again; the key is back to unowned.
     await waitFor(() => expect(screen.getByRole('button', { name: ownAs(priced.title) })).toBeDefined())
     expect(screen.queryByRole('button', { name: ownAs(priced.title, 'Loose') })).toBeNull()
+
+    // Leaving the page hands the strip back to the price caveat.
+    await user.click(screen.getAllByRole('link', { name: /trending/i })[0])
+    await waitFor(() => expect(screen.getByText('home page')).toBeDefined())
+    await waitFor(() => expect(screen.queryByRole('alert')).toBeNull())
+    expect(document.body.textContent).toMatch(/median asking price/i)
   })
 
   it('a signed-out visitor gets the same two controls on board rows, and both ask to sign in', async () => {

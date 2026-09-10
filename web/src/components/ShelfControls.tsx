@@ -85,11 +85,6 @@ export function OwnControl({ gameId }: { gameId: string }) {
           Remove
         </button>
       )}
-      {account.error && (
-        <p role="alert" className="text-xs font-semibold text-[var(--destructive)]">
-          {account.error}
-        </p>
-      )}
     </div>
   )
 }
