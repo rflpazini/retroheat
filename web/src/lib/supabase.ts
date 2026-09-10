@@ -1,5 +1,5 @@
-import { retryOnClockSkew, skewMessage, type ApiError } from '@/lib/retry'
-import type { AuthEvent, AuthUser, CollectionItem, ShelfBackend } from '@/lib/shelf'
+import { explainError, retryOnClockSkew, type ApiError } from '@/lib/retry'
+import type { AuthEvent, AuthUser, ShelfBackend } from '@/lib/shelf'
 import type { Condition } from '@/lib/types'
 
 export function supabaseEnv(): { url: string; anonKey: string } | null {
@@ -57,7 +57,7 @@ export async function loadSupabaseBackend(): Promise<ShelfBackend> {
   }
 
   const check = (error: ApiError | null) => {
-    if (error) throw new Error(skewMessage(error))
+    if (error) throw new Error(explainError(error))
   }
 
   return {
@@ -119,11 +119,22 @@ export async function loadSupabaseBackend(): Promise<ShelfBackend> {
       check(error)
     },
     async listCollection() {
+      // Every column, so a site deployed before migration 0003 still loads
+      // the shelf. A row without the paid_cents key at all means the column
+      // does not exist yet, and the page hides the field rather than offer a
+      // write that cannot land. Row mirrors the table by hand: keep it in
+      // step with supabase/migrations.
       const { data, error } = await retryOnClockSkew(() =>
-        client.from('collection_items').select('game_id, condition, added_at').order('added_at', { ascending: false }),
+        client.from('collection_items').select('*').order('added_at', { ascending: false }),
       )
       check(error)
-      return (data ?? []) as CollectionItem[]
+      type Row = { game_id: string; condition: Condition; added_at: string; paid_cents?: number | null }
+      return ((data ?? []) as Row[]).map((r) => ({
+        game_id: r.game_id,
+        condition: r.condition,
+        added_at: r.added_at,
+        paid_cents: 'paid_cents' in r ? (r.paid_cents ?? null) : undefined,
+      }))
     },
     async own(gameId, condition: Condition) {
       const user_id = await uid()
@@ -136,6 +147,13 @@ export async function loadSupabaseBackend(): Promise<ShelfBackend> {
       const user_id = await uid()
       const { error } = await retryOnClockSkew(() =>
         client.from('collection_items').delete().eq('user_id', user_id).eq('game_id', gameId),
+      )
+      check(error)
+    },
+    async setPaid(gameId, cents) {
+      const user_id = await uid()
+      const { error } = await retryOnClockSkew(() =>
+        client.from('collection_items').update({ paid_cents: cents }).eq('user_id', user_id).eq('game_id', gameId),
       )
       check(error)
     },

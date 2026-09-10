@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { isClockSkew, retryOnClockSkew, skewMessage } from './retry'
+import { explainError, isClockSkew, retryOnClockSkew, skewMessage } from './retry'
 
 describe('retrying a request the database refused for clock skew', () => {
   it('recognises PostgREST\'s "issued at future" refusal by code or by message', () => {
@@ -47,5 +47,18 @@ describe('retrying a request the database refused for clock skew', () => {
     expect(skewMessage({ code: 'PGRST303', message: 'JWT issued at future' })).toMatch(/clock/i)
     expect(skewMessage({ code: 'PGRST303', message: 'JWT issued at future' })).toContain('JWT issued at future')
     expect(skewMessage({ message: 'permission denied' })).toBe('permission denied')
+  })
+})
+
+describe('explainError', () => {
+  it('names a missing column as a migration not yet applied', () => {
+    const text = explainError({ code: 'PGRST204', message: "Could not find the 'paid_cents' column of 'collection_items' in the schema cache" })
+    expect(text).toMatch(/migration/i)
+    expect(text).toContain('paid_cents')
+  })
+
+  it('otherwise defers to the clock-skew wording', () => {
+    expect(explainError({ code: 'PGRST303', message: 'JWT issued at future' })).toMatch(/clock/i)
+    expect(explainError({ message: 'permission denied' })).toBe('permission denied')
   })
 })

@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
 import { useAccount } from '@/lib/account'
 import { useJson } from '@/lib/data'
-import { conditionColor, money } from '@/lib/format'
+import { conditionColor, heat, money, moneyExact, pct, signedMoney } from '@/lib/format'
 import { usePriceIndex } from '@/lib/prices'
 import { shelfValue, type ShelfLine } from '@/lib/shelf'
 import { CONDITION_LABELS, PLATFORM_SHORT, type CatalogFile, type CatalogGame } from '@/lib/types'
+import { PaidField } from '@/components/PaidField'
 import { QuickAdd } from '@/components/QuickAdd'
 import { ShelfGate, ShelfRowControls, shelfButton } from '@/components/ShelfControls'
 import { Message } from '@/components/States'
@@ -67,6 +68,44 @@ function Shelf() {
           {items.length} {items.length === 1 ? 'game' : 'games'} · {value.priced} priced · {value.unpriced} unpriced at
           their condition · asking prices, not appraisals
         </p>
+
+        {/* The shelf read against what it cost, for the copies where both numbers exist. */}
+        <div className="mt-4 border-t-2 border-dotted border-[var(--input)] pt-3">
+          {!value.paid_supported ? (
+            <p className="text-xs">
+              Recording what you paid needs the database migration{' '}
+              <code>supabase/migrations/0003_paid_price.sql</code>, which this copy has not applied yet.
+            </p>
+          ) : value.compared > 0 ? (
+            <div className="flex flex-wrap items-end gap-x-8 gap-y-3">
+              <div>
+                <p className="eyebrow">Paid</p>
+                <p className="tabular text-lg font-bold">{moneyExact(value.paid_cents)}</p>
+              </div>
+              <div>
+                <p className="eyebrow">Asking today</p>
+                <p className="tabular text-lg font-bold">{moneyExact(value.today_cents)}</p>
+              </div>
+              <div>
+                <p className="eyebrow">Gain</p>
+                <p className="flex items-center gap-2">
+                  <span className="tabular text-lg font-bold" style={{ color: heat(value.gain_pct) }}>
+                    {signedMoney(value.gain_cents)}
+                  </span>
+                  {value.gain_pct !== null && <TrendPill value={value.gain_pct} showIcon={false} />}
+                </p>
+              </div>
+              <p className="eyebrow pb-1">
+                {value.compared} of {items.length} compared
+              </p>
+            </div>
+          ) : (
+            <p className="text-xs">
+              Type what you paid in the Paid column to read the shelf against it. A copy counts once it has both a
+              paid price and a price today.
+            </p>
+          )}
+        </div>
       </Window>
 
       {value.movers.length > 0 && (
@@ -90,15 +129,25 @@ function Shelf() {
 
       <Window title="Shelf" bodyClassName="p-0" order={2}>
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[36rem] border-collapse">
+          <table className={`w-full border-collapse ${value.paid_supported ? 'min-w-[48rem]' : 'min-w-[36rem]'}`}>
             <thead>
               <tr className="border-b-2 border-[var(--border)] bg-[var(--muted)]">
                 <th scope="col" className="p-2 text-left">
                   <span className="eyebrow">Game</span>
                 </th>
+                {value.paid_supported && (
+                  <th scope="col" className="p-2 text-right">
+                    <span className="eyebrow">Paid</span>
+                  </th>
+                )}
                 <th scope="col" className="p-2 text-right">
                   <span className="eyebrow">Today</span>
                 </th>
+                {value.paid_supported && (
+                  <th scope="col" className="p-2 text-right">
+                    <span className="eyebrow">Gain</span>
+                  </th>
+                )}
                 <th scope="col" className="p-2 text-right">
                   <span className="eyebrow">7 days</span>
                 </th>
@@ -122,6 +171,11 @@ function Shelf() {
                         {l.entry?.stale && ' · stale'}
                       </p>
                     </td>
+                    {value.paid_supported && (
+                      <td className="p-2 text-right">
+                        <PaidField gameId={id} title={nameOf(l)} value={l.paid_cents} />
+                      </td>
+                    )}
                     <td className="p-2 text-right">
                       {/* The price is for the copy's condition, so the condition sits under it. */}
                       <div className="flex flex-col items-end">
@@ -136,6 +190,20 @@ function Shelf() {
                         </span>
                       </div>
                     </td>
+                    {value.paid_supported && (
+                      <td className="p-2 text-right">
+                        {l.gain_cents === null ? (
+                          <span className="text-xs text-[var(--muted-foreground)]">—</span>
+                        ) : (
+                          <div className="flex flex-col items-end">
+                            <span className="tabular text-xs font-bold" style={{ color: heat(l.gain_pct) }}>
+                              {signedMoney(l.gain_cents)}
+                            </span>
+                            {l.gain_pct !== null && <span className="eyebrow">{pct(l.gain_pct)} vs paid</span>}
+                          </div>
+                        )}
+                      </td>
+                    )}
                     <td className="p-2 text-right">
                       <TrendPill value={l.entry?.pct_7d ?? null} showIcon={false} />
                     </td>
@@ -152,7 +220,8 @@ function Shelf() {
 
       <p className="text-[0.7rem] text-[var(--card-foreground)]">
         <span className="window inline-block px-2 py-1">
-          A dash means no listing in that condition cleared the four-listing minimum today.
+          A dash means no listing in that condition cleared the four-listing minimum today. Gains compare that
+          asking price with what you typed as paid, in the same dollars.
         </span>
       </p>
     </div>

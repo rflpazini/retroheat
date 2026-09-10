@@ -45,3 +45,15 @@ export function skewMessage(error: ApiError): string {
   if (!isClockSkew(error)) return error.message
   return `the sign-in server's clock is ahead of the database's (${error.message}); wait a minute and try again`
 }
+
+/**
+ * The text shown for a failed database call. Two refusals get plain words:
+ * the clock skew above, and a column the schema does not have yet, which
+ * means a migration under supabase/migrations has not been applied.
+ */
+export function explainError(error: ApiError): string {
+  if (error.code === 'PGRST204' || /schema cache/i.test(error.message)) {
+    return `the database has not been updated for this yet (apply the latest migration under supabase/migrations); ${error.message}`
+  }
+  return skewMessage(error)
+}

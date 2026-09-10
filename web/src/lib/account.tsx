@@ -23,6 +23,8 @@ export interface Account {
   collection: Loadable<Map<string, CollectionItem>>
   owned: (id: string) => CollectionItem | undefined
   setOwned: (id: string, condition: Condition | null) => Promise<void>
+  /** Records what an owned copy cost, or forgets it with null. */
+  setPaid: (id: string, cents: number | null) => Promise<void>
   /** The last failed write, in the backend's words; cleared by the next success. */
   error: string | null
   /** Why the last sign-in redirect failed, e.g. a magic link opened in another browser. */
@@ -52,6 +54,7 @@ const disabled: Account = {
   collection: { status: 'ready', data: new Map() },
   owned: () => undefined,
   setOwned: noop,
+  setPaid: noop,
   error: null,
   signInError: null,
 }
@@ -324,8 +327,18 @@ function AccountState({
     const cur = collectionRef.current
     if (cur.status !== 'ready') return
     const next = new Map(cur.data)
-    if (condition) next.set(id, { game_id: id, condition, added_at: new Date().toISOString() })
-    else next.delete(id)
+    const before = cur.data.get(id)
+    // A change of condition keeps what the copy cost; the server does the same.
+    if (condition) {
+      next.set(id, {
+        game_id: id,
+        condition,
+        added_at: before?.added_at ?? new Date().toISOString(),
+        paid_cents: before?.paid_cents ?? null,
+      })
+    } else {
+      next.delete(id)
+    }
     setCollection({ status: 'ready', data: next })
     try {
       if (condition) await b.own(id, condition)
@@ -333,6 +346,32 @@ function AccountState({
       setError(null)
     } catch (e) {
       setCollection(cur)
+      setError(messageOf(e))
+    }
+  }, [])
+
+  // The latest edit of a field wins: a slower earlier write must not put its
+  // value, or its failure, over a later one.
+  const paidSeq = useRef(new Map<string, number>())
+  const setPaid = useCallback(async (id: string, cents: number | null) => {
+    const seq = (paidSeq.current.get(id) ?? 0) + 1
+    paidSeq.current.set(id, seq)
+    const b = await ensure()
+    const cur = collectionRef.current
+    if (cur.status !== 'ready') return
+    const before = cur.data.get(id)
+    if (!before) return
+    const next = new Map(cur.data)
+    next.set(id, { ...before, paid_cents: cents })
+    setCollection({ status: 'ready', data: next })
+    try {
+      await b.setPaid(id, cents)
+      if (paidSeq.current.get(id) !== seq) return
+      setError(null)
+    } catch (e) {
+      if (paidSeq.current.get(id) !== seq) return
+      // Put back this one field, not the whole shelf as it was.
+      setCollection((c) => (c.status === 'ready' ? { status: 'ready', data: new Map(c.data).set(id, before) } : c))
       setError(messageOf(e))
     }
   }, [])
@@ -361,10 +400,11 @@ function AccountState({
       collection,
       owned: (id) => (collection.status === 'ready' ? collection.data.get(id) : undefined),
       setOwned,
+      setPaid,
       error,
       signInError,
     }),
-    [status, user, signInOpen, ensure, signInWithGoogle, signInWithEmail, signOut, deleteAccount, saved, toggleSaved, collection, setOwned, error, signInError],
+    [status, user, signInOpen, ensure, signInWithGoogle, signInWithEmail, signOut, deleteAccount, saved, toggleSaved, collection, setOwned, setPaid, error, signInError],
   )
 
   return <AccountContext.Provider value={value}>{children}</AccountContext.Provider>

@@ -37,7 +37,7 @@ export function memoryBackend(seed: {
   const state: MemoryState = {
     user: seed.user ?? null,
     saved: new Set(seed.saved ?? []),
-    collection: new Map((seed.collection ?? []).map((c) => [c.game_id, c])),
+    collection: new Map((seed.collection ?? []).map((c) => [c.game_id, { ...c, paid_cents: c.paid_cents ?? null }])),
     sentTo: null,
     googleRedirect: null,
     deleted: false,
@@ -87,11 +87,23 @@ export function memoryBackend(seed: {
     },
     async own(id, condition: Condition) {
       requireUser()
-      state.collection.set(id, { game_id: id, condition, added_at: '2026-09-07T00:00:00Z' })
+      const before = state.collection.get(id)
+      state.collection.set(id, {
+        game_id: id,
+        condition,
+        added_at: before?.added_at ?? '2026-09-07T00:00:00Z',
+        paid_cents: before?.paid_cents ?? null,
+      })
     },
     async disown(id) {
       requireUser()
       state.collection.delete(id)
+    },
+    async setPaid(id, cents) {
+      requireUser()
+      const before = state.collection.get(id)
+      if (!before) throw new Error('Not in the collection')
+      state.collection.set(id, { ...before, paid_cents: cents })
     },
     async deleteAccount() {
       requireUser()

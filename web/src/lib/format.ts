@@ -8,6 +8,46 @@ export function money(cents: number | null | undefined): string {
     : `$${dollars.toFixed(2)}`
 }
 
+/** Money to the cent whatever the size, for a ledger where the cents are the point. */
+export function moneyExact(cents: number | null | undefined): string {
+  if (cents == null) return '—'
+  return `$${(cents / 100).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+}
+
+/** A gain or loss in money, to the cent and with its sign; zero and unknown stay plain. */
+export function signedMoney(cents: number | null | undefined): string {
+  if (cents == null) return '—'
+  if (cents === 0) return moneyExact(0)
+  return `${cents < 0 ? '-' : '+'}${moneyExact(Math.abs(cents))}`
+}
+
+/**
+ * What a person typed for a price, in cents, or null when it is not one.
+ * Accepts a currency sign, thousands separators, and either "." or "," as
+ * the decimal mark: a Brazilian keyboard types 12,50 and means $12.50. When
+ * both marks appear the later one is the decimal; a lone mark is the decimal
+ * when one or two digits follow it, and a thousands separator when exactly
+ * three do.
+ */
+export function parseMoney(text: string): number | null {
+  const raw = text.replace(/[^\d.,-]/g, '')
+  if (!raw || raw.includes('-')) return null
+  const lastDot = raw.lastIndexOf('.')
+  const lastComma = raw.lastIndexOf(',')
+  const at = Math.max(lastDot, lastComma)
+  let normalised = raw
+  if (at !== -1) {
+    const after = raw.slice(at + 1)
+    const both = lastDot !== -1 && lastComma !== -1
+    const digits = (part: string) => part.replace(/[.,]/g, '')
+    if (both || after.length <= 2) normalised = `${digits(raw.slice(0, at)) || '0'}.${after}`
+    else if (after.length === 3) normalised = digits(raw)
+    else return null
+  }
+  if (!/^\d+(\.\d{1,2})?$/.test(normalised)) return null
+  return Math.round(Number(normalised) * 100)
+}
+
 export function pct(value: number | null | undefined): string {
   if (value == null) return '—'
   const rounded = Math.round(value * 10) / 10

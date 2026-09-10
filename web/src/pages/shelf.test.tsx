@@ -6,7 +6,7 @@ import userEvent from '@testing-library/user-event'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import { AccountProvider } from '../lib/account'
 import { resetCache } from '../lib/data'
-import { money } from '../lib/format'
+import { money, signedMoney } from '../lib/format'
 import type { ShelfBackend } from '../lib/shelf'
 import { memoryBackend, testUser } from '../lib/shelf-memory'
 import type { LatestFile, TrendingFile } from '../lib/types'
@@ -167,6 +167,118 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     await waitFor(() => expect(screen.queryByRole('button', { name: ownAs(firstTitle, 'Loose') })).toBeNull())
     // The movers window may name the survivor too, so look for the link in the table.
     await waitFor(() => expect(document.activeElement).toBe(within(table).getByRole('link', { name: survivor.title })))
+  })
+
+  it('records what was paid for a copy and shows the gain against today', async () => {
+    if (!priced) return
+    const { backend, state } = memoryBackend({
+      user: testUser,
+      collection: [{ game_id: priced.id, condition: 'loose', added_at: '2026-09-07T00:00:00Z' }],
+    })
+    renderAt('/collection', <Collection />, '/collection', backend)
+    const user = userEvent.setup()
+
+    const field = await screen.findByRole('textbox', { name: paidFor(priced.title) })
+    const today = priced.prices.loose!.median_cents
+    const paid = Math.round(today / 2)
+    await user.type(field, `${(paid / 100).toFixed(2)}{Enter}`)
+    await waitFor(() => expect(state.collection.get(priced.id)?.paid_cents).toBe(paid))
+
+    // The line and the summary both compare today's asking price with what was paid.
+    await waitFor(() => expect(document.body.textContent).toContain(signedMoney(today - paid)))
+    expect(document.body.textContent).toMatch(/1 of 1 compared/i)
+    expect(document.body.textContent).toContain(money(paid))
+  })
+
+  it('keeps the paid price when the condition changes, and clears it when the field is emptied', async () => {
+    if (!priced) return
+    const { backend, state } = memoryBackend({
+      user: testUser,
+      collection: [{ game_id: priced.id, condition: 'loose', added_at: '2026-09-07T00:00:00Z', paid_cents: 1234 }],
+    })
+    renderAt('/collection', <Collection />, '/collection', backend)
+    const user = userEvent.setup()
+
+    const field = (await screen.findByRole('textbox', { name: paidFor(priced.title) })) as HTMLInputElement
+    expect(field.value).toBe('12.34')
+
+    await user.click(screen.getByRole('button', { name: ownAs(priced.title, 'Loose') }))
+    await user.click(await screen.findByRole('menuitemradio', { name: /complete/i }))
+    await waitFor(() => expect(state.collection.get(priced.id)?.condition).toBe('cib'))
+    expect(state.collection.get(priced.id)?.paid_cents).toBe(1234)
+    expect((screen.getByRole('textbox', { name: paidFor(priced.title) }) as HTMLInputElement).value).toBe('12.34')
+
+    await user.clear(field)
+    await user.tab()
+    await waitFor(() => expect(state.collection.get(priced.id)?.paid_cents).toBeNull())
+  })
+
+  it('puts back the stored paid price when the typed value is not a price', async () => {
+    if (!priced) return
+    const { backend, state } = memoryBackend({
+      user: testUser,
+      collection: [{ game_id: priced.id, condition: 'loose', added_at: '2026-09-07T00:00:00Z', paid_cents: 1234 }],
+    })
+    renderAt('/collection', <Collection />, '/collection', backend)
+    const user = userEvent.setup()
+    const field = (await screen.findByRole('textbox', { name: paidFor(priced.title) })) as HTMLInputElement
+    await user.clear(field)
+    await user.type(field, 'abc{Enter}')
+    await waitFor(() => expect(field.value).toBe('12.34'))
+    expect(state.collection.get(priced.id)?.paid_cents).toBe(1234)
+
+    // More than the store allows snaps back too, instead of failing on the server.
+    await user.clear(field)
+    await user.type(field, '2000000{Enter}')
+    await waitFor(() => expect(field.value).toBe('12.34'))
+    expect(state.collection.get(priced.id)?.paid_cents).toBe(1234)
+  })
+
+  it('lets the latest edit win when an earlier save is slow to come back', async () => {
+    if (!priced) return
+    const { backend, state } = memoryBackend({
+      user: testUser,
+      collection: [{ game_id: priced.id, condition: 'loose', added_at: '2026-09-07T00:00:00Z' }],
+    })
+    // The first write lands at once but its reply is held back until released.
+    const original = backend.setPaid
+    let release: () => void = () => {}
+    let held = false
+    backend.setPaid = async (id, cents) => {
+      await original(id, cents)
+      if (!held) {
+        held = true
+        await new Promise<void>((resolve) => {
+          release = resolve
+        })
+      }
+    }
+    renderAt('/collection', <Collection />, '/collection', backend)
+    const user = userEvent.setup()
+    const field = (await screen.findByRole('textbox', { name: paidFor(priced.title) })) as HTMLInputElement
+
+    await user.type(field, '10{Enter}')
+    await user.clear(field)
+    await user.type(field, '20{Enter}')
+    await waitFor(() => expect(state.collection.get(priced.id)?.paid_cents).toBe(2000))
+    expect(field.value).toBe('20.00')
+
+    release()
+    await new Promise((r) => setTimeout(r, 20))
+    expect(field.value).toBe('20.00')
+    expect(state.collection.get(priced.id)?.paid_cents).toBe(2000)
+  })
+
+  it('hides the paid field when the store has no column for it yet', async () => {
+    if (!priced) return
+    const { backend } = memoryBackend({ user: testUser })
+    // A store from before migration 0003 returns rows without the key at all.
+    backend.listCollection = async () => [{ game_id: priced.id, condition: 'loose', added_at: '2026-09-07T00:00:00Z' }]
+    renderAt('/collection', <Collection />, '/collection', backend)
+    await waitFor(() => expect(document.body.textContent).toMatch(/shelf value/i))
+    expect(screen.queryByRole('textbox', { name: paidFor(priced.title) })).toBeNull()
+    expect(document.body.textContent).toMatch(/0003_paid_price\.sql/)
+    expect(document.body.textContent).not.toMatch(/\bGain\b/)
   })
 
   it('lists saved games with their price and removes one', async () => {
@@ -330,6 +442,11 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     expect(screen.getByRole('button', { name: /i own this/i })).toBeDefined()
   })
 })
+
+/** The accessible name of a row's paid-price field. */
+function paidFor(title: string): string {
+  return `Paid for ${title}, in dollars`
+}
 
 /** The accessible name of a row's own-as menu button, with the condition it currently shows. */
 function ownAs(title: string, condition?: string): string {

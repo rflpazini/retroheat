@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { companions, formatDate, headlinePrice, heat, middleHalf, money, pct, priceMap } from './format'
+import { companions, formatDate, headlinePrice, heat, middleHalf, money, moneyExact, pct, priceMap, parseMoney, signedMoney } from './format'
 
 describe('money', () => {
   it('shows cents below a thousand dollars', () => {
@@ -115,5 +115,50 @@ describe('formatDate', () => {
 
   it('passes through text it cannot parse', () => {
     expect(formatDate('unknown')).toBe('unknown')
+  })
+})
+
+describe('parseMoney', () => {
+  it('reads what a person types for a price, in cents', () => {
+    expect(parseMoney('12')).toBe(1200)
+    expect(parseMoney('12.5')).toBe(1250)
+    expect(parseMoney('$12.50')).toBe(1250)
+    expect(parseMoney(' 1,299.99 ')).toBe(129999)
+    expect(parseMoney('0')).toBe(0)
+  })
+
+  it('accepts a comma as the decimal mark, as a Brazilian keyboard produces', () => {
+    expect(parseMoney('12,50')).toBe(1250)
+    expect(parseMoney('1.299,99')).toBe(129999)
+  })
+
+  it('returns null for nothing, nonsense or a negative amount', () => {
+    expect(parseMoney('')).toBeNull()
+    expect(parseMoney('   ')).toBeNull()
+    expect(parseMoney('abc')).toBeNull()
+    expect(parseMoney('-5')).toBeNull()
+    expect(parseMoney('12.3456')).toBeNull()
+    expect(parseMoney('1.234,567')).toBeNull()
+  })
+
+  it('reads a lone mark before exactly three digits as a thousands separator', () => {
+    expect(parseMoney('12.345')).toBe(1234500)
+    expect(parseMoney('1,299')).toBe(129900)
+    expect(parseMoney('.5')).toBe(50)
+  })
+})
+
+describe('signedMoney', () => {
+  it('always shows the direction of a gain or loss', () => {
+    expect(signedMoney(1234)).toBe('+$12.34')
+    expect(signedMoney(-1234)).toBe('-$12.34')
+    expect(signedMoney(0)).toBe('$0.00')
+    expect(signedMoney(null)).toBe('—')
+  })
+
+  it('keeps the cents above a thousand dollars, unlike a board price', () => {
+    expect(signedMoney(123456)).toBe('+$1,234.56')
+    expect(moneyExact(100040)).toBe('$1,000.40')
+    expect(money(100040)).toBe('$1,000')
   })
 })
