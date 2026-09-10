@@ -6,7 +6,7 @@ import { usePriceIndex } from '@/lib/prices'
 import { CONDITION_LABELS, PLATFORM_SHORT, type CatalogFile, type CatalogGame } from '@/lib/types'
 import { OtherPrices } from '@/components/OtherPrices'
 import { QuickAdd } from '@/components/QuickAdd'
-import { ConditionSelect, ShelfGate, shelfButton } from '@/components/ShelfControls'
+import { ShelfGate, ShelfRowControls, shelfButton } from '@/components/ShelfControls'
 import { Message } from '@/components/States'
 import { TrendPill } from '@/components/TrendPill'
 import { Window } from '@/components/Window'
@@ -87,7 +87,6 @@ function SavedList() {
                 const game = byId.get(id)
                 const entry = index.get(id)
                 const headline = headlineFromMap(entry?.prices)
-                const owned = account.owned(id)
                 return (
                   <tr key={id} className="border-b border-[var(--input)] last:border-0 hover:bg-[var(--secondary)]">
                     <td className="p-2">
@@ -114,22 +113,7 @@ function SavedList() {
                       <TrendPill value={entry?.pct_7d ?? null} showIcon={false} />
                     </td>
                     <td className="p-2 text-right">
-                      <div className="flex items-center justify-end gap-2">
-                        <ConditionSelect
-                          value={owned?.condition ?? ''}
-                          label={`Own ${game?.title ?? id} as`}
-                          placeholder="Own it as…"
-                          onChange={(c) => void account.setOwned(id, c)}
-                        />
-                        <button
-                          type="button"
-                          className="text-xs underline"
-                          onClick={() => void account.toggleSaved(id)}
-                          aria-label={`Remove ${game?.title ?? id} from saved games`}
-                        >
-                          Remove
-                        </button>
-                      </div>
+                      <ShelfRowControls gameId={id} title={game?.title ?? id} />
                     </td>
                   </tr>
                 )

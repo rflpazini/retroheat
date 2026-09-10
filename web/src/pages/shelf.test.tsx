@@ -9,7 +9,7 @@ import { resetCache } from '../lib/data'
 import { money } from '../lib/format'
 import type { ShelfBackend } from '../lib/shelf'
 import { memoryBackend, testUser } from '../lib/shelf-memory'
-import type { LatestFile } from '../lib/types'
+import type { LatestFile, TrendingFile } from '../lib/types'
 import { Collection } from './Collection'
 import { Saved } from './Saved'
 
@@ -118,10 +118,54 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     renderAt('/collection', <Collection />, '/collection', backend)
     const user = userEvent.setup()
 
-    const select = await screen.findByLabelText(new RegExp(`condition of ${escapeRegExp(priced.title)}`, 'i'))
-    await user.selectOptions(select, 'cib')
+    // The row's own menu names the copy's condition, and reopens on it.
+    const own = await screen.findByRole('button', { name: ownAs(priced.title, 'Loose') })
+    await user.click(own)
+    await user.click(await screen.findByRole('menuitemradio', { name: /complete/i }))
     await waitFor(() => expect(state.collection.get(priced.id)?.condition).toBe('cib'))
     expect(document.body.textContent).toContain(money(priced.prices.cib!.median_cents))
+    expect(screen.getByRole('button', { name: ownAs(priced.title, 'Complete') })).toBeDefined()
+  })
+
+  it('removes a copy from the shelf through the same menu', async () => {
+    if (!priced) return
+    const { backend, state } = memoryBackend({
+      user: testUser,
+      collection: [{ game_id: priced.id, condition: 'cib', added_at: '2026-09-07T00:00:00Z' }],
+    })
+    renderAt('/collection', <Collection />, '/collection', backend)
+    const user = userEvent.setup()
+
+    await user.click(await screen.findByRole('button', { name: ownAs(priced.title, 'Complete') }))
+    await user.click(await screen.findByRole('menuitem', { name: /remove from collection/i }))
+    await waitFor(() => expect(document.body.textContent).toMatch(/nothing on the shelf yet/i))
+    expect(state.collection.size).toBe(0)
+    // The row that held the menu is gone, so focus lands on the page region, not on <body>.
+    await waitFor(() => expect(document.activeElement).toBe(screen.getByRole('region', { name: /your collection/i })))
+  })
+
+  it('moves focus to the next row when a copy is removed from a longer shelf', async () => {
+    if (!priced) return
+    const other = ps2.games.find((g) => g.id !== priced.id && g.prices.loose)
+    if (!other) return
+    const { backend } = memoryBackend({
+      user: testUser,
+      collection: [
+        { game_id: priced.id, condition: 'loose', added_at: '2026-09-07T00:00:00Z' },
+        { game_id: other.id, condition: 'loose', added_at: '2026-09-07T00:00:00Z' },
+      ],
+    })
+    renderAt('/collection', <Collection />, '/collection', backend)
+    const user = userEvent.setup()
+
+    // Rows are sorted by price, so remove whichever comes first and expect the survivor.
+    const table = (await screen.findByRole('table')) as HTMLTableElement
+    const firstTitle = table.tBodies[0].rows[0].querySelector('a')!.textContent!
+    const survivor = firstTitle === priced.title ? other : priced
+    await user.click(screen.getByRole('button', { name: ownAs(firstTitle, 'Loose') }))
+    await user.click(await screen.findByRole('menuitem', { name: /remove from collection/i }))
+    await waitFor(() => expect(screen.queryByRole('button', { name: ownAs(firstTitle, 'Loose') })).toBeNull())
+    await waitFor(() => expect(document.activeElement).toBe(screen.getByRole('link', { name: survivor.title })))
   })
 
   it('lists saved games with their price and removes one', async () => {
@@ -132,9 +176,13 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
 
     await waitFor(() => expect(document.body.textContent).toContain(priced.title))
     expect(document.body.textContent).toMatch(/1 saved/)
-    await user.click(screen.getByRole('button', { name: /remove .* from saved games/i }))
+    // On the saved list the bookmark is pressed; pressing it again lets go.
+    const bookmark = screen.getByRole('button', { name: `Save ${priced.title}` })
+    expect(bookmark.getAttribute('aria-pressed')).toBe('true')
+    await user.click(bookmark)
     await waitFor(() => expect(document.body.textContent).toMatch(/nothing saved yet/i))
     expect(state.saved.size).toBe(0)
+    await waitFor(() => expect(document.activeElement).toBe(screen.getByRole('region', { name: /your saved games/i })))
   })
 
   it('the game page saves a game and records the copy owned', async () => {
@@ -162,22 +210,44 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     const user = userEvent.setup()
 
     const save = await screen.findByRole('button', { name: `Save ${priced.title}` })
+    expect(save.getAttribute('aria-pressed')).toBe('false')
     await user.click(save)
-    await waitFor(() => expect(screen.getByRole('button', { name: `Saved ${priced.title}` }).getAttribute('aria-pressed')).toBe('true'))
+    await waitFor(() => expect(save.getAttribute('aria-pressed')).toBe('true'))
     expect(state.saved.has(priced.id)).toBe(true)
 
-    await user.selectOptions(screen.getByLabelText(`Own ${priced.title} as`), 'loose')
+    await user.click(screen.getByRole('button', { name: ownAs(priced.title) }))
+    await user.click(await screen.findByRole('menuitemradio', { name: /loose/i }))
     await waitFor(() => expect(state.collection.get(priced.id)?.condition).toBe('loose'))
+    // The row now reads the condition back, so a board doubles as a checklist.
+    expect(screen.getByRole('button', { name: ownAs(priced.title, 'Loose') })).toBeDefined()
   })
 
-  it('a signed-out visitor gets a bookmark on board rows that asks to sign in', async () => {
+  it('a signed-out visitor gets the same two controls on board rows, and both ask to sign in', async () => {
     if (!priced) return
     const { backend } = memoryBackend({ user: null })
     const { Platform } = await import('./Platform')
     serveTrimmedBoard('ps2', [priced.id, ...ps2.games.slice(0, 4).map((g) => g.id)])
     renderAt('/p/ps2', <Platform />, '/p/:platform', backend)
     expect(await screen.findByRole('button', { name: `Sign in to save ${priced.title}` })).toBeDefined()
-    expect(screen.queryByLabelText(`Own ${priced.title} as`)).toBeNull()
+    expect(screen.getByRole('button', { name: `Sign in to add ${priced.title} to your collection` })).toBeDefined()
+    expect(screen.queryByRole('button', { name: ownAs(priced.title) })).toBeNull()
+  })
+
+  it('the trending board gives the shelf its own column for a signed-in visitor', async () => {
+    const trending = JSON.parse(fs.readFileSync(path.join(dataDir, 'trending/all.json'), 'utf8')) as TrendingFile
+    if (trending.entries.length < 2) return
+    const { backend } = memoryBackend({ user: testUser })
+    const { Home } = await import('./Home')
+    renderAt('/', <Home />, '/', backend)
+
+    const first = await screen.findByRole('button', { name: `Save ${trending.entries[0].title}` })
+    expect(first).toBeDefined()
+    // Every row carries the pair, and the header names the column.
+    const saves = screen.getAllByRole('button', { name: /^Save / })
+    const owns = screen.getAllByRole('button', { name: /^Own .* as$/ })
+    expect(saves.length).toBeGreaterThan(1)
+    expect(owns.length).toBe(saves.length)
+    expect(screen.getByText('Shelf', { selector: 'span' })).toBeDefined()
   })
 
   it('the game page invites a signed-out visitor to build a collection, and not a signed-in one', async () => {
@@ -220,6 +290,7 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
   })
 })
 
-function escapeRegExp(s: string): string {
-  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+/** The accessible name of a row's own-as menu button, with the condition it currently shows. */
+function ownAs(title: string, condition?: string): string {
+  return condition ? `Own ${title} as: ${condition}` : `Own ${title} as`
 }

@@ -6,7 +6,7 @@ import { usePriceIndex } from '@/lib/prices'
 import { shelfValue, type ShelfLine } from '@/lib/shelf'
 import { CONDITION_LABELS, PLATFORM_SHORT, type CatalogFile, type CatalogGame } from '@/lib/types'
 import { QuickAdd } from '@/components/QuickAdd'
-import { ConditionSelect, ShelfGate, shelfButton } from '@/components/ShelfControls'
+import { ShelfGate, ShelfRowControls, shelfButton } from '@/components/ShelfControls'
 import { Message } from '@/components/States'
 import { TrendPill } from '@/components/TrendPill'
 import { Window } from '@/components/Window'
@@ -96,9 +96,6 @@ function Shelf() {
                 <th scope="col" className="p-2 text-left">
                   <span className="eyebrow">Game</span>
                 </th>
-                <th scope="col" className="p-2 text-left">
-                  <span className="eyebrow">Condition</span>
-                </th>
                 <th scope="col" className="p-2 text-right">
                   <span className="eyebrow">Today</span>
                 </th>
@@ -125,32 +122,25 @@ function Shelf() {
                         {l.entry?.stale && ' · stale'}
                       </p>
                     </td>
-                    <td className="p-2">
-                      <span className="flex items-center gap-1.5">
-                        <span className="h-1 w-4" style={{ background: conditionColor(l.item.condition) }} aria-hidden />
-                        <span className="eyebrow">{CONDITION_LABELS[l.item.condition]}</span>
-                      </span>
+                    <td className="p-2 text-right">
+                      {/* The price is for the copy's condition, so the condition sits under it. */}
+                      <div className="flex flex-col items-end">
+                        <span className="tabular text-xs font-bold">{money(l.price_cents)}</span>
+                        <span className="flex items-center gap-1.5">
+                          <span className="h-1 w-4" style={{ background: conditionColor(l.item.condition) }} aria-hidden />
+                          <span className="eyebrow">
+                            <span className="sr-only">for a </span>
+                            {CONDITION_LABELS[l.item.condition]}
+                            <span className="sr-only"> copy</span>
+                          </span>
+                        </span>
+                      </div>
                     </td>
-                    <td className="tabular p-2 text-right text-xs font-bold">{money(l.price_cents)}</td>
                     <td className="p-2 text-right">
                       <TrendPill value={l.entry?.pct_7d ?? null} showIcon={false} />
                     </td>
                     <td className="p-2 text-right">
-                      <div className="flex items-center justify-end gap-2">
-                        <ConditionSelect
-                          value={l.item.condition}
-                          label={`Condition of ${nameOf(l)}`}
-                          onChange={(c) => void account.setOwned(id, c)}
-                        />
-                        <button
-                          type="button"
-                          className="text-xs underline"
-                          onClick={() => void account.setOwned(id, null)}
-                          aria-label={`Remove ${nameOf(l)} from my collection`}
-                        >
-                          Remove
-                        </button>
-                      </div>
+                      <ShelfRowControls gameId={id} title={nameOf(l)} />
                     </td>
                   </tr>
                 )

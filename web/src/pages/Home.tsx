@@ -17,6 +17,7 @@ import { DiskWindow } from '@/components/DiskWindow'
 import { LoadError, Message } from '@/components/States'
 import { OtherPrices } from '@/components/OtherPrices'
 import { ShelfRowControls } from '@/components/ShelfControls'
+import { useAccount } from '@/lib/account'
 
 type MoveWindow = 'pct_1d' | 'pct_7d' | 'pct_30d'
 
@@ -28,6 +29,16 @@ const WINDOWS: [MoveWindow, string, string][] = [
 
 /** How many movers the shelf lists after sorting by the chosen window. */
 const SHELF_SIZE = 20
+
+/*
+  The board's columns from the small breakpoint up. With accounts on, a last
+  column holds the shelf keys at one width on every row, so they line up like
+  a column of checkboxes instead of trailing each title.
+*/
+const boardColumns = {
+  plain: 'sm:grid-cols-[2.5rem_1fr_7rem_7rem_6.5rem]',
+  shelf: 'sm:grid-cols-[2.5rem_1fr_7rem_7rem_6.5rem_9.5rem]',
+}
 
 function Hero({ entry, move }: { entry: TrendEntry; move: MoveWindow }) {
   const color = heat(entry[move])
@@ -48,9 +59,9 @@ function Hero({ entry, move }: { entry: TrendEntry; move: MoveWindow }) {
             <span className="eyebrow">{CONDITION_LABELS[entry.headline_condition]} copy</span>
             <TrendPill value={entry[move]} />
             <span className="text-xs">{over}</span>
-            <ShelfRowControls gameId={entry.id} title={entry.title} />
           </div>
           <OtherPrices prices={entry.prices} headline={entry.headline_condition} className="mt-2" />
+          <ShelfRowControls gameId={entry.id} title={entry.title} className="mt-4" />
           {entry.annotation && (
             <p className="bevel-in mt-4 max-w-xl border-2 border-[var(--border)] p-2 text-xs">
               <span className="eyebrow mr-1">Why:</span>
@@ -67,22 +78,23 @@ function Hero({ entry, move }: { entry: TrendEntry; move: MoveWindow }) {
   )
 }
 
-function MoverRow({ entry, rank, move }: { entry: TrendEntry; rank: number; move: MoveWindow }) {
+function MoverRow({ entry, rank, move, shelf }: { entry: TrendEntry; rank: number; move: MoveWindow; shelf: boolean }) {
   const change = entry[move]
 
   return (
-    <div className="bevel grid grid-cols-[2rem_1fr_auto] items-center gap-3 border-2 border-[var(--border)] bg-[var(--card)] p-2.5 sm:grid-cols-[2.5rem_1fr_7rem_7rem_6.5rem]">
+    <div
+      className={`bevel grid grid-cols-[2rem_1fr_auto] items-center gap-3 border-2 border-[var(--border)] bg-[var(--card)] p-2.5 ${
+        shelf ? boardColumns.shelf : boardColumns.plain
+      }`}
+    >
       <span className="pixel text-[0.6rem] text-[var(--muted-foreground)]">
         {String(rank).padStart(2, '0')}
       </span>
 
       <div className="min-w-0">
-        <div className="flex flex-wrap items-center gap-2">
-          <Link to={`/g/${entry.id}`} className="text-sm font-semibold hover:text-[var(--primary)]">
-            <span className="line-clamp-1">{entry.title}</span>
-          </Link>
-          <ShelfRowControls gameId={entry.id} title={entry.title} />
-        </div>
+        <Link to={`/g/${entry.id}`} className="text-sm font-semibold hover:text-[var(--primary)]">
+          <span className="line-clamp-1">{entry.title}</span>
+        </Link>
         <p className="eyebrow mt-0.5">
           {PLATFORM_SHORT[entry.platform]}
           {companions(entry.prices, entry.headline_condition).map(
@@ -109,6 +121,13 @@ function MoverRow({ entry, rank, move }: { entry: TrendEntry; rank: number; move
         <p className="eyebrow">{CONDITION_LABELS[entry.headline_condition]}</p>
         <TrendPill value={change} showIcon={false} className="mt-1" />
       </div>
+
+      {/* On a phone the keys drop under the title; from the small breakpoint they take the last column. */}
+      {shelf && (
+        <div className="col-span-2 col-start-2 sm:col-span-1 sm:col-start-auto sm:justify-self-end">
+          <ShelfRowControls gameId={entry.id} title={entry.title} />
+        </div>
+      )}
     </div>
   )
 }
@@ -127,6 +146,7 @@ export function Home() {
   const [chosen, setMove] = useState<MoveWindow | null>(null)
 
   const board = useJson<TrendingFile>(`trending/${platform}.json`)
+  const shelf = useAccount().status !== 'disabled'
 
   // Until the reader picks a window the board opens on the longest one that
   // has movers. In the first week of collection only the 1 day window does,
@@ -207,16 +227,17 @@ export function Home() {
           <Hero entry={top} move={move} />
 
           <Window title="The shelf — ranked by momentum" bodyClassName="p-3" order={2}>
-            <div className="mb-2 hidden grid-cols-[2.5rem_1fr_7rem_7rem_6.5rem] gap-3 px-2.5 sm:grid">
+            <div className={`mb-2 hidden gap-3 px-2.5 sm:grid ${shelf ? boardColumns.shelf : boardColumns.plain}`}>
               <span className="eyebrow">#</span>
               <span className="eyebrow">Game</span>
               <span className="eyebrow">Status</span>
               <span className="eyebrow">Trend</span>
               <span className="eyebrow text-right">Price</span>
+              {shelf && <span className="eyebrow text-right">Shelf</span>}
             </div>
             <div className="space-y-2">
               {rest.map((entry, i) => (
-                <MoverRow key={entry.id} entry={entry} rank={i + 2} move={move} />
+                <MoverRow key={entry.id} entry={entry} rank={i + 2} move={move} shelf={shelf} />
               ))}
             </div>
           </Window>
