@@ -11,7 +11,7 @@
    "prices": {
     "loose": 2450,
     "cib": 5850,
-    "new": 10000
+    "new": 11000
    },
    "pct_1d": 0,
    "pct_7d": 25.81,
@@ -32,7 +32,7 @@
    "headline_condition": "cib",
    "price_cents": 3995,
    "prices": {
-    "loose": 1816,
+    "loose": 1831,
     "cib": 3995
    },
    "pct_1d": 0,
@@ -94,13 +94,13 @@
    "title": "Dynamite Cop",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 14995,
+   "price_cents": 14997,
    "prices": {
     "loose": 9250,
-    "cib": 14995,
+    "cib": 14997,
     "new": 29950
    },
-   "pct_1d": 0,
+   "pct_1d": 0.01,
    "pct_7d": 3.43,
    "pct_30d": null,
    "score": 3.43,
@@ -139,7 +139,7 @@
    "headline_condition": "cib",
    "price_cents": 3700,
    "prices": {
-    "loose": 2898,
+    "loose": 2796,
     "cib": 3700
    },
    "pct_1d": 0,
@@ -160,7 +160,7 @@
    "headline_condition": "cib",
    "price_cents": 3195,
    "prices": {
-    "loose": 2500,
+    "loose": 2499,
     "cib": 3195,
     "new": 8498
    },
@@ -184,7 +184,7 @@
    "prices": {
     "loose": 4995,
     "cib": 7995,
-    "new": 19000
+    "new": 18000
    },
    "pct_1d": 0,
    "pct_7d": 1.02,
@@ -248,7 +248,7 @@
    "headline_condition": "cib",
    "price_cents": 4999,
    "prices": {
-    "loose": 2399,
+    "loose": 2200,
     "cib": 4999,
     "new": 11100
    },
@@ -268,13 +268,13 @@
    "title": "Armada",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 4500,
+   "price_cents": 4670,
    "prices": {
     "loose": 1897,
-    "cib": 4500,
-    "new": 8999
+    "cib": 4670,
+    "new": 9900
    },
-   "pct_1d": 0.04,
+   "pct_1d": 3.82,
    "pct_7d": 0.07,
    "pct_30d": null,
    "score": 0.07,
@@ -292,7 +292,7 @@
    "headline_condition": "cib",
    "price_cents": 10000,
    "prices": {
-    "loose": 5399,
+    "loose": 4995,
     "cib": 10000,
     "new": 24999
    },
@@ -354,12 +354,12 @@
    "title": "Bomberman Online",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 7500,
+   "price_cents": 7498,
    "prices": {
     "loose": 3847,
-    "cib": 7500
+    "cib": 7498
    },
-   "pct_1d": -11.64,
+   "pct_1d": -11.66,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
@@ -540,47 +540,67 @@
    ]
   },
   {
-   "id": "phantasy-star-online-ver-2-dreamcast",
-   "title": "Phantasy Star Online Ver. 2",
+   "id": "legacy-of-kain-soul-reaver-dreamcast",
+   "title": "Legacy of Kain: Soul Reaver",
    "platform": "dreamcast",
-   "headline_condition": "loose",
-   "price_cents": 3800,
+   "headline_condition": "cib",
+   "price_cents": 3325,
    "prices": {
-    "loose": 3800,
-    "new": 14750
+    "loose": 1943,
+    "cib": 3325,
+    "new": 9999
    },
-   "pct_1d": 4.11,
+   "pct_1d": 0.79,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    3650,
-    3650,
-    3650,
-    3650,
-    3650
+    3299,
+    3299,
+    3299,
+    3299
    ]
   },
   {
-   "id": "project-justice-dreamcast",
-   "title": "Project Justice",
+   "id": "looney-tunes-space-race-dreamcast",
+   "title": "Looney Tunes: Space Race",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 24639,
+   "price_cents": 4999,
    "prices": {
-    "loose": 8498,
-    "cib": 24639
+    "cib": 4999,
+    "new": 11100
    },
-   "pct_1d": 7.98,
+   "pct_1d": 3.07,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    22819,
-    22819,
-    22819,
-    22819,
-    22819
+    4850,
+    4850,
+    4850,
+    4850
+   ]
+  },
+  {
+   "id": "shenmue-2-dreamcast",
+   "title": "Shenmue II",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 12398,
+   "prices": {
+    "cib": 12398
+   },
+   "pct_1d": 3.32,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    12199,
+    12199,
+    12199,
+    12100,
+    12199
    ]
   },
   {
@@ -670,25 +690,26 @@
    ]
   },
   {
-   "id": "tomb-raider-the-last-revelation-dreamcast",
-   "title": "Tomb Raider: The Last Revelation",
+   "id": "crazy-taxi-dreamcast",
+   "title": "Crazy Taxi",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 1749,
+   "price_cents": 4299,
    "prices": {
-    "loose": 1099,
-    "cib": 1749,
-    "new": 5000
+    "loose": 2180,
+    "cib": 4299,
+    "new": 12000
    },
-   "pct_1d": 0.29,
-   "pct_7d": -0.11,
+   "pct_1d": 3.59,
+   "pct_7d": -2.23,
    "pct_30d": null,
-   "score": -0.11,
+   "score": -2.23,
    "spark": [
-    1749,
-    1747,
-    1744,
-    1747
+    4397,
+    4348,
+    4397,
+    4348,
+    4299
    ]
   },
   {
@@ -731,27 +752,6 @@
     12074,
     11899,
     11899
-   ]
-  },
-  {
-   "id": "evolution-2-far-off-promise-dreamcast",
-   "title": "Evolution 2: Far Off Promise",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 7747,
-   "prices": {
-    "loose": 2999,
-    "cib": 7747
-   },
-   "pct_1d": 0,
-   "pct_7d": -3.1,
-   "pct_30d": null,
-   "score": -3.1,
-   "spark": [
-    7995,
-    7871,
-    7747,
-    7747
    ]
   },
   {
@@ -806,7 +806,7 @@
    "prices": {
     "loose": 1999,
     "cib": 3500,
-    "new": 4699
+    "new": 4844
    },
    "pct_1d": 0,
    "pct_7d": -12.5,
