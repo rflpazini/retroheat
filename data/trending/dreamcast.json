@@ -32,12 +32,12 @@
    "title": "The House of the Dead 2",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 3995,
+   "price_cents": 3997,
    "prices": {
     "loose": 1899,
-    "cib": 3995
+    "cib": 3997
    },
-   "pct_1d": 0,
+   "pct_1d": 0.05,
    "pct_7d": 6.56,
    "pct_30d": null,
    "score": 6.56,
@@ -154,7 +154,7 @@
    "prices": {
     "loose": 1897,
     "cib": 4670,
-    "new": 9900
+    "new": 9950
    },
    "pct_1d": 0,
    "pct_7d": 3.87,
@@ -174,13 +174,13 @@
    "title": "Dynamite Cop",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 14995,
+   "price_cents": 14997,
    "prices": {
     "loose": 9250,
-    "cib": 14995,
+    "cib": 14997,
     "new": 29950
    },
-   "pct_1d": 3.43,
+   "pct_1d": 3.44,
    "pct_7d": 3.43,
    "pct_30d": null,
    "score": 3.43,
@@ -222,12 +222,12 @@
    "title": "Sturmwind",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 4599,
+   "price_cents": 4794,
    "prices": {
-    "cib": 4599,
+    "cib": 4794,
     "new": 12599
    },
-   "pct_1d": 0,
+   "pct_1d": 4.24,
    "pct_7d": 2.2,
    "pct_30d": null,
    "score": 2.2,
@@ -239,6 +239,31 @@
     4500,
     4500,
     4599
+   ]
+  },
+  {
+   "id": "sonic-adventure-dreamcast",
+   "title": "Sonic Adventure",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 7995,
+   "prices": {
+    "loose": 4898,
+    "cib": 7995,
+    "new": 17750
+   },
+   "pct_1d": 6.49,
+   "pct_7d": 2.03,
+   "pct_30d": null,
+   "score": 2.03,
+   "spark": [
+    7836,
+    7876,
+    7916,
+    7916,
+    7916,
+    7916,
+    7995
    ]
   },
   {
@@ -314,68 +339,19 @@
    ]
   },
   {
-   "id": "sonic-adventure-dreamcast",
-   "title": "Sonic Adventure",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 7755,
-   "prices": {
-    "loose": 4898,
-    "cib": 7755,
-    "new": 17750
-   },
-   "pct_1d": 3.29,
-   "pct_7d": 1.02,
-   "pct_30d": null,
-   "score": 1.02,
-   "spark": [
-    7836,
-    7876,
-    7916,
-    7916,
-    7916,
-    7916,
-    7916
-   ]
-  },
-  {
-   "id": "legacy-of-kain-soul-reaver-dreamcast",
-   "title": "Legacy of Kain: Soul Reaver",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 3325,
-   "prices": {
-    "loose": 1987,
-    "cib": 3325,
-    "new": 9999
-   },
-   "pct_1d": 0,
-   "pct_7d": 0.79,
-   "pct_30d": null,
-   "score": 0.79,
-   "spark": [
-    3299,
-    3299,
-    3299,
-    3299,
-    3299,
-    3325
-   ]
-  },
-  {
    "id": "grandia-2-dreamcast",
    "title": "Grandia II",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 7995,
+   "price_cents": 7999,
    "prices": {
     "loose": 4200,
-    "cib": 7995
+    "cib": 7999
    },
-   "pct_1d": 0,
-   "pct_7d": 0.62,
+   "pct_1d": 0.05,
+   "pct_7d": 0.64,
    "pct_30d": null,
-   "score": 0.62,
+   "score": 0.64,
    "spark": [
     7948,
     7973,
@@ -383,7 +359,7 @@
     7997,
     7997,
     7997,
-    7997
+    7999
    ]
   },
   {
@@ -459,12 +435,12 @@
    "title": "Marvel vs. Capcom 2",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 19900,
+   "price_cents": 18950,
    "prices": {
     "loose": 9999,
-    "cib": 19900
+    "cib": 18950
    },
-   "pct_1d": 5.01,
+   "pct_1d": 0,
    "pct_7d": 0.01,
    "pct_30d": null,
    "score": 0.01,
@@ -479,38 +455,16 @@
    ]
   },
   {
-   "id": "18-wheeler-american-pro-trucker-dreamcast",
-   "title": "18 Wheeler: American Pro Trucker",
-   "platform": "dreamcast",
-   "headline_condition": "loose",
-   "price_cents": 1499,
-   "prices": {
-    "loose": 1499
-   },
-   "pct_1d": 0,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    1499,
-    1499,
-    1499,
-    1499,
-    1499,
-    1499
-   ]
-  },
-  {
    "id": "bangai-o-dreamcast",
    "title": "Bangai-O",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 16260,
+   "price_cents": 16000,
    "prices": {
     "loose": 7672,
-    "cib": 16260
+    "cib": 16000
    },
-   "pct_1d": 0,
+   "pct_1d": -1.6,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
@@ -617,6 +571,29 @@
    ]
   },
   {
+   "id": "elemental-gimmick-gear-dreamcast",
+   "title": "Elemental Gimmick Gear",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 19500,
+   "prices": {
+    "cib": 19500,
+    "new": 24999
+   },
+   "pct_1d": 0,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    18999,
+    18999,
+    18999,
+    18999,
+    18999,
+    18999
+   ]
+  },
+  {
    "id": "jet-grind-radio-dreamcast",
    "title": "Jet Grind Radio",
    "platform": "dreamcast",
@@ -688,6 +665,29 @@
    ]
   },
   {
+   "id": "samba-de-amigo-dreamcast",
+   "title": "Samba de Amigo",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 6148,
+   "prices": {
+    "cib": 6148
+   },
+   "pct_1d": 2.47,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    6148,
+    6148,
+    6148,
+    6148,
+    6148,
+    6148,
+    6148
+   ]
+  },
+  {
    "id": "zombie-revenge-dreamcast",
    "title": "Zombie Revenge",
    "platform": "dreamcast",
@@ -737,13 +737,13 @@
    "title": "Crazy Taxi",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 4397,
+   "price_cents": 4299,
    "prices": {
     "loose": 2160,
-    "cib": 4397,
+    "cib": 4299,
     "new": 12000
    },
-   "pct_1d": 2.28,
+   "pct_1d": 0,
    "pct_7d": -2.23,
    "pct_30d": null,
    "score": -2.23,
@@ -762,11 +762,11 @@
    "title": "Daytona USA",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 11899,
+   "price_cents": 11999,
    "prices": {
-    "cib": 11899
+    "cib": 11999
    },
-   "pct_1d": 0,
+   "pct_1d": 0.84,
    "pct_7d": -2.86,
    "pct_30d": null,
    "score": -2.86,
@@ -855,13 +855,13 @@
    "title": "Hydro Thunder",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 3623,
+   "price_cents": 3497,
    "prices": {
     "loose": 3169,
-    "cib": 3623,
+    "cib": 3497,
     "new": 13199
    },
-   "pct_1d": 3.66,
+   "pct_1d": 0.06,
    "pct_7d": -8,
    "pct_30d": null,
    "score": -8,
