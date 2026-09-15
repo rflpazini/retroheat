@@ -1,7 +1,32 @@
 {
  "board": "all",
- "as_of": "2026-09-14",
+ "as_of": "2026-09-15",
  "entries": [
+  {
+   "id": "gauntlet-legends-n64",
+   "title": "Gauntlet Legends",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 29999,
+   "prices": {
+    "loose": 6999,
+    "cib": 29999
+   },
+   "pct_1d": 0,
+   "pct_7d": 51.52,
+   "pct_30d": null,
+   "score": 51.52,
+   "spark": [
+    19799,
+    19799,
+    19799,
+    19799,
+    19799,
+    19799,
+    19799,
+    29999
+   ]
+  },
   {
    "id": "shadow-hearts-covenant-ps2",
    "title": "Shadow Hearts: Covenant",
@@ -12,42 +37,67 @@
     "cib": 22248
    },
    "pct_1d": 0,
-   "pct_7d": 59.26,
+   "pct_7d": 45.92,
    "pct_30d": null,
-   "score": 59.26,
+   "score": 45.92,
    "spark": [
     13499,
     15247,
     16995,
     19247,
     21498,
-    21498
+    21498,
+    22248
    ]
   },
   {
-   "id": "space-channel-5-dreamcast",
-   "title": "Space Channel 5",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 5850,
+   "id": "hydro-thunder-n64",
+   "title": "Hydro Thunder",
+   "platform": "n64",
+   "headline_condition": "loose",
+   "price_cents": 12217,
    "prices": {
-    "loose": 2450,
-    "cib": 5850,
-    "new": 11000
+    "loose": 12217
    },
    "pct_1d": 0,
-   "pct_7d": 25.81,
+   "pct_7d": 29.97,
    "pct_30d": null,
-   "score": 25.81,
+   "score": 29.97,
    "spark": [
-    4650,
-    5250,
-    5850,
-    5850,
-    5850,
-    5850,
-    5850,
-    5850
+    9400,
+    9200,
+    9200,
+    9300,
+    9400,
+    9400,
+    11130,
+    12217
+   ]
+  },
+  {
+   "id": "digital-devil-saga-2-ps2",
+   "title": "Shin Megami Tensei: Digital Devil Saga 2",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 5595,
+   "prices": {
+    "cib": 5595,
+    "new": 8000
+   },
+   "pct_1d": 0,
+   "pct_7d": 29.13,
+   "pct_30d": null,
+   "score": 29.13,
+   "spark": [
+    4277,
+    4333,
+    4388,
+    4388,
+    4388,
+    4499,
+    4499,
+    4499,
+    5595
    ]
   },
   {
@@ -57,7 +107,7 @@
    "headline_condition": "cib",
    "price_cents": 4499,
    "prices": {
-    "loose": 1329,
+    "loose": 1314,
     "cib": 4499
    },
    "pct_1d": 0,
@@ -71,58 +121,8 @@
     4049,
     4049,
     4499,
+    4499,
     4499
-   ]
-  },
-  {
-   "id": "freedom-wars-vita",
-   "title": "Freedom Wars",
-   "platform": "vita",
-   "headline_condition": "cib",
-   "price_cents": 2548,
-   "prices": {
-    "loose": 1500,
-    "cib": 2548,
-    "new": 2500
-   },
-   "pct_1d": 13.35,
-   "pct_7d": 24.75,
-   "pct_30d": null,
-   "score": 24.75,
-   "spark": [
-    2000,
-    2124,
-    2248,
-    2274,
-    2300,
-    2495,
-    2495,
-    2495
-   ]
-  },
-  {
-   "id": "xenosaga-episode-2-ps2",
-   "title": "Xenosaga Episode II",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 7448,
-   "prices": {
-    "cib": 7448,
-    "new": 10000
-   },
-   "pct_1d": -0.63,
-   "pct_7d": 24.13,
-   "pct_30d": null,
-   "score": 24.13,
-   "spark": [
-    6000,
-    6125,
-    6250,
-    6375,
-    6500,
-    7000,
-    7248,
-    7448
    ]
   },
   {
@@ -148,7 +148,35 @@
     6499,
     7249,
     7249,
+    7999,
     7999
+   ]
+  },
+  {
+   "id": "zelda-four-swords-adventures-gamecube",
+   "title": "The Legend of Zelda: Four Swords Adventures",
+   "platform": "gamecube",
+   "headline_condition": "cib",
+   "price_cents": 13000,
+   "prices": {
+    "loose": 6300,
+    "cib": 13000,
+    "new": 42500
+   },
+   "pct_1d": 0.01,
+   "pct_7d": 22.34,
+   "pct_30d": null,
+   "score": 22.34,
+   "spark": [
+    10499,
+    10625,
+    10750,
+    10750,
+    10750,
+    10750,
+    11999,
+    12499,
+    12999
    ]
   },
   {
@@ -156,12 +184,12 @@
    "title": "Dragon Ball Z: Shin Budokai",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 4839,
+   "price_cents": 5167,
    "prices": {
-    "loose": 2881,
-    "cib": 4839
+    "loose": 2795,
+    "cib": 5167
    },
-   "pct_1d": -11.94,
+   "pct_1d": 6.78,
    "pct_7d": 22.11,
    "pct_30d": null,
    "score": 22.11,
@@ -172,6 +200,7 @@
     5496,
     5495,
     5495,
+    5495,
     5495
    ]
   },
@@ -180,13 +209,13 @@
    "title": "Crisis Core: Final Fantasy VII",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 2435,
+   "price_cents": 2400,
    "prices": {
-    "loose": 1299,
-    "cib": 2435,
+    "loose": 1312,
+    "cib": 2400,
     "new": 10997
    },
-   "pct_1d": -0.61,
+   "pct_1d": -1.44,
    "pct_7d": 21.75,
    "pct_30d": null,
    "score": 21.75,
@@ -198,7 +227,34 @@
     2000,
     2000,
     2000,
+    2435,
     2435
+   ]
+  },
+  {
+   "id": "xenosaga-episode-2-ps2",
+   "title": "Xenosaga Episode II",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 7448,
+   "prices": {
+    "cib": 7448,
+    "new": 10000
+   },
+   "pct_1d": 0,
+   "pct_7d": 21.6,
+   "pct_30d": null,
+   "score": 21.6,
+   "spark": [
+    6000,
+    6125,
+    6250,
+    6375,
+    6500,
+    7000,
+    7248,
+    7448,
+    7448
    ]
   },
   {
@@ -206,11 +262,11 @@
    "title": "Aidyn Chronicles: The First Mage",
    "platform": "n64",
    "headline_condition": "loose",
-   "price_cents": 5500,
+   "price_cents": 5999,
    "prices": {
-    "loose": 5500
+    "loose": 5999
    },
-   "pct_1d": -8.32,
+   "pct_1d": 9.07,
    "pct_7d": 19.98,
    "pct_30d": null,
    "score": 19.98,
@@ -221,59 +277,58 @@
     5500,
     5500,
     5999,
+    5999,
     5999
    ]
   },
   {
-   "id": "viewtiful-joe-gamecube",
-   "title": "Viewtiful Joe",
-   "platform": "gamecube",
+   "id": "freedom-wars-vita",
+   "title": "Freedom Wars",
+   "platform": "vita",
    "headline_condition": "cib",
-   "price_cents": 6500,
+   "price_cents": 2548,
    "prices": {
-    "loose": 3000,
-    "cib": 6500,
-    "new": 10500
+    "loose": 1499,
+    "cib": 2548,
+    "new": 2500
    },
-   "pct_1d": -9.57,
-   "pct_7d": 19.82,
+   "pct_1d": 0,
+   "pct_7d": 19.96,
    "pct_30d": null,
-   "score": 19.82,
+   "score": 19.96,
    "spark": [
-    5999,
-    6125,
-    6250,
-    6375,
-    6500,
-    6500,
-    7188,
-    7188
+    2000,
+    2124,
+    2248,
+    2274,
+    2300,
+    2495,
+    2495,
+    2495,
+    2548
    ]
   },
   {
-   "id": "zelda-four-swords-adventures-gamecube",
-   "title": "The Legend of Zelda: Four Swords Adventures",
-   "platform": "gamecube",
+   "id": "call-of-duty-black-ops-declassified-vita",
+   "title": "Call of Duty: Black Ops Declassified",
+   "platform": "vita",
    "headline_condition": "cib",
-   "price_cents": 12999,
+   "price_cents": 3295,
    "prices": {
-    "loose": 6300,
-    "cib": 12999,
-    "new": 42500
+    "loose": 1800,
+    "cib": 3295,
+    "new": 7999
    },
-   "pct_1d": -0.01,
-   "pct_7d": 19.05,
+   "pct_1d": 0,
+   "pct_7d": 19.86,
    "pct_30d": null,
-   "score": 19.05,
+   "score": 19.86,
    "spark": [
-    10499,
-    10625,
-    10750,
-    10750,
-    10750,
-    10750,
-    11999,
-    12499
+    2749,
+    2874,
+    2999,
+    3147,
+    3295
    ]
   },
   {
@@ -281,16 +336,16 @@
    "title": "Dissidia 012 Final Fantasy",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 4250,
+   "price_cents": 4000,
    "prices": {
     "loose": 1613,
-    "cib": 4250,
+    "cib": 4000,
     "new": 7999
    },
-   "pct_1d": -10.53,
-   "pct_7d": 18.9,
+   "pct_1d": -5.88,
+   "pct_7d": 18.81,
    "pct_30d": null,
-   "score": 18.9,
+   "score": 18.81,
    "spark": [
     3995,
     3998,
@@ -299,30 +354,8 @@
     4000,
     4500,
     4750,
+    4750,
     4750
-   ]
-  },
-  {
-   "id": "hydro-thunder-n64",
-   "title": "Hydro Thunder",
-   "platform": "n64",
-   "headline_condition": "loose",
-   "price_cents": 12217,
-   "prices": {
-    "loose": 12217
-   },
-   "pct_1d": -5,
-   "pct_7d": 18.4,
-   "pct_30d": null,
-   "score": 18.4,
-   "spark": [
-    9400,
-    9200,
-    9200,
-    9300,
-    9400,
-    9400,
-    11130
    ]
   },
   {
@@ -336,7 +369,7 @@
     "cib": 1349,
     "new": 2481
    },
-   "pct_1d": -10.01,
+   "pct_1d": 0,
    "pct_7d": 17.66,
    "pct_30d": null,
    "score": 17.66,
@@ -347,33 +380,35 @@
     1274,
     1274,
     1499,
+    1499,
     1499
    ]
   },
   {
-   "id": "devil-may-cry-3-special-edition-ps2",
-   "title": "Devil May Cry 3: Special Edition",
-   "platform": "ps2",
+   "id": "viewtiful-joe-gamecube",
+   "title": "Viewtiful Joe",
+   "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 1793,
+   "price_cents": 6500,
    "prices": {
-    "loose": 1095,
-    "cib": 1793,
-    "new": 4275
+    "loose": 3000,
+    "cib": 6500,
+    "new": 10250
    },
-   "pct_1d": -3.03,
-   "pct_7d": 15.13,
+   "pct_1d": 0,
+   "pct_7d": 17.36,
    "pct_30d": null,
-   "score": 15.13,
+   "score": 17.36,
    "spark": [
-    1599,
-    1639,
-    1679,
-    1719,
-    1759,
-    1793,
-    1841,
-    1841
+    5999,
+    6125,
+    6250,
+    6375,
+    6500,
+    6500,
+    7188,
+    7188,
+    7188
    ]
   },
   {
@@ -397,54 +432,8 @@
     10749,
     11498,
     11498,
+    11498,
     11498
-   ]
-  },
-  {
-   "id": "call-of-duty-black-ops-declassified-vita",
-   "title": "Call of Duty: Black Ops Declassified",
-   "platform": "vita",
-   "headline_condition": "cib",
-   "price_cents": 3295,
-   "prices": {
-    "loose": 1800,
-    "cib": 3295,
-    "new": 7999
-   },
-   "pct_1d": 0,
-   "pct_7d": 14.48,
-   "pct_30d": null,
-   "score": 14.48,
-   "spark": [
-    2749,
-    2874,
-    2999,
-    3147
-   ]
-  },
-  {
-   "id": "senran-kagura-shinovi-versus-vita",
-   "title": "Senran Kagura: Shinovi Versus",
-   "platform": "vita",
-   "headline_condition": "loose",
-   "price_cents": 6758,
-   "prices": {
-    "loose": 6758,
-    "new": 11999
-   },
-   "pct_1d": 0,
-   "pct_7d": 13.6,
-   "pct_30d": null,
-   "score": 13.6,
-   "spark": [
-    5949,
-    6018,
-    6087,
-    6423,
-    6758,
-    6758,
-    6758,
-    6758
    ]
   },
   {
@@ -454,10 +443,10 @@
    "headline_condition": "cib",
    "price_cents": 3000,
    "prices": {
-    "loose": 1947,
+    "loose": 1999,
     "cib": 3000
    },
-   "pct_1d": -11.76,
+   "pct_1d": 0,
    "pct_7d": 13.33,
    "pct_30d": null,
    "score": 13.33,
@@ -468,6 +457,7 @@
     3000,
     3000,
     3000,
+    3400,
     3400,
     3400
    ]
@@ -495,96 +485,138 @@
     2649,
     2699,
     2699,
+    2999,
     2999
    ]
   },
   {
-   "id": "steambot-chronicles-ps2",
-   "title": "Steambot Chronicles",
-   "platform": "ps2",
+   "id": "star-wars-battlefront-renegade-squadron-psp",
+   "title": "Star Wars Battlefront: Renegade Squadron",
+   "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 28900,
+   "price_cents": 1462,
    "prices": {
-    "cib": 28900
+    "loose": 995,
+    "cib": 1462,
+    "new": 2998
    },
-   "pct_1d": 7.04,
-   "pct_7d": 12.5,
+   "pct_1d": -2.47,
+   "pct_7d": 12.55,
    "pct_30d": null,
-   "score": 12.5,
+   "score": 12.55,
    "spark": [
-    24000,
-    24000,
-    24000,
-    25500,
-    27000,
-    27000
+    1299,
+    1299,
+    1299,
+    1299,
+    1299,
+    1299,
+    1424,
+    1462
    ]
   },
   {
-   "id": "18-wheeler-american-pro-trucker-dreamcast",
-   "title": "18 Wheeler: American Pro Trucker",
-   "platform": "dreamcast",
+   "id": "siren-ps2",
+   "title": "Siren",
+   "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 3695,
+   "price_cents": 13995,
    "prices": {
-    "loose": 1499,
-    "cib": 3695
+    "loose": 6000,
+    "cib": 13995
    },
-   "pct_1d": 9.06,
-   "pct_7d": null,
+   "pct_1d": 8.51,
+   "pct_7d": 5.94,
    "pct_30d": null,
-   "score": 9.06,
+   "score": 5.94,
    "spark": [
-    3388,
-    3542
+    12748,
+    12174,
+    11599,
+    11699,
+    11799,
+    11799,
+    12897,
+    12897,
+    12897
    ]
   },
   {
-   "id": "gran-turismo-3-a-spec-ps2",
-   "title": "Gran Turismo 3: A-Spec",
-   "platform": "ps2",
+   "id": "sonic-adventure-dx-gamecube",
+   "title": "Sonic Adventure DX: Director's Cut",
+   "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 1190,
+   "price_cents": 6750,
    "prices": {
-    "loose": 897,
-    "cib": 1190
+    "loose": 4000,
+    "cib": 6750,
+    "new": 16249
    },
-   "pct_1d": 11.53,
-   "pct_7d": 8.5,
+   "pct_1d": 12.5,
+   "pct_7d": 4.17,
    "pct_30d": null,
-   "score": 8.5,
+   "score": 4.17,
    "spark": [
-    1000,
-    1006,
-    1011,
-    1048,
-    1030,
-    1067,
-    1085
+    6000,
+    6000,
+    6000,
+    6000,
+    6000,
+    6248,
+    6248,
+    6250
    ]
   },
   {
-   "id": "burnout-3-takedown-ps2",
-   "title": "Burnout 3: Takedown",
+   "id": "castlevania-curse-of-darkness-ps2",
+   "title": "Castlevania: Curse of Darkness",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 2498,
+   "price_cents": 9999,
    "prices": {
-    "loose": 1529,
-    "cib": 2498
+    "loose": 4290,
+    "cib": 9999
    },
-   "pct_1d": 5.76,
-   "pct_7d": 2.84,
+   "pct_1d": 7.56,
+   "pct_7d": 3.3,
    "pct_30d": null,
-   "score": 2.84,
+   "score": 3.3,
    "spark": [
-    2362,
-    2396,
-    2362,
-    2396,
-    2429,
-    2429,
-    2429
+    8999,
+    8999,
+    8999,
+    8999,
+    8999,
+    9296,
+    9296,
+    9296,
+    9296
+   ]
+  },
+  {
+   "id": "tekken-5-ps2",
+   "title": "Tekken 5",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 3799,
+   "prices": {
+    "loose": 1750,
+    "cib": 3799,
+    "new": 19500
+   },
+   "pct_1d": 8.57,
+   "pct_7d": 2.94,
+   "pct_30d": null,
+   "score": 2.94,
+   "spark": [
+    3399,
+    3399,
+    3399,
+    3424,
+    3449,
+    3499,
+    3499,
+    3499
    ]
   },
   {
@@ -592,13 +624,13 @@
    "title": "Manhunt",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 11000,
+   "price_cents": 12000,
    "prices": {
-    "loose": 5500,
-    "cib": 11000,
+    "loose": 5700,
+    "cib": 12000,
     "new": 30000
    },
-   "pct_1d": 10.06,
+   "pct_1d": 9.09,
    "pct_7d": 2.56,
    "pct_30d": null,
    "score": 2.56,
@@ -609,353 +641,368 @@
     9996,
     9995,
     9995,
+    9997,
     9997
    ]
   },
   {
-   "id": "criminal-girls-invite-only-vita",
-   "title": "Criminal Girls: Invite Only",
-   "platform": "vita",
+   "id": "super-mario-sunshine-gamecube",
+   "title": "Super Mario Sunshine",
+   "platform": "gamecube",
+   "headline_condition": "cib",
+   "price_cents": 5995,
+   "prices": {
+    "loose": 4000,
+    "cib": 5995
+   },
+   "pct_1d": 7.26,
+   "pct_7d": 2.48,
+   "pct_30d": null,
+   "score": 2.48,
+   "spark": [
+    6000,
+    5850,
+    5848,
+    5848,
+    5848,
+    5848,
+    5848,
+    5848,
+    5995
+   ]
+  },
+  {
+   "id": "zombie-revenge-dreamcast",
+   "title": "Zombie Revenge",
+   "platform": "dreamcast",
    "headline_condition": "loose",
-   "price_cents": 5347,
+   "price_cents": 3495,
    "prices": {
-    "loose": 5347,
-    "new": 18800
+    "loose": 3495
    },
-   "pct_1d": 13.91,
-   "pct_7d": 0,
+   "pct_1d": 7.64,
+   "pct_7d": 1.5,
    "pct_30d": null,
-   "score": 0,
+   "score": 1.5,
    "spark": [
-    4694,
-    4694,
-    4694,
-    4694,
-    4694,
-    4694,
-    4694
+    3199,
+    3199,
+    3199,
+    3199,
+    3199,
+    3199,
+    3247,
+    3247
    ]
   },
   {
-   "id": "final-fantasy-x-ps2",
-   "title": "Final Fantasy X",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 1495,
-   "prices": {
-    "loose": 1099,
-    "cib": 1495,
-    "new": 2999
-   },
-   "pct_1d": 6.86,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    1399,
-    1387,
-    1398,
-    1399,
-    1399,
-    1399,
-    1399
-   ]
-  },
-  {
-   "id": "gauntlet-legends-n64",
-   "title": "Gauntlet Legends",
-   "platform": "n64",
-   "headline_condition": "cib",
-   "price_cents": 29999,
-   "prices": {
-    "loose": 7000,
-    "cib": 29999
-   },
-   "pct_1d": 51.52,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    19799,
-    19799,
-    19799,
-    19799,
-    19799,
-    19799,
-    19799
-   ]
-  },
-  {
-   "id": "persona-3-fes-ps2",
-   "title": "Persona 3 FES",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 12500,
-   "prices": {
-    "cib": 12500,
-    "new": 19999
-   },
-   "pct_1d": 56.27,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    10250,
-    10250,
-    10250,
-    10250,
-    10250,
-    10250,
-    10250,
-    10250
-   ]
-  },
-  {
-   "id": "zone-of-the-enders-ps2",
-   "title": "Zone of the Enders",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 2499,
-   "prices": {
-    "loose": 1139,
-    "cib": 2499
-   },
-   "pct_1d": 6.34,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    2499,
-    2499,
-    2499,
-    2499,
-    2499,
-    2499,
-    2499
-   ]
-  },
-  {
-   "id": "tearaway-vita",
-   "title": "Tearaway",
-   "platform": "vita",
+   "id": "lost-kingdoms-gamecube",
+   "title": "Lost Kingdoms",
+   "platform": "gamecube",
    "headline_condition": "loose",
-   "price_cents": 3750,
+   "price_cents": 5846,
    "prices": {
-    "loose": 3750,
-    "new": 6250
+    "loose": 5846
    },
-   "pct_1d": 7.17,
-   "pct_7d": -0.03,
+   "pct_1d": 9.35,
+   "pct_7d": 0.84,
    "pct_30d": null,
-   "score": -0.03,
+   "score": 0.84,
    "spark": [
-    3500,
-    3500,
-    3500,
-    3500,
-    3500,
-    3500,
-    3499,
-    3499
+    5598,
+    5598,
+    5598,
+    5622,
+    5645,
+    5645,
+    5645,
+    5645
    ]
   },
   {
-   "id": "ys-i-ii-chronicles-psp",
-   "title": "Ys I & II Chronicles",
+   "id": "god-of-war-ghost-of-sparta-psp",
+   "title": "God of War: Ghost of Sparta",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 13999,
+   "price_cents": 8998,
    "prices": {
-    "cib": 13999
+    "cib": 8998,
+    "new": 14999
    },
-   "pct_1d": 7.69,
-   "pct_7d": -3.71,
+   "pct_1d": 12.48,
+   "pct_7d": 0,
    "pct_30d": null,
-   "score": -3.71,
+   "score": 0,
    "spark": [
-    13500,
-    13250,
-    13500,
-    13250,
-    13500,
-    12999,
-    12999,
-    12999
+    8000,
+    8000,
+    8000,
+    8000,
+    8000,
+    8000,
+    8000,
+    8000,
+    8000
    ]
   },
   {
-   "id": "burnout-dominator-psp",
-   "title": "Burnout Dominator",
-   "platform": "psp",
-   "headline_condition": "cib",
-   "price_cents": 1912,
-   "prices": {
-    "loose": 1150,
-    "cib": 1912
-   },
-   "pct_1d": 12.08,
-   "pct_7d": -5.54,
-   "pct_30d": null,
-   "score": -5.54,
-   "spark": [
-    1806,
-    1753,
-    1699,
-    1703,
-    1706,
-    1706,
-    1706
-   ]
-  },
-  {
-   "id": "def-jam-fight-for-ny-ps2",
-   "title": "Def Jam: Fight for NY",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 28700,
-   "prices": {
-    "loose": 22247,
-    "cib": 28700
-   },
-   "pct_1d": 7.29,
-   "pct_7d": -5.61,
-   "pct_30d": null,
-   "score": -5.61,
-   "spark": [
-    29665,
-    29808,
-    29950,
-    29950,
-    29950,
-    29950,
-    28000,
-    28000
-   ]
-  },
-  {
-   "id": "snowboard-kids-2-n64",
-   "title": "Snowboard Kids 2",
-   "platform": "n64",
-   "headline_condition": "cib",
-   "price_cents": 51249,
-   "prices": {
-    "loose": 11100,
-    "cib": 51249
-   },
-   "pct_1d": 23.64,
-   "pct_7d": -5.79,
-   "pct_30d": null,
-   "score": -5.79,
-   "spark": [
-    43999,
-    43999,
-    43999,
-    42725,
-    41450,
-    41450,
-    41450,
-    41450
-   ]
-  },
-  {
-   "id": "tony-hawks-pro-skater-n64",
-   "title": "Tony Hawk's Pro Skater",
-   "platform": "n64",
-   "headline_condition": "cib",
-   "price_cents": 5271,
-   "prices": {
-    "loose": 1500,
-    "cib": 5271
-   },
-   "pct_1d": 6.18,
-   "pct_7d": -5.82,
-   "pct_30d": null,
-   "score": -5.82,
-   "spark": [
-    5271,
-    5271,
-    5271,
-    5118,
-    4964,
-    4964,
-    4964
-   ]
-  },
-  {
-   "id": "metal-gear-solid-peace-walker-psp",
-   "title": "Metal Gear Solid: Peace Walker",
-   "platform": "psp",
-   "headline_condition": "cib",
-   "price_cents": 6988,
-   "prices": {
-    "loose": 3995,
-    "cib": 6988,
-    "new": 9999
-   },
-   "pct_1d": 7.51,
-   "pct_7d": -7.06,
-   "pct_30d": null,
-   "score": -7.06,
-   "spark": [
-    6994,
-    6994,
-    6994,
-    6994,
-    6994,
-    6500,
-    6500,
-    6500
-   ]
-  },
-  {
-   "id": "chuchu-rocket-dreamcast",
-   "title": "ChuChu Rocket!",
+   "id": "project-justice-dreamcast",
+   "title": "Project Justice",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 3999,
+   "price_cents": 24639,
    "prices": {
-    "loose": 1999,
-    "cib": 3999,
-    "new": 4600
+    "cib": 24639
    },
-   "pct_1d": 14.26,
-   "pct_7d": -12.5,
+   "pct_1d": 7.98,
+   "pct_7d": 0,
    "pct_30d": null,
-   "score": -12.5,
+   "score": 0,
    "spark": [
-    4000,
-    4000,
-    3999,
-    3750,
-    3500,
-    3500,
-    3500,
-    3500
+    22819,
+    22819,
+    22819,
+    22819,
+    22819,
+    22819,
+    22819,
+    22819,
+    22819
    ]
   },
   {
-   "id": "kingdom-hearts-ps2",
-   "title": "Kingdom Hearts",
+   "id": "resident-evil-code-veronica-x-ps2",
+   "title": "Resident Evil Code: Veronica X",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 1799,
+   "price_cents": 4748,
    "prices": {
-    "loose": 999,
-    "cib": 1799,
-    "new": 4500
+    "loose": 1997,
+    "cib": 4748,
+    "new": 12463
    },
-   "pct_1d": 12.44,
-   "pct_7d": -13.47,
+   "pct_1d": 11.72,
+   "pct_7d": 0,
    "pct_30d": null,
-   "score": -13.47,
+   "score": 0,
    "spark": [
-    1849,
-    1824,
-    1799,
-    1700,
-    1799,
-    1600,
-    1600
+    4748,
+    4872,
+    4748,
+    4748,
+    4748,
+    4995,
+    4748,
+    4748
+   ]
+  },
+  {
+   "id": "stranger-of-sword-city-vita",
+   "title": "Stranger of Sword City",
+   "platform": "vita",
+   "headline_condition": "loose",
+   "price_cents": 3499,
+   "prices": {
+    "loose": 3499,
+    "new": 6465
+   },
+   "pct_1d": 7.66,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    3250,
+    3250,
+    3250,
+    3250,
+    3250,
+    3250,
+    3250,
+    3250
+   ]
+  },
+  {
+   "id": "ultimate-marvel-vs-capcom-3-vita",
+   "title": "Ultimate Marvel vs. Capcom 3",
+   "platform": "vita",
+   "headline_condition": "cib",
+   "price_cents": 3248,
+   "prices": {
+    "loose": 2899,
+    "cib": 3248,
+    "new": 7249
+   },
+   "pct_1d": 8.3,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    2999,
+    2999,
+    2999,
+    2999,
+    2999,
+    2999,
+    2999,
+    2999
+   ]
+  },
+  {
+   "id": "metal-gear-solid-3-subsistence-ps2",
+   "title": "Metal Gear Solid 3: Subsistence",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 5986,
+   "prices": {
+    "loose": 2099,
+    "cib": 5986
+   },
+   "pct_1d": 8.86,
+   "pct_7d": -0.22,
+   "pct_30d": null,
+   "score": -0.22,
+   "spark": [
+    5999,
+    5999,
+    5999,
+    5999,
+    5999,
+    5999,
+    5999,
+    5999,
+    5986
+   ]
+  },
+  {
+   "id": "katamari-damacy-ps2",
+   "title": "Katamari Damacy",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 2249,
+   "prices": {
+    "loose": 1374,
+    "cib": 2249,
+    "new": 3495
+   },
+   "pct_1d": 7.1,
+   "pct_7d": -1.08,
+   "pct_30d": null,
+   "score": -1.08,
+   "spark": [
+    2199,
+    2224,
+    2200,
+    2200,
+    2200,
+    2200,
+    2200,
+    2200,
+    2200
+   ]
+  },
+  {
+   "id": "shenmue-dreamcast",
+   "title": "Shenmue",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 5995,
+   "prices": {
+    "loose": 4000,
+    "cib": 5995,
+    "new": 19000
+   },
+   "pct_1d": 7.17,
+   "pct_7d": -2.54,
+   "pct_30d": null,
+   "score": -2.54,
+   "spark": [
+    5885,
+    5740,
+    5594,
+    5594,
+    5594,
+    5594,
+    5594,
+    5594,
+    5594
+   ]
+  },
+  {
+   "id": "donkey-kong-64-n64",
+   "title": "Donkey Kong 64",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 14450,
+   "prices": {
+    "loose": 3500,
+    "cib": 14450
+   },
+   "pct_1d": 12.06,
+   "pct_7d": -5.06,
+   "pct_30d": null,
+   "score": -5.06,
+   "spark": [
+    14999,
+    14475,
+    13950,
+    13950,
+    13950,
+    13742,
+    13742,
+    12900,
+    13742
+   ]
+  },
+  {
+   "id": "daxter-psp",
+   "title": "Daxter",
+   "platform": "psp",
+   "headline_condition": "cib",
+   "price_cents": 2199,
+   "prices": {
+    "loose": 1000,
+    "cib": 2199,
+    "new": 3500
+   },
+   "pct_1d": 10.01,
+   "pct_7d": -9.1,
+   "pct_30d": null,
+   "score": -9.1,
+   "spark": [
+    2199,
+    2199,
+    2199,
+    2240,
+    2199,
+    2199,
+    1999,
+    1999,
+    1999
+   ]
+  },
+  {
+   "id": "star-wars-episode-i-racer-dreamcast",
+   "title": "Star Wars Episode I: Racer",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 3300,
+   "prices": {
+    "loose": 1979,
+    "cib": 3300
+   },
+   "pct_1d": 22.22,
+   "pct_7d": -13.04,
+   "pct_30d": null,
+   "score": -13.04,
+   "spark": [
+    3450,
+    3225,
+    3000,
+    3000,
+    3000,
+    3000,
+    3000,
+    3000
    ]
   }
  ]
