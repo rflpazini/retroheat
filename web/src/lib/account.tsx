@@ -38,6 +38,10 @@ export interface Account {
   /** The copy just added to the shelf, for the window that asks what it cost; null when none. */
   pendingAdd: { copy_id: string; game_id: string; condition: Condition } | null
   dismissAdd: () => void
+  /** The copy whose Info window is open, and whether it opened to record a sale. */
+  infoCopy: { id: string; sell: boolean } | null
+  openInfo: (copyId: string, opts?: { sell?: boolean }) => void
+  closeInfo: () => void
   /** The last failed write, in the backend's words; cleared by the next success. */
   error: string | null
   /** Why the last sign-in redirect failed, e.g. a magic link opened in another browser. */
@@ -79,6 +83,9 @@ const disabled: Account = {
   setPaid: noop,
   pendingAdd: null,
   dismissAdd: () => {},
+  infoCopy: null,
+  openInfo: () => {},
+  closeInfo: () => {},
   error: null,
   signInError: null,
 }
@@ -225,12 +232,14 @@ function AccountState({
   const [collection, setCollection] = useState<Shelf>({ status: 'ready', data: new Map() })
   const [error, setError] = useState<string | null>(null)
   const [pendingAdd, setPendingAdd] = useState<Account['pendingAdd']>(null)
+  const [infoCopy, setInfoCopy] = useState<Account['infoCopy']>(null)
   // A failed write's message belongs to the page it happened on; leaving the
   // page gives the status strip back to the price caveat. The same goes for
-  // the window asking what a copy cost.
+  // the windows about one copy.
   useEffect(() => {
     setError(null)
     setPendingAdd(null)
+    setInfoCopy(null)
   }, [location.pathname])
   const [signInError, setSignInError] = useState<string | null>(null)
   const savedRef = useRef(saved)
@@ -498,8 +507,10 @@ function AccountState({
 
   const setPaid = useCallback((copyId: string, cents: number | null) => updateCopy(copyId, { paid_cents: cents }), [updateCopy])
 
-  // Stable, so the window's mount effect does not re-run on every provider render.
+  // Stable, so the windows' mount effects do not re-run on every provider render.
   const dismissAdd = useCallback(() => setPendingAdd(null), [])
+  const openInfo = useCallback((id: string, opts?: { sell?: boolean }) => setInfoCopy({ id, sell: opts?.sell ?? false }), [])
+  const closeInfo = useCallback(() => setInfoCopy(null), [])
 
   const value = useMemo<Account>(() => {
     const copiesOf = (gameId: string) => (collection.status === 'ready' ? copiesIn(collection.data, gameId) : [])
@@ -534,6 +545,9 @@ function AccountState({
       setPaid,
       pendingAdd,
       dismissAdd,
+      infoCopy,
+      openInfo,
+      closeInfo,
       error,
       signInError,
     }
@@ -556,6 +570,9 @@ function AccountState({
     setPaid,
     pendingAdd,
     dismissAdd,
+    infoCopy,
+    openInfo,
+    closeInfo,
     error,
     signInError,
   ])

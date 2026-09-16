@@ -6,11 +6,9 @@ import { conditionColor, moneyExact, parseMoney, pct, signedMoney } from '@/lib/
 import { usePriceIndex } from '@/lib/prices'
 import { MAX_PAID_CENTS } from '@/lib/shelf'
 import { CONDITION_LABELS, PLATFORM_SHORT, type Condition, type GameDetail } from '@/lib/types'
+import { defaultRing, macButton, macField } from '@/components/mac'
 
-const field = 'bevel-in tabular w-32 border-2 border-[var(--border)] bg-[var(--card)] px-2 py-1.5 text-right text-xs outline-none'
-/* A classic Mac push button: a rounded rectangle that inverts while pressed. */
-const macButton =
-  'min-w-[4.5rem] rounded-md border border-[var(--border)] bg-[var(--card)] px-4 py-1 text-xs font-semibold active:bg-[var(--border)] active:text-[var(--card)]'
+const field = `${macField} tabular w-32 text-right`
 
 /**
  * The window that opens the moment a copy joins the shelf: the game, the
@@ -166,7 +164,7 @@ export function AddToShelfDialog({
                 Skip
               </button>
               {/* The default button: Return presses it, and the ring says so. */}
-              <span className="rounded-[10px] border-[3px] border-[var(--border)] p-[2px]">
+              <span className={defaultRing}>
                 <button type="submit" className={macButton}>
                   Save
                 </button>

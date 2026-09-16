@@ -65,6 +65,18 @@ describe('collectionTimeline', () => {
     expect(t.points).toEqual([{ date: '2026-09-03', value_cents: 3000 }])
   })
 
+  it('charts only the copies still on the shelf', () => {
+    const histories = new Map<string, HistoryPoint[]>([
+      ['a', [point('2026-09-01', { loose: 1000 })]],
+      ['b', [point('2026-09-01', { cib: 5000 })]],
+    ])
+    const soldCopy: CollectionItem = { ...owned('b', 'cib', 100), sold_cents: 6000, sold_on: '2026-09-02' }
+    const t = collectionTimeline([owned('a', 'loose'), soldCopy], histories)
+    expect(t.points).toEqual([{ date: '2026-09-01', value_cents: 1000 }])
+    expect(t.total).toBe(1)
+    expect(t.paid_covers).toBe(0)
+  })
+
   it('sums what was paid over the copies on the line only, so the rule matches the line it is drawn against', () => {
     const histories = new Map<string, HistoryPoint[]>([
       ['a', [point('2026-09-01', { cib: 2000 })]],

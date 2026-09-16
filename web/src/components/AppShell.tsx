@@ -8,6 +8,7 @@ import { StatusBar } from '@/components/StatusBar'
 import { Spotlight, useSpotlightShortcut } from '@/components/Spotlight'
 import { AccountSignIn } from '@/components/SignInDialog'
 import { AccountAddToShelf } from '@/components/AddToShelfDialog'
+import { AccountCopyInfo } from '@/components/CopyInfoDialog'
 import { AccountProvider, useAccount } from '@/lib/account'
 import { PLATFORMS, PLATFORM_LABELS, type Meta } from '@/lib/types'
 import { useJson } from '@/lib/data'
@@ -241,6 +242,7 @@ function Shell() {
       <Spotlight open={searchOpen} onOpenChange={setSearchOpen} />
       <AccountSignIn />
       <AccountAddToShelf />
+      <AccountCopyInfo />
     </div>
   )
 }

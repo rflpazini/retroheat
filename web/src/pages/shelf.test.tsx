@@ -556,6 +556,105 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     await waitFor(() => expect(state.copiesOf(priced.id).map((c) => c.paid_cents)).toEqual([1000, 2000]))
   })
 
+  it('opens Info from the row menu and saves the purchase day and notes with Return', async () => {
+    if (!priced) return
+    const { backend, state } = memoryBackend({
+      user: testUser,
+      collection: [{ game_id: priced.id, condition: 'loose', added_at: '2026-09-07T00:00:00Z', paid_cents: 1234 }],
+    })
+    renderShell('/collection', <Route path="collection" element={<Collection />} />, backend)
+    const user = userEvent.setup()
+
+    await user.click(await screen.findByRole('button', { name: ownAs(priced.title, 'Loose') }))
+    await user.click(await screen.findByRole('menuitem', { name: /get info/i }))
+    const dialog = await screen.findByRole('dialog', { name: `${priced.title} Info` })
+    expect((within(dialog).getByRole('textbox', { name: /paid, in dollars/i }) as HTMLInputElement).value).toBe('12.34')
+    await user.type(within(dialog).getByRole('textbox', { name: /acquired on/i }), '2024-10-08')
+    await user.type(within(dialog).getByRole('textbox', { name: /^notes$/i }), 'Flea market find{Enter}')
+    // Return in the notes makes a new line; the default button saves.
+    await user.click(within(dialog).getByRole('button', { name: /^save$/i }))
+    await waitFor(() => expect(screen.queryByRole('dialog', { name: /info/i })).toBeNull())
+    await waitFor(() => expect(state.copyOf(priced.id)?.acquired_on).toBe('2024-10-08'))
+    expect(state.copyOf(priced.id)?.notes).toBe('Flea market find')
+    expect(state.copyOf(priced.id)?.paid_cents).toBe(1234)
+  })
+
+  it('refuses a day it cannot read and notes over 500 characters, and keeps the window open', async () => {
+    if (!priced) return
+    const { backend, state } = memoryBackend({
+      user: testUser,
+      collection: [{ game_id: priced.id, condition: 'loose', added_at: '2026-09-07T00:00:00Z' }],
+    })
+    renderShell('/collection', <Route path="collection" element={<Collection />} />, backend)
+    const user = userEvent.setup()
+
+    await user.click(await screen.findByRole('button', { name: ownAs(priced.title, 'Loose') }))
+    await user.click(await screen.findByRole('menuitem', { name: /get info/i }))
+    const dialog = await screen.findByRole('dialog', { name: `${priced.title} Info` })
+    await user.type(within(dialog).getByRole('textbox', { name: /acquired on/i }), 'last summer')
+    await user.click(within(dialog).getByRole('button', { name: /^save$/i }))
+    expect((await within(dialog).findByRole('alert')).textContent).toMatch(/day/i)
+    await user.clear(within(dialog).getByRole('textbox', { name: /acquired on/i }))
+
+    const notes = within(dialog).getByRole('textbox', { name: /^notes$/i })
+    await user.click(notes)
+    await user.paste('x'.repeat(501))
+    await user.click(within(dialog).getByRole('button', { name: /^save$/i }))
+    expect((await within(dialog).findByRole('alert')).textContent).toMatch(/500/)
+    expect(screen.getByRole('dialog', { name: `${priced.title} Info` })).toBeDefined()
+    expect(state.copyOf(priced.id)?.notes ?? null).toBeNull()
+  })
+
+  it('marks a copy sold and moves it to the Sold window with its realized gain', async () => {
+    if (!priced) return
+    const { backend, state } = memoryBackend({
+      user: testUser,
+      collection: [{ game_id: priced.id, condition: 'loose', added_at: '2026-09-07T00:00:00Z', paid_cents: 1234 }],
+    })
+    renderShell('/collection', <Route path="collection" element={<Collection />} />, backend)
+    const user = userEvent.setup()
+
+    await user.click(await screen.findByRole('button', { name: ownAs(priced.title, 'Loose') }))
+    await user.click(await screen.findByRole('menuitem', { name: /mark as sold/i }))
+    const dialog = await screen.findByRole('dialog', { name: `${priced.title} Info` })
+    expect(within(dialog).getByRole('checkbox', { name: /^sold$/i }).getAttribute('aria-checked')).toBe('true')
+    await user.type(within(dialog).getByRole('textbox', { name: /sold for, in dollars/i }), '20')
+    await user.click(within(dialog).getByRole('button', { name: /^save$/i }))
+
+    await waitFor(() => expect(state.copyOf(priced.id)).toBeUndefined())
+    const sold = [...state.collection.values()][0]
+    expect(sold.sold_cents).toBe(2000)
+    expect(sold.sold_on).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+    // The copy left the shelf table and shows under Sold with what it made.
+    await waitFor(() => expect(screen.queryByRole('button', { name: ownAs(priced.title, 'Loose') })).toBeNull())
+    const soldWindow = screen.getByRole('region', { name: /sold/i })
+    expect(soldWindow.textContent).toContain(priced.title)
+    expect(soldWindow.textContent).toContain(signedMoney(2000 - 1234))
+    expect(document.body.textContent).toMatch(/nothing on the shelf/i)
+  })
+
+  it('puts a sold copy back on the shelf from its Info window', async () => {
+    if (!priced) return
+    const { backend, state } = memoryBackend({
+      user: testUser,
+      collection: [
+        { game_id: priced.id, condition: 'loose', added_at: '2026-09-07T00:00:00Z', paid_cents: 1000, sold_cents: 1500, sold_on: '2026-09-10' },
+      ],
+    })
+    renderShell('/collection', <Route path="collection" element={<Collection />} />, backend)
+    const user = userEvent.setup()
+
+    const soldWindow = await screen.findByRole('region', { name: /sold/i })
+    expect(soldWindow.textContent).toContain(signedMoney(500))
+    await user.click(within(soldWindow).getByRole('button', { name: `Info on ${priced.title}` }))
+    const dialog = await screen.findByRole('dialog', { name: `${priced.title} Info` })
+    await user.click(within(dialog).getByRole('checkbox', { name: /^sold$/i }))
+    await user.click(within(dialog).getByRole('button', { name: /^save$/i }))
+    await waitFor(() => expect(state.copyOf(priced.id)?.sold_on ?? null).toBeNull())
+    expect(state.copyOf(priced.id)?.sold_cents ?? null).toBeNull()
+    expect(await screen.findByRole('button', { name: ownAs(priced.title, 'Loose') })).toBeDefined()
+  })
+
   it('never opens the window when the add itself failed', async () => {
     if (!priced) return
     const { backend } = memoryBackend({ user: testUser })

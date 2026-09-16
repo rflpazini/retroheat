@@ -1,4 +1,4 @@
-import type { CollectionItem } from '@/lib/shelf'
+import { onShelf, type CollectionItem } from '@/lib/shelf'
 import type { HistoryPoint } from '@/lib/types'
 
 export interface TimelinePoint {
@@ -25,9 +25,11 @@ export interface Timeline {
  * carries a holding. Only the newest classifier series of each game counts,
  * as on the game page, so a rule change never reads as a move. When the
  * collector added a copy to the shelf plays no part: the line answers "what
- * would my shelf have asked", not "what did I own then".
+ * would my shelf have asked", not "what did I own then". A sold copy is not
+ * on the shelf and not on the line.
  */
-export function collectionTimeline(items: CollectionItem[], histories: Map<string, HistoryPoint[]>): Timeline {
+export function collectionTimeline(allItems: CollectionItem[], histories: Map<string, HistoryPoint[]>): Timeline {
+  const items = allItems.filter(onShelf)
   const series: { item: CollectionItem; dates: string[]; cents: number[] }[] = []
   for (const item of items) {
     const points = histories.get(item.game_id)

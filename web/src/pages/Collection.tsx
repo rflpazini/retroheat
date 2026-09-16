@@ -3,12 +3,13 @@ import { useAccount } from '@/lib/account'
 import { useJson } from '@/lib/data'
 import { conditionColor, heat, money, moneyExact, pct, signedMoney } from '@/lib/format'
 import { usePriceIndex } from '@/lib/prices'
-import { onShelf, shelfValue, type CollectionItem, type ShelfLine } from '@/lib/shelf'
+import { onShelf, shelfValue, soldSummary, type CollectionItem, type ShelfLine } from '@/lib/shelf'
 import { CONDITION_LABELS, PLATFORM_SHORT, type CatalogFile, type CatalogGame } from '@/lib/types'
 import { PaidField } from '@/components/PaidField'
 import { QuickAdd } from '@/components/QuickAdd'
 import { ShelfTimeline } from '@/components/ShelfTimeline'
 import { ShelfGate, ShelfRowControls, shelfButton } from '@/components/ShelfControls'
+import { SoldWindow } from '@/components/SoldWindow'
 import { Message } from '@/components/States'
 import { TrendPill } from '@/components/TrendPill'
 import { Window } from '@/components/Window'
@@ -38,7 +39,11 @@ function Shelf() {
   }
 
   const items = [...account.collection.data.values()]
-  if (items.length === 0) {
+  const byId = new Map<string, CatalogGame>(catalog.status === 'ready' ? catalog.data.games.map((g) => [g.id, g]) : [])
+  const sold = soldSummary(items)
+  // Copies of one game, oldest first, so a row can say which of them it is.
+  const shelf = items.filter(onShelf).sort((a, b) => a.added_at.localeCompare(b.added_at))
+  if (shelf.length === 0) {
     return (
       <div className="space-y-4">
         <QuickAdd mode="own" />
@@ -51,19 +56,16 @@ function Shelf() {
             </Link>
           }
         />
+        <SoldWindow summary={sold} byId={byId} />
       </div>
     )
   }
 
-  const byId = new Map<string, CatalogGame>(catalog.status === 'ready' ? catalog.data.games.map((g) => [g.id, g]) : [])
   const value = shelfValue(items, index)
   const nameOf = (l: ShelfLine) => byId.get(l.item.game_id)?.title ?? l.item.game_id
   // A store from before migration 0004 has no copy ids: it reads, it does not write.
   const writable = value.copies_supported
   const showPaid = writable && value.paid_supported
-
-  // Copies of one game, oldest first, so a row can say which of them it is.
-  const shelf = items.filter(onShelf).sort((a, b) => a.added_at.localeCompare(b.added_at))
   const copiesByGame = new Map<string, CollectionItem[]>()
   for (const item of shelf) copiesByGame.set(item.game_id, [...(copiesByGame.get(item.game_id) ?? []), item])
   const positionOf = (item: CollectionItem): string | null => {
@@ -242,6 +244,8 @@ function Shelf() {
           </table>
         </div>
       </Window>
+
+      <SoldWindow summary={sold} byId={byId} />
 
       <p className="text-[0.7rem] text-[var(--card-foreground)]">
         <span className="window inline-block px-2 py-1">

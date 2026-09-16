@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { shelfValue, type CollectionItem } from './shelf'
+import { shelfValue, soldSummary, type CollectionItem } from './shelf'
 import type { PriceEntry } from './types'
 
 function entry(prices: Partial<Record<'loose' | 'cib' | 'new', number>>, pct7: number | null): PriceEntry {
@@ -121,5 +121,41 @@ describe('shelfValue', () => {
   it('orders priced lines by value, highest first', () => {
     const v = shelfValue([owned('okami-ps2', 'loose'), owned('gitaroo-man-ps2', 'loose'), owned('bully-ps2', 'cib')], index)
     expect(v.lines.map((l) => l.price_cents)).toEqual([8000, 3000, 1000])
+  })
+})
+
+describe('soldSummary', () => {
+  const sold = (item: CollectionItem, sold_cents: number | null, sold_on: string): CollectionItem => ({ ...item, sold_cents, sold_on })
+
+  it('sums realized gain over the copies that have both a paid and a sold price, newest sale first', () => {
+    const s = soldSummary([
+      sold(owned('bully-ps2', 'loose', 1000), 1500, '2026-09-10'),
+      sold(owned('okami-ps2', 'cib', 3000), 2000, '2026-09-11'),
+      sold(owned('gitaroo-man-ps2', 'loose'), 9000, '2026-09-12'),
+      owned('bully-ps2', 'cib'),
+    ])
+    expect(s.lines.map((l) => l.item.game_id)).toEqual(['gitaroo-man-ps2', 'okami-ps2', 'bully-ps2'])
+    expect(s.lines[0].gain_cents).toBeNull()
+    expect(s.lines[1].gain_cents).toBe(-1000)
+    expect(s.lines[1].gain_pct).toBeCloseTo(-33.33, 1)
+    expect(s.compared).toBe(2)
+    expect(s.paid_cents).toBe(4000)
+    expect(s.sold_cents).toBe(3500)
+    expect(s.gain_cents).toBe(-500)
+    expect(s.gain_pct).toBe(-12.5)
+  })
+
+  it('has no percentage when the copies compared were free, and none at all when nothing was sold', () => {
+    const s = soldSummary([sold(owned('bully-ps2', 'loose', 0), 1500, '2026-09-10')])
+    expect(s.gain_cents).toBe(1500)
+    expect(s.gain_pct).toBeNull()
+    expect(soldSummary([owned('bully-ps2', 'loose')]).lines).toEqual([])
+  })
+
+  it('lists a sale whose price was forgotten, without comparing it', () => {
+    const s = soldSummary([sold(owned('bully-ps2', 'loose', 1000), null, '2026-09-10')])
+    expect(s.lines).toHaveLength(1)
+    expect(s.lines[0].sold_cents).toBeNull()
+    expect(s.compared).toBe(0)
   })
 })

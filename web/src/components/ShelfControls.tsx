@@ -289,6 +289,25 @@ function OwnKey({ account, gameId, title, copyId }: KeyProps) {
             <DropdownMenuSeparator className="bg-[var(--border)]" />
             <DropdownMenuItem
               className={menuBarClasses.item}
+              onClick={() => {
+                returnFocusTo(trigger.current)
+                account.openInfo(copyId)
+              }}
+            >
+              Get Info…
+            </DropdownMenuItem>
+            <DropdownMenuItem
+              className={menuBarClasses.item}
+              onClick={() => {
+                returnFocusTo(trigger.current)
+                account.openInfo(copyId, { sell: true })
+              }}
+            >
+              Mark as sold…
+            </DropdownMenuItem>
+            <DropdownMenuSeparator className="bg-[var(--border)]" />
+            <DropdownMenuItem
+              className={menuBarClasses.item}
               onClick={() => void keepingFocus(trigger.current, () => account.removeCopy(copyId))}
             >
               Remove this copy

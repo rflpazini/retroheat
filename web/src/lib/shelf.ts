@@ -107,6 +107,55 @@ export interface ShelfValue {
   gain_pct: number | null
 }
 
+export interface SoldLine {
+  item: CollectionItem
+  paid_cents: number | null
+  sold_cents: number | null
+  /** What the copy sold for less what it cost; null unless both are known. */
+  gain_cents: number | null
+  gain_pct: number | null
+}
+
+export interface SoldSummary {
+  /** Newest sale first. */
+  lines: SoldLine[]
+  /** How many sales have both a paid and a sold price; the sums below cover only those. */
+  compared: number
+  paid_cents: number
+  sold_cents: number
+  gain_cents: number
+  gain_pct: number | null
+}
+
+/**
+ * The copies that left the shelf, and what they realized: the gain that is
+ * no longer an asking price but money that changed hands.
+ */
+export function soldSummary(items: CollectionItem[]): SoldSummary {
+  const lines: SoldLine[] = items
+    .filter((item) => !onShelf(item))
+    .map((item) => {
+      const paid_cents = item.paid_cents ?? null
+      const sold_cents = item.sold_cents ?? null
+      const gain_cents = paid_cents !== null && sold_cents !== null ? sold_cents - paid_cents : null
+      const gain_pct = gain_cents !== null && paid_cents! > 0 ? (gain_cents / paid_cents!) * 100 : null
+      return { item, paid_cents, sold_cents, gain_cents, gain_pct }
+    })
+    .sort((a, b) => (b.item.sold_on ?? '').localeCompare(a.item.sold_on ?? ''))
+  const compared = lines.filter((l) => l.gain_cents !== null)
+  const paid_cents = compared.reduce((sum, l) => sum + (l.paid_cents ?? 0), 0)
+  const sold_cents = compared.reduce((sum, l) => sum + (l.sold_cents ?? 0), 0)
+  const gain_cents = sold_cents - paid_cents
+  return {
+    lines,
+    compared: compared.length,
+    paid_cents,
+    sold_cents,
+    gain_cents,
+    gain_pct: paid_cents > 0 ? (gain_cents / paid_cents) * 100 : null,
+  }
+}
+
 /**
  * What a shelf is asking today: the sum of each copy's median at the
  * condition of that copy. Sold copies are history, not shelf, and stay out.
