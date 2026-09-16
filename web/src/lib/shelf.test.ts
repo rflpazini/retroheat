@@ -6,7 +6,9 @@ function entry(prices: Partial<Record<'loose' | 'cib' | 'new', number>>, pct7: n
   return { prices, pct_7d: pct7 }
 }
 
+let copies = 0
 const owned = (game_id: string, condition: CollectionItem['condition'], paid_cents: number | null = null): CollectionItem => ({
+  id: `copy-${++copies}`,
   game_id,
   condition,
   added_at: '2026-09-07T00:00:00Z',
@@ -47,6 +49,11 @@ describe('shelfValue', () => {
     expect(v.movers.map((l) => l.item.game_id)).toEqual(['bully-ps2', 'okami-ps2'])
   })
 
+  it('names a game once among the movers however many copies of it are on the shelf', () => {
+    const v = shelfValue([owned('bully-ps2', 'loose'), owned('bully-ps2', 'cib'), owned('okami-ps2', 'cib')], index)
+    expect(v.movers.map((l) => l.item.game_id)).toEqual(['bully-ps2', 'okami-ps2'])
+  })
+
   it('compares what was paid with what the copy asks today, per line and in total', () => {
     // bully loose asks 1500, paid 1000: +500 (+50%); okami cib asks 2000, paid 2500: -500 (-20%).
     const v = shelfValue([owned('bully-ps2', 'loose', 1000), owned('okami-ps2', 'cib', 2500)], index)
@@ -78,9 +85,31 @@ describe('shelfValue', () => {
   it('reports a store that cannot hold a paid price yet, so the page can hide the field', () => {
     const withColumn = shelfValue([owned('bully-ps2', 'loose')], index)
     expect(withColumn.paid_supported).toBe(true)
-    const before = shelfValue([{ game_id: 'bully-ps2', condition: 'loose', added_at: '2026-09-07T00:00:00Z' }], index)
+    const before = shelfValue([{ id: 'copy-x', game_id: 'bully-ps2', condition: 'loose', added_at: '2026-09-07T00:00:00Z' }], index)
     expect(before.paid_supported).toBe(false)
     expect(shelfValue([], index).paid_supported).toBe(true)
+  })
+
+  it('sums two copies of the same game at their own conditions', () => {
+    const v = shelfValue([owned('bully-ps2', 'loose'), owned('bully-ps2', 'cib')], index)
+    expect(v.total_cents).toBe(1500 + 3000)
+    expect(v.priced).toBe(2)
+    expect(v.lines.map((l) => l.item.condition)).toEqual(['cib', 'loose'])
+  })
+
+  it('leaves sold copies out of the shelf value', () => {
+    const sold = { ...owned('okami-ps2', 'new', 1000), sold_cents: 8000, sold_on: '2026-09-10' }
+    const v = shelfValue([owned('bully-ps2', 'loose'), sold], index)
+    expect(v.total_cents).toBe(1500)
+    expect(v.lines).toHaveLength(1)
+    expect(v.compared).toBe(0)
+  })
+
+  it('reports a store without copy ids, so the page can hold writes until migration 0004', () => {
+    expect(shelfValue([owned('bully-ps2', 'loose')], index).copies_supported).toBe(true)
+    const legacy = shelfValue([{ game_id: 'bully-ps2', condition: 'loose', added_at: '2026-09-07T00:00:00Z', paid_cents: null }], index)
+    expect(legacy.copies_supported).toBe(false)
+    expect(shelfValue([], index).copies_supported).toBe(true)
   })
 
   it('has no percentage when the copies compared were free', () => {

@@ -1,10 +1,15 @@
-import type { AuthEvent, AuthUser, CollectionItem, ShelfBackend } from '@/lib/shelf'
-import type { Condition } from '@/lib/types'
+import type { AuthEvent, AuthUser, CollectionItem, CopyPatch, NewCopy, ShelfBackend } from '@/lib/shelf'
+import { onShelf } from '@/lib/shelf'
 
 export interface MemoryState {
   user: AuthUser | null
   saved: Set<string>
+  /** Every copy, sold ones included, by its own id. */
   collection: Map<string, CollectionItem>
+  /** The copies of a game still on the shelf, in the order they were added. */
+  copiesOf(gameId: string): CollectionItem[]
+  /** The first such copy, for tests that speak of "the" copy of a game. */
+  copyOf(gameId: string): CollectionItem | undefined
   /** The address the last magic link was requested for. */
   sentTo: string | null
   /** The redirect the last Google sign-in asked for. */
@@ -25,19 +30,32 @@ export const testUser: AuthUser = {
  * An in-memory backend for tests and local demos. Every call resolves on the
  * next tick, which is enough to exercise loading states without a network.
  */
-export function memoryBackend(seed: {
-  user?: AuthUser | null
-  saved?: string[]
-  collection?: CollectionItem[]
-} = {}): { backend: ShelfBackend; state: MemoryState } {
+export function memoryBackend(
+  seed: {
+    user?: AuthUser | null
+    saved?: string[]
+    collection?: CollectionItem[]
+    /** Answer like a store from before migration 0004: rows without an id. */
+    legacy?: boolean
+  } = {},
+): { backend: ShelfBackend; state: MemoryState } {
   const listeners = new Set<(user: AuthUser | null, event: AuthEvent) => void>()
   const emit = (event: AuthEvent) => {
     for (const cb of listeners) cb(state.user, event)
   }
+  let copies = 0
+  const nextId = () => `copy-${++copies}`
+  const seeded = (seed.collection ?? []).map((c) => ({ ...c, id: c.id ?? nextId(), paid_cents: c.paid_cents ?? null }))
   const state: MemoryState = {
     user: seed.user ?? null,
     saved: new Set(seed.saved ?? []),
-    collection: new Map((seed.collection ?? []).map((c) => [c.game_id, { ...c, paid_cents: c.paid_cents ?? null }])),
+    collection: new Map(seeded.map((c) => [c.id, c])),
+    copiesOf(gameId) {
+      return [...state.collection.values()].filter((c) => c.game_id === gameId && onShelf(c))
+    },
+    copyOf(gameId) {
+      return state.copiesOf(gameId)[0]
+    },
     sentTo: null,
     googleRedirect: null,
     deleted: false,
@@ -83,27 +101,39 @@ export function memoryBackend(seed: {
     },
     async listCollection() {
       requireUser()
-      return [...state.collection.values()]
-    },
-    async own(id, condition: Condition) {
-      requireUser()
-      const before = state.collection.get(id)
-      state.collection.set(id, {
-        game_id: id,
-        condition,
-        added_at: before?.added_at ?? '2026-09-07T00:00:00Z',
-        paid_cents: before?.paid_cents ?? null,
+      const rows = [...state.collection.values()]
+      if (!seed.legacy) return rows
+      return rows.map((r) => {
+        const row = { ...r }
+        delete row.id
+        return row
       })
     },
-    async disown(id) {
+    async addCopy(copy: NewCopy) {
       requireUser()
-      state.collection.delete(id)
+      const item: CollectionItem = {
+        id: nextId(),
+        game_id: copy.game_id,
+        condition: copy.condition,
+        added_at: '2026-09-07T00:00:00Z',
+        paid_cents: copy.paid_cents ?? null,
+        acquired_on: copy.acquired_on ?? null,
+        notes: copy.notes ?? null,
+        sold_cents: null,
+        sold_on: null,
+      }
+      state.collection.set(item.id!, item)
+      return item
     },
-    async setPaid(id, cents) {
+    async updateCopy(id, patch: CopyPatch) {
       requireUser()
       const before = state.collection.get(id)
-      if (!before) throw new Error('Not in the collection')
-      state.collection.set(id, { ...before, paid_cents: cents })
+      if (!before) throw new Error('No such copy')
+      state.collection.set(id, { ...before, ...patch })
+    },
+    async removeCopy(id) {
+      requireUser()
+      state.collection.delete(id)
     },
     async deleteAccount() {
       requireUser()

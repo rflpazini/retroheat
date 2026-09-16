@@ -10,7 +10,9 @@ import { Message } from '@/components/States'
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
+  DropdownMenuLabel,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
@@ -180,6 +182,8 @@ interface KeyProps {
   account: Account
   gameId: string
   title: string
+  /** On a shelf row, the copy this key speaks for; a board row speaks for the game's first copy. */
+  copyId?: string
 }
 
 /** The bookmark key: pressed while the game is saved. */
@@ -212,13 +216,22 @@ function BookmarkKey({ account, gameId, title }: KeyProps) {
   )
 }
 
+/** What the remove item says: the count matters when it takes more than one copy. */
+function removeLabel(copies: number): string {
+  if (copies === 2) return 'Remove both copies'
+  if (copies > 2) return `Remove all ${copies} copies`
+  return 'Remove from collection'
+}
+
 /**
  * The own-as key. Unowned it reads "Own"; owned it is pressed and reads the
  * condition of the copy with its colour, so the board doubles as a checklist.
  * The menu is a real menu in the system's chrome, with a checkmark against
- * the current condition and, once owned, a way out.
+ * the current condition and, once owned, a way out. On a board the key speaks
+ * for the game's first copy and offers to add another; on a shelf row it
+ * speaks for that one copy.
  */
-function OwnKey({ account, gameId, title }: KeyProps) {
+function OwnKey({ account, gameId, title, copyId }: KeyProps) {
   const trigger = useRef<HTMLButtonElement>(null)
   if (account.status === 'signed-out') {
     return (
@@ -234,18 +247,22 @@ function OwnKey({ account, gameId, title }: KeyProps) {
       </button>
     )
   }
-  const owned = account.owned(gameId)?.condition
-  const label = owned ? CONDITION_LABELS[owned] : 'Own'
+  const copies = account.copiesOf(gameId)
+  const copy = copyId ? copies.find((c) => c.id === copyId) : copies[0]
+  const owned = copy?.condition
+  const several = !copyId && copies.length > 1
+  const label = several ? `${copies.length} copies` : owned ? CONDITION_LABELS[owned] : 'Own'
+  const name = several ? copies.map((c) => CONDITION_LABELS[c.condition]).join(', ') : owned ? CONDITION_LABELS[owned] : null
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
         ref={trigger}
         className={cn(key, owned ? keyDown : keyUp, ownKey)}
-        aria-label={owned ? `Own ${title} as: ${label}` : `Own ${title} as`}
-        title={owned ? `In your collection as ${label.toLowerCase()}` : 'Mark as owned'}
+        aria-label={name ? `Own ${title} as: ${name}` : `Own ${title} as`}
+        title={several ? `${copies.length} copies in your collection` : owned ? `In your collection as ${label.toLowerCase()}` : 'Mark as owned'}
       >
         <span className="inline-flex min-w-0 items-center gap-1.5">
-          {owned && <Swatch condition={owned} />}
+          {owned && !several && <Swatch condition={owned} />}
           <span className="truncate">{label}</span>
         </span>
         <ChevronDown className="size-3 shrink-0" aria-hidden />
@@ -256,7 +273,8 @@ function OwnKey({ account, gameId, title }: KeyProps) {
           onValueChange={(value) => {
             // A first pick opens the "on the shelf" window; it should hand focus back here.
             returnFocusTo(trigger.current)
-            void account.setOwned(gameId, value as Condition)
+            if (copyId) void account.updateCopy(copyId, { condition: value as Condition })
+            else void account.setOwned(gameId, value as Condition)
           }}
         >
           {CONDITIONS.map((c) => (
@@ -266,14 +284,43 @@ function OwnKey({ account, gameId, title }: KeyProps) {
             </DropdownMenuRadioItem>
           ))}
         </DropdownMenuRadioGroup>
-        {owned && (
+        {owned && copyId && (
           <>
+            <DropdownMenuSeparator className="bg-[var(--border)]" />
+            <DropdownMenuItem
+              className={menuBarClasses.item}
+              onClick={() => void keepingFocus(trigger.current, () => account.removeCopy(copyId))}
+            >
+              Remove this copy
+            </DropdownMenuItem>
+          </>
+        )}
+        {owned && !copyId && (
+          <>
+            <DropdownMenuSeparator className="bg-[var(--border)]" />
+            <DropdownMenuGroup>
+              <DropdownMenuLabel className="eyebrow px-2 pb-0.5 pt-1.5">Add another copy as</DropdownMenuLabel>
+              {CONDITIONS.map((c) => (
+                <DropdownMenuItem
+                  key={c}
+                  className={cn(menuBarClasses.item, 'gap-2')}
+                  aria-label={`Add another copy of ${title} as ${CONDITION_LABELS[c]}`}
+                  onClick={() => {
+                    returnFocusTo(trigger.current)
+                    void account.addCopy(gameId, c)
+                  }}
+                >
+                  <Swatch condition={c} />
+                  {CONDITION_LABELS[c]}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuGroup>
             <DropdownMenuSeparator className="bg-[var(--border)]" />
             <DropdownMenuItem
               className={menuBarClasses.item}
               onClick={() => void keepingFocus(trigger.current, () => account.setOwned(gameId, null))}
             >
-              Remove from collection
+              {removeLabel(copies.length)}
             </DropdownMenuItem>
           </>
         )}
@@ -287,13 +334,24 @@ function OwnKey({ account, gameId, title }: KeyProps) {
  * keys appear and both open the sign-in window, so the shelf is visible before
  * it is usable and the row keeps its shape when the visitor signs in.
  */
-export function ShelfRowControls({ gameId, title, className }: { gameId: string; title: string; className?: string }) {
+export function ShelfRowControls({
+  gameId,
+  title,
+  copyId,
+  className,
+}: {
+  gameId: string
+  title: string
+  /** On the collection page, the copy the row is about. */
+  copyId?: string
+  className?: string
+}) {
   const account = useAccount()
   if (account.status === 'disabled' || account.status === 'loading') return null
   return (
     <span className={cn('inline-flex items-center', className)}>
       <BookmarkKey account={account} gameId={gameId} title={title} />
-      <OwnKey account={account} gameId={gameId} title={title} />
+      <OwnKey account={account} gameId={gameId} title={title} copyId={copyId} />
     </span>
   )
 }

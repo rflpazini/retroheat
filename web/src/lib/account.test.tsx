@@ -5,7 +5,7 @@ import { render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import { AppShell } from '../components/AppShell'
-import { AccountProvider } from './account'
+import { AccountProvider, useAccount } from './account'
 import { resetCache } from './data'
 import { memoryBackend, testUser } from './shelf-memory'
 import type { ShelfBackend } from './shelf'
@@ -153,6 +153,79 @@ describe('account deletion', () => {
     expect(state.deleted).toBe(false)
     expect(state.user).toEqual(testUser)
     confirm.mockRestore()
+  })
+})
+
+/** Reads the shelf through the same context the pages use, and pokes it. */
+function ShelfProbe() {
+  const a = useAccount()
+  const copies = a.collection.status === 'ready' ? [...a.collection.data.values()] : []
+  return (
+    <div>
+      <p data-testid="copies">{copies.map((c) => `${c.game_id}:${c.condition}`).join(',')}</p>
+      <button type="button" onClick={() => void a.addCopy('bully-ps2', 'loose')}>
+        add loose
+      </button>
+      <button type="button" onClick={() => void a.removeCopy(copies[0]?.id ?? '')}>
+        remove first
+      </button>
+      <button type="button" onClick={() => void a.setOwned('bully-ps2', 'new')}>
+        own sealed
+      </button>
+      {a.error && <p role="alert">{a.error}</p>}
+    </div>
+  )
+}
+
+function renderProbe(backend: ShelfBackend) {
+  return render(
+    <MemoryRouter initialEntries={['/collection']}>
+      <AccountProvider backend={() => Promise.resolve(backend)}>
+        <ShelfProbe />
+      </AccountProvider>
+    </MemoryRouter>,
+  )
+}
+
+describe('a shelf holds several copies of one game', () => {
+  const copy = (condition: 'loose' | 'cib' | 'new') => ({ game_id: 'bully-ps2', condition, added_at: '2026-09-07T00:00:00Z' })
+
+  it('adds a second copy of a game the shelf already holds', async () => {
+    const { backend, state } = memoryBackend({ user: testUser, collection: [copy('cib')] })
+    renderProbe(backend)
+    const user = userEvent.setup()
+    await waitFor(() => expect(screen.getByTestId('copies').textContent).toBe('bully-ps2:cib'))
+
+    await user.click(screen.getByRole('button', { name: /add loose/i }))
+    await waitFor(() => expect(screen.getByTestId('copies').textContent).toBe('bully-ps2:cib,bully-ps2:loose'))
+    expect(state.copiesOf('bully-ps2').map((c) => c.condition)).toEqual(['cib', 'loose'])
+    // Every copy has a key of its own; the pair share nothing but the game.
+    const ids = state.copiesOf('bully-ps2').map((c) => c.id)
+    expect(new Set(ids).size).toBe(2)
+  })
+
+  it('removes one copy and keeps the other', async () => {
+    const { backend, state } = memoryBackend({ user: testUser, collection: [copy('cib'), copy('loose')] })
+    renderProbe(backend)
+    const user = userEvent.setup()
+    await waitFor(() => expect(screen.getByTestId('copies').textContent).toBe('bully-ps2:cib,bully-ps2:loose'))
+
+    await user.click(screen.getByRole('button', { name: /remove first/i }))
+    await waitFor(() => expect(screen.getByTestId('copies').textContent).toBe('bully-ps2:loose'))
+    expect(state.copiesOf('bully-ps2').map((c) => c.condition)).toEqual(['loose'])
+  })
+
+  it('refuses collection writes on a database without copy ids and says which migration', async () => {
+    // A store from before migration 0004 returns rows without an id.
+    const { backend, state } = memoryBackend({ user: testUser, collection: [copy('cib')], legacy: true })
+    renderProbe(backend)
+    const user = userEvent.setup()
+    await waitFor(() => expect(screen.getByTestId('copies').textContent).toBe('bully-ps2:cib'))
+
+    await user.click(screen.getByRole('button', { name: /own sealed/i }))
+    expect((await screen.findByRole('alert')).textContent).toMatch(/0004_copies\.sql/)
+    expect(state.copiesOf('bully-ps2')[0]?.condition).toBe('cib')
+    expect(screen.getByTestId('copies').textContent).toBe('bully-ps2:cib')
   })
 })
 

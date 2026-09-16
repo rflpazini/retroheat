@@ -1,5 +1,5 @@
 import { explainError, retryOnClockSkew, type ApiError } from '@/lib/retry'
-import type { AuthEvent, AuthUser, ShelfBackend } from '@/lib/shelf'
+import type { AuthEvent, AuthUser, CollectionItem, ShelfBackend } from '@/lib/shelf'
 import type { Condition } from '@/lib/types'
 
 export function supabaseEnv(): { url: string; anonKey: string } | null {
@@ -58,6 +58,36 @@ export async function loadSupabaseBackend(): Promise<ShelfBackend> {
 
   const check = (error: ApiError | null) => {
     if (error) throw new Error(explainError(error))
+  }
+
+  // Row mirrors collection_items by hand: keep it in step with
+  // supabase/migrations. A key missing from the row altogether means the
+  // column does not exist yet: without paid_cents the page hides the field
+  // (0003); without id the shelf reads but refuses to write (0004).
+  type Row = {
+    id?: string
+    game_id: string
+    condition: Condition
+    added_at: string
+    paid_cents?: number | null
+    acquired_on?: string | null
+    notes?: string | null
+    sold_cents?: number | null
+    sold_on?: string | null
+  }
+  const toItem = (r: Row): CollectionItem => {
+    const copies = 'id' in r
+    return {
+      id: copies ? r.id : undefined,
+      game_id: r.game_id,
+      condition: r.condition,
+      added_at: r.added_at,
+      paid_cents: 'paid_cents' in r ? (r.paid_cents ?? null) : undefined,
+      acquired_on: copies ? (r.acquired_on ?? null) : undefined,
+      notes: copies ? (r.notes ?? null) : undefined,
+      sold_cents: copies ? (r.sold_cents ?? null) : undefined,
+      sold_on: copies ? (r.sold_on ?? null) : undefined,
+    }
   }
 
   return {
@@ -119,41 +149,34 @@ export async function loadSupabaseBackend(): Promise<ShelfBackend> {
       check(error)
     },
     async listCollection() {
-      // Every column, so a site deployed before migration 0003 still loads
-      // the shelf. A row without the paid_cents key at all means the column
-      // does not exist yet, and the page hides the field rather than offer a
-      // write that cannot land. Row mirrors the table by hand: keep it in
-      // step with supabase/migrations.
+      // Every column, so a site deployed ahead of a migration still loads the
+      // shelf; toItem reads what is there.
       const { data, error } = await retryOnClockSkew(() =>
         client.from('collection_items').select('*').order('added_at', { ascending: false }),
       )
       check(error)
-      type Row = { game_id: string; condition: Condition; added_at: string; paid_cents?: number | null }
-      return ((data ?? []) as Row[]).map((r) => ({
-        game_id: r.game_id,
-        condition: r.condition,
-        added_at: r.added_at,
-        paid_cents: 'paid_cents' in r ? (r.paid_cents ?? null) : undefined,
-      }))
+      return ((data ?? []) as Row[]).map(toItem)
     },
-    async own(gameId, condition: Condition) {
+    async addCopy(copy) {
+      const user_id = await uid()
+      // The store names the copy, so the row comes back rather than a count.
+      const { data, error } = await retryOnClockSkew(() =>
+        client.from('collection_items').insert({ user_id, ...copy }).select().single(),
+      )
+      check(error)
+      return toItem(data as Row)
+    },
+    async updateCopy(id, patch) {
       const user_id = await uid()
       const { error } = await retryOnClockSkew(() =>
-        client.from('collection_items').upsert({ user_id, game_id: gameId, condition }, { onConflict: 'user_id,game_id' }),
+        client.from('collection_items').update(patch).eq('id', id).eq('user_id', user_id),
       )
       check(error)
     },
-    async disown(gameId) {
+    async removeCopy(id) {
       const user_id = await uid()
       const { error } = await retryOnClockSkew(() =>
-        client.from('collection_items').delete().eq('user_id', user_id).eq('game_id', gameId),
-      )
-      check(error)
-    },
-    async setPaid(gameId, cents) {
-      const user_id = await uid()
-      const { error } = await retryOnClockSkew(() =>
-        client.from('collection_items').update({ paid_cents: cents }).eq('user_id', user_id).eq('game_id', gameId),
+        client.from('collection_items').delete().eq('id', id).eq('user_id', user_id),
       )
       check(error)
     },

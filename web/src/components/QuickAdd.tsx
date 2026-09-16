@@ -15,6 +15,8 @@ const toggle = (active: boolean) =>
 /**
  * Fill a shelf without opening every game: type a title, pick a condition,
  * done. Same ranking as the search palette, so "bully ps2" works here too.
+ * Owning adds a copy each time, which is how a second cart of the same game
+ * gets on the shelf; the keys show the conditions already held.
  */
 export function QuickAdd({ mode }: { mode: 'save' | 'own' }) {
   const account = useAccount()
@@ -27,7 +29,7 @@ export function QuickAdd({ mode }: { mode: 'save' | 'own' }) {
   const label = mode === 'own' ? 'Add a game you own' : 'Save a game'
 
   async function add(g: CatalogGame, condition?: Condition) {
-    if (mode === 'own') await account.setOwned(g.id, condition ?? 'cib')
+    if (mode === 'own') await account.addCopy(g.id, condition ?? 'cib')
     else if (!account.isSaved(g.id)) await account.toggleSaved(g.id)
     setAdded(g.title)
     setQuery('')
@@ -53,13 +55,14 @@ export function QuickAdd({ mode }: { mode: 'save' | 'own' }) {
       {hits.length > 0 && (
         <ul className="mt-2 divide-y divide-dotted divide-[var(--input)]" aria-label="Matching games">
           {hits.map(({ item: g }) => {
-            const owned = account.owned(g.id)
+            const held = new Set(account.copiesOf(g.id).map((c) => c.condition))
             const saved = account.isSaved(g.id)
             return (
               <li key={g.id} className="flex flex-wrap items-center justify-between gap-2 py-1.5 text-xs">
                 <span>
                   <span className="font-semibold">{g.title}</span>
                   <span className="eyebrow ml-2">{PLATFORM_SHORT[g.platform]}</span>
+                  {held.size > 0 && <span className="eyebrow ml-2">on the shelf</span>}
                 </span>
                 {mode === 'own' ? (
                   <span className="flex" role="group" aria-label={`Add ${g.title} as`}>
@@ -67,8 +70,8 @@ export function QuickAdd({ mode }: { mode: 'save' | 'own' }) {
                       <button
                         key={c}
                         type="button"
-                        className={toggle(owned?.condition === c)}
-                        aria-pressed={owned?.condition === c}
+                        className={toggle(held.has(c))}
+                        aria-pressed={held.has(c)}
                         onClick={() => void add(g, c)}
                       >
                         {CONDITION_LABELS[c]}

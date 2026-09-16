@@ -123,7 +123,7 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     const own = await screen.findByRole('button', { name: ownAs(priced.title, 'Loose') })
     await user.click(own)
     await user.click(await screen.findByRole('menuitemradio', { name: /complete/i }))
-    await waitFor(() => expect(state.collection.get(priced.id)?.condition).toBe('cib'))
+    await waitFor(() => expect(state.copyOf(priced.id)?.condition).toBe('cib'))
     expect(document.body.textContent).toContain(money(priced.prices.cib!.median_cents))
     expect(screen.getByRole('button', { name: ownAs(priced.title, 'Complete') })).toBeDefined()
   })
@@ -138,7 +138,7 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     const user = userEvent.setup()
 
     await user.click(await screen.findByRole('button', { name: ownAs(priced.title, 'Complete') }))
-    await user.click(await screen.findByRole('menuitem', { name: /remove from collection/i }))
+    await user.click(await screen.findByRole('menuitem', { name: /remove this copy/i }))
     await waitFor(() => expect(document.body.textContent).toMatch(/nothing on the shelf yet/i))
     expect(state.collection.size).toBe(0)
     // The row that held the menu is gone, so focus lands on the page region, not on <body>.
@@ -164,7 +164,7 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     const firstTitle = table.tBodies[0].rows[0].querySelector('a')!.textContent!
     const survivor = firstTitle === priced.title ? other : priced
     await user.click(screen.getByRole('button', { name: ownAs(firstTitle, 'Loose') }))
-    await user.click(await screen.findByRole('menuitem', { name: /remove from collection/i }))
+    await user.click(await screen.findByRole('menuitem', { name: /remove this copy/i }))
     await waitFor(() => expect(screen.queryByRole('button', { name: ownAs(firstTitle, 'Loose') })).toBeNull())
     // The movers window may name the survivor too, so look for the link in the table.
     await waitFor(() => expect(document.activeElement).toBe(within(table).getByRole('link', { name: survivor.title })))
@@ -221,7 +221,7 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     const today = priced.prices.loose!.median_cents
     const paid = Math.round(today / 2)
     await user.type(field, `${(paid / 100).toFixed(2)}{Enter}`)
-    await waitFor(() => expect(state.collection.get(priced.id)?.paid_cents).toBe(paid))
+    await waitFor(() => expect(state.copyOf(priced.id)?.paid_cents).toBe(paid))
 
     // The line and the summary both compare today's asking price with what was paid.
     await waitFor(() => expect(document.body.textContent).toContain(signedMoney(today - paid)))
@@ -243,13 +243,13 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
 
     await user.click(screen.getByRole('button', { name: ownAs(priced.title, 'Loose') }))
     await user.click(await screen.findByRole('menuitemradio', { name: /complete/i }))
-    await waitFor(() => expect(state.collection.get(priced.id)?.condition).toBe('cib'))
-    expect(state.collection.get(priced.id)?.paid_cents).toBe(1234)
+    await waitFor(() => expect(state.copyOf(priced.id)?.condition).toBe('cib'))
+    expect(state.copyOf(priced.id)?.paid_cents).toBe(1234)
     expect((screen.getByRole('textbox', { name: paidFor(priced.title) }) as HTMLInputElement).value).toBe('12.34')
 
     await user.clear(field)
     await user.tab()
-    await waitFor(() => expect(state.collection.get(priced.id)?.paid_cents).toBeNull())
+    await waitFor(() => expect(state.copyOf(priced.id)?.paid_cents).toBeNull())
   })
 
   it('puts back the stored paid price when the typed value is not a price', async () => {
@@ -264,13 +264,13 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     await user.clear(field)
     await user.type(field, 'abc{Enter}')
     await waitFor(() => expect(field.value).toBe('12.34'))
-    expect(state.collection.get(priced.id)?.paid_cents).toBe(1234)
+    expect(state.copyOf(priced.id)?.paid_cents).toBe(1234)
 
     // More than the store allows snaps back too, instead of failing on the server.
     await user.clear(field)
     await user.type(field, '2000000{Enter}')
     await waitFor(() => expect(field.value).toBe('12.34'))
-    expect(state.collection.get(priced.id)?.paid_cents).toBe(1234)
+    expect(state.copyOf(priced.id)?.paid_cents).toBe(1234)
   })
 
   it('lets the latest edit win when an earlier save is slow to come back', async () => {
@@ -280,11 +280,11 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
       collection: [{ game_id: priced.id, condition: 'loose', added_at: '2026-09-07T00:00:00Z' }],
     })
     // The first write lands at once but its reply is held back until released.
-    const original = backend.setPaid
+    const original = backend.updateCopy
     let release: () => void = () => {}
     let held = false
-    backend.setPaid = async (id, cents) => {
-      await original(id, cents)
+    backend.updateCopy = async (id, patch) => {
+      await original(id, patch)
       if (!held) {
         held = true
         await new Promise<void>((resolve) => {
@@ -299,25 +299,81 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     await user.type(field, '10{Enter}')
     await user.clear(field)
     await user.type(field, '20{Enter}')
-    await waitFor(() => expect(state.collection.get(priced.id)?.paid_cents).toBe(2000))
+    await waitFor(() => expect(state.copyOf(priced.id)?.paid_cents).toBe(2000))
     expect(field.value).toBe('20.00')
 
     release()
     await new Promise((r) => setTimeout(r, 20))
     expect(field.value).toBe('20.00')
-    expect(state.collection.get(priced.id)?.paid_cents).toBe(2000)
+    expect(state.copyOf(priced.id)?.paid_cents).toBe(2000)
   })
 
-  it('hides the paid field when the store has no column for it yet', async () => {
+  it('shows the copies notice and no row controls on a store from before migration 0004', async () => {
     if (!priced) return
-    const { backend } = memoryBackend({ user: testUser })
-    // A store from before migration 0003 returns rows without the key at all.
-    backend.listCollection = async () => [{ game_id: priced.id, condition: 'loose', added_at: '2026-09-07T00:00:00Z' }]
+    // A store from before 0004 returns rows without an id: the shelf reads, nothing on it can be written.
+    const { backend } = memoryBackend({
+      user: testUser,
+      collection: [{ game_id: priced.id, condition: 'loose', added_at: '2026-09-07T00:00:00Z', paid_cents: 1234 }],
+      legacy: true,
+    })
     renderAt('/collection', <Collection />, '/collection', backend)
     await waitFor(() => expect(document.body.textContent).toMatch(/shelf value/i))
+    expect(document.body.textContent).toContain(priced.title)
+    expect(document.body.textContent).toMatch(/0004_copies\.sql/)
     expect(screen.queryByRole('textbox', { name: paidFor(priced.title) })).toBeNull()
-    expect(document.body.textContent).toMatch(/0003_paid_price\.sql/)
-    expect(document.body.textContent).not.toMatch(/\bGain\b/)
+    expect(screen.queryByRole('button', { name: ownAs(priced.title, 'Loose') })).toBeNull()
+  })
+
+  it('shows one row per copy with each copy at its own condition', async () => {
+    if (!priced) return
+    const { backend, state } = memoryBackend({
+      user: testUser,
+      collection: [
+        { game_id: priced.id, condition: 'loose', added_at: '2026-09-07T00:00:00Z' },
+        { game_id: priced.id, condition: 'cib', added_at: '2026-09-08T00:00:00Z' },
+      ],
+    })
+    renderAt('/collection', <Collection />, '/collection', backend)
+    const user = userEvent.setup()
+
+    await waitFor(() => expect(document.body.textContent).toMatch(/shelf value/i))
+    expect(document.body.textContent).toMatch(/2 copies · 1 game/)
+    expect(document.body.textContent).toContain(money(priced.prices.loose!.median_cents + priced.prices.cib!.median_cents))
+    const loose = screen.getByRole('button', { name: ownAs(priced.title, 'Loose') })
+    expect(screen.getByRole('button', { name: ownAs(priced.title, 'Complete') })).toBeDefined()
+    expect(document.body.textContent).toMatch(/copy 1 of 2/i)
+
+    // Each row's menu speaks for its own copy.
+    await user.click(loose)
+    await user.click(await screen.findByRole('menuitemradio', { name: /sealed/i }))
+    await waitFor(() => expect(state.copiesOf(priced.id).map((c) => c.condition)).toEqual(['new', 'cib']))
+
+    await user.click(screen.getByRole('button', { name: ownAs(priced.title, 'Sealed') }))
+    await user.click(await screen.findByRole('menuitem', { name: /remove this copy/i }))
+    await waitFor(() => expect(state.copiesOf(priced.id).map((c) => c.condition)).toEqual(['cib']))
+    expect(document.body.textContent).toMatch(/1 game · 1 priced/)
+  })
+
+  it('offers another copy from a board row already owned, and names every copy on the key', async () => {
+    if (!priced) return
+    const { backend, state } = memoryBackend({
+      user: testUser,
+      collection: [{ game_id: priced.id, condition: 'loose', added_at: '2026-09-07T00:00:00Z' }],
+    })
+    const { Platform } = await import('./Platform')
+    serveTrimmedBoard('ps2', [priced.id, ...ps2.games.slice(0, 4).map((g) => g.id)])
+    renderAt('/p/ps2', <Platform />, '/p/:platform', backend)
+    const user = userEvent.setup()
+
+    await user.click(await screen.findByRole('button', { name: ownAs(priced.title, 'Loose') }))
+    await user.click(await screen.findByRole('menuitem', { name: `Add another copy of ${priced.title} as Complete` }))
+    await waitFor(() => expect(state.copiesOf(priced.id).map((c) => c.condition)).toEqual(['loose', 'cib']))
+    expect(await screen.findByRole('button', { name: ownAs(priced.title, 'Loose, Complete') })).toBeDefined()
+
+    await user.click(screen.getByRole('button', { name: ownAs(priced.title, 'Loose, Complete') }))
+    await user.click(await screen.findByRole('menuitem', { name: /remove both copies/i }))
+    await waitFor(() => expect(state.collection.size).toBe(0))
+    expect(await screen.findByRole('button', { name: ownAs(priced.title) })).toBeDefined()
   })
 
   it('lists saved games with their price and removes one', async () => {
@@ -349,7 +405,7 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
 
     const group = screen.getByRole('group', { name: /condition owned/i })
     await user.click(within(group).getByRole('button', { name: /complete/i }))
-    await waitFor(() => expect(state.collection.get('jet-force-gemini-n64')?.condition).toBe('cib'))
+    await waitFor(() => expect(state.copyOf('jet-force-gemini-n64')?.condition).toBe('cib'))
     expect(document.body.textContent).toMatch(/in my collection as/i)
   })
 
@@ -369,7 +425,7 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
 
     await user.click(screen.getByRole('button', { name: ownAs(priced.title) }))
     await user.click(await screen.findByRole('menuitemradio', { name: /loose/i }))
-    await waitFor(() => expect(state.collection.get(priced.id)?.condition).toBe('loose'))
+    await waitFor(() => expect(state.copyOf(priced.id)?.condition).toBe('loose'))
     // The row now reads the condition back, so a board doubles as a checklist.
     expect(screen.getByRole('button', { name: ownAs(priced.title, 'Loose') })).toBeDefined()
   })
@@ -412,8 +468,8 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     expect(dialog.textContent).toContain(signedMoney(priced.prices.cib!.median_cents - paid))
     await user.click(within(dialog).getByRole('button', { name: /^save$/i }))
     await waitFor(() => expect(screen.queryByRole('dialog', { name: /on the shelf/i })).toBeNull())
-    await waitFor(() => expect(state.collection.get(priced.id)?.paid_cents).toBe(paid))
-    expect(state.collection.get(priced.id)?.condition).toBe('cib')
+    await waitFor(() => expect(state.copyOf(priced.id)?.paid_cents).toBe(paid))
+    expect(state.copyOf(priced.id)?.condition).toBe('cib')
   })
 
   it('lets the window be skipped, keeps the copy, and does not ask again for a change of condition', async () => {
@@ -429,12 +485,12 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     const dialog = await screen.findByRole('dialog', { name: /on the shelf/i })
     await user.click(within(dialog).getByRole('button', { name: /skip/i }))
     await waitFor(() => expect(screen.queryByRole('dialog', { name: /on the shelf/i })).toBeNull())
-    expect(state.collection.get(priced.id)?.condition).toBe('loose')
-    expect(state.collection.get(priced.id)?.paid_cents).toBeNull()
+    expect(state.copyOf(priced.id)?.condition).toBe('loose')
+    expect(state.copyOf(priced.id)?.paid_cents).toBeNull()
 
     await user.click(screen.getByRole('button', { name: ownAs(priced.title, 'Loose') }))
     await user.click(await screen.findByRole('menuitemradio', { name: /sealed/i }))
-    await waitFor(() => expect(state.collection.get(priced.id)?.condition).toBe('new'))
+    await waitFor(() => expect(state.copyOf(priced.id)?.condition).toBe('new'))
     expect(screen.queryByRole('dialog', { name: /on the shelf/i })).toBeNull()
   })
 
@@ -452,7 +508,7 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     await user.type(within(dialog).getByRole('textbox', { name: paidFor(priced.title) }), 'abc{Enter}')
     expect((await within(dialog).findByRole('alert')).textContent).toMatch(/type a price/i)
     expect(screen.getByRole('dialog', { name: /on the shelf/i })).toBeDefined()
-    expect(state.collection.get(priced.id)?.paid_cents).toBeNull()
+    expect(state.copyOf(priced.id)?.paid_cents).toBeNull()
   })
 
   it('opens the same window from the game page', async () => {
@@ -465,7 +521,7 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     const dialog = await screen.findByRole('dialog', { name: /on the shelf/i })
     await waitFor(() => expect(dialog.textContent).toMatch(/jet force gemini/i))
     await user.type(within(dialog).getByRole('textbox', { name: /paid for/i }), '15{Enter}')
-    await waitFor(() => expect(state.collection.get('jet-force-gemini-n64')?.paid_cents).toBe(1500))
+    await waitFor(() => expect(state.copyOf('jet-force-gemini-n64')?.paid_cents).toBe(1500))
   })
 
   it('opens the same window from quick-add on the collection page', async () => {
@@ -478,13 +534,32 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     const dialog = await screen.findByRole('dialog', { name: /on the shelf/i })
     await waitFor(() => expect(dialog.textContent).toMatch(/bully/i))
     await user.type(within(dialog).getByRole('textbox', { name: /paid for/i }), '22{Enter}')
-    await waitFor(() => expect(state.collection.get('bully-ps2')?.paid_cents).toBe(2200))
+    await waitFor(() => expect(state.copyOf('bully-ps2')?.paid_cents).toBe(2200))
+  })
+
+  it('asks what the second copy cost, and leaves the first copy alone', async () => {
+    if (!priced) return
+    const { backend, state } = memoryBackend({
+      user: testUser,
+      collection: [{ game_id: priced.id, condition: 'loose', added_at: '2026-09-07T00:00:00Z', paid_cents: 1000 }],
+    })
+    const { Platform } = await import('./Platform')
+    serveTrimmedBoard('ps2', [priced.id, ...ps2.games.slice(0, 4).map((g) => g.id)])
+    renderShell('/p/ps2', <Route path="p/:platform" element={<Platform />} />, backend)
+    const user = userEvent.setup()
+
+    await user.click(await screen.findByRole('button', { name: ownAs(priced.title, 'Loose') }))
+    await user.click(await screen.findByRole('menuitem', { name: `Add another copy of ${priced.title} as Sealed` }))
+    const dialog = await screen.findByRole('dialog', { name: /on the shelf/i })
+    expect(dialog.textContent).toMatch(/sealed copy/i)
+    await user.type(within(dialog).getByRole('textbox', { name: paidFor(priced.title) }), '20{Enter}')
+    await waitFor(() => expect(state.copiesOf(priced.id).map((c) => c.paid_cents)).toEqual([1000, 2000]))
   })
 
   it('never opens the window when the add itself failed', async () => {
     if (!priced) return
     const { backend } = memoryBackend({ user: testUser })
-    backend.own = async () => {
+    backend.addCopy = async () => {
       throw new Error('new row violates row-level security policy')
     }
     const { Platform } = await import('./Platform')
@@ -501,7 +576,7 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
   it('reports a failed shelf write on the status strip and rolls the row back', async () => {
     if (!priced) return
     const { backend } = memoryBackend({ user: testUser })
-    backend.own = async () => {
+    backend.addCopy = async () => {
       throw new Error('new row violates row-level security policy')
     }
     const { Platform } = await import('./Platform')
@@ -590,7 +665,7 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     const group = await screen.findByRole('group', { name: /add bully as/i })
     await user.click(within(group).getByRole('button', { name: /loose/i }))
 
-    await waitFor(() => expect(state.collection.get('bully-ps2')?.condition).toBe('loose'))
+    await waitFor(() => expect(state.copyOf('bully-ps2')?.condition).toBe('loose'))
     await waitFor(() => expect(screen.getByRole('status').textContent).toMatch(/added bully to your collection/i))
     expect(document.body.textContent).toMatch(/shelf value/i)
     expect((box as HTMLInputElement).value).toBe('')

@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import type { Loadable } from '@/lib/data'
-import type { AuthUser, CollectionItem, ShelfBackend } from '@/lib/shelf'
+import { onShelf, type AuthUser, type CollectionItem, type CopyPatch, type ShelfBackend } from '@/lib/shelf'
 import { isAuthEnabled, loadSupabaseBackend } from '@/lib/supabase'
 import type { Condition } from '@/lib/types'
 
@@ -20,19 +20,33 @@ export interface Account {
   saved: Loadable<Set<string>>
   isSaved: (id: string) => boolean
   toggleSaved: (id: string) => Promise<void>
+  /** Every copy, sold ones included, keyed by copy id (by game id on a store from before migration 0004). */
   collection: Loadable<Map<string, CollectionItem>>
-  owned: (id: string) => CollectionItem | undefined
-  setOwned: (id: string, condition: Condition | null) => Promise<void>
-  /** Records what an owned copy cost, or forgets it with null. */
-  setPaid: (id: string, cents: number | null) => Promise<void>
+  /** False when the store has no copy ids yet: the shelf reads, but nothing on it can be written. */
+  copiesSupported: boolean
+  /** The copies of a game still on the shelf, oldest first. */
+  copiesOf: (gameId: string) => CollectionItem[]
+  /** The first copy of a game still on the shelf, for controls that speak of "the" copy. */
+  owned: (gameId: string) => CollectionItem | undefined
+  /** Sets the first copy's condition, adds a copy when there is none, or with null takes every copy off the shelf. */
+  setOwned: (gameId: string, condition: Condition | null) => Promise<void>
+  addCopy: (gameId: string, condition: Condition) => Promise<void>
+  updateCopy: (copyId: string, patch: CopyPatch) => Promise<void>
+  removeCopy: (copyId: string) => Promise<void>
+  /** Records what a copy cost, or forgets it with null. */
+  setPaid: (copyId: string, cents: number | null) => Promise<void>
   /** The copy just added to the shelf, for the window that asks what it cost; null when none. */
-  pendingAdd: { game_id: string; condition: Condition } | null
+  pendingAdd: { copy_id: string; game_id: string; condition: Condition } | null
   dismissAdd: () => void
   /** The last failed write, in the backend's words; cleared by the next success. */
   error: string | null
   /** Why the last sign-in redirect failed, e.g. a magic link opened in another browser. */
   signInError: string | null
 }
+
+/** What a write is refused with on a store that predates copies. */
+export const COPIES_MIGRATION =
+  'The database has not been updated for copies yet (apply supabase/migrations/0004_copies.sql)'
 
 const noop = async () => {}
 
@@ -55,8 +69,13 @@ const disabled: Account = {
   isSaved: () => false,
   toggleSaved: noop,
   collection: { status: 'ready', data: new Map() },
+  copiesSupported: true,
+  copiesOf: () => [],
   owned: () => undefined,
   setOwned: noop,
+  addCopy: noop,
+  updateCopy: noop,
+  removeCopy: noop,
   setPaid: noop,
   pendingAdd: null,
   dismissAdd: () => {},
@@ -134,6 +153,23 @@ function consumeAuthParams(): { errorDescription: string | null } {
   return { errorDescription }
 }
 
+type Shelf = Loadable<Map<string, CollectionItem>>
+
+/** The map key of a copy: its id, or the game on a store that has none yet. */
+const keyOf = (item: CollectionItem) => item.id ?? item.game_id
+
+/** Whether every row carries a copy id; an empty shelf can be written to. */
+function supported(shelf: Shelf): boolean {
+  return shelf.status === 'ready' && [...shelf.data.values()].every((i) => i.id !== undefined)
+}
+
+/** The copies of a game still on the shelf, oldest first. */
+function copiesIn(shelf: Map<string, CollectionItem>, gameId: string): CollectionItem[] {
+  return [...shelf.values()]
+    .filter((i) => i.game_id === gameId && onShelf(i))
+    .sort((a, b) => a.added_at.localeCompare(b.added_at))
+}
+
 /**
  * Holds the signed-in user and their lists for everything under it. The
  * backend is loaded once, on demand; pass one explicitly in tests, or null to
@@ -186,10 +222,7 @@ function AccountState({
   const [user, setUser] = useState<AuthUser | null>(null)
   const [signInOpen, setSignInOpen] = useState(false)
   const [saved, setSaved] = useState<Loadable<Set<string>>>({ status: 'ready', data: new Set() })
-  const [collection, setCollection] = useState<Loadable<Map<string, CollectionItem>>>({
-    status: 'ready',
-    data: new Map(),
-  })
+  const [collection, setCollection] = useState<Shelf>({ status: 'ready', data: new Map() })
   const [error, setError] = useState<string | null>(null)
   const [pendingAdd, setPendingAdd] = useState<Account['pendingAdd']>(null)
   // A failed write's message belongs to the page it happened on; leaving the
@@ -274,7 +307,7 @@ function AccountState({
       .then(([s, c]) => {
         if (cancelled) return
         setSaved({ status: 'ready', data: new Set(s) })
-        setCollection({ status: 'ready', data: new Map(c.map((i) => [i.game_id, i])) })
+        setCollection({ status: 'ready', data: new Map(c.map((i) => [keyOf(i), i])) })
       })
       .catch((e: unknown) => {
         if (cancelled) return
@@ -330,76 +363,147 @@ function AccountState({
     }
   }, [])
 
-  const setOwned = useCallback(async (id: string, condition: Condition | null) => {
-    const b = await ensure()
-    const cur = collectionRef.current
-    if (cur.status !== 'ready') return
-    const next = new Map(cur.data)
-    const before = cur.data.get(id)
-    // A change of condition keeps what the copy cost; the server does the same.
-    if (condition) {
-      next.set(id, {
-        game_id: id,
-        condition,
-        added_at: before?.added_at ?? new Date().toISOString(),
-        paid_cents: before?.paid_cents ?? null,
-      })
-    } else {
-      next.delete(id)
-    }
-    setCollection({ status: 'ready', data: next })
-    const from = locationRef.current.pathname
-    try {
-      if (condition) await b.own(id, condition)
-      else await b.disown(id)
-      setError(null)
-      // A copy new to the shelf gets the window asking what it cost, once the
-      // write has landed and only if the visitor is still on the same page; a
-      // change of condition does not.
-      if (condition && !before && locationRef.current.pathname === from) setPendingAdd({ game_id: id, condition })
-    } catch (e) {
-      setCollection(cur)
-      setError(messageOf(e))
-    }
-  }, [])
-
-  // The latest edit of a field wins: a slower earlier write must not put its
-  // value, or its failure, over a later one.
-  const paidSeq = useRef(new Map<string, number>())
-  const setPaid = useCallback(async (id: string, cents: number | null) => {
-    const seq = (paidSeq.current.get(id) ?? 0) + 1
-    paidSeq.current.set(id, seq)
+  // A shelf write needs the backend and a store with copy ids; either
+  // missing is said once on the status strip and nothing moves.
+  const ready = useCallback(async (): Promise<{ b: ShelfBackend; shelf: Map<string, CollectionItem> } | null> => {
     let b: ShelfBackend
     try {
       b = await ensure()
     } catch (e) {
       setError(messageOf(e))
-      return
+      return null
     }
     const cur = collectionRef.current
-    if (cur.status !== 'ready') return
-    const before = cur.data.get(id)
-    if (!before) return
-    const next = new Map(cur.data)
-    next.set(id, { ...before, paid_cents: cents })
-    setCollection({ status: 'ready', data: next })
-    try {
-      await b.setPaid(id, cents)
-      if (paidSeq.current.get(id) !== seq) return
-      setError(null)
-    } catch (e) {
-      if (paidSeq.current.get(id) !== seq) return
-      // Put back this one field, not the whole shelf as it was.
-      setCollection((c) => (c.status === 'ready' ? { status: 'ready', data: new Map(c.data).set(id, before) } : c))
-      setError(messageOf(e))
+    if (cur.status !== 'ready') return null
+    if (!supported(cur)) {
+      setError(COPIES_MIGRATION)
+      return null
     }
+    return { b, shelf: cur.data }
+  }, [ensure])
+
+  // Change one copy in place, whatever the shelf looks like by the time the
+  // write comes back; a row put back after a failure keeps the rest as is.
+  const patchShelf = useCallback((fn: (next: Map<string, CollectionItem>) => void) => {
+    setCollection((c) => {
+      if (c.status !== 'ready') return c
+      const next = new Map(c.data)
+      fn(next)
+      return { status: 'ready', data: next }
+    })
   }, [])
+
+  // Copies whose insert is in flight carry a key of their own until the store
+  // names them; nothing else may address them in the meantime.
+  const tempSeq = useRef(0)
+  const inFlight = useRef(new Set<string>())
+
+  const addCopy = useCallback(
+    async (gameId: string, condition: Condition) => {
+      const r = await ready()
+      if (!r) return
+      const temp = `pending-${++tempSeq.current}`
+      inFlight.current.add(temp)
+      patchShelf((next) =>
+        next.set(temp, { id: temp, game_id: gameId, condition, added_at: new Date().toISOString(), paid_cents: null }),
+      )
+      const from = locationRef.current.pathname
+      try {
+        const row = await r.b.addCopy({ game_id: gameId, condition })
+        patchShelf((next) => {
+          next.delete(temp)
+          next.set(keyOf(row), row)
+        })
+        setError(null)
+        // The copy gets the window asking what it cost once the write has
+        // landed, and only if the visitor is still on the same page.
+        if (row.id && locationRef.current.pathname === from) setPendingAdd({ copy_id: row.id, game_id: gameId, condition })
+      } catch (e) {
+        patchShelf((next) => next.delete(temp))
+        setError(messageOf(e))
+      } finally {
+        inFlight.current.delete(temp)
+      }
+    },
+    [ready, patchShelf],
+  )
+
+  // The latest edit of a copy wins: a slower earlier write must not put its
+  // value, or its failure, over a later one.
+  const copySeq = useRef(new Map<string, number>())
+  const updateCopy = useCallback(
+    async (copyId: string, patch: CopyPatch) => {
+      const seq = (copySeq.current.get(copyId) ?? 0) + 1
+      copySeq.current.set(copyId, seq)
+      const r = await ready()
+      if (!r || inFlight.current.has(copyId)) return
+      const before = r.shelf.get(copyId)
+      if (!before) return
+      patchShelf((next) => next.set(copyId, { ...before, ...patch }))
+      try {
+        await r.b.updateCopy(copyId, patch)
+        if (copySeq.current.get(copyId) !== seq) return
+        setError(null)
+      } catch (e) {
+        if (copySeq.current.get(copyId) !== seq) return
+        // Put back this one copy, not the whole shelf as it was.
+        patchShelf((next) => next.set(copyId, before))
+        setError(messageOf(e))
+      }
+    },
+    [ready, patchShelf],
+  )
+
+  const removeCopy = useCallback(
+    async (copyId: string) => {
+      const r = await ready()
+      if (!r || inFlight.current.has(copyId)) return
+      const before = r.shelf.get(copyId)
+      if (!before) return
+      patchShelf((next) => next.delete(copyId))
+      try {
+        await r.b.removeCopy(copyId)
+        setError(null)
+      } catch (e) {
+        patchShelf((next) => next.set(copyId, before))
+        setError(messageOf(e))
+      }
+    },
+    [ready, patchShelf],
+  )
+
+  const setOwned = useCallback(
+    async (gameId: string, condition: Condition | null) => {
+      const cur = collectionRef.current
+      if (cur.status !== 'ready') return
+      const copies = copiesIn(cur.data, gameId)
+      if (condition) {
+        const first = copies[0]
+        if (!first) return addCopy(gameId, condition)
+        if (!first.id) {
+          setError(COPIES_MIGRATION)
+          return
+        }
+        return updateCopy(first.id, { condition })
+      }
+      if (copies.length === 0) return
+      if (!supported(cur)) {
+        setError(COPIES_MIGRATION)
+        return
+      }
+      await Promise.all(copies.map((c) => removeCopy(c.id!)))
+    },
+    [addCopy, updateCopy, removeCopy],
+  )
+
+  const setPaid = useCallback((copyId: string, cents: number | null) => updateCopy(copyId, { paid_cents: cents }), [updateCopy])
 
   // Stable, so the window's mount effect does not re-run on every provider render.
   const dismissAdd = useCallback(() => setPendingAdd(null), [])
 
-  const value = useMemo<Account>(
-    () => ({
+  const value = useMemo<Account>(() => {
+    const copiesOf = (gameId: string) => (collection.status === 'ready' ? copiesIn(collection.data, gameId) : [])
+    return {
       status,
       user,
       signInOpen,
@@ -420,16 +524,41 @@ function AccountState({
       isSaved: (id) => saved.status === 'ready' && saved.data.has(id),
       toggleSaved,
       collection,
-      owned: (id) => (collection.status === 'ready' ? collection.data.get(id) : undefined),
+      copiesSupported: supported(collection),
+      copiesOf,
+      owned: (gameId) => copiesOf(gameId)[0],
       setOwned,
+      addCopy,
+      updateCopy,
+      removeCopy,
       setPaid,
       pendingAdd,
       dismissAdd,
       error,
       signInError,
-    }),
-    [status, user, signInOpen, ensure, signInWithGoogle, signInWithEmail, signOut, deleteAccount, saved, toggleSaved, collection, setOwned, setPaid, pendingAdd, dismissAdd, error, signInError],
-  )
+    }
+  }, [
+    status,
+    user,
+    signInOpen,
+    ensure,
+    signInWithGoogle,
+    signInWithEmail,
+    signOut,
+    deleteAccount,
+    saved,
+    toggleSaved,
+    collection,
+    setOwned,
+    addCopy,
+    updateCopy,
+    removeCopy,
+    setPaid,
+    pendingAdd,
+    dismissAdd,
+    error,
+    signInError,
+  ])
 
   return <AccountContext.Provider value={value}>{children}</AccountContext.Provider>
 }

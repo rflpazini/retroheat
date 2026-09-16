@@ -8,8 +8,14 @@ export interface AuthUser {
   avatarUrl: string | null
 }
 
-/** One owned game: the id the catalog uses, the condition of the copy, and what it cost, if known. */
+/**
+ * One physical copy on a shelf: the game the catalog knows, the condition of
+ * this copy, and what happened to it. A loose cart and a sealed box of the
+ * same game are two items.
+ */
 export interface CollectionItem {
+  /** The copy's own key. Absent (undefined) when the store predates migration 0004. */
+  id?: string
   game_id: string
   condition: Condition
   added_at: string
@@ -18,10 +24,31 @@ export interface CollectionItem {
    * recorded; absent (undefined) when the store has no such column yet.
    */
   paid_cents?: number | null
+  /** The day the copy was bought, YYYY-MM-DD; null when unknown. */
+  acquired_on?: string | null
+  notes?: string | null
+  /** What the copy sold for, when it has been sold. */
+  sold_cents?: number | null
+  /** The day the copy was sold, YYYY-MM-DD. Set, the copy has left the shelf. */
+  sold_on?: string | null
 }
+
+/** A copy still on the shelf, as opposed to one that was sold. */
+export function onShelf(item: CollectionItem): boolean {
+  return item.sold_on == null
+}
+
+/** What a new copy is created from; the store adds the id and the date. */
+export type NewCopy = Pick<CollectionItem, 'game_id' | 'condition'> &
+  Partial<Pick<CollectionItem, 'paid_cents' | 'acquired_on' | 'notes'>>
+
+/** The fields of a copy a person can change after it is on the shelf. */
+export type CopyPatch = Partial<Pick<CollectionItem, 'condition' | 'paid_cents' | 'acquired_on' | 'notes' | 'sold_cents' | 'sold_on'>>
 
 /** The most a copy can be recorded as costing, matching the database check. */
 export const MAX_PAID_CENTS = 100_000_000
+/** The longest note a copy can carry, matching the database check. */
+export const MAX_NOTES = 500
 
 export type AuthEvent = 'initial' | 'signed-in' | 'signed-out' | 'refresh'
 
@@ -40,10 +67,10 @@ export interface ShelfBackend {
   save(gameId: string): Promise<void>
   unsave(gameId: string): Promise<void>
   listCollection(): Promise<CollectionItem[]>
-  own(gameId: string, condition: Condition): Promise<void>
-  disown(gameId: string): Promise<void>
-  /** Records (or with null, forgets) what an owned copy cost. */
-  setPaid(gameId: string, cents: number | null): Promise<void>
+  /** Puts one more copy on the shelf and returns it as the store named it. */
+  addCopy(copy: NewCopy): Promise<CollectionItem>
+  updateCopy(id: string, patch: CopyPatch): Promise<void>
+  removeCopy(id: string): Promise<void>
   deleteAccount(): Promise<void>
 }
 
@@ -70,6 +97,8 @@ export interface ShelfValue {
   movers: ShelfLine[]
   /** False when the store cannot hold a paid price yet (migration not applied). */
   paid_supported: boolean
+  /** False when the store has no copy ids yet (migration 0004 not applied), so nothing can be written. */
+  copies_supported: boolean
   /** How many copies have both a paid price and a price today; the sums below cover only those. */
   compared: number
   paid_cents: number
@@ -79,11 +108,12 @@ export interface ShelfValue {
 }
 
 /**
- * What a shelf is asking today: the sum of each owned game's median at the
- * condition owned. Asking prices, not appraisals, and the page says so.
+ * What a shelf is asking today: the sum of each copy's median at the
+ * condition of that copy. Sold copies are history, not shelf, and stay out.
+ * Asking prices, not appraisals, and the page says so.
  */
 export function shelfValue(items: CollectionItem[], index: Map<string, PriceEntry>, moverLimit = 5): ShelfValue {
-  const lines: ShelfLine[] = items.map((item) => {
+  const lines: ShelfLine[] = items.filter(onShelf).map((item) => {
     const entry = index.get(item.game_id)
     const price_cents = entry?.prices[item.condition] ?? null
     const paid_cents = item.paid_cents ?? null
@@ -98,9 +128,12 @@ export function shelfValue(items: CollectionItem[], index: Map<string, PriceEntr
     return b.price_cents - a.price_cents
   })
   const priced = lines.filter((l) => l.price_cents !== null)
+  // A move belongs to the game, not to each copy of it: one line per game.
+  const seen = new Set<string>()
   const movers = lines
     .filter((l) => l.entry?.pct_7d != null)
     .sort((a, b) => Math.abs(b.entry!.pct_7d!) - Math.abs(a.entry!.pct_7d!))
+    .filter((l) => !seen.has(l.item.game_id) && seen.add(l.item.game_id))
     .slice(0, moverLimit)
   const compared = lines.filter((l) => l.gain_cents !== null)
   const paid_cents = compared.reduce((sum, l) => sum + (l.paid_cents ?? 0), 0)
@@ -113,6 +146,7 @@ export function shelfValue(items: CollectionItem[], index: Map<string, PriceEntr
     lines,
     movers,
     paid_supported: items.every((item) => item.paid_cents !== undefined),
+    copies_supported: items.every((item) => item.id !== undefined),
     compared: compared.length,
     paid_cents,
     today_cents,

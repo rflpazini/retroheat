@@ -20,10 +20,12 @@ const macButton =
  * from a menu and a menu's focus restore fights a primitive's focus trap.
  */
 export function AddToShelfDialog({
+  copyId,
   gameId,
   condition,
   onClose,
 }: {
+  copyId: string
   gameId: string
   condition: Condition
   onClose: () => void
@@ -71,7 +73,7 @@ export function AddToShelfDialog({
       return
     }
     onClose()
-    await account.setPaid(gameId, cents)
+    await account.setPaid(copyId, cents)
   }
 
   return (
@@ -183,7 +185,8 @@ export function AccountAddToShelf() {
   if (!account.pendingAdd) return null
   return (
     <AddToShelfDialog
-      key={`${account.pendingAdd.game_id}-${account.pendingAdd.condition}`}
+      key={account.pendingAdd.copy_id}
+      copyId={account.pendingAdd.copy_id}
       gameId={account.pendingAdd.game_id}
       condition={account.pendingAdd.condition}
       onClose={account.dismissAdd}

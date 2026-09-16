@@ -10,7 +10,7 @@ import { MAX_PAID_CENTS } from '@/lib/shelf'
  * Follows the stored value when it
  * changes from elsewhere, including a rollback after a failed write.
  */
-export function PaidField({ gameId, title, value }: { gameId: string; title: string; value: number | null }) {
+export function PaidField({ copyId, title, value }: { copyId: string; title: string; value: number | null }) {
   const account = useAccount()
   const stored = value === null ? '' : (value / 100).toFixed(2)
   const [text, setText] = useState(stored)
@@ -23,7 +23,7 @@ export function PaidField({ gameId, title, value }: { gameId: string; title: str
   function commit() {
     const trimmed = text.trim()
     if (trimmed === '') {
-      if (value !== null) void account.setPaid(gameId, null)
+      if (value !== null) void account.setPaid(copyId, null)
       return
     }
     const cents = parseMoney(trimmed)
@@ -31,7 +31,7 @@ export function PaidField({ gameId, title, value }: { gameId: string; title: str
       setText(stored)
       return
     }
-    void account.setPaid(gameId, cents)
+    void account.setPaid(copyId, cents)
   }
 
   return (

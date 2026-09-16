@@ -131,9 +131,9 @@ and is hidden entirely when the site is built without it.
 - **Sign in with Google or an email link.** No passwords. The email link has to
   be opened in the same browser that requested it.
 - **What is stored:** your account id, your email address (and the name and
-  picture Google shares), the ids of the games you save, one condition per
-  owned game and, only if you type it, what that copy cost, with timestamps.
-  Nothing else: no browsing history, no analytics.
+  picture Google shares), the ids of the games you save, one row per copy you
+  own with its condition and, only if you type it, what that copy cost, with
+  timestamps. Nothing else: no browsing history, no analytics.
 - **Who can see it:** only you. Row-level security in the database scopes every
   row to its owner; the site talks to the database with a public key, and that
   boundary is the database's, not the browser's.
@@ -203,7 +203,7 @@ The rules, the archive format and the replay command are in
 5. Run the `scrape` workflow manually once, then let the schedule take over.
 6. Optional, for accounts: create a free [Supabase](https://supabase.com)
    project; run the files under `supabase/migrations/` in order in its SQL
-   editor (lists, price history, paid price); under
+   editor (lists, price history, paid price, copies); under
    Authentication enable Google (an OAuth client in Google Cloud pointing at
    the project's callback URL) and email, and add your site URL to the
    redirect allow-list; set up custom SMTP before real users, since the
