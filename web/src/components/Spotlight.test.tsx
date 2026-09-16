@@ -4,7 +4,10 @@ import path from 'node:path'
 import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter, Route, Routes, useParams } from 'react-router-dom'
+import { AccountProvider } from '../lib/account'
 import { resetCache } from '../lib/data'
+import type { ShelfBackend } from '../lib/shelf'
+import { memoryBackend, testUser } from '../lib/shelf-memory'
 import { AppShell } from './AppShell'
 
 const dataDir = path.resolve(__dirname, '../../../data')
@@ -25,16 +28,19 @@ function GameStub() {
   return <p>game page {id}</p>
 }
 
-function renderShell(route = '/') {
+function renderShell(route = '/', backend?: ShelfBackend) {
+  const shell = (
+    <Routes>
+      <Route path="/" element={<AppShell />}>
+        <Route index element={<p>home page</p>} />
+        <Route path="p/:platform" element={<p>board page</p>} />
+        <Route path="g/:id" element={<GameStub />} />
+      </Route>
+    </Routes>
+  )
   return render(
     <MemoryRouter initialEntries={[route]}>
-      <Routes>
-        <Route path="/" element={<AppShell />}>
-          <Route index element={<p>home page</p>} />
-          <Route path="p/:platform" element={<p>board page</p>} />
-          <Route path="g/:id" element={<GameStub />} />
-        </Route>
-      </Routes>
+      {backend ? <AccountProvider backend={() => Promise.resolve(backend)}>{shell}</AccountProvider> : shell}
     </MemoryRouter>,
   )
 }
@@ -121,6 +127,34 @@ describe.skipIf(!present)('Spotlight search', () => {
     expect(screen.queryAllByRole('option')).toHaveLength(0)
     await user.keyboard('{Enter}')
     expect(screen.getByRole('dialog')).toBeDefined()
+  })
+
+  it('tells a signed-in visitor which results are already on the shelf or saved', async () => {
+    const user = userEvent.setup()
+    const { backend } = memoryBackend({
+      user: testUser,
+      saved: ['okami-ps2'],
+      collection: [
+        { game_id: 'bully-ps2', condition: 'loose', added_at: '2026-09-07T00:00:00Z' },
+        { game_id: 'bully-ps2', condition: 'new', added_at: '2026-09-08T00:00:00Z' },
+      ],
+    })
+    renderShell('/', backend)
+    await screen.findByRole('button', { name: /account menu/i })
+
+    await user.keyboard('{Meta>}k{/Meta}')
+    const input = await screen.findByRole('combobox', { name: /search games/i })
+    await user.type(input, 'bully ps2')
+    await waitFor(() => expect(screen.getByRole('option', { name: /^Bully/ })).toBeDefined())
+    const bully = screen.getAllByRole('option').filter((o) => o.dataset.kind === 'game')[0]
+    expect(bully.textContent).toMatch(/on shelf · loose, sealed/i)
+
+    await user.clear(input)
+    await user.type(input, 'okami ps2')
+    await waitFor(() => expect(screen.getByRole('option', { name: /^Okami/ })).toBeDefined())
+    const okami = screen.getAllByRole('option').filter((o) => o.dataset.kind === 'game')[0]
+    expect(okami.textContent).toMatch(/saved/i)
+    expect(okami.textContent).not.toMatch(/on shelf/i)
   })
 
   it('shows the headline price beside a priced game', async () => {

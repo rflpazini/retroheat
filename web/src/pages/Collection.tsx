@@ -7,6 +7,7 @@ import { onShelf, shelfValue, soldSummary, type CollectionItem, type ShelfLine }
 import { CONDITION_LABELS, PLATFORM_SHORT, type CatalogFile, type CatalogGame } from '@/lib/types'
 import { PaidField } from '@/components/PaidField'
 import { QuickAdd } from '@/components/QuickAdd'
+import { ShelfReport } from '@/components/ShelfReport'
 import { ShelfTimeline } from '@/components/ShelfTimeline'
 import { ShelfGate, ShelfRowControls, shelfButton } from '@/components/ShelfControls'
 import { SoldWindow } from '@/components/SoldWindow'
@@ -130,6 +131,8 @@ function Shelf() {
           )}
         </div>
       </Window>
+
+      <ShelfReport items={items} />
 
       <ShelfTimeline items={items} />
 

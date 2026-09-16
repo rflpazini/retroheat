@@ -393,6 +393,31 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     await waitFor(() => expect(document.activeElement).toBe(screen.getByRole('region', { name: /your saved games/i })))
   })
 
+  it('reports the shelf by platform with a bar per platform and the figures in text', async () => {
+    if (!priced) return
+    const meta = JSON.parse(fs.readFileSync(path.join(dataDir, 'meta.json'), 'utf8')) as { counts: { per_platform?: Record<string, number> } }
+    const { backend } = memoryBackend({
+      user: testUser,
+      collection: [
+        { game_id: priced.id, condition: 'loose', added_at: '2026-09-07T00:00:00Z', paid_cents: 100 },
+        { game_id: priced.id, condition: 'cib', added_at: '2026-09-08T00:00:00Z' },
+        { game_id: 'jet-force-gemini-n64', condition: 'loose', added_at: '2026-09-07T00:00:00Z' },
+      ],
+    })
+    renderAt('/collection', <Collection />, '/collection', backend)
+
+    const report = await screen.findByRole('region', { name: /shelf by platform/i })
+    const bars = within(report).getAllByRole('img')
+    expect(bars).toHaveLength(2)
+    expect(bars.map((b) => b.getAttribute('aria-label'))).toEqual(
+      expect.arrayContaining([expect.stringMatching(/^PS2: \d+% of the shelf/), expect.stringMatching(/^N64: \d+% of the shelf/)]),
+    )
+    // The figures are printed, not only drawn: copies, tracked games (once meta.json lands), value.
+    const ps2Tracked = meta.counts.per_platform?.ps2
+    if (ps2Tracked) await waitFor(() => expect(report.textContent).toMatch(new RegExp(`2 copies · 1 of ${ps2Tracked} tracked`)))
+    expect(report.textContent).toContain(money(priced.prices.loose!.median_cents + priced.prices.cib!.median_cents))
+  })
+
   it('shows a Target column on Saved, marks a row under target, and counts them in the strip', async () => {
     if (!priced) return
     const headline = priced.prices.cib!.median_cents

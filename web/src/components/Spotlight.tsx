@@ -12,7 +12,7 @@ import { useJson } from '@/lib/data'
 import { headlineFromMap, money } from '@/lib/format'
 import { usePriceIndex } from '@/lib/prices'
 import { rank, rankBoards, BOARDS, SHELF_BOARDS } from '@/lib/search'
-import { CONDITION_LABELS, PLATFORM_SHORT, type CatalogFile, type CatalogGame, type PriceEntry } from '@/lib/types'
+import { CONDITION_LABELS, PLATFORM_SHORT, type CatalogFile, type CatalogGame, type Condition, type PriceEntry } from '@/lib/types'
 import { OtherPrices } from '@/components/OtherPrices'
 
 export { shortcutLabel, useSpotlightShortcut }
@@ -25,8 +25,19 @@ function boardIcon(to: string) {
   return <Icon className="size-4" />
 }
 
-function gameItem(game: CatalogGame, price: PriceEntry | undefined): SpotlightItem {
+/** What the visitor's own shelf says about a game: the conditions held, and whether it is saved. */
+interface ShelfMark {
+  held: Condition[]
+  saved: boolean
+}
+
+function gameItem(game: CatalogGame, price: PriceEntry | undefined, mark?: ShelfMark): SpotlightItem {
   const headline = headlineFromMap(price?.prices)
+  // Answered here so "do I have this?" never needs the game page: the
+  // question a collector asks with a cart in one hand and a phone in the other.
+  const marks: string[] = []
+  if (mark && mark.held.length > 0) marks.push(`On shelf · ${mark.held.map((c) => CONDITION_LABELS[c]).join(', ')}`)
+  if (mark?.saved) marks.push('Saved')
   return {
     id: game.id,
     title: game.title,
@@ -34,14 +45,19 @@ function gameItem(game: CatalogGame, price: PriceEntry | undefined): SpotlightIt
     image: game.info?.cover_url,
     icon: <span className="pixel text-[0.4rem]">{PLATFORM_SHORT[game.platform]}</span>,
     subtitle: [PLATFORM_SHORT[game.platform], game.info?.year, game.info?.developer].filter(Boolean).join(' · '),
-    trailing: headline ? (
+    trailing: (
       <>
-        <span className="tabular block text-sm font-semibold">{money(headline.cents)}</span>
-        <span className="eyebrow block">{CONDITION_LABELS[headline.condition]}</span>
-        {price && <OtherPrices prices={price.prices} headline={headline.condition} />}
+        {headline ? (
+          <>
+            <span className="tabular block text-sm font-semibold">{money(headline.cents)}</span>
+            <span className="eyebrow block">{CONDITION_LABELS[headline.condition]}</span>
+            {price && <OtherPrices prices={price.prices} headline={headline.condition} />}
+          </>
+        ) : (
+          <span className="eyebrow block">{price ? 'unpriced' : ''}</span>
+        )}
+        {marks.length > 0 && <span className="eyebrow mt-0.5 block text-[var(--primary)]">{marks.join(' · ')}</span>}
       </>
-    ) : (
-      <span className="eyebrow block">{price ? 'unpriced' : ''}</span>
     ),
     data: { kind: 'game', platform: game.platform },
   }
@@ -75,8 +91,12 @@ export function Spotlight({ open, onOpenChange }: { open: boolean; onOpenChange:
       keywords: b.keywords,
       data: { kind: 'board' },
     }))
-    return [...games.map((g) => gameItem(g, prices.get(g.id))), ...boards]
-  }, [games, prices, destinations])
+    const signedIn = account.status === 'signed-in'
+    const markOf = (id: string): ShelfMark | undefined =>
+      signedIn ? { held: account.copiesOf(id).map((c) => c.condition), saved: account.isSaved(id) } : undefined
+    return [...games.map((g) => gameItem(g, prices.get(g.id), markOf(g.id))), ...boards]
+    // The shelf lists are part of the answer, so a save or an add redraws the results.
+  }, [games, prices, destinations, account.status, account.collection, account.saved])
 
   // Games first by the catalog ranking, then whichever boards the words name.
   const search = useCallback(
