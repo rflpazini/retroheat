@@ -469,3 +469,39 @@ describe('a board that has not been priced yet', () => {
   })
 })
 
+// A collector run limited to some platforms reports how many games it
+// priced, while the boards on disk still hold every platform. The shell
+// counts what is on disk, not what one run touched.
+describe('the shell counts the games on disk, not the last run', () => {
+  beforeEach(() => {
+    resetCache()
+    vi.stubGlobal('fetch', async (input: RequestInfo | URL) => {
+      const url = String(input)
+      if (url.endsWith('/data/meta.json')) {
+        return new Response(
+          JSON.stringify({
+            generated_at: '2026-09-16T03:19:55Z',
+            source: 'ebay-browse',
+            price_kind: 'asking',
+            counts: { tracked: 168, ok: 160, stale: 0, failed: 8, per_platform: { ps2: 172, gb: 51 } },
+            api_calls_used: 168,
+            platforms: ['ps2', 'gb'],
+          }),
+          { status: 200 },
+        )
+      }
+      return new Response('{}', { status: 404 })
+    })
+  })
+
+  it('sums the per-platform counts in the header and the status strip', async () => {
+    render(
+      <MemoryRouter>
+        <AppShell />
+      </MemoryRouter>,
+    )
+    await waitFor(() => expect(document.body.textContent).toMatch(/223 games/))
+    expect(document.body.textContent).toMatch(/223 items/)
+    expect(document.body.textContent).not.toMatch(/168 games/)
+  })
+})

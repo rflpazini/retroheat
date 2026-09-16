@@ -12,6 +12,7 @@ import { AccountProvider, useAccount } from '@/lib/account'
 import { PLATFORMS, PLATFORM_LABELS, type Meta } from '@/lib/types'
 import { useJson } from '@/lib/data'
 import { relativeDay } from '@/lib/format'
+import { gamesOnDisk } from '@/lib/meta'
 import { cn } from '@/lib/utils'
 
 function useTheme() {
@@ -220,7 +221,7 @@ function Shell() {
             </p>
             {meta.status === 'ready' && (
               <p className="eyebrow">
-                {meta.data.counts.tracked} games · updated {relativeDay(meta.data.generated_at)}
+                {gamesOnDisk(meta.data)} games · updated {relativeDay(meta.data.generated_at)}
               </p>
             )}
           </div>

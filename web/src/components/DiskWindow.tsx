@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useAccount } from '@/lib/account'
 import { useJson } from '@/lib/data'
+import { gamesOnDisk } from '@/lib/meta'
 import { PLATFORMS, PLATFORM_LABELS, type LatestFile, type Meta, type Platform } from '@/lib/types'
 import { Window } from '@/components/Window'
 
@@ -55,7 +56,7 @@ function FolderIcon({ to, label, count }: { to: string; label: string; count: nu
 
 export function DiskWindow({ order }: { order?: number }) {
   const meta = useJson<Meta>('meta.json')
-  const tracked = meta.status === 'ready' ? meta.data.counts.tracked : null
+  const tracked = meta.status === 'ready' ? gamesOnDisk(meta.data) : null
   const perPlatform = meta.status === 'ready' ? meta.data.counts.per_platform : undefined
   const account = useAccount()
 

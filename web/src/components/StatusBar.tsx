@@ -2,6 +2,7 @@ import { StatusBar as Strip } from '@/components/retro-os/status-bar'
 import { useAccount } from '@/lib/account'
 import { useJson } from '@/lib/data'
 import { relativeDay } from '@/lib/format'
+import { gamesOnDisk } from '@/lib/meta'
 import type { Meta } from '@/lib/types'
 
 /**
@@ -16,7 +17,7 @@ export function StatusBar() {
 
   return (
     <Strip
-      left={meta.status === 'ready' ? `${meta.data.counts.tracked} items` : '—'}
+      left={meta.status === 'ready' ? `${gamesOnDisk(meta.data)} items` : '—'}
       right={meta.status === 'ready' ? relativeDay(meta.data.generated_at) : '800×600'}
     >
       {error ? (
