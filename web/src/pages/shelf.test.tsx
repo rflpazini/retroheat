@@ -96,6 +96,51 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     serveLocalData()
   })
 
+  it('keeps the whole shelf in one window that scrolls on its own, with the add field on its header strip', async () => {
+    if (!priced) return
+    const { backend } = memoryBackend({
+      user: testUser,
+      collection: [
+        { game_id: priced.id, condition: 'loose', added_at: '2026-09-07T00:00:00Z', paid_cents: 1000 },
+        { game_id: priced.id, condition: 'cib', added_at: '2026-09-08T00:00:00Z' },
+        { game_id: 'jet-force-gemini-n64', condition: 'loose', added_at: '2026-09-01T00:00:00Z', paid_cents: 500, sold_cents: 900, sold_on: '2026-09-10' },
+      ],
+    })
+    renderAt('/collection', <Collection />, '/collection', backend)
+
+    // One pane holds the table and the sold copies; a scroll bar you cannot reach from the keyboard is scenery.
+    const pane = await screen.findByRole('region', { name: /^my collection$/i })
+    expect(pane.tabIndex).toBe(0)
+    // The shelf table and the sold table, both inside the one pane.
+    expect(within(pane).getAllByRole('table')).toHaveLength(2)
+    expect(within(pane).getByRole('region', { name: /^sold$/i })).toBeDefined()
+    // The add field sits on the window's header strip, not in a window of its own.
+    const titles = [...document.querySelectorAll('.window-title-text')].map((el) => el.textContent?.trim())
+    expect(titles).toContain('My collection')
+    expect(titles).not.toContain('Add a game you own')
+    expect(titles).not.toContain('Shelf')
+    expect(screen.getByLabelText(/add a game you own/i)).toBeDefined()
+    expect(pane.contains(screen.getByLabelText(/add a game you own/i))).toBe(false)
+  })
+
+  it('sums the shelf up in one About window: value, gain and the platform bars', async () => {
+    if (!priced) return
+    const { backend } = memoryBackend({
+      user: testUser,
+      collection: [{ game_id: priced.id, condition: 'loose', added_at: '2026-09-07T00:00:00Z', paid_cents: 1000 }],
+    })
+    renderAt('/collection', <Collection />, '/collection', backend)
+    const about = await screen.findByRole('region', { name: /about this shelf/i })
+    expect(about.textContent).toMatch(/shelf value/i)
+    expect(about.textContent).toContain(money(priced.prices.loose!.median_cents))
+    expect(about.textContent).toContain(signedMoney(priced.prices.loose!.median_cents - 1000))
+    const bars = within(about).getByRole('region', { name: /shelf by platform/i })
+    expect(within(bars).getAllByRole('img')).toHaveLength(1)
+    // Value and bars are one window, not two.
+    const titles = [...document.querySelectorAll('.window-title-text')].map((el) => el.textContent?.trim())
+    expect(titles.filter((t) => /shelf by platform|shelf value$/i.test(t ?? ''))).toEqual([])
+  })
+
   it('totals the shelf at the condition of each copy', async () => {
     if (!priced) return
     const { backend } = memoryBackend({

@@ -126,9 +126,11 @@ export function ShelfGate({ what, children }: { what: string; children: React.Re
       )
     default:
       // A focusable region, so a control that removes its own row can hand
-      // focus back to the page instead of letting it fall to <body>.
+      // focus back to the page instead of letting it fall to <body>. It also
+      // passes the desktop's height down, so a page below it can fill a
+      // window the way the boards do.
       return (
-        <section aria-label={`Your ${what}`} tabIndex={-1} data-shelf-anchor>
+        <section aria-label={`Your ${what}`} tabIndex={-1} data-shelf-anchor className="flex flex-col gap-4 lg:min-h-0 lg:flex-1">
           {children}
         </section>
       )
