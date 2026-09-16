@@ -30,7 +30,7 @@ function DiskIcon({ platform, count, fetchBoard }: { platform: Platform; count: 
       <span className="px-1 text-[0.7rem] font-semibold group-hover:bg-[var(--border)] group-hover:text-[var(--card)]">
         {PLATFORM_LABELS[platform]}
       </span>
-      <span className="eyebrow">{shown === null ? '—' : `${shown} items`}</span>
+      <span className="eyebrow whitespace-nowrap">{shown === null ? '—' : `${shown} items`}</span>
     </Link>
   )
 }
@@ -48,7 +48,7 @@ function FolderIcon({ to, label, count }: { to: string; label: string; count: nu
       <span className="px-1 text-[0.7rem] font-semibold group-hover:bg-[var(--border)] group-hover:text-[var(--card)]">
         {label}
       </span>
-      <span className="eyebrow">{count === null ? '—' : `${count} items`}</span>
+      <span className="eyebrow whitespace-nowrap">{count === null ? '—' : `${count} items`}</span>
     </Link>
   )
 }
@@ -67,7 +67,7 @@ export function DiskWindow({ order }: { order?: number }) {
         <span className="eyebrow">{tracked === null ? '—' : `${tracked} games on disk`}</span>
       </div>
 
-      <div className="grid grid-cols-3 gap-1 p-3 sm:grid-cols-6">
+      <div className="grid grid-cols-3 gap-1 p-3 sm:grid-cols-5 lg:grid-cols-9">
         {PLATFORMS.map((p) => (
           <DiskIcon
             key={p}
@@ -79,7 +79,7 @@ export function DiskWindow({ order }: { order?: number }) {
       </div>
 
       {account.status === 'signed-in' && (
-        <div className="grid grid-cols-3 gap-1 border-t-2 border-[var(--border)] p-3 sm:grid-cols-6">
+        <div className="grid grid-cols-3 gap-1 border-t-2 border-[var(--border)] p-3 sm:grid-cols-5 lg:grid-cols-9">
           <FolderIcon
             to="/saved"
             label="Saved"

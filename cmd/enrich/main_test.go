@@ -3,6 +3,8 @@ package main
 import (
 	"strings"
 	"testing"
+
+	"github.com/rflpazini/retroheat/internal/catalog"
 )
 
 const sample = `platform: vita
@@ -154,6 +156,26 @@ func TestIsVideoGame(t *testing.T) {
 	} {
 		if got := isVideoGame(desc); got != want {
 			t.Errorf("isVideoGame(%q) = %v, want %v", desc, got, want)
+		}
+	}
+}
+
+// Wikidata lookups are keyed by platform: a platform missing from any of the
+// three maps enriches every one of its games with the wrong console's release
+// (or with no year floor at all) and nothing fails until someone notices the
+// years. Iterating catalog.Platforms means the next platform added to the
+// catalog cannot be forgotten here.
+func TestEveryPlatformHasWikidataMappings(t *testing.T) {
+	t.Parallel()
+	for _, p := range catalog.Platforms {
+		if _, ok := platformLabel[p]; !ok {
+			t.Errorf("platformLabel has no entry for %s", p)
+		}
+		if qid, ok := platformQID[p]; !ok || !strings.HasPrefix(qid, "Q") {
+			t.Errorf("platformQID has no Wikidata item for %s (got %q)", p, qid)
+		}
+		if y, ok := platformLaunch[p]; !ok || y < 1980 || y > 2020 {
+			t.Errorf("platformLaunch has no plausible launch year for %s (got %d)", p, y)
 		}
 	}
 }

@@ -1,9 +1,9 @@
 # RetroHeat
 
 A daily momentum board for collectible retro games. It tracks a curated list of
-PlayStation 2, GameCube, PSP, PS Vita, Nintendo 64 and Dreamcast titles, and
-ranks them by how fast their prices are moving — plus, where a contributor has
-written one, a note explaining *why*.
+PlayStation 2, GameCube, PSP, PS Vita, Nintendo 64, Dreamcast, Game Boy, Game
+Boy Color and Game Boy Advance titles, and ranks them by how fast their prices
+are moving — plus, where a contributor has written one, a note explaining *why*.
 
 Every price site worth using either paywalls its movers list, sorts it by dollar
 change so the same expensive games appear every week, or never says what drove a

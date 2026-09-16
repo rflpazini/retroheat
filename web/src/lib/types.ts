@@ -5,7 +5,7 @@ export const CONDITIONS: Condition[] = ['loose', 'cib', 'new']
 /** Cents per condition, for files that carry one figure rather than a full Price. */
 export type PriceMap = Partial<Record<Condition, number>>
 
-export const PLATFORMS = ['ps2', 'gamecube', 'psp', 'vita', 'n64', 'dreamcast'] as const
+export const PLATFORMS = ['ps2', 'gamecube', 'psp', 'vita', 'n64', 'dreamcast', 'gb', 'gbc', 'gba'] as const
 export type Platform = (typeof PLATFORMS)[number]
 
 export const PLATFORM_LABELS: Record<Platform, string> = {
@@ -15,6 +15,9 @@ export const PLATFORM_LABELS: Record<Platform, string> = {
   vita: 'PS Vita',
   n64: 'Nintendo 64',
   dreamcast: 'Dreamcast',
+  gb: 'Game Boy',
+  gbc: 'Game Boy Color',
+  gba: 'Game Boy Advance',
 }
 
 export const PLATFORM_SHORT: Record<Platform, string> = {
@@ -24,6 +27,9 @@ export const PLATFORM_SHORT: Record<Platform, string> = {
   vita: 'VITA',
   n64: 'N64',
   dreamcast: 'DC',
+  gb: 'GB',
+  gbc: 'GBC',
+  gba: 'GBA',
 }
 
 export const CONDITION_LABELS: Record<Condition, string> = {

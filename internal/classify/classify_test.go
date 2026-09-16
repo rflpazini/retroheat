@@ -580,6 +580,9 @@ func TestABareCartridgeOrCardIsLoose(t *testing.T) {
 		{"Conker's Bad Fur Day (Nintendo 64, 2001) N64", classify.Boxed},
 		{"Conker's Bad Fur Day - Nintendo 64 (N64)", classify.Boxed},
 		{"Mario Golf Nintendo 64 N64 Game Cleaned Tested Authentic Warranty", classify.Boxed},
+		// Game Boy carts are boxed media too, and even more often listed bare.
+		{"Pokemon Crystal Version (Game Boy Color, 2001) Authentic Tested", classify.Boxed},
+		{"Mother 3 Nintendo Game Boy Advance GBA Japan Import", classify.Boxed},
 		{"Rayman Origins - PlayStation Vita (PS Vita) - PERFECT!!", classify.Carded},
 		{"Superbeat: XONiC for PlayStation Vita™", classify.Carded},
 	}

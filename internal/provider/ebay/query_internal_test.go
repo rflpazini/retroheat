@@ -68,6 +68,9 @@ func TestMediaOfTellsCartridgesCardsAndDiscsApart(t *testing.T) {
 	t.Parallel()
 	cases := map[catalog.Platform]classify.Media{
 		catalog.N64:  classify.Boxed,
+		catalog.GB:   classify.Boxed,
+		catalog.GBC:  classify.Boxed,
+		catalog.GBA:  classify.Boxed,
 		catalog.Vita: classify.Carded,
 		catalog.PS2:  classify.Cased,
 	}

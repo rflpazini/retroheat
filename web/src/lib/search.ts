@@ -52,6 +52,9 @@ const PLATFORM_ALIASES: Record<string, Platform> = (() => {
   m.psvita = 'vita'
   m.nintendo64 = 'n64'
   m.dc = 'dreamcast'
+  // "gameboy" on its own means the original; the Color and Advance are
+  // named by their own abbreviations, which the short labels already give.
+  m.gameboy = 'gb'
   return m
 })()
 

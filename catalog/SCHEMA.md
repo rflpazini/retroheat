@@ -1,8 +1,8 @@
 # Catalog format
 
 Each platform has one file: `ps2.yaml`, `gamecube.yaml`, `psp.yaml`,
-`vita.yaml`, `n64.yaml`, `dreamcast.yaml`. Keeping them separate keeps pull
-request diffs small.
+`vita.yaml`, `n64.yaml`, `dreamcast.yaml`, `gb.yaml`, `gbc.yaml`, `gba.yaml`.
+Keeping them separate keeps pull request diffs small.
 
 ```yaml
 platform: ps2          # must match the filename's console
@@ -26,11 +26,28 @@ games:
 | `region` | no | `NTSC-U`, `NTSC-J` or `PAL` |
 | `variant` | no | `none`, `black-label`, `greatest-hits`, `players-choice`, `platinum` |
 | `igdb_id` | no | Reserved for a future IGDB link-up; cover art comes from `info.cover_url` |
-| `ebay.query` | yes | Search terms; **must name the platform** |
+| `ebay.query` | yes | Search terms; **must name the platform** (see below for the Game Boy line) |
 | `ebay.negative` | no | Terms that disqualify a listing |
 
 Parsing is strict: an unknown key fails CI rather than being ignored, so a typo
 in a pull request is caught immediately.
+
+### Naming the platform in a query
+
+eBay's search matches words, so `Silent Hill 2 PS2` is enough for a console
+whose sellers all write it the same way. Game Boy sellers do not: the same
+cartridge is listed as "Game Boy", "Gameboy", "GBA" or "Game Boy Advance".
+eBay accepts a group of alternatives in parentheses, separated by commas, so
+the Game Boy files end every query with the group for their console:
+
+```yaml
+query: "Metroid Fusion (gba, \"game boy advance\", \"gameboy advance\")"
+```
+
+Measured on 15 September 2026, that group returned the 200-listing page cap
+for Metroid Fusion where the plain phrase "Game Boy Advance" returned 154 and
+"Gameboy Advance" 37. Use `(gameboy, "game boy")` for `gb.yaml` and
+`(gbc, "game boy color", "gameboy color")` for `gbc.yaml`.
 
 ## Adding a game
 

@@ -9,6 +9,7 @@ import { Home } from './Home'
 import { Platform } from './Platform'
 import { About } from './About'
 import { AppShell } from '../components/AppShell'
+import { PLATFORMS, PLATFORM_LABELS } from '../lib/types'
 
 // These render against the collector's real output rather than hand-made
 // fixtures, so a change to the emitted JSON shape fails here instead of in
@@ -192,7 +193,7 @@ describe.skipIf(!present)('the shell behaves like an operating system', () => {
 
     await user.click(screen.getByRole('button', { name: 'File' }))
     await waitFor(() => expect(screen.getByText('Open PlayStation 2')).toBeDefined())
-    for (const label of ['Open GameCube', 'Open Dreamcast', 'Open Trending']) {
+    for (const label of ['Open GameCube', 'Open Dreamcast', 'Open Game Boy Advance', 'Open Trending']) {
       expect(screen.getByText(label)).toBeDefined()
     }
 
@@ -219,10 +220,10 @@ describe.skipIf(!present)('the shell behaves like an operating system', () => {
     renderAt('/', <Home />, '/')
     await waitFor(() => expect(document.body.textContent).toMatch(/RetroHeat HD/i))
 
-    for (const label of ['PlayStation 2', 'GameCube', 'PSP', 'PS Vita', 'Nintendo 64', 'Dreamcast']) {
+    for (const label of Object.values(PLATFORM_LABELS)) {
       expect(screen.getAllByText(label).length).toBeGreaterThan(0)
     }
-    expect(document.body.textContent).toMatch(/6 items/i)
+    expect(document.body.textContent).toMatch(new RegExp(`${PLATFORMS.length} items`, 'i'))
   })
 })
 
@@ -359,3 +360,4 @@ describe('the game page marks a classifier change', () => {
     expect(document.body.textContent).not.toMatch(/older classifier/i)
   })
 })
+

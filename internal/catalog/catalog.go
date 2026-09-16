@@ -25,9 +25,12 @@ const (
 	Vita      Platform = "vita"
 	N64       Platform = "n64"
 	Dreamcast Platform = "dreamcast"
+	GB        Platform = "gb"
+	GBC       Platform = "gbc"
+	GBA       Platform = "gba"
 )
 
-var Platforms = []Platform{PS2, GameCube, PSP, Vita, N64, Dreamcast}
+var Platforms = []Platform{PS2, GameCube, PSP, Vita, N64, Dreamcast, GB, GBC, GBA}
 
 var platformLabels = map[Platform]string{
 	PS2:       "PlayStation 2",
@@ -36,13 +39,16 @@ var platformLabels = map[Platform]string{
 	Vita:      "PS Vita",
 	N64:       "Nintendo 64",
 	Dreamcast: "Dreamcast",
+	GB:        "Game Boy",
+	GBC:       "Game Boy Color",
+	GBA:       "Game Boy Advance",
 }
 
 // Boxed reports whether the platform sold games as a cartridge in a cardboard
-// box. The box is the fragile, valuable part of a complete copy, so a
-// "cartridge with manual" is not complete the way a disc with its manual in
-// the original case is.
-func (p Platform) Boxed() bool { return p == N64 }
+// box: Nintendo 64 and the three Game Boy lines. The box is the fragile,
+// valuable part of a complete copy, so a "cartridge with manual" is not
+// complete the way a disc with its manual in the original case is.
+func (p Platform) Boxed() bool { return p == N64 || p == GB || p == GBC || p == GBA }
 
 // Carded reports whether the platform sold games as a small card in a plastic
 // case. Like a cartridge, a card listed with no word about its case or

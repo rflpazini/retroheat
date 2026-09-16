@@ -19,6 +19,9 @@ const shelf = [
   game('Pokémon Snap', 'n64'),
   game('Ys I & II Chronicles', 'psp'),
   game('Skies of Arcadia', 'dreamcast', { developer: 'Overworks', publisher: 'Sega', year: 2000 }),
+  game('Metroid II: Return of Samus', 'gb'),
+  game('Shantae', 'gbc'),
+  game('Metroid Fusion', 'gba'),
 ]
 
 const titles = (q: string) => rank(q, shelf).map((h) => h.item.title)
@@ -57,6 +60,17 @@ describe('rank', () => {
     expect(titles('bully ps2')).toEqual(['Bully'])
     // A platform alone lists that platform's shelf.
     expect(titles('n64')).toEqual(['F-Zero X', 'Pokémon Snap'])
+  })
+
+  it('knows the Game Boy line by the names sellers and collectors use', () => {
+    // The three handhelds share a name, so each abbreviation must land on
+    // its own board and the bare word "gameboy" on the original.
+    expect(titles('metroid gba')).toEqual(['Metroid Fusion'])
+    expect(titles('metroid gb')).toEqual(['Metroid II: Return of Samus'])
+    expect(titles('metroid gameboy')).toEqual(['Metroid II: Return of Samus'])
+    expect(parse('shantae gbc')).toEqual({ words: ['shantae'], platform: 'gbc' })
+    expect(parse('shantae gameboycolor')).toEqual({ words: ['shantae'], platform: 'gbc' })
+    expect(parse('fusion gameboyadvance')).toEqual({ words: ['fusion'], platform: 'gba' })
   })
 
   it('falls back to developer, publisher and year', () => {

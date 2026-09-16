@@ -75,6 +75,9 @@ var platformLabel = map[catalog.Platform]string{
 	catalog.Vita:      "PlayStation Vita",
 	catalog.N64:       "Nintendo 64",
 	catalog.Dreamcast: "Dreamcast",
+	catalog.GB:        "Game Boy",
+	catalog.GBC:       "Game Boy Color",
+	catalog.GBA:       "Game Boy Advance",
 }
 
 var platformQID = map[catalog.Platform]string{
@@ -84,6 +87,9 @@ var platformQID = map[catalog.Platform]string{
 	catalog.Vita:      "Q188808",
 	catalog.N64:       "Q184839",
 	catalog.Dreamcast: "Q184198",
+	catalog.GB:        "Q186437",
+	catalog.GBC:       "Q203992",
+	catalog.GBA:       "Q188642",
 }
 
 // platformLaunch is the first year a game could have shipped on each console.
@@ -94,6 +100,9 @@ var platformLaunch = map[catalog.Platform]int{
 	catalog.Vita:      2011,
 	catalog.N64:       1996,
 	catalog.Dreamcast: 1998,
+	catalog.GB:        1989,
+	catalog.GBC:       1998,
+	catalog.GBA:       2001,
 }
 
 // fieldOrder is how new keys are laid out in a fresh info block.

@@ -69,6 +69,9 @@ func TestEveryQueryIsPlatformScoped(t *testing.T) {
 		catalog.Vita:      {"vita"},
 		catalog.N64:       {"n64", "nintendo 64"},
 		catalog.Dreamcast: {"dreamcast"},
+		catalog.GB:        {"game boy", "gameboy", "gb"},
+		catalog.GBC:       {"game boy color", "gameboy color", "gbc"},
+		catalog.GBA:       {"game boy advance", "gameboy advance", "gba"},
 	}
 	for _, g := range games {
 		if !containsAny(g.Ebay.Query, hints[g.Platform]) {
@@ -121,8 +124,10 @@ func TestRepoGameInfoIsWellFormed(t *testing.T) {
 			continue
 		}
 		withInfo++
-		if g.Info.Year != 0 && (g.Info.Year < 1994 || g.Info.Year > 2020) {
-			t.Errorf("%s: release year %d is outside the era this project tracks", g.ID, g.Info.Year)
+		// The Game Boy launched in 1989 with Tetris and Super Mario Land, so
+		// that is the floor; the Vita's last physical releases set the ceiling.
+		if g.Info.Year != 0 && (g.Info.Year < 1989 || g.Info.Year > 2020) {
+			t.Errorf("%s: release year %d is outside the 1989-2020 era this project tracks", g.ID, g.Info.Year)
 		}
 		if g.Info.Why != "" && len(g.Info.Why) < 40 {
 			t.Errorf("%s: the collectibility note is too short to explain anything", g.ID)

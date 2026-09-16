@@ -44,7 +44,8 @@ const (
 	// Cased media is a disc or card in a plastic case: PS2, GameCube, PSP,
 	// Vita, Dreamcast.
 	Cased Media = iota
-	// Boxed media is a cartridge in a cardboard box: N64.
+	// Boxed media is a cartridge in a cardboard box: N64, Game Boy, Game Boy
+	// Color, Game Boy Advance.
 	Boxed
 	// Carded media is a game card in a small plastic case: PS Vita. It reads
 	// like cased media, except that a bare listing is a loose card.

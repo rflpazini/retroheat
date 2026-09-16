@@ -74,21 +74,22 @@ Every surviving title is then read in a fixed order:
    parts listed out: "box, manual and cart", "w/ box & manual".
 5. **With manual** — "with manual", "w manual", "manual included". On a disc
    platform the disc is in its case, so this is a complete copy. On a
-   cartridge platform (N64) the cardboard box is the part collectors pay for,
-   so a cartridge "with manual" only counts as complete when the title also
-   names the box; otherwise it is dropped, since it is worth more than a bare
-   cartridge and much less than a boxed one and belongs in neither bucket.
-   "No box" and "box protector" do not name a box. On a disc platform "no
-   box" means no case, and is read as loose.
+   cartridge platform (N64, Game Boy, Game Boy Color, Game Boy Advance) the
+   cardboard box is the part collectors pay for, so a cartridge "with manual"
+   only counts as complete when the title also names the box; otherwise it is
+   dropped, since it is worth more than a bare cartridge and much less than a
+   boxed one and belongs in neither bucket. "No box" and "box protector" do
+   not name a box. On a disc platform "no box" means no case, and is read as
+   loose.
 6. **Loose** — "loose", "unboxed".
 7. **Bare cartridge or card** — a title that says nothing about completeness
-   on a cartridge platform (N64) or a card platform (PS Vita) is a loose copy.
-   The box, the case and the manual are where the value is, and a seller who
-   has them says so; on 8 September 2026, 90% of N64 listings and 82% of Vita
-   listings were bare, and a third of the N64 catalog could not be priced
-   without them. Bare disc listings are not read this way: a disc with no
-   words is usually the disc in its case, sometimes with the manual, and the
-   two markets differ.
+   on a cartridge platform (N64 and the Game Boy line) or a card platform (PS
+   Vita) is a loose copy. The box, the case and the manual are where the value
+   is, and a seller who has them says so; on 8 September 2026, 90% of N64
+   listings and 82% of Vita listings were bare, and a third of the N64 catalog
+   could not be priced without them. Bare disc listings are not read this way:
+   a disc with no words is usually the disc in its case, sometimes with the
+   manual, and the two markets differ.
 8. **Unknown** — dropped.
 
 Unknown listings are dropped rather than guessed. Guessing would bias the
