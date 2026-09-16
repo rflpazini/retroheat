@@ -99,6 +99,15 @@ export function Game() {
     ['Genre', info?.genre ?? ''],
   ].filter((row): row is [string, string] => row[1] !== '')
 
+  // The demand signal the collector publishes from the accounts: how many
+  // people keep the game and how many want it, each only from three people up.
+  const shelfLine = [
+    game?.shelf?.owned ? `On ${game.shelf.owned} shelves` : null,
+    game?.shelf?.saved ? `wanted by ${game.shelf.saved}` : null,
+  ]
+    .filter(Boolean)
+    .join(' · ')
+
   const latest = history.data.points.at(-1)
   const available = CONDITIONS.filter((c) => history.data.points.some((p) => p[c] != null))
   const color = conditionColor(condition)
@@ -157,6 +166,12 @@ export function Game() {
                   </div>
                 ))}
               </dl>
+            )}
+
+            {shelfLine && (
+              <p className="eyebrow mt-3" title="Counted from RetroHeat accounts, private shelves included; a figure is shown from three people up">
+                {shelfLine} · on RetroHeat
+              </p>
             )}
 
             {info?.about && (

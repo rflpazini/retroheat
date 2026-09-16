@@ -138,6 +138,36 @@ type GameDetail struct {
 	// Annotation travels with the game so its page can always explain why a
 	// price moved, not only while the game sits on a trending board.
 	Annotation *catalog.Annotation `json:"annotation,omitempty"`
+	// Shelf is how many people keep and want the game, from the accounts;
+	// absent when nobody has been counted or the count is below the floor.
+	Shelf *ShelfCount `json:"shelf,omitempty"`
+}
+
+// MinShelfCount is the fewest people a count is published from. Below it a
+// figure could point at one collector, so the site says nothing instead.
+const MinShelfCount = 3
+
+// ShelfCount is a demand signal: distinct people who hold a copy of the game
+// and distinct people who saved it. Each figure appears only from
+// MinShelfCount up; a zero here means "not published", never "nobody".
+type ShelfCount struct {
+	Owned int `json:"owned,omitempty"`
+	Saved int `json:"saved,omitempty"`
+}
+
+// ShelfOf applies the floor to raw counts; nil when neither clears it.
+func ShelfOf(owned, saved int) *ShelfCount {
+	var c ShelfCount
+	if owned >= MinShelfCount {
+		c.Owned = owned
+	}
+	if saved >= MinShelfCount {
+		c.Saved = saved
+	}
+	if c == (ShelfCount{}) {
+		return nil
+	}
+	return &c
 }
 
 // PriceEntry is one game in prices.json: the latest median per priced
@@ -241,6 +271,20 @@ func WriteMeta(dataDir string, m Meta) error {
 
 func WriteGame(dataDir string, g GameDetail) error {
 	return writeJSON(filepath.Join(dataDir, "games", g.ID+".json"), g)
+}
+
+// ReadGame reads games/<id>.json back, for the fields a run carries over
+// rather than recomputes.
+func ReadGame(dataDir, id string) (GameDetail, error) {
+	var g GameDetail
+	data, err := os.ReadFile(filepath.Join(dataDir, "games", id+".json"))
+	if err != nil {
+		return g, err
+	}
+	if err := json.Unmarshal(data, &g); err != nil {
+		return g, fmt.Errorf("decode games/%s.json: %w", id, err)
+	}
+	return g, nil
 }
 
 // WritePrices stores the index compactly: it is fetched far more often than

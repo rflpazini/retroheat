@@ -49,6 +49,10 @@ type Options struct {
 	// copy of the history. It is a copy, never the source: a failure is
 	// logged and the run still succeeds.
 	Mirror mirror.Writer
+	// Counter, when set, says how many people keep and want each game, for
+	// the game files. A signal, never the run's purpose: without one, or when
+	// the read fails, the figures the last run published stand.
+	Counter mirror.Counter
 }
 
 type Result struct {
@@ -294,10 +298,45 @@ func Run(ctx context.Context, o Options) (Result, error) {
 			log.Info("mirrored", slog.Int("points", len(mirrored)))
 		}
 	}
-	if err := writeCatalogFiles(o.DataDir, today, allGames, latestAnn); err != nil {
+	if err := writeCatalogFiles(o.DataDir, today, allGames, latestAnn, shelfCounts(ctx, o.Counter, o.DataDir, log)); err != nil {
 		return Result{}, err
 	}
 	return res, nil
+}
+
+// shelfLookup answers what games/<id>.json should say about the shelves a
+// game sits on; nil means nothing.
+type shelfLookup func(id string) *snapshot.ShelfCount
+
+// carriedShelf keeps whatever the last run published. A run that cannot
+// count (a laptop without the service key, a failed read) must not strip
+// eight hundred files of a figure it merely could not refresh.
+func carriedShelf(dataDir string) shelfLookup {
+	return func(id string) *snapshot.ShelfCount {
+		g, err := snapshot.ReadGame(dataDir, id)
+		if err != nil {
+			return nil
+		}
+		return g.Shelf
+	}
+}
+
+// shelfCounts asks the accounts how many people keep and want each game and
+// applies the publication floor; a game the view does not name has nobody.
+func shelfCounts(ctx context.Context, c mirror.Counter, dataDir string, log *slog.Logger) shelfLookup {
+	if c == nil {
+		return carriedShelf(dataDir)
+	}
+	rows, err := c.ShelfCounts(ctx)
+	if err != nil {
+		log.Error("shelf counts not read; keeping the last published", slog.String("err", err.Error()))
+		return carriedShelf(dataDir)
+	}
+	counts := make(map[string]*snapshot.ShelfCount, len(rows))
+	for _, r := range rows {
+		counts[r.GameID] = snapshot.ShelfOf(r.Owned, r.Saved)
+	}
+	return func(id string) *snapshot.ShelfCount { return counts[id] }
 }
 
 func boardsOnDisk(dataDir string, platforms []catalog.Platform) ([]snapshot.Latest, error) {
@@ -321,11 +360,11 @@ func countsOf(boards []snapshot.Latest) map[catalog.Platform]int {
 }
 
 // writeCatalogFiles rewrites catalog.json and every games/<id>.json.
-func writeCatalogFiles(dataDir, asOf string, games []catalog.Game, anns map[string]catalog.Annotation) error {
+func writeCatalogFiles(dataDir, asOf string, games []catalog.Game, anns map[string]catalog.Annotation, shelf shelfLookup) error {
 	if err := snapshot.WriteCatalog(dataDir, snapshot.Catalog{AsOf: asOf, Games: catalogEntries(games)}); err != nil {
 		return err
 	}
-	for _, g := range gameDetails(games, anns) {
+	for _, g := range gameDetails(games, anns, shelf) {
 		if err := snapshot.WriteGame(dataDir, g); err != nil {
 			return err
 		}
@@ -440,7 +479,7 @@ func WriteCatalogOnly(dataDir, catalogDir string, now time.Time) error {
 		return err
 	}
 	today := now.UTC().Format(time.DateOnly)
-	if err := writeCatalogFiles(dataDir, today, games, catalog.Latest(anns)); err != nil {
+	if err := writeCatalogFiles(dataDir, today, games, catalog.Latest(anns), carriedShelf(dataDir)); err != nil {
 		return err
 	}
 	// The price index is derived from the boards already on disk, so it can
@@ -474,7 +513,7 @@ func catalogEntries(games []catalog.Game) []snapshot.CatalogGame {
 	return out
 }
 
-func gameDetails(games []catalog.Game, anns map[string]catalog.Annotation) []snapshot.GameDetail {
+func gameDetails(games []catalog.Game, anns map[string]catalog.Annotation, shelf shelfLookup) []snapshot.GameDetail {
 	out := make([]snapshot.GameDetail, 0, len(games))
 	for _, g := range games {
 		d := snapshot.GameDetail{
@@ -486,6 +525,7 @@ func gameDetails(games []catalog.Game, anns map[string]catalog.Annotation) []sna
 			IGDBID:   g.IGDBID,
 			EbayURL:  "https://www.ebay.com/sch/i.html?_nkw=" + url.QueryEscape(g.Ebay.Query),
 			Info:     g.Info,
+			Shelf:    shelf(g.ID),
 		}
 		if a, ok := anns[g.ID]; ok {
 			ann := a

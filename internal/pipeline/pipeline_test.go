@@ -711,3 +711,94 @@ func TestCatalogOnlyAlsoRewritesTheGameFilesAndThePriceIndex(t *testing.T) {
 		}
 	}
 }
+
+// countingShelf stands in for the shelf_counts view.
+type countingShelf struct {
+	rows  []mirror.ShelfCount
+	err   error
+	calls int
+}
+
+func (c *countingShelf) ShelfCounts(context.Context) ([]mirror.ShelfCount, error) {
+	c.calls++
+	return c.rows, c.err
+}
+
+func readGame(t *testing.T, dataDir, id string) snapshot.GameDetail {
+	t.Helper()
+	g, err := snapshot.ReadGame(dataDir, id)
+	if err != nil {
+		t.Fatal(err)
+	}
+	return g
+}
+
+func TestRunWritesShelfCountsIntoGameFiles(t *testing.T) {
+	t.Parallel()
+	dataDir, catalogDir := setup(t)
+	o := opts(dataDir, catalogDir, countingProvider{})
+	o.BackfillDays = 0
+	o.Counter = &countingShelf{rows: []mirror.ShelfCount{
+		{GameID: "silent-hill-2-ps2", Owned: 5, Saved: 2},
+		{GameID: "god-hand-ps2", Owned: 1, Saved: 1},
+	}}
+	if _, err := pipeline.Run(context.Background(), o); err != nil {
+		t.Fatal(err)
+	}
+	if sh2 := readGame(t, dataDir, "silent-hill-2-ps2"); sh2.Shelf == nil || sh2.Shelf.Owned != 5 || sh2.Shelf.Saved != 0 {
+		t.Errorf("silent hill 2 shelf = %+v, want owned 5 and the saved count below the floor left out", sh2.Shelf)
+	}
+	if gh := readGame(t, dataDir, "god-hand-ps2"); gh.Shelf != nil {
+		t.Errorf("god hand shelf = %+v, want none: one person is not a count", gh.Shelf)
+	}
+}
+
+func TestRunKeepsYesterdaysShelfCountsWhenItCannotCount(t *testing.T) {
+	t.Parallel()
+	dataDir, catalogDir := setup(t)
+	o := opts(dataDir, catalogDir, countingProvider{})
+	o.BackfillDays = 0
+	o.Counter = &countingShelf{rows: []mirror.ShelfCount{{GameID: "silent-hill-2-ps2", Owned: 7}}}
+	if _, err := pipeline.Run(context.Background(), o); err != nil {
+		t.Fatal(err)
+	}
+
+	// A laptop run has no service key: it must not strip what the last counted run published.
+	o.Counter = nil
+	if _, err := pipeline.Run(context.Background(), o); err != nil {
+		t.Fatal(err)
+	}
+	if g := readGame(t, dataDir, "silent-hill-2-ps2"); g.Shelf == nil || g.Shelf.Owned != 7 {
+		t.Errorf("after a run without a counter, shelf = %+v, want yesterday's owned 7 carried over", g.Shelf)
+	}
+
+	// A run whose count fails is still a run; the counts stay as they were.
+	failing := &countingShelf{err: errors.New("supabase down")}
+	o.Counter = failing
+	if _, err := pipeline.Run(context.Background(), o); err != nil {
+		t.Fatalf("a failed count must not fail the run: %v", err)
+	}
+	if failing.calls != 1 {
+		t.Errorf("counter calls = %d, want exactly one", failing.calls)
+	}
+	if g := readGame(t, dataDir, "silent-hill-2-ps2"); g.Shelf == nil || g.Shelf.Owned != 7 {
+		t.Errorf("after a failed count, shelf = %+v, want owned 7 kept", g.Shelf)
+	}
+
+	// The catalog-only rewrite keeps them too.
+	if err := pipeline.WriteCatalogOnly(dataDir, catalogDir, runDay.Add(time.Hour)); err != nil {
+		t.Fatal(err)
+	}
+	if g := readGame(t, dataDir, "silent-hill-2-ps2"); g.Shelf == nil || g.Shelf.Owned != 7 {
+		t.Errorf("after a catalog-only rewrite, shelf = %+v, want owned 7 kept", g.Shelf)
+	}
+
+	// A fresh count that falls below the floor does remove a stale figure.
+	o.Counter = &countingShelf{rows: []mirror.ShelfCount{{GameID: "silent-hill-2-ps2", Owned: 2}}}
+	if _, err := pipeline.Run(context.Background(), o); err != nil {
+		t.Fatal(err)
+	}
+	if g := readGame(t, dataDir, "silent-hill-2-ps2"); g.Shelf != nil {
+		t.Errorf("after a count below the floor, shelf = %+v, want none", g.Shelf)
+	}
+}

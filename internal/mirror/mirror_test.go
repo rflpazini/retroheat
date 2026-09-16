@@ -398,3 +398,76 @@ func TestPushCanBeLimitedToSomeGames(t *testing.T) {
 		t.Errorf("pushed %d rows, stored %d; want only okami-ps2", pushed, len(f.rows))
 	}
 }
+
+// shelfCountsServer answers /rest/v1/shelf_counts a page at a time, the way
+// PostgREST does, and keeps every request for the assertions.
+func shelfCountsServer(t *testing.T, rows []map[string]any, requests *[]*http.Request) *mirror.Supabase {
+	t.Helper()
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		*requests = append(*requests, r)
+		if r.Method != http.MethodGet || r.URL.Path != "/rest/v1/shelf_counts" {
+			w.WriteHeader(http.StatusNotFound)
+			return
+		}
+		limit, _ := strconv.Atoi(r.URL.Query().Get("limit"))
+		offset, _ := strconv.Atoi(r.URL.Query().Get("offset"))
+		out := []map[string]any{}
+		for i := offset; i < len(rows) && i < offset+limit; i++ {
+			out = append(out, rows[i])
+		}
+		w.Header().Set("Content-Type", "application/json")
+		_ = json.NewEncoder(w).Encode(out)
+	}))
+	t.Cleanup(srv.Close)
+	return mirror.NewSupabase(srv.URL, "service-key", mirror.WithPageSize(2))
+}
+
+func TestShelfCountsPagesUntilAnEmptyPage(t *testing.T) {
+	t.Parallel()
+	var requests []*http.Request
+	s := shelfCountsServer(t, []map[string]any{
+		{"game_id": "bully-ps2", "owned": 5, "saved": 2},
+		{"game_id": "okami-ps2", "owned": 3, "saved": 0},
+		{"game_id": "rez-ps2", "owned": 1, "saved": 4},
+	}, &requests)
+
+	got, err := s.ShelfCounts(context.Background())
+	if err != nil {
+		t.Fatal(err)
+	}
+	want := []mirror.ShelfCount{{GameID: "bully-ps2", Owned: 5, Saved: 2}, {GameID: "okami-ps2", Owned: 3}, {GameID: "rez-ps2", Owned: 1, Saved: 4}}
+	if len(got) != len(want) {
+		t.Fatalf("counts = %+v, want %+v", got, want)
+	}
+	for i := range want {
+		if got[i] != want[i] {
+			t.Errorf("count %d = %+v, want %+v", i, got[i], want[i])
+		}
+	}
+	if len(requests) != 3 {
+		t.Errorf("requests = %d, want two pages and the empty page that ends the read", len(requests))
+	}
+	req := requests[0]
+	if req.Header.Get("apikey") != "service-key" || req.Header.Get("Authorization") != "Bearer service-key" {
+		t.Error("the service key must travel in both headers: the view refuses the anon key")
+	}
+	if got := req.URL.Query().Get("select"); got != "game_id,owned,saved" {
+		t.Errorf("select = %q, want the three columns of the view", got)
+	}
+	if got := req.URL.Query().Get("order"); !strings.HasPrefix(got, "game_id") {
+		t.Errorf("order = %q, want by game so pages never overlap", got)
+	}
+}
+
+func TestShelfCountsReportsTheServersAnswer(t *testing.T) {
+	t.Parallel()
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, _ *http.Request) {
+		w.WriteHeader(http.StatusUnauthorized)
+		_, _ = w.Write([]byte(`{"message":"permission denied for view shelf_counts"}`))
+	}))
+	t.Cleanup(srv.Close)
+	_, err := mirror.NewSupabase(srv.URL, "anon").ShelfCounts(context.Background())
+	if err == nil || !strings.Contains(err.Error(), "401") || !strings.Contains(err.Error(), "permission denied") {
+		t.Fatalf("err = %v, want the status and the server's message", err)
+	}
+}

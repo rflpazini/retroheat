@@ -272,3 +272,65 @@ func TestWriteGameLandsUnderGames(t *testing.T) {
 		}
 	}
 }
+
+func TestShelfOfHidesCountsUnderThree(t *testing.T) {
+	t.Parallel()
+	cases := []struct {
+		name         string
+		owned, saved int
+		want         *snapshot.ShelfCount
+	}{
+		{"both clear the floor", 5, 3, &snapshot.ShelfCount{Owned: 5, Saved: 3}},
+		{"only owned clears it", 4, 2, &snapshot.ShelfCount{Owned: 4}},
+		{"only saved clears it", 1, 3, &snapshot.ShelfCount{Saved: 3}},
+		{"neither clears it", 2, 2, nil},
+		{"nobody", 0, 0, nil},
+	}
+	for _, c := range cases {
+		t.Run(c.name, func(t *testing.T) {
+			t.Parallel()
+			got := snapshot.ShelfOf(c.owned, c.saved)
+			if (got == nil) != (c.want == nil) || (got != nil && *got != *c.want) {
+				t.Errorf("ShelfOf(%d, %d) = %+v, want %+v", c.owned, c.saved, got, c.want)
+			}
+		})
+	}
+}
+
+func TestGameFileRoundTripsShelfCounts(t *testing.T) {
+	t.Parallel()
+	dir := t.TempDir()
+	g := snapshot.GameDetail{ID: "bully-ps2", Title: "Bully", Platform: catalog.PS2, Shelf: &snapshot.ShelfCount{Owned: 12}}
+	if err := snapshot.WriteGame(dir, g); err != nil {
+		t.Fatal(err)
+	}
+	raw, err := os.ReadFile(filepath.Join(dir, "games", "bully-ps2.json"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !strings.Contains(string(raw), `"shelf"`) || strings.Contains(string(raw), `"saved"`) {
+		t.Errorf("game file = %s, want owned under shelf and no saved key for a count below the floor", raw)
+	}
+	back, err := snapshot.ReadGame(dir, "bully-ps2")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if back.Shelf == nil || back.Shelf.Owned != 12 || back.Shelf.Saved != 0 {
+		t.Errorf("read back shelf = %+v, want owned 12", back.Shelf)
+	}
+
+	// A game nobody has counted carries no key at all, so the page says nothing.
+	if err := snapshot.WriteGame(dir, snapshot.GameDetail{ID: "okami-ps2", Title: "Okami", Platform: catalog.PS2}); err != nil {
+		t.Fatal(err)
+	}
+	raw, err = os.ReadFile(filepath.Join(dir, "games", "okami-ps2.json"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if strings.Contains(string(raw), `"shelf"`) {
+		t.Errorf("game file = %s, want no shelf key", raw)
+	}
+	if _, err := snapshot.ReadGame(dir, "vanished-ps2"); err == nil {
+		t.Error("reading a game file that does not exist must fail, not invent a game")
+	}
+}

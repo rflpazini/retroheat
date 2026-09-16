@@ -46,6 +46,26 @@ describe.skipIf(!present)('pages render against real collector output', () => {
     serveLocalData()
   })
 
+  it('says on how many shelves a game sits and how many want it, only when its file says so', async () => {
+    const { Game } = await import('./Game')
+    // The collector writes the counts into the game file; here one file is served with them.
+    const serve = globalThis.fetch
+    vi.stubGlobal('fetch', async (input: RequestInfo | URL) => {
+      const url = String(input)
+      if (!url.endsWith('/data/games/jet-force-gemini-n64.json')) return serve(input)
+      const game = (await (await serve(input)).json()) as Record<string, unknown>
+      return new Response(JSON.stringify({ ...game, shelf: { owned: 12, saved: 4 } }), { status: 200 })
+    })
+    const first = renderAt('/g/jet-force-gemini-n64', <Game />, '/g/:id')
+    await waitFor(() => expect(document.body.textContent).toMatch(/on 12 shelves · wanted by 4/i))
+    first.unmount()
+
+    resetCache()
+    renderAt('/g/bully-ps2', <Game />, '/g/:id')
+    await waitFor(() => expect(document.body.textContent).toMatch(/details/i))
+    expect(document.body.textContent).not.toMatch(/shelves ·|wanted by/i)
+  })
+
   it('the home board shows a ranked mover, or says why there is none yet', async () => {
     const trending = JSON.parse(fs.readFileSync(path.join(dataDir, 'trending/all.json'), 'utf8')) as {
       entries: unknown[]

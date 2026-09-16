@@ -201,6 +201,8 @@ export interface GameDetail {
   ebay_url?: string
   info?: GameInfo
   annotation?: Annotation
+  /** How many people keep and want the game, from the accounts; each figure only from three people up, else absent. */
+  shelf?: { owned?: number; saved?: number }
 }
 
 /** One game in prices.json: latest medians, the week's move, staleness. */

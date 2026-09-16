@@ -138,7 +138,9 @@ and is hidden entirely when the site is built without it.
   history, no analytics.
 - **Who can see it:** only you. Row-level security in the database scopes every
   row to its owner; the site talks to the database with a public key, and that
-  boundary is the database's, not the browser's.
+  boundary is the database's, not the browser's. The one thing that leaves is
+  a count: a game page says "on N shelves · wanted by N" from everyone's lists
+  together, names no one, and shows a figure only from three people up.
 - **Delete it any time** from the account menu. That removes the account and
   everything saved with it.
 - **Works without a signal.** The site installs as an app (Add to Home Screen

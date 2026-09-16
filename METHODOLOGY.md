@@ -188,6 +188,12 @@ workflow fails loudly instead of publishing a half-empty board.
 - Graded copies, promo and demo discs, regional imports and hardware are out of
   scope.
 - Annotations are hand-written by contributors and are editorial, not data.
+- The "on N shelves · wanted by N" line on a game page counts RetroHeat
+  accounts, private shelves included, and is a demand signal from a small
+  crowd, not a market figure. A count is published only from three people
+  up, so it never points at one collector, and it is refreshed by the
+  collector twice a day; a run without the service key keeps the last
+  published figures rather than blanking them.
 
 ## 9. Never losing collected data
 

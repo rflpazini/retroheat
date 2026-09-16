@@ -157,6 +157,19 @@ describe.skipIf(!present)('collector output matches the frontend contract', () =
     }
   })
 
+  it("a game file's shelf counts, when present, are whole numbers from three people up", () => {
+    const details = read<CatalogFile>('catalog.json').games.map((g) => read<GameDetail>(`games/${g.id}.json`))
+    for (const d of details) {
+      if (!d.shelf) continue
+      for (const k of ['owned', 'saved'] as const) {
+        const v = d.shelf[k]
+        if (v === undefined) continue
+        expect(Number.isInteger(v)).toBe(true)
+        expect(v).toBeGreaterThanOrEqual(3)
+      }
+    }
+  })
+
   it('titles are written without HTML escaping', () => {
     const raw = fs.readFileSync(path.join(dataDir, 'catalog.json'), 'utf8')
     expect(raw).not.toContain('\\u0026')

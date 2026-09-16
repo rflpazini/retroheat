@@ -104,6 +104,7 @@ func run() int {
 		Log:          log,
 		RawDir:       *rawDir,
 		Mirror:       store,
+		Counter:      counterOf(store),
 	})
 	if err != nil {
 		log.Error("run failed", slog.String("err", err.Error()))
@@ -157,6 +158,13 @@ func selectMirror() mirror.Writer {
 		return nil
 	}
 	return mirror.NewSupabase(url, key)
+}
+
+// counterOf reads the shelf counts through the same store, when there is one;
+// a nil store, or one that cannot count, leaves the last published figures.
+func counterOf(w mirror.Writer) mirror.Counter {
+	c, _ := w.(mirror.Counter)
+	return c
 }
 
 func parsePlatforms(s string) ([]catalog.Platform, error) {

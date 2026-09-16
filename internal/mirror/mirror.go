@@ -64,6 +64,21 @@ type Store interface {
 	Points(ctx context.Context) ([]Row, error)
 }
 
+// ShelfCount is one row of the shelf_counts view: distinct people who keep
+// the game and distinct people who saved it. Private shelves count; no one
+// is named.
+type ShelfCount struct {
+	GameID string `json:"game_id"`
+	Owned  int    `json:"owned"`
+	Saved  int    `json:"saved"`
+}
+
+// Counter reads the demand signal the accounts give off. Only the service
+// role can: the view is closed to the anon key the site ships with.
+type Counter interface {
+	ShelfCounts(ctx context.Context) ([]ShelfCount, error)
+}
+
 // Supabase talks to PostgREST with the service role key.
 type Supabase struct {
 	http      *http.Client
@@ -185,6 +200,33 @@ func (s *Supabase) Points(ctx context.Context) ([]Row, error) {
 		var page []Row
 		if err := s.do(req, &page); err != nil {
 			return nil, fmt.Errorf("read points at offset %d: %w", offset, err)
+		}
+		if len(page) == 0 {
+			return all, nil
+		}
+		all = append(all, page...)
+	}
+}
+
+// ShelfCounts reads the shelf_counts view a page at a time, ordered by game
+// so pages never overlap, and stops only on an empty page, as Points does.
+func (s *Supabase) ShelfCounts(ctx context.Context) ([]ShelfCount, error) {
+	var all []ShelfCount
+	for offset := 0; ; offset += s.pageSize {
+		q := url.Values{
+			"select": {"game_id,owned,saved"},
+			"order":  {"game_id.asc"},
+			"limit":  {fmt.Sprint(s.pageSize)},
+			"offset": {fmt.Sprint(offset)},
+		}
+		req, err := http.NewRequestWithContext(ctx, http.MethodGet, s.baseURL+"/rest/v1/shelf_counts?"+q.Encode(), nil)
+		if err != nil {
+			return nil, err
+		}
+		s.authorize(req)
+		var page []ShelfCount
+		if err := s.do(req, &page); err != nil {
+			return nil, fmt.Errorf("read shelf counts at offset %d: %w", offset, err)
 		}
 		if len(page) == 0 {
 			return all, nil
