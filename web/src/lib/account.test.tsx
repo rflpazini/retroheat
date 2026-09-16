@@ -1,6 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import fs from 'node:fs'
 import path from 'node:path'
+import { useState } from 'react'
 import { render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
@@ -159,6 +160,7 @@ describe('account deletion', () => {
 /** Reads the shelf through the same context the pages use, and pokes it. */
 function ShelfProbe() {
   const a = useAccount()
+  const [problem, setProblem] = useState<string | null>(null)
   const copies = a.collection.status === 'ready' ? [...a.collection.data.values()] : []
   return (
     <div>
@@ -183,6 +185,16 @@ function ShelfProbe() {
       </p>
       <p data-testid="offline">{a.offline?.at ?? ''}</p>
       <p data-testid="status">{a.collection.status}</p>
+      <button type="button" onClick={() => void a.saveProfile({ slug: 'rafa', is_public: true, share_paid: false }).catch(() => {})}>
+        share as rafa
+      </button>
+      <button type="button" onClick={() => void a.saveProfile({ slug: 'taken', is_public: true, share_paid: true }).catch((e: Error) => setProblem(e.message))}>
+        share as taken
+      </button>
+      <p data-testid="profile">
+        {a.profile.status === 'ready' && a.profile.data ? `${a.profile.data.slug}:${a.profile.data.is_public ? 'public' : 'private'}` : a.profile.status}
+      </p>
+      {problem && <p role="alert">{problem}</p>}
       {a.error && <p role="alert">{a.error}</p>}
     </div>
   )
@@ -255,6 +267,24 @@ describe('a saved game can carry a target price', () => {
     await waitFor(() => expect(screen.getByTestId('targets').textContent).toBe('bully-ps2:-'))
     expect(state.saved.get('bully-ps2')?.target_cents).toBeNull()
     expect(state.saved.has('bully-ps2')).toBe(true)
+  })
+})
+
+describe('a shelf can be shared by link', () => {
+  it('saves a name and the sharing choices, and reports a name that is taken', async () => {
+    const { backend, state } = memoryBackend({ user: testUser, takenSlugs: ['taken'] })
+    renderProbe(backend)
+    const user = userEvent.setup()
+    await waitFor(() => expect(screen.getByTestId('profile').textContent).toBe('ready'))
+
+    await user.click(screen.getByRole('button', { name: /share as rafa/i }))
+    await waitFor(() => expect(screen.getByTestId('profile').textContent).toBe('rafa:public'))
+    expect(state.profile).toEqual({ slug: 'rafa', is_public: true, share_paid: false })
+
+    await user.click(screen.getByRole('button', { name: /share as taken/i }))
+    expect((await screen.findByRole('alert')).textContent).toMatch(/taken/i)
+    expect(state.profile?.slug).toBe('rafa')
+    expect(screen.getByTestId('profile').textContent).toBe('rafa:public')
   })
 })
 

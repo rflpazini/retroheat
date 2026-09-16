@@ -7,6 +7,7 @@ import {
   type CollectionItem,
   type CopyPatch,
   type NewCopy,
+  type Profile,
   type SavedGame,
   type ShelfBackend,
 } from '@/lib/shelf'
@@ -57,6 +58,13 @@ export interface Account {
   infoCopy: { id: string; sell: boolean } | null
   openInfo: (copyId: string, opts?: { sell?: boolean }) => void
   closeInfo: () => void
+  /** The sharing choices, fetched when the Sharing window opens; null data until the person made any. */
+  profile: Loadable<Profile | null>
+  /** Saves the sharing choices; throws with the store's words (e.g. "That name is taken.") so the window can say them. */
+  saveProfile: (p: Profile) => Promise<void>
+  sharingOpen: boolean
+  openSharing: () => void
+  closeSharing: () => void
   /** Set when the lists came from the copy kept on this device because the network failed; says when that copy was saved. */
   offline: { at: string } | null
   /** The last failed write, in the backend's words; cleared by the next success. */
@@ -106,6 +114,11 @@ const disabled: Account = {
   infoCopy: null,
   openInfo: () => {},
   closeInfo: () => {},
+  profile: { status: 'ready', data: null },
+  saveProfile: noop,
+  sharingOpen: false,
+  openSharing: () => {},
+  closeSharing: () => {},
   offline: null,
   error: null,
   signInError: null,
@@ -286,13 +299,16 @@ function AccountState({
   const [offline, setOffline] = useState<Account['offline']>(null)
   const [pendingAdd, setPendingAdd] = useState<Account['pendingAdd']>(null)
   const [infoCopy, setInfoCopy] = useState<Account['infoCopy']>(null)
+  const [profile, setProfile] = useState<Loadable<Profile | null>>({ status: 'ready', data: null })
+  const [sharingOpen, setSharingOpen] = useState(false)
   // A failed write's message belongs to the page it happened on; leaving the
   // page gives the status strip back to the price caveat. The same goes for
-  // the windows about one copy.
+  // the windows about one copy or the shelf's sharing.
   useEffect(() => {
     setError(null)
     setPendingAdd(null)
     setInfoCopy(null)
+    setSharingOpen(false)
   }, [location.pathname])
   const [signInError, setSignInError] = useState<string | null>(null)
   const savedRef = useRef(saved)
@@ -633,6 +649,30 @@ function AccountState({
   const openInfo = useCallback((id: string, opts?: { sell?: boolean }) => setInfoCopy({ id, sell: opts?.sell ?? false }), [])
   const closeInfo = useCallback(() => setInfoCopy(null), [])
 
+  // The sharing choices are read when the window opens, not on sign-in: most
+  // visits never open it.
+  const openSharing = useCallback(() => {
+    setSharingOpen(true)
+    setProfile({ status: 'loading' })
+    void (async () => {
+      try {
+        const b = await ensure()
+        setProfile({ status: 'ready', data: await b.getProfile() })
+      } catch (e) {
+        setProfile({ status: 'error', error: messageOf(e) })
+      }
+    })()
+  }, [ensure])
+  const closeSharing = useCallback(() => setSharingOpen(false), [])
+  const saveProfile = useCallback(
+    async (p: Profile) => {
+      const b = await ensure()
+      await b.saveProfile(p)
+      setProfile({ status: 'ready', data: p })
+    },
+    [ensure],
+  )
+
   const value = useMemo<Account>(() => {
     const copiesOf = (gameId: string) => (collection.status === 'ready' ? copiesIn(collection.data, gameId) : [])
     return {
@@ -672,6 +712,11 @@ function AccountState({
       infoCopy,
       openInfo,
       closeInfo,
+      profile,
+      saveProfile,
+      sharingOpen,
+      openSharing,
+      closeSharing,
       offline,
       error,
       signInError,
@@ -700,6 +745,11 @@ function AccountState({
     infoCopy,
     openInfo,
     closeInfo,
+    profile,
+    saveProfile,
+    sharingOpen,
+    openSharing,
+    closeSharing,
     offline,
     error,
     signInError,

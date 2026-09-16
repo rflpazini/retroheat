@@ -18,6 +18,10 @@ const Saved = lazy(() => importFresh(() => import('@/pages/Saved')).then((m) => 
 const Collection = lazy(() =>
   importFresh(() => import('@/pages/Collection')).then((m) => ({ default: m.Collection })),
 )
+// A shelf someone shared by link: rare enough to load on demand as well.
+const PublicShelf = lazy(() =>
+  importFresh(() => import('@/pages/PublicShelf')).then((m) => ({ default: m.PublicShelf })),
+)
 
 // Hash routing keeps GitHub Pages serving a single index.html without the
 // 404.html redirect trick. The error window sits on the child routes so the
@@ -51,6 +55,14 @@ const router = createHashRouter([
         element: (
           <Suspense fallback={<Skeleton className="h-96 w-full rounded-xl" />}>
             <Collection />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'u/:slug',
+        element: (
+          <Suspense fallback={<Skeleton className="h-96 w-full rounded-xl" />}>
+            <PublicShelf />
           </Suspense>
         ),
       },

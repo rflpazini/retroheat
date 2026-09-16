@@ -141,6 +141,11 @@ and is hidden entirely when the site is built without it.
   boundary is the database's, not the browser's. The one thing that leaves is
   a count: a game page says "on N shelves · wanted by N" from everyone's lists
   together, names no one, and shows a figure only from three people up.
+- **Share it if you want, by link.** Sharing… in the account menu gives the
+  shelf a name and an address (`#/u/<name>`). Off by default; when on, anyone
+  with the link sees the games, conditions and asking prices, what you paid
+  only if you tick that too, and never your notes or sold copies. Turn it off
+  and the link says "No such shelf".
 - **Delete it any time** from the account menu. That removes the account and
   everything saved with it.
 - **Works without a signal.** The site installs as an app (Add to Home Screen
@@ -212,7 +217,7 @@ The rules, the archive format and the replay command are in
 5. Run the `scrape` workflow manually once, then let the schedule take over.
 6. Optional, for accounts: create a free [Supabase](https://supabase.com)
    project; run the files under `supabase/migrations/` in order in its SQL
-   editor (lists, price history, paid price, copies); under
+   editor (lists, price history, paid price, copies, sharing); under
    Authentication enable Google (an OAuth client in Google Cloud pointing at
    the project's callback URL) and email, and add your site URL to the
    redirect allow-list; set up custom SMTP before real users, since the

@@ -1,5 +1,5 @@
 import { explainError, retryOnClockSkew, type ApiError } from '@/lib/retry'
-import { IMPORT_CHUNK, type AuthEvent, type AuthUser, type CollectionItem, type ShelfBackend } from '@/lib/shelf'
+import { IMPORT_CHUNK, type AuthEvent, type AuthUser, type CollectionItem, type Profile, type ShelfBackend } from '@/lib/shelf'
 import type { Condition } from '@/lib/types'
 
 export function supabaseEnv(): { url: string; anonKey: string } | null {
@@ -204,6 +204,23 @@ export async function loadSupabaseBackend(): Promise<ShelfBackend> {
       const user_id = await uid()
       const { error } = await retryOnClockSkew(() =>
         client.from('collection_items').delete().eq('id', id).eq('user_id', user_id),
+      )
+      check(error)
+    },
+    async getProfile() {
+      const user_id = await uid()
+      const { data, error } = await retryOnClockSkew(() =>
+        client.from('profiles').select('slug,is_public,share_paid').eq('user_id', user_id).maybeSingle(),
+      )
+      check(error)
+      return (data as Profile | null) ?? null
+    },
+    async saveProfile(p) {
+      const user_id = await uid()
+      const { error } = await retryOnClockSkew(() =>
+        client
+          .from('profiles')
+          .upsert({ user_id, slug: p.slug, is_public: p.is_public, share_paid: p.share_paid, updated_at: new Date().toISOString() }, { onConflict: 'user_id' }),
       )
       check(error)
     },

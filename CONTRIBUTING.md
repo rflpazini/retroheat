@@ -78,6 +78,8 @@ change that compiles is not a change that works.
 ## Scope
 
 Out of scope for now, and deliberately: graded copies, promo and demo discs,
-hardware, and non-US regions. Accounts exist only to save games and record
-what you own; sharing collections, social features and price alerts stay out
-of scope. Plenty of tools already do those; none explain the market.
+hardware, and non-US regions. Accounts save games and record what you own,
+copy by copy; a shelf stays private unless its owner shares it by link, and a
+game page carries an anonymous count of the shelves it sits on. Price
+alerts, comments, follows and other social features stay out of scope.
+Plenty of tools already do those; none explain the market.

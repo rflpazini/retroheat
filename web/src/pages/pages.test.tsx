@@ -66,6 +66,45 @@ describe.skipIf(!present)('pages render against real collector output', () => {
     expect(document.body.textContent).not.toMatch(/shelves ·|wanted by/i)
   })
 
+  it("renders someone's public shelf read-only with its asking value, and says when there is no such shelf", async () => {
+    vi.stubEnv('VITE_SUPABASE_URL', 'https://example.supabase.co')
+    vi.stubEnv('VITE_SUPABASE_ANON_KEY', 'anon-key')
+    const { PublicShelf } = await import('./PublicShelf')
+    const ps2 = JSON.parse(fs.readFileSync(path.join(dataDir, 'latest/ps2.json'), 'utf8')) as {
+      games: { id: string; title: string; prices: Record<string, { median_cents: number }> }[]
+    }
+    const priced = ps2.games.find((g) => g.prices.cib)
+    if (!priced) return
+    // Data files come from disk as usual; the two public views answer from here.
+    const serve = globalThis.fetch
+    vi.stubGlobal('fetch', async (input: RequestInfo | URL, init?: RequestInit) => {
+      const url = String(input)
+      if (!url.startsWith('https://example.supabase.co/')) return serve(input, init)
+      const slug = new URL(url).searchParams.get('slug') ?? ''
+      if (url.includes('/rest/v1/public_profiles')) return new Response(JSON.stringify(slug === 'eq.rafa' ? [{ slug: 'rafa' }] : []), { status: 200 })
+      if (slug !== 'eq.rafa') return new Response('[]', { status: 200 })
+      return new Response(
+        JSON.stringify([{ game_id: priced.id, condition: 'cib', added_at: '2026-09-07T00:00:00Z', paid_cents: 1000 }]),
+        { status: 200 },
+      )
+    })
+
+    const first = renderAt('/u/rafa', <PublicShelf />, '/u/:slug')
+    await waitFor(() => expect(document.body.textContent).toMatch(/rafa/i))
+    await waitFor(() => expect(document.body.textContent).toContain(priced.title))
+    const { money } = await import('../lib/format')
+    expect(document.body.textContent).toContain(money(priced.prices.cib.median_cents))
+    expect(document.body.textContent).toMatch(/asking prices, not appraisals/i)
+    expect(document.body.textContent).toMatch(/paid/i)
+    expect(screen.queryByRole('button', { name: /^Own / })).toBeNull()
+    expect(screen.queryByRole('textbox')).toBeNull()
+    first.unmount()
+
+    renderAt('/u/nobody', <PublicShelf />, '/u/:slug')
+    await waitFor(() => expect(document.body.textContent).toMatch(/no such shelf/i))
+    vi.unstubAllEnvs()
+  })
+
   it('the home board shows a ranked mover, or says why there is none yet', async () => {
     const trending = JSON.parse(fs.readFileSync(path.join(dataDir, 'trending/all.json'), 'utf8')) as {
       entries: unknown[]

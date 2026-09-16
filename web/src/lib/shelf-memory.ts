@@ -1,8 +1,10 @@
-import type { AuthEvent, AuthUser, CollectionItem, CopyPatch, NewCopy, SavedGame, ShelfBackend } from '@/lib/shelf'
+import type { AuthEvent, AuthUser, CollectionItem, CopyPatch, NewCopy, Profile, SavedGame, ShelfBackend } from '@/lib/shelf'
 import { onShelf } from '@/lib/shelf'
 
 export interface MemoryState {
   user: AuthUser | null
+  /** The sharing choices, null until made. */
+  profile: Profile | null
   /** Saved games by game id. */
   saved: Map<string, SavedGame>
   /** Every copy, sold ones included, by its own id. */
@@ -41,6 +43,9 @@ export function memoryBackend(
     collection?: CollectionItem[]
     /** Answer like a store from before migration 0004: rows without an id. */
     legacy?: boolean
+    profile?: Profile | null
+    /** Shelf names other people already hold. */
+    takenSlugs?: string[]
   } = {},
 ): { backend: ShelfBackend; state: MemoryState } {
   const listeners = new Set<(user: AuthUser | null, event: AuthEvent) => void>()
@@ -55,6 +60,7 @@ export function memoryBackend(
   )
   const state: MemoryState = {
     user: seed.user ?? null,
+    profile: seed.profile ?? null,
     saved: new Map(savedRows.map((s) => [s.game_id, s])),
     collection: new Map(seeded.map((c) => [c.id, c])),
     copiesOf(gameId) {
@@ -153,11 +159,21 @@ export function memoryBackend(
       requireUser()
       state.collection.delete(id)
     },
+    async getProfile() {
+      requireUser()
+      return state.profile
+    },
+    async saveProfile(p) {
+      requireUser()
+      if ((seed.takenSlugs ?? []).includes(p.slug)) throw new Error('That name is taken.')
+      state.profile = { ...p }
+    },
     async deleteAccount() {
       requireUser()
       state.deleted = true
       state.saved.clear()
       state.collection.clear()
+      state.profile = null
       state.user = null
       emit('signed-out')
     },

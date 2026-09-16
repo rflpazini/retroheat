@@ -55,5 +55,7 @@ export function explainError(error: ApiError): string {
   if (error.code === 'PGRST204' || /schema cache/i.test(error.message)) {
     return `the database has not been updated for this yet (apply the latest migration under supabase/migrations); ${error.message}`
   }
+  // The one unique key a person can collide on is a shelf name.
+  if (error.code === '23505') return 'That name is taken.'
   return skewMessage(error)
 }

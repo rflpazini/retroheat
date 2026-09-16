@@ -9,6 +9,7 @@ import { Spotlight, useSpotlightShortcut } from '@/components/Spotlight'
 import { AccountSignIn } from '@/components/SignInDialog'
 import { AccountAddToShelf } from '@/components/AddToShelfDialog'
 import { AccountCopyInfo } from '@/components/CopyInfoDialog'
+import { AccountSharing } from '@/components/SharingDialog'
 import { AccountProvider, useAccount } from '@/lib/account'
 import { PLATFORMS, PLATFORM_LABELS, type Meta } from '@/lib/types'
 import { useJson } from '@/lib/data'
@@ -243,6 +244,7 @@ function Shell() {
       <AccountSignIn />
       <AccountAddToShelf />
       <AccountCopyInfo />
+      <AccountSharing />
     </div>
   )
 }

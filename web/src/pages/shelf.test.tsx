@@ -797,6 +797,33 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     expect(document.body.textContent).toMatch(/4 games/i)
   })
 
+  it('opens Sharing from the account menu, shows the link once public, and saves the choices', async () => {
+    const { backend, state } = memoryBackend({ user: testUser })
+    renderShell('/collection', <Route path="collection" element={<Collection />} />, backend)
+    // user-event installs a clipboard of its own; the copy is read back from it.
+    const user = userEvent.setup()
+
+    await user.click(await screen.findByRole('button', { name: /account menu/i }))
+    await user.click(within(await screen.findByRole('menu')).getByRole('menuitem', { name: /sharing/i }))
+    const dialog = await screen.findByRole('dialog', { name: /sharing/i })
+    expect(dialog.textContent).toMatch(/private/i)
+    expect(within(dialog).queryByRole('button', { name: /^copy$/i })).toBeNull()
+
+    await user.type(within(dialog).getByRole('textbox', { name: /shelf name/i }), 'Rafa Shelf')
+    // The name is made link-safe as it is typed.
+    expect((within(dialog).getByRole('textbox', { name: /shelf name/i }) as HTMLInputElement).value).toBe('rafa-shelf')
+    await user.click(within(dialog).getByRole('checkbox', { name: /anyone with the link/i }))
+    expect(dialog.textContent).toContain('#/u/rafa-shelf')
+    await user.click(within(dialog).getByRole('button', { name: /^copy$/i }))
+    expect((await within(dialog).findByRole('status')).textContent).toMatch(/copied/i)
+    expect(await navigator.clipboard.readText()).toContain('#/u/rafa-shelf')
+
+    await user.click(within(dialog).getByRole('checkbox', { name: /include what i paid/i }))
+    await user.click(within(dialog).getByRole('button', { name: /^save$/i }))
+    await waitFor(() => expect(screen.queryByRole('dialog', { name: /sharing/i })).toBeNull())
+    expect(state.profile).toEqual({ slug: 'rafa-shelf', is_public: true, share_paid: true })
+  })
+
   it('never opens the window when the add itself failed', async () => {
     if (!priced) return
     const { backend } = memoryBackend({ user: testUser })

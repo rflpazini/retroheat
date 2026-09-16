@@ -39,6 +39,29 @@ export function onShelf(item: CollectionItem): boolean {
   return item.sold_on == null
 }
 
+/** A shelf shared by link: its name in the address, whether anyone may see it, and whether paid prices show. */
+export interface Profile {
+  slug: string
+  is_public: boolean
+  share_paid: boolean
+}
+
+/** What a shelf name may be, matching the database check: lowercase, digits and hyphens, 3 to 32 characters. */
+export const SLUG_RE = /^[a-z0-9][a-z0-9-]{2,31}$/
+
+/** Makes typed text link-safe as it is typed: lowercase, spaces to hyphens, nothing else. */
+export function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .replace(/\s/g, '-')
+    .replace(/[^a-z0-9-]/g, '')
+    .replace(/-{2,}/g, '-')
+    .replace(/^-+/, '')
+    .slice(0, 32)
+}
+
 /** A game kept to buy later, and the most its owner would pay for it, if they said. */
 export interface SavedGame {
   game_id: string
@@ -86,6 +109,10 @@ export interface ShelfBackend {
   addCopies(copies: NewCopy[]): Promise<CollectionItem[]>
   updateCopy(id: string, patch: CopyPatch): Promise<void>
   removeCopy(id: string): Promise<void>
+  /** The sharing choices, or null when the person never made any. */
+  getProfile(): Promise<Profile | null>
+  /** Saves the sharing choices; a name someone else holds is refused with "That name is taken." */
+  saveProfile(p: Profile): Promise<void>
   deleteAccount(): Promise<void>
 }
 

@@ -50,6 +50,8 @@ export function UserMenu() {
             { label: 'Saved games', onSelect: () => navigate('/saved') },
             { label: 'My collection', onSelect: () => navigate('/collection') },
             'separator',
+            { label: 'Sharing…', onSelect: account.openSharing },
+            'separator',
             { label: 'Sign out', onSelect: () => void account.signOut() },
             {
               label: 'Delete account…',
