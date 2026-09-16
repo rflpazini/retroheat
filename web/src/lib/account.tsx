@@ -57,6 +57,8 @@ export interface Account {
   infoCopy: { id: string; sell: boolean } | null
   openInfo: (copyId: string, opts?: { sell?: boolean }) => void
   closeInfo: () => void
+  /** Set when the lists came from the copy kept on this device because the network failed; says when that copy was saved. */
+  offline: { at: string } | null
   /** The last failed write, in the backend's words; cleared by the next success. */
   error: string | null
   /** Why the last sign-in redirect failed, e.g. a magic link opened in another browser. */
@@ -104,6 +106,7 @@ const disabled: Account = {
   infoCopy: null,
   openInfo: () => {},
   closeInfo: () => {},
+  offline: null,
   error: null,
   signInError: null,
 }
@@ -183,6 +186,37 @@ type Shelf = Loadable<Map<string, CollectionItem>>
 /** The map key of a copy: its id, or the game on a store that has none yet. */
 const keyOf = (item: CollectionItem) => item.id ?? item.game_id
 
+/*
+  The last good shelf, kept on this device, so a collector with no signal
+  still sees what they own. It is written after every successful load and
+  write and read only when the network fails; it is never a source of writes.
+*/
+interface Mirror {
+  at: string
+  saved: SavedGame[]
+  collection: CollectionItem[]
+}
+const mirrorKey = (uid: string) => `retroheat-shelf-${uid}`
+
+function readMirror(uid: string): Mirror | null {
+  try {
+    const raw = localStorage.getItem(mirrorKey(uid))
+    if (!raw) return null
+    const m = JSON.parse(raw) as Mirror
+    return Array.isArray(m.saved) && Array.isArray(m.collection) && typeof m.at === 'string' ? m : null
+  } catch {
+    return null
+  }
+}
+
+function writeMirror(uid: string, m: Mirror) {
+  try {
+    localStorage.setItem(mirrorKey(uid), JSON.stringify(m))
+  } catch {
+    // Private browsing or a full disk; the shelf simply has no offline copy.
+  }
+}
+
 /** Whether every row carries a copy id; an empty shelf can be written to. */
 function supported(shelf: Shelf): boolean {
   return shelf.status === 'ready' && [...shelf.data.values()].every((i) => i.id !== undefined)
@@ -249,6 +283,7 @@ function AccountState({
   const [saved, setSaved] = useState<Loadable<Map<string, SavedGame>>>({ status: 'ready', data: new Map() })
   const [collection, setCollection] = useState<Shelf>({ status: 'ready', data: new Map() })
   const [error, setError] = useState<string | null>(null)
+  const [offline, setOffline] = useState<Account['offline']>(null)
   const [pendingAdd, setPendingAdd] = useState<Account['pendingAdd']>(null)
   const [infoCopy, setInfoCopy] = useState<Account['infoCopy']>(null)
   // A failed write's message belongs to the page it happened on; leaving the
@@ -320,10 +355,14 @@ function AccountState({
   }, [load, loadNow, ensure])
 
   // Lists follow the user. They are fetched here, never inside the auth
-  // callback, which the SDK documents as a deadlock.
+  // callback, which the SDK documents as a deadlock. When the fetch fails
+  // and this device kept a copy, the copy is shown and marked as such.
   const userId = user?.id ?? null
+  const mirrorable = useRef(false)
   useEffect(() => {
     const b = ref.current
+    mirrorable.current = false
+    setOffline(null)
     if (!userId || !b) {
       setSaved({ status: 'ready', data: new Map() })
       setCollection({ status: 'ready', data: new Map() })
@@ -335,11 +374,19 @@ function AccountState({
     Promise.all([b.listSaved(), b.listCollection()])
       .then(([s, c]) => {
         if (cancelled) return
+        mirrorable.current = true
         setSaved({ status: 'ready', data: new Map(s.map((g) => [g.game_id, g])) })
         setCollection({ status: 'ready', data: new Map(c.map((i) => [keyOf(i), i])) })
       })
       .catch((e: unknown) => {
         if (cancelled) return
+        const m = readMirror(userId)
+        if (m) {
+          setSaved({ status: 'ready', data: new Map(m.saved.map((g) => [g.game_id, g])) })
+          setCollection({ status: 'ready', data: new Map(m.collection.map((i) => [keyOf(i), i])) })
+          setOffline({ at: m.at })
+          return
+        }
         setSaved({ status: 'error', error: messageOf(e) })
         setCollection({ status: 'error', error: messageOf(e) })
       })
@@ -347,6 +394,12 @@ function AccountState({
       cancelled = true
     }
   }, [userId])
+
+  // Every good state of the lists goes to disk; a state served from disk does not.
+  useEffect(() => {
+    if (!userId || !mirrorable.current || saved.status !== 'ready' || collection.status !== 'ready') return
+    writeMirror(userId, { at: new Date().toISOString(), saved: [...saved.data.values()], collection: [...collection.data.values()] })
+  }, [userId, saved, collection])
 
   const signInWithGoogle = useCallback(async () => {
     stashReturn(locationRef.current.pathname)
@@ -619,6 +672,7 @@ function AccountState({
       infoCopy,
       openInfo,
       closeInfo,
+      offline,
       error,
       signInError,
     }
@@ -646,6 +700,7 @@ function AccountState({
     infoCopy,
     openInfo,
     closeInfo,
+    offline,
     error,
     signInError,
   ])

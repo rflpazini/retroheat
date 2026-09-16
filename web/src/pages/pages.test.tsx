@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import fs from 'node:fs'
 import path from 'node:path'
-import { render, screen, waitFor, within } from '@testing-library/react'
+import { act, render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import { resetCache } from '../lib/data'
@@ -176,6 +176,42 @@ describe.skipIf(!present)('the shell behaves like an operating system', () => {
     )
     await waitFor(() => expect(document.body.textContent).toMatch(/asking price/i))
     expect(document.body.textContent).toMatch(/not what\s+copies sold for/i)
+  })
+
+  it('says so on the status strip when the browser is offline, with the day the prices are from', async () => {
+    const state = { onLine: false }
+    vi.stubGlobal('navigator', {
+      ...navigator,
+      get onLine() {
+        return state.onLine
+      },
+    })
+    render(
+      <MemoryRouter>
+        <AppShell />
+      </MemoryRouter>,
+    )
+    await waitFor(() => expect(document.body.textContent).toMatch(/offline · prices as of/i))
+    state.onLine = true
+    act(() => window.dispatchEvent(new Event('online')))
+    await waitFor(() => expect(document.body.textContent).toMatch(/asking price/i))
+    expect(document.body.textContent).not.toMatch(/offline ·/i)
+    vi.unstubAllGlobals()
+  })
+
+  it('offers Restart on the status strip when a new version is on disk', async () => {
+    render(
+      <MemoryRouter>
+        <AppShell />
+      </MemoryRouter>,
+    )
+    await waitFor(() => expect(document.body.textContent).toMatch(/asking price/i))
+    const apply = vi.fn()
+    act(() => window.dispatchEvent(new CustomEvent('retroheat:update-ready', { detail: { apply } })))
+    const restart = await screen.findByRole('button', { name: /restart/i })
+    expect(document.body.textContent).toMatch(/new version on disk/i)
+    await userEvent.setup().click(restart)
+    expect(apply).toHaveBeenCalledOnce()
   })
 
   it('opens a File menu whose items actually navigate', async () => {

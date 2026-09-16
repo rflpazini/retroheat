@@ -2,7 +2,10 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { App } from './App'
 import { reloadForNewVersion } from './lib/lazy'
+import { startOffline } from './pwa'
 import './index.css'
+
+startOffline()
 
 // Vite reports a chunk it could not preload here; a tab that outlived a
 // deploy reloads once to get the new file names. The error is left to

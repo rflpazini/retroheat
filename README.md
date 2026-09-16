@@ -141,6 +141,11 @@ and is hidden entirely when the site is built without it.
   boundary is the database's, not the browser's.
 - **Delete it any time** from the account menu. That removes the account and
   everything saved with it.
+- **Works without a signal.** The site installs as an app (Add to Home Screen
+  or the browser's Install button) and keeps the boards and prices it has
+  seen, so a board opened at a flea market still opens. Your shelf keeps a
+  copy on the device too; when the network is away the status strip says so
+  and the shelf reads from that copy, read-only.
 
 ## What runs on GitHub Actions
 

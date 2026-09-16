@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import fs from 'node:fs'
 import path from 'node:path'
 import { render, screen, waitFor, within } from '@testing-library/react'
@@ -181,6 +181,8 @@ function ShelfProbe() {
       <p data-testid="targets">
         {a.saved.status === 'ready' ? [...a.saved.data.values()].map((s) => `${s.game_id}:${s.target_cents ?? '-'}`).join(',') : ''}
       </p>
+      <p data-testid="offline">{a.offline?.at ?? ''}</p>
+      <p data-testid="status">{a.collection.status}</p>
       {a.error && <p role="alert">{a.error}</p>}
     </div>
   )
@@ -253,6 +255,67 @@ describe('a saved game can carry a target price', () => {
     await waitFor(() => expect(screen.getByTestId('targets').textContent).toBe('bully-ps2:-'))
     expect(state.saved.get('bully-ps2')?.target_cents).toBeNull()
     expect(state.saved.has('bully-ps2')).toBe(true)
+  })
+})
+
+describe('the shelf keeps a copy on disk for when the network is away', () => {
+  const key = `retroheat-shelf-${testUser.id}`
+  const copy = { game_id: 'bully-ps2', condition: 'cib' as const, added_at: '2026-09-07T00:00:00Z' }
+
+  // jsdom under vitest exposes no localStorage; a Map stands in for the disk.
+  beforeEach(() => {
+    const disk = new Map<string, string>()
+    vi.stubGlobal('localStorage', {
+      getItem: (k: string) => disk.get(k) ?? null,
+      setItem: (k: string, v: string) => void disk.set(k, String(v)),
+      removeItem: (k: string) => void disk.delete(k),
+      clear: () => disk.clear(),
+    })
+  })
+  afterEach(() => {
+    vi.unstubAllGlobals()
+  })
+
+  it('writes the lists to disk once they load', async () => {
+    const { backend } = memoryBackend({ user: testUser, saved: ['okami-ps2'], collection: [copy] })
+    renderProbe(backend)
+    await waitFor(() => expect(screen.getByTestId('copies').textContent).toBe('bully-ps2:cib'))
+    await waitFor(() => expect(localStorage.getItem(key)).not.toBeNull())
+    const mirror = JSON.parse(localStorage.getItem(key)!) as { at: string; saved: unknown[]; collection: unknown[] }
+    expect(mirror.saved).toHaveLength(1)
+    expect(mirror.collection).toHaveLength(1)
+    expect(mirror.at).toMatch(/^\d{4}-\d{2}-\d{2}T/)
+    expect(screen.getByTestId('offline').textContent).toBe('')
+  })
+
+  it('serves the last shelf from disk when the network fails, and says when it was saved', async () => {
+    localStorage.setItem(
+      key,
+      JSON.stringify({
+        at: '2026-09-15T10:00:00.000Z',
+        saved: [{ game_id: 'okami-ps2', created_at: '2026-09-01T00:00:00Z', target_cents: null }],
+        collection: [{ id: 'copy-9', ...copy, paid_cents: 1000 }],
+      }),
+    )
+    const { backend } = memoryBackend({ user: testUser })
+    backend.listCollection = async () => {
+      throw new TypeError('Failed to fetch')
+    }
+    renderProbe(backend)
+    await waitFor(() => expect(screen.getByTestId('copies').textContent).toBe('bully-ps2:cib'))
+    expect(screen.getByTestId('targets').textContent).toBe('okami-ps2:-')
+    expect(screen.getByTestId('offline').textContent).toBe('2026-09-15T10:00:00.000Z')
+    expect(screen.getByTestId('status').textContent).toBe('ready')
+  })
+
+  it('still reports the failure when there is no copy on disk', async () => {
+    const { backend } = memoryBackend({ user: testUser })
+    backend.listCollection = async () => {
+      throw new TypeError('Failed to fetch')
+    }
+    renderProbe(backend)
+    await waitFor(() => expect(screen.getByTestId('status').textContent).toBe('error'))
+    expect(screen.getByTestId('offline').textContent).toBe('')
   })
 })
 
