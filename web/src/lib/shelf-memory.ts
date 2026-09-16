@@ -138,6 +138,11 @@ export function memoryBackend(
       state.collection.set(item.id!, item)
       return item
     },
+    async addCopies(copies: NewCopy[]) {
+      const out: CollectionItem[] = []
+      for (const c of copies) out.push(await backend.addCopy(c))
+      return out
+    },
     async updateCopy(id, patch: CopyPatch) {
       requireUser()
       const before = state.collection.get(id)

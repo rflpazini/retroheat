@@ -1,7 +1,15 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import type { Loadable } from '@/lib/data'
-import { onShelf, type AuthUser, type CollectionItem, type CopyPatch, type SavedGame, type ShelfBackend } from '@/lib/shelf'
+import {
+  onShelf,
+  type AuthUser,
+  type CollectionItem,
+  type CopyPatch,
+  type NewCopy,
+  type SavedGame,
+  type ShelfBackend,
+} from '@/lib/shelf'
 import { isAuthEnabled, loadSupabaseBackend } from '@/lib/supabase'
 import type { Condition } from '@/lib/types'
 
@@ -36,6 +44,8 @@ export interface Account {
   /** Sets the first copy's condition, adds a copy when there is none, or with null takes every copy off the shelf. */
   setOwned: (gameId: string, condition: Condition | null) => Promise<void>
   addCopy: (gameId: string, condition: Condition) => Promise<void>
+  /** Puts many copies on the shelf (an import) and says how many landed; throws with the store's words when it fails. */
+  addCopies: (copies: NewCopy[]) => Promise<number>
   updateCopy: (copyId: string, patch: CopyPatch) => Promise<void>
   removeCopy: (copyId: string) => Promise<void>
   /** Records what a copy cost, or forgets it with null. */
@@ -85,6 +95,7 @@ const disabled: Account = {
   owned: () => undefined,
   setOwned: noop,
   addCopy: noop,
+  addCopies: async () => 0,
   updateCopy: noop,
   removeCopy: noop,
   setPaid: noop,
@@ -251,6 +262,8 @@ function AccountState({
   const [signInError, setSignInError] = useState<string | null>(null)
   const savedRef = useRef(saved)
   savedRef.current = saved
+  const errorRef = useRef(error)
+  errorRef.current = error
   const collectionRef = useRef(collection)
   collectionRef.current = collection
 
@@ -476,6 +489,22 @@ function AccountState({
     [ready, patchShelf],
   )
 
+  // An import: nothing optimistic, since the store names every row; the rows
+  // come back and join the shelf, and the caller reports the count.
+  const addCopies = useCallback(
+    async (copies: NewCopy[]): Promise<number> => {
+      const r = await ready()
+      if (!r) throw new Error(errorRef.current ?? COPIES_MIGRATION)
+      const rows = await r.b.addCopies(copies)
+      patchShelf((next) => {
+        for (const row of rows) next.set(keyOf(row), row)
+      })
+      setError(null)
+      return rows.length
+    },
+    [ready, patchShelf],
+  )
+
   // The latest edit of a copy wins: a slower earlier write must not put its
   // value, or its failure, over a later one.
   const copySeq = useRef(new Map<string, number>())
@@ -581,6 +610,7 @@ function AccountState({
       owned: (gameId) => copiesOf(gameId)[0],
       setOwned,
       addCopy,
+      addCopies,
       updateCopy,
       removeCopy,
       setPaid,
@@ -607,6 +637,7 @@ function AccountState({
     collection,
     setOwned,
     addCopy,
+    addCopies,
     updateCopy,
     removeCopy,
     setPaid,

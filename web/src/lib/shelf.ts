@@ -58,6 +58,8 @@ export type CopyPatch = Partial<Pick<CollectionItem, 'condition' | 'paid_cents' 
 export const MAX_PAID_CENTS = 100_000_000
 /** The longest note a copy can carry, matching the database check. */
 export const MAX_NOTES = 500
+/** How many copies an import writes per request; small enough for one round trip, large enough for a shelf. */
+export const IMPORT_CHUNK = 100
 
 export type AuthEvent = 'initial' | 'signed-in' | 'signed-out' | 'refresh'
 
@@ -80,6 +82,8 @@ export interface ShelfBackend {
   listCollection(): Promise<CollectionItem[]>
   /** Puts one more copy on the shelf and returns it as the store named it. */
   addCopy(copy: NewCopy): Promise<CollectionItem>
+  /** Puts many copies on the shelf at once (an import), in chunks of IMPORT_CHUNK. */
+  addCopies(copies: NewCopy[]): Promise<CollectionItem[]>
   updateCopy(id: string, patch: CopyPatch): Promise<void>
   removeCopy(id: string): Promise<void>
   deleteAccount(): Promise<void>

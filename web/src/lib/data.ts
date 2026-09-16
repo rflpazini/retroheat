@@ -72,6 +72,11 @@ export function useJson<T>(rel: string | null): Loadable<T> {
 
 const messageOf = (err: unknown) => (err instanceof Error ? err.message : 'failed')
 
+/** One file, once, outside a component: for a menu action that wants the catalog only when picked. */
+export function loadJson<T>(rel: string): Promise<T> {
+  return loadCached<T>(dataURL(rel))
+}
+
 /** One fetch per file, shared: the cache answers repeats and the in-flight map joins concurrent asks. */
 function loadCached<T>(url: string): Promise<T> {
   if (cache.has(url)) return Promise.resolve(cache.get(url) as T)

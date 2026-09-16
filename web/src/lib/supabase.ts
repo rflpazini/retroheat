@@ -1,5 +1,5 @@
 import { explainError, retryOnClockSkew, type ApiError } from '@/lib/retry'
-import type { AuthEvent, AuthUser, CollectionItem, ShelfBackend } from '@/lib/shelf'
+import { IMPORT_CHUNK, type AuthEvent, type AuthUser, type CollectionItem, type ShelfBackend } from '@/lib/shelf'
 import type { Condition } from '@/lib/types'
 
 export function supabaseEnv(): { url: string; anonKey: string } | null {
@@ -179,6 +179,19 @@ export async function loadSupabaseBackend(): Promise<ShelfBackend> {
       )
       check(error)
       return toItem(data as Row)
+    },
+    async addCopies(copies) {
+      const user_id = await uid()
+      const out: CollectionItem[] = []
+      // A shelf of hundreds goes in a few requests; a failure names the chunk
+      // and leaves the earlier ones in place, which the review list can show.
+      for (let start = 0; start < copies.length; start += IMPORT_CHUNK) {
+        const chunk = copies.slice(start, start + IMPORT_CHUNK).map((c) => ({ user_id, ...c }))
+        const { data, error } = await retryOnClockSkew(() => client.from('collection_items').insert(chunk).select())
+        check(error)
+        out.push(...((data ?? []) as Row[]).map(toItem))
+      }
+      return out
     },
     async updateCopy(id, patch) {
       const user_id = await uid()

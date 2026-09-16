@@ -6,6 +6,7 @@ import userEvent from '@testing-library/user-event'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import { AccountProvider } from '../lib/account'
 import { resetCache } from '../lib/data'
+import { COLLECTION_HEADER } from '../lib/export'
 import { money, moneyExact, signedMoney } from '../lib/format'
 import type { ShelfBackend } from '../lib/shelf'
 import { memoryBackend, testUser } from '../lib/shelf-memory'
@@ -725,6 +726,75 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     await waitFor(() => expect(state.copyOf(priced.id)?.sold_on ?? null).toBeNull())
     expect(state.copyOf(priced.id)?.sold_cents ?? null).toBeNull()
     expect(await screen.findByRole('button', { name: ownAs(priced.title, 'Loose') })).toBeDefined()
+  })
+
+  it('exports the collection from the File menu as a dated CSV download', async () => {
+    if (!priced) return
+    const { backend } = memoryBackend({
+      user: testUser,
+      collection: [{ game_id: priced.id, condition: 'loose', added_at: '2026-09-07T00:00:00Z', paid_cents: 1250 }],
+    })
+    const blobs: Blob[] = []
+    const names: string[] = []
+    URL.createObjectURL = (b: Blob | MediaSource) => {
+      blobs.push(b as Blob)
+      return 'blob:shelf'
+    }
+    URL.revokeObjectURL = () => {}
+    const click = vi.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(function (this: HTMLAnchorElement) {
+      names.push(this.download)
+    })
+    renderShell('/collection', <Route path="collection" element={<Collection />} />, backend)
+    const user = userEvent.setup()
+    await screen.findByRole('button', { name: /account menu/i })
+
+    await user.click(screen.getByRole('button', { name: 'File' }))
+    await user.click(await screen.findByRole('menuitem', { name: /export collection/i }))
+    await waitFor(() => expect(names).toHaveLength(1))
+    expect(names[0]).toMatch(/^retroheat-collection-\d{4}-\d{2}-\d{2}\.csv$/)
+    // jsdom's Blob has no text(); a FileReader reads it the old way.
+    const text = await new Promise<string>((resolve) => {
+      const r = new FileReader()
+      r.onload = () => resolve(String(r.result))
+      r.readAsText(blobs[0])
+    })
+    expect(text.split('\r\n')[0]).toBe(COLLECTION_HEADER.join(','))
+    expect(text).toContain(priced.id)
+    expect(text).toContain(',loose,12.50,')
+    click.mockRestore()
+  })
+
+  it('imports a GAMEYE file: says what comes in, what needs a pick and what is skipped, then adds the copies', async () => {
+    const { backend, state } = memoryBackend({ user: testUser })
+    renderShell('/collection', <Route path="collection" element={<Collection />} />, backend)
+    const user = userEvent.setup()
+    await screen.findByRole('button', { name: /account menu/i })
+
+    await user.click(screen.getByRole('button', { name: 'File' }))
+    await user.click(await screen.findByRole('menuitem', { name: /import collection/i }))
+    const dialog = await screen.findByRole('dialog', { name: /import collection/i })
+    const csv = fs.readFileSync(path.resolve(__dirname, '../lib/fixtures/gameye-collection.csv'), 'utf8')
+    await user.upload(within(dialog).getByLabelText(/collection file/i), new File([csv], 'gameye.csv', { type: 'text/csv' }))
+
+    await waitFor(() => expect(dialog.textContent).toMatch(/3 to import/i))
+    expect(dialog.textContent).toMatch(/1 needs a pick/i)
+    expect(dialog.textContent).toMatch(/3 skipped/i)
+    expect(dialog.textContent).toMatch(/Sega Saturn/)
+    expect(dialog.textContent).toMatch(/not a game/i)
+
+    // The pick: "Silent Hill" on PS2 could be three games; choosing one brings it in.
+    await user.click(within(dialog).getByRole('button', { name: 'Pick Silent Hill 2' }))
+    await waitFor(() => expect(dialog.textContent).toMatch(/4 to import/i))
+
+    await user.click(within(dialog).getByRole('button', { name: /import 4 copies/i }))
+    await waitFor(() => expect(state.collection.size).toBe(4))
+    expect(state.copyOf('bully-ps2')).toMatchObject({ condition: 'cib', paid_cents: 1850, notes: 'Black label' })
+    expect(state.copyOf('metroid-fusion-gba')?.condition).toBe('loose')
+    expect(state.copyOf('jet-force-gemini-n64')?.condition).toBe('new')
+    expect(state.copyOf('silent-hill-2-ps2')).toMatchObject({ condition: 'loose', paid_cents: 1200 })
+    expect((await within(dialog).findByRole('status')).textContent).toMatch(/imported 4 copies/i)
+    // The shelf behind the window already shows them.
+    expect(document.body.textContent).toMatch(/4 games/i)
   })
 
   it('never opens the window when the add itself failed', async () => {
