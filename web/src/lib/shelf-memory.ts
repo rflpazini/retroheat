@@ -1,9 +1,10 @@
-import type { AuthEvent, AuthUser, CollectionItem, CopyPatch, NewCopy, ShelfBackend } from '@/lib/shelf'
+import type { AuthEvent, AuthUser, CollectionItem, CopyPatch, NewCopy, SavedGame, ShelfBackend } from '@/lib/shelf'
 import { onShelf } from '@/lib/shelf'
 
 export interface MemoryState {
   user: AuthUser | null
-  saved: Set<string>
+  /** Saved games by game id. */
+  saved: Map<string, SavedGame>
   /** Every copy, sold ones included, by its own id. */
   collection: Map<string, CollectionItem>
   /** The copies of a game still on the shelf, in the order they were added. */
@@ -26,6 +27,8 @@ export const testUser: AuthUser = {
   avatarUrl: null,
 }
 
+const SEED_DAY = '2026-09-07T00:00:00Z'
+
 /**
  * An in-memory backend for tests and local demos. Every call resolves on the
  * next tick, which is enough to exercise loading states without a network.
@@ -33,7 +36,8 @@ export const testUser: AuthUser = {
 export function memoryBackend(
   seed: {
     user?: AuthUser | null
-    saved?: string[]
+    /** Game ids, or full rows when a target matters. */
+    saved?: (string | SavedGame)[]
     collection?: CollectionItem[]
     /** Answer like a store from before migration 0004: rows without an id. */
     legacy?: boolean
@@ -46,9 +50,12 @@ export function memoryBackend(
   let copies = 0
   const nextId = () => `copy-${++copies}`
   const seeded = (seed.collection ?? []).map((c) => ({ ...c, id: c.id ?? nextId(), paid_cents: c.paid_cents ?? null }))
+  const savedRows = (seed.saved ?? []).map((s): SavedGame =>
+    typeof s === 'string' ? { game_id: s, created_at: SEED_DAY, target_cents: null } : { ...s, target_cents: s.target_cents ?? null },
+  )
   const state: MemoryState = {
     user: seed.user ?? null,
-    saved: new Set(seed.saved ?? []),
+    saved: new Map(savedRows.map((s) => [s.game_id, s])),
     collection: new Map(seeded.map((c) => [c.id, c])),
     copiesOf(gameId) {
       return [...state.collection.values()].filter((c) => c.game_id === gameId && onShelf(c))
@@ -89,15 +96,21 @@ export function memoryBackend(
     },
     async listSaved() {
       requireUser()
-      return [...state.saved]
+      return [...state.saved.values()]
     },
     async save(id) {
       requireUser()
-      state.saved.add(id)
+      if (!state.saved.has(id)) state.saved.set(id, { game_id: id, created_at: SEED_DAY, target_cents: null })
     },
     async unsave(id) {
       requireUser()
       state.saved.delete(id)
+    },
+    async setTarget(id, cents) {
+      requireUser()
+      const before = state.saved.get(id)
+      if (!before) throw new Error('Not saved')
+      state.saved.set(id, { ...before, target_cents: cents })
     },
     async listCollection() {
       requireUser()
@@ -115,7 +128,7 @@ export function memoryBackend(
         id: nextId(),
         game_id: copy.game_id,
         condition: copy.condition,
-        added_at: '2026-09-07T00:00:00Z',
+        added_at: SEED_DAY,
         paid_cents: copy.paid_cents ?? null,
         acquired_on: copy.acquired_on ?? null,
         notes: copy.notes ?? null,

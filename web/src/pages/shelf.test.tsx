@@ -393,6 +393,53 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     await waitFor(() => expect(document.activeElement).toBe(screen.getByRole('region', { name: /your saved games/i })))
   })
 
+  it('shows a Target column on Saved, marks a row under target, and counts them in the strip', async () => {
+    if (!priced) return
+    const headline = priced.prices.cib!.median_cents
+    const other = ps2.games.find((g) => g.id !== priced.id && g.prices.cib)
+    if (!other) return
+    const { backend, state } = memoryBackend({
+      user: testUser,
+      saved: [
+        { game_id: priced.id, created_at: '2026-09-07T00:00:00Z', target_cents: headline + 100 },
+        { game_id: other.id, created_at: '2026-09-07T00:00:00Z', target_cents: null },
+      ],
+    })
+    renderAt('/saved', <Saved />, '/saved', backend)
+    const user = userEvent.setup()
+
+    await waitFor(() => expect(document.body.textContent).toContain(priced.title))
+    expect(document.body.textContent).toMatch(/2 saved · 1 under target/i)
+    const row = screen.getByRole('link', { name: priced.title }).closest('tr')!
+    expect(row.textContent).toMatch(/under target/i)
+    const otherRow = screen.getByRole('link', { name: other.title }).closest('tr')!
+    expect(otherRow.textContent).not.toMatch(/under target/i)
+
+    // A target typed into the row is kept, in cents, and read back.
+    const field = within(otherRow).getByRole('textbox', { name: targetFor(other.title) }) as HTMLInputElement
+    const target = other.prices.cib!.median_cents + 500
+    await user.type(field, `${(target / 100).toFixed(2)}{Enter}`)
+    await waitFor(() => expect(state.saved.get(other.id)?.target_cents).toBe(target))
+    await waitFor(() => expect(document.body.textContent).toMatch(/2 saved · 2 under target/i))
+
+    // Clearing the field forgets the target, and the game stays saved.
+    await user.clear(field)
+    await user.tab()
+    await waitFor(() => expect(state.saved.get(other.id)?.target_cents).toBeNull())
+    expect(state.saved.has(other.id)).toBe(true)
+  })
+
+  it('hides the Target column when the store has no column for it yet', async () => {
+    if (!priced) return
+    const { backend } = memoryBackend({ user: testUser })
+    // A store from before migration 0004 returns saved rows without the key at all.
+    backend.listSaved = async () => [{ game_id: priced.id, created_at: '2026-09-07T00:00:00Z' }]
+    renderAt('/saved', <Saved />, '/saved', backend)
+    await waitFor(() => expect(document.body.textContent).toContain(priced.title))
+    expect(screen.queryByRole('textbox', { name: targetFor(priced.title) })).toBeNull()
+    expect(document.body.textContent).not.toMatch(/under target/i)
+  })
+
   it('the game page saves a game and records the copy owned', async () => {
     const { backend, state } = memoryBackend({ user: testUser })
     const { Game } = await import('./Game')
@@ -783,6 +830,11 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
 /** The accessible name of a row's paid-price field. */
 function paidFor(title: string): string {
   return `Paid for ${title}, in dollars`
+}
+
+/** The accessible name of a saved row's target-price field. */
+function targetFor(title: string): string {
+  return `Target for ${title}, in dollars`
 }
 
 /** The accessible name of a row's own-as menu button, with the condition it currently shows. */

@@ -1,3 +1,4 @@
+import { headlineFromMap } from '@/lib/format'
 import type { Condition, PriceEntry } from '@/lib/types'
 
 /** The signed-in person, reduced to what the menu bar shows. */
@@ -38,6 +39,14 @@ export function onShelf(item: CollectionItem): boolean {
   return item.sold_on == null
 }
 
+/** A game kept to buy later, and the most its owner would pay for it, if they said. */
+export interface SavedGame {
+  game_id: string
+  created_at: string
+  /** Cents; null when no target was set, absent (undefined) when the store has no such column yet. */
+  target_cents?: number | null
+}
+
 /** What a new copy is created from; the store adds the id and the date. */
 export type NewCopy = Pick<CollectionItem, 'game_id' | 'condition'> &
   Partial<Pick<CollectionItem, 'paid_cents' | 'acquired_on' | 'notes'>>
@@ -63,9 +72,11 @@ export interface ShelfBackend {
   signInWithGoogle(redirectTo: string): Promise<void>
   signInWithEmail(email: string, redirectTo: string): Promise<void>
   signOut(): Promise<void>
-  listSaved(): Promise<string[]>
+  listSaved(): Promise<SavedGame[]>
   save(gameId: string): Promise<void>
   unsave(gameId: string): Promise<void>
+  /** Sets, or with null forgets, the most the owner would pay for a saved game. */
+  setTarget(gameId: string, cents: number | null): Promise<void>
   listCollection(): Promise<CollectionItem[]>
   /** Puts one more copy on the shelf and returns it as the store named it. */
   addCopy(copy: NewCopy): Promise<CollectionItem>
@@ -105,6 +116,30 @@ export interface ShelfValue {
   today_cents: number
   gain_cents: number
   gain_pct: number | null
+}
+
+export interface TargetHit {
+  game_id: string
+  target_cents: number
+  /** Today's headline asking price, the one the saved list leads with. */
+  asking_cents: number
+  condition: Condition
+}
+
+/**
+ * The saved games asking no more than their owner would pay, read from the
+ * day's medians when the page opens. Nothing watches and nothing is sent;
+ * the list is the alert.
+ */
+export function underTarget(saved: SavedGame[], index: Map<string, PriceEntry>): TargetHit[] {
+  const hits: TargetHit[] = []
+  for (const s of saved) {
+    if (s.target_cents == null) continue
+    const headline = headlineFromMap(index.get(s.game_id)?.prices)
+    if (!headline || headline.cents > s.target_cents) continue
+    hits.push({ game_id: s.game_id, target_cents: s.target_cents, asking_cents: headline.cents, condition: headline.condition })
+  }
+  return hits
 }
 
 export interface SoldLine {

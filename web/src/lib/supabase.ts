@@ -126,11 +126,25 @@ export async function loadSupabaseBackend(): Promise<ShelfBackend> {
     // Every database call goes through retryOnClockSkew: a token minted a
     // moment ago can be refused as "issued at future" and pass seconds later.
     async listSaved() {
+      // Every column, for the same reason as the collection: a row without
+      // the target_cents key means migration 0004 is not applied yet.
       const { data, error } = await retryOnClockSkew(() =>
-        client.from('saved_games').select('game_id').order('created_at', { ascending: false }),
+        client.from('saved_games').select('*').order('created_at', { ascending: false }),
       )
       check(error)
-      return ((data ?? []) as { game_id: string }[]).map((r) => r.game_id)
+      type SavedRow = { game_id: string; created_at: string; target_cents?: number | null }
+      return ((data ?? []) as SavedRow[]).map((r) => ({
+        game_id: r.game_id,
+        created_at: r.created_at,
+        target_cents: 'target_cents' in r ? (r.target_cents ?? null) : undefined,
+      }))
+    },
+    async setTarget(gameId, cents) {
+      const user_id = await uid()
+      const { error } = await retryOnClockSkew(() =>
+        client.from('saved_games').update({ target_cents: cents }).eq('user_id', user_id).eq('game_id', gameId),
+      )
+      check(error)
     },
     async save(gameId) {
       const user_id = await uid()

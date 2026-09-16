@@ -172,6 +172,15 @@ function ShelfProbe() {
       <button type="button" onClick={() => void a.setOwned('bully-ps2', 'new')}>
         own sealed
       </button>
+      <button type="button" onClick={() => void a.setTarget('bully-ps2', 2000)}>
+        target 20
+      </button>
+      <button type="button" onClick={() => void a.setTarget('bully-ps2', null)}>
+        clear target
+      </button>
+      <p data-testid="targets">
+        {a.saved.status === 'ready' ? [...a.saved.data.values()].map((s) => `${s.game_id}:${s.target_cents ?? '-'}`).join(',') : ''}
+      </p>
       {a.error && <p role="alert">{a.error}</p>}
     </div>
   )
@@ -226,6 +235,24 @@ describe('a shelf holds several copies of one game', () => {
     expect((await screen.findByRole('alert')).textContent).toMatch(/0004_copies\.sql/)
     expect(state.copiesOf('bully-ps2')[0]?.condition).toBe('cib')
     expect(screen.getByTestId('copies').textContent).toBe('bully-ps2:cib')
+  })
+})
+
+describe('a saved game can carry a target price', () => {
+  it('records a target for a saved game and forgets it when cleared', async () => {
+    const { backend, state } = memoryBackend({ user: testUser, saved: ['bully-ps2'] })
+    renderProbe(backend)
+    const user = userEvent.setup()
+    await waitFor(() => expect(screen.getByTestId('targets').textContent).toBe('bully-ps2:-'))
+
+    await user.click(screen.getByRole('button', { name: /target 20/i }))
+    await waitFor(() => expect(screen.getByTestId('targets').textContent).toBe('bully-ps2:2000'))
+    expect(state.saved.get('bully-ps2')?.target_cents).toBe(2000)
+
+    await user.click(screen.getByRole('button', { name: /clear target/i }))
+    await waitFor(() => expect(screen.getByTestId('targets').textContent).toBe('bully-ps2:-'))
+    expect(state.saved.get('bully-ps2')?.target_cents).toBeNull()
+    expect(state.saved.has('bully-ps2')).toBe(true)
   })
 })
 

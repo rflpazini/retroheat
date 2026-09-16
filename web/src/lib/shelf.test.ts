@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { shelfValue, soldSummary, type CollectionItem } from './shelf'
+import { shelfValue, soldSummary, underTarget, type CollectionItem, type SavedGame } from './shelf'
 import type { PriceEntry } from './types'
 
 function entry(prices: Partial<Record<'loose' | 'cib' | 'new', number>>, pct7: number | null): PriceEntry {
@@ -157,5 +157,31 @@ describe('soldSummary', () => {
     expect(s.lines).toHaveLength(1)
     expect(s.lines[0].sold_cents).toBeNull()
     expect(s.compared).toBe(0)
+  })
+})
+
+describe('underTarget', () => {
+  const index = new Map([
+    ['bully-ps2', entry({ loose: 1500, cib: 3000 }, 12)],
+    ['okami-ps2', entry({ loose: 1000, cib: 2000, new: 9000 }, -4)],
+    ['gitaroo-man-ps2', entry({ loose: 8000 }, null)],
+  ])
+  const saved = (game_id: string, target_cents: number | null | undefined): SavedGame => ({
+    game_id,
+    created_at: '2026-09-07T00:00:00Z',
+    target_cents,
+  })
+
+  it('lists the saved games whose headline asking price is at or under the target', () => {
+    const hits = underTarget(
+      [saved('bully-ps2', 3000), saved('okami-ps2', 1999), saved('gitaroo-man-ps2', 10000), saved('vanished-ps2', 500)],
+      index,
+    )
+    expect(hits.map((h) => h.game_id)).toEqual(['bully-ps2', 'gitaroo-man-ps2'])
+    expect(hits[0]).toEqual({ game_id: 'bully-ps2', target_cents: 3000, asking_cents: 3000, condition: 'cib' })
+  })
+
+  it('skips saved games without a target, and reports whether the store can hold one', () => {
+    expect(underTarget([saved('bully-ps2', null), saved('okami-ps2', undefined)], index)).toEqual([])
   })
 })

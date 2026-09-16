@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import type { Loadable } from '@/lib/data'
-import { onShelf, type AuthUser, type CollectionItem, type CopyPatch, type ShelfBackend } from '@/lib/shelf'
+import { onShelf, type AuthUser, type CollectionItem, type CopyPatch, type SavedGame, type ShelfBackend } from '@/lib/shelf'
 import { isAuthEnabled, loadSupabaseBackend } from '@/lib/supabase'
 import type { Condition } from '@/lib/types'
 
@@ -17,9 +17,14 @@ export interface Account {
   signInWithEmail: (email: string) => Promise<void>
   signOut: () => Promise<void>
   deleteAccount: () => Promise<void>
-  saved: Loadable<Set<string>>
+  /** Saved games by game id. */
+  saved: Loadable<Map<string, SavedGame>>
   isSaved: (id: string) => boolean
   toggleSaved: (id: string) => Promise<void>
+  /** False when the store has no target column yet (migration 0004 not applied). */
+  targetSupported: boolean
+  /** Sets, or with null forgets, the most the owner would pay for a saved game. */
+  setTarget: (gameId: string, cents: number | null) => Promise<void>
   /** Every copy, sold ones included, keyed by copy id (by game id on a store from before migration 0004). */
   collection: Loadable<Map<string, CollectionItem>>
   /** False when the store has no copy ids yet: the shelf reads, but nothing on it can be written. */
@@ -69,9 +74,11 @@ const disabled: Account = {
   signInWithEmail: noop,
   signOut: noop,
   deleteAccount: noop,
-  saved: { status: 'ready', data: new Set() },
+  saved: { status: 'ready', data: new Map() },
   isSaved: () => false,
   toggleSaved: noop,
+  targetSupported: true,
+  setTarget: noop,
   collection: { status: 'ready', data: new Map() },
   copiesSupported: true,
   copiesOf: () => [],
@@ -228,7 +235,7 @@ function AccountState({
   const [status, setStatus] = useState<AccountStatus>(!load ? 'disabled' : loadNow ? 'loading' : 'signed-out')
   const [user, setUser] = useState<AuthUser | null>(null)
   const [signInOpen, setSignInOpen] = useState(false)
-  const [saved, setSaved] = useState<Loadable<Set<string>>>({ status: 'ready', data: new Set() })
+  const [saved, setSaved] = useState<Loadable<Map<string, SavedGame>>>({ status: 'ready', data: new Map() })
   const [collection, setCollection] = useState<Shelf>({ status: 'ready', data: new Map() })
   const [error, setError] = useState<string | null>(null)
   const [pendingAdd, setPendingAdd] = useState<Account['pendingAdd']>(null)
@@ -305,7 +312,7 @@ function AccountState({
   useEffect(() => {
     const b = ref.current
     if (!userId || !b) {
-      setSaved({ status: 'ready', data: new Set() })
+      setSaved({ status: 'ready', data: new Map() })
       setCollection({ status: 'ready', data: new Map() })
       return
     }
@@ -315,7 +322,7 @@ function AccountState({
     Promise.all([b.listSaved(), b.listCollection()])
       .then(([s, c]) => {
         if (cancelled) return
-        setSaved({ status: 'ready', data: new Set(s) })
+        setSaved({ status: 'ready', data: new Map(s.map((g) => [g.game_id, g])) })
         setCollection({ status: 'ready', data: new Map(c.map((i) => [keyOf(i), i])) })
       })
       .catch((e: unknown) => {
@@ -358,9 +365,9 @@ function AccountState({
     const cur = savedRef.current
     if (cur.status !== 'ready') return
     const was = cur.data.has(id)
-    const next = new Set(cur.data)
+    const next = new Map(cur.data)
     if (was) next.delete(id)
-    else next.add(id)
+    else next.set(id, { game_id: id, created_at: new Date().toISOString(), target_cents: null })
     setSaved({ status: 'ready', data: next })
     try {
       if (was) await b.unsave(id)
@@ -368,6 +375,38 @@ function AccountState({
       setError(null)
     } catch (e) {
       setSaved(cur)
+      setError(messageOf(e))
+    }
+  }, [])
+
+  // As with a copy's fields: the latest target typed wins over a slower write.
+  const targetSeq = useRef(new Map<string, number>())
+  const setTarget = useCallback(async (gameId: string, cents: number | null) => {
+    const seq = (targetSeq.current.get(gameId) ?? 0) + 1
+    targetSeq.current.set(gameId, seq)
+    let b: ShelfBackend
+    try {
+      b = await ensure()
+    } catch (e) {
+      setError(messageOf(e))
+      return
+    }
+    const cur = savedRef.current
+    if (cur.status !== 'ready') return
+    const before = cur.data.get(gameId)
+    if (!before) return
+    if (before.target_cents === undefined) {
+      setError(COPIES_MIGRATION)
+      return
+    }
+    setSaved({ status: 'ready', data: new Map(cur.data).set(gameId, { ...before, target_cents: cents }) })
+    try {
+      await b.setTarget(gameId, cents)
+      if (targetSeq.current.get(gameId) !== seq) return
+      setError(null)
+    } catch (e) {
+      if (targetSeq.current.get(gameId) !== seq) return
+      setSaved((s) => (s.status === 'ready' ? { status: 'ready', data: new Map(s.data).set(gameId, before) } : s))
       setError(messageOf(e))
     }
   }, [])
@@ -534,6 +573,8 @@ function AccountState({
       saved,
       isSaved: (id) => saved.status === 'ready' && saved.data.has(id),
       toggleSaved,
+      targetSupported: saved.status === 'ready' && [...saved.data.values()].every((s) => s.target_cents !== undefined),
+      setTarget,
       collection,
       copiesSupported: supported(collection),
       copiesOf,
@@ -562,6 +603,7 @@ function AccountState({
     deleteAccount,
     saved,
     toggleSaved,
+    setTarget,
     collection,
     setOwned,
     addCopy,

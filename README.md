@@ -131,9 +131,11 @@ and is hidden entirely when the site is built without it.
 - **Sign in with Google or an email link.** No passwords. The email link has to
   be opened in the same browser that requested it.
 - **What is stored:** your account id, your email address (and the name and
-  picture Google shares), the ids of the games you save, one row per copy you
-  own with its condition and, only if you type it, what that copy cost, with
-  timestamps. Nothing else: no browsing history, no analytics.
+  picture Google shares), the ids of the games you save and, if you type it,
+  the most you would pay for each; one row per copy you own with its
+  condition and, only if you type them, what it cost and when, a note, and
+  what it sold for and when; with timestamps. Nothing else: no browsing
+  history, no analytics.
 - **Who can see it:** only you. Row-level security in the database scopes every
   row to its owner; the site talks to the database with a public key, and that
   boundary is the database's, not the browser's.
