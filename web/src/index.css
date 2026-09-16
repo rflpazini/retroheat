@@ -296,6 +296,82 @@
   box-shadow: inset 1px 1px 0 0 var(--bevel-light);
 }
 
+/*
+  The scrolling part of a window. System 7 drew a scroll bar as a dotted grey
+  track between two arrow boxes, with a plain bevelled thumb. The browser's
+  scroll bar parts are dressed to match where it lets them be, and Firefox
+  gets the same two colours through the standard properties.
+*/
+@utility pane {
+  overflow: auto;
+  overscroll-behavior: contain;
+
+  &::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: var(--card);
+    background-image: conic-gradient(var(--input) 25%, transparent 0 50%, var(--input) 0 75%, transparent 0);
+    background-size: 2px 2px;
+    border-left: 1px solid var(--border);
+  }
+  &::-webkit-scrollbar-track:horizontal {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--card);
+    border: 1px solid var(--border);
+    box-shadow:
+      inset 1px 1px 0 0 var(--bevel-light),
+      inset -1px -1px 0 0 var(--bevel-dark);
+  }
+  /*
+    The arrow boxes, one at each end; the arrow itself is a wedge of the
+    border colour. The browser also offers a second pair beside the first,
+    which System 7 never had, so those are switched off.
+  */
+  &::-webkit-scrollbar-button {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-color: var(--card);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 7px 4px;
+    border: 1px solid var(--border);
+  }
+  &::-webkit-scrollbar-button:vertical:start:increment,
+  &::-webkit-scrollbar-button:vertical:end:decrement,
+  &::-webkit-scrollbar-button:horizontal:start:increment,
+  &::-webkit-scrollbar-button:horizontal:end:decrement {
+    display: none;
+  }
+  &::-webkit-scrollbar-button:vertical:decrement {
+    background-image: conic-gradient(from 139deg at 50% 0, var(--border) 0 82deg, transparent 0);
+  }
+  &::-webkit-scrollbar-button:vertical:increment {
+    background-image: conic-gradient(from 319deg at 50% 100%, var(--border) 0 82deg, transparent 0);
+  }
+  &::-webkit-scrollbar-button:horizontal:decrement {
+    background-size: 4px 7px;
+    background-image: conic-gradient(from 49deg at 0 50%, var(--border) 0 82deg, transparent 0);
+  }
+  &::-webkit-scrollbar-button:horizontal:increment {
+    background-size: 4px 7px;
+    background-image: conic-gradient(from 229deg at 100% 50%, var(--border) 0 82deg, transparent 0);
+  }
+  /* The size box, where two scroll bars meet. */
+  &::-webkit-scrollbar-corner {
+    background: var(--card);
+    border: 1px solid var(--border);
+  }
+  @supports not selector(::-webkit-scrollbar) {
+    scrollbar-color: var(--input) var(--card);
+  }
+}
+
 /* The arcade stripe, used as a rule rather than as decoration. */
 @utility stripe {
   height: 6px;

@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import fs from 'node:fs'
 import path from 'node:path'
-import { render, screen, waitFor } from '@testing-library/react'
+import { render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter, Route, Routes } from 'react-router-dom'
 import { resetCache } from '../lib/data'
@@ -358,6 +358,114 @@ describe('the game page marks a classifier change', () => {
     renderAt('/g/x-ps2', <Game />, '/g/:id')
     await waitFor(() => expect(document.body.textContent).toMatch(/details/i))
     expect(document.body.textContent).not.toMatch(/older classifier/i)
+  })
+})
+
+/*
+  The boards live inside a window that scrolls on its own, the way a Finder
+  list did, instead of stretching the page. The pane is a named, focusable
+  region so a keyboard user can reach it and scroll it.
+*/
+describe('boards scroll inside their window', () => {
+  function serveFiles(files: Record<string, unknown>) {
+    vi.stubGlobal('fetch', async (input: RequestInfo | URL) => {
+      const url = String(input)
+      const rel = url.slice(url.indexOf('/data/') + '/data/'.length)
+      const body = files[rel]
+      return body ? new Response(JSON.stringify(body), { status: 200 }) : new Response('{}', { status: 404 })
+    })
+  }
+  const mover = (i: number) => ({
+    id: `game-${i}-ps2`,
+    title: `Game ${i}`,
+    platform: 'ps2',
+    headline_condition: 'cib',
+    price_cents: 1000 + i,
+    pct_1d: null,
+    pct_7d: 40 - i,
+    pct_30d: null,
+    score: 40 - i,
+    spark: [1, 2, 3],
+  })
+
+  beforeEach(() => resetCache())
+
+  it('lists every mover the file carries, not a page of them', async () => {
+    const entries = Array.from({ length: 30 }, (_, i) => mover(i + 1))
+    serveFiles({ 'trending/all.json': { board: 'all', as_of: '2026-09-15', entries } })
+    renderAt('/', <Home />, '/')
+
+    const pane = await screen.findByRole('region', { name: /shelf/i })
+    // The first mover is the hero; the other 29 are ranked 02 to 30 in the pane.
+    await waitFor(() => expect(within(pane).getByText('30')).toBeDefined())
+    expect(within(pane).getByText('02')).toBeDefined()
+    expect(pane.getAttribute('tabindex')).toBe('0')
+  })
+
+  it('picks the platform from a system menu in the shelf window, and keeps it when a board is empty', async () => {
+    const user = userEvent.setup()
+    serveFiles({
+      'trending/all.json': { board: 'all', as_of: '2026-09-15', entries: [mover(1), mover(2), mover(3)] },
+      'trending/gba.json': {
+        board: 'gba',
+        as_of: '2026-09-15',
+        entries: [{ ...mover(1), id: 'metroid-fusion-gba', title: 'Metroid Fusion', platform: 'gba' }],
+      },
+      // No Game Boy file yet: the board was added before the collector ran.
+    })
+    renderAt('/', <Home />, '/')
+    await screen.findByRole('region', { name: /shelf/i })
+
+    // A menu in the window's own chrome, not a form control dropped on the page.
+    expect(document.querySelector('select')).toBeNull()
+    await user.click(screen.getByRole('button', { name: /platform/i }))
+    await user.click(await screen.findByRole('menuitemradio', { name: 'Game Boy Advance' }))
+    await waitFor(() => expect(document.body.textContent).toMatch(/Metroid Fusion/))
+
+    await user.click(screen.getByRole('button', { name: /platform/i }))
+    await user.click(await screen.findByRole('menuitemradio', { name: 'Game Boy' }))
+    await waitFor(() => expect(document.body.textContent).toMatch(/No prices yet/i))
+    // The way back must still be on screen.
+    expect(screen.getByRole('button', { name: /platform/i })).toBeDefined()
+    expect(screen.getByRole('button', { name: '7 days' })).toBeDefined()
+  })
+
+  it('puts a platform board in a named pane too', async () => {
+    serveFiles({
+      'latest/ps2.json': {
+        platform: 'ps2',
+        as_of: '2026-09-15',
+        source: 'ebay-browse',
+        price_kind: 'asking',
+        games: [
+          {
+            id: 'x-ps2', title: 'X', region: 'NTSC-U', variant: 'none', prices: { cib: { median_cents: 1000, n: 5 } },
+            pct_1d: null, pct_7d: 2, pct_30d: null, sparks: {}, stale: false, as_of: '2026-09-15',
+          },
+        ],
+      },
+    })
+    renderAt('/p/ps2', <Platform />, '/p/:platform')
+
+    const pane = await screen.findByRole('region', { name: /board/i })
+    expect(within(pane).getByRole('table')).toBeDefined()
+    expect(pane.getAttribute('tabindex')).toBe('0')
+  })
+})
+
+// A board added to the catalog has no prices until the scheduled collector
+// has run once. That is a state to explain, not an error to apologise for.
+describe('a board that has not been priced yet', () => {
+  beforeEach(() => {
+    resetCache()
+    vi.stubGlobal('fetch', async () => new Response('{}', { status: 404 }))
+  })
+
+  it('says the board is waiting for its first collection', async () => {
+    renderAt('/p/gba', <Platform />, '/p/:platform')
+    await waitFor(() => expect(document.body.textContent).toMatch(/No prices yet/i))
+    expect(document.body.textContent).toMatch(/Game Boy Advance/)
+    expect(document.body.textContent).not.toMatch(/Could not load/i)
   })
 })
 

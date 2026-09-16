@@ -14,7 +14,7 @@ import {
 } from '@/lib/types'
 import { Sparkline } from '@/components/Sparkline'
 import { TrendPill, TrendStatus } from '@/components/TrendPill'
-import { Window } from '@/components/Window'
+import { Window, WindowPane } from '@/components/Window'
 import { LoadError, Message } from '@/components/States'
 import { ShelfRowControls } from '@/components/ShelfControls'
 import { useAccount } from '@/lib/account'
@@ -30,6 +30,9 @@ const columns: { key: SortKey; label: string; numeric: boolean }[] = [
   { key: 'pct_7d', label: '7 days', numeric: true },
   { key: 'pct_30d', label: '30 days', numeric: true },
 ]
+
+/* A head cell that sticks to the top of the pane, carrying its own rule. */
+const headCell = 'sticky top-0 z-10 bg-[var(--muted)] p-2 shadow-[0_2px_0_0_var(--border)]'
 
 function valueOf(game: LatestGame, key: SortKey): number | string | null {
   switch (key) {
@@ -112,7 +115,20 @@ export function Platform() {
       </Window>
     )
   }
-  if (file.status === 'error') return <LoadError what={`the ${platform} board`} />
+  const label = PLATFORM_LABELS[platform]
+  if (file.status === 'error') {
+    // A board added to the catalog has no file until the scheduled collector
+    // has run once. That is a state to explain, not a failure to report.
+    if (file.error === '404') {
+      return (
+        <Message
+          title="No prices yet"
+          detail={`${label} was added to the catalog, but the collector has not priced it yet. It runs twice a day, so this board fills in after its next run.`}
+        />
+      )
+    }
+    return <LoadError what={`the ${platform} board`} />
+  }
 
   function toggle(key: SortKey) {
     if (key === sort) {
@@ -124,13 +140,8 @@ export function Platform() {
   }
 
   return (
-    <div className="space-y-4">
-      <Window
-        title={`${PLATFORM_LABELS[platform as PlatformID]} — price board`}
-        bodyClassName="p-0"
-        stripe
-        order={0}
-      >
+    <div className="flex flex-col gap-4 lg:min-h-0 lg:flex-1">
+      <Window title={`${label} — price board`} bodyClassName="p-0" stripe order={0} fill>
         <div className="flex flex-wrap items-center justify-between gap-3 border-b-2 border-[var(--border)] p-3">
           <p className="eyebrow">
             {file.data.games.length} games · median and mode asking price · as of {file.data.as_of}
@@ -149,10 +160,11 @@ export function Platform() {
           </div>
         </div>
 
-        <div className="overflow-x-auto">
+        <WindowPane label={`${label} price board`}>
+          {/* The heads stay put while the rows scroll under them; the rule under them travels with the cells. */}
           <table className="w-full min-w-[52rem] border-collapse">
             <thead>
-              <tr className="border-b-2 border-[var(--border)] bg-[var(--muted)]">
+              <tr>
                 {columns.map((c) => {
                   const active = sort === c.key
                   return (
@@ -160,7 +172,7 @@ export function Platform() {
                       key={c.key}
                       scope="col"
                       aria-sort={active ? (desc ? 'descending' : 'ascending') : 'none'}
-                      className={`p-2 ${c.numeric ? 'text-right' : 'text-left'}`}
+                      className={`${headCell} ${c.numeric ? 'text-right' : 'text-left'}`}
                     >
                       <button
                         onClick={() => toggle(c.key)}
@@ -174,11 +186,11 @@ export function Platform() {
                     </th>
                   )
                 })}
-                <th scope="col" className="p-2 text-right">
+                <th scope="col" className={`${headCell} text-right`}>
                   <span className="eyebrow">Status</span>
                 </th>
                 {shelf && (
-                  <th scope="col" className="p-2 text-right">
+                  <th scope="col" className={`${headCell} text-right`}>
                     <span className="eyebrow">Shelf</span>
                   </th>
                 )}
@@ -230,7 +242,7 @@ export function Platform() {
               ))}
             </tbody>
           </table>
-        </div>
+        </WindowPane>
       </Window>
 
       <p className="text-[0.7rem] text-[var(--card-foreground)]">

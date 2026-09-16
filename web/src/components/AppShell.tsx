@@ -164,12 +164,19 @@ function Shell() {
       ? (PLATFORM_LABELS[location.pathname.slice(3) as keyof typeof PLATFORM_LABELS] ?? 'Board')
       : 'Game')
 
+  /*
+    From the large breakpoint the desktop is one screen, as a desktop is: the
+    menu bar and the status strip frame it, the sidebar and the page header
+    stay put, and only a window's pane scrolls. Below that a phone gets a
+    page that flows, because a scroll region inside a scrolling page is a
+    trap for a thumb.
+  */
   return (
-    <>
+    <div className="lg:flex lg:h-dvh lg:flex-col">
       <BootScreen />
       <MenuBar dark={dark} onToggleTheme={toggle} onSearch={() => setSearchOpen(true)} />
-      <div className="min-h-screen p-3 sm:p-5 lg:grid lg:grid-cols-[15rem_1fr] lg:gap-5">
-      <aside className="window hidden self-start lg:block">
+      <div className="min-h-screen p-3 sm:p-5 lg:grid lg:min-h-0 lg:flex-1 lg:grid-cols-[15rem_1fr] lg:grid-rows-[minmax(0,1fr)] lg:gap-5">
+      <aside className="window pane hidden self-start lg:block lg:max-h-full">
         <SidebarContent />
       </aside>
 
@@ -186,7 +193,7 @@ function Shell() {
         </div>
       )}
 
-      <div className="flex min-w-0 flex-col gap-4">
+      <div className="flex min-w-0 flex-col gap-4 lg:min-h-0">
         <header className="window animate-window">
           <div className="window-title flex items-center gap-2 px-2 py-1">
             <button
@@ -221,7 +228,8 @@ function Shell() {
 
         <Ticker />
 
-        <main className="min-w-0">
+        {/* The margin and padding cancel out; they leave room inside the scrollport for the windows' shadows. */}
+        <main className="pane min-w-0 lg:-m-1 lg:flex lg:min-h-0 lg:flex-1 lg:flex-col lg:p-1">
           <DataSourceNotice />
           <Outlet />
         </main>
@@ -232,6 +240,6 @@ function Shell() {
       <Spotlight open={searchOpen} onOpenChange={setSearchOpen} />
       <AccountSignIn />
       <AccountAddToShelf />
-    </>
+    </div>
   )
 }

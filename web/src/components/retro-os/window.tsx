@@ -48,7 +48,23 @@ interface WindowProps {
   order?: number
   onClose?: () => void
   closeLabel?: string
+  /**
+   * Take the height the parent offers instead of the height of the content,
+   * so a WindowPane inside scrolls and the page does not. Only from the
+   * large breakpoint, where the desktop is one screen; on a phone the page
+   * flows as usual.
+   */
+  fill?: boolean
 }
+
+/*
+  The classes that let a flex column hand its spare height down to a child.
+  The window keeps a floor of its own: below it the page scrolls instead,
+  because a window that shrank further would draw its border across its own
+  rows. Everything inside may shrink to nothing, so the pane gets the rest.
+*/
+const fillWindow = 'lg:flex lg:min-h-[20rem] lg:flex-1 lg:flex-col'
+const fillBody = 'lg:flex lg:min-h-0 lg:flex-1 lg:flex-col'
 
 /**
  * An application window: hard border, bevelled face, hard-edged shadow, and
@@ -64,14 +80,41 @@ export function Window({
   order = 0,
   onClose,
   closeLabel,
+  fill,
 }: WindowProps) {
   return (
     <section
-      className={cn('window animate-window', className)}
+      className={cn('window animate-window', fill && fillWindow, className)}
       style={{ animationDelay: `${Math.min(order, 6) * 45}ms` }}
     >
       <TitleBar title={title} stripe={stripe} onClose={onClose} closeLabel={closeLabel} />
-      <div className={cn('p-4', bodyClassName)}>{children}</div>
+      <div className={cn('p-4', fill && fillBody, bodyClassName)}>{children}</div>
     </section>
+  )
+}
+
+interface WindowPaneProps {
+  /** What is being scrolled, read out to a keyboard or screen-reader user who lands on the pane. */
+  label: string
+  children: React.ReactNode
+  className?: string
+}
+
+/**
+ * The scrolling part of a window. A System 7 list scrolled inside its own
+ * frame, behind a scroll bar of arrow boxes and a dotted track, while the
+ * desktop stayed put; this is that frame. It is a focusable region, because a
+ * scroll bar you cannot reach from the keyboard is scenery, not a control.
+ */
+export function WindowPane({ label, children, className }: WindowPaneProps) {
+  return (
+    <div
+      role="region"
+      aria-label={label}
+      tabIndex={0}
+      className={cn('pane lg:min-h-0 lg:flex-1 lg:[scrollbar-gutter:stable]', className)}
+    >
+      {children}
+    </div>
   )
 }
