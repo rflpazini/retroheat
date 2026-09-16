@@ -1,29 +1,35 @@
 {
- "generated_at": "2026-09-15T23:33:28Z",
+ "generated_at": "2026-09-16T03:18:07Z",
  "source": "ebay-browse",
  "price_kind": "asking",
  "series_version": 2,
  "counts": {
-  "tracked": 642,
-  "ok": 593,
-  "stale": 10,
-  "failed": 49,
+  "tracked": 168,
+  "ok": 160,
+  "stale": 0,
+  "failed": 8,
   "per_platform": {
    "dreamcast": 88,
    "gamecube": 103,
+   "gb": 51,
+   "gba": 56,
+   "gbc": 53,
    "n64": 88,
    "ps2": 172,
    "psp": 84,
    "vita": 68
   }
  },
- "api_calls_used": 642,
+ "api_calls_used": 168,
  "platforms": [
   "ps2",
   "gamecube",
   "psp",
   "vita",
   "n64",
-  "dreamcast"
+  "dreamcast",
+  "gb",
+  "gbc",
+  "gba"
  ]
 }
