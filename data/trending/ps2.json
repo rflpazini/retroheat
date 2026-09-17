@@ -1,31 +1,7 @@
 {
  "board": "ps2",
- "as_of": "2026-09-16",
+ "as_of": "2026-09-17",
  "entries": [
-  {
-   "id": "shadow-hearts-covenant-ps2",
-   "title": "Shadow Hearts: Covenant",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 16995,
-   "prices": {
-    "cib": 16995
-   },
-   "pct_1d": -23.61,
-   "pct_7d": 30.91,
-   "pct_30d": null,
-   "score": 30.91,
-   "spark": [
-    13499,
-    15247,
-    16995,
-    19247,
-    21498,
-    21498,
-    22248,
-    22248
-   ]
-  },
   {
    "id": "digital-devil-saga-2-ps2",
    "title": "Shin Megami Tensei: Digital Devil Saga 2",
@@ -36,7 +12,7 @@
     "cib": 5047,
     "new": 7500
    },
-   "pct_1d": -9.79,
+   "pct_1d": 0,
    "pct_7d": 27.51,
    "pct_30d": null,
    "score": 27.51,
@@ -49,6 +25,7 @@
     4499,
     4499,
     4499,
+    5595,
     5595,
     5595
    ]
@@ -74,7 +51,65 @@
     27000,
     27000,
     27000,
+    28900,
     28900
+   ]
+  },
+  {
+   "id": "fatal-frame-ps2",
+   "title": "Fatal Frame",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 17499,
+   "prices": {
+    "loose": 9750,
+    "cib": 17499,
+    "new": 19500
+   },
+   "pct_1d": 9.38,
+   "pct_7d": 19.64,
+   "pct_30d": null,
+   "score": 19.64,
+   "spark": [
+    15000,
+    14500,
+    14000,
+    14000,
+    14000,
+    14000,
+    14000,
+    14498,
+    15999,
+    15999,
+    16749
+   ]
+  },
+  {
+   "id": "siren-ps2",
+   "title": "Siren",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 13995,
+   "prices": {
+    "loose": 5750,
+    "cib": 13995
+   },
+   "pct_1d": 0,
+   "pct_7d": 19.63,
+   "pct_30d": null,
+   "score": 19.63,
+   "spark": [
+    12748,
+    12174,
+    11599,
+    11699,
+    11799,
+    11799,
+    12897,
+    12897,
+    12897,
+    12897,
+    13995
    ]
   },
   {
@@ -88,10 +123,10 @@
     "cib": 7495,
     "new": 10000
    },
-   "pct_1d": 0.63,
-   "pct_7d": 19.17,
+   "pct_1d": 0,
+   "pct_7d": 17.57,
    "pct_30d": null,
-   "score": 19.17,
+   "score": 17.57,
    "spark": [
     6000,
     6125,
@@ -102,87 +137,33 @@
     7248,
     7448,
     7448,
-    7448
+    7448,
+    7495
    ]
   },
   {
-   "id": "shinobi-ps2",
-   "title": "Shinobi",
+   "id": "shadow-hearts-covenant-ps2",
+   "title": "Shadow Hearts: Covenant",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 4499,
+   "price_cents": 22248,
    "prices": {
-    "loose": 1329,
-    "cib": 4499
+    "cib": 22248
    },
-   "pct_1d": 0,
-   "pct_7d": 17.65,
+   "pct_1d": 30.91,
+   "pct_7d": 15.59,
    "pct_30d": null,
-   "score": 17.65,
+   "score": 15.59,
    "spark": [
-    3599,
-    3824,
-    4049,
-    4049,
-    4049,
-    4499,
-    4499,
-    4499,
-    4499
-   ]
-  },
-  {
-   "id": "ar-tonelico-ps2",
-   "title": "Ar tonelico: Melody of Elemia",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 11498,
-   "prices": {
-    "cib": 11498
-   },
-   "pct_1d": 0,
-   "pct_7d": 14.98,
-   "pct_30d": null,
-   "score": 14.98,
-   "spark": [
-    10000,
-    10000,
-    10000,
-    10375,
-    10749,
-    11498,
-    11498,
-    11498,
-    11498,
-    11498
-   ]
-  },
-  {
-   "id": "fatal-frame-ps2",
-   "title": "Fatal Frame",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 15999,
-   "prices": {
-    "loose": 9750,
-    "cib": 15999,
-    "new": 19500
-   },
-   "pct_1d": -4.48,
-   "pct_7d": 14.28,
-   "pct_30d": null,
-   "score": 14.28,
-   "spark": [
-    15000,
-    14500,
-    14000,
-    14000,
-    14000,
-    14000,
-    14000,
-    14498,
-    15999,
-    15999
+    13499,
+    15247,
+    16995,
+    19247,
+    21498,
+    21498,
+    22248,
+    22248,
+    22248
    ]
   },
   {
@@ -208,61 +189,143 @@
     1590,
     1590,
     1680,
+    1680,
     1680
    ]
   },
   {
-   "id": "siren-ps2",
-   "title": "Siren",
+   "id": "tekken-5-ps2",
+   "title": "Tekken 5",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 13995,
+   "price_cents": 3799,
    "prices": {
-    "loose": 6000,
-    "cib": 13995
+    "loose": 1750,
+    "cib": 3799,
+    "new": 19500
    },
    "pct_1d": 0,
-   "pct_7d": 11.19,
+   "pct_7d": 11.77,
    "pct_30d": null,
-   "score": 11.19,
+   "score": 11.77,
    "spark": [
-    12748,
-    12174,
-    11599,
-    11699,
-    11799,
-    11799,
-    12897,
-    12897,
-    12897,
-    12897
+    3399,
+    3399,
+    3399,
+    3424,
+    3449,
+    3499,
+    3499,
+    3499,
+    3499,
+    3799
    ]
   },
   {
-   "id": "final-fantasy-x-2-ps2",
-   "title": "Final Fantasy X-2",
+   "id": "shinobi-ps2",
+   "title": "Shinobi",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 1397,
+   "price_cents": 4499,
    "prices": {
-    "loose": 799,
-    "cib": 1397,
-    "new": 2049
+    "loose": 1314,
+    "cib": 4499
    },
-   "pct_1d": 0.14,
-   "pct_7d": 10.54,
+   "pct_1d": 0,
+   "pct_7d": 11.11,
    "pct_30d": null,
-   "score": 10.54,
+   "score": 11.11,
    "spark": [
-    1231,
-    1262,
-    1249,
-    1271,
-    1293,
-    1358,
-    1358,
-    1372,
-    1395
+    3599,
+    3824,
+    4049,
+    4049,
+    4049,
+    4499,
+    4499,
+    4499,
+    4499,
+    4499
+   ]
+  },
+  {
+   "id": "ar-tonelico-ps2",
+   "title": "Ar tonelico: Melody of Elemia",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 11498,
+   "prices": {
+    "cib": 11498
+   },
+   "pct_1d": 0,
+   "pct_7d": 10.82,
+   "pct_30d": null,
+   "score": 10.82,
+   "spark": [
+    10000,
+    10000,
+    10000,
+    10375,
+    10749,
+    11498,
+    11498,
+    11498,
+    11498,
+    11498,
+    11498
+   ]
+  },
+  {
+   "id": "growlanser-heritage-of-war-ps2",
+   "title": "Growlanser: Heritage of War",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 9900,
+   "prices": {
+    "cib": 9900,
+    "new": 15000
+   },
+   "pct_1d": 0,
+   "pct_7d": 10.61,
+   "pct_30d": null,
+   "score": 10.61,
+   "spark": [
+    8950,
+    8950,
+    8950,
+    8950,
+    8950,
+    8950,
+    8950,
+    9900
+   ]
+  },
+  {
+   "id": "manhunt-ps2",
+   "title": "Manhunt",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 12000,
+   "prices": {
+    "loose": 5500,
+    "cib": 12000,
+    "new": 30000
+   },
+   "pct_1d": 6.67,
+   "pct_7d": 10.06,
+   "pct_30d": null,
+   "score": 10.06,
+   "spark": [
+    9747,
+    9871,
+    9995,
+    9996,
+    9995,
+    9995,
+    9997,
+    9997,
+    10497,
+    11000
    ]
   },
   {
@@ -274,7 +337,7 @@
    "prices": {
     "loose": 1955
    },
-   "pct_1d": -1.01,
+   "pct_1d": 0,
    "pct_7d": 9.84,
    "pct_30d": null,
    "score": 9.84,
@@ -287,6 +350,7 @@
     1955,
     1975,
     1975,
+    1975,
     1975
    ]
   },
@@ -295,13 +359,13 @@
    "title": "Grand Theft Auto: San Andreas",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 2299,
+   "price_cents": 2247,
    "prices": {
-    "loose": 1295,
-    "cib": 2299,
-    "new": 8499
+    "loose": 1199,
+    "cib": 2247,
+    "new": 10000
    },
-   "pct_1d": 4.74,
+   "pct_1d": -2.26,
    "pct_7d": 9.8,
    "pct_30d": null,
    "score": 9.8,
@@ -314,7 +378,64 @@
     1999,
     2050,
     2195,
+    2195,
     2195
+   ]
+  },
+  {
+   "id": "silent-hill-3-ps2",
+   "title": "Silent Hill 3",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 44000,
+   "prices": {
+    "loose": 26000,
+    "cib": 44000
+   },
+   "pct_1d": -2.22,
+   "pct_7d": 8.98,
+   "pct_30d": null,
+   "score": 8.98,
+   "spark": [
+    40000,
+    40250,
+    40250,
+    40375,
+    40500,
+    42500,
+    42500,
+    42500,
+    43000,
+    43000,
+    44000
+   ]
+  },
+  {
+   "id": "final-fantasy-x-2-ps2",
+   "title": "Final Fantasy X-2",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 1350,
+   "prices": {
+    "loose": 799,
+    "cib": 1350,
+    "new": 2996
+   },
+   "pct_1d": -3.36,
+   "pct_7d": 8.73,
+   "pct_30d": null,
+   "score": 8.73,
+   "spark": [
+    1231,
+    1262,
+    1249,
+    1271,
+    1293,
+    1358,
+    1358,
+    1372,
+    1395,
+    1358
    ]
   },
   {
@@ -322,15 +443,15 @@
    "title": "Gran Turismo 3: A-Spec",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 1195,
+   "price_cents": 1067,
    "prices": {
-    "loose": 897,
-    "cib": 1195
+    "loose": 999,
+    "cib": 1067
    },
-   "pct_1d": 8.74,
-   "pct_7d": 9.24,
+   "pct_1d": -10.71,
+   "pct_7d": 8.7,
    "pct_30d": null,
-   "score": 9.24,
+   "score": 8.7,
    "spark": [
     1000,
     1006,
@@ -340,7 +461,36 @@
     1067,
     1085,
     1085,
+    1099,
     1099
+   ]
+  },
+  {
+   "id": "metal-gear-solid-3-subsistence-ps2",
+   "title": "Metal Gear Solid 3: Subsistence",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 6495,
+   "prices": {
+    "loose": 2099,
+    "cib": 6495
+   },
+   "pct_1d": 0,
+   "pct_7d": 8.27,
+   "pct_30d": null,
+   "score": 8.27,
+   "spark": [
+    5999,
+    5999,
+    5999,
+    5999,
+    5999,
+    5999,
+    5999,
+    5999,
+    5999,
+    5999,
+    6495
    ]
   },
   {
@@ -368,60 +518,34 @@
     2700,
     2896,
     2896,
+    2896,
     2896
    ]
   },
   {
-   "id": "nba-street-vol-2-ps2",
-   "title": "NBA Street Vol. 2",
+   "id": "okage-shadow-king-ps2",
+   "title": "Okage: Shadow King",
    "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 5250,
+   "headline_condition": "loose",
+   "price_cents": 1636,
    "prices": {
-    "loose": 3500,
-    "cib": 5250
+    "loose": 1636
    },
-   "pct_1d": 5.02,
-   "pct_7d": 8.09,
+   "pct_1d": -13.67,
+   "pct_7d": 7.92,
    "pct_30d": null,
-   "score": 8.09,
+   "score": 7.92,
    "spark": [
-    4500,
-    4625,
-    4750,
-    4875,
-    4999,
-    4999,
-    4999,
-    4999,
-    4999
-   ]
-  },
-  {
-   "id": "final-fantasy-x-ps2",
-   "title": "Final Fantasy X",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 1499,
-   "prices": {
-    "loose": 1069,
-    "cib": 1499,
-    "new": 2999
-   },
-   "pct_1d": 0,
-   "pct_7d": 7.79,
-   "pct_30d": null,
-   "score": 7.79,
-   "spark": [
-    1399,
-    1387,
-    1398,
-    1399,
-    1399,
-    1399,
-    1399,
-    1399,
-    1495
+    1995,
+    1876,
+    1756,
+    1826,
+    1895,
+    1895,
+    1895,
+    1895,
+    1895,
+    1895
    ]
   },
   {
@@ -429,16 +553,16 @@
    "title": "Resident Evil 4",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 2799,
+   "price_cents": 2950,
    "prices": {
     "loose": 1499,
-    "cib": 2799,
-    "new": 7950
+    "cib": 2950,
+    "new": 7900
    },
-   "pct_1d": 0.04,
-   "pct_7d": 7.58,
+   "pct_1d": 5.39,
+   "pct_7d": 7.66,
    "pct_30d": null,
-   "score": 7.58,
+   "score": 7.66,
    "spark": [
     2599,
     2599,
@@ -448,223 +572,36 @@
     2795,
     2796,
     2796,
-    2796
+    2796,
+    2798
    ]
   },
   {
-   "id": "gradius-v-ps2",
-   "title": "Gradius V",
+   "id": "final-fantasy-x-ps2",
+   "title": "Final Fantasy X",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 7499,
-   "prices": {
-    "cib": 7499
-   },
-   "pct_1d": 0,
-   "pct_7d": 7.14,
-   "pct_30d": null,
-   "score": 7.14,
-   "spark": [
-    6999,
-    6999,
-    6999,
-    7249,
-    7499,
-    7499,
-    7499,
-    7499,
-    7499,
-    7499
-   ]
-  },
-  {
-   "id": "silent-hill-3-ps2",
-   "title": "Silent Hill 3",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 45000,
-   "prices": {
-    "loose": 26000,
-    "cib": 45000
-   },
-   "pct_1d": 2.27,
-   "pct_7d": 6.83,
-   "pct_30d": null,
-   "score": 6.83,
-   "spark": [
-    40000,
-    40250,
-    40250,
-    40375,
-    40500,
-    42500,
-    42500,
-    42500,
-    43000,
-    43000
-   ]
-  },
-  {
-   "id": "devil-may-cry-3-special-edition-ps2",
-   "title": "Devil May Cry 3: Special Edition",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 1785,
+   "price_cents": 1499,
    "prices": {
     "loose": 1095,
-    "cib": 1785,
-    "new": 4500
+    "cib": 1499,
+    "new": 3200
    },
    "pct_1d": 0,
-   "pct_7d": 6.79,
+   "pct_7d": 7.22,
    "pct_30d": null,
-   "score": 6.79,
+   "score": 7.22,
    "spark": [
-    1599,
-    1639,
-    1679,
-    1719,
-    1759,
-    1793,
-    1841,
-    1841,
-    1793,
-    1793
-   ]
-  },
-  {
-   "id": "wild-arms-3-ps2",
-   "title": "Wild Arms 3",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 3000,
-   "prices": {
-    "loose": 1325,
-    "cib": 3000,
-    "new": 5600
-   },
-   "pct_1d": -6.25,
-   "pct_7d": 6.67,
-   "pct_30d": null,
-   "score": 6.67,
-   "spark": [
-    3000,
-    3000,
-    3000,
-    3000,
-    3000,
-    3200,
-    3200,
-    3200,
-    3200
-   ]
-  },
-  {
-   "id": "silent-hill-4-the-room-ps2",
-   "title": "Silent Hill 4: The Room",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 24948,
-   "prices": {
-    "loose": 17850,
-    "cib": 24948
-   },
-   "pct_1d": 0,
-   "pct_7d": 6.62,
-   "pct_30d": null,
-   "score": 6.62,
-   "spark": [
-    23400,
-    23400,
-    23400,
-    23400,
-    23400,
-    23950,
-    24150,
-    24499,
-    24499,
-    24948
-   ]
-  },
-  {
-   "id": "manhunt-ps2",
-   "title": "Manhunt",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 11250,
-   "prices": {
-    "loose": 5500,
-    "cib": 11250,
-    "new": 30000
-   },
-   "pct_1d": 7.17,
-   "pct_7d": 6.34,
-   "pct_30d": null,
-   "score": 6.34,
-   "spark": [
-    9747,
-    9871,
-    9995,
-    9996,
-    9995,
-    9995,
-    9997,
-    9997,
-    10497
-   ]
-  },
-  {
-   "id": "onimusha-2-samurais-destiny-ps2",
-   "title": "Onimusha 2: Samurai's Destiny",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 1899,
-   "prices": {
-    "loose": 999,
-    "cib": 1899,
-    "new": 3999
-   },
-   "pct_1d": -1.86,
-   "pct_7d": 5.5,
-   "pct_30d": null,
-   "score": 5.5,
-   "spark": [
-    1800,
-    1800,
-    1800,
-    1800,
-    1800,
-    1800,
-    1800,
-    1800,
-    1899
-   ]
-  },
-  {
-   "id": "final-fantasy-xii-ps2",
-   "title": "Final Fantasy XII",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 1299,
-   "prices": {
-    "loose": 949,
-    "cib": 1299,
-    "new": 2199
-   },
-   "pct_1d": 2.04,
-   "pct_7d": 5.17,
-   "pct_30d": null,
-   "score": 5.17,
-   "spark": [
-    1200,
-    1200,
-    1200,
-    1200,
-    1200,
-    1200,
-    1200,
-    1221,
-    1262
+    1399,
+    1387,
+    1398,
+    1399,
+    1399,
+    1399,
+    1399,
+    1399,
+    1495,
+    1499
    ]
   },
   {
@@ -677,10 +614,10 @@
     "loose": 4290,
     "cib": 9999
    },
-   "pct_1d": 3.66,
-   "pct_7d": 3.3,
+   "pct_1d": 0,
+   "pct_7d": 7.19,
    "pct_30d": null,
-   "score": 3.3,
+   "score": 7.19,
    "spark": [
     8999,
     8999,
@@ -691,7 +628,90 @@
     9296,
     9296,
     9296,
-    9296
+    9296,
+    9646
+   ]
+  },
+  {
+   "id": "tony-hawks-pro-skater-3-ps2",
+   "title": "Tony Hawk's Pro Skater 3",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 1499,
+   "prices": {
+    "loose": 1000,
+    "cib": 1499
+   },
+   "pct_1d": 0,
+   "pct_7d": 6.86,
+   "pct_30d": null,
+   "score": 6.86,
+   "spark": [
+    1399,
+    1399,
+    1399,
+    1399,
+    1399,
+    1399,
+    1399,
+    1399,
+    1399,
+    1495
+   ]
+  },
+  {
+   "id": "ssx-3-ps2",
+   "title": "SSX 3",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 1886,
+   "prices": {
+    "loose": 1270,
+    "cib": 1886,
+    "new": 9500
+   },
+   "pct_1d": 4.84,
+   "pct_7d": 6.77,
+   "pct_30d": null,
+   "score": 6.77,
+   "spark": [
+    1671,
+    1678,
+    1685,
+    1693,
+    1699,
+    1700,
+    1700,
+    1700,
+    1700,
+    1799
+   ]
+  },
+  {
+   "id": "nba-street-vol-2-ps2",
+   "title": "NBA Street Vol. 2",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 5500,
+   "prices": {
+    "loose": 3500,
+    "cib": 5500
+   },
+   "pct_1d": 4.76,
+   "pct_7d": 5.24,
+   "pct_30d": null,
+   "score": 5.24,
+   "spark": [
+    4500,
+    4625,
+    4750,
+    4875,
+    4999,
+    4999,
+    4999,
+    4999,
+    4999,
+    4999
    ]
   },
   {
@@ -699,15 +719,15 @@
    "title": "Grand Theft Auto: Vice City",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 1899,
+   "price_cents": 1979,
    "prices": {
     "loose": 997,
-    "cib": 1899
+    "cib": 1979
    },
-   "pct_1d": 8.83,
-   "pct_7d": 3.21,
+   "pct_1d": 4.21,
+   "pct_7d": 4.69,
    "pct_30d": null,
-   "score": 3.21,
+   "score": 4.69,
    "spark": [
     1799,
     1774,
@@ -717,105 +737,168 @@
     1831,
     1831,
     1831,
+    1831,
     1831
    ]
   },
   {
-   "id": "ratchet-deadlocked-ps2",
-   "title": "Ratchet: Deadlocked",
+   "id": "virtua-fighter-4-evolution-ps2",
+   "title": "Virtua Fighter 4: Evolution",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 1695,
+   "price_cents": 1347,
    "prices": {
-    "loose": 1199,
-    "cib": 1695
+    "loose": 800,
+    "cib": 1347,
+    "new": 3700
    },
-   "pct_1d": 6,
-   "pct_7d": 2.49,
+   "pct_1d": 1.74,
+   "pct_7d": 3.7,
    "pct_30d": null,
-   "score": 2.49,
+   "score": 3.7,
    "spark": [
-    1599,
-    1647,
-    1695,
-    1694,
-    1692,
-    1695,
-    1692,
-    1688,
-    1688
+    1299,
+    1299,
+    1299,
+    1299,
+    1299,
+    1299,
+    1299,
+    1299,
+    1324,
+    1347
    ]
   },
   {
-   "id": "twisted-metal-black-ps2",
-   "title": "Twisted Metal: Black",
+   "id": "ssx-tricky-ps2",
+   "title": "SSX Tricky",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 2400,
+   "price_cents": 3899,
+   "prices": {
+    "loose": 2699,
+    "cib": 3899
+   },
+   "pct_1d": 2.63,
+   "pct_7d": 2.63,
+   "pct_30d": null,
+   "score": 2.63,
+   "spark": [
+    3699,
+    3749,
+    3799,
+    3799,
+    3799,
+    3799,
+    3824,
+    3824,
+    3824,
+    3899
+   ]
+  },
+  {
+   "id": "tony-hawks-pro-skater-4-ps2",
+   "title": "Tony Hawk's Pro Skater 4",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 1449,
+   "prices": {
+    "loose": 897,
+    "cib": 1449,
+    "new": 7597
+   },
+   "pct_1d": 1.76,
+   "pct_7d": 1.71,
+   "pct_30d": null,
+   "score": 1.71,
+   "spark": [
+    1400,
+    1400,
+    1400,
+    1400,
+    1400,
+    1400,
+    1400,
+    1422,
+    1422,
+    1424
+   ]
+  },
+  {
+   "id": "kingdom-hearts-2-ps2",
+   "title": "Kingdom Hearts 2",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 1997,
    "prices": {
     "loose": 1299,
-    "cib": 2400,
-    "new": 4021
+    "cib": 1997,
+    "new": 2999
    },
-   "pct_1d": 0.54,
-   "pct_7d": 1.87,
+   "pct_1d": 2.52,
+   "pct_7d": 0.1,
    "pct_30d": null,
-   "score": 1.87,
+   "score": 0.1,
    "spark": [
-    2337,
-    2356,
-    2374,
-    2387,
-    2399,
-    2422,
-    2422,
-    2422,
-    2400
+    1895,
+    1946,
+    1995,
+    1945,
+    1900,
+    1995,
+    1995,
+    1996,
+    1996,
+    1997
    ]
   },
   {
-   "id": "ratchet-and-clank-going-commando-ps2",
-   "title": "Ratchet & Clank: Going Commando",
+   "id": "castlevania-lament-of-innocence-ps2",
+   "title": "Castlevania: Lament of Innocence",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 1993,
+   "price_cents": 4499,
    "prices": {
-    "loose": 1199,
-    "cib": 1993,
-    "new": 5499
+    "loose": 2100,
+    "cib": 4499,
+    "new": 16999
    },
-   "pct_1d": 4.89,
-   "pct_7d": 1.33,
-   "pct_30d": null,
-   "score": 1.33,
-   "spark": [
-    1850,
-    1875,
-    1899,
-    1899,
-    1899,
-    1900,
-    1900,
-    1900,
-    1900
-   ]
-  },
-  {
-   "id": "mortal-kombat-armageddon-ps2",
-   "title": "Mortal Kombat: Armageddon",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 2299,
-   "prices": {
-    "loose": 1541,
-    "cib": 2299,
-    "new": 4000
-   },
-   "pct_1d": 4.5,
+   "pct_1d": 0.6,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    4500,
+    4500,
+    4499,
+    4499,
+    4499,
+    4499,
+    4499,
+    4499,
+    4499,
+    4499,
+    4499
+   ]
+  },
+  {
+   "id": "katamari-damacy-ps2",
+   "title": "Katamari Damacy",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 2225,
+   "prices": {
+    "loose": 1500,
+    "cib": 2225,
+    "new": 3495
+   },
+   "pct_1d": 5.95,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    2199,
+    2224,
     2200,
     2200,
     2200,
@@ -823,118 +906,202 @@
     2200,
     2200,
     2200,
-    2200,
+    2199,
     2200
    ]
   },
   {
-   "id": "kuon-ps2",
-   "title": "Kuon",
-   "platform": "ps2",
-   "headline_condition": "loose",
-   "price_cents": 88750,
-   "prices": {
-    "loose": 88750
-   },
-   "pct_1d": 4.41,
-   "pct_7d": -0,
-   "pct_30d": null,
-   "score": -0,
-   "spark": [
-    85000,
-    85000,
-    85000,
-    85000,
-    85000,
-    85000,
-    84999,
-    84999,
-    84999,
-    84999
-   ],
-   "annotation": {
-    "date": "2022-02-25",
-    "note": "Elden Ring renewed interest in FromSoftware's back catalogue, and Kuon had a very small US print run."
-   }
-  },
-  {
-   "id": "radiata-stories-ps2",
-   "title": "Radiata Stories",
+   "id": "star-wars-battlefront-ii-ps2",
+   "title": "Star Wars: Battlefront II",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 7299,
+   "price_cents": 1499,
    "prices": {
-    "loose": 4100,
-    "cib": 7299,
-    "new": 13500
+    "loose": 1000,
+    "cib": 1499,
+    "new": 6999
    },
-   "pct_1d": 2.1,
-   "pct_7d": -0.01,
+   "pct_1d": 0.27,
+   "pct_7d": 0,
    "pct_30d": null,
-   "score": -0.01,
+   "score": 0,
    "spark": [
-    7000,
-    7000,
-    7000,
-    7000,
-    7000,
-    6999,
-    6999,
-    6999,
-    6999
+    1499,
+    1499,
+    1499,
+    1499,
+    1499,
+    1499,
+    1495,
+    1495,
+    1495,
+    1499
    ]
   },
   {
-   "id": "metal-gear-solid-2-sons-of-liberty-ps2",
-   "title": "Metal Gear Solid 2: Sons of Liberty",
+   "id": "star-wars-battlefront-ps2",
+   "title": "Star Wars: Battlefront",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 1898,
+   "price_cents": 1299,
    "prices": {
-    "loose": 1013,
-    "cib": 1898
+    "loose": 814,
+    "cib": 1299,
+    "new": 9999
    },
-   "pct_1d": 2.71,
-   "pct_7d": -0.05,
+   "pct_1d": 8.25,
+   "pct_7d": 0,
    "pct_30d": null,
-   "score": -0.05,
+   "score": 0,
    "spark": [
-    1897,
-    1849,
+    1299,
+    1299,
+    1299,
+    1299,
+    1299,
+    1299,
+    1299,
+    1299,
+    1299,
+    1299
+   ]
+  },
+  {
+   "id": "timesplitters-2-ps2",
+   "title": "TimeSplitters 2",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 2693,
+   "prices": {
+    "loose": 2045,
+    "cib": 2693
+   },
+   "pct_1d": 3.62,
+   "pct_7d": -0.26,
+   "pct_30d": null,
+   "score": -0.26,
+   "spark": [
+    2700,
+    2700,
+    2700,
+    2700,
+    2700,
+    2744,
+    2744,
+    2744,
+    2700,
+    2693
+   ]
+  },
+  {
+   "id": "front-mission-4-ps2",
+   "title": "Front Mission 4",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 1894,
+   "prices": {
+    "loose": 1150,
+    "cib": 1894,
+    "new": 5998
+   },
+   "pct_1d": 0.64,
+   "pct_7d": -0.68,
+   "pct_30d": null,
+   "score": -0.68,
+   "spark": [
     1850,
-    1825,
-    1800,
-    1800,
-    1800,
-    1800,
-    1848
+    1888,
+    1925,
+    1907,
+    1907,
+    1907,
+    1907,
+    1899,
+    1907,
+    1899,
+    1894
    ]
   },
   {
-   "id": "jak-and-daxter-the-precursor-legacy-ps2",
-   "title": "Jak and Daxter: The Precursor Legacy",
+   "id": "def-jam-vendetta-ps2",
+   "title": "Def Jam Vendetta",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 1600,
+   "price_cents": 6000,
    "prices": {
-    "loose": 922,
-    "cib": 1600,
-    "new": 5080
+    "loose": 3499,
+    "cib": 6000
    },
-   "pct_1d": 1.65,
-   "pct_7d": -1.56,
+   "pct_1d": 2.16,
+   "pct_7d": -1.48,
    "pct_30d": null,
-   "score": -1.56,
+   "score": -1.48,
+   "spark": [
+    6090,
+    6090,
+    6090,
+    6090,
+    6090,
+    6179,
+    6179,
+    6089,
+    6089,
+    6000
+   ]
+  },
+  {
+   "id": "dragon-ball-z-budokai-3-ps2",
+   "title": "Dragon Ball Z: Budokai 3",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 4745,
+   "prices": {
+    "loose": 2850,
+    "cib": 4745
+   },
+   "pct_1d": 0.49,
+   "pct_7d": -1.8,
+   "pct_30d": null,
+   "score": -1.8,
+   "spark": [
+    4987,
+    4910,
+    4832,
+    4832,
+    4832,
+    4832,
+    4843,
+    4843,
+    4843,
+    4745
+   ]
+  },
+  {
+   "id": "gran-turismo-4-ps2",
+   "title": "Gran Turismo 4",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 1575,
+   "prices": {
+    "loose": 879,
+    "cib": 1575,
+    "new": 5500
+   },
+   "pct_1d": 1.94,
+   "pct_7d": -1.81,
+   "pct_30d": null,
+   "score": -1.81,
    "spark": [
     1599,
+    1560,
     1599,
-    1599,
-    1599,
-    1599,
-    1599,
-    1599,
-    1574,
-    1574
+    1570,
+    1540,
+    1540,
+    1540,
+    1540,
+    1545,
+    1570
    ]
   },
   {
@@ -942,13 +1109,13 @@
    "title": "Kingdom Hearts Re:Chain of Memories",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 1656,
+   "price_cents": 1678,
    "prices": {
-    "loose": 1195,
-    "cib": 1656,
-    "new": 2497
+    "loose": 1245,
+    "cib": 1678,
+    "new": 2499
    },
-   "pct_1d": 1.72,
+   "pct_1d": 1.33,
    "pct_7d": -2.98,
    "pct_30d": null,
    "score": -2.98,
@@ -961,30 +1128,8 @@
     1628,
     1628,
     1628,
+    1628,
     1628
-   ]
-  },
-  {
-   "id": "timesplitters-future-perfect-ps2",
-   "title": "TimeSplitters: Future Perfect",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 4118,
-   "prices": {
-    "cib": 4118,
-    "new": 18500
-   },
-   "pct_1d": 3.21,
-   "pct_7d": -2.99,
-   "pct_30d": null,
-   "score": -2.99,
-   "spark": [
-    4118,
-    4057,
-    3995,
-    3995,
-    3995,
-    3995
    ]
   },
   {
@@ -992,16 +1137,16 @@
    "title": "Ace Combat 5: The Unsung War",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 1184,
+   "price_cents": 1199,
    "prices": {
-    "loose": 1084,
-    "cib": 1184,
+    "loose": 1094,
+    "cib": 1199,
     "new": 3499
    },
-   "pct_1d": 1.28,
-   "pct_7d": -3.23,
+   "pct_1d": 1.27,
+   "pct_7d": -3.94,
    "pct_30d": null,
-   "score": -3.23,
+   "score": -3.94,
    "spark": [
     1199,
     1208,
@@ -1011,143 +1156,92 @@
     1199,
     1199,
     1169,
+    1169,
     1169
    ]
   },
   {
-   "id": "def-jam-fight-for-ny-ps2",
-   "title": "Def Jam: Fight for NY",
+   "id": "klonoa-2-lunateas-veil-ps2",
+   "title": "Klonoa 2: Lunatea's Veil",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 29999,
+   "price_cents": 7260,
    "prices": {
-    "loose": 23495,
-    "cib": 29999
+    "loose": 4450,
+    "cib": 7260
    },
-   "pct_1d": 3.62,
-   "pct_7d": -4.17,
+   "pct_1d": 3.73,
+   "pct_7d": -4.1,
    "pct_30d": null,
-   "score": -4.17,
+   "score": -4.1,
    "spark": [
-    29665,
-    29808,
-    29950,
-    29950,
-    29950,
-    29950,
-    28000,
-    28000,
-    28000,
-    28700
+    7298,
+    7298,
+    7298,
+    7298,
+    7298,
+    7298,
+    6999,
+    6999,
+    6999,
+    6999,
+    6999
    ]
   },
   {
-   "id": "bully-ps2",
-   "title": "Bully",
+   "id": "kingdom-hearts-ps2",
+   "title": "Kingdom Hearts",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 5900,
+   "price_cents": 1747,
    "prices": {
-    "loose": 1749,
-    "cib": 5900
+    "loose": 999,
+    "cib": 1747,
+    "new": 4500
    },
-   "pct_1d": 18,
-   "pct_7d": -4.74,
+   "pct_1d": 9.19,
+   "pct_7d": -11.06,
    "pct_30d": null,
-   "score": -4.74,
+   "score": -11.06,
    "spark": [
-    5249,
-    5374,
-    5249,
-    5249,
-    5249,
-    5249,
-    5000,
-    4999,
-    4999,
-    5000
+    1849,
+    1824,
+    1799,
+    1700,
+    1799,
+    1600,
+    1600,
+    1600,
+    1600,
+    1600
    ]
   },
   {
-   "id": "r-type-final-ps2",
-   "title": "R-Type Final",
+   "id": "ratchet-and-clank-ps2",
+   "title": "Ratchet & Clank",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 2112,
+   "price_cents": 3995,
    "prices": {
-    "loose": 1447,
-    "cib": 2112,
-    "new": 6500
+    "loose": 1397,
+    "cib": 3995,
+    "new": 9749
    },
-   "pct_1d": 2.72,
-   "pct_7d": -5.3,
+   "pct_1d": 33.17,
+   "pct_7d": -11.63,
    "pct_30d": null,
-   "score": -5.3,
+   "score": -11.63,
    "spark": [
-    2150,
-    2131,
-    2112,
-    2112,
-    2112,
-    2112,
-    2112,
-    2000,
-    2000,
-    2000
-   ]
-  },
-  {
-   "id": "shadow-of-the-colossus-ps2",
-   "title": "Shadow of the Colossus",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 3594,
-   "prices": {
-    "loose": 1499,
-    "cib": 3594,
-    "new": 7599
-   },
-   "pct_1d": 12.31,
-   "pct_7d": -8.17,
-   "pct_30d": null,
-   "score": -8.17,
-   "spark": [
-    3499,
-    3648,
-    3697,
-    3646,
-    3594,
-    3594,
-    3495,
     3395,
-    3295,
-    3395
-   ]
-  },
-  {
-   "id": "magna-carta-tears-of-blood-ps2",
-   "title": "Magna Carta: Tears of Blood",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 9995,
-   "prices": {
-    "loose": 3999,
-    "cib": 9995
-   },
-   "pct_1d": 16.9,
-   "pct_7d": -24.92,
-   "pct_30d": null,
-   "score": -24.92,
-   "spark": [
-    11500,
-    11388,
-    11275,
-    11275,
-    11275,
-    11275,
-    8550,
-    8550,
-    8550
+    3342,
+    3395,
+    3448,
+    3500,
+    3500,
+    3500,
+    3500,
+    3000,
+    3000
    ]
   }
  ]
