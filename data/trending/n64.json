@@ -7,11 +7,11 @@
    "title": "Hydro Thunder",
    "platform": "n64",
    "headline_condition": "loose",
-   "price_cents": 12758,
+   "price_cents": 13299,
    "prices": {
-    "loose": 12758
+    "loose": 13299
    },
-   "pct_1d": 0,
+   "pct_1d": 4.24,
    "pct_7d": 31.37,
    "pct_30d": null,
    "score": 31.37,
@@ -34,12 +34,12 @@
    "title": "Tony Hawk's Pro Skater",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 6000,
+   "price_cents": 6399,
    "prices": {
     "loose": 1500,
-    "cib": 6000
+    "cib": 6399
    },
-   "pct_1d": 0,
+   "pct_1d": 6.65,
    "pct_7d": 17.23,
    "pct_30d": null,
    "score": 17.23,
@@ -62,12 +62,12 @@
    "title": "The Legend of Zelda: Ocarina of Time",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 21500,
+   "price_cents": 23159,
    "prices": {
     "loose": 6649,
-    "cib": 21500
+    "cib": 23159
    },
-   "pct_1d": 0,
+   "pct_1d": 7.72,
    "pct_7d": 13.16,
    "pct_30d": null,
    "score": 13.16,
@@ -173,13 +173,13 @@
    "title": "Conker's Bad Fur Day",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 57499,
+   "price_cents": 59999,
    "prices": {
     "loose": 19000,
-    "cib": 57499,
+    "cib": 59999,
     "new": 1064950
    },
-   "pct_1d": 0,
+   "pct_1d": 4.35,
    "pct_7d": 5.56,
    "pct_30d": null,
    "score": 5.56,
@@ -205,7 +205,7 @@
    "headline_condition": "cib",
    "price_cents": 10000,
    "prices": {
-    "loose": 2999,
+    "loose": 2997,
     "cib": 10000
    },
    "pct_1d": 0,
@@ -258,15 +258,15 @@
    "title": "Pokémon Snap",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 11999,
+   "price_cents": 11748,
    "prices": {
     "loose": 2299,
-    "cib": 11999
+    "cib": 11748
    },
-   "pct_1d": 0.02,
-   "pct_7d": 4.34,
+   "pct_1d": -2.08,
+   "pct_7d": 4.32,
    "pct_30d": null,
-   "score": 4.34,
+   "score": 4.32,
    "spark": [
     11499,
     11500,
@@ -279,7 +279,7 @@
     11999,
     11999,
     11999,
-    11999
+    11997
    ]
   },
   {
@@ -317,7 +317,7 @@
    "headline_condition": "cib",
    "price_cents": 4499,
    "prices": {
-    "loose": 1300,
+    "loose": 1362,
     "cib": 4499,
     "new": 11824
    },
@@ -340,13 +340,40 @@
    ]
   },
   {
+   "id": "duke-nukem-64-n64",
+   "title": "Duke Nukem 64",
+   "platform": "n64",
+   "headline_condition": "loose",
+   "price_cents": 4533,
+   "prices": {
+    "loose": 4533
+   },
+   "pct_1d": 0,
+   "pct_7d": 3.02,
+   "pct_30d": null,
+   "score": 3.02,
+   "spark": [
+    4267,
+    4400,
+    4533,
+    4400,
+    4533,
+    4533,
+    4533,
+    4533,
+    4533,
+    4533,
+    4533
+   ]
+  },
+  {
    "id": "pilotwings-64-n64",
    "title": "Pilotwings 64",
    "platform": "n64",
    "headline_condition": "cib",
    "price_cents": 8999,
    "prices": {
-    "loose": 2499,
+    "loose": 2497,
     "cib": 8999
    },
    "pct_1d": 2.85,
@@ -397,33 +424,6 @@
    ]
   },
   {
-   "id": "duke-nukem-64-n64",
-   "title": "Duke Nukem 64",
-   "platform": "n64",
-   "headline_condition": "loose",
-   "price_cents": 4515,
-   "prices": {
-    "loose": 4515
-   },
-   "pct_1d": -0.4,
-   "pct_7d": 2.61,
-   "pct_30d": null,
-   "score": 2.61,
-   "spark": [
-    4267,
-    4400,
-    4533,
-    4400,
-    4533,
-    4533,
-    4533,
-    4533,
-    4533,
-    4533,
-    4515
-   ]
-  },
-  {
    "id": "wwf-wrestlemania-2000-n64",
    "title": "WWF WrestleMania 2000",
    "platform": "n64",
@@ -449,6 +449,34 @@
     7295,
     7295,
     7295
+   ]
+  },
+  {
+   "id": "diddy-kong-racing-n64",
+   "title": "Diddy Kong Racing",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 12750,
+   "prices": {
+    "loose": 3324,
+    "cib": 12750
+   },
+   "pct_1d": 2,
+   "pct_7d": 2.02,
+   "pct_30d": null,
+   "score": 2.02,
+   "spark": [
+    12497,
+    12497,
+    12497,
+    12498,
+    12497,
+    12499,
+    12499,
+    12500,
+    12500,
+    12500,
+    12750
    ]
   },
   {
@@ -484,13 +512,13 @@
    "title": "Castlevania",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 11549,
+   "price_cents": 11999,
    "prices": {
     "loose": 3500,
-    "cib": 11549,
+    "cib": 11999,
     "new": 31700
    },
-   "pct_1d": -3.75,
+   "pct_1d": 0,
    "pct_7d": 1.91,
    "pct_30d": null,
    "score": 1.91,
@@ -598,12 +626,12 @@
    "title": "Star Wars: Shadows of the Empire",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 5999,
+   "price_cents": 6200,
    "prices": {
-    "loose": 1837,
-    "cib": 5999
+    "loose": 1799,
+    "cib": 6200
    },
-   "pct_1d": 0,
+   "pct_1d": 3.35,
    "pct_7d": 0.02,
    "pct_30d": null,
    "score": 0.02,
@@ -619,34 +647,6 @@
     5995,
     5997,
     5999
-   ]
-  },
-  {
-   "id": "diddy-kong-racing-n64",
-   "title": "Diddy Kong Racing",
-   "platform": "n64",
-   "headline_condition": "cib",
-   "price_cents": 12500,
-   "prices": {
-    "loose": 3399,
-    "cib": 12500
-   },
-   "pct_1d": 0,
-   "pct_7d": 0.02,
-   "pct_30d": null,
-   "score": 0.02,
-   "spark": [
-    12497,
-    12497,
-    12497,
-    12498,
-    12497,
-    12499,
-    12499,
-    12500,
-    12500,
-    12500,
-    12500
    ]
   },
   {
@@ -684,7 +684,7 @@
    "headline_condition": "cib",
    "price_cents": 30000,
    "prices": {
-    "loose": 12250,
+    "loose": 12100,
     "cib": 30000
    },
    "pct_1d": 0,
@@ -769,12 +769,12 @@
    "title": "Banjo-Tooie",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 13500,
+   "price_cents": 13995,
    "prices": {
-    "loose": 4000,
-    "cib": 13500
+    "loose": 4100,
+    "cib": 13995
    },
-   "pct_1d": 0,
+   "pct_1d": 3.67,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
@@ -794,88 +794,61 @@
    ]
   },
   {
-   "id": "blast-corps-n64",
-   "title": "Blast Corps",
+   "id": "castlevania-legacy-of-darkness-n64",
+   "title": "Castlevania: Legacy of Darkness",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 7795,
+   "price_cents": 42499,
    "prices": {
-    "loose": 2000,
-    "cib": 7795
+    "loose": 19999,
+    "cib": 42499
    },
-   "pct_1d": 0,
+   "pct_1d": 3.03,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    6999,
-    7198,
-    7397,
-    7596,
-    7795,
-    7795,
-    7795,
-    7795,
-    7795,
-    7795,
-    7795,
-    7795
+    42499,
+    42499,
+    42499,
+    42499,
+    42499,
+    42499,
+    42499,
+    42499,
+    42499,
+    42499,
+    42499,
+    42499
    ]
   },
   {
-   "id": "bomberman-64-n64",
-   "title": "Bomberman 64",
+   "id": "goldeneye-007-n64",
+   "title": "GoldenEye 007",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 14248,
+   "price_cents": 11000,
    "prices": {
     "loose": 3500,
-    "cib": 14248
+    "cib": 11000
    },
-   "pct_1d": 0,
+   "pct_1d": 10.01,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    14248,
-    14248,
-    14248,
-    14248,
-    14248,
-    14248,
-    14248,
-    14248,
-    14248,
-    14248,
-    14248
-   ]
-  },
-  {
-   "id": "chameleon-twist-n64",
-   "title": "Chameleon Twist",
-   "platform": "n64",
-   "headline_condition": "cib",
-   "price_cents": 16000,
-   "prices": {
-    "loose": 4099,
-    "cib": 16000
-   },
-   "pct_1d": 0,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    16000,
-    16000,
-    16000,
-    16000,
-    16000,
-    16000,
-    16000,
-    16000,
-    16000,
-    16000,
-    16000
+    12000,
+    11000,
+    9999,
+    9999,
+    9999,
+    9999,
+    9999,
+    9999,
+    9999,
+    9999,
+    9999,
+    9999
    ]
   },
   {
@@ -885,7 +858,7 @@
    "headline_condition": "cib",
    "price_cents": 14500,
    "prices": {
-    "loose": 4000,
+    "loose": 4099,
     "cib": 14500
    },
    "pct_1d": 3.57,
@@ -936,59 +909,31 @@
    ]
   },
   {
-   "id": "resident-evil-2-n64",
-   "title": "Resident Evil 2",
+   "id": "turok-3-shadow-of-oblivion-n64",
+   "title": "Turok 3: Shadow of Oblivion",
    "platform": "n64",
-   "headline_condition": "loose",
-   "price_cents": 8500,
+   "headline_condition": "cib",
+   "price_cents": 15000,
    "prices": {
-    "loose": 8500
+    "loose": 4999,
+    "cib": 15000
    },
    "pct_1d": 0.01,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    8450,
-    8425,
-    8450,
-    8475,
-    8500,
-    8500,
-    8500,
-    8500,
-    8500,
-    8500,
-    8500,
-    8500
-   ]
-  },
-  {
-   "id": "body-harvest-n64",
-   "title": "Body Harvest",
-   "platform": "n64",
-   "headline_condition": "loose",
-   "price_cents": 3995,
-   "prices": {
-    "loose": 3995
-   },
-   "pct_1d": 3.15,
-   "pct_7d": -0.56,
-   "pct_30d": null,
-   "score": -0.56,
-   "spark": [
-    3998,
-    3997,
-    3995,
-    3945,
-    3895,
-    3895,
-    3895,
-    3895,
-    3873,
-    3873,
-    3873,
-    3873
+    14999,
+    14999,
+    14999,
+    14999,
+    14999,
+    14999,
+    14999,
+    14999,
+    14999,
+    14999,
+    14999
    ]
   },
   {
@@ -1022,34 +967,6 @@
    ]
   },
   {
-   "id": "bomberman-64-second-attack-n64",
-   "title": "Bomberman 64: The Second Attack",
-   "platform": "n64",
-   "headline_condition": "loose",
-   "price_cents": 37495,
-   "prices": {
-    "loose": 37495
-   },
-   "pct_1d": 0,
-   "pct_7d": -0.81,
-   "pct_30d": null,
-   "score": -0.81,
-   "spark": [
-    41500,
-    40875,
-    40250,
-    39025,
-    37800,
-    37498,
-    37498,
-    37495,
-    37495,
-    37495,
-    37495,
-    37495
-   ]
-  },
-  {
    "id": "goemons-great-adventure-n64",
    "title": "Goemon's Great Adventure",
    "platform": "n64",
@@ -1079,32 +996,62 @@
    ]
   },
   {
-   "id": "castlevania-legacy-of-darkness-n64",
-   "title": "Castlevania: Legacy of Darkness",
+   "id": "paper-mario-n64",
+   "title": "Paper Mario",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 41249,
+   "price_cents": 28900,
    "prices": {
-    "loose": 19999,
-    "cib": 41249
+    "loose": 9250,
+    "cib": 28900,
+    "new": 147500
    },
-   "pct_1d": 0,
-   "pct_7d": -2.94,
+   "pct_1d": 2.48,
+   "pct_7d": -3.34,
    "pct_30d": null,
-   "score": -2.94,
+   "score": -3.34,
    "spark": [
-    42499,
-    42499,
-    42499,
-    42499,
-    42499,
-    42499,
-    42499,
-    42499,
-    42499,
-    42499,
-    42499,
-    41249
+    29450,
+    29675,
+    29900,
+    29900,
+    29900,
+    29900,
+    29900,
+    29900,
+    29900,
+    29900,
+    29400,
+    28900
+   ]
+  },
+  {
+   "id": "super-mario-64-n64",
+   "title": "Super Mario 64",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 15050,
+   "prices": {
+    "loose": 4999,
+    "cib": 15050
+   },
+   "pct_1d": 5.24,
+   "pct_7d": -4.68,
+   "pct_30d": null,
+   "score": -4.68,
+   "spark": [
+    15998,
+    15990,
+    15998,
+    15998,
+    15998,
+    15981,
+    15964,
+    15964,
+    15964,
+    15964,
+    15500,
+    15250
    ]
   },
   {
@@ -1112,12 +1059,12 @@
    "title": "Mario Kart 64",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 14000,
+   "price_cents": 14499,
    "prices": {
     "loose": 4999,
-    "cib": 14000
+    "cib": 14499
    },
-   "pct_1d": 9.2,
+   "pct_1d": 13.09,
    "pct_7d": -6.9,
    "pct_30d": null,
    "score": -6.9,
@@ -1137,46 +1084,16 @@
    ]
   },
   {
-   "id": "super-smash-bros-n64",
-   "title": "Super Smash Bros.",
-   "platform": "n64",
-   "headline_condition": "cib",
-   "price_cents": 26250,
-   "prices": {
-    "loose": 6000,
-    "cib": 26250,
-    "new": 612298
-   },
-   "pct_1d": 5,
-   "pct_7d": -9.09,
-   "pct_30d": null,
-   "score": -9.09,
-   "spark": [
-    27500,
-    27500,
-    27500,
-    27500,
-    27500,
-    26500,
-    26250,
-    26250,
-    24999,
-    24999,
-    24999,
-    24999
-   ]
-  },
-  {
    "id": "star-fox-64-n64",
    "title": "Star Fox 64",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 22999,
+   "price_cents": 24988,
    "prices": {
     "loose": 3499,
-    "cib": 22999
+    "cib": 24988
    },
-   "pct_1d": 2.23,
+   "pct_1d": 11.07,
    "pct_7d": -9.99,
    "pct_30d": null,
    "score": -9.99,
@@ -1202,7 +1119,7 @@
    "headline_condition": "cib",
    "price_cents": 11000,
    "prices": {
-    "loose": 3495,
+    "loose": 3447,
     "cib": 11000
    },
    "pct_1d": 0,
