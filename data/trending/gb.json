@@ -1,27 +1,7 @@
 {
  "board": "gb",
- "as_of": "2026-09-18",
+ "as_of": "2026-09-19",
  "entries": [
-  {
-   "id": "super-mario-land-gb",
-   "title": "Super Mario Land",
-   "platform": "gb",
-   "headline_condition": "cib",
-   "price_cents": 10595,
-   "prices": {
-    "loose": 2199,
-    "cib": 10595
-   },
-   "pct_1d": 27.7,
-   "pct_7d": null,
-   "pct_30d": null,
-   "score": 27.7,
-   "spark": [
-    8297,
-    8297,
-    8297
-   ]
-  },
   {
    "id": "donkey-kong-gb",
    "title": "Donkey Kong",
@@ -32,14 +12,36 @@
     "loose": 2999,
     "cib": 12250
    },
-   "pct_1d": 22.5,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": 11.25,
    "pct_30d": null,
-   "score": 22.5,
+   "score": 11.25,
    "spark": [
     10000,
     10000,
-    10000
+    10000,
+    11125
+   ]
+  },
+  {
+   "id": "donkey-kong-land-gb",
+   "title": "Donkey Kong Land",
+   "platform": "gb",
+   "headline_condition": "cib",
+   "price_cents": 7200,
+   "prices": {
+    "loose": 1800,
+    "cib": 7200
+   },
+   "pct_1d": 0,
+   "pct_7d": 10.77,
+   "pct_30d": null,
+   "score": 10.77,
+   "spark": [
+    6500,
+    6850,
+    7200,
+    7200
    ]
   },
   {
@@ -51,32 +53,77 @@
    "prices": {
     "loose": 6799
    },
-   "pct_1d": 21.43,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": 10.72,
    "pct_30d": null,
-   "score": 21.43,
+   "score": 10.72,
    "spark": [
     5599,
     5599,
-    5599
+    5599,
+    6199
    ]
   },
   {
-   "id": "bionic-commando-gb",
-   "title": "Bionic Commando",
+   "id": "final-fantasy-adventure-gb",
+   "title": "Final Fantasy Adventure",
    "platform": "gb",
    "headline_condition": "loose",
-   "price_cents": 5499,
+   "price_cents": 5900,
    "prices": {
-    "loose": 5499
+    "loose": 5900
    },
-   "pct_1d": 15.77,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": 2.63,
    "pct_30d": null,
-   "score": 15.77,
+   "score": 2.63,
    "spark": [
-    4750,
-    5125
+    5749,
+    5874,
+    5900,
+    5900
+   ]
+  },
+  {
+   "id": "mega-man-dr-wilys-revenge-gb",
+   "title": "Mega Man: Dr. Wily's Revenge",
+   "platform": "gb",
+   "headline_condition": "cib",
+   "price_cents": 16479,
+   "prices": {
+    "loose": 2000,
+    "cib": 16479
+   },
+   "pct_1d": 0,
+   "pct_7d": 2.42,
+   "pct_30d": null,
+   "score": 2.42,
+   "spark": [
+    16089,
+    16284,
+    16479,
+    16479
+   ]
+  },
+  {
+   "id": "legend-of-zelda-links-awakening-gb",
+   "title": "The Legend of Zelda: Link's Awakening",
+   "platform": "gb",
+   "headline_condition": "cib",
+   "price_cents": 27000,
+   "prices": {
+    "loose": 4500,
+    "cib": 27000
+   },
+   "pct_1d": 0,
+   "pct_7d": 2.27,
+   "pct_30d": null,
+   "score": 2.27,
+   "spark": [
+    26400,
+    26700,
+    27000,
+    27000
    ]
   },
   {
@@ -84,18 +131,19 @@
    "title": "Castlevania II: Belmont's Revenge",
    "platform": "gb",
    "headline_condition": "loose",
-   "price_cents": 7607,
+   "price_cents": 7554,
    "prices": {
-    "loose": 7607
+    "loose": 7554
    },
-   "pct_1d": 4.92,
-   "pct_7d": null,
+   "pct_1d": -0.7,
+   "pct_7d": 2.1,
    "pct_30d": null,
-   "score": 4.92,
+   "score": 2.1,
    "spark": [
     7250,
     7250,
-    7250
+    7250,
+    7402
    ]
   },
   {
@@ -107,34 +155,35 @@
    "prices": {
     "loose": 11250
    },
-   "pct_1d": 2.27,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": 1.14,
    "pct_30d": null,
-   "score": 2.27,
+   "score": 1.14,
    "spark": [
     11000,
     11000,
-    11000
+    11000,
+    11125
    ]
   },
   {
-   "id": "alleyway-gb",
-   "title": "Alleyway",
+   "id": "tetris-gb",
+   "title": "Tetris",
    "platform": "gb",
-   "headline_condition": "cib",
-   "price_cents": 5499,
+   "headline_condition": "loose",
+   "price_cents": 1800,
    "prices": {
-    "loose": 1099,
-    "cib": 5499
+    "loose": 1800
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": -5.26,
+   "pct_7d": 0.11,
    "pct_30d": null,
-   "score": 0,
+   "score": 0.11,
    "spark": [
-    5995,
-    5747,
-    5499
+    1896,
+    1946,
+    1900,
+    1898
    ]
   },
   {
@@ -147,10 +196,11 @@
     "loose": 18245
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    18245,
     18245,
     18245,
     18245
@@ -166,10 +216,11 @@
     "loose": 1799
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    1799,
     1799,
     1799,
     1799
@@ -182,18 +233,38 @@
    "headline_condition": "cib",
    "price_cents": 18298,
    "prices": {
-    "loose": 2199,
+    "loose": 2250,
     "cib": 18298,
     "new": 9999
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
     18298,
     18298,
+    18298,
     18298
+   ]
+  },
+  {
+   "id": "bionic-commando-gb",
+   "title": "Bionic Commando",
+   "platform": "gb",
+   "headline_condition": "loose",
+   "price_cents": 3300,
+   "prices": {
+    "loose": 3300
+   },
+   "pct_1d": -39.99,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    4750,
+    5125,
+    4750
    ]
   },
   {
@@ -203,14 +274,15 @@
    "headline_condition": "cib",
    "price_cents": 12995,
    "prices": {
-    "loose": 2199,
+    "loose": 2100,
     "cib": 12995
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    12995,
     12995,
     12995,
     12995
@@ -221,15 +293,16 @@
    "title": "Castlevania Legends",
    "platform": "gb",
    "headline_condition": "loose",
-   "price_cents": 19750,
+   "price_cents": 19699,
    "prices": {
-    "loose": 19750
+    "loose": 19699
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": -0.26,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    19750,
     19750,
     19750,
     19750
@@ -242,37 +315,18 @@
    "headline_condition": "cib",
    "price_cents": 15295,
    "prices": {
-    "loose": 2080,
+    "loose": 2088,
     "cib": 15295
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    15295,
     15295,
     15295,
     15295
-   ]
-  },
-  {
-   "id": "donkey-kong-land-gb",
-   "title": "Donkey Kong Land",
-   "platform": "gb",
-   "headline_condition": "cib",
-   "price_cents": 7200,
-   "prices": {
-    "loose": 1848,
-    "cib": 7200
-   },
-   "pct_1d": 0,
-   "pct_7d": null,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    6500,
-    6850,
-    7200
    ]
   },
   {
@@ -287,13 +341,34 @@
     "new": 19997
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
     12950,
     12950,
+    12950,
     12950
+   ]
+  },
+  {
+   "id": "dr-mario-gb",
+   "title": "Dr. Mario",
+   "platform": "gb",
+   "headline_condition": "loose",
+   "price_cents": 1399,
+   "prices": {
+    "loose": 1399
+   },
+   "pct_1d": 0,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    1399,
+    1399,
+    1399,
+    1399
    ]
   },
   {
@@ -306,10 +381,11 @@
     "loose": 2100
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    2100,
     2100,
     2100,
     2100
@@ -326,10 +402,11 @@
     "cib": 16500
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    16500,
     16500,
     16500,
     16500
@@ -346,10 +423,11 @@
     "cib": 14248
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    14248,
     14248,
     14248,
     14248
@@ -366,10 +444,11 @@
     "cib": 18000
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    18000,
     18000,
     18000,
     18000
@@ -386,10 +465,11 @@
     "cib": 7500
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    7500,
     7500,
     7500,
     7500
@@ -400,15 +480,16 @@
    "title": "Gargoyle's Quest",
    "platform": "gb",
    "headline_condition": "loose",
-   "price_cents": 4995,
+   "price_cents": 4947,
    "prices": {
-    "loose": 4995
+    "loose": 4947
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": -0.96,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    4995,
     4995,
     4995,
     4995
@@ -424,10 +505,11 @@
     "loose": 28799
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    28799,
     28799,
     28799,
     28799
@@ -443,10 +525,11 @@
     "loose": 4000
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    4000,
     4000,
     4000,
     4000
@@ -463,10 +546,11 @@
     "cib": 12505
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    12505,
     12505,
     12505,
     12505
@@ -483,13 +567,137 @@
     "cib": 9999
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
     9999,
     9999,
+    9999,
     9999
+   ]
+  },
+  {
+   "id": "kid-icarus-of-myths-and-monsters-gb",
+   "title": "Kid Icarus: Of Myths and Monsters",
+   "platform": "gb",
+   "headline_condition": "loose",
+   "price_cents": 2799,
+   "prices": {
+    "loose": 2799
+   },
+   "pct_1d": 1.82,
+   "pct_7d": -0.04,
+   "pct_30d": null,
+   "score": -0.04,
+   "spark": [
+    2800,
+    2800,
+    2799,
+    2799
+   ]
+  },
+  {
+   "id": "contra-the-alien-wars-gb",
+   "title": "Contra: The Alien Wars",
+   "platform": "gb",
+   "headline_condition": "loose",
+   "price_cents": 4695,
+   "prices": {
+    "loose": 4695
+   },
+   "pct_1d": 0,
+   "pct_7d": -0.57,
+   "pct_30d": null,
+   "score": -0.57,
+   "spark": [
+    4750,
+    4750,
+    4750,
+    4723
+   ]
+  },
+  {
+   "id": "donkey-kong-land-2-gb",
+   "title": "Donkey Kong Land 2",
+   "platform": "gb",
+   "headline_condition": "cib",
+   "price_cents": 10700,
+   "prices": {
+    "loose": 1700,
+    "cib": 10700
+   },
+   "pct_1d": 0,
+   "pct_7d": -2.23,
+   "pct_30d": null,
+   "score": -2.23,
+   "spark": [
+    11200,
+    11200,
+    11200,
+    10950
+   ]
+  },
+  {
+   "id": "pokemon-yellow-gb",
+   "title": "Pokémon Yellow",
+   "platform": "gb",
+   "headline_condition": "cib",
+   "price_cents": 38497,
+   "prices": {
+    "loose": 7500,
+    "cib": 38497
+   },
+   "pct_1d": 1.32,
+   "pct_7d": -4.38,
+   "pct_30d": null,
+   "score": -4.38,
+   "spark": [
+    39999,
+    38998,
+    37997,
+    38247
+   ]
+  },
+  {
+   "id": "harvest-moon-gb",
+   "title": "Harvest Moon GB",
+   "platform": "gb",
+   "headline_condition": "loose",
+   "price_cents": 3025,
+   "prices": {
+    "loose": 3025
+   },
+   "pct_1d": 0,
+   "pct_7d": -6.77,
+   "pct_30d": null,
+   "score": -6.77,
+   "spark": [
+    3500,
+    3500,
+    3500,
+    3263
+   ]
+  },
+  {
+   "id": "alleyway-gb",
+   "title": "Alleyway",
+   "platform": "gb",
+   "headline_condition": "cib",
+   "price_cents": 5499,
+   "prices": {
+    "loose": 1091,
+    "cib": 5499
+   },
+   "pct_1d": 0,
+   "pct_7d": -8.27,
+   "pct_30d": null,
+   "score": -8.27,
+   "spark": [
+    5995,
+    5747,
+    5499,
+    5499
    ]
   }
  ]

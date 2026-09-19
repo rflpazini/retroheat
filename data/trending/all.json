@@ -1,26 +1,7 @@
 {
  "board": "all",
- "as_of": "2026-09-18",
+ "as_of": "2026-09-19",
  "entries": [
-  {
-   "id": "metal-slug-advance-gba",
-   "title": "Metal Slug Advance",
-   "platform": "gba",
-   "headline_condition": "loose",
-   "price_cents": 6500,
-   "prices": {
-    "loose": 6500
-   },
-   "pct_1d": 160.1,
-   "pct_7d": null,
-   "pct_30d": null,
-   "score": 160.1,
-   "spark": [
-    2999,
-    2749,
-    2999
-   ]
-  },
   {
    "id": "hydro-thunder-n64",
    "title": "Hydro Thunder",
@@ -30,10 +11,10 @@
    "prices": {
     "loose": 13299
    },
-   "pct_1d": 4.24,
-   "pct_7d": 31.37,
+   "pct_1d": 0,
+   "pct_7d": 35.72,
    "pct_30d": null,
-   "score": 31.37,
+   "score": 35.72,
    "spark": [
     9400,
     9200,
@@ -45,27 +26,39 @@
     12217,
     12217,
     12217,
-    12217
+    12217,
+    12758
    ]
   },
   {
-   "id": "super-mario-land-gb",
-   "title": "Super Mario Land",
-   "platform": "gb",
+   "id": "conkers-bad-fur-day-n64",
+   "title": "Conker's Bad Fur Day",
+   "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 10595,
+   "price_cents": 59999,
    "prices": {
-    "loose": 2199,
-    "cib": 10595
+    "loose": 19295,
+    "cib": 59999,
+    "new": 1064950
    },
-   "pct_1d": 27.7,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": 32.18,
    "pct_30d": null,
-   "score": 27.7,
+   "score": 32.18,
    "spark": [
-    8297,
-    8297,
-    8297
+    65000,
+    60000,
+    55000,
+    50000,
+    44999,
+    43499,
+    43499,
+    43499,
+    43499,
+    44999,
+    44999,
+    47500,
+    57499
    ]
   },
   {
@@ -73,13 +66,13 @@
    "title": "The Legend of Zelda: Four Swords Adventures",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 13997,
+   "price_cents": 13499,
    "prices": {
     "loose": 6499,
-    "cib": 13997,
+    "cib": 13499,
     "new": 39999
    },
-   "pct_1d": 3.69,
+   "pct_1d": -3.56,
    "pct_7d": 25.57,
    "pct_30d": null,
    "score": 25.57,
@@ -94,6 +87,7 @@
     12499,
     12999,
     13000,
+    13499,
     13499,
     13499
    ]
@@ -124,57 +118,8 @@
     2999,
     2999,
     3497,
+    3748,
     3748
-   ]
-  },
-  {
-   "id": "ys-the-oath-in-felghana-psp",
-   "title": "Ys: The Oath in Felghana",
-   "platform": "psp",
-   "headline_condition": "cib",
-   "price_cents": 7499,
-   "prices": {
-    "loose": 5112,
-    "cib": 7499,
-    "new": 18000
-   },
-   "pct_1d": -6.25,
-   "pct_7d": 23.08,
-   "pct_30d": null,
-   "score": 23.08,
-   "spark": [
-    6499,
-    6499,
-    6499,
-    6499,
-    6499,
-    7249,
-    7249,
-    7999,
-    7999,
-    7999,
-    7999,
-    7999
-   ]
-  },
-  {
-   "id": "donkey-kong-gb",
-   "title": "Donkey Kong",
-   "platform": "gb",
-   "headline_condition": "cib",
-   "price_cents": 12250,
-   "prices": {
-    "loose": 2999,
-    "cib": 12250
-   },
-   "pct_1d": 22.5,
-   "pct_7d": null,
-   "pct_30d": null,
-   "score": 22.5,
-   "spark": [
-    10000,
-    10000,
-    10000
    ]
   },
   {
@@ -182,16 +127,16 @@
    "title": "Crisis Core: Final Fantasy VII",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 2375,
+   "price_cents": 2467,
    "prices": {
     "loose": 1297,
-    "cib": 2375,
-    "new": 7998
+    "cib": 2467,
+    "new": 9995
    },
-   "pct_1d": -4.96,
-   "pct_7d": 21.75,
+   "pct_1d": 3.87,
+   "pct_7d": 23.35,
    "pct_30d": null,
-   "score": 21.75,
+   "score": 23.35,
    "spark": [
     2000,
     2000,
@@ -204,52 +149,109 @@
     2435,
     2450,
     2450,
-    2435
+    2435,
+    2467
    ]
   },
   {
-   "id": "marios-picross-gb",
-   "title": "Mario's Picross",
-   "platform": "gb",
-   "headline_condition": "loose",
-   "price_cents": 6799,
-   "prices": {
-    "loose": 6799
-   },
-   "pct_1d": 21.43,
-   "pct_7d": null,
-   "pct_30d": null,
-   "score": 21.43,
-   "spark": [
-    5599,
-    5599,
-    5599
-   ]
-  },
-  {
-   "id": "steambot-chronicles-ps2",
-   "title": "Steambot Chronicles",
-   "platform": "ps2",
+   "id": "zelda-ocarina-of-time-n64",
+   "title": "The Legend of Zelda: Ocarina of Time",
+   "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 28900,
+   "price_cents": 23159,
    "prices": {
-    "cib": 28900
+    "loose": 6649,
+    "cib": 23159
    },
    "pct_1d": 0,
-   "pct_7d": 20.42,
+   "pct_7d": 21.9,
    "pct_30d": null,
-   "score": 20.42,
+   "score": 21.9,
    "spark": [
-    24000,
-    24000,
-    24000,
-    25500,
-    27000,
-    27000,
-    27000,
-    28900,
-    28900,
-    28900
+    18000,
+    17875,
+    18000,
+    18500,
+    18999,
+    18999,
+    18999,
+    18999,
+    20000,
+    20000,
+    20000,
+    21500,
+    23159
+   ]
+  },
+  {
+   "id": "tony-hawks-pro-skater-n64",
+   "title": "Tony Hawk's Pro Skater",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 6000,
+   "prices": {
+    "loose": 1500,
+    "cib": 6000
+   },
+   "pct_1d": -6.24,
+   "pct_7d": 20.87,
+   "pct_30d": null,
+   "score": 20.87,
+   "spark": [
+    5271,
+    5271,
+    5271,
+    5118,
+    4964,
+    4964,
+    4964,
+    4964,
+    5271,
+    5500,
+    6000,
+    6000
+   ]
+  },
+  {
+   "id": "revelations-the-demon-slayer-gbc",
+   "title": "Revelations: The Demon Slayer",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 13999,
+   "prices": {
+    "loose": 13999
+   },
+   "pct_1d": 0,
+   "pct_7d": 19.15,
+   "pct_30d": null,
+   "score": 19.15,
+   "spark": [
+    11749,
+    12874,
+    13999,
+    13999
+   ]
+  },
+  {
+   "id": "advance-wars-gba",
+   "title": "Advance Wars",
+   "platform": "gba",
+   "headline_condition": "cib",
+   "price_cents": 7750,
+   "prices": {
+    "loose": 1499,
+    "cib": 7750,
+    "new": 13275
+   },
+   "pct_1d": 19.23,
+   "pct_7d": 18.85,
+   "pct_30d": null,
+   "score": 18.85,
+   "spark": [
+    5995,
+    6873,
+    6500,
+    7125
    ]
   },
   {
@@ -278,7 +280,29 @@
     12897,
     12897,
     13995,
+    13995,
     13995
+   ]
+  },
+  {
+   "id": "wario-land-3-gbc",
+   "title": "Wario Land 3",
+   "platform": "gbc",
+   "headline_condition": "cib",
+   "price_cents": 12974,
+   "prices": {
+    "loose": 3499,
+    "cib": 12974
+   },
+   "pct_1d": 0,
+   "pct_7d": 18.49,
+   "pct_30d": null,
+   "score": 18.49,
+   "spark": [
+    10949,
+    11962,
+    12974,
+    12974
    ]
   },
   {
@@ -288,10 +312,10 @@
    "headline_condition": "cib",
    "price_cents": 2899,
    "prices": {
-    "loose": 1675,
+    "loose": 1699,
     "cib": 2899
    },
-   "pct_1d": -3.21,
+   "pct_1d": 0,
    "pct_7d": 17.88,
    "pct_30d": null,
    "score": 17.88,
@@ -306,35 +330,37 @@
     2700,
     2849,
     2947,
+    2947,
     2947
    ]
   },
   {
-   "id": "tony-hawks-pro-skater-n64",
-   "title": "Tony Hawk's Pro Skater",
-   "platform": "n64",
+   "id": "star-wars-episode-i-racer-dreamcast",
+   "title": "Star Wars Episode I: Racer",
+   "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 6399,
+   "price_cents": 3495,
    "prices": {
-    "loose": 1500,
-    "cib": 6399
+    "loose": 1971,
+    "cib": 3495
    },
-   "pct_1d": 6.65,
-   "pct_7d": 17.23,
+   "pct_1d": 0,
+   "pct_7d": 16.5,
    "pct_30d": null,
-   "score": 17.23,
+   "score": 16.5,
    "spark": [
-    5271,
-    5271,
-    5271,
-    5118,
-    4964,
-    4964,
-    4964,
-    4964,
-    5271,
-    5500,
-    6000
+    3450,
+    3225,
+    3000,
+    3000,
+    3000,
+    3000,
+    3000,
+    3000,
+    3000,
+    3300,
+    3300,
+    3495
    ]
   },
   {
@@ -359,54 +385,8 @@
     7000,
     7000,
     7550,
+    7550,
     7550
-   ]
-  },
-  {
-   "id": "bionic-commando-gb",
-   "title": "Bionic Commando",
-   "platform": "gb",
-   "headline_condition": "loose",
-   "price_cents": 5499,
-   "prices": {
-    "loose": 5499
-   },
-   "pct_1d": 15.77,
-   "pct_7d": null,
-   "pct_30d": null,
-   "score": 15.77,
-   "spark": [
-    4750,
-    5125
-   ]
-  },
-  {
-   "id": "digital-devil-saga-2-ps2",
-   "title": "Shin Megami Tensei: Digital Devil Saga 2",
-   "platform": "ps2",
-   "headline_condition": "cib",
-   "price_cents": 5000,
-   "prices": {
-    "cib": 5000,
-    "new": 7500
-   },
-   "pct_1d": 0,
-   "pct_7d": 15.02,
-   "pct_30d": null,
-   "score": 15.02,
-   "spark": [
-    4277,
-    4333,
-    4388,
-    4388,
-    4388,
-    4499,
-    4499,
-    4499,
-    5595,
-    5595,
-    5595,
-    5047
    ]
   },
   {
@@ -414,13 +394,13 @@
    "title": "Grand Theft Auto: San Andreas",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 2350,
+   "price_cents": 2318,
    "prices": {
-    "loose": 1298,
-    "cib": 2350,
-    "new": 6999
+    "loose": 1199,
+    "cib": 2318,
+    "new": 5399
    },
-   "pct_1d": 2.22,
+   "pct_1d": -1.36,
    "pct_7d": 15.01,
    "pct_30d": null,
    "score": 15.01,
@@ -435,37 +415,38 @@
     2195,
     2195,
     2195,
+    2299,
     2299
    ]
   },
   {
-   "id": "xenosaga-episode-2-ps2",
-   "title": "Xenosaga Episode II",
-   "platform": "ps2",
+   "id": "pn03-gamecube",
+   "title": "P.N.03",
+   "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 7448,
+   "price_cents": 15500,
    "prices": {
-    "loose": 3795,
-    "cib": 7448,
-    "new": 10000
+    "loose": 8900,
+    "cib": 15500
    },
    "pct_1d": 0,
-   "pct_7d": 14.58,
+   "pct_7d": 14.81,
    "pct_30d": null,
-   "score": 14.58,
+   "score": 14.81,
    "spark": [
-    6000,
-    6125,
-    6250,
-    6375,
-    6500,
-    7000,
-    7248,
-    7448,
-    7448,
-    7448,
-    7448,
-    7448
+    14742,
+    14619,
+    14495,
+    14495,
+    14495,
+    13500,
+    13500,
+    13500,
+    13998,
+    14495,
+    14997,
+    15499,
+    15499
    ]
   },
   {
@@ -479,7 +460,7 @@
     "cib": 15999,
     "new": 19500
    },
-   "pct_1d": 0.31,
+   "pct_1d": 0,
    "pct_7d": 14.28,
    "pct_30d": null,
    "score": 14.28,
@@ -495,7 +476,38 @@
     15999,
     15999,
     15999,
+    15999,
     15999
+   ]
+  },
+  {
+   "id": "ratchet-and-clank-ps2",
+   "title": "Ratchet & Clank",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 4000,
+   "prices": {
+    "loose": 1400,
+    "cib": 4000,
+    "new": 9749
+   },
+   "pct_1d": 0,
+   "pct_7d": 14.14,
+   "pct_30d": null,
+   "score": 14.14,
+   "spark": [
+    3395,
+    3342,
+    3395,
+    3448,
+    3500,
+    3500,
+    3500,
+    3500,
+    3000,
+    3000,
+    3000,
+    3995
    ]
   },
   {
@@ -523,314 +535,429 @@
     3250,
     3250,
     3499,
+    3697,
     3697
    ]
   },
   {
-   "id": "mario-superstar-baseball-gamecube",
-   "title": "Mario Superstar Baseball",
-   "platform": "gamecube",
-   "headline_condition": "cib",
-   "price_cents": 12999,
-   "prices": {
-    "loose": 7450,
-    "cib": 12999
-   },
-   "pct_1d": 29.99,
-   "pct_7d": 12.6,
-   "pct_30d": null,
-   "score": 12.6,
-   "spark": [
-    13500,
-    12745,
-    11989,
-    11989,
-    11989,
-    11989,
-    12250,
-    13500,
-    13500,
-    13500,
-    13500
-   ]
-  },
-  {
-   "id": "pokemon-sapphire-gba",
-   "title": "Pokémon Sapphire",
-   "platform": "gba",
-   "headline_condition": "cib",
-   "price_cents": 36500,
-   "prices": {
-    "loose": 11099,
-    "cib": 36500
-   },
-   "pct_1d": 9.77,
-   "pct_7d": null,
-   "pct_30d": null,
-   "score": 9.77,
-   "spark": [
-    39999,
-    36625,
-    36500
-   ]
-  },
-  {
-   "id": "tearaway-vita",
-   "title": "Tearaway",
+   "id": "trails-of-cold-steel-vita",
+   "title": "The Legend of Heroes: Trails of Cold Steel",
    "platform": "vita",
-   "headline_condition": "loose",
-   "price_cents": 4100,
-   "prices": {
-    "loose": 4100,
-    "new": 5561
-   },
-   "pct_1d": 9.33,
-   "pct_7d": 7.14,
-   "pct_30d": null,
-   "score": 7.14,
-   "spark": [
-    3500,
-    3500,
-    3500,
-    3500,
-    3500,
-    3500,
-    3499,
-    3499,
-    3499,
-    3499,
-    3750,
-    3750
-   ]
-  },
-  {
-   "id": "daxter-psp",
-   "title": "Daxter",
-   "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 2649,
+   "price_cents": 6247,
    "prices": {
-    "loose": 1000,
-    "cib": 2649,
-    "new": 3500
+    "loose": 5000,
+    "cib": 6247,
+    "new": 6999
    },
-   "pct_1d": 20.46,
-   "pct_7d": 6.82,
+   "pct_1d": 0,
+   "pct_7d": 13.69,
    "pct_30d": null,
-   "score": 6.82,
+   "score": 13.69,
    "spark": [
-    2199,
-    2199,
-    2199,
-    2240,
-    2199,
-    2199,
-    1999,
-    1999,
-    1999,
-    1999,
-    2199,
-    2349
+    5495,
+    5495,
+    5495,
+    5495,
+    5495,
+    5495,
+    5495,
+    5495,
+    5495,
+    5495,
+    5495,
+    5495,
+    6247
    ]
   },
   {
-   "id": "onimusha-2-samurais-destiny-ps2",
-   "title": "Onimusha 2: Samurai's Destiny",
+   "id": "manhunt-ps2",
+   "title": "Manhunt",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 1945,
+   "price_cents": 12000,
    "prices": {
-    "loose": 999,
-    "cib": 1945,
-    "new": 3999
+    "loose": 5999,
+    "cib": 12000,
+    "new": 30000
    },
-   "pct_1d": 8.06,
-   "pct_7d": 5.5,
+   "pct_1d": 6.67,
+   "pct_7d": 12.56,
    "pct_30d": null,
-   "score": 5.5,
+   "score": 12.56,
    "spark": [
-    1800,
-    1800,
-    1800,
-    1800,
-    1800,
-    1800,
-    1800,
-    1800,
-    1899,
-    1800,
-    1899
+    9747,
+    9871,
+    9995,
+    9996,
+    9995,
+    9995,
+    9997,
+    9997,
+    10497,
+    11000,
+    11250,
+    11250
    ]
   },
   {
-   "id": "goldeneye-007-n64",
-   "title": "GoldenEye 007",
+   "id": "star-wars-episode-i-racer-n64",
+   "title": "Star Wars Episode I: Racer",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 11000,
+   "price_cents": 4749,
    "prices": {
-    "loose": 3500,
-    "cib": 11000
+    "loose": 1362,
+    "cib": 4749,
+    "new": 11824
    },
-   "pct_1d": 10.01,
-   "pct_7d": 0,
+   "pct_1d": 5.56,
+   "pct_7d": 9.2,
    "pct_30d": null,
-   "score": 0,
+   "score": 9.2,
    "spark": [
-    12000,
-    11000,
-    9999,
-    9999,
-    9999,
-    9999,
-    9999,
-    9999,
-    9999,
-    9999,
-    9999,
-    9999
+    4349,
+    4349,
+    4349,
+    4349,
+    4349,
+    4349,
+    4499,
+    4499,
+    4499,
+    4499,
+    4499,
+    4749
    ]
   },
   {
-   "id": "grandia-xtreme-ps2",
-   "title": "Grandia Xtreme",
+   "id": "kingdom-hearts-2-ps2",
+   "title": "Kingdom Hearts 2",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 8995,
+   "price_cents": 1996,
    "prices": {
-    "cib": 8995
+    "loose": 1349,
+    "cib": 1996,
+    "new": 2999
    },
-   "pct_1d": 12.51,
-   "pct_7d": 0,
+   "pct_1d": 5.33,
+   "pct_7d": 5.05,
    "pct_30d": null,
-   "score": 0,
+   "score": 5.05,
    "spark": [
-    7995,
-    7995,
-    7995,
-    7995,
-    7995,
-    7995,
-    7995,
-    7995,
-    7995,
-    7995,
-    7995
+    1895,
+    1946,
+    1995,
+    1945,
+    1900,
+    1995,
+    1995,
+    1996,
+    1996,
+    1997,
+    1996,
+    1996
    ]
   },
   {
-   "id": "odama-gamecube",
-   "title": "Odama",
-   "platform": "gamecube",
+   "id": "pokemon-crystal-gbc",
+   "title": "Pokémon Crystal",
+   "platform": "gbc",
    "headline_condition": "cib",
-   "price_cents": 3450,
+   "price_cents": 99997,
    "prices": {
-    "loose": 2497,
-    "cib": 3450,
-    "new": 13250
-   },
-   "pct_1d": 11.25,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    3101,
-    3101,
-    3101,
-    3101,
-    3101,
-    3101,
-    3101,
-    3101,
-    3101,
-    3101,
-    3101,
-    3101
-   ]
-  },
-  {
-   "id": "ridge-racer-psp",
-   "title": "Ridge Racer",
-   "platform": "psp",
-   "headline_condition": "cib",
-   "price_cents": 1776,
-   "prices": {
-    "loose": 999,
-    "cib": 1776
-   },
-   "pct_1d": 18.4,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    1788,
-    1782,
-    1776,
-    1776,
-    1776,
-    1776,
-    1776,
-    1776,
-    1776,
-    1776,
-    1776
-   ]
-  },
-  {
-   "id": "soldier-of-fortune-dreamcast",
-   "title": "Soldier of Fortune",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 5000,
-   "prices": {
-    "cib": 5000
+    "loose": 18999,
+    "cib": 99997,
+    "new": 399795
    },
    "pct_1d": 11.11,
-   "pct_7d": 0,
+   "pct_7d": 4.66,
    "pct_30d": null,
-   "score": 0,
+   "score": 4.66,
    "spark": [
-    4500,
-    4500,
-    4500,
-    4500,
-    4500,
-    4500,
-    4500,
-    4500,
-    4500,
-    4500,
-    4500
+    85799,
+    87699,
+    89599,
+    89800
    ]
   },
   {
-   "id": "toy-commander-dreamcast",
-   "title": "Toy Commander",
+   "id": "jet-grind-radio-dreamcast",
+   "title": "Jet Grind Radio",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 3249,
+   "price_cents": 11347,
    "prices": {
-    "loose": 1885,
-    "cib": 3249,
-    "new": 5994
+    "loose": 5944,
+    "cib": 11347,
+    "new": 19999
    },
-   "pct_1d": 8.34,
+   "pct_1d": 13.47,
+   "pct_7d": 3.78,
+   "pct_30d": null,
+   "score": 3.78,
+   "spark": [
+    10599,
+    11000,
+    11400,
+    11000,
+    10599,
+    10599,
+    10599,
+    10599,
+    10599,
+    11000,
+    11000,
+    10269,
+    11000
+   ]
+  },
+  {
+   "id": "dragon-quest-viii-ps2",
+   "title": "Dragon Quest VIII",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 5868,
+   "prices": {
+    "loose": 2019,
+    "cib": 5868,
+    "new": 14999
+   },
+   "pct_1d": 17.36,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    2999,
-    2999,
-    2999,
-    2999,
-    2999,
-    2999,
-    3047,
-    3095,
-    3095,
-    3095,
-    2999,
-    2999
+    5999,
+    5999,
+    5999,
+    5967,
+    5934,
+    5868,
+    5868,
+    5868,
+    5999,
+    5999,
+    5999,
+    5868,
+    5868
+   ]
+  },
+  {
+   "id": "hamtaro-ham-hams-unite-gbc",
+   "title": "Hamtaro: Ham-Hams Unite!",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 4400,
+   "prices": {
+    "loose": 4400
+   },
+   "pct_1d": 5.67,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    4164,
+    4164,
+    4164,
+    4164
+   ]
+  },
+  {
+   "id": "hatsune-miku-project-diva-x-vita",
+   "title": "Hatsune Miku: Project DIVA X",
+   "platform": "vita",
+   "headline_condition": "loose",
+   "price_cents": 10799,
+   "prices": {
+    "loose": 10799
+   },
+   "pct_1d": 45.93,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    7400,
+    7400,
+    7400,
+    7400,
+    7400,
+    7400,
+    7400,
+    7400,
+    7400,
+    7400,
+    7400,
+    7400
+   ]
+  },
+  {
+   "id": "mario-tennis-n64",
+   "title": "Mario Tennis",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 9900,
+   "prices": {
+    "loose": 3499,
+    "cib": 9900
+   },
+   "pct_1d": 10,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    9950,
+    9700,
+    9450,
+    9450,
+    9450,
+    9450,
+    9450,
+    9450,
+    9450,
+    9450,
+    9450,
+    9450
+   ]
+  },
+  {
+   "id": "okage-shadow-king-ps2",
+   "title": "Okage: Shadow King",
+   "platform": "ps2",
+   "headline_condition": "loose",
+   "price_cents": 1895,
+   "prices": {
+    "loose": 1895
+   },
+   "pct_1d": 15.83,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    1995,
+    1876,
+    1756,
+    1826,
+    1895,
+    1895,
+    1895,
+    1895,
+    1895,
+    1895,
+    1895,
+    1895
+   ]
+  },
+  {
+   "id": "shadow-of-the-colossus-ps2",
+   "title": "Shadow of the Colossus",
+   "platform": "ps2",
+   "headline_condition": "cib",
+   "price_cents": 3999,
+   "prices": {
+    "loose": 1497,
+    "cib": 3999,
+    "new": 7599
+   },
+   "pct_1d": 5.32,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    3499,
+    3648,
+    3697,
+    3646,
+    3594,
+    3594,
+    3495,
+    3395,
+    3295,
+    3395,
+    3495,
+    3594,
+    3594
+   ]
+  },
+  {
+   "id": "snowboard-kids-2-n64",
+   "title": "Snowboard Kids 2",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 51249,
+   "prices": {
+    "loose": 11199,
+    "cib": 51249
+   },
+   "pct_1d": 23.64,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    43999,
+    43999,
+    43999,
+    42725,
+    41450,
+    41450,
+    41450,
+    41450,
+    41450,
+    41450,
+    41450,
+    41450,
+    41450
+   ]
+  },
+  {
+   "id": "sly-cooper-collection-vita",
+   "title": "The Sly Collection",
+   "platform": "vita",
+   "headline_condition": "loose",
+   "price_cents": 5999,
+   "prices": {
+    "loose": 5999,
+    "new": 8431
+   },
+   "pct_1d": 9.09,
+   "pct_7d": -0.02,
+   "pct_30d": null,
+   "score": -0.02,
+   "spark": [
+    5500,
+    5750,
+    5500,
+    5500,
+    5500,
+    5500,
+    5500,
+    5500,
+    5500,
+    5500,
+    5499,
+    5499,
+    5499
+   ]
+  },
+  {
+   "id": "dragon-warrior-monsters-gbc",
+   "title": "Dragon Warrior Monsters",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 3449,
+   "prices": {
+    "loose": 3449
+   },
+   "pct_1d": 7.81,
+   "pct_7d": -1.52,
+   "pct_30d": null,
+   "score": -1.52,
+   "spark": [
+    3299,
+    3249,
+    3199,
+    3249
    ]
   },
   {
@@ -838,12 +965,12 @@
    "title": "Bully",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 5000,
+   "price_cents": 5988,
    "prices": {
     "loose": 1750,
-    "cib": 5000
+    "cib": 5988
    },
-   "pct_1d": 11.14,
+   "pct_1d": 19.76,
    "pct_7d": -4.74,
    "pct_30d": null,
    "score": -4.74,
@@ -859,91 +986,126 @@
     4999,
     5000,
     4799,
+    5000,
     5000
    ]
   },
   {
-   "id": "mario-kart-64-n64",
-   "title": "Mario Kart 64",
+   "id": "nfl-blitz-n64",
+   "title": "NFL Blitz",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 14499,
+   "price_cents": 5999,
    "prices": {
-    "loose": 4999,
-    "cib": 14499
+    "loose": 2500,
+    "cib": 5999
    },
-   "pct_1d": 13.09,
-   "pct_7d": -6.9,
+   "pct_1d": 5.26,
+   "pct_7d": -5.02,
    "pct_30d": null,
-   "score": -6.9,
+   "score": -5.02,
    "spark": [
-    13982,
-    14241,
-    14499,
-    14499,
-    14499,
-    14499,
-    14499,
-    14499,
-    14250,
-    14000,
-    13499,
-    13499
+    6000,
+    6000,
+    6000,
+    6000,
+    6000,
+    6000,
+    6000,
+    6000,
+    5999,
+    5999,
+    5699,
+    5699
    ]
   },
   {
-   "id": "dark-cloud-2-ps2",
-   "title": "Dark Cloud 2",
+   "id": "rayman-2-the-great-escape-dreamcast",
+   "title": "Rayman 2: The Great Escape",
+   "platform": "dreamcast",
+   "headline_condition": "loose",
+   "price_cents": 3997,
+   "prices": {
+    "loose": 3997,
+    "new": 14999
+   },
+   "pct_1d": 6.64,
+   "pct_7d": -6.23,
+   "pct_30d": null,
+   "score": -6.23,
+   "spark": [
+    3997,
+    3997,
+    3997,
+    3997,
+    3997,
+    3748,
+    3748,
+    3748,
+    3748,
+    3748,
+    3748,
+    3748
+   ]
+  },
+  {
+   "id": "growlanser-generations-ps2",
+   "title": "Growlanser Generations",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 5499,
+   "price_cents": 9495,
    "prices": {
-    "loose": 3499,
-    "cib": 5499,
-    "new": 14900
+    "cib": 9495,
+    "new": 29995
    },
-   "pct_1d": 9.98,
-   "pct_7d": -9.07,
+   "pct_1d": 5.56,
+   "pct_7d": -6.8,
    "pct_30d": null,
-   "score": -9.07,
+   "score": -6.8,
    "spark": [
-    5499,
-    5249,
-    5499,
-    5250,
-    5000,
-    5000,
-    5000,
-    5000
+    9997,
+    9818,
+    9997,
+    9997,
+    9997,
+    9997,
+    9997,
+    9997,
+    9997,
+    9638,
+    9638,
+    9317,
+    9317
    ]
   },
   {
-   "id": "star-fox-64-n64",
-   "title": "Star Fox 64",
+   "id": "kirby-64-the-crystal-shards-n64",
+   "title": "Kirby 64: The Crystal Shards",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 24988,
+   "price_cents": 21300,
    "prices": {
-    "loose": 3499,
-    "cib": 24988
+    "loose": 5000,
+    "cib": 21300
    },
-   "pct_1d": 11.07,
-   "pct_7d": -9.99,
+   "pct_1d": 20.26,
+   "pct_7d": -7.75,
    "pct_30d": null,
-   "score": -9.99,
+   "score": -7.75,
    "spark": [
-    24994,
-    24994,
-    24994,
-    24994,
-    24994,
-    24994,
-    24994,
-    24988,
-    24988,
-    23994,
-    22497,
-    22497
+    21300,
+    21300,
+    21300,
+    21300,
+    21300,
+    21300,
+    21300,
+    21300,
+    21300,
+    21300,
+    21300,
+    19650,
+    19650
    ]
   }
  ]
