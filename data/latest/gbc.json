@@ -1,6 +1,6 @@
 {
  "platform": "gbc",
- "as_of": "2026-09-19",
+ "as_of": "2026-09-20",
  "source": "ebay-browse",
  "price_kind": "asking",
  "games": [
@@ -11,39 +11,41 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 7498,
+     "median_cents": 7499,
      "mode_cents": 7500,
-     "q1_cents": 6497,
-     "q3_cents": 8500,
-     "n": 145
+     "q1_cents": 6495,
+     "q3_cents": 9036,
+     "n": 154
     },
     "cib": {
-     "median_cents": 31750,
-     "mode_cents": 50000,
-     "q1_cents": 28999,
-     "q3_cents": 44997,
-     "n": 12
+     "median_cents": 30999,
+     "mode_cents": 30000,
+     "q1_cents": 27999,
+     "q3_cents": 39999,
+     "n": 11
     }
    },
-   "pct_1d": 0,
-   "pct_7d": 1.21,
+   "pct_1d": -2.37,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
      7399,
      7404,
      7408,
-     7437
+     7437,
+     7466
     ],
     "cib": [
      30999,
      30750,
      30999,
-     31375
+     31375,
+     30999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "pokemon-silver-gbc",
@@ -53,7 +55,7 @@
    "prices": {
     "loose": {
      "median_cents": 7499,
-     "mode_cents": 8000,
+     "mode_cents": 7000,
      "q1_cents": 6499,
      "q3_cents": 8995,
      "n": 133
@@ -66,11 +68,12 @@
      "n": 12
     }
    },
-   "pct_1d": 1.29,
+   "pct_1d": 0,
    "pct_7d": -1.26,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     7499,
      7499,
      7499,
      7499,
@@ -80,11 +83,12 @@
      39995,
      39744,
      39493,
+     39493,
      39493
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "pokemon-crystal-gbc",
@@ -95,16 +99,16 @@
     "loose": {
      "median_cents": 18999,
      "mode_cents": 20000,
-     "q1_cents": 17499,
-     "q3_cents": 20247,
-     "n": 147
+     "q1_cents": 17500,
+     "q3_cents": 20336,
+     "n": 148
     },
     "cib": {
      "median_cents": 99999,
      "mode_cents": 100000,
-     "q1_cents": 85000,
-     "q3_cents": 108000,
-     "n": 11
+     "q1_cents": 85799,
+     "q3_cents": 111500,
+     "n": 9
     },
     "new": {
      "median_cents": 399795,
@@ -113,11 +117,12 @@
      "n": 4
     }
    },
-   "pct_1d": 11.11,
-   "pct_7d": 4.66,
+   "pct_1d": 0,
+   "pct_7d": 4.9,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     18999,
      18999,
      18999,
      18999,
@@ -127,15 +132,17 @@
      85799,
      87699,
      89599,
-     89800
+     89800,
+     90000
     ],
     "new": [
+     399795,
      399795,
      399795
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "pokemon-trading-card-game-gbc",
@@ -152,18 +159,19 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": 0.09,
+   "pct_7d": 0.11,
    "pct_30d": null,
    "sparks": {
     "loose": [
      3495,
      3496,
      3497,
-     3498
+     3498,
+     3499
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "pokemon-pinball-gbc",
@@ -193,17 +201,19 @@
      2499,
      2499,
      2499,
+     2499,
      2499
     ],
     "cib": [
      12499,
      11874,
      11249,
+     11249,
      11249
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "pokemon-puzzle-challenge-gbc",
@@ -227,11 +237,12 @@
      4499,
      4499,
      4499,
+     4499,
      4499
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "zelda-links-awakening-dx-gbc",
@@ -240,11 +251,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 7300,
+     "median_cents": 7150,
      "mode_cents": 6500,
      "q1_cents": 6499,
      "q3_cents": 8000,
-     "n": 55
+     "n": 54
     },
     "cib": {
      "median_cents": 21500,
@@ -254,12 +265,13 @@
      "n": 7
     }
    },
-   "pct_1d": -1.83,
-   "pct_7d": 0.93,
+   "pct_1d": 0,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
      6999,
+     7000,
      7000,
      7000,
      7000
@@ -268,11 +280,12 @@
      21500,
      21700,
      21900,
-     21700
+     21700,
+     21500
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "zelda-oracle-of-ages-gbc",
@@ -283,9 +296,9 @@
     "loose": {
      "median_cents": 7499,
      "mode_cents": 7000,
-     "q1_cents": 6997,
+     "q1_cents": 6996,
      "q3_cents": 7999,
-     "n": 43
+     "n": 44
     },
     "cib": {
      "median_cents": 22000,
@@ -294,11 +307,12 @@
      "n": 7
     }
    },
-   "pct_1d": 0.46,
-   "pct_7d": 0.23,
+   "pct_1d": 0,
+   "pct_7d": 0.46,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     7499,
      7499,
      7499,
      7499,
@@ -308,11 +322,12 @@
      21900,
      21950,
      21900,
-     21950
+     21950,
+     22000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "zelda-oracle-of-seasons-gbc",
@@ -323,9 +338,9 @@
     "loose": {
      "median_cents": 7000,
      "mode_cents": 7500,
-     "q1_cents": 6298,
-     "q3_cents": 7999,
-     "n": 33
+     "q1_cents": 6299,
+     "q3_cents": 7500,
+     "n": 31
     },
     "cib": {
      "median_cents": 21999,
@@ -350,9 +365,11 @@
      7499,
      7250,
      7000,
+     7000,
      7000
     ],
     "cib": [
+     21999,
      21999,
      21999,
      21999,
@@ -362,11 +379,12 @@
      62900,
      62900,
      62900,
+     62900,
      62900
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "shantae-gbc",
@@ -377,9 +395,9 @@
     "loose": {
      "median_cents": 70000,
      "mode_cents": 70000,
-     "q1_cents": 66250,
-     "q3_cents": 95000,
-     "n": 9
+     "q1_cents": 60000,
+     "q3_cents": 89999,
+     "n": 10
     },
     "cib": {
      "median_cents": 245000,
@@ -397,9 +415,11 @@
      81500,
      78625,
      75750,
-     72875
+     72875,
+     70000
     ],
     "cib": [
+     245000,
      245000,
      245000,
      245000,
@@ -407,7 +427,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "wario-land-3-gbc",
@@ -416,11 +436,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 3499,
+     "median_cents": 3497,
      "mode_cents": 3000,
      "q1_cents": 2999,
      "q3_cents": 3999,
-     "n": 79
+     "n": 80
     },
     "cib": {
      "median_cents": 12974,
@@ -437,17 +457,19 @@
      3499,
      3500,
      3499,
+     3499,
      3499
     ],
     "cib": [
      10949,
      11962,
      12974,
+     12974,
      12974
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "mario-golf-gbc",
@@ -456,14 +478,14 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 3498,
+     "median_cents": 3320,
      "mode_cents": 3000,
      "q1_cents": 2999,
-     "q3_cents": 4499,
-     "n": 38
+     "q3_cents": 4000,
+     "n": 36
     }
    },
-   "pct_1d": 0,
+   "pct_1d": -5.09,
    "pct_7d": -0.06,
    "pct_30d": null,
    "sparks": {
@@ -471,11 +493,12 @@
      3500,
      3499,
      3498,
+     3498,
      3498
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "mario-tennis-gbc",
@@ -488,7 +511,7 @@
      "mode_cents": 3500,
      "q1_cents": 3000,
      "q3_cents": 4000,
-     "n": 40
+     "n": 41
     },
     "cib": {
      "median_cents": 7497,
@@ -498,11 +521,12 @@
      "n": 7
     }
    },
-   "pct_1d": -3.24,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     3500,
      3500,
      3500,
      3500,
@@ -512,11 +536,12 @@
      7497,
      7497,
      7497,
+     7497,
      7497
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "super-mario-bros-deluxe-gbc",
@@ -525,31 +550,32 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 3199,
+     "median_cents": 3200,
      "mode_cents": 3000,
      "q1_cents": 2889,
-     "q3_cents": 3725,
+     "q3_cents": 3799,
      "n": 139
     },
     "cib": {
-     "median_cents": 7397,
-     "q1_cents": 6699,
-     "q3_cents": 12549,
-     "n": 12
+     "median_cents": 8297,
+     "q1_cents": 6900,
+     "q3_cents": 12999,
+     "n": 10
     },
     "new": {
-     "median_cents": 39948,
+     "median_cents": 39995,
      "mode_cents": 39900,
      "q1_cents": 39900,
-     "q3_cents": 44480,
-     "n": 6
+     "q3_cents": 44740,
+     "n": 5
     }
    },
-   "pct_1d": -2.61,
+   "pct_1d": 12.17,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     3200,
      3200,
      3200,
      3200,
@@ -559,9 +585,11 @@
      7595,
      7946,
      7595,
+     7595,
      7595
     ],
     "new": [
+     39948,
      39948,
      39948,
      39948,
@@ -569,7 +597,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "metal-gear-solid-gbc",
@@ -578,11 +606,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 14489,
+     "median_cents": 14242,
      "mode_cents": 14500,
-     "q1_cents": 12500,
+     "q1_cents": 12999,
      "q3_cents": 16000,
-     "n": 17
+     "n": 18
     },
     "cib": {
      "median_cents": 39900,
@@ -600,9 +628,11 @@
      14495,
      14495,
      14495,
+     14495,
      14495
     ],
     "cib": [
+     39900,
      39900,
      39900,
      39900,
@@ -610,7 +640,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "resident-evil-gaiden-gbc",
@@ -619,14 +649,14 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 39995,
+     "median_cents": 39498,
      "mode_cents": 40000,
-     "q1_cents": 37499,
-     "q3_cents": 45000,
-     "n": 11
+     "q1_cents": 36249,
+     "q3_cents": 42800,
+     "n": 12
     }
    },
-   "pct_1d": 0,
+   "pct_1d": -1.24,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -634,11 +664,12 @@
      39995,
      39747,
      39995,
+     39995,
      39995
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "dragon-warrior-i-and-ii-gbc",
@@ -669,9 +700,11 @@
      4999,
      4999,
      4999,
+     4999,
      4999
     ],
     "cib": [
+     12500,
      12500,
      12500,
      12500,
@@ -679,7 +712,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "dragon-warrior-iii-gbc",
@@ -717,11 +750,13 @@
      6499,
      6499,
      6499,
+     6499,
      6499
     ],
     "cib": [
      16999,
      17249,
+     17499,
      17499,
      17499
     ],
@@ -729,11 +764,12 @@
      45000,
      45000,
      45000,
+     45000,
      45000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "dragon-warrior-monsters-gbc",
@@ -749,19 +785,20 @@
      "n": 30
     }
    },
-   "pct_1d": 7.81,
-   "pct_7d": -1.52,
+   "pct_1d": 0,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
      3299,
      3249,
      3199,
-     3249
+     3249,
+     3299
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "dragon-warrior-monsters-2-cobis-journey-gbc",
@@ -777,7 +814,7 @@
      "n": 15
     }
    },
-   "pct_1d": -4.35,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -785,11 +822,12 @@
      5749,
      5749,
      5749,
+     5749,
      5749
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "dragon-warrior-monsters-2-taras-adventure-gbc",
@@ -805,7 +843,7 @@
      "n": 15
     }
    },
-   "pct_1d": 0.02,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -813,11 +851,12 @@
      4999,
      4999,
      4999,
+     4999,
      4999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "harvest-moon-gbc",
@@ -848,9 +887,11 @@
      3999,
      3999,
      3999,
+     4000,
      4000
     ],
     "cib": [
+     16995,
      16995,
      16995,
      16995,
@@ -858,7 +899,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "harvest-moon-2-gbc",
@@ -867,13 +908,13 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 4889,
+     "median_cents": 4440,
      "q1_cents": 2494,
-     "q3_cents": 5500,
-     "n": 5
+     "q3_cents": 5445,
+     "n": 4
     }
    },
-   "pct_1d": 0,
+   "pct_1d": -9.18,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -881,11 +922,12 @@
      4889,
      4889,
      4889,
+     4889,
      4889
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "harvest-moon-3-gbc",
@@ -909,11 +951,12 @@
      7995,
      7995,
      7995,
+     7995,
      7995
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "mega-man-xtreme-gbc",
@@ -937,11 +980,12 @@
      5000,
      5000,
      5000,
+     5000,
      5000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "mega-man-xtreme-2-gbc",
@@ -965,11 +1009,12 @@
      5250,
      5125,
      5000,
+     5000,
      5000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "kirby-tilt-n-tumble-gbc",
@@ -993,11 +1038,12 @@
      7000,
      7000,
      7000,
+     7000,
      7000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "donkey-kong-country-gbc",
@@ -1010,7 +1056,7 @@
      "mode_cents": 2500,
      "q1_cents": 2400,
      "q3_cents": 3000,
-     "n": 87
+     "n": 89
     },
     "cib": {
      "median_cents": 8499,
@@ -1028,9 +1074,11 @@
      2595,
      2621,
      2646,
-     2671
+     2671,
+     2696
     ],
     "cib": [
+     8499,
      8499,
      8499,
      8499,
@@ -1038,7 +1086,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "tetris-dx-gbc",
@@ -1069,9 +1117,11 @@
      3199,
      3200,
      3200,
+     3200,
      3200
     ],
     "cib": [
+     6099,
      6099,
      6099,
      6099,
@@ -1079,7 +1129,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "game-and-watch-gallery-2-gbc",
@@ -1092,7 +1142,7 @@
      "mode_cents": 1000,
      "q1_cents": 999,
      "q3_cents": 1499,
-     "n": 117
+     "n": 118
     },
     "cib": {
      "median_cents": 3700,
@@ -1110,9 +1160,11 @@
      1124,
      1112,
      1124,
-     1112
+     1112,
+     1100
     ],
     "cib": [
+     3700,
      3700,
      3700,
      3700,
@@ -1120,7 +1172,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "game-and-watch-gallery-3-gbc",
@@ -1132,8 +1184,8 @@
      "median_cents": 1199,
      "mode_cents": 1000,
      "q1_cents": 999,
-     "q3_cents": 1499,
-     "n": 113
+     "q3_cents": 1498,
+     "n": 111
     }
    },
    "pct_1d": 0,
@@ -1144,11 +1196,12 @@
      1199,
      1199,
      1199,
+     1199,
      1199
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "bomberman-max-red-challenger-gbc",
@@ -1172,11 +1225,12 @@
      1800,
      1800,
      1800,
+     1800,
      1800
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "bomberman-max-blue-champion-gbc",
@@ -1193,18 +1247,19 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": -1.55,
+   "pct_7d": -3.13,
    "pct_30d": null,
    "sparks": {
     "loose": [
      2909,
      2909,
      2909,
-     2864
+     2864,
+     2818
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "survival-kids-gbc",
@@ -1228,11 +1283,12 @@
      19500,
      19500,
      19500,
+     19500,
      19500
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "lufia-the-legend-returns-gbc",
@@ -1241,10 +1297,10 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 11999,
+     "median_cents": 12490,
      "mode_cents": 12500,
-     "q1_cents": 6800,
-     "q3_cents": 12500,
+     "q1_cents": 10999,
+     "q3_cents": 18400,
      "n": 7
     },
     "new": {
@@ -1255,11 +1311,12 @@
      "n": 4
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 4.09,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     11999,
      11999,
      11999,
      11999,
@@ -1269,11 +1326,12 @@
      51200,
      51200,
      51200,
+     51200,
      51200
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "magi-nation-gbc",
@@ -1297,11 +1355,12 @@
      3749,
      3749,
      3749,
+     3749,
      3749
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "warlocked-gbc",
@@ -1332,9 +1391,11 @@
      7124,
      7124,
      7124,
+     7124,
      7124
     ],
     "cib": [
+     20000,
      20000,
      20000,
      20000,
@@ -1342,7 +1403,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "return-of-the-ninja-gbc",
@@ -1366,11 +1427,12 @@
      12499,
      12499,
      12499,
+     12499,
      12499
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "toki-tori-gbc",
@@ -1379,26 +1441,27 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 3999,
+     "median_cents": 4024,
      "mode_cents": 4500,
      "q1_cents": 3300,
      "q3_cents": 4489,
-     "n": 11
+     "n": 10
     }
    },
-   "pct_1d": 0,
-   "pct_7d": -1.5,
+   "pct_1d": 0.63,
+   "pct_7d": -2.42,
    "pct_30d": null,
    "sparks": {
     "loose": [
      4124,
      4124,
      4124,
-     4062
+     4062,
+     4024
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "crystalis-gbc",
@@ -1414,7 +1477,7 @@
      "n": 10
     }
    },
-   "pct_1d": -3.85,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -1422,11 +1485,12 @@
      6500,
      6500,
      6500,
+     6500,
      6500
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "alone-in-the-dark-the-new-nightmare-gbc",
@@ -1450,11 +1514,12 @@
      4000,
      4000,
      4000,
+     4000,
      4000
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "perfect-dark-gbc",
@@ -1478,11 +1543,12 @@
      3200,
      3200,
      3200,
+     3200,
      3200
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "conkers-pocket-tales-gbc",
@@ -1506,11 +1572,12 @@
      2389,
      2390,
      2390,
+     2390,
      2390
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "rayman-gbc",
@@ -1521,9 +1588,9 @@
     "loose": {
      "median_cents": 1999,
      "mode_cents": 2000,
-     "q1_cents": 1560,
-     "q3_cents": 2495,
-     "n": 22
+     "q1_cents": 1630,
+     "q3_cents": 2497,
+     "n": 20
     }
    },
    "pct_1d": 0,
@@ -1534,11 +1601,12 @@
      1999,
      1999,
      1999,
+     1999,
      1999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "tomb-raider-gbc",
@@ -1568,9 +1636,11 @@
      1750,
      1750,
      1750,
+     1750,
      1750
     ],
     "cib": [
+     10999,
      10999,
      10999,
      10999,
@@ -1578,7 +1648,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "azure-dreams-gbc",
@@ -1604,7 +1674,7 @@
      25500
     ]
    },
-   "stale": false,
+   "stale": true,
    "as_of": "2026-09-19"
   },
   {
@@ -1628,11 +1698,12 @@
      11749,
      12874,
      13999,
+     13999,
      13999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "wendy-every-witch-way-gbc",
@@ -1641,13 +1712,13 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 12450,
+     "median_cents": 12699,
      "q1_cents": 9750,
      "q3_cents": 15450,
-     "n": 4
+     "n": 5
     }
    },
-   "pct_1d": -8.12,
+   "pct_1d": 2,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -1655,11 +1726,12 @@
      13550,
      13550,
      13550,
+     13550,
      13550
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "mr-driller-gbc",
@@ -1682,11 +1754,12 @@
      11999,
      11999,
      11999,
+     11999,
      11999
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "ghosts-n-goblins-gbc",
@@ -1702,17 +1775,18 @@
      "n": 8
     },
     "cib": {
-     "median_cents": 31500,
-     "q1_cents": 29786,
+     "median_cents": 32400,
+     "q1_cents": 30899,
      "q3_cents": 37748,
      "n": 4
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 2.86,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     12749,
      12749,
      12749,
      12749,
@@ -1722,11 +1796,12 @@
      31500,
      31500,
      31500,
+     31500,
      31500
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "dragon-ball-z-legendary-super-warriors-gbc",
@@ -1737,9 +1812,9 @@
     "loose": {
      "median_cents": 2500,
      "mode_cents": 2500,
-     "q1_cents": 2498,
+     "q1_cents": 2496,
      "q3_cents": 3228,
-     "n": 32
+     "n": 33
     }
    },
    "pct_1d": 0,
@@ -1750,11 +1825,12 @@
      2500,
      2500,
      2500,
+     2500,
      2500
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "yu-gi-oh-dark-duel-stories-gbc",
@@ -1763,11 +1839,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1198,
+     "median_cents": 1187,
      "mode_cents": 1000,
-     "q1_cents": 900,
-     "q3_cents": 1495,
-     "n": 143
+     "q1_cents": 954,
+     "q3_cents": 1499,
+     "n": 142
     },
     "cib": {
      "median_cents": 8491,
@@ -1784,9 +1860,11 @@
      1158,
      1142,
      1158,
-     1178
+     1178,
+     1187
     ],
     "cib": [
+     8491,
      8491,
      8491,
      8491,
@@ -1794,7 +1872,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   },
   {
    "id": "hamtaro-ham-hams-unite-gbc",
@@ -1803,14 +1881,14 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 4500,
+     "median_cents": 4525,
      "mode_cents": 4600,
-     "q1_cents": 4000,
+     "q1_cents": 4028,
      "q3_cents": 4900,
-     "n": 11
+     "n": 10
     }
    },
-   "pct_1d": 8.07,
+   "pct_1d": 0.56,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -1818,11 +1896,12 @@
      4164,
      4164,
      4164,
+     4164,
      4164
     ]
    },
    "stale": false,
-   "as_of": "2026-09-19"
+   "as_of": "2026-09-20"
   }
  ]
 }

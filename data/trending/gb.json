@@ -1,6 +1,6 @@
 {
  "board": "gb",
- "as_of": "2026-09-19",
+ "as_of": "2026-09-20",
  "entries": [
   {
    "id": "donkey-kong-gb",
@@ -13,14 +13,36 @@
     "cib": 12250
    },
    "pct_1d": 0,
-   "pct_7d": 11.25,
+   "pct_7d": 22.5,
    "pct_30d": null,
-   "score": 11.25,
+   "score": 22.5,
    "spark": [
     10000,
     10000,
     10000,
-    11125
+    11125,
+    12250
+   ]
+  },
+  {
+   "id": "marios-picross-gb",
+   "title": "Mario's Picross",
+   "platform": "gb",
+   "headline_condition": "loose",
+   "price_cents": 6799,
+   "prices": {
+    "loose": 6799
+   },
+   "pct_1d": 0,
+   "pct_7d": 21.43,
+   "pct_30d": null,
+   "score": 21.43,
+   "spark": [
+    5599,
+    5599,
+    5599,
+    6199,
+    6799
    ]
   },
   {
@@ -41,27 +63,29 @@
     6500,
     6850,
     7200,
+    7200,
     7200
    ]
   },
   {
-   "id": "marios-picross-gb",
-   "title": "Mario's Picross",
+   "id": "castlevania-ii-belmonts-revenge-gb",
+   "title": "Castlevania II: Belmont's Revenge",
    "platform": "gb",
    "headline_condition": "loose",
-   "price_cents": 6799,
+   "price_cents": 7554,
    "prices": {
-    "loose": 6799
+    "loose": 7554
    },
    "pct_1d": 0,
-   "pct_7d": 10.72,
+   "pct_7d": 4.19,
    "pct_30d": null,
-   "score": 10.72,
+   "score": 4.19,
    "spark": [
-    5599,
-    5599,
-    5599,
-    6199
+    7250,
+    7250,
+    7250,
+    7402,
+    7554
    ]
   },
   {
@@ -73,15 +97,16 @@
    "prices": {
     "loose": 5950
    },
-   "pct_1d": 0.85,
-   "pct_7d": 3.06,
+   "pct_1d": 0,
+   "pct_7d": 3.5,
    "pct_30d": null,
-   "score": 3.06,
+   "score": 3.5,
    "spark": [
     5749,
     5874,
     5900,
-    5925
+    5925,
+    5950
    ]
   },
   {
@@ -102,6 +127,7 @@
     16089,
     16284,
     16479,
+    16479,
     16479
    ]
   },
@@ -112,7 +138,7 @@
    "headline_condition": "cib",
    "price_cents": 27000,
    "prices": {
-    "loose": 4499,
+    "loose": 4500,
     "cib": 27000
    },
    "pct_1d": 0,
@@ -123,27 +149,8 @@
     26400,
     26700,
     27000,
+    27000,
     27000
-   ]
-  },
-  {
-   "id": "castlevania-ii-belmonts-revenge-gb",
-   "title": "Castlevania II: Belmont's Revenge",
-   "platform": "gb",
-   "headline_condition": "loose",
-   "price_cents": 7554,
-   "prices": {
-    "loose": 7554
-   },
-   "pct_1d": -0.7,
-   "pct_7d": 2.1,
-   "pct_30d": null,
-   "score": 2.1,
-   "spark": [
-    7250,
-    7250,
-    7250,
-    7402
    ]
   },
   {
@@ -151,39 +158,20 @@
    "title": "Mega Man IV",
    "platform": "gb",
    "headline_condition": "loose",
-   "price_cents": 11499,
+   "price_cents": 11250,
    "prices": {
-    "loose": 11499
+    "loose": 11250
    },
-   "pct_1d": 2.21,
-   "pct_7d": 1.14,
+   "pct_1d": -2.17,
+   "pct_7d": 2.27,
    "pct_30d": null,
-   "score": 1.14,
+   "score": 2.27,
    "spark": [
     11000,
     11000,
     11000,
-    11125
-   ]
-  },
-  {
-   "id": "tetris-gb",
-   "title": "Tetris",
-   "platform": "gb",
-   "headline_condition": "loose",
-   "price_cents": 1850,
-   "prices": {
-    "loose": 1850
-   },
-   "pct_1d": -2.63,
-   "pct_7d": 0.11,
-   "pct_30d": null,
-   "score": 0.11,
-   "spark": [
-    1896,
-    1946,
-    1900,
-    1898
+    11125,
+    11250
    ]
   },
   {
@@ -200,6 +188,7 @@
    "pct_30d": null,
    "score": 0,
    "spark": [
+    18245,
     18245,
     18245,
     18245,
@@ -223,6 +212,7 @@
     1799,
     1799,
     1799,
+    1799,
     1799
    ]
   },
@@ -233,7 +223,7 @@
    "headline_condition": "cib",
    "price_cents": 18298,
    "prices": {
-    "loose": 2250,
+    "loose": 2321,
     "cib": 18298,
     "new": 9999
    },
@@ -245,26 +235,8 @@
     18298,
     18298,
     18298,
+    18298,
     18298
-   ]
-  },
-  {
-   "id": "bionic-commando-gb",
-   "title": "Bionic Commando",
-   "platform": "gb",
-   "headline_condition": "loose",
-   "price_cents": 3300,
-   "prices": {
-    "loose": 3300
-   },
-   "pct_1d": -39.99,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    4750,
-    5125,
-    4750
    ]
   },
   {
@@ -285,6 +257,7 @@
     12995,
     12995,
     12995,
+    12995,
     12995
    ]
   },
@@ -297,11 +270,12 @@
    "prices": {
     "loose": 19699
    },
-   "pct_1d": -0.26,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    19750,
     19750,
     19750,
     19750,
@@ -326,6 +300,7 @@
     15295,
     15295,
     15295,
+    15295,
     15295
    ]
   },
@@ -334,17 +309,18 @@
    "title": "Donkey Kong Land III",
    "platform": "gb",
    "headline_condition": "cib",
-   "price_cents": 12950,
+   "price_cents": 12499,
    "prices": {
     "loose": 2149,
-    "cib": 12950,
+    "cib": 12499,
     "new": 19997
    },
-   "pct_1d": 0,
+   "pct_1d": -3.48,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    12950,
     12950,
     12950,
     12950,
@@ -360,11 +336,12 @@
    "prices": {
     "loose": 1400
    },
-   "pct_1d": 0.07,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    1399,
     1399,
     1399,
     1399,
@@ -376,15 +353,16 @@
    "title": "DuckTales",
    "platform": "gb",
    "headline_condition": "loose",
-   "price_cents": 2100,
+   "price_cents": 2150,
    "prices": {
-    "loose": 2100
+    "loose": 2150
    },
-   "pct_1d": 0,
+   "pct_1d": 2.38,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    2100,
     2100,
     2100,
     2100,
@@ -398,7 +376,7 @@
    "headline_condition": "cib",
    "price_cents": 16500,
    "prices": {
-    "loose": 3500,
+    "loose": 3499,
     "cib": 16500
    },
    "pct_1d": 0,
@@ -406,6 +384,7 @@
    "pct_30d": null,
    "score": 0,
    "spark": [
+    16500,
     16500,
     16500,
     16500,
@@ -430,6 +409,7 @@
     14248,
     14248,
     14248,
+    14248,
     14248
    ]
   },
@@ -438,16 +418,17 @@
    "title": "Final Fantasy Legend III",
    "platform": "gb",
    "headline_condition": "cib",
-   "price_cents": 18000,
+   "price_cents": 17999,
    "prices": {
-    "loose": 4000,
-    "cib": 18000
+    "loose": 3999,
+    "cib": 17999
    },
-   "pct_1d": 0,
+   "pct_1d": -0.01,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    18000,
     18000,
     18000,
     18000,
@@ -472,6 +453,7 @@
     7500,
     7500,
     7500,
+    7500,
     7500
    ]
   },
@@ -484,7 +466,7 @@
    "prices": {
     "loose": 4899
    },
-   "pct_1d": -1.92,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
@@ -492,7 +474,29 @@
     4995,
     4995,
     4995,
+    4995,
     4995
+   ]
+  },
+  {
+   "id": "harvest-moon-gb",
+   "title": "Harvest Moon GB",
+   "platform": "gb",
+   "headline_condition": "loose",
+   "price_cents": 3760,
+   "prices": {
+    "loose": 3760
+   },
+   "pct_1d": 24.3,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    3500,
+    3500,
+    3500,
+    3263,
+    3500
    ]
   },
   {
@@ -512,6 +516,7 @@
     28799,
     28799,
     28799,
+    28799,
     28799
    ]
   },
@@ -520,15 +525,16 @@
    "title": "Kirby's Dream Land 2",
    "platform": "gb",
    "headline_condition": "loose",
-   "price_cents": 4050,
+   "price_cents": 4099,
    "prices": {
-    "loose": 4050
+    "loose": 4099
    },
-   "pct_1d": 1.25,
+   "pct_1d": 1.21,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    4000,
     4000,
     4000,
     4000,
@@ -540,16 +546,17 @@
    "title": "Kirby's Dream Land",
    "platform": "gb",
    "headline_condition": "cib",
-   "price_cents": 12505,
+   "price_cents": 12510,
    "prices": {
     "loose": 2699,
-    "cib": 12505
+    "cib": 12510
    },
-   "pct_1d": 0,
+   "pct_1d": 0.04,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    12505,
     12505,
     12505,
     12505,
@@ -557,65 +564,89 @@
    ]
   },
   {
-   "id": "kirbys-pinball-land-gb",
-   "title": "Kirby's Pinball Land",
+   "id": "super-mario-land-gb",
+   "title": "Super Mario Land",
    "platform": "gb",
    "headline_condition": "cib",
-   "price_cents": 9999,
+   "price_cents": 10595,
    "prices": {
-    "loose": 1599,
-    "cib": 9999
+    "loose": 2249,
+    "cib": 10595
    },
-   "pct_1d": 0,
+   "pct_1d": 27.7,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    9999,
-    9999,
-    9999,
-    9999
+    8297,
+    8297,
+    8297,
+    8297,
+    8297
    ]
   },
   {
-   "id": "super-mario-land-2-gb",
-   "title": "Super Mario Land 2",
+   "id": "tmnt-fall-of-the-foot-clan-gb",
+   "title": "Teenage Mutant Ninja Turtles: Fall of the Foot Clan",
    "platform": "gb",
    "headline_condition": "cib",
-   "price_cents": 10000,
+   "price_cents": 12200,
    "prices": {
-    "loose": 2485,
-    "cib": 10000
+    "loose": 1500,
+    "cib": 12200
    },
-   "pct_1d": 5.27,
+   "pct_1d": 3.85,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    9499,
-    9499,
-    9499,
-    9499
+    11748,
+    11748,
+    11748,
+    11748,
+    11748
    ]
   },
   {
-   "id": "kid-icarus-of-myths-and-monsters-gb",
-   "title": "Kid Icarus: Of Myths and Monsters",
+   "id": "contra-the-alien-wars-gb",
+   "title": "Contra: The Alien Wars",
    "platform": "gb",
    "headline_condition": "loose",
-   "price_cents": 2799,
+   "price_cents": 4512,
    "prices": {
-    "loose": 2799
+    "loose": 4512
    },
-   "pct_1d": 1.82,
-   "pct_7d": -0.04,
+   "pct_1d": 0,
+   "pct_7d": -1.16,
    "pct_30d": null,
-   "score": -0.04,
+   "score": -1.16,
    "spark": [
-    2800,
-    2800,
-    2799,
-    2799
+    4750,
+    4750,
+    4750,
+    4723,
+    4695
+   ]
+  },
+  {
+   "id": "pokemon-blue-gb",
+   "title": "Pokémon Blue",
+   "platform": "gb",
+   "headline_condition": "cib",
+   "price_cents": 37500,
+   "prices": {
+    "loose": 6499,
+    "cib": 37500
+   },
+   "pct_1d": 7.14,
+   "pct_7d": -3.12,
+   "pct_30d": null,
+   "score": -3.12,
+   "spark": [
+    39999,
+    39999,
+    39999,
+    38750
    ]
   },
   {
@@ -629,34 +660,37 @@
     "cib": 10700
    },
    "pct_1d": 0,
-   "pct_7d": -2.23,
+   "pct_7d": -4.46,
    "pct_30d": null,
-   "score": -2.23,
+   "score": -4.46,
    "spark": [
     11200,
     11200,
     11200,
-    10950
+    10950,
+    10700
    ]
   },
   {
-   "id": "harvest-moon-gb",
-   "title": "Harvest Moon GB",
+   "id": "pokemon-yellow-gb",
+   "title": "Pokémon Yellow",
    "platform": "gb",
-   "headline_condition": "loose",
-   "price_cents": 3025,
+   "headline_condition": "cib",
+   "price_cents": 39995,
    "prices": {
-    "loose": 3025
+    "loose": 7560,
+    "cib": 39995
    },
-   "pct_1d": 0,
-   "pct_7d": -6.77,
+   "pct_1d": 5.26,
+   "pct_7d": -5.01,
    "pct_30d": null,
-   "score": -6.77,
+   "score": -5.01,
    "spark": [
-    3500,
-    3500,
-    3500,
-    3263
+    39999,
+    38998,
+    37997,
+    37997,
+    37997
    ]
   },
   {
@@ -666,7 +700,7 @@
    "headline_condition": "cib",
    "price_cents": 5499,
    "prices": {
-    "loose": 1099,
+    "loose": 1095,
     "cib": 5499
    },
    "pct_1d": 0,
@@ -677,7 +711,28 @@
     5995,
     5747,
     5499,
+    5499,
     5499
+   ]
+  },
+  {
+   "id": "bionic-commando-gb",
+   "title": "Bionic Commando",
+   "platform": "gb",
+   "headline_condition": "loose",
+   "price_cents": 3300,
+   "prices": {
+    "loose": 3300
+   },
+   "pct_1d": 0,
+   "pct_7d": -15.26,
+   "pct_30d": null,
+   "score": -15.26,
+   "spark": [
+    4750,
+    5125,
+    4750,
+    4025
    ]
   }
  ]
