@@ -9,7 +9,7 @@
    "headline_condition": "cib",
    "price_cents": 8999,
    "prices": {
-    "loose": 1556,
+    "loose": 1500,
     "cib": 8999,
     "new": 6149
    },
@@ -33,13 +33,13 @@
    "title": "The Legend of Zelda: A Link to the Past & Four Swords",
    "platform": "gba",
    "headline_condition": "cib",
-   "price_cents": 10999,
+   "price_cents": 11247,
    "prices": {
-    "loose": 3995,
-    "cib": 10999,
+    "loose": 3880,
+    "cib": 11247,
     "new": 54999
    },
-   "pct_1d": 0,
+   "pct_1d": 2.25,
    "pct_7d": 4.75,
    "pct_30d": null,
    "score": 4.75,
@@ -111,7 +111,7 @@
    "headline_condition": "cib",
    "price_cents": 14998,
    "prices": {
-    "loose": 5178,
+    "loose": 5000,
     "cib": 14998,
     "new": 24999
    },
@@ -163,7 +163,7 @@
    "headline_condition": "cib",
    "price_cents": 9900,
    "prices": {
-    "loose": 4750,
+    "loose": 4500,
     "cib": 9900,
     "new": 13995
    },
@@ -180,31 +180,6 @@
     9495,
     9495,
     9900
-   ]
-  },
-  {
-   "id": "pokemon-emerald-gba",
-   "title": "Pokémon Emerald",
-   "platform": "gba",
-   "headline_condition": "cib",
-   "price_cents": 81250,
-   "prices": {
-    "loose": 26995,
-    "cib": 81250
-   },
-   "pct_1d": 3.18,
-   "pct_7d": 0.96,
-   "pct_30d": null,
-   "score": 0.96,
-   "spark": [
-    78000,
-    78000,
-    78000,
-    78500,
-    78000,
-    78000,
-    78748,
-    78748
    ]
   },
   {
@@ -238,16 +213,16 @@
    "title": "The Legend of Zelda: The Minish Cap",
    "platform": "gba",
    "headline_condition": "cib",
-   "price_cents": 29995,
+   "price_cents": 29997,
    "prices": {
-    "loose": 1449,
-    "cib": 29995,
+    "loose": 1550,
+    "cib": 29997,
     "new": 72500
    },
-   "pct_1d": 0,
-   "pct_7d": 0.83,
+   "pct_1d": 0.01,
+   "pct_7d": 0.84,
    "pct_30d": null,
-   "score": 0.83,
+   "score": 0.84,
    "spark": [
     29748,
     29748,
@@ -256,7 +231,7 @@
     29748,
     29995,
     29995,
-    29995
+    29997
    ]
   },
   {
@@ -268,7 +243,7 @@
    "prices": {
     "loose": 7999,
     "cib": 24247,
-    "new": 54949
+    "new": 59999
    },
    "pct_1d": 0,
    "pct_7d": 0.82,
@@ -290,12 +265,12 @@
    "title": "Golden Sun",
    "platform": "gba",
    "headline_condition": "cib",
-   "price_cents": 13599,
+   "price_cents": 13550,
    "prices": {
-    "loose": 3597,
-    "cib": 13599
+    "loose": 3548,
+    "cib": 13550
    },
-   "pct_1d": 0,
+   "pct_1d": -0.36,
    "pct_7d": 0.73,
    "pct_30d": null,
    "score": 0.73,
@@ -341,9 +316,9 @@
    "headline_condition": "cib",
    "price_cents": 5500,
    "prices": {
-    "loose": 2276,
+    "loose": 2249,
     "cib": 5500,
-    "new": 12999
+    "new": 12499
    },
    "pct_1d": 0,
    "pct_7d": 0.02,
@@ -417,7 +392,7 @@
    "headline_condition": "cib",
    "price_cents": 17500,
    "prices": {
-    "loose": 5524,
+    "loose": 5500,
     "cib": 17500
    },
    "pct_1d": 0,
@@ -492,7 +467,7 @@
    "headline_condition": "cib",
    "price_cents": 8000,
    "prices": {
-    "loose": 2925,
+    "loose": 2950,
     "cib": 8000,
     "new": 14995
    },
@@ -544,7 +519,7 @@
    "headline_condition": "cib",
    "price_cents": 16499,
    "prices": {
-    "loose": 8999,
+    "loose": 8995,
     "cib": 16499,
     "new": 29500
    },
@@ -570,7 +545,7 @@
    "headline_condition": "cib",
    "price_cents": 31500,
    "prices": {
-    "loose": 2897,
+    "loose": 3897,
     "cib": 31500
    },
    "pct_1d": 0,
@@ -637,6 +612,30 @@
    ]
   },
   {
+   "id": "mega-man-zero-3-gba",
+   "title": "Mega Man Zero 3",
+   "platform": "gba",
+   "headline_condition": "loose",
+   "price_cents": 3999,
+   "prices": {
+    "loose": 3999
+   },
+   "pct_1d": 0,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    3999,
+    3999,
+    3999,
+    3999,
+    3999,
+    3999,
+    3999,
+    3999
+   ]
+  },
+  {
    "id": "mother-3-gba",
    "title": "Mother 3",
    "platform": "gba",
@@ -685,28 +684,27 @@
    ]
   },
   {
-   "id": "klonoa-empire-of-dreams-gba",
-   "title": "Klonoa: Empire of Dreams",
+   "id": "metal-slug-advance-gba",
+   "title": "Metal Slug Advance",
    "platform": "gba",
    "headline_condition": "loose",
-   "price_cents": 4999,
+   "price_cents": 9400,
    "prices": {
-    "loose": 4999,
-    "new": 24997
+    "loose": 9400
    },
-   "pct_1d": 0.04,
-   "pct_7d": -0.04,
+   "pct_1d": 4.46,
+   "pct_7d": -0.07,
    "pct_30d": null,
-   "score": -0.04,
+   "score": -0.07,
    "spark": [
-    4999,
-    4998,
-    4997,
-    4997,
-    4997,
-    4997,
-    4997,
-    4997
+    2999,
+    2749,
+    2999,
+    2998,
+    2997,
+    2997,
+    2997,
+    2997
    ]
   },
   {
@@ -739,12 +737,12 @@
    "title": "Super Mario Advance 4: Super Mario Bros. 3",
    "platform": "gba",
    "headline_condition": "cib",
-   "price_cents": 9995,
+   "price_cents": 9998,
    "prices": {
     "loose": 1999,
-    "cib": 9995
+    "cib": 9998
    },
-   "pct_1d": 2.53,
+   "pct_1d": 2.56,
    "pct_7d": -2.47,
    "pct_30d": null,
    "score": -2.47,
@@ -841,12 +839,12 @@
    "title": "Pokémon Sapphire",
    "platform": "gba",
    "headline_condition": "cib",
-   "price_cents": 39999,
+   "price_cents": 42250,
    "prices": {
     "loose": 11000,
-    "cib": 39999
+    "cib": 42250
    },
-   "pct_1d": 9.59,
+   "pct_1d": 15.75,
    "pct_7d": -8.75,
    "pct_30d": null,
    "score": -8.75,

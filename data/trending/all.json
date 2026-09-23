@@ -10,7 +10,7 @@
    "price_cents": 14500,
    "prices": {
     "loose": 14500,
-    "new": 30000
+    "new": 35000
    },
    "pct_1d": 0,
    "pct_7d": 61.11,
@@ -42,7 +42,7 @@
    "headline_condition": "cib",
    "price_cents": 8999,
    "prices": {
-    "loose": 1556,
+    "loose": 1500,
     "cib": 8999,
     "new": 6149
    },
@@ -98,13 +98,13 @@
    "title": "Conker's Bad Fur Day",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 64999,
+   "price_cents": 54444,
    "prices": {
-    "loose": 19097,
-    "cib": 64999,
+    "loose": 18999,
+    "cib": 54444,
     "new": 1064950
    },
-   "pct_1d": 0,
+   "pct_1d": -16.24,
    "pct_7d": 44.45,
    "pct_30d": null,
    "score": 44.45,
@@ -133,13 +133,13 @@
    "title": "Ratchet & Clank",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 4000,
+   "price_cents": 2999,
    "prices": {
-    "loose": 1498,
-    "cib": 4000,
+    "loose": 1499,
+    "cib": 2999,
     "new": 10499
    },
-   "pct_1d": 14.29,
+   "pct_1d": -14.31,
    "pct_7d": 33.33,
    "pct_30d": null,
    "score": 33.33,
@@ -167,13 +167,13 @@
    "title": "Daxter",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 2499,
+   "price_cents": 2349,
    "prices": {
     "loose": 1000,
-    "cib": 2499,
+    "cib": 2349,
     "new": 3300
    },
-   "pct_1d": 0,
+   "pct_1d": -6,
    "pct_7d": 32.52,
    "pct_30d": null,
    "score": 32.52,
@@ -220,31 +220,6 @@
     7200,
     8449,
     8449
-   ]
-  },
-  {
-   "id": "super-mario-land-gb",
-   "title": "Super Mario Land",
-   "platform": "gb",
-   "headline_condition": "cib",
-   "price_cents": 10595,
-   "prices": {
-    "loose": 2199,
-    "cib": 10595
-   },
-   "pct_1d": 27.7,
-   "pct_7d": 27.7,
-   "pct_30d": null,
-   "score": 27.7,
-   "spark": [
-    8297,
-    8297,
-    8297,
-    8297,
-    8297,
-    10595,
-    10595,
-    10595
    ]
   },
   {
@@ -318,12 +293,12 @@
    "title": "Star Wars Episode I: Racer",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 3900,
+   "price_cents": 3950,
    "prices": {
-    "loose": 1999,
-    "cib": 3900
+    "loose": 1979,
+    "cib": 3950
    },
-   "pct_1d": 5.41,
+   "pct_1d": 6.76,
    "pct_7d": 23.27,
    "pct_30d": null,
    "score": 23.27,
@@ -351,12 +326,12 @@
    "title": "Donkey Kong",
    "platform": "gb",
    "headline_condition": "cib",
-   "price_cents": 12250,
+   "price_cents": 10000,
    "prices": {
-    "loose": 2975,
-    "cib": 12250
+    "loose": 2846,
+    "cib": 10000
    },
-   "pct_1d": -15.51,
+   "pct_1d": -31.03,
    "pct_7d": 22.5,
    "pct_30d": null,
    "score": 22.5,
@@ -496,12 +471,12 @@
    "title": "Bully",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 5999,
+   "price_cents": 5994,
    "prices": {
     "loose": 1749,
-    "cib": 5999
+    "cib": 5994
    },
-   "pct_1d": 0.18,
+   "pct_1d": 0.1,
    "pct_7d": 19.76,
    "pct_30d": null,
    "score": 19.76,
@@ -579,12 +554,12 @@
    "title": "The Sly Collection",
    "platform": "vita",
    "headline_condition": "loose",
-   "price_cents": 6499,
+   "price_cents": 5999,
    "prices": {
-    "loose": 6499,
+    "loose": 5999,
     "new": 8431
    },
-   "pct_1d": 0,
+   "pct_1d": -7.69,
    "pct_7d": 18.16,
    "pct_30d": null,
    "score": 18.16,
@@ -609,91 +584,106 @@
    ]
   },
   {
-   "id": "shadow-hearts-from-the-new-world-ps2",
-   "title": "Shadow Hearts: From the New World",
+   "id": "tearaway-vita",
+   "title": "Tearaway",
+   "platform": "vita",
+   "headline_condition": "loose",
+   "price_cents": 4199,
+   "prices": {
+    "loose": 4199,
+    "new": 5561
+   },
+   "pct_1d": 2.41,
+   "pct_7d": 17.18,
+   "pct_30d": null,
+   "score": 17.18,
+   "spark": [
+    3500,
+    3500,
+    3500,
+    3500,
+    3500,
+    3500,
+    3499,
+    3499,
+    3499,
+    3499,
+    3750,
+    3750,
+    3750,
+    4100,
+    4100,
+    4100,
+    4100
+   ]
+  },
+  {
+   "id": "metal-gear-solid-3-subsistence-ps2",
+   "title": "Metal Gear Solid 3: Subsistence",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 12498,
+   "price_cents": 6495,
    "prices": {
-    "cib": 12498
+    "loose": 2099,
+    "cib": 6495
    },
-   "pct_1d": 6.37,
-   "pct_7d": 14.63,
+   "pct_1d": 8.3,
+   "pct_7d": 8.27,
    "pct_30d": null,
-   "score": 14.63,
+   "score": 8.27,
    "spark": [
-    10250,
-    10250,
-    10250,
-    11000,
-    11750
+    5999,
+    5999,
+    5999,
+    5999,
+    5999,
+    5999,
+    5999,
+    5999,
+    5999,
+    5999,
+    6495,
+    6498,
+    6498,
+    6498,
+    6498,
+    6495,
+    6495
    ]
   },
   {
-   "id": "mario-party-7-gamecube",
-   "title": "Mario Party 7",
-   "platform": "gamecube",
+   "id": "toy-commander-dreamcast",
+   "title": "Toy Commander",
+   "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 6499,
+   "price_cents": 3249,
    "prices": {
-    "loose": 4298,
-    "cib": 6499
+    "loose": 1875,
+    "cib": 3249,
+    "new": 5994
    },
-   "pct_1d": 8.32,
-   "pct_7d": 8.32,
+   "pct_1d": 8.34,
+   "pct_7d": 4.98,
    "pct_30d": null,
-   "score": 8.32,
+   "score": 4.98,
    "spark": [
-    6450,
-    6363,
-    6275,
-    6200,
-    6250,
-    6125,
-    6000,
-    6000,
-    6000,
-    6000,
-    6000,
-    6000,
-    6000,
-    6000,
-    6000,
-    6499
-   ]
-  },
-  {
-   "id": "resident-evil-zero-gamecube",
-   "title": "Resident Evil Zero",
-   "platform": "gamecube",
-   "headline_condition": "cib",
-   "price_cents": 3349,
-   "prices": {
-    "loose": 2339,
-    "cib": 3349
-   },
-   "pct_1d": 6.32,
-   "pct_7d": 5,
-   "pct_30d": null,
-   "score": 5,
-   "spark": [
-    3000,
-    3000,
-    3000,
-    3000,
-    3000,
-    3000,
-    3000,
-    3000,
-    3000,
-    3000,
-    3000,
-    3000,
     2999,
     2999,
     2999,
-    3000,
-    3150
+    2999,
+    2999,
+    2999,
+    3047,
+    3095,
+    3095,
+    3095,
+    2999,
+    2999,
+    2999,
+    3249,
+    3249,
+    3249,
+    3249
    ]
   },
   {
@@ -730,46 +720,13 @@
    ]
   },
   {
-   "id": "ogre-battle-64-n64",
-   "title": "Ogre Battle 64: Person of Lordly Caliber",
-   "platform": "n64",
-   "headline_condition": "loose",
-   "price_cents": 22222,
-   "prices": {
-    "loose": 22222
-   },
-   "pct_1d": 8.41,
-   "pct_7d": 3.69,
-   "pct_30d": null,
-   "score": 3.69,
-   "spark": [
-    20997,
-    20748,
-    20499,
-    20499,
-    20499,
-    20499,
-    20499,
-    20249,
-    20249,
-    20249,
-    20249,
-    20249,
-    20499,
-    20499,
-    20499,
-    20499,
-    20997
-   ]
-  },
-  {
    "id": "pikmin-gamecube",
    "title": "Pikmin",
    "platform": "gamecube",
    "headline_condition": "cib",
    "price_cents": 5924,
    "prices": {
-    "loose": 3800,
+    "loose": 3750,
     "cib": 5924
    },
    "pct_1d": 7.71,
@@ -802,7 +759,7 @@
    "headline_condition": "cib",
    "price_cents": 2149,
    "prices": {
-    "loose": 1541,
+    "loose": 1500,
     "cib": 2149,
     "new": 4195
    },
@@ -834,7 +791,7 @@
    "headline_condition": "cib",
    "price_cents": 17999,
    "prices": {
-    "loose": 5980,
+    "loose": 5990,
     "cib": 17999
    },
    "pct_1d": 8.35,
@@ -862,28 +819,38 @@
    ]
   },
   {
-   "id": "metroid-ii-return-of-samus-gb",
-   "title": "Metroid II: Return of Samus",
-   "platform": "gb",
+   "id": "metal-gear-solid-peace-walker-psp",
+   "title": "Metal Gear Solid: Peace Walker",
+   "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 28999,
+   "price_cents": 6988,
    "prices": {
-    "loose": 4000,
-    "cib": 28999
+    "loose": 3599,
+    "cib": 6988,
+    "new": 10000
    },
-   "pct_1d": 9.43,
+   "pct_1d": 7.51,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    27749,
-    28374,
-    27749,
-    27749,
-    27749,
-    27749,
-    27749,
-    27749
+    6994,
+    6994,
+    6994,
+    6994,
+    6994,
+    6500,
+    6500,
+    6500,
+    6500,
+    6500,
+    6988,
+    6988,
+    6994,
+    6994,
+    6988,
+    6500,
+    6500
    ]
   },
   {
@@ -945,16 +912,40 @@
    ]
   },
   {
+   "id": "mario-golf-gbc",
+   "title": "Mario Golf",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 3440,
+   "prices": {
+    "loose": 3440
+   },
+   "pct_1d": 7.5,
+   "pct_7d": -5.14,
+   "pct_30d": null,
+   "score": -5.14,
+   "spark": [
+    3500,
+    3499,
+    3498,
+    3498,
+    3498,
+    3498,
+    3320,
+    3320
+   ]
+  },
+  {
    "id": "resident-evil-code-veronica-x-ps2",
    "title": "Resident Evil Code: Veronica X",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 4700,
+   "price_cents": 4900,
    "prices": {
-    "loose": 1982,
-    "cib": 4700
+    "loose": 1884,
+    "cib": 4900
    },
-   "pct_1d": 17.53,
+   "pct_1d": 22.53,
    "pct_7d": -5.91,
    "pct_30d": null,
    "score": -5.91,
@@ -1015,12 +1006,12 @@
    "title": "Shinobi",
    "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 4199,
+   "price_cents": 4499,
    "prices": {
-    "loose": 1329,
-    "cib": 4199
+    "loose": 1365,
+    "cib": 4499
    },
-   "pct_1d": 7.69,
+   "pct_1d": 15.39,
    "pct_7d": -6.67,
    "pct_30d": null,
    "score": -6.67,
@@ -1044,37 +1035,36 @@
    ]
   },
   {
-   "id": "sonic-adventure-2-dreamcast",
-   "title": "Sonic Adventure 2",
-   "platform": "dreamcast",
+   "id": "red-dead-revolver-ps2",
+   "title": "Red Dead Revolver",
+   "platform": "ps2",
    "headline_condition": "cib",
-   "price_cents": 22500,
+   "price_cents": 2799,
    "prices": {
-    "loose": 13000,
-    "cib": 22500
+    "loose": 1500,
+    "cib": 2799
    },
-   "pct_1d": 14.8,
-   "pct_7d": -7.39,
+   "pct_1d": 11.96,
+   "pct_7d": -6.72,
    "pct_30d": null,
-   "score": -7.39,
+   "score": -6.72,
    "spark": [
-    23250,
-    22873,
-    22495,
-    22748,
-    23000,
-    22500,
-    22500,
-    23000,
-    23000,
-    23000,
-    23500,
-    23500,
-    23000,
-    22500,
-    21300,
-    21300,
-    21300
+    2800,
+    2740,
+    2680,
+    2740,
+    2800,
+    2800,
+    2800,
+    2800,
+    2680,
+    2680,
+    2594,
+    2594,
+    2500,
+    2500,
+    2500,
+    2500
    ]
   },
   {
@@ -1113,16 +1103,83 @@
    ]
   },
   {
+   "id": "sonic-adventure-2-dreamcast",
+   "title": "Sonic Adventure 2",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 21050,
+   "prices": {
+    "loose": 13000,
+    "cib": 21050
+   },
+   "pct_1d": 7.4,
+   "pct_7d": -8.48,
+   "pct_30d": null,
+   "score": -8.48,
+   "spark": [
+    23250,
+    22873,
+    22495,
+    22748,
+    23000,
+    22500,
+    22500,
+    23000,
+    23000,
+    23000,
+    23500,
+    23500,
+    23000,
+    22500,
+    21300,
+    21300,
+    21050
+   ]
+  },
+  {
+   "id": "littlebigplanet-vita",
+   "title": "LittleBigPlanet PS Vita",
+   "platform": "vita",
+   "headline_condition": "cib",
+   "price_cents": 3498,
+   "prices": {
+    "loose": 2300,
+    "cib": 3498,
+    "new": 5050
+   },
+   "pct_1d": 9.35,
+   "pct_7d": -8.55,
+   "pct_30d": null,
+   "score": -8.55,
+   "spark": [
+    3498,
+    3498,
+    3498,
+    3498,
+    3498,
+    3498,
+    3498,
+    3498,
+    3498,
+    3498,
+    3498,
+    3498,
+    3498,
+    3199,
+    3199
+   ]
+  },
+  {
    "id": "pokemon-sapphire-gba",
    "title": "Pokémon Sapphire",
    "platform": "gba",
    "headline_condition": "cib",
-   "price_cents": 39999,
+   "price_cents": 42250,
    "prices": {
     "loose": 11000,
-    "cib": 39999
+    "cib": 42250
    },
-   "pct_1d": 9.59,
+   "pct_1d": 15.75,
    "pct_7d": -8.75,
    "pct_30d": null,
    "score": -8.75,
@@ -1144,7 +1201,7 @@
    "headline_condition": "cib",
    "price_cents": 4399,
    "prices": {
-    "loose": 2548,
+    "loose": 2500,
     "cib": 4399
    },
    "pct_1d": 7.29,
@@ -1168,6 +1225,41 @@
     4199,
     4199,
     4199
+   ]
+  },
+  {
+   "id": "space-channel-5-dreamcast",
+   "title": "Space Channel 5",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 5850,
+   "prices": {
+    "loose": 2450,
+    "cib": 5850,
+    "new": 9750
+   },
+   "pct_1d": 21.88,
+   "pct_7d": -17.95,
+   "pct_30d": null,
+   "score": -17.95,
+   "spark": [
+    4650,
+    5250,
+    5850,
+    5850,
+    5850,
+    5850,
+    5850,
+    5850,
+    5850,
+    5850,
+    4800,
+    4800,
+    4800,
+    4800,
+    4800,
+    4800,
+    4800
    ]
   }
  ]
