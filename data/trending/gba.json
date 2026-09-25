@@ -1,47 +1,20 @@
 {
  "board": "gba",
- "as_of": "2026-09-24",
+ "as_of": "2026-09-25",
  "entries": [
-  {
-   "id": "advance-wars-gba",
-   "title": "Advance Wars",
-   "platform": "gba",
-   "headline_condition": "cib",
-   "price_cents": 9399,
-   "prices": {
-    "loose": 1498,
-    "cib": 9399,
-    "new": 6149
-   },
-   "pct_1d": 4.44,
-   "pct_7d": 30.93,
-   "pct_30d": null,
-   "score": 30.93,
-   "spark": [
-    5995,
-    6873,
-    6500,
-    7125,
-    7750,
-    7750,
-    8999,
-    8999,
-    8999
-   ]
-  },
   {
    "id": "metal-slug-advance-gba",
    "title": "Metal Slug Advance",
    "platform": "gba",
    "headline_condition": "loose",
-   "price_cents": 2995,
+   "price_cents": 9800,
    "prices": {
-    "loose": 2995
+    "loose": 9800
    },
-   "pct_1d": -68.14,
-   "pct_7d": 9.02,
+   "pct_1d": 227.21,
+   "pct_7d": 200.07,
    "pct_30d": null,
-   "score": 9.02,
+   "score": 200.07,
    "spark": [
     2999,
     2749,
@@ -51,32 +24,89 @@
     2997,
     2997,
     2997,
-    2997
+    2997,
+    8999
    ]
   },
   {
-   "id": "harvest-moon-friends-of-mineral-town-gba",
-   "title": "Harvest Moon: Friends of Mineral Town",
+   "id": "advance-wars-gba",
+   "title": "Advance Wars",
+   "platform": "gba",
+   "headline_condition": "cib",
+   "price_cents": 7750,
+   "prices": {
+    "loose": 1496,
+    "cib": 7750,
+    "new": 6149
+   },
+   "pct_1d": -17.54,
+   "pct_7d": 38.45,
+   "pct_30d": null,
+   "score": 38.45,
+   "spark": [
+    5995,
+    6873,
+    6500,
+    7125,
+    7750,
+    7750,
+    8999,
+    8999,
+    8999,
+    8999
+   ]
+  },
+  {
+   "id": "pokemon-sapphire-gba",
+   "title": "Pokémon Sapphire",
+   "platform": "gba",
+   "headline_condition": "cib",
+   "price_cents": 47500,
+   "prices": {
+    "loose": 10999,
+    "cib": 47500
+   },
+   "pct_1d": 6.74,
+   "pct_7d": 15.75,
+   "pct_30d": null,
+   "score": 15.75,
+   "spark": [
+    39999,
+    36625,
+    36500,
+    36500,
+    36500,
+    36500,
+    36500,
+    36500,
+    36500,
+    42250
+   ]
+  },
+  {
+   "id": "mother-3-gba",
+   "title": "Mother 3",
    "platform": "gba",
    "headline_condition": "loose",
-   "price_cents": 4299,
+   "price_cents": 7099,
    "prices": {
-    "loose": 4299
+    "loose": 7099
    },
-   "pct_1d": 2.97,
-   "pct_7d": 5.03,
+   "pct_1d": 0,
+   "pct_7d": 13.58,
    "pct_30d": null,
-   "score": 5.03,
+   "score": 13.58,
    "spark": [
-    4000,
-    3975,
-    4000,
-    4000,
-    4000,
-    4000,
-    4000,
-    4025,
-    4175
+    6250,
+    6250,
+    6250,
+    6250,
+    6250,
+    6250,
+    6250,
+    6250,
+    6250,
+    7099
    ]
   },
   {
@@ -86,14 +116,14 @@
    "headline_condition": "cib",
    "price_cents": 18000,
    "prices": {
-    "loose": 5600,
+    "loose": 5500,
     "cib": 18000,
     "new": 60000
    },
    "pct_1d": 0,
-   "pct_7d": 4.85,
+   "pct_7d": 6.58,
    "pct_30d": null,
-   "score": 4.85,
+   "score": 6.58,
    "spark": [
     16889,
     17167,
@@ -103,7 +133,62 @@
     17445,
     17445,
     17445,
+    18000,
     18000
+   ]
+  },
+  {
+   "id": "harvest-moon-friends-of-mineral-town-gba",
+   "title": "Harvest Moon: Friends of Mineral Town",
+   "platform": "gba",
+   "headline_condition": "loose",
+   "price_cents": 4399,
+   "prices": {
+    "loose": 4399
+   },
+   "pct_1d": 2.33,
+   "pct_7d": 4.38,
+   "pct_30d": null,
+   "score": 4.38,
+   "spark": [
+    4000,
+    3975,
+    4000,
+    4000,
+    4000,
+    4000,
+    4000,
+    4025,
+    4175,
+    4175
+   ]
+  },
+  {
+   "id": "mario-luigi-superstar-saga-gba",
+   "title": "Mario & Luigi: Superstar Saga",
+   "platform": "gba",
+   "headline_condition": "cib",
+   "price_cents": 12700,
+   "prices": {
+    "loose": 2998,
+    "cib": 12700,
+    "new": 25500
+   },
+   "pct_1d": 3.67,
+   "pct_7d": 3.82,
+   "pct_30d": null,
+   "score": 3.82,
+   "spark": [
+    11900,
+    11850,
+    11799,
+    11799,
+    11799,
+    11799,
+    11900,
+    12000,
+    12250,
+    12250
    ]
   },
   {
@@ -115,7 +200,7 @@
    "prices": {
     "loose": 5497
    },
-   "pct_1d": -0.04,
+   "pct_1d": 0,
    "pct_7d": 3.77,
    "pct_30d": null,
    "score": 3.77,
@@ -128,34 +213,8 @@
     5448,
     5498,
     5499,
+    5499,
     5499
-   ]
-  },
-  {
-   "id": "mario-luigi-superstar-saga-gba",
-   "title": "Mario & Luigi: Superstar Saga",
-   "platform": "gba",
-   "headline_condition": "cib",
-   "price_cents": 12250,
-   "prices": {
-    "loose": 2999,
-    "cib": 12250,
-    "new": 25500
-   },
-   "pct_1d": 0,
-   "pct_7d": 3.38,
-   "pct_30d": null,
-   "score": 3.38,
-   "spark": [
-    11900,
-    11850,
-    11799,
-    11799,
-    11799,
-    11799,
-    11900,
-    12000,
-    12250
    ]
   },
   {
@@ -182,6 +241,7 @@
     14998,
     14998,
     14998,
+    14998,
     14998
    ]
   },
@@ -192,14 +252,14 @@
    "headline_condition": "cib",
    "price_cents": 11247,
    "prices": {
-    "loose": 3790,
+    "loose": 3695,
     "cib": 11247,
     "new": 54999
    },
    "pct_1d": 0,
-   "pct_7d": 2.32,
+   "pct_7d": 2.25,
    "pct_30d": null,
-   "score": 2.32,
+   "score": 2.25,
    "spark": [
     10500,
     10750,
@@ -209,7 +269,8 @@
     10999,
     10999,
     10999,
-    10999
+    10999,
+    11247
    ]
   },
   {
@@ -236,34 +297,8 @@
     9495,
     9495,
     9900,
+    9900,
     9900
-   ]
-  },
-  {
-   "id": "warioware-twisted-gba",
-   "title": "WarioWare: Twisted!",
-   "platform": "gba",
-   "headline_condition": "cib",
-   "price_cents": 16999,
-   "prices": {
-    "loose": 9610,
-    "cib": 16999,
-    "new": 57499
-   },
-   "pct_1d": 0,
-   "pct_7d": 1.49,
-   "pct_30d": null,
-   "score": 1.49,
-   "spark": [
-    16499,
-    16749,
-    16999,
-    16999,
-    16999,
-    16999,
-    16999,
-    16999,
-    16999
    ]
   },
   {
@@ -273,11 +308,11 @@
    "headline_condition": "cib",
    "price_cents": 29999,
    "prices": {
-    "loose": 1632,
+    "loose": 1719,
     "cib": 29999,
     "new": 65000
    },
-   "pct_1d": 0.01,
+   "pct_1d": 0,
    "pct_7d": 0.84,
    "pct_30d": null,
    "score": 0.84,
@@ -290,6 +325,7 @@
     29995,
     29995,
     29997,
+    29999,
     29999
    ]
   },
@@ -317,6 +353,7 @@
     24050,
     24247,
     24247,
+    24247,
     24247
    ]
   },
@@ -327,13 +364,13 @@
    "headline_condition": "cib",
    "price_cents": 13550,
    "prices": {
-    "loose": 3525,
+    "loose": 3573,
     "cib": 13550
    },
    "pct_1d": 0,
-   "pct_7d": 0.73,
+   "pct_7d": 0.37,
    "pct_30d": null,
-   "score": 0.73,
+   "score": 0.37,
    "spark": [
     13500,
     13500,
@@ -343,34 +380,8 @@
     13550,
     13599,
     13599,
-    13599
-   ]
-  },
-  {
-   "id": "final-fantasy-i-ii-dawn-of-souls-gba",
-   "title": "Final Fantasy I & II: Dawn of Souls",
-   "platform": "gba",
-   "headline_condition": "cib",
-   "price_cents": 5499,
-   "prices": {
-    "loose": 2273,
-    "cib": 5499,
-    "new": 12499
-   },
-   "pct_1d": -0.02,
-   "pct_7d": 0.02,
-   "pct_30d": null,
-   "score": 0.02,
-   "spark": [
-    5499,
-    5499,
-    5499,
-    5500,
-    5500,
-    5500,
-    5500,
-    5500,
-    5500
+    13599,
+    13550
    ]
   },
   {
@@ -389,6 +400,7 @@
    "pct_30d": null,
    "score": 0,
    "spark": [
+    8455,
     8455,
     8455,
     8455,
@@ -422,7 +434,36 @@
     23000,
     23000,
     23000,
+    23000,
     23000
+   ]
+  },
+  {
+   "id": "castlevania-circle-of-the-moon-gba",
+   "title": "Castlevania: Circle of the Moon",
+   "platform": "gba",
+   "headline_condition": "cib",
+   "price_cents": 9500,
+   "prices": {
+    "loose": 2500,
+    "cib": 9500,
+    "new": 29900
+   },
+   "pct_1d": 0,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    9999,
+    9750,
+    9500,
+    9500,
+    9500,
+    9500,
+    9500,
+    9500,
+    9500,
+    9500
    ]
   },
   {
@@ -440,6 +481,7 @@
    "pct_30d": null,
    "score": 0,
    "spark": [
+    17500,
     17500,
     17500,
     17500,
@@ -474,6 +516,7 @@
     2500,
     2500,
     2500,
+    2500,
     2500
    ]
   },
@@ -484,7 +527,7 @@
    "headline_condition": "cib",
    "price_cents": 19500,
    "prices": {
-    "loose": 12500,
+    "loose": 12250,
     "cib": 19500
    },
    "pct_1d": 0,
@@ -500,7 +543,36 @@
     19500,
     19500,
     19500,
+    19500,
     19500
+   ]
+  },
+  {
+   "id": "final-fantasy-i-ii-dawn-of-souls-gba",
+   "title": "Final Fantasy I & II: Dawn of Souls",
+   "platform": "gba",
+   "headline_condition": "cib",
+   "price_cents": 5499,
+   "prices": {
+    "loose": 2249,
+    "cib": 5499,
+    "new": 12999
+   },
+   "pct_1d": 0,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    5499,
+    5499,
+    5499,
+    5500,
+    5500,
+    5500,
+    5500,
+    5500,
+    5500,
+    5499
    ]
   },
   {
@@ -510,7 +582,7 @@
    "headline_condition": "cib",
    "price_cents": 8000,
    "prices": {
-    "loose": 2950,
+    "loose": 2925,
     "cib": 8000,
     "new": 14995
    },
@@ -519,6 +591,7 @@
    "pct_30d": null,
    "score": 0,
    "spark": [
+    8000,
     8000,
     8000,
     8000,
@@ -554,6 +627,7 @@
     11000,
     11000,
     11000,
+    11000,
     11000
    ]
   },
@@ -564,7 +638,7 @@
    "headline_condition": "cib",
    "price_cents": 16499,
    "prices": {
-    "loose": 8996,
+    "loose": 8995,
     "cib": 16499,
     "new": 29500
    },
@@ -581,6 +655,7 @@
     16499,
     16499,
     16499,
+    16499,
     16499
    ]
   },
@@ -589,16 +664,17 @@
    "title": "Fire Emblem",
    "platform": "gba",
    "headline_condition": "cib",
-   "price_cents": 31500,
+   "price_cents": 31000,
    "prices": {
     "loose": 2499,
-    "cib": 31500
+    "cib": 31000
    },
-   "pct_1d": 0,
+   "pct_1d": -1.59,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    31500,
     31500,
     31500,
     31500,
@@ -632,313 +708,61 @@
     2000,
     2000,
     2000,
+    2000,
     2000
    ]
   },
   {
-   "id": "mega-man-zero-3-gba",
-   "title": "Mega Man Zero 3",
+   "id": "kirby-nightmare-in-dream-land-gba",
+   "title": "Kirby: Nightmare in Dream Land",
    "platform": "gba",
    "headline_condition": "loose",
-   "price_cents": 3999,
+   "price_cents": 3000,
    "prices": {
-    "loose": 3999
+    "loose": 3000
    },
    "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    3999,
-    3999,
-    3999,
-    3999,
-    3999,
-    3999,
-    3999,
-    3999,
-    3999
+    3000,
+    3000,
+    3000,
+    3000,
+    3000,
+    2999,
+    2999,
+    2999,
+    2999,
+    3000
    ]
   },
   {
-   "id": "pokemon-emerald-gba",
-   "title": "Pokémon Emerald",
-   "platform": "gba",
-   "headline_condition": "cib",
-   "price_cents": 87499,
-   "prices": {
-    "loose": 26500,
-    "cib": 87499
-   },
-   "pct_1d": 15.59,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    78000,
-    78000,
-    78000,
-    78500,
-    78000,
-    78000,
-    78748,
-    78000,
-    78000
-   ]
-  },
-  {
-   "id": "pokemon-leafgreen-gba",
-   "title": "Pokémon LeafGreen",
-   "platform": "gba",
-   "headline_condition": "cib",
-   "price_cents": 41200,
-   "prices": {
-    "loose": 12792,
-    "cib": 41200,
-    "new": 2375
-   },
-   "pct_1d": 3.26,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    39900,
-    39900,
-    39900,
-    39900,
-    39900,
-    39900,
-    39900,
-    39900,
-    39900
-   ]
-  },
-  {
-   "id": "pokemon-mystery-dungeon-red-rescue-team-gba",
-   "title": "Pokémon Mystery Dungeon: Red Rescue Team",
-   "platform": "gba",
-   "headline_condition": "cib",
-   "price_cents": 19900,
-   "prices": {
-    "loose": 3499,
-    "cib": 19900,
-    "new": 45000
-   },
-   "pct_1d": 7.57,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    18500,
-    18500,
-    18500,
-    18500,
-    18500,
-    18500,
-    18500,
-    18500,
-    18500
-   ]
-  },
-  {
-   "id": "sigma-star-saga-gba",
-   "title": "Sigma Star Saga",
-   "platform": "gba",
-   "headline_condition": "cib",
-   "price_cents": 10000,
-   "prices": {
-    "loose": 5500,
-    "cib": 10000
-   },
-   "pct_1d": 0.01,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    9999,
-    9999,
-    9999,
-    9999,
-    9999,
-    9999,
-    9999,
-    9999,
-    9999
-   ]
-  },
-  {
-   "id": "tactics-ogre-the-knight-of-lodis-gba",
-   "title": "Tactics Ogre: The Knight of Lodis",
-   "platform": "gba",
-   "headline_condition": "cib",
-   "price_cents": 18745,
-   "prices": {
-    "loose": 6499,
-    "cib": 18745
-   },
-   "pct_1d": 7.18,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    17490,
-    17490,
-    17490,
-    17490,
-    17490,
-    17490,
-    17490,
-    17490,
-    17490
-   ]
-  },
-  {
-   "id": "wario-land-4-gba",
-   "title": "Wario Land 4",
-   "platform": "gba",
-   "headline_condition": "cib",
-   "price_cents": 19750,
-   "prices": {
-    "loose": 3949,
-    "cib": 19750
-   },
-   "pct_1d": 0.01,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    19749,
-    19749,
-    19749,
-    19749
-   ]
-  },
-  {
-   "id": "yggdra-union-gba",
-   "title": "Yggdra Union",
+   "id": "klonoa-empire-of-dreams-gba",
+   "title": "Klonoa: Empire of Dreams",
    "platform": "gba",
    "headline_condition": "loose",
-   "price_cents": 9000,
+   "price_cents": 4997,
    "prices": {
-    "loose": 9000
-   },
-   "pct_1d": 5.88,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    9000,
-    9000,
-    9000,
-    9000,
-    9000,
-    9000,
-    9000,
-    9000,
-    9000
-   ]
-  },
-  {
-   "id": "pokemon-sapphire-gba",
-   "title": "Pokémon Sapphire",
-   "platform": "gba",
-   "headline_condition": "cib",
-   "price_cents": 44500,
-   "prices": {
-    "loose": 10999,
-    "cib": 44500
-   },
-   "pct_1d": 5.33,
-   "pct_7d": -0.34,
-   "pct_30d": null,
-   "score": -0.34,
-   "spark": [
-    39999,
-    36625,
-    36500,
-    36500,
-    36500,
-    36500,
-    36500,
-    36500,
-    36500
-   ]
-  },
-  {
-   "id": "boktai-the-sun-is-in-your-hand-gba",
-   "title": "Boktai: The Sun Is in Your Hand",
-   "platform": "gba",
-   "headline_condition": "loose",
-   "price_cents": 12350,
-   "prices": {
-    "loose": 12350
+    "loose": 4997,
+    "new": 24997
    },
    "pct_1d": 0,
-   "pct_7d": -0.97,
+   "pct_7d": 0,
    "pct_30d": null,
-   "score": -0.97,
+   "score": 0,
    "spark": [
-    13000,
-    12875,
-    12750,
-    12750,
-    12750,
-    12750,
-    12750,
-    12750,
-    12750
-   ]
-  },
-  {
-   "id": "pokemon-firered-gba",
-   "title": "Pokémon FireRed",
-   "platform": "gba",
-   "headline_condition": "loose",
-   "price_cents": 12230,
-   "prices": {
-    "loose": 12230
-   },
-   "pct_1d": 1.92,
-   "pct_7d": -2.16,
-   "pct_30d": null,
-   "score": -2.16,
-   "spark": [
-    12500,
-    12500,
-    12500,
-    12500,
-    12500,
-    12499,
-    12499,
-    12499,
-    12230
-   ]
-  },
-  {
-   "id": "castlevania-circle-of-the-moon-gba",
-   "title": "Castlevania: Circle of the Moon",
-   "platform": "gba",
-   "headline_condition": "cib",
-   "price_cents": 9500,
-   "prices": {
-    "loose": 2500,
-    "cib": 9500,
-    "new": 29900
-   },
-   "pct_1d": 0,
-   "pct_7d": -2.56,
-   "pct_30d": null,
-   "score": -2.56,
-   "spark": [
-    9999,
-    9750,
-    9500,
-    9500,
-    9500,
-    9500,
-    9500,
-    9500,
-    9500
+    4999,
+    4998,
+    4997,
+    4997,
+    4997,
+    4997,
+    4997,
+    4997,
+    4997,
+    4997
    ]
   },
   {
@@ -964,60 +788,116 @@
     8745,
     8500,
     8500,
+    8500,
     8500
    ]
   },
   {
-   "id": "mega-man-and-bass-gba",
-   "title": "Mega Man & Bass",
+   "id": "boktai-the-sun-is-in-your-hand-gba",
+   "title": "Boktai: The Sun Is in Your Hand",
    "platform": "gba",
-   "headline_condition": "cib",
-   "price_cents": 11999,
+   "headline_condition": "loose",
+   "price_cents": 12350,
    "prices": {
-    "loose": 3295,
-    "cib": 11999
+    "loose": 12350
    },
-   "pct_1d": 13.64,
-   "pct_7d": -8.17,
+   "pct_1d": 0,
+   "pct_7d": -3.14,
    "pct_30d": null,
-   "score": -8.17,
+   "score": -3.14,
    "spark": [
-    11499,
-    11499,
-    11499,
-    11029,
-    10559,
-    10559,
-    10559,
-    10559,
-    10559
+    13000,
+    12875,
+    12750,
+    12750,
+    12750,
+    12750,
+    12750,
+    12750,
+    12750,
+    12350
    ]
   },
   {
-   "id": "mario-kart-super-circuit-gba",
-   "title": "Mario Kart: Super Circuit",
+   "id": "gunstar-super-heroes-gba",
+   "title": "Gunstar Super Heroes",
    "platform": "gba",
    "headline_condition": "cib",
-   "price_cents": 5799,
+   "price_cents": 10799,
    "prices": {
-    "loose": 1997,
-    "cib": 5799,
-    "new": 25812
+    "loose": 4987,
+    "cib": 10799,
+    "new": 14245
    },
-   "pct_1d": 2.64,
-   "pct_7d": -8.21,
+   "pct_1d": 0,
+   "pct_7d": -3.23,
    "pct_30d": null,
-   "score": -8.21,
+   "score": -3.23,
    "spark": [
-    6499,
-    6373,
-    6247,
-    6074,
-    5900,
-    5900,
-    5900,
-    5850,
-    5850
+    11160,
+    11160,
+    11160,
+    11160,
+    11160,
+    11160,
+    10799,
+    10799,
+    10799,
+    10799
+   ]
+  },
+  {
+   "id": "kirby-and-the-amazing-mirror-gba",
+   "title": "Kirby & The Amazing Mirror",
+   "platform": "gba",
+   "headline_condition": "cib",
+   "price_cents": 19799,
+   "prices": {
+    "loose": 3799,
+    "cib": 19799
+   },
+   "pct_1d": 0,
+   "pct_7d": -5.37,
+   "pct_30d": null,
+   "score": -5.37,
+   "spark": [
+    20922,
+    20922,
+    20922,
+    20922,
+    20922,
+    20922,
+    19999,
+    19999,
+    19799,
+    19799
+   ]
+  },
+  {
+   "id": "super-mario-advance-4-gba",
+   "title": "Super Mario Advance 4: Super Mario Bros. 3",
+   "platform": "gba",
+   "headline_condition": "cib",
+   "price_cents": 9748,
+   "prices": {
+    "loose": 1999,
+    "cib": 9748
+   },
+   "pct_1d": 2.61,
+   "pct_7d": -7.12,
+   "pct_30d": null,
+   "score": -7.12,
+   "spark": [
+    10248,
+    10372,
+    10495,
+    10372,
+    10248,
+    10245,
+    9995,
+    9995,
+    9995,
+    9748
    ]
   },
   {
@@ -1031,9 +911,9 @@
     "new": 97500
    },
    "pct_1d": 0,
-   "pct_7d": -35.85,
+   "pct_7d": -35.05,
    "pct_30d": null,
-   "score": -35.85,
+   "score": -35.05,
    "spark": [
     2050,
     2025,
@@ -1043,6 +923,7 @@
     2000,
     1495,
     1495,
+    1299,
     1299
    ]
   }
