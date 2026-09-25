@@ -7,12 +7,12 @@
    "title": "Pokémon Crystal",
    "platform": "gbc",
    "headline_condition": "cib",
-   "price_cents": 94999,
+   "price_cents": 97499,
    "prices": {
     "loose": 18999,
-    "cib": 94999
+    "cib": 97499
    },
-   "pct_1d": -2.56,
+   "pct_1d": 0,
    "pct_7d": 11.17,
    "pct_30d": null,
    "score": 11.17,
@@ -58,11 +58,11 @@
    "title": "Hamtaro: Ham-Hams Unite!",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 4500,
+   "price_cents": 4550,
    "prices": {
-    "loose": 4500
+    "loose": 4550
    },
-   "pct_1d": 0,
+   "pct_1d": 1.11,
    "pct_7d": 8.67,
    "pct_30d": null,
    "score": 8.67,
@@ -85,7 +85,7 @@
    "headline_condition": "cib",
    "price_cents": 12974,
    "prices": {
-    "loose": 3495,
+    "loose": 3432,
     "cib": 12974
    },
    "pct_1d": 0,
@@ -159,11 +159,11 @@
    "title": "Perfect Dark",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 3355,
+   "price_cents": 3509,
    "prices": {
-    "loose": 3355
+    "loose": 3509
    },
-   "pct_1d": 0,
+   "pct_1d": 4.59,
    "pct_7d": 4.84,
    "pct_30d": null,
    "score": 4.84,
@@ -188,7 +188,7 @@
    "prices": {
     "loose": 3000,
     "cib": 7995,
-    "new": 39995
+    "new": 42190
    },
    "pct_1d": 0,
    "pct_7d": 4.42,
@@ -265,7 +265,7 @@
    "headline_condition": "cib",
    "price_cents": 17499,
    "prices": {
-    "loose": 6499,
+    "loose": 6500,
     "cib": 17499,
     "new": 45000
    },
@@ -283,6 +283,32 @@
     17499,
     17499,
     17499
+   ]
+  },
+  {
+   "id": "pokemon-silver-gbc",
+   "title": "Pokémon Silver",
+   "platform": "gbc",
+   "headline_condition": "cib",
+   "price_cents": 39997,
+   "prices": {
+    "loose": 7499,
+    "cib": 39997
+   },
+   "pct_1d": 0.01,
+   "pct_7d": 0.63,
+   "pct_30d": null,
+   "score": 0.63,
+   "spark": [
+    39995,
+    39744,
+    39493,
+    39493,
+    39493,
+    39493,
+    39493,
+    39493,
+    39995
    ]
   },
   {
@@ -539,11 +565,11 @@
    "title": "Game & Watch Gallery 3",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 1200,
+   "price_cents": 1199,
    "prices": {
-    "loose": 1200
+    "loose": 1199
    },
-   "pct_1d": 0.08,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
@@ -591,7 +617,7 @@
    "headline_condition": "cib",
    "price_cents": 16995,
    "prices": {
-    "loose": 4038,
+    "loose": 4000,
     "cib": 16995
    },
    "pct_1d": 0,
@@ -611,44 +637,18 @@
    ]
   },
   {
-   "id": "mario-tennis-gbc",
-   "title": "Mario Tennis",
-   "platform": "gbc",
-   "headline_condition": "cib",
-   "price_cents": 7497,
-   "prices": {
-    "loose": 3499,
-    "cib": 7497
-   },
-   "pct_1d": 0,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    7497,
-    7497,
-    7497,
-    7497,
-    7497,
-    7497,
-    7497,
-    7497,
-    7497
-   ]
-  },
-  {
    "id": "mega-man-xtreme-gbc",
    "title": "Mega Man Xtreme",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 4999,
+   "price_cents": 4997,
    "prices": {
-    "loose": 4999
+    "loose": 4997
    },
-   "pct_1d": 2.02,
-   "pct_7d": -0.02,
+   "pct_1d": 1.98,
+   "pct_7d": -0.06,
    "pct_30d": null,
-   "score": -0.02,
+   "score": -0.06,
    "spark": [
     5000,
     5000,
@@ -658,7 +658,59 @@
     5000,
     5000,
     5000,
-    4999
+    4997
+   ]
+  },
+  {
+   "id": "zelda-oracle-of-ages-gbc",
+   "title": "The Legend of Zelda: Oracle of Ages",
+   "platform": "gbc",
+   "headline_condition": "cib",
+   "price_cents": 25900,
+   "prices": {
+    "loose": 7499,
+    "cib": 25900
+   },
+   "pct_1d": 18.81,
+   "pct_7d": -0.68,
+   "pct_30d": null,
+   "score": -0.68,
+   "spark": [
+    21900,
+    21950,
+    21900,
+    21950,
+    22000,
+    22000,
+    21900,
+    21800,
+    21800
+   ]
+  },
+  {
+   "id": "pokemon-gold-gbc",
+   "title": "Pokémon Gold",
+   "platform": "gbc",
+   "headline_condition": "cib",
+   "price_cents": 30999,
+   "prices": {
+    "loose": 7482,
+    "cib": 30999
+   },
+   "pct_1d": 1.64,
+   "pct_7d": -0.81,
+   "pct_30d": null,
+   "score": -0.81,
+   "spark": [
+    30999,
+    30750,
+    30999,
+    31375,
+    30999,
+    30999,
+    30999,
+    30500,
+    30500
    ]
   },
   {
@@ -716,11 +768,11 @@
    "title": "Mario Golf",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 3497,
+   "price_cents": 3498,
    "prices": {
-    "loose": 3497
+    "loose": 3498
    },
-   "pct_1d": 1.66,
+   "pct_1d": 1.69,
    "pct_7d": -5.12,
    "pct_30d": null,
    "score": -5.12,
@@ -737,53 +789,29 @@
    ]
   },
   {
-   "id": "magi-nation-gbc",
-   "title": "Magi Nation",
+   "id": "pokemon-pinball-gbc",
+   "title": "Pokémon Pinball",
    "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 3499,
+   "headline_condition": "cib",
+   "price_cents": 12499,
    "prices": {
-    "loose": 3499
+    "loose": 2500,
+    "cib": 12499
    },
-   "pct_1d": 0,
-   "pct_7d": -6.67,
+   "pct_1d": 11.11,
+   "pct_7d": -5.26,
    "pct_30d": null,
-   "score": -6.67,
+   "score": -5.26,
    "spark": [
-    3749,
-    3749,
-    3749,
-    3749,
-    3749,
-    3749,
-    3749,
-    3749,
-    3499
-   ]
-  },
-  {
-   "id": "bomberman-max-blue-champion-gbc",
-   "title": "Bomberman Max: Blue Champion",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 2659,
-   "prices": {
-    "loose": 2659
-   },
-   "pct_1d": 0,
-   "pct_7d": -8.59,
-   "pct_30d": null,
-   "score": -8.59,
-   "spark": [
-    2909,
-    2909,
-    2909,
-    2864,
-    2818,
-    2818,
-    2818,
-    2659,
-    2659
+    12499,
+    11874,
+    11249,
+    11249,
+    11249,
+    11249,
+    11249,
+    11249,
+    11249
    ]
   },
   {
@@ -818,7 +846,7 @@
    "headline_condition": "cib",
    "price_cents": 6995,
    "prices": {
-    "loose": 1160,
+    "loose": 1155,
     "cib": 6995
    },
    "pct_1d": 5.27,

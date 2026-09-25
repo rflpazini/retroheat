@@ -35,7 +35,7 @@
    "headline_condition": "cib",
    "price_cents": 12250,
    "prices": {
-    "loose": 2846,
+    "loose": 2985,
     "cib": 12250
    },
    "pct_1d": 22.5,
@@ -131,41 +131,16 @@
    ]
   },
   {
-   "id": "mega-man-v-gb",
-   "title": "Mega Man V",
-   "platform": "gb",
-   "headline_condition": "loose",
-   "price_cents": 30497,
-   "prices": {
-    "loose": 30497
-   },
-   "pct_1d": 8.93,
-   "pct_7d": 7.03,
-   "pct_30d": null,
-   "score": 7.03,
-   "spark": [
-    28494,
-    28494,
-    28494,
-    28494,
-    28494,
-    28494,
-    28494,
-    28494,
-    30497
-   ]
-  },
-  {
    "id": "super-mario-land-2-gb",
    "title": "Super Mario Land 2",
    "platform": "gb",
    "headline_condition": "cib",
-   "price_cents": 9653,
+   "price_cents": 10000,
    "prices": {
     "loose": 2300,
-    "cib": 9653
+    "cib": 10000
    },
-   "pct_1d": -3.47,
+   "pct_1d": 0,
    "pct_7d": 5.27,
    "pct_30d": null,
    "score": 5.27,
@@ -188,7 +163,7 @@
    "headline_condition": "cib",
    "price_cents": 22500,
    "prices": {
-    "loose": 6550,
+    "loose": 6500,
     "cib": 22500
    },
    "pct_1d": 0,
@@ -239,7 +214,7 @@
    "headline_condition": "cib",
    "price_cents": 12200,
    "prices": {
-    "loose": 1500,
+    "loose": 1599,
     "cib": 12200
    },
    "pct_1d": 0,
@@ -289,12 +264,12 @@
    "title": "Pokémon Yellow",
    "platform": "gb",
    "headline_condition": "cib",
-   "price_cents": 39995,
+   "price_cents": 39997,
    "prices": {
-    "loose": 7500,
-    "cib": 39995
+    "loose": 7499,
+    "cib": 39997
    },
-   "pct_1d": 0,
+   "pct_1d": 0.01,
    "pct_7d": 2.56,
    "pct_30d": null,
    "score": 2.56,
@@ -390,12 +365,12 @@
    "title": "Kirby's Dream Land",
    "platform": "gb",
    "headline_condition": "cib",
-   "price_cents": 13999,
+   "price_cents": 14999,
    "prices": {
     "loose": 2699,
-    "cib": 13999
+    "cib": 14999
    },
-   "pct_1d": 9.75,
+   "pct_1d": 17.59,
    "pct_7d": 2,
    "pct_30d": null,
    "score": 2,
@@ -416,11 +391,11 @@
    "title": "Dr. Mario",
    "platform": "gb",
    "headline_condition": "loose",
-   "price_cents": 1489,
+   "price_cents": 1450,
    "prices": {
-    "loose": 1489
+    "loose": 1450
    },
-   "pct_1d": 4.86,
+   "pct_1d": 2.11,
    "pct_7d": 1.5,
    "pct_30d": null,
    "score": 1.5,
@@ -441,12 +416,12 @@
    "title": "Mega Man: Dr. Wily's Revenge",
    "platform": "gb",
    "headline_condition": "cib",
-   "price_cents": 16479,
+   "price_cents": 16990,
    "prices": {
     "loose": 2000,
-    "cib": 16479
+    "cib": 16990
    },
-   "pct_1d": 0,
+   "pct_1d": 3.1,
    "pct_7d": 1.2,
    "pct_30d": null,
    "score": 1.2,
@@ -521,7 +496,7 @@
    "prices": {
     "loose": 2000,
     "cib": 18298,
-    "new": 9999
+    "new": 13499
    },
    "pct_1d": 0,
    "pct_7d": 0,
@@ -572,7 +547,7 @@
    "headline_condition": "cib",
    "price_cents": 15295,
    "prices": {
-    "loose": 2088,
+    "loose": 2080,
     "cib": 15295
    },
    "pct_1d": 0,
@@ -598,7 +573,7 @@
    "headline_condition": "cib",
    "price_cents": 20999,
    "prices": {
-    "loose": 5950,
+    "loose": 5900,
     "cib": 20999
    },
    "pct_1d": 0,
@@ -664,15 +639,169 @@
    ]
   },
   {
+   "id": "mega-man-ii-gb",
+   "title": "Mega Man II",
+   "platform": "gb",
+   "headline_condition": "cib",
+   "price_cents": 22999,
+   "prices": {
+    "loose": 3000,
+    "cib": 22999
+   },
+   "pct_1d": 6.98,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    21499,
+    21499,
+    21499,
+    21499,
+    21499,
+    21499,
+    21499,
+    21499,
+    21499
+   ]
+  },
+  {
+   "id": "mega-man-v-gb",
+   "title": "Mega Man V",
+   "platform": "gb",
+   "headline_condition": "loose",
+   "price_cents": 28494,
+   "prices": {
+    "loose": 28494
+   },
+   "pct_1d": 1.78,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    28494,
+    28494,
+    28494,
+    28494,
+    28494,
+    28494,
+    28494,
+    28494,
+    28494
+   ]
+  },
+  {
+   "id": "operation-c-gb",
+   "title": "Operation C",
+   "platform": "gb",
+   "headline_condition": "loose",
+   "price_cents": 3499,
+   "prices": {
+    "loose": 3499
+   },
+   "pct_1d": 0.11,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    3499,
+    3499,
+    3499,
+    3499,
+    3499,
+    3499,
+    3499,
+    3499,
+    3499
+   ]
+  },
+  {
+   "id": "super-mario-land-gb",
+   "title": "Super Mario Land",
+   "platform": "gb",
+   "headline_condition": "cib",
+   "price_cents": 7994,
+   "prices": {
+    "loose": 2229,
+    "cib": 7994
+   },
+   "pct_1d": 14.25,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    8297,
+    8297,
+    8297,
+    8297,
+    8297,
+    10595,
+    10595,
+    8297,
+    8297
+   ]
+  },
+  {
+   "id": "sword-of-hope-gb",
+   "title": "The Sword of Hope",
+   "platform": "gb",
+   "headline_condition": "cib",
+   "price_cents": 17749,
+   "prices": {
+    "loose": 5500,
+    "cib": 17749
+   },
+   "pct_1d": 1.43,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    17499,
+    17499,
+    17499,
+    17499,
+    17499,
+    17499,
+    17499,
+    17499,
+    17499
+   ]
+  },
+  {
+   "id": "wario-land-super-mario-land-3-gb",
+   "title": "Wario Land: Super Mario Land 3",
+   "platform": "gb",
+   "headline_condition": "cib",
+   "price_cents": 13499,
+   "prices": {
+    "loose": 2997,
+    "cib": 13499
+   },
+   "pct_1d": 1.89,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    13499,
+    13499,
+    13499,
+    13499,
+    13499,
+    13499,
+    13499,
+    13499,
+    13499
+   ]
+  },
+  {
    "id": "castlevania-legends-gb",
    "title": "Castlevania Legends",
    "platform": "gb",
    "headline_condition": "loose",
-   "price_cents": 19699,
+   "price_cents": 19750,
    "prices": {
-    "loose": 19699
+    "loose": 19750
    },
-   "pct_1d": 0,
+   "pct_1d": 0.26,
    "pct_7d": -0.26,
    "pct_30d": null,
    "score": -0.26,
@@ -718,13 +847,13 @@
    "title": "Donkey Kong Land III",
    "platform": "gb",
    "headline_condition": "cib",
-   "price_cents": 12499,
+   "price_cents": 12749,
    "prices": {
     "loose": 2049,
-    "cib": 12499,
+    "cib": 12749,
     "new": 20997
    },
-   "pct_1d": 0,
+   "pct_1d": 2,
    "pct_7d": -3.48,
    "pct_30d": null,
    "score": -3.48,
@@ -747,7 +876,7 @@
    "headline_condition": "cib",
    "price_cents": 10700,
    "prices": {
-    "loose": 1700,
+    "loose": 1737,
     "cib": 10700
    },
    "pct_1d": 0,
@@ -771,11 +900,11 @@
    "title": "Gargoyle's Quest",
    "platform": "gb",
    "headline_condition": "loose",
-   "price_cents": 4547,
+   "price_cents": 4599,
    "prices": {
-    "loose": 4547
+    "loose": 4599
    },
-   "pct_1d": 0,
+   "pct_1d": 1.14,
    "pct_7d": -4.92,
    "pct_30d": null,
    "score": -4.92,
@@ -789,57 +918,6 @@
     4749,
     4749,
     4749
-   ]
-  },
-  {
-   "id": "contra-the-alien-wars-gb",
-   "title": "Contra: The Alien Wars",
-   "platform": "gb",
-   "headline_condition": "loose",
-   "price_cents": 4512,
-   "prices": {
-    "loose": 4512
-   },
-   "pct_1d": 0,
-   "pct_7d": -5.01,
-   "pct_30d": null,
-   "score": -5.01,
-   "spark": [
-    4750,
-    4750,
-    4750,
-    4723,
-    4695,
-    4695,
-    4512,
-    4512,
-    4512
-   ]
-  },
-  {
-   "id": "final-fantasy-legend-iii-gb",
-   "title": "Final Fantasy Legend III",
-   "platform": "gb",
-   "headline_condition": "cib",
-   "price_cents": 16499,
-   "prices": {
-    "loose": 3924,
-    "cib": 16499
-   },
-   "pct_1d": 0,
-   "pct_7d": -8.34,
-   "pct_30d": null,
-   "score": -8.34,
-   "spark": [
-    18000,
-    18000,
-    18000,
-    18000,
-    18000,
-    18000,
-    17999,
-    16499,
-    16499
    ]
   },
   {
@@ -866,30 +944,6 @@
     5499,
     5248,
     5248
-   ]
-  },
-  {
-   "id": "bionic-commando-gb",
-   "title": "Bionic Commando",
-   "platform": "gb",
-   "headline_condition": "loose",
-   "price_cents": 3599,
-   "prices": {
-    "loose": 3599
-   },
-   "pct_1d": 0,
-   "pct_7d": -29.78,
-   "pct_30d": null,
-   "score": -29.78,
-   "spark": [
-    4750,
-    5125,
-    4750,
-    4025,
-    3300,
-    3300,
-    3300,
-    3599
    ]
   }
  ]
