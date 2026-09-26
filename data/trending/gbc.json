@@ -61,12 +61,12 @@
    "title": "Pokémon Crystal",
    "platform": "gbc",
    "headline_condition": "cib",
-   "price_cents": 94999,
+   "price_cents": 97499,
    "prices": {
-    "loose": 18999,
-    "cib": 94999
+    "loose": 18997,
+    "cib": 97499
    },
-   "pct_1d": -2.56,
+   "pct_1d": 0,
    "pct_7d": 8.82,
    "pct_30d": null,
    "score": 8.82,
@@ -114,11 +114,11 @@
    "title": "Kirby Tilt 'n' Tumble",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 7499,
+   "price_cents": 7500,
    "prices": {
-    "loose": 7499
+    "loose": 7500
    },
-   "pct_1d": 0,
+   "pct_1d": 0.01,
    "pct_7d": 7.13,
    "pct_30d": null,
    "score": 7.13,
@@ -142,7 +142,7 @@
    "headline_condition": "cib",
    "price_cents": 8249,
    "prices": {
-    "loose": 3469,
+    "loose": 3497,
     "cib": 8249
    },
    "pct_1d": null,
@@ -152,34 +152,6 @@
    "spark": [
     7249,
     7749
-   ]
-  },
-  {
-   "id": "zelda-oracle-of-seasons-gbc",
-   "title": "The Legend of Zelda: Oracle of Seasons",
-   "platform": "gbc",
-   "headline_condition": "cib",
-   "price_cents": 23499,
-   "prices": {
-    "loose": 7499,
-    "cib": 23499,
-    "new": 69998
-   },
-   "pct_1d": 0,
-   "pct_7d": 6.82,
-   "pct_30d": null,
-   "score": 6.82,
-   "spark": [
-    21999,
-    21999,
-    21999,
-    21999,
-    21999,
-    21999,
-    21999,
-    21999,
-    21999,
-    23499
    ]
   },
   {
@@ -236,13 +208,41 @@
    ]
   },
   {
+   "id": "zelda-oracle-of-seasons-gbc",
+   "title": "The Legend of Zelda: Oracle of Seasons",
+   "platform": "gbc",
+   "headline_condition": "cib",
+   "price_cents": 22499,
+   "prices": {
+    "loose": 7000,
+    "cib": 22499,
+    "new": 69998
+   },
+   "pct_1d": -4.26,
+   "pct_7d": 2.27,
+   "pct_30d": null,
+   "score": 2.27,
+   "spark": [
+    21999,
+    21999,
+    21999,
+    21999,
+    21999,
+    21999,
+    21999,
+    21999,
+    21999,
+    22499
+   ]
+  },
+  {
    "id": "pokemon-silver-gbc",
    "title": "Pokémon Silver",
    "platform": "gbc",
    "headline_condition": "cib",
    "price_cents": 39995,
    "prices": {
-    "loose": 7499,
+    "loose": 7500,
     "cib": 39995
    },
    "pct_1d": -0.01,
@@ -286,6 +286,32 @@
     3499,
     3499,
     3499
+   ]
+  },
+  {
+   "id": "harvest-moon-3-gbc",
+   "title": "Harvest Moon 3 GBC",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 7999,
+   "prices": {
+    "loose": 7999
+   },
+   "pct_1d": 0,
+   "pct_7d": 0.05,
+   "pct_30d": null,
+   "score": 0.05,
+   "spark": [
+    7995,
+    7995,
+    7995,
+    7995,
+    7995,
+    7995,
+    7995,
+    7995,
+    7995,
+    7999
    ]
   },
   {
@@ -528,7 +554,7 @@
    "headline_condition": "cib",
    "price_cents": 17499,
    "prices": {
-    "loose": 6500,
+    "loose": 6499,
     "cib": 17499,
     "new": 45000
    },
@@ -573,32 +599,6 @@
     1199,
     1199,
     1199
-   ]
-  },
-  {
-   "id": "harvest-moon-3-gbc",
-   "title": "Harvest Moon 3 GBC",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 7995,
-   "prices": {
-    "loose": 7995
-   },
-   "pct_1d": -0.05,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    7995,
-    7995,
-    7995,
-    7995,
-    7995,
-    7995,
-    7995,
-    7995,
-    7995,
-    7995
    ]
   },
   {
@@ -656,56 +656,30 @@
    ]
   },
   {
-   "id": "mario-tennis-gbc",
-   "title": "Mario Tennis",
+   "id": "tetris-dx-gbc",
+   "title": "Tetris DX",
    "platform": "gbc",
    "headline_condition": "cib",
-   "price_cents": 7497,
+   "price_cents": 6999,
    "prices": {
-    "loose": 3499,
-    "cib": 7497
+    "loose": 3295,
+    "cib": 6999
    },
-   "pct_1d": 0,
+   "pct_1d": 14.76,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    7497,
-    7497,
-    7497,
-    7497,
-    7497,
-    7497,
-    7497,
-    7497,
-    7497,
-    7497
-   ]
-  },
-  {
-   "id": "mega-man-xtreme-2-gbc",
-   "title": "Mega Man Xtreme 2",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 5000,
-   "prices": {
-    "loose": 5000
-   },
-   "pct_1d": 0,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    5250,
-    5125,
-    5000,
-    5000,
-    5000,
-    5000,
-    5000,
-    5000,
-    5000,
-    5000
+    6099,
+    6099,
+    6099,
+    6099,
+    6099,
+    6099,
+    6099,
+    6099,
+    6099,
+    6099
    ]
   },
   {
