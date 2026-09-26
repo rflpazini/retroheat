@@ -1,86 +1,80 @@
 {
  "board": "gbc",
- "as_of": "2026-09-25",
+ "as_of": "2026-09-26",
  "entries": [
   {
-   "id": "super-mario-bros-deluxe-gbc",
-   "title": "Super Mario Bros. Deluxe",
+   "id": "mario-golf-gbc",
+   "title": "Mario Golf",
    "platform": "gbc",
    "headline_condition": "cib",
-   "price_cents": 8497,
+   "price_cents": 8249,
    "prices": {
-    "loose": 3000,
-    "cib": 8497,
-    "new": 39995
+    "loose": 3497,
+    "cib": 8249
    },
-   "pct_1d": 6.28,
-   "pct_7d": 11.88,
+   "pct_1d": 0,
+   "pct_7d": 13.8,
    "pct_30d": null,
-   "score": 11.88,
+   "score": 13.8,
    "spark": [
-    7595,
-    7946,
-    7595,
-    7595,
-    7595,
-    8297,
-    8297,
-    8297,
-    8297,
-    8497
+    7249,
+    7749,
+    8249
    ]
   },
   {
-   "id": "dragon-warrior-monsters-gbc",
-   "title": "Dragon Warrior Monsters",
+   "id": "pokemon-pinball-gbc",
+   "title": "Pokémon Pinball",
+   "platform": "gbc",
+   "headline_condition": "cib",
+   "price_cents": 12499,
+   "prices": {
+    "loose": 2500,
+    "cib": 12499
+   },
+   "pct_1d": 0,
+   "pct_7d": 11.11,
+   "pct_30d": null,
+   "score": 11.11,
+   "spark": [
+    12499,
+    11874,
+    11249,
+    11249,
+    11249,
+    11249,
+    11249,
+    11249,
+    11249,
+    11249,
+    12499
+   ]
+  },
+  {
+   "id": "perfect-dark-gbc",
+   "title": "Perfect Dark",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 3499,
+   "price_cents": 3509,
    "prices": {
-    "loose": 3499
+    "loose": 3509
    },
    "pct_1d": 0,
-   "pct_7d": 9.38,
+   "pct_7d": 9.66,
    "pct_30d": null,
-   "score": 9.38,
+   "score": 9.66,
    "spark": [
-    3299,
-    3249,
-    3199,
-    3249,
-    3299,
-    3449,
-    3449,
-    3499,
-    3499,
-    3499
-   ]
-  },
-  {
-   "id": "pokemon-crystal-gbc",
-   "title": "Pokémon Crystal",
-   "platform": "gbc",
-   "headline_condition": "cib",
-   "price_cents": 97499,
-   "prices": {
-    "loose": 18997,
-    "cib": 97499
-   },
-   "pct_1d": 0,
-   "pct_7d": 8.82,
-   "pct_30d": null,
-   "score": 8.82,
-   "spark": [
-    85799,
-    87699,
-    89599,
-    89800,
-    90000,
-    94799,
-    99999,
-    99999,
-    97499,
-    97499
+    3200,
+    3200,
+    3200,
+    3200,
+    3200,
+    3200,
+    3355,
+    3355,
+    3355,
+    3355,
+    3509
    ]
   },
   {
@@ -93,9 +87,9 @@
     "loose": 4550
    },
    "pct_1d": 0,
-   "pct_7d": 8.67,
+   "pct_7d": 9.27,
    "pct_30d": null,
-   "score": 8.67,
+   "score": 9.27,
    "spark": [
     4164,
     4164,
@@ -106,7 +100,63 @@
     4525,
     4525,
     4525,
-    4525
+    4525,
+    4550
+   ]
+  },
+  {
+   "id": "pokemon-crystal-gbc",
+   "title": "Pokémon Crystal",
+   "platform": "gbc",
+   "headline_condition": "cib",
+   "price_cents": 94999,
+   "prices": {
+    "loose": 18999,
+    "cib": 94999
+   },
+   "pct_1d": -2.56,
+   "pct_7d": 8.57,
+   "pct_30d": null,
+   "score": 8.57,
+   "spark": [
+    85799,
+    87699,
+    89599,
+    89800,
+    90000,
+    94799,
+    99999,
+    99999,
+    97499,
+    97499,
+    97499
+   ]
+  },
+  {
+   "id": "dragon-warrior-monsters-gbc",
+   "title": "Dragon Warrior Monsters",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 3499,
+   "prices": {
+    "loose": 3499
+   },
+   "pct_1d": 0,
+   "pct_7d": 7.69,
+   "pct_30d": null,
+   "score": 7.69,
+   "spark": [
+    3299,
+    3249,
+    3199,
+    3249,
+    3299,
+    3449,
+    3449,
+    3499,
+    3499,
+    3499,
+    3499
    ]
   },
   {
@@ -118,7 +168,7 @@
    "prices": {
     "loose": 7500
    },
-   "pct_1d": 0.01,
+   "pct_1d": 0,
    "pct_7d": 7.13,
    "pct_30d": null,
    "score": 7.13,
@@ -132,52 +182,37 @@
     7000,
     7250,
     7499,
+    7499,
     7499
    ]
   },
   {
-   "id": "mario-golf-gbc",
-   "title": "Mario Golf",
+   "id": "super-mario-bros-deluxe-gbc",
+   "title": "Super Mario Bros. Deluxe",
    "platform": "gbc",
    "headline_condition": "cib",
-   "price_cents": 8249,
+   "price_cents": 7995,
    "prices": {
-    "loose": 3497,
-    "cib": 8249
+    "loose": 3000,
+    "cib": 7995,
+    "new": 42190
    },
-   "pct_1d": null,
-   "pct_7d": 6.9,
+   "pct_1d": -5.91,
+   "pct_7d": 5.27,
    "pct_30d": null,
-   "score": 6.9,
+   "score": 5.27,
    "spark": [
-    7249,
-    7749
-   ]
-  },
-  {
-   "id": "perfect-dark-gbc",
-   "title": "Perfect Dark",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 3509,
-   "prices": {
-    "loose": 3509
-   },
-   "pct_1d": 0,
-   "pct_7d": 4.84,
-   "pct_30d": null,
-   "score": 4.84,
-   "spark": [
-    3200,
-    3200,
-    3200,
-    3200,
-    3200,
-    3200,
-    3355,
-    3355,
-    3355,
-    3355
+    7595,
+    7946,
+    7595,
+    7595,
+    7595,
+    8297,
+    8297,
+    8297,
+    8297,
+    8497,
+    7995
    ]
   },
   {
@@ -204,6 +239,7 @@
     32400,
     32400,
     32400,
+    33000,
     33000
    ]
   },
@@ -218,7 +254,7 @@
     "cib": 22499,
     "new": 69998
    },
-   "pct_1d": -4.26,
+   "pct_1d": 0,
    "pct_7d": 2.27,
    "pct_30d": null,
    "score": 2.27,
@@ -232,6 +268,7 @@
     21999,
     21999,
     21999,
+    22499,
     22499
    ]
   },
@@ -242,10 +279,10 @@
    "headline_condition": "cib",
    "price_cents": 39995,
    "prices": {
-    "loose": 7500,
+    "loose": 7499,
     "cib": 39995
    },
-   "pct_1d": -0.01,
+   "pct_1d": 0,
    "pct_7d": 1.27,
    "pct_30d": null,
    "score": 1.27,
@@ -259,33 +296,8 @@
     39493,
     39493,
     39995,
+    39995,
     39995
-   ]
-  },
-  {
-   "id": "pokemon-trading-card-game-gbc",
-   "title": "Pokémon Trading Card Game",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 3499,
-   "prices": {
-    "loose": 3499
-   },
-   "pct_1d": 0,
-   "pct_7d": 0.06,
-   "pct_30d": null,
-   "score": 0.06,
-   "spark": [
-    3495,
-    3496,
-    3497,
-    3498,
-    3499,
-    3499,
-    3499,
-    3499,
-    3499,
-    3499
    ]
   },
   {
@@ -311,7 +323,35 @@
     7995,
     7995,
     7995,
+    7999,
     7999
+   ]
+  },
+  {
+   "id": "pokemon-trading-card-game-gbc",
+   "title": "Pokémon Trading Card Game",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 3499,
+   "prices": {
+    "loose": 3499
+   },
+   "pct_1d": 0,
+   "pct_7d": 0.03,
+   "pct_30d": null,
+   "score": 0.03,
+   "spark": [
+    3495,
+    3496,
+    3497,
+    3498,
+    3499,
+    3499,
+    3499,
+    3499,
+    3499,
+    3499,
+    3499
    ]
   },
   {
@@ -337,6 +377,7 @@
     4499,
     4499,
     4499,
+    4500,
     4500
    ]
   },
@@ -363,6 +404,7 @@
     5000,
     5000,
     5000,
+    5000,
     5000
    ]
   },
@@ -380,6 +422,7 @@
    "pct_30d": null,
    "score": 0,
    "spark": [
+    4000,
     4000,
     4000,
     4000,
@@ -412,6 +455,7 @@
     25500,
     25500,
     25500,
+    25500,
     25500
    ]
   },
@@ -424,11 +468,12 @@
    "prices": {
     "loose": 1800
    },
-   "pct_1d": 0.06,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    1800,
     1800,
     1800,
     1800,
@@ -455,6 +500,7 @@
    "pct_30d": null,
    "score": 0,
    "spark": [
+    6500,
     6500,
     6500,
     6500,
@@ -491,6 +537,7 @@
     8499,
     8499,
     8499,
+    8499,
     8499
    ]
   },
@@ -508,6 +555,7 @@
    "pct_30d": null,
    "score": 0,
    "spark": [
+    2500,
     2500,
     2500,
     2500,
@@ -544,6 +592,7 @@
     12500,
     12500,
     12500,
+    12500,
     12500
    ]
   },
@@ -554,7 +603,7 @@
    "headline_condition": "cib",
    "price_cents": 17499,
    "prices": {
-    "loose": 6499,
+    "loose": 6500,
     "cib": 17499,
     "new": 45000
    },
@@ -572,6 +621,7 @@
     17499,
     17499,
     17499,
+    17499,
     17499
    ]
   },
@@ -580,15 +630,16 @@
    "title": "Game & Watch Gallery 3",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 1199,
+   "price_cents": 1200,
    "prices": {
-    "loose": 1199
+    "loose": 1200
    },
-   "pct_1d": 0,
+   "pct_1d": 0.08,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    1199,
     1199,
     1199,
     1199,
@@ -625,6 +676,7 @@
     16995,
     16995,
     16995,
+    16995,
     16995
    ]
   },
@@ -652,34 +704,36 @@
     12495,
     12495,
     12495,
+    11999,
     11999
    ]
   },
   {
-   "id": "tetris-dx-gbc",
-   "title": "Tetris DX",
+   "id": "pokemon-gold-gbc",
+   "title": "Pokémon Gold",
    "platform": "gbc",
    "headline_condition": "cib",
-   "price_cents": 6999,
+   "price_cents": 31750,
    "prices": {
-    "loose": 3295,
-    "cib": 6999
+    "loose": 7499,
+    "cib": 31750
    },
-   "pct_1d": 14.76,
-   "pct_7d": 0,
+   "pct_1d": 2.42,
+   "pct_7d": -1.2,
    "pct_30d": null,
-   "score": 0,
+   "score": -1.2,
    "spark": [
-    6099,
-    6099,
-    6099,
-    6099,
-    6099,
-    6099,
-    6099,
-    6099,
-    6099,
-    6099
+    30999,
+    30750,
+    30999,
+    31375,
+    30999,
+    30999,
+    30999,
+    30500,
+    30500,
+    30500,
+    30999
    ]
   },
   {
@@ -701,6 +755,7 @@
     5749,
     5749,
     5749,
+    5499,
     5499,
     5499,
     5499,
@@ -731,6 +786,7 @@
     2345,
     2345,
     2285,
+    2285,
     2285
    ]
   },
@@ -758,6 +814,7 @@
     3700,
     3700,
     3700,
+    3500,
     3500
    ]
   },
@@ -784,33 +841,8 @@
     3749,
     3749,
     3499,
+    3499,
     3499
-   ]
-  },
-  {
-   "id": "bomberman-max-blue-champion-gbc",
-   "title": "Bomberman Max: Blue Champion",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 2499,
-   "prices": {
-    "loose": 2499
-   },
-   "pct_1d": 0,
-   "pct_7d": -8.59,
-   "pct_30d": null,
-   "score": -8.59,
-   "spark": [
-    2909,
-    2909,
-    2909,
-    2864,
-    2818,
-    2818,
-    2818,
-    2659,
-    2659,
-    2659
    ]
   },
   {
@@ -818,11 +850,11 @@
    "title": "Harvest Moon 2 GBC",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 4318,
+   "price_cents": 4500,
    "prices": {
-    "loose": 4318
+    "loose": 4500
    },
-   "pct_1d": 0,
+   "pct_1d": 4.21,
    "pct_7d": -11.68,
    "pct_30d": null,
    "score": -11.68,
@@ -836,7 +868,35 @@
     4318,
     4318,
     4318,
+    4318,
     4318
+   ]
+  },
+  {
+   "id": "bomberman-max-blue-champion-gbc",
+   "title": "Bomberman Max: Blue Champion",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 2499,
+   "prices": {
+    "loose": 2499
+   },
+   "pct_1d": 0,
+   "pct_7d": -12.74,
+   "pct_30d": null,
+   "score": -12.74,
+   "spark": [
+    2909,
+    2909,
+    2909,
+    2864,
+    2818,
+    2818,
+    2818,
+    2659,
+    2659,
+    2659,
+    2499
    ]
   }
  ]
