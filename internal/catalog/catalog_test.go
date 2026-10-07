@@ -291,7 +291,7 @@ func TestPlatformPackaging(t *testing.T) {
 			t.Errorf("%s.Boxed() = false, want true: it sold cartridges in cardboard boxes", p)
 		}
 	}
-	for _, p := range []catalog.Platform{catalog.PS2, catalog.GameCube, catalog.PSP, catalog.Vita, catalog.Dreamcast} {
+	for _, p := range []catalog.Platform{catalog.PS2, catalog.PS3, catalog.GameCube, catalog.PSP, catalog.Vita, catalog.Dreamcast} {
 		if p.Boxed() {
 			t.Errorf("%s.Boxed() = true, want false: it sold discs or cards in plastic cases", p)
 		}
@@ -321,6 +321,36 @@ func TestGameBoyPlatformsAreValidAndLabelled(t *testing.T) {
 		if got := p.Label(); got != label {
 			t.Errorf("%s.Label() = %q, want %q", p, got, label)
 		}
+	}
+}
+
+// PlayStation 3 ids sit one character away from PlayStation 2 and PSP ids, so
+// the file must load as its own platform and refuse a neighbour's suffix.
+func TestPlayStation3IsItsOwnPlatform(t *testing.T) {
+	t.Parallel()
+	if !catalog.PS3.Valid() {
+		t.Fatal("PS3.Valid() = false, want true")
+	}
+	if got := catalog.PS3.Label(); got != "PlayStation 3" {
+		t.Errorf("PS3.Label() = %q, want %q", got, "PlayStation 3")
+	}
+	dir := writeCatalog(t, map[string]string{"ps3.yaml": `platform: ps3
+games:
+  - {id: folklore-ps3, title: "Folklore", ebay: {query: "Folklore PS3"}}
+`})
+	games, err := catalog.Load(dir)
+	if err != nil {
+		t.Fatalf("Load rejected a ps3 file: %v", err)
+	}
+	if len(games) != 1 || games[0].Platform != catalog.PS3 {
+		t.Fatalf("games = %+v, want one entry on platform ps3", games)
+	}
+	if err := catalog.Validate(games); err != nil {
+		t.Errorf("Validate rejected a good ps3 entry: %v", err)
+	}
+	games[0].ID = "folklore-ps2"
+	if err := catalog.Validate(games); err == nil {
+		t.Error("Validate accepted an id ending in -ps2 on a ps3 entry")
 	}
 }
 

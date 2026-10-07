@@ -73,6 +73,7 @@ func TestMediaOfTellsCartridgesCardsAndDiscsApart(t *testing.T) {
 		catalog.GBA:  classify.Boxed,
 		catalog.Vita: classify.Carded,
 		catalog.PS2:  classify.Cased,
+		catalog.PS3:  classify.Cased,
 	}
 	for p, want := range cases {
 		if got := mediaOf(catalog.Game{Platform: p}); got != want {

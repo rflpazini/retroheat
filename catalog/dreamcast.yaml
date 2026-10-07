@@ -274,7 +274,7 @@ games:
       negative: ["3rd strike"]
   - id: garou-mark-of-the-wolves-dreamcast
     title: "Garou: Mark of the Wolves"
-    # Japan-only on Dreamcast.
+    # The Japanese release; the North American one is fatal-fury-mark-of-the-wolves-dreamcast.
     region: NTSC-J
     info:
       developer: "SNK"
@@ -283,12 +283,10 @@ games:
       genre: "Fighting"
       about: "Garou: Mark of the Wolves is a 1999 fighting game developed and published by SNK, originally for the Neo Geo and then as Fatal Fury: Mark of the Wolves for the Dreamcast. It is the sixth main installment in the Fatal Fury series."
       about_url: "https://en.wikipedia.org/wiki/Garou:_Mark_of_the_Wolves"
-      cover_url: "https://upload.wikimedia.org/wikipedia/en/3/3f/Garou_-_Mark_of_the_Wolves_arcade_flyer.png"
-      trivia: "SNK's Dreamcast version was released only in Japan; North America did not see the game until the 2009 PS2 release."
-      why: "Every Dreamcast copy in the US market is an import, and the game's reputation as SNK's finest fighter keeps demand high."
+      trivia: "SNK's Dreamcast port came out in Japan on September 21, 2001, and was re-released there on May 23, 2002, under the SNK Best label."
     ebay:
       query: "Garou Mark of the Wolves Dreamcast"
-      negative: ["neo geo", "ps4", "switch"]
+      negative: ["neo geo", "ps4", "switch", "agetec"]
   - id: the-last-blade-2-dreamcast
     title: "The Last Blade 2"
     info:
@@ -1353,3 +1351,127 @@ games:
     ebay:
       query: "Looney Tunes Space Race Dreamcast"
       negative: ["ps2", "japan"]
+  - id: jojos-bizarre-adventure-dreamcast
+    title: "JoJo's Bizarre Adventure"
+    info:
+      developer: "Capcom"
+      publisher: "Capcom"
+      year: 2000
+      genre: "Fighting"
+      about: "JoJo's Bizarre Adventure is a 1998 fighting video game developed and published by Capcom, based on Hirohiko Araki's manga of the same title. It was originally released for arcades on the CP System III (CPS-3) board; this version was known outside Japan as JOJO's Venture."
+      about_url: "https://en.wikipedia.org/wiki/JoJo%27s_Bizarre_Adventure_%28video_game%29"
+      trivia: "The Dreamcast version includes both the original arcade game and its revised Heritage for the Future update in their original forms."
+      why: "The Dreamcast disc carries both arcade versions, and Capcom's 2012 HD port of this version was sold only as a download, so the disc is the only way to own it physically."
+    ebay:
+      query: "JoJo's Bizarre Adventure Dreamcast"
+      negative: ["ps1", "playstation", "ps3", "ps4", "xbox", "all star battle", "eyes of heaven", "matching service", "manga", "dvd", "blu-ray", "figure"]
+  - id: ecw-anarchy-rulz-dreamcast
+    title: "ECW Anarchy Rulz"
+    info:
+      developer: "Sculptured Software"
+      publisher: "Acclaim Entertainment"
+      year: 2000
+      genre: "Wrestling"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/b/b4/Ecw_anarchy_rulz.jpg"
+      about: "ECW Anarchy Rulz is a professional wrestling video game released by Acclaim Entertainment in 2000 based on Extreme Championship Wrestling (ECW). It was released for the PlayStation and Dreamcast."
+      about_url: "https://en.wikipedia.org/wiki/ECW_Anarchy_Rulz_%28video_game%29"
+      trivia: "It was the last ECW game, made before the promotion filed for bankruptcy and was bought by WWE, and a planned Nintendo 64 version was cancelled."
+      why: "The ECW licence ended with the promotion's bankruptcy, which left this as the final ECW game, and wrestling collectors chase the Dreamcast disc."
+    ebay:
+      query: "ECW Anarchy Rulz Dreamcast"
+      negative: ["hardcore revolution", "ps1", "playstation"]
+  - id: tech-romancer-dreamcast
+    title: "Tech Romancer"
+    info:
+      developer: "Capcom"
+      publisher: "Capcom"
+      year: 2000
+      genre: "Fighting"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/d/d8/Tech_Romancer_JP_DC.jpg"
+      about: "Tech Romancer is a 1998 3D fighting arcade game by Capcom that draws heavily from the various subgenres of mecha anime. It was later ported to the Dreamcast console."
+      about_url: "https://en.wikipedia.org/wiki/Tech_Romancer"
+      trivia: "Studio Nue designed the robots, and each robot's story mode plays out like an anime series, with episode titles and eyecatches between fights."
+      why: "Capcom never ported it beyond the Dreamcast, so the Dreamcast disc is the only home version of the arcade game."
+    ebay:
+      query: "Tech Romancer Dreamcast"
+  - id: confidential-mission-dreamcast
+    title: "Confidential Mission"
+    info:
+      developer: "Hitmaker"
+      publisher: "Sega"
+      year: 2001
+      genre: "Light-gun shooter"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/5/5c/Confidential_Mission_Box_Art.jpg"
+      about: "Confidential Mission is a light gun game published by Sega, first available as an arcade game, then ported to the Dreamcast. The game is in the same style as the Virtua Cop series or The House of the Dead series, with support for one or two players."
+      about_url: "https://en.wikipedia.org/wiki/Confidential_Mission"
+    ebay:
+      query: "Confidential Mission Dreamcast"
+      negative: ["ps2"]
+  - id: fatal-fury-mark-of-the-wolves-dreamcast
+    title: "Fatal Fury: Mark of the Wolves"
+    info:
+      developer: "SNK"
+      publisher: "Agetec"
+      year: 2001
+      genre: "Fighting"
+      about: "Garou: Mark of the Wolves is a 1999 fighting game developed and published by SNK for the Neo Geo arcade and home platforms. It was ported as Fatal Fury: Mark of the Wolves to the Dreamcast."
+      about_url: "https://en.wikipedia.org/wiki/Garou:_Mark_of_the_Wolves"
+      trivia: "The Dreamcast version was the only port of the game released in North America, arriving on November 23, 2001 as one of the system's last games there."
+      why: "It came out at the end of the Dreamcast's North American life, published by Agetec, and its standing among SNK's best fighting games keeps it in demand."
+    ebay:
+      query: "Fatal Fury Mark of the Wolves Dreamcast"
+      # The Japanese release is tracked as garou-mark-of-the-wolves-dreamcast.
+      negative: ["garou", "neo geo", "pc engine", "ps2", "ps4", "switch", "xbox"]
+  - id: death-crimson-ox-dreamcast
+    title: "Death Crimson OX"
+    info:
+      developer: "Ecole Software"
+      publisher: "Sammy Entertainment"
+      year: 2001
+      genre: "Light-gun shooter"
+      about: "Death Crimson OX is a light gun shooting game developed by Ecole Software. It was released in arcades in 2000 then ported to the Dreamcast console in 2001, several months after Sega had dropped support for the console."
+      about_url: "https://en.wikipedia.org/wiki/Death_Crimson_OX"
+      trivia: "It is the third and final Death Crimson game and the only one released outside Japan."
+      why: "Sammy released it in North America several months after Sega had dropped support for the Dreamcast, so it shipped into a shrinking market."
+    ebay:
+      query: "Death Crimson OX Dreamcast"
+      negative: ["death crimson 2"]
+  - id: maken-x-dreamcast
+    title: "Maken X"
+    info:
+      developer: "Atlus"
+      publisher: "Sega"
+      year: 2000
+      genre: "Action"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/d/da/Maken_X.jpg"
+      about: "Maken X is a first-person hack and slash video game developed by Atlus for the Dreamcast. It was published by Atlus in Japan in 1999, while Sega localized and released the game overseas in 2000."
+      about_url: "https://en.wikipedia.org/wiki/Maken_X"
+    ebay:
+      query: "Maken X Dreamcast"
+      negative: ["maken shao", "ps2"]
+  - id: heavy-metal-geomatrix-dreamcast
+    title: "Heavy Metal: Geomatrix"
+    info:
+      developer: "Capcom"
+      publisher: "Capcom"
+      year: 2001
+      genre: "Fighting"
+      about: "Heavy Metal: Geomatrix is a 3D arena fighting video game released in 2001 by both Sega and Capcom for the Sega NAOMI and Dreamcast, based upon the Heavy Metal license."
+      about_url: "https://en.wikipedia.org/wiki/Heavy_Metal:_Geomatrix"
+      trivia: "Its licensed soundtrack features Megadeth, Halford, W.A.S.P. and Corrosion of Conformity."
+      why: "Released only in arcades and on the Dreamcast under the Heavy Metal licence, the Dreamcast disc is the game's only home release."
+    ebay:
+      query: "Heavy Metal Geomatrix Dreamcast"
+      negative: ["fakk", "dvd", "blu-ray", "vhs", "ps2"]
+  - id: cyber-troopers-virtual-on-oratorio-tangram-dreamcast
+    title: "Cyber Troopers Virtual-On Oratorio Tangram"
+    info:
+      developer: "Sega AM3"
+      publisher: "Activision"
+      year: 2000
+      genre: "Fighting"
+      about: "Cyber Troopers Virtual-On Oratorio Tangram is a 1998 arcade action game from Sega, a 3D fighting game where the player assumes control of a giant humanoid robot. It was developed initially on the Sega Model 3 arcade hardware."
+      about_url: "https://en.wikipedia.org/wiki/Cyber_Troopers_Virtual-On_Oratorio_Tangram"
+    ebay:
+      query: "Virtual On Oratorio Tangram Dreamcast"
+      negative: ["twin stick", "saturn", "marz", "force", "xbox", "ps2", "ps4"]

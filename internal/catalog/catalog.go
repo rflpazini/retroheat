@@ -20,6 +20,7 @@ type Platform string
 
 const (
 	PS2       Platform = "ps2"
+	PS3       Platform = "ps3"
 	GameCube  Platform = "gamecube"
 	PSP       Platform = "psp"
 	Vita      Platform = "vita"
@@ -30,10 +31,11 @@ const (
 	GBA       Platform = "gba"
 )
 
-var Platforms = []Platform{PS2, GameCube, PSP, Vita, N64, Dreamcast, GB, GBC, GBA}
+var Platforms = []Platform{PS2, PS3, GameCube, PSP, Vita, N64, Dreamcast, GB, GBC, GBA}
 
 var platformLabels = map[Platform]string{
 	PS2:       "PlayStation 2",
+	PS3:       "PlayStation 3",
 	GameCube:  "GameCube",
 	PSP:       "PSP",
 	Vita:      "PS Vita",

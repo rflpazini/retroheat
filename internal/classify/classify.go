@@ -41,8 +41,8 @@ const SeriesVersion = 2
 type Media int
 
 const (
-	// Cased media is a disc or card in a plastic case: PS2, GameCube, PSP,
-	// Vita, Dreamcast.
+	// Cased media is a disc or card in a plastic case: PS2, PS3, GameCube,
+	// PSP, Vita, Dreamcast.
 	Cased Media = iota
 	// Boxed media is a cartridge in a cardboard box: N64, Game Boy, Game Boy
 	// Color, Game Boy Advance.
@@ -334,9 +334,10 @@ func containsRunTogether(listing, game string) bool {
 
 // platformNumbers strips platform names whose number would otherwise stand in
 // for a sequel number: "Dark Cloud (Sony PlayStation 2)" is not Dark Cloud 2,
-// and "Silent Hill Origins PlayStation 2" is not Silent Hill 2. Nintendo 64 is
-// left alone because its games carry the 64 in their own titles.
-var platformNumbersRe = regexp.MustCompile(`\b(play ?station ?(2|two)|ps 2)\b`)
+// "Silent Hill Origins PlayStation 2" is not Silent Hill 2, and "Resistance:
+// Fall of Man (PlayStation 3)" is not Resistance 3. Nintendo 64 is left alone
+// because its games carry the 64 in their own titles.
+var platformNumbersRe = regexp.MustCompile(`\b(play ?station ?(2|3|two|three)|ps (2|3))\b`)
 
 // completenessRe is any word about what came with the game. A cartridge or
 // card title that uses one and still reached the end of the rules is

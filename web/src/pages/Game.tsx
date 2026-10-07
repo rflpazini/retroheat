@@ -88,7 +88,22 @@ export function Game() {
       </Window>
     )
   }
-  if (history.status === 'error') return <LoadError what="this game's history" />
+  // A game the collector has never priced has a detail file but no history
+  // yet: it is new to the catalog, or too thinly listed to clear the
+  // four-listing minimum. That is a state to show, not a failure to report.
+  const unpriced = history.status === 'error' && history.error === '404'
+  if (history.status === 'error' && !unpriced) return <LoadError what="this game's history" />
+  if (unpriced && detail.status === 'loading') {
+    return (
+      <Window title="Loading…">
+        <p className="pixel text-[0.6rem]">Reading disk…</p>
+      </Window>
+    )
+  }
+  if (unpriced && detail.status === 'error') {
+    return <Message title="No such game" detail="Nothing in the catalog has this id. Pick a game from any board." />
+  }
+  const points = history.status === 'ready' ? history.data.points : []
 
   const annotation = game?.annotation
   const info = game?.info
@@ -108,8 +123,8 @@ export function Game() {
     .filter(Boolean)
     .join(' · ')
 
-  const latest = history.data.points.at(-1)
-  const available = CONDITIONS.filter((c) => history.data.points.some((p) => p[c] != null))
+  const latest = points.at(-1)
+  const available = CONDITIONS.filter((c) => points.some((p) => p[c] != null))
   const color = conditionColor(condition)
   const hasOlder = series.some((p) => p.older != null)
   const boundary = series.find((p) => p.current != null)?.date
@@ -278,7 +293,12 @@ export function Game() {
             </div>
           </div>
 
-          {series.length < 2 ? (
+          {points.length === 0 ? (
+            <Message
+              title="No prices yet"
+              detail="The collector has not priced this game yet. It runs twice a day, and a condition needs four listings before its price is published."
+            />
+          ) : series.length < 2 ? (
             <Message
               title="Not enough history yet"
               detail="This game needs a few more daily snapshots before a chart is meaningful."

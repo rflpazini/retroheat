@@ -68,7 +68,7 @@ export function DiskWindow({ order }: { order?: number }) {
         <span className="eyebrow">{tracked === null ? '—' : `${tracked} games on disk`}</span>
       </div>
 
-      <div className="grid grid-cols-3 gap-1 p-3 sm:grid-cols-5 lg:grid-cols-9">
+      <div className="grid grid-cols-3 gap-1 p-3 sm:grid-cols-5 lg:grid-cols-10">
         {PLATFORMS.map((p) => (
           <DiskIcon
             key={p}
@@ -80,7 +80,7 @@ export function DiskWindow({ order }: { order?: number }) {
       </div>
 
       {account.status === 'signed-in' && (
-        <div className="grid grid-cols-3 gap-1 border-t-2 border-[var(--border)] p-3 sm:grid-cols-5 lg:grid-cols-9">
+        <div className="grid grid-cols-3 gap-1 border-t-2 border-[var(--border)] p-3 sm:grid-cols-5 lg:grid-cols-10">
           <FolderIcon
             to="/saved"
             label="Saved"

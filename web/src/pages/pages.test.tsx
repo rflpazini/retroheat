@@ -328,6 +328,30 @@ describe.skipIf(!present)('the game page explains the game, not just the price',
     serveLocalData()
   })
 
+  it('shows a game the collector has not priced yet, instead of a load error', async () => {
+    const { Game } = await import('./Game')
+    // A game new to the catalog, or too thinly listed to clear the minimum,
+    // has a detail file but no history file yet.
+    const serve = globalThis.fetch
+    vi.stubGlobal('fetch', async (input: RequestInfo | URL) =>
+      String(input).endsWith('/data/history/jet-force-gemini-n64.json')
+        ? new Response('{}', { status: 404 })
+        : serve(input),
+    )
+    const first = renderAt('/g/jet-force-gemini-n64', <Game />, '/g/:id')
+    await waitFor(() => expect(document.body.textContent).toMatch(/No prices yet/i))
+    const text = document.body.textContent ?? ''
+    expect(text).toMatch(/Jet Force Gemini/)
+    expect(text).toMatch(/Rare/)
+    expect(text).not.toMatch(/Could not load/i)
+    first.unmount()
+
+    // An id that names no game at all has neither file.
+    resetCache()
+    renderAt('/g/no-such-game-n64', <Game />, '/g/:id')
+    await waitFor(() => expect(document.body.textContent).toMatch(/No such game/i))
+  })
+
   it('shows specs, trivia and why a title costs what it does', async () => {
     const { Game } = await import('./Game')
     renderAt('/g/jet-force-gemini-n64', <Game />, '/g/:id')
