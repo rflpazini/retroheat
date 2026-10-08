@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
-import { Bookmark, Disc3, Gamepad2, HardDrive, Info, Library, Menu, Monitor, TrendingUp } from 'lucide-react'
+import { Bookmark, Disc3, HardDrive, Info, Library, Menu, Monitor, TrendingUp } from 'lucide-react'
+import { ConsoleIcon } from '@/components/ConsoleIcon'
 import { MenuBar } from '@/components/MenuBar'
 import { BootScreen } from '@/components/BootScreen'
 import { Ticker } from '@/components/Ticker'
@@ -70,7 +71,7 @@ function SidebarContent({ onNavigate }: { onNavigate?: () => void }) {
         <p className="eyebrow px-1 pt-3 pb-1">C:\ Platforms</p>
         {PLATFORMS.map((p) => (
           <NavLink key={p} to={`/p/${p}`} className={navLink} onClick={onNavigate}>
-            <Gamepad2 className="size-4 shrink-0" aria-hidden />
+            <ConsoleIcon platform={p} />
             {PLATFORM_LABELS[p]}
           </NavLink>
         ))}
