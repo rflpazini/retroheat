@@ -135,8 +135,9 @@ and is hidden entirely when the site is built without it.
   picture Google shares), the ids of the games you save and, if you type it,
   the most you would pay for each; one row per copy you own with its
   condition and, only if you type them, what it cost and when, a note, and
-  what it sold for and when; with timestamps. Nothing else: no browsing
-  history, no analytics.
+  what it sold for and when; the edition and barcode of a copy you scanned;
+  and, when the scanner did not know a box, the code and the game you paired
+  it with; with timestamps. Nothing else: no browsing history, no analytics.
 - **Who can see it:** only you. Row-level security in the database scopes every
   row to its owner; the site talks to the database with a public key, and that
   boundary is the database's, not the browser's. The one thing that leaves is
@@ -147,6 +148,17 @@ and is hidden entirely when the site is built without it.
   with the link sees the games, conditions and asking prices, what you paid
   only if you tick that too, and never your notes or sold copies. Turn it off
   and the link says "No such shelf".
+- **Scan a box to add it.** Scan in the collection's add strip (or File ▸ Scan
+  Barcode…) opens the phone's camera; point it at the barcode on the back of a
+  case and the game comes up with Complete ticked, ready to add, and the
+  camera waits for the next box. The barcode is read on the device: no picture
+  leaves it. A box the scanner does not know yet is paired by searching, and
+  that pairing (a code and a game id, never your name) is read by the
+  catalog's maintainer to fold into the catalog, so the next person's box of
+  that game scans too. The codes come from eBay's catalog; see
+  [catalog/SCHEMA.md](catalog/SCHEMA.md#barcodes). The home-screen shortcut
+  "Scan a game" goes straight to the camera when you are signed in; signed
+  out, it asks you to sign in first, and Scan is one tap from there.
 - **Delete it any time** from the account menu. That removes the account and
   everything saved with it.
 - **Works without a signal.** The site installs as an app (Add to Home Screen
@@ -218,7 +230,7 @@ The rules, the archive format and the replay command are in
 5. Run the `scrape` workflow manually once, then let the schedule take over.
 6. Optional, for accounts: create a free [Supabase](https://supabase.com)
    project; run the files under `supabase/migrations/` in order in its SQL
-   editor (lists, price history, paid price, copies, sharing); under
+   editor (lists, price history, paid price, copies, sharing, barcodes); under
    Authentication enable Google (an OAuth client in Google Cloud pointing at
    the project's callback URL) and email, and add your site URL to the
    redirect allow-list; set up custom SMTP before real users, since the
