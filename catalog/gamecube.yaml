@@ -703,7 +703,7 @@ games:
       trivia: "A commercial flop on release despite strong reviews, later remastered in HD."
       why: "Ubisoft printed few GameCube copies after weak sales, so it is the scarcest version."
     ebay:
-      query: "Beyond Good and Evil GameCube"
+      query: "Beyond Good Evil GameCube"
       negative: ["hd", "ps2", "xbox"]
   - id: geist-gamecube
     title: "Geist"
@@ -1801,3 +1801,724 @@ games:
     ebay:
       query: "One Piece Grand Adventure GameCube"
       negative: ["grand battle", "pirates carnival", "unlimited", "ps2", "wii"]
+  - id: pokemon-box-ruby-and-sapphire-gamecube
+    title: "Pokémon Box: Ruby & Sapphire"
+    info:
+      developer: "Game Freak"
+      publisher: "Nintendo"
+      year: 2004
+      genre: "Utility"
+    ebay:
+      query: "Pokemon Box (ruby, sapphire) (gamecube, \"game cube\")"
+      negative: ["colosseum", "xd", "gale of darkness", "tcg", "booster", "elite trainer"]
+  - id: disney-sports-basketball-gamecube
+    title: "Disney Sports Basketball"
+    info:
+      developer: "Konami"
+      year: 2003
+      genre: "Basketball"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/8/89/Disney_Sports_Basketball_GC.jpg"
+      about: "Disney Sports Basketball is a 2002 sports video game published by Konami."
+      about_url: "https://en.wikipedia.org/wiki/Disney_Sports_Basketball"
+      publisher: "Konami"
+    ebay:
+      query: "Disney Sports Basketball (gamecube, \"game cube\")"
+      negative: ["gba", "advance"]
+  - id: ncaa-college-basketball-2k3-gamecube
+    title: "NCAA College Basketball 2K3"
+    info:
+      developer: "Kush Games"
+      publisher: "Sega"
+      year: 2002
+      genre: "Basketball"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/c/c4/NCAA_College_Basketball_2K3.jpg"
+      about: "NCAA College Basketball 2K3 is a 2002 basketball video game developed by Kush Games and Visual Concepts and published by Sega for the PlayStation 2, GameCube, and Xbox."
+      about_url: "https://en.wikipedia.org/wiki/NCAA_College_Basketball_2K3"
+    ebay:
+      query: "NCAA Basketball 2K3 (gamecube, \"game cube\")"
+      negative: ["ps2", "xbox", "football"]
+  - id: disney-sports-football-gamecube
+    title: "Disney Sports Football"
+    info:
+      developer: "Konami"
+      publisher: "Konami"
+      year: 2002
+      genre: "Sports"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/0/01/Disney_Sports_Football_cover.png"
+      about: "Disney Sports Football is a pair of 2002 sports video games released by Konami for the GameCube and Game Boy Advance."
+      about_url: "https://en.wikipedia.org/wiki/Disney_Sports_Football"
+    ebay:
+      query: "Disney Sports Football (gamecube, \"game cube\")"
+      negative: ["gba", "advance"]
+  - id: samurai-jack-the-shadow-of-aku-gamecube
+    title: "Samurai Jack: The Shadow of Aku"
+    info:
+      developer: "Adrenium Games"
+      publisher: "Sega"
+      year: 2004
+      genre: "Action-adventure"
+      about: "Samurai Jack: The Shadow of Aku is an action-adventure video game released in 2004 by Adrenium Games and published by Sega and based on the Samurai Jack animated television series on Cartoon Network. It is the second game based on the series after Samurai Jack: The Amulet of Time on the Game Boy Advance a year prior."
+      about_url: "https://en.wikipedia.org/wiki/Samurai_Jack:_The_Shadow_of_Aku"
+    ebay:
+      query: "Samurai Jack Aku (gamecube, \"game cube\")"
+      negative: ["ps2", "battle through time", "dvd", "season"]
+  - id: phantasy-star-online-episode-1-2-plus-gamecube
+    title: "Phantasy Star Online Episode I & II Plus"
+    info:
+      developer: "Sonic Team"
+      publisher: "Sega"
+      genre: "Action role-playing"
+      about: "Phantasy Star Online is an online role-playing game (RPG) developed by Sonic Team and published by Sega in 2000 for the Dreamcast. Players adventure with up to three others over the internet to complete quests, collect items and fight enemies in real-time action RPG combat."
+      about_url: "https://en.wikipedia.org/wiki/Phantasy_Star_Online"
+      year: 2004
+    ebay:
+      query: "Phantasy Star Online Plus (gamecube, \"game cube\")"
+      negative: ["episode iii", "card revolution", "xbox", "dreamcast"]
+      # Half its title is the original Episode I & II, which asks a third as much.
+      require: ["plus"]
+  - id: rally-championship-gamecube
+    title: "Rally Championship"
+    info:
+      developer: "Warthog Games"
+      publisher: "Conspiracy Entertainment"
+      year: 2003
+      genre: "Racing"
+      about: "Rally Championship is a rally video game. It was released for PlayStation 2 in 2002 and GameCube in 2003."
+      about_url: "https://en.wikipedia.org/wiki/Rally_Championship_%28video_game%29"
+    ebay:
+      query: "Rally Championship (gamecube, \"game cube\")"
+      negative: ["ps2", "pc", "xtreme"]
+  - id: evolution-snowboarding-gamecube
+    title: "Evolution Snowboarding"
+    info:
+      developer: "Konami"
+      year: 2003
+      genre: "Snowboarding"
+      about: "Evolution Snowboarding is a 2002 snowboarding video game both developed and published by Japanese game company Konami. The game takes a new perspective on the snowboarding genre."
+      about_url: "https://en.wikipedia.org/wiki/Evolution_Snowboarding"
+      publisher: "Konami"
+    ebay:
+      query: "Evolution Snowboarding (gamecube, \"game cube\")"
+      negative: ["ps2", "skateboarding"]
+  - id: spirits-and-spells-gamecube
+    title: "Spirits & Spells"
+    info:
+      developer: "Wanadoo Edition"
+      publisher: "DreamCatcher Interactive"
+      year: 2003
+      genre: "Platformer"
+      about: "Castleween is a 3D platform video game developed and published by Wanadoo Edition for the PlayStation 2, before being ported to the GameCube."
+      about_url: "https://en.wikipedia.org/wiki/Castleween"
+    ebay:
+      query: "Spirits Spells (gamecube, \"game cube\")"
+      negative: ["ps2"]
+  - id: harry-potter-and-the-sorcerers-stone-gamecube
+    title: "Harry Potter and the Sorcerer's Stone"
+    info:
+      developer: "Warthog Games"
+      publisher: "Electronic Arts"
+      year: 2003
+      genre: "Action-adventure"
+      about: "Harry Potter and the Philosopher's Stone is an action-adventure video game based on the 2001 film of the same name."
+      about_url: "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_%282003_video_game%29"
+    ebay:
+      query: "Harry Potter Stone (gamecube, \"game cube\")"
+      negative: ["ps2", "xbox", "pc", "gba", "advance", "chamber of secrets", "azkaban", "goblet of fire", "quidditch", "philosophers stone", "dvd"]
+  - id: buffy-the-vampire-slayer-chaos-bleeds-gamecube
+    title: "Buffy the Vampire Slayer: Chaos Bleeds"
+    info:
+      developer: "Eurocom"
+      publisher: "Vivendi Universal Games"
+      year: 2003
+      genre: "Beat 'em up"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/d/dd/Buffy_the_Vampire_Slayer_-_Chaos_Bleeds_Coverart.png"
+      about: "Buffy the Vampire Slayer: Chaos Bleeds is an action beat 'em up video game developed by Eurocom Entertainment Software and published by Vivendi Universal Games. It is the fourth game in the Buffy the Vampire Slayer franchise, and the only multiplatform game."
+      about_url: "https://en.wikipedia.org/wiki/Buffy_the_Vampire_Slayer:_Chaos_Bleeds"
+    ebay:
+      query: "Buffy Chaos Bleeds (gamecube, \"game cube\")"
+      negative: ["ps2", "xbox", "dvd", "comic"]
+  - id: timesplitters-future-perfect-gamecube
+    title: "TimeSplitters: Future Perfect"
+    info:
+      developer: "Free Radical Design"
+      publisher: "Electronic Arts"
+      year: 2005
+      genre: "First-person shooter"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/4/48/TimeSplitters_-_Future_Perfect_cover.jpg"
+      about: "TimeSplitters: Future Perfect is a 2005 first-person shooter video game developed by Free Radical Design and published by Electronic Arts for the GameCube, PlayStation 2, and Xbox."
+      about_url: "https://en.wikipedia.org/wiki/TimeSplitters:_Future_Perfect"
+    ebay:
+      query: "Future Perfect (gamecube, \"game cube\")"
+      negative: ["ps2", "xbox", "timesplitters 2", "time splitters 2"]
+  - id: batman-dark-tomorrow-gamecube
+    title: "Batman: Dark Tomorrow"
+    info:
+      developer: "HotGen"
+      publisher: "Kemco"
+      year: 2003
+      genre: "Action-adventure"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/8/82/Batman_-_Dark_Tomorrow_Coverart.png"
+      about: "Batman: Dark Tomorrow, is an action-adventure game developed and published by Kemco for the GameCube and Xbox in 2003. It is based on the DC Comics character Batman."
+      about_url: "https://en.wikipedia.org/wiki/Batman:_Dark_Tomorrow"
+    ebay:
+      query: "Batman Dark Tomorrow (gamecube, \"game cube\")"
+      negative: ["xbox", "vengeance", "sin tzu", "begins", "dvd"]
+  - id: piglets-big-game-gamecube
+    title: "Piglet's Big Game"
+    info:
+      publisher: "Gotham Games"
+      year: 2003
+      genre: "Action-adventure"
+      about: "Disney's Piglet's Big Game is a 2003 action-adventure game developed by French developer Doki Denki Studio. Intended towards younger audiences, the game is based on the Disney version of the Winnie the Pooh franchise."
+      about_url: "https://en.wikipedia.org/wiki/Piglet%27s_Big_Game"
+      developer: "Doki Denki Studio"
+    ebay:
+      query: "Piglet's Big Game (gamecube, \"game cube\")"
+      negative: ["ps2", "gba", "advance", "dvd", "vhs", "movie"]
+  - id: disney-sports-soccer-gamecube
+    title: "Disney Sports Soccer"
+    info:
+      developer: "Konami"
+      year: 2002
+      genre: "Sports"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/0/00/Disney_Sports_Soccer_Coverart.png"
+      about: "Disney Sports Soccer, known as Disney Sports Football in Europe, is a pair of 2002 sports video games released by Konami, one for the GameCube, and the other for the Game Boy Advance."
+      about_url: "https://en.wikipedia.org/wiki/Disney_Sports_Soccer"
+      publisher: "Konami"
+    ebay:
+      query: "Disney Sports Soccer (gamecube, \"game cube\")"
+      negative: ["gba", "advance"]
+  - id: rayman-3-hoodlum-havoc-gamecube
+    title: "Rayman 3: Hoodlum Havoc"
+    info:
+      developer: "Ubi Soft Shanghai"
+      publisher: "Ubi Soft"
+      year: 2003
+      genre: "Platformer"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/3/34/Rayman_3_Box_Art.png"
+      about: "Rayman 3: Hoodlum Havoc is a 2003 platform game developed and published by Ubi Soft, and the third major installment in the Rayman series. It follows Rayman in his quest to stop an evil Black Lum named André from taking over the world with his army of hoodlum soldiers, which includes finding a cure for his best friend Globox after he accidentally swallows André."
+      about_url: "https://en.wikipedia.org/wiki/Rayman_3:_Hoodlum_Havoc"
+    ebay:
+      query: "Rayman 3 (gamecube, \"game cube\")"
+      negative: ["ps2", "xbox", "pc", "gba", "advance", "hd", "ps3", "rayman 2", "arena", "raving rabbids"]
+  - id: darkened-skye-gamecube
+    title: "Darkened Skye"
+    info:
+      developer: "Boston Animation"
+      publisher: "Simon & Schuster Interactive"
+      year: 2002
+      genre: "Third-person shooter"
+      about: "Darkened Skye is a 2002 action-adventure game developed by Boston Animation. The game was also packaged with Outlaw Golf."
+      about_url: "https://en.wikipedia.org/wiki/Darkened_Skye"
+    ebay:
+      query: "Darkened Skye (gamecube, \"game cube\")"
+      negative: ["pc", "outlaw golf"]
+  - id: virtua-quest-gamecube
+    title: "Virtua Quest"
+    info:
+      developer: "Sega AM2"
+      publisher: "Sega"
+      year: 2005
+      genre: "Action role-playing"
+      about: "Virtua Quest is a Virtua Fighter spin-off title co-developed by TOSE and Sega AM2, and published by Sega for the GameCube and PlayStation 2."
+      about_url: "https://en.wikipedia.org/wiki/Virtua_Quest"
+    ebay:
+      query: "Virtua Quest (gamecube, \"game cube\")"
+      negative: ["ps2"]
+  - id: the-incredible-hulk-ultimate-destruction-gamecube
+    title: "The Incredible Hulk: Ultimate Destruction"
+    info:
+      developer: "Radical Entertainment"
+      publisher: "Vivendi Universal Games"
+      year: 2005
+      genre: "Action-adventure"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/b/b5/The_Incredible_Hulk_-_Ultimate_Destruction_%28game_box_art%29.jpg"
+      about: "The Incredible Hulk: Ultimate Destruction is a 2005 action-adventure video game developed by Radical Entertainment and published by Vivendi Universal Games for the GameCube, PlayStation 2 and Xbox. The game is based on the Marvel Comics superhero the Hulk and showcases an open world with destructible environments."
+      about_url: "https://en.wikipedia.org/wiki/The_Incredible_Hulk:_Ultimate_Destruction"
+    ebay:
+      query: "Hulk Ultimate Destruction (gamecube, \"game cube\")"
+      negative: ["ps2", "xbox", "dvd", "figure"]
+  - id: hello-kitty-roller-rescue-gamecube
+    title: "Hello Kitty: Roller Rescue"
+    info:
+      developer: "XPEC Entertainment"
+      publisher: "Namco"
+      year: 2005
+      genre: "Action-adventure"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/2/29/Mission_Roller_Rescue.jpg"
+      about: "Hello Kitty: Roller Rescue is a 2005 action-adventure video game developed by XPEC Entertainment for the PlayStation 2, GameCube, Xbox, and Windows."
+      about_url: "https://en.wikipedia.org/wiki/Hello_Kitty:_Roller_Rescue"
+    ebay:
+      query: "Hello Kitty Roller Rescue (gamecube, \"game cube\")"
+      negative: ["ps2", "xbox", "pc"]
+  - id: spawn-armageddon-gamecube
+    title: "Spawn: Armageddon"
+    info:
+      developer: "Point of View, Inc."
+      publisher: "Namco"
+      year: 2003
+      genre: "Action-adventure"
+      about: "Spawn: Armageddon is a 2003 action-adventure game released for the PlayStation 2, Xbox and GameCube video game consoles."
+      about_url: "https://en.wikipedia.org/wiki/Spawn:_Armageddon"
+    ebay:
+      query: "Spawn Armageddon (gamecube, \"game cube\")"
+      negative: ["ps2", "xbox", "comic", "figure", "dvd"]
+  - id: the-powerpuff-girls-relish-rampage-gamecube
+    title: "The Powerpuff Girls: Relish Rampage"
+    info:
+      developer: "VIS Entertainment"
+      publisher: "BAM! Entertainment"
+      year: 2002
+      genre: "Action-adventure"
+      about: "The Powerpuff Girls: Relish Rampage is an action-adventure video game developed by VIS Entertainment and published by BAM! Entertainment, based on the Cartoon Network animated series The Powerpuff Girls."
+      about_url: "https://en.wikipedia.org/wiki/The_Powerpuff_Girls:_Relish_Rampage"
+    ebay:
+      query: "Relish Rampage (gamecube, \"game cube\")"
+      negative: ["ps2", "pc", "dvd"]
+  - id: serious-sam-next-encounter-gamecube
+    title: "Serious Sam: Next Encounter"
+    info:
+      developer: "Climax Solent"
+      publisher: "Global Star Software"
+      year: 2004
+      genre: "First-person shooter"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/6/64/Serious_Sam_Next_Encounter.jpg"
+      about: "Serious Sam: Next Encounter is a 2004 first-person shooter game developed by Climax Solent and published by Global Star Software. As a spin-off in the Serious Sam series, it follows Sam \"Serious\" Stone, who tracks an unidentified enemy through ancient Rome, feudal China and Atlantis, and eliminates the forces the enemy controls to eventually uncover their identity."
+      about_url: "https://en.wikipedia.org/wiki/Serious_Sam:_Next_Encounter"
+    ebay:
+      query: "Serious Sam Next Encounter (gamecube, \"game cube\")"
+      negative: ["ps2"]
+  - id: bmx-xxx-gamecube
+    title: "BMX XXX"
+    info:
+      developer: "Z-Axis"
+      publisher: "Acclaim Entertainment"
+      year: 2002
+      genre: "Sports"
+      about: "BMX XXX is a 2002 sports video game developed by Z-Axis and published by Acclaim Entertainment under their AKA Acclaim label for the Xbox, PlayStation 2 and GameCube. While primarily a BMX-based action sports title, the game places a distinct emphasis on off-color and sexual humor, and allows the player to create female characters that are fully topless."
+      about_url: "https://en.wikipedia.org/wiki/BMX_XXX"
+    ebay:
+      query: "BMX XXX (gamecube, \"game cube\")"
+      negative: ["ps2", "xbox"]
+  - id: codename-kids-next-door-gamecube
+    title: "Codename: Kids Next Door"
+    info:
+      developer: "High Voltage Software"
+      publisher: "Global Star Software"
+      year: 2005
+      genre: "Platformer"
+      about: "Codename: Kids Next Door – Operation: V.I.D.E.O.G.A.M.E. is a 2005 platform game developed by High Voltage Software and published by Global Star Software for the GameCube, Xbox, and PlayStation 2."
+      about_url: "https://en.wikipedia.org/wiki/Codename:_Kids_Next_Door_%E2%80%93_Operation:_V.I.D.E.O.G.A.M.E."
+    ebay:
+      query: "Kids Next Door (gamecube, \"game cube\")"
+      negative: ["ps2", "xbox", "gba", "advance", "dvd"]
+  - id: one-piece-grand-battle-gamecube
+    title: "One Piece: Grand Battle"
+    info:
+      developer: "Ganbarion"
+      publisher: "Bandai"
+      year: 2005
+      genre: "Fighting"
+      about: "One Piece: Grand Battle is a fighting game made in Japan based on the manga series One Piece and its anime adaptation. It is the fourth and final game in One Piece's Grand Battle series and the nineteenth One Piece video game released."
+      about_url: "https://en.wikipedia.org/wiki/One_Piece:_Grand_Battle%21"
+    ebay:
+      query: "One Piece Grand Battle (gamecube, \"game cube\")"
+      negative: ["ps2", "grand adventure", "pirates carnival"]
+  - id: nba-street-v3-gamecube
+    title: "NBA Street V3"
+    info:
+      developer: "EA Canada"
+      publisher: "EA Sports BIG"
+      year: 2005
+      genre: "Basketball"
+      about: "NBA Street V3 is a 2005 basketball video game developed by EA Canada and published by Electronic Arts under the EA Sports BIG label for the GameCube, PlayStation 2, and Xbox. It is the third installment in the NBA Street series."
+      about_url: "https://en.wikipedia.org/wiki/NBA_Street_V3"
+    ebay:
+      query: "NBA Street (v3, \"vol 3\") (gamecube, \"game cube\")"
+      negative: ["ps2", "xbox", "vol 2", "homecourt"]
+  - id: puyo-pop-fever-gamecube
+    title: "Puyo Pop Fever"
+    info:
+      developer: "Sonic Team"
+      publisher: "Sega"
+      year: 2004
+      genre: "Puzzle"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/2/22/Puyopopfever.jpg"
+      about: "Puyo Pop Fever is a 2003 puzzle video game developed by Sonic Team and published by Sega. It is the fifth main installment in the Puyo Puyo series, and the second Puyo Puyo game to be programmed by Sonic Team after Puyo Pop."
+      about_url: "https://en.wikipedia.org/wiki/Puyo_Pop_Fever"
+    ebay:
+      query: "Puyo Pop Fever (gamecube, \"game cube\")"
+      negative: ["nintendo ds", "psp", "ps2"]
+  - id: the-grim-adventures-of-billy-and-mandy-gamecube
+    title: "The Grim Adventures of Billy & Mandy"
+    info:
+      developer: "High Voltage Software"
+      publisher: "Midway Games"
+      year: 2006
+      genre: "Fighting"
+      about: "The Grim Adventures of Billy & Mandy is a fighting video game published by Midway based on the Cartoon Network animated television series of the same name. It pits characters from the series against one another in 3D arena battles using various attacks, items, and environmental hazards to eliminate opponents and be the last one standing."
+      about_url: "https://en.wikipedia.org/wiki/The_Grim_Adventures_of_Billy_&_Mandy_%28video_game%29"
+    ebay:
+      query: "Grim Billy Mandy (gamecube, \"game cube\")"
+      negative: ["ps2", "wii", "gba", "advance", "dvd"]
+  - id: dragons-lair-3d-gamecube
+    title: "Dragon's Lair 3D"
+    info:
+      developer: "Dragonstone Software"
+      publisher: "Encore Software"
+      year: 2003
+      genre: "Action-adventure"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/3/3c/Dragon%27s_Lair_3D_-_Return_to_the_Lair_Coverart.jpg"
+      about: "Dragon's Lair 3D: Return to the Lair is an action-adventure game released in 2002 by Ubi Soft. It is based on 1983 arcade video game Dragon's Lair and follows a similar story: Dirk the Daring must enter the evil wizard Mordroc's castle to rescue Princess Daphne from Singe the Dragon."
+      about_url: "https://en.wikipedia.org/wiki/Dragon%27s_Lair_3D:_Return_to_the_Lair"
+    ebay:
+      query: "Lair 3D (gamecube, \"game cube\")"
+      negative: ["ps2", "xbox", "pc", "dvd", "blu-ray", "trilogy"]
+  - id: one-piece-pirates-carnival-gamecube
+    title: "One Piece: Pirates' Carnival"
+    info:
+      developer: "h.a.n.d."
+      publisher: "Namco Bandai Games"
+      year: 2006
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/c/c4/One_Piece_Pirates%27_Carnival.jpg"
+      about: "One Piece: Pirates' Carnival is a party video game developed by h.a.n.d. and published by Namco Bandai Games for the GameCube and PlayStation 2. It is based on the One Piece manga series and its anime adaptation."
+      about_url: "https://en.wikipedia.org/wiki/One_Piece:_Pirates%27_Carnival"
+      genre: "Party"
+    ebay:
+      query: "One Piece Carnival (gamecube, \"game cube\")"
+      negative: ["ps2", "grand battle", "grand adventure"]
+  - id: i-ninja-gamecube
+    title: "I-Ninja"
+    info:
+      developer: "Argonaut Games"
+      publisher: "Namco"
+      year: 2003
+      genre: "Platformer"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/5/53/I-Ninja.jpg"
+      about: "I-Ninja is a 2003 platform video game developed by Argonaut Games and published by Namco Hometek for the PlayStation 2. Versions for GameCube, Xbox and Microsoft Windows were released later, with Namco Hometek releasing the game in North America."
+      about_url: "https://en.wikipedia.org/wiki/I-Ninja"
+    ebay:
+      query: "I-Ninja (gamecube, \"game cube\")"
+      negative: ["ps2", "xbox", "pc"]
+  - id: metal-arms-glitch-in-the-system-gamecube
+    title: "Metal Arms: Glitch in the System"
+    info:
+      developer: "Swingin' Ape Studios"
+      publisher: "Vivendi Universal Games"
+      year: 2003
+      genre: "Third-person shooter"
+      about: "Metal Arms: Glitch in the System is a third-person shooter action-adventure video game, developed by American team Swingin' Ape Studios, published by Vivendi Universal Games and their subsidiary Sierra Entertainment and released in 2003."
+      about_url: "https://en.wikipedia.org/wiki/Metal_Arms:_Glitch_in_the_System"
+    ebay:
+      query: "Metal Arms Glitch (gamecube, \"game cube\")"
+      negative: ["ps2", "xbox"]
+  - id: disneys-hide-and-sneak-gamecube
+    title: "Disney's Hide & Sneak"
+    info:
+      developer: "Capcom"
+      publisher: "Capcom"
+      year: 2003
+      genre: "Action-adventure"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/c/cf/Disney%27s_Hide_and_Sneak_GC.jpg"
+      about: "Disney's Hide and Sneak is an action-adventure game released in 2003 by Capcom for the GameCube."
+      about_url: "https://en.wikipedia.org/wiki/Disney%27s_Hide_and_Sneak"
+    ebay:
+      query: "Hide Sneak (gamecube, \"game cube\")"
+  - id: summoner-a-goddess-reborn-gamecube
+    title: "Summoner: A Goddess Reborn"
+    info:
+      developer: "Volition"
+      publisher: "THQ"
+      year: 2003
+      genre: "Action role-playing"
+      about: "Summoner 2 is a 2002 action role-playing game developed by Volition and published by THQ as the sequel to Summoner. It was originally released for PlayStation 2 in 2002 and was ported to the GameCube in 2003 by Cranky Pants Games with some visual changes as Summoner: A Goddess Reborn."
+      about_url: "https://en.wikipedia.org/wiki/Summoner_2"
+    ebay:
+      query: "Summoner Goddess Reborn (gamecube, \"game cube\")"
+      negative: ["ps2", "pc"]
+  - id: tmnt-mutant-nightmare-gamecube
+    title: "TMNT: Mutant Nightmare"
+    info:
+      developer: "Konami"
+      publisher: "Konami"
+      year: 2005
+      genre: "Beat 'em up"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/3/35/Teenage_Mutant_Ninja_Turtles_3_-_Mutant_Nightmare_Coverart.png"
+      about: "Teenage Mutant Ninja Turtles 3: Mutant Nightmare is a video game published by Konami for the PlayStation 2, GameCube, Xbox, and Nintendo DS, based on the 2003 Teenage Mutant Ninja Turtles TV series."
+      about_url: "https://en.wikipedia.org/wiki/Teenage_Mutant_Ninja_Turtles_3:_Mutant_Nightmare"
+    ebay:
+      query: "Mutant Nightmare (gamecube, \"game cube\")"
+      negative: ["ps2", "xbox", "nintendo ds", "dvd"]
+  - id: scooby-doo-night-of-100-frights-gamecube
+    title: "Scooby-Doo! Night of 100 Frights"
+    info:
+      developer: "Heavy Iron Studios"
+      publisher: "THQ"
+      year: 2002
+      genre: "Platformer"
+      about: "Scooby-Doo! Night of 100 Frights is a 3D platform game developed by Heavy Iron Studios and published by THQ for the PlayStation 2, GameCube, and Xbox."
+      about_url: "https://en.wikipedia.org/wiki/Scooby-Doo%21_Night_of_100_Frights"
+    ebay:
+      query: "Scooby 100 Frights (gamecube, \"game cube\")"
+      negative: ["ps2", "xbox", "dvd", "mystery mayhem", "unmasked"]
+  - id: zatch-bell-mamodo-battles-gamecube
+    title: "Zatch Bell! Mamodo Battles"
+    info:
+      developer: "Eighting"
+      publisher: "Bandai"
+      year: 2005
+      genre: "Fighting"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/a/a4/Zatch_Bell_Mamodo_Battles.jpg"
+      about: "Zatch Bell! Mamodo Battles, known in Japan as Konjiki no Gash Bell!! Yuujou Tag Battle 2!!, is a 3D fighting game released in 2005 by Bandai. It is based on the Zatch Bell! anime and manga series by Makoto Raiku."
+      about_url: "https://en.wikipedia.org/wiki/Zatch_Bell%21_Mamodo_Battles"
+    ebay:
+      query: "Zatch Bell Mamodo Battles (gamecube, \"game cube\")"
+      negative: ["ps2", "mamodo fury", "electric arena", "gba"]
+  - id: wwe-day-of-reckoning-2-gamecube
+    title: "WWE Day of Reckoning 2"
+    info:
+      developer: "Yuke's"
+      publisher: "THQ"
+      year: 2005
+      genre: "Fighting"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/6/6d/WWE_Day_of_Reckoning_2_Coverart.png"
+      about: "WWE Day of Reckoning 2 is a 2005 professional wrestling video game developed by Yuke's and released for the GameCube by THQ. It is the sequel to WWE Day of Reckoning."
+      about_url: "https://en.wikipedia.org/wiki/WWE_Day_of_Reckoning_2"
+    ebay:
+      query: "WWE Day Reckoning 2 (gamecube, \"game cube\")"
+  - id: wwe-day-of-reckoning-gamecube
+    title: "WWE Day of Reckoning"
+    info:
+      developer: "Yuke's"
+      publisher: "THQ"
+      year: 2004
+      genre: "Fighting"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/0/04/Day_of_Reckoning.jpg"
+      about: "WWE Day of Reckoning is a 2004 professional wrestling video game developed by Yuke's and released for the GameCube console by THQ. The game is based on World Wrestling Entertainment, and many of the wrestlers who were on the WWE roster at the time of release were included as player characters."
+      about_url: "https://en.wikipedia.org/wiki/WWE_Day_of_Reckoning"
+    ebay:
+      query: "WWE Day Reckoning (gamecube, \"game cube\")"
+      negative: ["reckoning 2", "reckoning ii"]
+  - id: rave-master-gamecube
+    title: "Rave Master"
+    info:
+      developer: "Konami"
+      publisher: "Konami"
+      year: 2005
+      genre: "Fighting"
+    ebay:
+      query: "Rave Master (gamecube, \"game cube\")"
+      negative: ["dvd"]
+  - id: baldurs-gate-dark-alliance-gamecube
+    title: "Baldur's Gate: Dark Alliance"
+    info:
+      developer: "Snowblind Studios"
+      publisher: "Interplay Entertainment"
+      year: 2002
+      genre: "Action role-playing"
+      about: "Baldur's Gate: Dark Alliance is a 2001 action role-playing video game developed by Snowblind Studios and published by Interplay Entertainment subsidiary Black Isle Studios for the PlayStation 2 and the Xbox consoles, with High Voltage Software handling the GameCube port and Magic Pockets developing the Game Boy Advance version."
+      about_url: "https://en.wikipedia.org/wiki/Baldur%27s_Gate:_Dark_Alliance"
+    ebay:
+      query: "Gate Dark Alliance (gamecube, \"game cube\")"
+      negative: ["ps2", "xbox", "gba", "advance", "switch", "ps4", "limited run", "lrg", "dark alliance ii", "dark alliance 2"]
+  - id: tmnt-battle-nexus-gamecube
+    title: "TMNT: Battle Nexus"
+    info:
+      developer: "Konami"
+      year: 2004
+      genre: "Beat 'em up"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/2/23/Tmnt2cover.jpg"
+      about: "Teenage Mutant Ninja Turtles 2: Battle Nexus is a 2004 beat 'em up game developed and published by Konami."
+      about_url: "https://en.wikipedia.org/wiki/Teenage_Mutant_Ninja_Turtles_2:_Battle_Nexus"
+      publisher: "Konami"
+    ebay:
+      query: "Battle Nexus (gamecube, \"game cube\")"
+      negative: ["ps2", "xbox", "pc", "gba", "advance"]
+  - id: ed-edd-n-eddy-the-mis-edventures-gamecube
+    title: "Ed, Edd n Eddy: The Mis-Edventures"
+    info:
+      developer: "Artificial Mind and Movement"
+      publisher: "Midway Games"
+      year: 2005
+      genre: "Adventure"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/f/ff/The_Mis-Edventures.jpg"
+      about: "Ed, Edd n Eddy: The Mis-Edventures is a 2005 video game developed by Artificial Mind and Movement and published by Midway. Based on the Cartoon Network animated television series Ed, Edd n Eddy."
+      about_url: "https://en.wikipedia.org/wiki/Ed%2C_Edd_n_Eddy:_The_Mis-Edventures"
+    ebay:
+      query: "Ed Edd Eddy (gamecube, \"game cube\")"
+      negative: ["ps2", "xbox", "pc", "gba", "advance", "dvd", "jawbreakers", "scam of the century"]
+  - id: freaky-flyers-gamecube
+    title: "Freaky Flyers"
+    info:
+      developer: "Point of View"
+      year: 2003
+      genre: "Racing"
+      about: "Freaky Flyers is a 2003 air racing video game developed internally by Midway Studios San Diego for the Xbox and PlayStation 2, while the version for the GameCube was developed by Point of View and published by Midway."
+      about_url: "https://en.wikipedia.org/wiki/Freaky_Flyers"
+      publisher: "Midway Games"
+    ebay:
+      query: "Freaky Flyers (gamecube, \"game cube\")"
+      negative: ["ps2", "xbox"]
+  - id: hunter-the-reckoning-gamecube
+    title: "Hunter: The Reckoning"
+    info:
+      developer: "High Voltage Software"
+      publisher: "Interplay Entertainment"
+      year: 2002
+      genre: "Action"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/7/76/Hunter_cover.PNG"
+      about: "Hunter: The Reckoning is a 2002 hack-and-slash third-person shooter video game developed by High Voltage Software and published by Interplay Entertainment for the Xbox and GameCube. It is based on the tabletop role-playing game of the same name, and is part of the larger World of Darkness series."
+      about_url: "https://en.wikipedia.org/wiki/Hunter:_The_Reckoning_%28video_game%29"
+    ebay:
+      query: "Hunter Reckoning (gamecube, \"game cube\")"
+      negative: ["xbox", "wayward", "redeemer"]
+  - id: legacy-of-kain-blood-omen-2-gamecube
+    title: "Legacy of Kain: Blood Omen 2"
+    info:
+      developer: "Crystal Dynamics"
+      publisher: "Eidos Interactive"
+      year: 2002
+      genre: "Action-adventure"
+      about: "Blood Omen 2 is a 2002 action-adventure video game developed by Crystal Dynamics and published by Eidos Interactive for the PlayStation 2, Xbox, Windows and GameCube."
+      about_url: "https://en.wikipedia.org/wiki/Blood_Omen_2"
+    ebay:
+      query: "Blood Omen 2 (gamecube, \"game cube\")"
+      negative: ["ps2", "xbox", "pc", "soul reaver", "defiance"]
+  - id: bomberman-generation-gamecube
+    title: "Bomberman Generation"
+    info:
+      developer: "Game Arts"
+      publisher: "Majesco Entertainment"
+      year: 2002
+      genre: "Action-adventure"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/1/17/Bomberman_Generation_box.jpg"
+      about: "Bomberman Generation is a 2002 video game released for the GameCube."
+      about_url: "https://en.wikipedia.org/wiki/Bomberman_Generation"
+    ebay:
+      query: "Bomberman Generation (gamecube, \"game cube\")"
+      negative: ["jetters"]
+  - id: bomberman-jetters-gamecube
+    title: "Bomberman Jetters"
+    info:
+      developer: "Hudson Soft"
+      publisher: "Majesco Entertainment"
+      year: 2004
+      genre: "Action"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/b/bc/Bombermanjetterscover1.jpg"
+      about: "Bomberman Jetters is an action game for the GameCube and PlayStation 2, and part of Hudson Soft's Bomberman series. The game builds on the gameplay style established in the previous Bomberman series entry, 2002's Bomberman Generation, and features characters and settings from the 2002 anime series Bomberman Jetters."
+      about_url: "https://en.wikipedia.org/wiki/Bomberman_Jetters_%28video_game%29"
+    ebay:
+      query: "Bomberman Jetters (gamecube, \"game cube\")"
+      negative: ["generation", "ps2"]
+  - id: teen-titans-gamecube
+    title: "Teen Titans"
+    info:
+      developer: "Artificial Mind and Movement"
+      publisher: "THQ"
+      year: 2006
+      genre: "Action"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/e/e9/Teen_Titans.jpg"
+      about: "Teen Titans is a 2006 action beat 'em up video game released for the GameCube, PlayStation 2, and Xbox. A game under the same name was released for the Game Boy Advance on October 16, 2005."
+      about_url: "https://en.wikipedia.org/wiki/Teen_Titans_%282006_video_game%29"
+    ebay:
+      query: "Teen Titans (gamecube, \"game cube\")"
+      negative: ["ps2", "xbox", "gba", "advance", "dvd", "figure", "comic", "titans go"]
+  - id: x-men-legends-ii-rise-of-apocalypse-gamecube
+    title: "X-Men Legends II: Rise of Apocalypse"
+    info:
+      developer: "Raven Software"
+      publisher: "Activision"
+      year: 2005
+      genre: "Action role-playing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/3/30/X-Men_Legends_II_-_Rise_of_Apocalypse_Coverart.png"
+      about: "X-Men Legends II: Rise of Apocalypse is an action role-playing game developed by Raven Software and published by Activision. It is the follow-up to 2004's X-Men Legends."
+      about_url: "https://en.wikipedia.org/wiki/X-Men_Legends_II:_Rise_of_Apocalypse"
+    ebay:
+      query: "X-Men Legends (ii, 2) (gamecube, \"game cube\")"
+      negative: ["ps2", "xbox", "pc", "psp", "n-gage"]
+  - id: mystic-heroes-gamecube
+    title: "Mystic Heroes"
+    info:
+      developer: "Koei"
+      publisher: "Koei"
+      year: 2002
+      genre: "Beat 'em up"
+      about: "Mystic Heroes is a hack and slash video game developed by Koei."
+      about_url: "https://en.wikipedia.org/wiki/Mystic_Heroes"
+    ebay:
+      query: "Mystic Heroes (gamecube, \"game cube\")"
+      negative: ["ps2"]
+  - id: harvest-moon-another-wonderful-life-gamecube
+    title: "Harvest Moon: Another Wonderful Life"
+    info:
+      developer: "Marvelous Interactive"
+      publisher: "Natsume"
+      year: 2005
+      genre: "Simulation"
+    ebay:
+      query: "Harvest Moon Another Wonderful Life (gamecube, \"game cube\")"
+      negative: ["ps2", "special edition", "switch"]
+  - id: ddr-mario-mix-gamecube
+    title: "DDR: Mario Mix"
+    info:
+      developer: "Konami"
+      publisher: "Nintendo"
+      year: 2005
+      genre: "Music"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/d/d1/DDR_Mario_Mix.jpg"
+      about: "Dance Dance Revolution: Mario Mix, known in Europe and Australia as Dancing Stage Mario Mix, is a 2005 music video game developed by Konami and published by Nintendo for the GameCube. It is the first Dance Dance Revolution game to be released on a Nintendo video game console outside Japan."
+      about_url: "https://en.wikipedia.org/wiki/Dance_Dance_Revolution:_Mario_Mix"
+    ebay:
+      query: "Mario Mix (gamecube, \"game cube\")"
+      negative: ["mat", "pad", "bundle"]
+  - id: yu-gi-oh-the-falsebound-kingdom-gamecube
+    title: "Yu-Gi-Oh! The Falsebound Kingdom"
+    info:
+      developer: "Konami"
+      year: 2003
+      genre: "Real-time strategy"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/3/35/Yu-Gi-Oh%21_The_Falsebound_Kingdom_Cover.png"
+      about: "Yu-Gi-Oh! The Falsebound Kingdom is a 2002 role-playing video game developed and published by Konami for the GameCube."
+      about_url: "https://en.wikipedia.org/wiki/Yu-Gi-Oh%21_The_Falsebound_Kingdom"
+      publisher: "Konami"
+    ebay:
+      query: "Falsebound Kingdom (gamecube, \"game cube\")"
+      negative: ["tcg", "fmr", "card only", "cards only"]
+  - id: amazing-island-gamecube
+    title: "Amazing Island"
+    info:
+      developer: "Ancient"
+      publisher: "Sega"
+      year: 2004
+      genre: "Action-adventure"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/7/7b/Amazing_Island.jpg"
+      about: "Amazing Island is a 2004 action-adventure game developed by Ancient and Hitmaker and published by Sega for the GameCube."
+      about_url: "https://en.wikipedia.org/wiki/Amazing_Island"
+    ebay:
+      query: "Amazing Island (gamecube, \"game cube\")"
+  - id: final-fantasy-crystal-chronicles-gamecube
+    title: "Final Fantasy Crystal Chronicles"
+    info:
+      developer: "The Game Designers Studio"
+      publisher: "Nintendo"
+      year: 2004
+      genre: "Role-playing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/3/3f/Final_Fantasy_Crystal_Chronicles_%28box_art%29.jpg"
+      about: "Final Fantasy Crystal Chronicles is an action role-playing video game developed by The Game Designers Studio for the GameCube. It was released in 2003 in Japan and 2004 in North America, Europe and Australia."
+      about_url: "https://en.wikipedia.org/wiki/Final_Fantasy_Crystal_Chronicles_%28video_game%29"
+    ebay:
+      query: "Final Fantasy Crystal Chronicles (gamecube, \"game cube\")"
+      negative: ["remastered", "switch", "ps4", "nintendo ds", "ring of fates", "echoes of time", "crystal bearers", "my life as a king"]
+  - id: bloodrayne-gamecube
+    title: "BloodRayne"
+    info:
+      developer: "Terminal Reality"
+      publisher: "Majesco Entertainment"
+      year: 2002
+      genre: "Action-adventure"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/a/a6/BloodRayne_Videogame_Cover.jpg"
+      about: "BloodRayne is an action-adventure hack and slash video game developed by Terminal Reality and released on October 31, 2002."
+      about_url: "https://en.wikipedia.org/wiki/BloodRayne_%28video_game%29"
+    ebay:
+      query: "(bloodrayne, \"blood rayne\") (gamecube, \"game cube\")"
+      negative: ["ps2", "xbox", "pc", "bloodrayne 2", "blood rayne 2", "terminal cut", "revamped", "betrayal", "dvd"]
