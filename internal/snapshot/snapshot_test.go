@@ -334,3 +334,43 @@ func TestGameFileRoundTripsShelfCounts(t *testing.T) {
 		t.Error("reading a game file that does not exist must fail, not invent a game")
 	}
 }
+
+// A code without a variant of its own was printed on the entry's edition.
+func TestBarcodesFromNamesTheEdition(t *testing.T) {
+	t.Parallel()
+	games := []catalog.Game{
+		{ID: "silent-hill-2-ps2", Variant: catalog.VariantBlackLabel, Barcodes: []catalog.Barcode{
+			{Code: "083717200253"}, {Code: "083717200505", Variant: catalog.VariantGreatestHits},
+		}},
+		{ID: "god-hand-ps2", Variant: catalog.VariantNone, Barcodes: []catalog.Barcode{{Code: "4988601003995"}}},
+	}
+	got := snapshot.BarcodesFrom("2026-10-08", games).Codes
+	want := map[string]snapshot.BarcodeEntry{
+		"0083717200253": {ID: "silent-hill-2-ps2", Variant: catalog.VariantBlackLabel},
+		"0083717200505": {ID: "silent-hill-2-ps2", Variant: catalog.VariantGreatestHits},
+		"4988601003995": {ID: "god-hand-ps2"},
+	}
+	if len(got) != len(want) {
+		t.Fatalf("BarcodesFrom = %+v, want %+v", got, want)
+	}
+	for code, e := range want {
+		if got[code] != e {
+			t.Errorf("BarcodesFrom[%s] = %+v, want %+v", code, got[code], e)
+		}
+	}
+}
+
+func TestWriteBarcodesWritesAnEmptyIndex(t *testing.T) {
+	t.Parallel()
+	dir := t.TempDir()
+	if err := snapshot.WriteBarcodes(dir, snapshot.Barcodes{AsOf: "2026-10-08"}); err != nil {
+		t.Fatal(err)
+	}
+	raw, err := os.ReadFile(filepath.Join(dir, "barcodes.json"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if got := strings.TrimSpace(string(raw)); got != `{"as_of":"2026-10-08","codes":{}}` {
+		t.Errorf("barcodes.json = %s", got)
+	}
+}

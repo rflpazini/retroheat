@@ -34,6 +34,11 @@ spellings brought 3 more. It only spends
 calls the rest of the run does not need: a thin game early in the catalog
 never costs a later game its first search.
 
+The barcodes the site's scanner reads come from the same API, through a
+separate tool (`cmd/barcodes`) that is run by hand and spends only what the
+collector leaves of the day's calls. They identify a box and nothing more:
+no price is ever computed from them, and the collector never asks for them.
+
 ## 3. Sorting listings by condition
 
 A listing must first name the game. A keyword search also returns storefront

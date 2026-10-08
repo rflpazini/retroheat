@@ -471,3 +471,42 @@ func TestShelfCountsReportsTheServersAnswer(t *testing.T) {
 		t.Fatalf("err = %v, want the status and the server's message", err)
 	}
 }
+
+func TestBarcodeReportsPagesUntilAnEmptyPage(t *testing.T) {
+	t.Parallel()
+	rows := []map[string]any{
+		{"code": "0083717200253", "game_id": "silent-hill-2-ps2", "user_id": "u1"},
+		{"code": "0083717200253", "game_id": "silent-hill-2-ps2", "user_id": "u2"},
+		{"code": "0711719501523", "game_id": "god-hand-ps2", "user_id": "u1"},
+	}
+	var requests []*http.Request
+	srv := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		requests = append(requests, r)
+		if r.URL.Path != "/rest/v1/barcode_reports" {
+			w.WriteHeader(http.StatusNotFound)
+			return
+		}
+		limit, _ := strconv.Atoi(r.URL.Query().Get("limit"))
+		offset, _ := strconv.Atoi(r.URL.Query().Get("offset"))
+		out := []map[string]any{}
+		for i := offset; i < len(rows) && i < offset+limit; i++ {
+			out = append(out, rows[i])
+		}
+		_ = json.NewEncoder(w).Encode(out)
+	}))
+	t.Cleanup(srv.Close)
+
+	got, err := mirror.NewSupabase(srv.URL, "service-key", mirror.WithPageSize(2)).BarcodeReports(context.Background())
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(got) != 3 || got[2] != (mirror.BarcodeReport{Code: "0711719501523", GameID: "god-hand-ps2", UserID: "u1"}) {
+		t.Errorf("reports = %+v", got)
+	}
+	if len(requests) != 3 {
+		t.Errorf("requests = %d, want two pages and the empty page that ends the read", len(requests))
+	}
+	if got := requests[0].URL.Query().Get("order"); got != "code.asc,user_id.asc" {
+		t.Errorf("order = %q, want a total order so pages never overlap", got)
+	}
+}

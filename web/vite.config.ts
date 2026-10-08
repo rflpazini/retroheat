@@ -2,6 +2,7 @@ import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
+import basicSsl from '@vitejs/plugin-basic-ssl'
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -66,6 +67,16 @@ function offlineGuide(): Plugin[] {
         { src: 'icons/icon-512.png', sizes: '512x512', type: 'image/png' },
         { src: 'icons/icon-512-maskable.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
       ],
+      // A long press on the home-screen icon goes straight to the camera.
+      shortcuts: [
+        {
+          name: 'Scan a game',
+          short_name: 'Scan',
+          description: 'Scan the barcode on a box to add it to your collection',
+          url: './#/collection?scan=1',
+          icons: [{ src: 'icons/icon-192.png', sizes: '192x192', type: 'image/png' }],
+        },
+      ],
     },
     workbox: {
       globPatterns: ['**/*.{js,css,html,woff2,png,svg,webmanifest}'],
@@ -80,6 +91,19 @@ function offlineGuide(): Plugin[] {
             cacheableResponse: { statuses: [0, 200] },
           },
         },
+        {
+          // The barcode reader for browsers without their own (Safari on an
+          // iPhone): about a megabyte, so it is not precached for everyone,
+          // only kept once a scan has fetched it. Its name carries a hash,
+          // so a new build is a new entry and the old one ages out.
+          urlPattern: ({ url, sameOrigin }) => sameOrigin && url.pathname.endsWith('.wasm'),
+          handler: 'CacheFirst',
+          options: {
+            cacheName: 'retroheat-scanner',
+            expiration: { maxEntries: 4 },
+            cacheableResponse: { statuses: [0, 200] },
+          },
+        },
       ],
     },
     devOptions: { enabled: false },
@@ -88,7 +112,10 @@ function offlineGuide(): Plugin[] {
 
 export default defineConfig({
   base: process.env.BASE_PATH ?? '/',
-  plugins: [react(), tailwindcss(), serveCollectorData(), ...offlineGuide()],
+  // HTTPS=1 serves the dev site over https with a throwaway certificate, so
+  // a phone on the same network (vite --host) may open the camera, which
+  // browsers only allow on a secure page.
+  plugins: [react(), tailwindcss(), serveCollectorData(), ...offlineGuide(), ...(process.env.HTTPS ? [basicSsl()] : [])],
   resolve: {
     alias: { '@': path.resolve(here, 'src') },
   },

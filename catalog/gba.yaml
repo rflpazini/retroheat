@@ -13,6 +13,8 @@ games:
     ebay:
       query: "Pokemon Ruby (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["sapphire", "emerald", "omega ruby", "3ds", "booster", "card", "cards", "guide"]
+    barcodes:
+      - {code: "045496732530"}
   - id: pokemon-sapphire-gba
     title: "Pokémon Sapphire"
     info:
@@ -26,6 +28,8 @@ games:
     ebay:
       query: "Pokemon Sapphire (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["ruby", "emerald", "alpha sapphire", "3ds", "booster", "card", "cards", "guide"]
+    barcodes:
+      - {code: "045496732547"}
   - id: pokemon-emerald-gba
     title: "Pokémon Emerald"
     info:
@@ -40,6 +44,8 @@ games:
     ebay:
       query: "Pokemon Emerald (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["ruby", "sapphire", "booster", "card", "cards", "guide"]
+    barcodes:
+      - {code: "045496735302"}
   - id: pokemon-firered-gba
     title: "Pokémon FireRed"
     info:
@@ -53,6 +59,9 @@ games:
     ebay:
       query: "Pokemon FireRed (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["leafgreen", "leaf green", "3ds", "booster", "card", "cards", "guide"]
+    barcodes:
+      - {code: "045496734114"}
+      - {code: "045496734930"}
   - id: pokemon-leafgreen-gba
     title: "Pokémon LeafGreen"
     info:
@@ -66,6 +75,9 @@ games:
     ebay:
       query: "Pokemon LeafGreen (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["firered", "fire red", "3ds", "booster", "card", "cards", "guide"]
+    barcodes:
+      - {code: "045496734121"}
+      - {code: "716853001117"}
   - id: pokemon-mystery-dungeon-red-rescue-team-gba
     title: "Pokémon Mystery Dungeon: Red Rescue Team"
     info:
@@ -78,6 +90,8 @@ games:
     ebay:
       query: "Pokemon Mystery Dungeon Red Rescue Team (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["blue rescue team", "explorers", "rescue team dx", "gates to infinity", "super mystery dungeon", "switch", "3ds", "guide"]
+    barcodes:
+      - {code: "045496737764"}
   - id: zelda-minish-cap-gba
     title: "The Legend of Zelda: The Minish Cap"
     info:
@@ -91,6 +105,8 @@ games:
     ebay:
       query: "Zelda Minish Cap (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["four swords", "link to the past", "manga", "switch", "guide"]
+    barcodes:
+      - {code: "045496734909"}
   - id: zelda-link-to-the-past-four-swords-gba
     title: "The Legend of Zelda: A Link to the Past & Four Swords"
     info:
@@ -117,6 +133,8 @@ games:
     ebay:
       query: "Metroid Fusion (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["zero mission", "wii u", "switch", "guide"]
+    barcodes:
+      - {code: "045496731847"}
   - id: metroid-zero-mission-gba
     title: "Metroid: Zero Mission"
     info:
@@ -130,6 +148,8 @@ games:
     ebay:
       query: "Metroid Zero Mission (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["fusion", "wii u", "switch", "guide"]
+    barcodes:
+      - {code: "885725636396"}
   - id: castlevania-circle-of-the-moon-gba
     title: "Castlevania: Circle of the Moon"
     info:
@@ -169,6 +189,8 @@ games:
     ebay:
       query: "Castlevania Aria of Sorrow (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["circle of the moon", "harmony of dissonance", "double pack", "advance collection", "dawn of sorrow", "guide"]
+    barcodes:
+      - {code: "083717500322"}
   - id: mario-luigi-superstar-saga-gba
     title: "Mario & Luigi: Superstar Saga"
     info:
@@ -182,6 +204,8 @@ games:
     ebay:
       query: "Mario Luigi Superstar Saga (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["minions", "3ds", "partners in time", "guide"]
+    barcodes:
+      - {code: "045496733438"}
   - id: super-mario-advance-4-gba
     title: "Super Mario Advance 4: Super Mario Bros. 3"
     info:
@@ -195,6 +219,8 @@ games:
     ebay:
       query: "Super Mario Advance 4 Super Mario Bros 3 (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["advance 2", "advance 3", "all stars", "e-reader", "e reader", "wii u", "guide"]
+    barcodes:
+      - {code: "045496733384"}
   - id: mario-kart-super-circuit-gba
     title: "Mario Kart: Super Circuit"
     info:
@@ -208,6 +234,8 @@ games:
     ebay:
       query: "Mario Kart Super Circuit (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["double dash", "kart ds", "mario kart 64", "kart wii", "kart 7", "kart 8", "wii u", "guide"]
+    barcodes:
+      - {code: "045496731465"}
   - id: wario-land-4-gba
     title: "Wario Land 4"
     info:
@@ -221,6 +249,8 @@ games:
     ebay:
       query: "Wario Land 4 (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["wario land 3", "wario land ii", "wario land 2", "shake it", "virtual boy", "gbc", "game boy color", "guide"]
+    barcodes:
+      - {code: "045496731496"}
   - id: warioware-inc-gba
     title: "WarioWare, Inc.: Mega Microgame$!"
     info:
@@ -234,6 +264,8 @@ games:
     ebay:
       query: "WarioWare Inc (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["twisted", "touched", "gamecube", "mega party", "smooth moves", "gold", "guide"]
+    barcodes:
+      - {code: "045496732370"}
   - id: warioware-twisted-gba
     title: "WarioWare: Twisted!"
     info:
@@ -248,6 +280,8 @@ games:
     ebay:
       query: "WarioWare Twisted (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["touched", "mega microgames", "mega microgame", "gamecube", "smooth moves", "gold", "guide"]
+    barcodes:
+      - {code: "045496735296"}
   - id: golden-sun-gba
     title: "Golden Sun"
     info:
@@ -261,6 +295,8 @@ games:
     ebay:
       query: "Golden Sun (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["lost age", "dark dawn", "guide"]
+    barcodes:
+      - {code: "045496731489"}
   - id: golden-sun-the-lost-age-gba
     title: "Golden Sun: The Lost Age"
     info:
@@ -274,6 +310,8 @@ games:
     ebay:
       query: "Golden Sun Lost Age (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["dark dawn", "guide"]
+    barcodes:
+      - {code: "045496731908"}
   - id: fire-emblem-gba
     title: "Fire Emblem"
     info:
@@ -287,6 +325,8 @@ games:
     ebay:
       query: "Fire Emblem (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["sacred stones", "shadow dragon", "awakening", "fates", "echoes", "three houses", "engage", "guide"]
+    barcodes:
+      - {code: "045496733421"}
   - id: fire-emblem-the-sacred-stones-gba
     title: "Fire Emblem: The Sacred Stones"
     info:
@@ -300,6 +340,8 @@ games:
     ebay:
       query: "Fire Emblem Sacred Stones (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["shadow dragon", "awakening", "echoes", "guide"]
+    barcodes:
+      - {code: "045496735203"}
   - id: final-fantasy-tactics-advance-gba
     title: "Final Fantasy Tactics Advance"
     info:
@@ -313,6 +355,8 @@ games:
     ebay:
       query: "Final Fantasy Tactics Advance (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["a2", "grimoire", "war of the lions", "psp", "ps1", "playstation", "guide"]
+    barcodes:
+      - {code: "045496733377"}
   - id: final-fantasy-i-ii-dawn-of-souls-gba
     title: "Final Fantasy I & II: Dawn of Souls"
     info:
@@ -325,6 +369,8 @@ games:
     ebay:
       query: "Final Fantasy Dawn of Souls (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["origins", "anniversary", "psp", "ps1", "playstation", "pixel remaster", "guide"]
+    barcodes:
+      - {code: "045496734923"}
   - id: final-fantasy-iv-advance-gba
     title: "Final Fantasy IV Advance"
     info:
@@ -337,6 +383,8 @@ games:
     ebay:
       query: "Final Fantasy IV Advance (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["final fantasy v", "final fantasy vi", "complete collection", "after years", "psp", "snes", "super nintendo", "guide"]
+    barcodes:
+      - {code: "045496736873"}
   - id: final-fantasy-v-advance-gba
     title: "Final Fantasy V Advance"
     info:
@@ -349,6 +397,8 @@ games:
     ebay:
       query: "Final Fantasy V Advance (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["final fantasy iv", "final fantasy vi", "anthology", "ps1", "playstation", "snes", "super nintendo", "guide"]
+    barcodes:
+      - {code: "045496738105"}
   - id: final-fantasy-vi-advance-gba
     title: "Final Fantasy VI Advance"
     info:
@@ -362,6 +412,8 @@ games:
     ebay:
       query: "Final Fantasy VI Advance (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["final fantasy iv", "final fantasy v", "anthology", "ps1", "playstation", "snes", "super nintendo", "guide"]
+    barcodes:
+      - {code: "045496738433"}
   - id: mother-3-gba
     title: "Mother 3"
     region: NTSC-J
@@ -377,6 +429,8 @@ games:
     ebay:
       query: "Mother 3 (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["mother 1+2", "mother 2", "english", "translated", "translation", "handbook", "deluxe box", "guide"]
+    barcodes:
+      - {code: "4902370512991"}
   - id: ninja-five-o-gba
     title: "Ninja Five-O"
     info:
@@ -405,6 +459,8 @@ games:
     ebay:
       query: "Drill Dozer (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["wii u", "guide"]
+    barcodes:
+      - {code: "045496736897"}
   - id: mega-man-zero-gba
     title: "Mega Man Zero"
     info:
@@ -484,6 +540,8 @@ games:
     ebay:
       query: "Mega Man Battle Network 3 Blue (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["white", "battle network 4", "battle network 5", "battle network 6", "legacy collection", "guide"]
+    barcodes:
+      - {code: "013388280148"}
   - id: mega-man-and-bass-gba
     title: "Mega Man & Bass"
     info:
@@ -497,6 +555,8 @@ games:
     ebay:
       query: "Mega Man Bass (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["battle network", "mega man zero", "battle chip", "snes", "super famicom", "legacy collection", "anniversary collection", "guide"]
+    barcodes:
+      - {code: "013388280117"}
   - id: advance-wars-gba
     title: "Advance Wars"
     info:
@@ -509,7 +569,9 @@ games:
       about_url: "https://en.wikipedia.org/wiki/Advance_Wars"
     ebay:
       query: "Advance Wars (gba, \"game boy advance\", \"gameboy advance\")"
-      negative: ["advance wars 2", "black hole rising", "dual strike", "days of ruin", "reboot camp", "re-boot camp", "switch", "guide"]
+      negative: ["advance wars 2", "black hole rising", "dual strike", "days of ruin", "reboot camp", "re-boot camp", "switch", "guide", "star wars", "turf wars", "alien wars", "robot wars", "gameboy wars"]
+    barcodes:
+      - {code: "045496731458"}
   - id: advance-wars-2-black-hole-rising-gba
     title: "Advance Wars 2: Black Hole Rising"
     info:
@@ -523,6 +585,8 @@ games:
     ebay:
       query: "Advance Wars 2 Black Hole Rising (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["dual strike", "days of ruin", "reboot camp", "re-boot camp", "switch", "guide"]
+    barcodes:
+      - {code: "045496733124"}
   - id: kirby-nightmare-in-dream-land-gba
     title: "Kirby: Nightmare in Dream Land"
     info:
@@ -535,6 +599,8 @@ games:
     ebay:
       query: "Kirby Nightmare in Dream Land (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["amazing mirror", "squeak squad", "nes", "wii u", "guide"]
+    barcodes:
+      - {code: "045496731830"}
   - id: kirby-and-the-amazing-mirror-gba
     title: "Kirby & The Amazing Mirror"
     info:
@@ -548,6 +614,8 @@ games:
     ebay:
       query: "Kirby Amazing Mirror (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["nightmare in dream land", "squeak squad", "wii u", "guide"]
+    barcodes:
+      - {code: "045496734190"}
   - id: kingdom-hearts-chain-of-memories-gba
     title: "Kingdom Hearts: Chain of Memories"
     info:
@@ -576,6 +644,8 @@ games:
     ebay:
       query: "Astro Boy Omega Factor (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["ps2", "dvd", "guide"]
+    barcodes:
+      - {code: "010086600278"}
   - id: gunstar-super-heroes-gba
     title: "Gunstar Super Heroes"
     info:
@@ -590,6 +660,8 @@ games:
     ebay:
       query: "Gunstar Super Heroes (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["genesis", "mega drive", "sega ages", "switch", "ps4", "guide"]
+    barcodes:
+      - {code: "010086600292"}
   - id: car-battler-joe-gba
     title: "Car Battler Joe"
     info:
@@ -616,6 +688,8 @@ games:
     ebay:
       query: "Shining Soul II (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["shining force", "guide"]
+    barcodes:
+      - {code: "730865850112"}
   - id: sword-of-mana-gba
     title: "Sword of Mana"
     info:
@@ -630,6 +704,8 @@ games:
     ebay:
       query: "Sword of Mana (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["secret of mana", "legend of mana", "trials of mana", "children of mana", "heroes of mana", "collection of mana", "guide"]
+    barcodes:
+      - {code: "045496733483"}
   - id: tactics-ogre-the-knight-of-lodis-gba
     title: "Tactics Ogre: The Knight of Lodis"
     info:
@@ -644,6 +720,8 @@ games:
     ebay:
       query: "Tactics Ogre Knight of Lodis (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["let us cling together", "reborn", "psp", "ps1", "playstation", "snes", "ogre battle", "guide"]
+    barcodes:
+      - {code: "730865850020"}
   - id: riviera-the-promised-land-gba
     title: "Riviera: The Promised Land"
     info:
@@ -658,6 +736,8 @@ games:
     ebay:
       query: "Riviera The Promised Land (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["psp", "wonderswan", "guide"]
+    barcodes:
+      - {code: "730865850150"}
   - id: yggdra-union-gba
     title: "Yggdra Union"
     info:
@@ -672,6 +752,8 @@ games:
     ebay:
       query: "Yggdra Union (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["psp", "guide"]
+    barcodes:
+      - {code: "730865850198"}
   - id: summon-night-swordcraft-story-gba
     title: "Summon Night: Swordcraft Story"
     info:
@@ -700,6 +782,8 @@ games:
     ebay:
       query: "Summon Night Swordcraft Story 2 (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["twin age", "guide"]
+    barcodes:
+      - {code: "730865850235"}
   - id: boktai-the-sun-is-in-your-hand-gba
     title: "Boktai: The Sun Is in Your Hand"
     info:
@@ -727,6 +811,8 @@ games:
     ebay:
       query: "Boktai 2 Solar Boy Django (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["lunar knights", "guide"]
+    barcodes:
+      - {code: "083717500476"}
   - id: klonoa-empire-of-dreams-gba
     title: "Klonoa: Empire of Dreams"
     info:
@@ -740,6 +826,8 @@ games:
     ebay:
       query: "Klonoa Empire of Dreams (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["dream champ", "ps1", "playstation", "wii", "phantasy reverie", "guide"]
+    barcodes:
+      - {code: "722674021135"}
   - id: sigma-star-saga-gba
     title: "Sigma Star Saga"
     info:
@@ -754,6 +842,8 @@ games:
     ebay:
       query: "Sigma Star Saga (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["limited run", "retro-bit", "retrobit", "lrg"]
+    barcodes:
+      - {code: "722674500128"}
   - id: donkey-kong-country-3-gba
     title: "Donkey Kong Country 3: Dixie Kong's Double Trouble!"
     info:
@@ -780,6 +870,8 @@ games:
     ebay:
       query: "Harvest Moon Friends of Mineral Town (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["more friends", "story of seasons", "switch", "ps4", "gbc", "game boy color", "guide"]
+    barcodes:
+      - {code: "719593020271"}
   - id: metal-slug-advance-gba
     title: "Metal Slug Advance"
     info:
@@ -794,6 +886,8 @@ games:
     ebay:
       query: "Metal Slug Advance (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["anthology", "neo geo", "ps2", "psp", "guide"]
+    barcodes:
+      - {code: "828862700018"}
   - id: pocky-and-rocky-with-becky-gba
     title: "Pocky & Rocky with Becky"
     info:
@@ -807,6 +901,8 @@ games:
     ebay:
       query: "Pocky Rocky Becky (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["snes", "super nintendo", "super famicom", "reshrined", "switch", "ps4", "limited run"]
+    barcodes:
+      - {code: "719593020202"}
   - id: super-ghouls-n-ghosts-gba
     title: "Super Ghouls 'n Ghosts"
     info:
@@ -830,6 +926,8 @@ games:
     ebay:
       query: "DemiKids Light (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["dark version", "demikids dark"]
+    barcodes:
+      - {code: "730865850068"}
   - id: lunar-legend-gba
     title: "Lunar Legend"
     info:
@@ -843,6 +941,8 @@ games:
     ebay:
       query: "Lunar Legend (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["silver star", "eternal blue", "dragon song", "lunar knights", "sega cd", "playstation", "psp"]
+    barcodes:
+      - {code: "008888140382"}
   - id: tales-of-phantasia-gba
     title: "Tales of Phantasia"
     info:
@@ -857,6 +957,8 @@ games:
     ebay:
       query: "Tales of Phantasia (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["snes", "super famicom", "playstation", "ps1", "psp", "narikiri", "tales of destiny", "tales of symphonia", "cross edition"]
+    barcodes:
+      - {code: "045496736910"}
   - id: scurge-hive-gba
     title: "Scurge: Hive"
     info:
@@ -870,6 +972,8 @@ games:
     ebay:
       query: "Scurge Hive (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["nintendo ds"]
+    barcodes:
+      - {code: "612561800052"}
   - id: dragon-ball-advanced-adventure-gba
     title: "Dragon Ball: Advanced Adventure"
     info:
@@ -885,6 +989,8 @@ games:
     ebay:
       query: "Dragon Ball Adventure (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["legacy of goku", "buu's fury", "supersonic warriors", "taiketsu", "transformation", "budokai", "origins", "nintendo ds", "video game gameboy advance"]
+    barcodes:
+      - {code: "742725271838"}
   - id: yoshi-topsy-turvy-gba
     title: "Yoshi Topsy-Turvy"
     info:
@@ -897,6 +1003,8 @@ games:
     ebay:
       query: "Yoshi Topsy Turvy (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["crash", "yoshi's island", "super mario advance", "gamecube"]
+    barcodes:
+      - {code: "045496735579"}
   - id: shining-soul-gba
     title: "Shining Soul"
     info:
@@ -910,6 +1018,8 @@ games:
     ebay:
       query: "Shining Soul (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["shining soul ii", "shining soul 2", "shining force", "shining tears", "ps2"]
+    barcodes:
+      - {code: "730865850105"}
   - id: shining-force-resurrection-of-the-dark-dragon-gba
     title: "Shining Force: Resurrection of the Dark Dragon"
     info:
@@ -933,6 +1043,8 @@ games:
     ebay:
       query: "Mario Tennis Power Tour (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["mario golf", "n64", "nintendo 64", "gamecube", "power tennis", "ultra smash", "aces", "3ds", "switch"]
+    barcodes:
+      - {code: "045496734398"}
   - id: hamtaro-ham-ham-heartbreak-gba
     title: "Hamtaro: Ham-Ham Heartbreak"
     info:
@@ -946,6 +1058,8 @@ games:
     ebay:
       query: "Hamtaro Heartbreak (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["ham-ham games", "ham ham games", "rainbow rescue", "ham-hams unite", "ham hams unite", "plush"]
+    barcodes:
+      - {code: "045496732363"}
   - id: lufia-the-ruins-of-lore-gba
     title: "Lufia: The Ruins of Lore"
     info:
@@ -959,6 +1073,8 @@ games:
     ebay:
       query: "Lufia Ruins of Lore (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["snes", "super nintendo", "legend returns", "curse of the sinistrals", "rise of the sinistrals", "fortress of doom", "nintendo ds"]
+    barcodes:
+      - {code: "730865850051"}
   - id: grand-theft-auto-advance-gba
     title: "Grand Theft Auto Advance"
     info:
@@ -971,6 +1087,8 @@ games:
     ebay:
       query: "Grand Theft Auto (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["grand theft auto 2", "gta 2", "gta2", "color", "gbc", "chinatown", "vice city", "san andreas", "liberty city", "nintendo ds", "ps2", "psp", "game card", "video game gameboy advance"]
+    barcodes:
+      - {code: "710425253775"}
   - id: zoids-legacy-gba
     title: "Zoids: Legacy"
     info:
@@ -980,6 +1098,8 @@ games:
     ebay:
       query: "Zoids Legacy (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["gamecube", "battle legends", "model kit", "figure"]
+    barcodes:
+      - {code: "742725250338"}
   - id: mortal-kombat-tournament-edition-gba
     title: "Mortal Kombat: Tournament Edition"
     info:
@@ -1002,6 +1122,8 @@ games:
     ebay:
       query: "Pokemon Pinball Ruby Sapphire (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["e-reader", "pokemon mini", "card", "tcg"]
+    barcodes:
+      - {code: "045496733308"}
   - id: klonoa-2-dream-champ-tournament-gba
     title: "Klonoa 2: Dream Champ Tournament"
     info:
@@ -1017,6 +1139,8 @@ games:
     ebay:
       query: "Klonoa 2 Dream Champ (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["lunatea", "ps2", "empire of dreams", "phantasy reverie", "switch", "wii", "video game gameboy advance"]
+    barcodes:
+      - {code: "722674500067"}
   - id: super-mario-world-gba
     title: "Super Mario World"
     info:
@@ -1029,6 +1153,8 @@ games:
     ebay:
       query: "Super Mario World (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["snes", "super nintendo", "yoshi's island", "mario bros", "advance 1", "advance 3", "advance 4", "nds", "kart", "switch", "video game gameboy advance"]
+    barcodes:
+      - {code: "045496731540"}
   - id: mario-golf-advance-tour-gba
     title: "Mario Golf: Advance Tour"
     info:
@@ -1042,6 +1168,8 @@ games:
     ebay:
       query: "Mario Golf Advance Tour (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["mario tennis", "n64", "nintendo 64", "gamecube", "toadstool tour", "world tour", "super rush", "3ds", "switch"]
+    barcodes:
+      - {code: "045496733254"}
   - id: cima-the-enemy-gba
     title: "CIMA: The Enemy"
     info:
@@ -1091,6 +1219,8 @@ games:
     ebay:
       query: "Sonic Battle (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["sonic advance", "adventure", "pinball", "nintendo ds", "collection", "gamecube"]
+    barcodes:
+      - {code: "785138321578"}
   - id: breath-of-fire-ii-gba
     title: "Breath of Fire II"
     info:
@@ -1103,6 +1233,8 @@ games:
     ebay:
       query: "Breath of Fire II (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["breath of fire i", "breath of fire 1", "fire and fire", "breath of fire iii", "breath of fire 3", "snes", "super nintendo", "super famicom", "playstation", "psp", "video game gameboy advance"]
+    barcodes:
+      - {code: "013388280087"}
   - id: mother-1-2-gba
     title: "Mother 1+2"
     region: NTSC-J
@@ -1139,6 +1271,8 @@ games:
     ebay:
       query: "Medabots Metabee (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["ax", "rokusho", "infinity", "gamecube"]
+    barcodes:
+      - {code: "719593020257"}
   - id: the-king-of-fighters-ex2-howling-blood-gba
     title: "The King of Fighters EX2: Howling Blood"
     info:
@@ -1152,6 +1286,8 @@ games:
     ebay:
       query: "King of Fighters Howling Blood (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["neo blood", "neoblood", "ps2", "ps4", "xbox", "switch", "maximum impact"]
+    barcodes:
+      - {code: "730865850129"}
   - id: mega-man-battle-network-6-cybeast-gregar-gba
     title: "Mega Man Battle Network 6: Cybeast Gregar"
     info:
@@ -1177,6 +1313,8 @@ games:
     ebay:
       query: "Harvest Moon More Friends of Mineral Town (gba, \"game boy advance\", \"gameboy advance\")"
       negative: ["town and more", "town & more", "friends and more", "friends & more", "friends + more", "for gameboy advance", "story of seasons", "back to nature", "playstation", "switch", "ps4"]
+    barcodes:
+      - {code: "719593020301"}
   - id: super-mario-advance-gba
     title: "Super Mario Advance"
     info:

@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { explainError, isClockSkew, retryOnClockSkew, skewMessage } from './retry'
+import { explainError, isClockSkew, retryOnClockSkew, retryWithoutColumns, skewMessage } from './retry'
 
 describe('retrying a request the database refused for clock skew', () => {
   it('recognises PostgREST\'s "issued at future" refusal by code or by message', () => {
@@ -60,5 +60,28 @@ describe('explainError', () => {
   it('otherwise defers to the clock-skew wording', () => {
     expect(explainError({ code: 'PGRST303', message: 'JWT issued at future' })).toMatch(/clock/i)
     expect(explainError({ message: 'permission denied' })).toBe('permission denied')
+  })
+})
+
+describe('writing to a store that predates a migration', () => {
+  const missing = { data: null, error: { code: 'PGRST204', message: "Could not find the 'barcode' column of 'collection_items' in the schema cache" } }
+
+  it('writes again without the columns the store does not have yet, so the copy still lands', async () => {
+    const run = vi.fn(async (rows: Record<string, unknown>[]) => ('barcode' in rows[0] ? missing : { data: rows, error: null }))
+    const result = await retryWithoutColumns([{ game_id: 'okami-ps2', barcode: '0013388250089', edition: null }], ['edition', 'barcode'], run)
+    expect(result.error).toBeNull()
+    expect(run).toHaveBeenCalledTimes(2)
+    expect(run.mock.calls[1][0]).toEqual([{ game_id: 'okami-ps2' }])
+  })
+
+  it('does not retry for any other refusal, or for a column it was not told about', async () => {
+    const denied = vi.fn(async () => ({ data: null, error: { message: 'permission denied' } }))
+    expect((await retryWithoutColumns([{ barcode: 'x' }], ['barcode'], denied)).error?.message).toBe('permission denied')
+    expect(denied).toHaveBeenCalledTimes(1)
+
+    const paid = { data: null, error: { code: 'PGRST204', message: "Could not find the 'paid_cents' column of 'collection_items' in the schema cache" } }
+    const other = vi.fn(async () => paid)
+    expect((await retryWithoutColumns([{ barcode: 'x', paid_cents: 1 }], ['barcode'], other)).error).toBe(paid.error)
+    expect(other).toHaveBeenCalledTimes(1)
   })
 })

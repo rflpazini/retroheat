@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import fs from 'node:fs'
 import path from 'node:path'
+import type { BarcodeIndexFile } from './barcode'
 import type { CatalogFile, GameDetail, HistoryFile, LatestFile, Meta, PriceIndexFile, TrendingFile } from './types'
 
 // The TypeScript types here are hand-written mirrors of Go structs. Nothing in
@@ -146,8 +147,28 @@ describe.skipIf(!present)('collector output matches the frontend contract', () =
 
   it('the catalog carries only what a list needs; the rest is in the game files', () => {
     const raw = fs.readFileSync(path.join(dataDir, 'catalog.json'), 'utf8')
-    for (const heavy of ['"about"', '"why"', '"trivia"', '"ebay_url"', '"annotation"']) {
+    for (const heavy of ['"about"', '"why"', '"trivia"', '"ebay_url"', '"annotation"', '"barcodes"']) {
       expect(raw, `catalog.json carries ${heavy}`).not.toContain(heavy)
+    }
+  })
+
+  // The scanner looks a code up as 13 digits; a 12-digit UPC-A key, or an id
+  // the catalog does not name, would be a box that scans as unknown. CI always
+  // has the file (it generates collector output first, and the Go pipeline
+  // tests fail if a run stops writing it); a checkout whose data/ predates the
+  // scanner skips this until the next scheduled run writes it.
+  it.skipIf(!fs.existsSync(path.join(dataDir, 'barcodes.json')))('barcodes.json keys 13-digit codes to games the catalog names', () => {
+    const index = read<BarcodeIndexFile>('barcodes.json')
+    expect(typeof index.as_of).toBe('string')
+    expect(typeof index.codes).toBe('object')
+    expect(Array.isArray(index.codes)).toBe(false)
+    const ids = new Set(read<CatalogFile>('catalog.json').games.map((g) => g.id))
+    const editions = ['black-label', 'greatest-hits', 'players-choice', 'platinum']
+    for (const [code, entry] of Object.entries(index.codes)) {
+      expect(code).toMatch(/^\d{13}$/)
+      expect(typeof entry.id).toBe('string')
+      expect(ids.has(entry.id), `${code} names ${entry.id}, which the catalog does not`).toBe(true)
+      if ('variant' in entry) expect(editions).toContain(entry.variant)
     }
   })
 

@@ -15,6 +15,8 @@ games:
     ebay:
       query: "Skies of Arcadia Dreamcast"
       negative: ["legends", "gamecube"]
+    barcodes:
+      - {code: "010086510522"}
   - id: marvel-vs-capcom-2-dreamcast
     title: "Marvel vs. Capcom 2"
     info:
@@ -30,6 +32,8 @@ games:
     ebay:
       query: "Marvel vs Capcom 2 Dreamcast"
       negative: ["ps2", "xbox", "ps3", "marvel vs capcom 1"]
+    barcodes:
+      - {code: "013388250103"}
   - id: bangai-o-dreamcast
     title: "Bangai-O"
     info:
@@ -45,6 +49,8 @@ games:
     ebay:
       query: "Bangai-O Dreamcast"
       negative: ["spirits", "n64", "ds"]
+    barcodes:
+      - {code: "815315000009"}
   - id: cannon-spike-dreamcast
     title: "Cannon Spike"
     info:
@@ -77,6 +83,8 @@ games:
       # The Passport disc is the fourth disc of the set, sold on its own for
       # ten dollars; on its own it is not a copy of the game.
       negative: ["shenmue ii", "shenmue 2", "shenmue 3", "hd", "xbox", "ps4", "shenmue passport", "passport2", "passport disc only"]
+    barcodes:
+      - {code: "010086510591"}
   - id: shenmue-2-dreamcast
     title: "Shenmue II"
     region: PAL
@@ -93,6 +101,8 @@ games:
     ebay:
       query: "Shenmue II Dreamcast"
       negative: ["xbox", "hd", "ps4", "shenmue 1"]
+    barcodes:
+      - {code: "5060004761302"}
   - id: grandia-2-dreamcast
     title: "Grandia II"
     info:
@@ -108,6 +118,8 @@ games:
     ebay:
       query: "Grandia II Dreamcast"
       negative: ["ps2", "pc", "hd remaster", "switch"]
+    barcodes:
+      - {code: "008888260226"}
   - id: record-of-lodoss-war-dreamcast
     title: "Record of Lodoss War"
     info:
@@ -123,6 +135,8 @@ games:
     ebay:
       query: "Record of Lodoss War Dreamcast"
       negative: ["deedlit", "wonder labyrinth"]
+    barcodes:
+      - {code: "815315000016"}
   - id: phantasy-star-online-ver-2-dreamcast
     title: "Phantasy Star Online Ver. 2"
     info:
@@ -138,6 +152,8 @@ games:
     ebay:
       query: "Phantasy Star Online Ver 2 Dreamcast"
       negative: ["episode i", "gamecube", "xbox"]
+    barcodes:
+      - {code: "010086511932"}
   - id: sonic-adventure-dreamcast
     title: "Sonic Adventure"
     info:
@@ -168,6 +184,8 @@ games:
     ebay:
       query: "Sonic Adventure 2 Dreamcast"
       negative: ["battle", "gamecube", "sonic adventure 1"]
+    barcodes:
+      - {code: "010086511178"}
   - id: jet-grind-radio-dreamcast
     title: "Jet Grind Radio"
     info:
@@ -183,6 +201,8 @@ games:
     ebay:
       query: "Jet Grind Radio Dreamcast"
       negative: ["future", "xbox", "hd"]
+    barcodes:
+      - {code: "010086510584"}
   - id: crazy-taxi-dreamcast
     title: "Crazy Taxi"
     info:
@@ -198,6 +218,8 @@ games:
     ebay:
       query: "Crazy Taxi Dreamcast"
       negative: ["crazy taxi 2", "crazy taxi 3", "ps2", "gamecube"]
+    barcodes:
+      - {code: "010086510355"}
   - id: power-stone-dreamcast
     title: "Power Stone"
     info:
@@ -213,6 +235,8 @@ games:
     ebay:
       query: "Power Stone Dreamcast"
       negative: ["power stone 2", "collection", "psp"]
+    barcodes:
+      - {code: "013388250011"}
   - id: power-stone-2-dreamcast
     title: "Power Stone 2"
     info:
@@ -227,6 +251,8 @@ games:
     ebay:
       query: "Power Stone 2 Dreamcast"
       negative: ["collection", "psp"]
+    barcodes:
+      - {code: "013388250110"}
   - id: project-justice-dreamcast
     title: "Project Justice"
     info:
@@ -242,6 +268,8 @@ games:
     ebay:
       query: "Project Justice Dreamcast"
       negative: ["rival schools ps1"]
+    barcodes:
+      - {code: "013388250165"}
   - id: street-fighter-iii-3rd-strike-dreamcast
     title: "Street Fighter III: 3rd Strike"
     info:
@@ -257,6 +285,8 @@ games:
     ebay:
       query: "Street Fighter III 3rd Strike Dreamcast"
       negative: ["double impact", "online edition", "ps2", "xbox"]
+    barcodes:
+      - {code: "013388250172"}
   - id: street-fighter-iii-double-impact-dreamcast
     title: "Street Fighter III: Double Impact"
     info:
@@ -272,6 +302,8 @@ games:
     ebay:
       query: "Street Fighter III Double Impact Dreamcast"
       negative: ["3rd strike"]
+    barcodes:
+      - {code: "013388250073"}
   - id: garou-mark-of-the-wolves-dreamcast
     title: "Garou: Mark of the Wolves"
     # The Japanese release; the North American one is fatal-fury-mark-of-the-wolves-dreamcast.
@@ -302,6 +334,8 @@ games:
     ebay:
       query: "The Last Blade 2 Dreamcast"
       negative: ["neo geo", "switch"]
+    barcodes:
+      - {code: "093992057909"}
   - id: capcom-vs-snk-2-dreamcast
     title: "Capcom vs. SNK 2"
     # Never released in North America on Dreamcast; every copy is Japanese.
@@ -334,6 +368,8 @@ games:
     ebay:
       query: "Soulcalibur Dreamcast"
       negative: ["soulcalibur ii", "soul blade", "xbox", "hd"]
+    barcodes:
+      - {code: "722674020923"}
   - id: resident-evil-code-veronica-dreamcast
     title: "Resident Evil Code: Veronica"
     info:
@@ -349,6 +385,8 @@ games:
     ebay:
       query: "Resident Evil Code Veronica Dreamcast"
       negative: ["x ", "ps2", "gamecube", "hd"]
+    barcodes:
+      - {code: "013388250035"}
   - id: illbleed-dreamcast
     title: "Illbleed"
     info:
@@ -394,6 +432,8 @@ games:
     ebay:
       query: "House of the Dead 2 Dreamcast"
       negative: ["typing", "gun only", "remake", "switch"]
+    barcodes:
+      - {code: "010086510027"}
   - id: seaman-dreamcast
     title: "Seaman"
     info:
@@ -409,6 +449,8 @@ games:
     ebay:
       query: "Seaman Dreamcast"
       negative: ["microphone only", "ps2"]
+    barcodes:
+      - {code: "010086510485"}
   - id: space-channel-5-dreamcast
     title: "Space Channel 5"
     info:
@@ -424,6 +466,8 @@ games:
     ebay:
       query: "Space Channel 5 Dreamcast"
       negative: ["part 2", "ps2", "vr"]
+    barcodes:
+      - {code: "010086510515"}
   - id: samba-de-amigo-dreamcast
     title: "Samba de Amigo"
     info:
@@ -439,6 +483,8 @@ games:
     ebay:
       query: "Samba de Amigo Dreamcast"
       negative: ["maracas only", "wii", "ver 2000"]
+    barcodes:
+      - {code: "010086510928"}
   - id: chuchu-rocket-dreamcast
     title: "ChuChu Rocket!"
     info:
@@ -454,6 +500,8 @@ games:
     ebay:
       query: "ChuChu Rocket Dreamcast"
       negative: ["gba"]
+    barcodes:
+      - {code: "010086510492"}
   - id: toy-commander-dreamcast
     title: "Toy Commander"
     info:
@@ -469,6 +517,8 @@ games:
     ebay:
       query: "Toy Commander Dreamcast"
       negative: ["toy racer"]
+    barcodes:
+      - {code: "010086510201"}
   - id: mdk2-dreamcast
     title: "MDK2"
     info:
@@ -484,6 +534,8 @@ games:
     ebay:
       query: "MDK2 Dreamcast"
       negative: ["pc", "hd", "wii"]
+    barcodes:
+      - {code: "040421005567"}
   - id: fur-fighters-dreamcast
     title: "Fur Fighters"
     info:
@@ -499,6 +551,8 @@ games:
     ebay:
       query: "Fur Fighters Dreamcast"
       negative: ["viggo's revenge", "ps2"]
+    barcodes:
+      - {code: "021481832188"}
   - id: sturmwind-dreamcast
     title: "Sturmwind"
     info:
@@ -544,6 +598,8 @@ games:
     ebay:
       query: "Mars Matrix Dreamcast"
       negative: []
+    barcodes:
+      - {code: "013388250219"}
   - id: virtua-tennis-2-dreamcast
     # Sold in North America as Tennis 2K2; listings use that name.
     title: "Tennis 2K2"
@@ -560,6 +616,8 @@ games:
     ebay:
       query: "Tennis 2K2 Dreamcast"
       negative: ["virtua tennis 1", "ps2", "2k1"]
+    barcodes:
+      - {code: "010086511864"}
   - id: hydro-thunder-dreamcast
     title: "Hydro Thunder"
     info:
@@ -575,6 +633,8 @@ games:
     ebay:
       query: "Hydro Thunder Dreamcast"
       negative: ["hurricane", "n64", "ps1"]
+    barcodes:
+      - {code: "031719209804"}
   - id: phantasy-star-online-dreamcast
     title: "Phantasy Star Online"
     info:
@@ -588,6 +648,8 @@ games:
     ebay:
       query: "Phantasy Star Online Dreamcast -\"ver. 2\" -\"ver 2\" -\"version 2\""
       negative: ["ver. 2", "ver 2", "version 2", "v2", "episode", "gamecube", "xbox", "pc", "blue burst", "japan"]
+    barcodes:
+      - {code: "010086511000"}
   - id: crazy-taxi-2-dreamcast
     title: "Crazy Taxi 2"
     info:
@@ -601,6 +663,8 @@ games:
     ebay:
       query: "Crazy Taxi 2 Dreamcast"
       negative: ["japan"]
+    barcodes:
+      - {code: "010086511369"}
   - id: marvel-vs-capcom-dreamcast
     title: "Marvel vs. Capcom: Clash of Super Heroes"
     info:
@@ -614,6 +678,8 @@ games:
     ebay:
       query: "Marvel vs Capcom Dreamcast"
       negative: ["marvel vs capcom 2", "mvc2", "ps1", "playstation 1", "japan", "ps2", "xbox"]
+    barcodes:
+      - {code: "013388250028"}
   - id: capcom-vs-snk-dreamcast
     title: "Capcom vs. SNK"
     info:
@@ -627,6 +693,8 @@ games:
     ebay:
       query: "Capcom vs SNK Dreamcast -pro"
       negative: ["capcom vs snk 2", "cvs2", "pro", "millennium fight 2000 pro", "ps1", "playstation 1", "japan"]
+    barcodes:
+      - {code: "013388250158"}
   - id: street-fighter-alpha-3-dreamcast
     title: "Street Fighter Alpha 3"
     info:
@@ -640,6 +708,8 @@ games:
     ebay:
       query: "Street Fighter Alpha 3 Dreamcast"
       negative: ["ps1", "playstation 1", "saturn", "ps2", "psp", "gba", "upper", "max", "japan", "zero 3"]
+    barcodes:
+      - {code: "013388250059"}
   - id: dead-or-alive-2-dreamcast
     title: "Dead or Alive 2"
     info:
@@ -653,6 +723,8 @@ games:
     ebay:
       query: "Dead or Alive 2 Dreamcast"
       negative: ["ps2", "hardcore", "xbox", "ultimate", "japan", "limited edition"]
+    barcodes:
+      - {code: "018946010120"}
   - id: virtua-fighter-3tb-dreamcast
     title: "Virtua Fighter 3tb"
     info:
@@ -666,6 +738,8 @@ games:
     ebay:
       query: "Virtua Fighter 3tb Dreamcast"
       negative: ["japan", "virtua fighter 4", "virtua fighter 5"]
+    barcodes:
+      - {code: "010086510010"}
   - id: sonic-shuffle-dreamcast
     title: "Sonic Shuffle"
     info:
@@ -679,6 +753,8 @@ games:
     ebay:
       query: "Sonic Shuffle Dreamcast"
       negative: ["japan"]
+    barcodes:
+      - {code: "010086510607"}
   - id: ecco-the-dolphin-defender-of-the-future-dreamcast
     title: "Ecco the Dolphin: Defender of the Future"
     info:
@@ -692,6 +768,8 @@ games:
     ebay:
       query: "Ecco the Dolphin Defender of the Future Dreamcast"
       negative: ["ps2", "genesis", "sega cd", "game gear", "tides of time"]
+    barcodes:
+      - {code: "010086510331"}
   - id: sega-rally-2-dreamcast
     title: "Sega Rally 2"
     info:
@@ -718,6 +796,8 @@ games:
     ebay:
       query: "Metropolis Street Racer Dreamcast"
       negative: ["project gotham", "japan"]
+    barcodes:
+      - {code: "010086510126"}
   - id: daytona-usa-dreamcast
     title: "Daytona USA"
     info:
@@ -730,6 +810,8 @@ games:
     ebay:
       query: "Daytona USA Dreamcast"
       negative: ["saturn", "championship circuit", "arcade", "xbox", "ps3", "japan"]
+    barcodes:
+      - {code: "010086510379"}
   - id: test-drive-le-mans-dreamcast
     title: "Test Drive Le Mans"
     info:
@@ -743,6 +825,8 @@ games:
     ebay:
       query: "Test Drive Le Mans Dreamcast"
       negative: ["ps1", "playstation 1", "ps2", "pc", "gbc"]
+    barcodes:
+      - {code: "020295150204"}
   - id: tokyo-xtreme-racer-dreamcast
     title: "Tokyo Xtreme Racer"
     info:
@@ -756,6 +840,8 @@ games:
     ebay:
       query: "Tokyo Xtreme Racer Dreamcast"
       negative: ["tokyo xtreme racer 2", "drift", "ps2", "japan"]
+    barcodes:
+      - {code: "650008799125"}
   - id: tokyo-xtreme-racer-2-dreamcast
     title: "Tokyo Xtreme Racer 2"
     info:
@@ -769,6 +855,8 @@ games:
     ebay:
       query: "Tokyo Xtreme Racer 2 Dreamcast"
       negative: ["drift", "ps2", "japan"]
+    barcodes:
+      - {code: "650008799194"}
   - id: 18-wheeler-american-pro-trucker-dreamcast
     title: "18 Wheeler: American Pro Trucker"
     info:
@@ -782,6 +870,8 @@ games:
     ebay:
       query: "18 Wheeler American Pro Trucker Dreamcast"
       negative: ["ps2", "gamecube", "arcade", "japan"]
+    barcodes:
+      - {code: "010086510645"}
   - id: virtua-tennis-dreamcast
     title: "Virtua Tennis"
     info:
@@ -795,6 +885,8 @@ games:
     ebay:
       query: "Virtua Tennis Dreamcast -2K2"
       negative: ["virtua tennis 2", "2k2", "tennis 2k2", "virtua tennis 3", "virtua tennis 4", "ps2", "psp", "pc", "japan", "power smash"]
+    barcodes:
+      - {code: "010086510546"}
   - id: rayman-2-the-great-escape-dreamcast
     title: "Rayman 2: The Great Escape"
     info:
@@ -808,6 +900,8 @@ games:
     ebay:
       query: "Rayman 2 Great Escape Dreamcast"
       negative: ["ps1", "playstation 1", "n64", "pc", "ps2", "ds", "revolution", "japan"]
+    barcodes:
+      - {code: "008888260059"}
   - id: rez-dreamcast
     title: "Rez"
     region: NTSC-J
@@ -835,6 +929,8 @@ games:
     ebay:
       query: "Zombie Revenge Dreamcast"
       negative: ["japan", "arcade"]
+    barcodes:
+      - {code: "010086510386"}
   - id: dynamite-cop-dreamcast
     title: "Dynamite Cop"
     info:
@@ -848,6 +944,8 @@ games:
     ebay:
       query: "Dynamite Cop Dreamcast"
       negative: ["japan", "dynamite deka", "arcade"]
+    barcodes:
+      - {code: "010086510133"}
   - id: blue-stinger-dreamcast
     title: "Blue Stinger"
     info:
@@ -861,6 +959,8 @@ games:
     ebay:
       query: "Blue Stinger Dreamcast"
       negative: ["japan"]
+    barcodes:
+      - {code: "047875109346"}
   - id: d2-dreamcast
     title: "D2"
     info:
@@ -874,6 +974,8 @@ games:
     ebay:
       query: "D2 Dreamcast -\"dead or alive\""
       negative: ["japan", "dead or alive", "warp", "doa2"]
+    barcodes:
+      - {code: "010086510362"}
   - id: sword-of-the-berserk-guts-rage-dreamcast
     title: "Sword of the Berserk: Guts' Rage"
     info:
@@ -887,6 +989,8 @@ games:
     ebay:
       query: "Sword of the Berserk Guts Rage Dreamcast"
       negative: ["japan", "ps2", "millennium falcon"]
+    barcodes:
+      - {code: "788687452045"}
   - id: evolution-the-world-of-sacred-device-dreamcast
     title: "Evolution: The World of Sacred Device"
     info:
@@ -900,6 +1004,8 @@ games:
     ebay:
       query: "Evolution World of Sacred Device Dreamcast"
       negative: ["evolution 2", "far off promise", "worlds", "gamecube", "japan"]
+    barcodes:
+      - {code: "008888260066"}
   - id: evolution-2-far-off-promise-dreamcast
     title: "Evolution 2: Far Off Promise"
     info:
@@ -913,6 +1019,8 @@ games:
     ebay:
       query: "Evolution 2 Far Off Promise Dreamcast"
       negative: ["sacred device", "worlds", "gamecube", "japan"]
+    barcodes:
+      - {code: "008888260073"}
   - id: time-stalkers-dreamcast
     title: "Time Stalkers"
     info:
@@ -926,6 +1034,8 @@ games:
     ebay:
       query: "Time Stalkers Dreamcast"
       negative: ["japan", "climax landers"]
+    barcodes:
+      - {code: "010086510119"}
   - id: silver-dreamcast
     title: "Silver"
     info:
@@ -938,6 +1048,8 @@ games:
     ebay:
       query: "Silver Dreamcast"
       negative: ["pc", "japan", "quicksilver", "silver star", "silverado", "silverback"]
+    barcodes:
+      - {code: "020295150105"}
   - id: elemental-gimmick-gear-dreamcast
     title: "Elemental Gimmick Gear"
     info:
@@ -951,6 +1063,8 @@ games:
     ebay:
       query: "Elemental Gimmick Gear Dreamcast"
       negative: ["japan"]
+    barcodes:
+      - {code: "681313024114"}
   - id: draconus-cult-of-the-wyrm-dreamcast
     title: "Draconus: Cult of the Wyrm"
     info:
@@ -964,6 +1078,8 @@ games:
     ebay:
       query: "Draconus Cult of the Wyrm Dreamcast"
       negative: ["dragon's blood", "pal"]
+    barcodes:
+      - {code: "650008799101"}
   - id: armada-dreamcast
     title: "Armada"
     info:
@@ -977,6 +1093,8 @@ games:
     ebay:
       query: "Armada Dreamcast"
       negative: ["star trek", "pc", "japan"]
+    barcodes:
+      - {code: "650001222217"}
   - id: alien-front-online-dreamcast
     title: "Alien Front Online"
     info:
@@ -990,6 +1108,8 @@ games:
     ebay:
       query: "Alien Front Online Dreamcast"
       negative: ["japan", "arcade", "microphone only", "mic only"]
+    barcodes:
+      - {code: "010086511710"}
   - id: ooga-booga-dreamcast
     title: "Ooga Booga"
     info:
@@ -1002,6 +1122,8 @@ games:
       about_url: "https://en.wikipedia.org/wiki/Ooga_Booga"
     ebay:
       query: "Ooga Booga Dreamcast"
+    barcodes:
+      - {code: "010086511406"}
   - id: floigan-bros-dreamcast
     title: "Floigan Bros."
     info:
@@ -1014,6 +1136,8 @@ games:
       about_url: "https://en.wikipedia.org/wiki/Floigan_Bros."
     ebay:
       query: "Floigan Bros Dreamcast"
+    barcodes:
+      - {code: "010086511147"}
   - id: bomberman-online-dreamcast
     title: "Bomberman Online"
     info:
@@ -1027,6 +1151,8 @@ games:
     ebay:
       query: "Bomberman Online Dreamcast"
       negative: ["japan", "pc", "xbox"]
+    barcodes:
+      - {code: "010086510652"}
   - id: mr-driller-dreamcast
     title: "Mr. Driller"
     info:
@@ -1040,6 +1166,8 @@ games:
     ebay:
       query: "Mr. Driller Dreamcast"
       negative: ["ps1", "playstation 1", "gbc", "game boy", "pc", "japan", "drill land", "ds"]
+    barcodes:
+      - {code: "722674020947"}
   - id: ready-2-rumble-boxing-dreamcast
     title: "Ready 2 Rumble Boxing"
     info:
@@ -1053,6 +1181,8 @@ games:
     ebay:
       query: "Ready 2 Rumble Boxing Dreamcast -\"round 2\""
       negative: ["round 2", "ps1", "playstation 1", "n64", "gbc", "game boy", "ps2", "revolution", "japan"]
+    barcodes:
+      - {code: "031719209828"}
   - id: ready-2-rumble-boxing-round-2-dreamcast
     title: "Ready 2 Rumble Boxing: Round 2"
     info:
@@ -1066,6 +1196,8 @@ games:
     ebay:
       query: "Ready 2 Rumble Boxing Round 2 Dreamcast"
       negative: ["ps1", "playstation 1", "n64", "ps2", "japan"]
+    barcodes:
+      - {code: "031719209910"}
   - id: plasma-sword-nightmare-of-bilstein-dreamcast
     title: "Plasma Sword: Nightmare of Bilstein"
     info:
@@ -1079,6 +1211,8 @@ games:
     ebay:
       query: "Plasma Sword Nightmare of Bilstein Dreamcast"
       negative: ["japan", "star gladiator"]
+    barcodes:
+      - {code: "013388250066"}
   - id: star-wars-episode-i-racer-dreamcast
     title: "Star Wars Episode I: Racer"
     info:
@@ -1092,6 +1226,8 @@ games:
     ebay:
       query: "Star Wars Episode I Racer Dreamcast"
       negative: ["n64", "nintendo 64", "pc", "gbc", "game boy", "switch", "ps4", "japan"]
+    barcodes:
+      - {code: "023272653484"}
   - id: quake-iii-arena-dreamcast
     title: "Quake III Arena"
     info:
@@ -1105,6 +1241,8 @@ games:
     ebay:
       query: "Quake III Arena Dreamcast"
       negative: ["pc", "ps2", "revolution", "japan"]
+    barcodes:
+      - {code: "010086510614"}
   - id: unreal-tournament-dreamcast
     title: "Unreal Tournament"
     info:
@@ -1118,6 +1256,8 @@ games:
     ebay:
       query: "Unreal Tournament Dreamcast"
       negative: ["pc", "ps2", "japan"]
+    barcodes:
+      - {code: "742725216358"}
   - id: soldier-of-fortune-dreamcast
     title: "Soldier of Fortune"
     info:
@@ -1131,6 +1271,8 @@ games:
     ebay:
       query: "Soldier of Fortune Dreamcast"
       negative: ["pc", "ps2", "double helix", "payback", "japan"]
+    barcodes:
+      - {code: "650008799224"}
   - id: legacy-of-kain-soul-reaver-dreamcast
     title: "Legacy of Kain: Soul Reaver"
     info:
@@ -1144,6 +1286,8 @@ games:
     ebay:
       query: "Legacy of Kain Soul Reaver Dreamcast"
       negative: ["ps1", "playstation 1", "pc", "soul reaver 2", "ps2", "blood omen", "defiance", "japan"]
+    barcodes:
+      - {code: "788687450645"}
   - id: tomb-raider-the-last-revelation-dreamcast
     title: "Tomb Raider: The Last Revelation"
     info:
@@ -1157,6 +1301,8 @@ games:
     ebay:
       query: "Tomb Raider Last Revelation Dreamcast"
       negative: ["ps1", "playstation 1", "pc", "chronicles", "japan"]
+    barcodes:
+      - {code: "788687451444"}
   - id: resident-evil-2-dreamcast
     title: "Resident Evil 2"
     info:
@@ -1183,6 +1329,8 @@ games:
     ebay:
       query: "Resident Evil 3 Nemesis Dreamcast"
       negative: ["ps1", "playstation 1", "gamecube", "pc", "remake", "ps4", "xbox", "japan", "biohazard"]
+    barcodes:
+      - {code: "013388250202"}
   - id: dino-crisis-dreamcast
     title: "Dino Crisis"
     info:
@@ -1196,6 +1344,8 @@ games:
     ebay:
       query: "Dino Crisis Dreamcast"
       negative: ["dino crisis 2", "dino crisis 3", "ps1", "playstation 1", "pc", "japan"]
+    barcodes:
+      - {code: "013388250189"}
   - id: carrier-dreamcast
     title: "Carrier"
     info:
@@ -1208,6 +1358,8 @@ games:
     ebay:
       query: "Carrier Dreamcast"
       negative: ["japan", "aircraft carrier", "carrier command", "case", "carrier bag"]
+    barcodes:
+      - {code: "032264500149"}
   - id: nightmare-creatures-ii-dreamcast
     title: "Nightmare Creatures II"
     info:
@@ -1221,6 +1373,8 @@ games:
     ebay:
       query: "Nightmare Creatures II Dreamcast"
       negative: ["ps1", "playstation 1"]
+    barcodes:
+      - {code: "083717190615"}
   - id: gauntlet-legends-dreamcast
     title: "Gauntlet Legends"
     info:
@@ -1234,6 +1388,8 @@ games:
     ebay:
       query: "Gauntlet Legends Dreamcast"
       negative: ["n64", "nintendo 64", "ps1", "playstation 1", "dark legacy", "arcade"]
+    barcodes:
+      - {code: "031719209941"}
   - id: san-francisco-rush-2049-dreamcast
     title: "San Francisco Rush 2049"
     info:
@@ -1260,6 +1416,8 @@ games:
     ebay:
       query: "Speed Devils Dreamcast -online"
       negative: ["online", "japan"]
+    barcodes:
+      - {code: "008888260028"}
   - id: ferrari-f355-challenge-dreamcast
     title: "Ferrari F355 Challenge"
     info:
@@ -1286,6 +1444,8 @@ games:
     ebay:
       query: "Toy Story 2 Dreamcast"
       negative: ["ps1", "playstation 1", "n64", "pc", "gbc", "game boy", "japan"]
+    barcodes:
+      - {code: "047875109360"}
   - id: tony-hawks-pro-skater-dreamcast
     title: "Tony Hawk's Pro Skater"
     info:
@@ -1299,6 +1459,8 @@ games:
     ebay:
       query: "Tony Hawk's Pro Skater Dreamcast"
       negative: ["pro skater 2", "ps1", "playstation 1", "n64", "gbc", "game boy", "pc", "japan"]
+    barcodes:
+      - {code: "650008799149"}
   - id: tony-hawks-pro-skater-2-dreamcast
     title: "Tony Hawk's Pro Skater 2"
     info:
@@ -1312,6 +1474,8 @@ games:
     ebay:
       query: "Tony Hawk's Pro Skater 2 Dreamcast"
       negative: ["pro skater 3", "ps1", "playstation 1", "n64", "gba", "gbc", "pc", "xbox", "japan"]
+    barcodes:
+      - {code: "047875122369"}
   - id: grand-theft-auto-2-dreamcast
     title: "Grand Theft Auto 2"
     info:
@@ -1325,6 +1489,8 @@ games:
     ebay:
       query: "Grand Theft Auto 2 Dreamcast"
       negative: ["ps1", "playstation 1", "pc", "gbc", "game boy", "japan"]
+    barcodes:
+      - {code: "710425260421"}
   - id: wacky-races-dreamcast
     title: "Wacky Races"
     info:
@@ -1338,6 +1504,8 @@ games:
     ebay:
       query: "Wacky Races Dreamcast"
       negative: ["ps1", "playstation 1", "gbc", "game boy", "pc", "japan"]
+    barcodes:
+      - {code: "020295150099"}
   - id: looney-tunes-space-race-dreamcast
     title: "Looney Tunes: Space Race"
     info:
@@ -1351,6 +1519,8 @@ games:
     ebay:
       query: "Looney Tunes Space Race Dreamcast"
       negative: ["ps2", "japan"]
+    barcodes:
+      - {code: "020295150082"}
   - id: jojos-bizarre-adventure-dreamcast
     title: "JoJo's Bizarre Adventure"
     info:
@@ -1365,6 +1535,8 @@ games:
     ebay:
       query: "JoJo's Bizarre Adventure Dreamcast"
       negative: ["ps1", "playstation", "ps3", "ps4", "xbox", "all star battle", "eyes of heaven", "matching service", "manga", "dvd", "blu-ray", "figure"]
+    barcodes:
+      - {code: "013388250042"}
   - id: ecw-anarchy-rulz-dreamcast
     title: "ECW Anarchy Rulz"
     info:
@@ -1380,6 +1552,8 @@ games:
     ebay:
       query: "ECW Anarchy Rulz Dreamcast"
       negative: ["hardcore revolution", "ps1", "playstation"]
+    barcodes:
+      - {code: "021481832041"}
   - id: tech-romancer-dreamcast
     title: "Tech Romancer"
     info:
@@ -1394,6 +1568,8 @@ games:
       why: "Capcom never ported it beyond the Dreamcast, so the Dreamcast disc is the only home version of the arcade game."
     ebay:
       query: "Tech Romancer Dreamcast"
+    barcodes:
+      - {code: "013388250097"}
   - id: confidential-mission-dreamcast
     title: "Confidential Mission"
     info:
@@ -1407,6 +1583,8 @@ games:
     ebay:
       query: "Confidential Mission Dreamcast"
       negative: ["ps2"]
+    barcodes:
+      - {code: "010086511604"}
   - id: fatal-fury-mark-of-the-wolves-dreamcast
     title: "Fatal Fury: Mark of the Wolves"
     info:
@@ -1422,6 +1600,8 @@ games:
       query: "Fatal Fury Mark of the Wolves Dreamcast"
       # The Japanese release is tracked as garou-mark-of-the-wolves-dreamcast.
       negative: ["garou", "neo geo", "pc engine", "ps2", "ps4", "switch", "xbox"]
+    barcodes:
+      - {code: "093992058005"}
   - id: death-crimson-ox-dreamcast
     title: "Death Crimson OX"
     info:
@@ -1449,6 +1629,8 @@ games:
     ebay:
       query: "Maken X Dreamcast"
       negative: ["maken shao", "ps2"]
+    barcodes:
+      - {code: "010086510508"}
   - id: heavy-metal-geomatrix-dreamcast
     title: "Heavy Metal: Geomatrix"
     info:
@@ -1475,6 +1657,8 @@ games:
     ebay:
       query: "Virtual On Oratorio Tangram Dreamcast"
       negative: ["twin stick", "saturn", "marz", "force", "xbox", "ps2", "ps4"]
+    barcodes:
+      - {code: "047875122277"}
   - id: giga-wing-2-dreamcast
     title: "Giga Wing 2"
     info:

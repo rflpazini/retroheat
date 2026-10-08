@@ -11,6 +11,7 @@ import (
 	"strings"
 	"sync/atomic"
 	"testing"
+	"time"
 
 	"github.com/rflpazini/retroheat/internal/catalog"
 	"github.com/rflpazini/retroheat/internal/classify"
@@ -59,6 +60,17 @@ func (s *stub) server(t *testing.T) *httptest.Server {
 			return
 		}
 		body, err := os.ReadFile(filepath.Join("testdata", s.fixture))
+		if err != nil {
+			t.Fatal(err)
+		}
+		w.Header().Set("Content-Type", "application/json")
+		_, _ = w.Write(body)
+	})
+	mux.HandleFunc("/developer/analytics/v1_beta/rate_limit", func(w http.ResponseWriter, r *http.Request) {
+		if got := r.URL.Query().Get("api_name"); got != "browse" {
+			t.Errorf("api_name = %q, want browse", got)
+		}
+		body, err := os.ReadFile(filepath.Join("testdata", "rate_limit.json"))
 		if err != nil {
 			t.Fatal(err)
 		}
@@ -294,6 +306,23 @@ func TestQuotesFromListingsMatchesQuotes(t *testing.T) {
 	}
 	if !reflect.DeepEqual(live, replayed) {
 		t.Errorf("replayed quotes differ from live:\nlive     %+v\nreplayed %+v", live, replayed)
+	}
+}
+
+func TestQuotaReadsTheBrowseAllowanceWithoutSearching(t *testing.T) {
+	t.Parallel()
+	s := &stub{fixture: "search_empty.json"}
+	c := newClient(t, s)
+	q, err := c.Quota(context.Background())
+	if err != nil {
+		t.Fatal(err)
+	}
+	want := ebay.Quota{Limit: 5000, Remaining: 430, Reset: time.Date(2026, 10, 9, 7, 0, 0, 0, time.UTC)}
+	if q != want {
+		t.Errorf("Quota = %+v, want %+v (the buy.browse allowance, not the bulk one)", q, want)
+	}
+	if n := s.searchCalls.Load(); n != 0 {
+		t.Errorf("searches = %d, want 0: reading the quota must not spend it", n)
 	}
 }
 

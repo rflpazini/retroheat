@@ -84,10 +84,14 @@ func (c *Client) Name() string     { return Name }
 func (c *Client) Kind() string     { return provider.KindAsking }
 func (c *Client) CostPerGame() int { return 1 }
 
+// itemSummary is the part of a listing the collector reads. EPID, the eBay
+// product the listing is attached to, is read only by the barcode harvest;
+// pricing and the raw archive never see it.
 type itemSummary struct {
 	ItemID    string `json:"itemId"`
 	Title     string `json:"title"`
 	Condition string `json:"condition"`
+	EPID      string `json:"epid"`
 	Price     struct {
 		Value    string `json:"value"`
 		Currency string `json:"currency"`

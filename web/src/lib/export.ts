@@ -25,6 +25,8 @@ export const COLLECTION_HEADER = [
   'notes',
   'asking_today',
   'added_at',
+  'edition',
+  'barcode',
 ]
 
 export const SAVED_HEADER = ['game_id', 'title', 'platform', 'target', 'asking_today', 'saved_at']
@@ -52,6 +54,8 @@ export function collectionCSV(items: CollectionItem[], byId: Map<string, Catalog
         item.notes ?? '',
         dollars(index.get(item.game_id)?.prices[item.condition]),
         item.added_at,
+        item.edition ?? '',
+        item.barcode ?? '',
       ]
     })
   return toCSV([COLLECTION_HEADER, ...rows])

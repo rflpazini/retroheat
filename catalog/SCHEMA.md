@@ -16,6 +16,9 @@ games:
     ebay:
       query: "Silent Hill 2 (ps2, \"playstation 2\")"
       negative: ["greatest hits", "hd collection", "silent hill 3"]
+    barcodes:                # optional, usually filled by cmd/barcodes
+      - {code: "083717200253"}
+      - {code: "083717200505", variant: greatest-hits}
 ```
 
 ## Fields
@@ -30,6 +33,7 @@ games:
 | `ebay.query` | yes | Search terms; **must name the platform** (see below for the Game Boy line) |
 | `ebay.negative` | no | Terms that disqualify a listing |
 | `ebay.require` | no | Words every listing must contain (see below) |
+| `barcodes` | no | Codes printed on the game's boxes, so the site's scanner finds the entry; see below |
 
 Parsing is strict: an unknown key fails CI rather than being ignored, so a typo
 in a pull request is caught immediately.
@@ -178,6 +182,44 @@ Track a variant separately when it prices differently — a PS2 black label
 against its Greatest Hits reprint, or a GameCube original against Player's
 Choice. Give each its own `id`, set `variant`, and exclude the other in
 `negative` so the two do not contaminate each other.
+
+## Barcodes
+
+`barcodes` lists the codes printed on the back of the game's boxes, so a phone
+pointed at a box lands on this entry. Write each code as the box prints it:
+twelve digits for a US UPC, thirteen for a European EAN or a Japanese JAN.
+A code without a `variant` was printed on the entry's own edition. A reprint's
+code names its reprint (`greatest-hits`, `players-choice`, `platinum`), so a
+Greatest Hits box scans to the base game and the copy remembers which print it
+is. Barcodes never affect prices.
+
+CI checks every code's check digit and that no code belongs to two entries: a
+scan has to land on exactly one game. A variant tracked as its own entry gets
+its own codes.
+
+You rarely type them. `go run ./cmd/barcodes` fills them from eBay's catalog:
+for each entry it runs the entry's own search, counts the eBay products the
+listings the classifier keeps are attached to, and reads the codes off each
+product that at least three listings agree on. Reprints an entry keeps out of
+its prices get a search of their own. Only codes printed for the entry's
+region are kept: eBay's product for a US game sometimes carries only the
+European box's code, and some old products carry a filler code (one half
+printed twice) that is on no box. The searches use the collector's daily
+quota, so by default a run leaves a catalog's worth of calls for every
+scheduled collector run before the quota resets, and resumes from
+`.cache/barcodes.json` the next day. `-platforms`, `-only`, `-limit` and
+`-dry-run` narrow a run; `-v` prints what each entry got and what was turned
+down.
+
+A harvest only ever adds codes, `-force` included. When the rules improve,
+`go run ./cmd/barcodes -rejudge` re-checks every code against the products the
+cache remembers, with no API calls, and drops the ones that no longer hold.
+
+Codes people pair by hand in the scanner (a box eBay did not know) wait in
+Supabase until `go run ./cmd/barcodes -reports` reviews them. A pairing joins
+the catalog when eBay's listings for that code are this game, or, for a code
+eBay US has never listed, when two different people agree. Everything else is
+printed for a person to look at.
 
 ## Annotations
 

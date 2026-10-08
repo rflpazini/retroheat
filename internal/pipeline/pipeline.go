@@ -379,9 +379,13 @@ func countsOf(boards []snapshot.Latest) map[catalog.Platform]int {
 	return out
 }
 
-// writeCatalogFiles rewrites catalog.json and every games/<id>.json.
+// writeCatalogFiles rewrites catalog.json, barcodes.json and every
+// games/<id>.json.
 func writeCatalogFiles(dataDir, asOf string, games []catalog.Game, anns map[string]catalog.Annotation, shelf shelfLookup) error {
 	if err := snapshot.WriteCatalog(dataDir, snapshot.Catalog{AsOf: asOf, Games: catalogEntries(games)}); err != nil {
+		return err
+	}
+	if err := snapshot.WriteBarcodes(dataDir, snapshot.BarcodesFrom(asOf, games)); err != nil {
 		return err
 	}
 	for _, g := range gameDetails(games, anns, shelf) {

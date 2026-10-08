@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { Suspense, lazy, useCallback, useEffect, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { Bookmark, Disc3, HardDrive, Info, Library, Menu, Monitor, TrendingUp } from 'lucide-react'
 import { ConsoleIcon } from '@/components/ConsoleIcon'
@@ -12,11 +12,26 @@ import { AccountAddToShelf } from '@/components/AddToShelfDialog'
 import { AccountCopyInfo } from '@/components/CopyInfoDialog'
 import { AccountSharing } from '@/components/SharingDialog'
 import { AccountProvider, useAccount } from '@/lib/account'
+import { importFresh } from '@/lib/lazy'
 import { PLATFORMS, PLATFORM_LABELS, type Meta } from '@/lib/types'
 import { useJson } from '@/lib/data'
 import { relativeDay } from '@/lib/format'
 import { gamesOnDisk } from '@/lib/meta'
 import { cn } from '@/lib/utils'
+
+// The scanner and its reader load only when someone opens it; most visits never do.
+const ScanDialog = lazy(() => importFresh(() => import('@/components/ScanDialog')).then((m) => ({ default: m.ScanDialog })))
+
+/** Mounts the scanner whenever the provider has it open. */
+function AccountScan() {
+  const account = useAccount()
+  if (!account.scanOpen) return null
+  return (
+    <Suspense fallback={null}>
+      <ScanDialog onClose={account.closeScan} />
+    </Suspense>
+  )
+}
 
 function useTheme() {
   const [dark, setDark] = useState(() => document.documentElement.classList.contains('dark'))
@@ -246,6 +261,7 @@ function Shell() {
       <AccountAddToShelf />
       <AccountCopyInfo />
       <AccountSharing />
+      <AccountScan />
     </div>
   )
 }

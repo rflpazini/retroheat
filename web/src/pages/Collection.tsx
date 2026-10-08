@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Link, useSearchParams } from 'react-router-dom'
 import { useAccount } from '@/lib/account'
 import { useJson } from '@/lib/data'
 import { conditionColor, heat, money, moneyExact, pct, signedMoney } from '@/lib/format'
@@ -48,6 +49,22 @@ function Shelf() {
   const account = useAccount()
   const catalog = useJson<CatalogFile>('catalog.json')
   const { index, loading } = usePriceIndex()
+
+  // The home-screen shortcut opens the collection with ?scan=1: straight to
+  // the camera, and the address is put back so a reload does not reopen it.
+  const [params, setParams] = useSearchParams()
+  const { openScan } = account
+  useEffect(() => {
+    if (!params.has('scan')) return
+    openScan()
+    setParams(
+      (p) => {
+        p.delete('scan')
+        return p
+      },
+      { replace: true },
+    )
+  }, [params, setParams, openScan])
 
   if (account.collection.status === 'loading' || loading || catalog.status === 'loading') {
     return (

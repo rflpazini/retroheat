@@ -93,12 +93,20 @@ func run() int {
 		return 0
 	}
 
+	limit := *callBudget
+	if qr, ok := p.(quotaReader); ok {
+		var proceed bool
+		if limit, proceed = checkQuota(ctx, log, qr, *catalogDir, selected, limit); !proceed {
+			return 0
+		}
+	}
+
 	res, err := pipeline.Run(ctx, pipeline.Options{
 		DataDir:      *dataDir,
 		CatalogDir:   *catalogDir,
 		Platforms:    selected,
 		Provider:     p,
-		Budget:       budget.New(*callBudget),
+		Budget:       budget.New(limit),
 		Now:          now,
 		BackfillDays: *backfill,
 		Log:          log,
@@ -127,6 +135,69 @@ func run() int {
 		return 1
 	}
 	return 0
+}
+
+// quotaReader is a provider that can say how much of its daily allowance is
+// left without spending any of it.
+type quotaReader interface {
+	Quota(context.Context) (ebay.Quota, error)
+}
+
+// checkQuota reads the allowance before the run spends it. Every tool on the
+// keyset shares the daily calls, and a run that meets the limit halfway fails
+// every game after it and then the health check, so the run is capped at what
+// is left, and skipped when that could not price half the catalog: the boards
+// keep their last prices and the next run after the reset collects. An
+// unreadable quota is not a reason to stop collecting.
+func checkQuota(ctx context.Context, log *slog.Logger, qr quotaReader, catalogDir string, selected []catalog.Platform, limit int) (int, bool) {
+	games, err := catalog.Load(catalogDir)
+	if err != nil {
+		// The pipeline reports a broken catalog properly.
+		return limit, true
+	}
+	need := len(games)
+	if len(selected) > 0 {
+		need = 0
+		for _, g := range games {
+			if slices.Contains(selected, g.Platform) {
+				need++
+			}
+		}
+	}
+	q, err := qr.Quota(ctx)
+	if err != nil {
+		log.Warn("could not read the API quota; collecting anyway", slog.String("err", err.Error()))
+		return limit, true
+	}
+	allowed, proceed := planCalls(limit, q.Remaining, need)
+	if !proceed {
+		reset := q.Reset.UTC().Format(time.RFC3339)
+		log.Warn("the API quota left cannot price half the catalog; skipping this run",
+			slog.Int("remaining", q.Remaining), slog.Int("games", need), slog.String("reset", reset))
+		if os.Getenv("GITHUB_ACTIONS") == "true" {
+			fmt.Printf("::warning title=eBay quota too low::%d of the %d daily calls are left and a full run needs %d; the boards keep their last prices until the allowance resets at %s.\n",
+				q.Remaining, q.Limit, need, reset)
+		}
+		return 0, false
+	}
+	if allowed != limit {
+		log.Info("capping the run at the API quota left", slog.Int("budget", allowed), slog.Int("games", need))
+	}
+	return allowed, true
+}
+
+// planCalls is the run's call budget given the configured one (0 = unlimited),
+// the allowance left and one call per game; proceed is false when the run
+// could not price the share of games a healthy run needs.
+func planCalls(limit, remaining, need int) (allowed int, proceed bool) {
+	allowed = limit
+	if allowed == 0 || remaining < allowed {
+		allowed = remaining
+	}
+	if allowed <= 0 || float64(min(allowed, need)) < minSuccessRatio*float64(need) {
+		return 0, false
+	}
+	return allowed, true
 }
 
 func selectProvider(useFake bool, now time.Time) (provider.Provider, error) {

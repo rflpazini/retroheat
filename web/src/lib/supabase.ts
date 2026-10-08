@@ -1,6 +1,16 @@
-import { explainError, retryOnClockSkew, type ApiError } from '@/lib/retry'
-import { IMPORT_CHUNK, type AuthEvent, type AuthUser, type CollectionItem, type Profile, type ShelfBackend } from '@/lib/shelf'
-import type { Condition } from '@/lib/types'
+import { explainError, retryOnClockSkew, retryWithoutColumns, type ApiError } from '@/lib/retry'
+import {
+  BARCODE_COLUMNS,
+  IMPORT_CHUNK,
+  type AuthEvent,
+  type AuthUser,
+  type BarcodePair,
+  type CollectionItem,
+  type NewCopy,
+  type Profile,
+  type ShelfBackend,
+} from '@/lib/shelf'
+import type { Condition, Edition } from '@/lib/types'
 
 export function supabaseEnv(): { url: string; anonKey: string } | null {
   const url = import.meta.env.VITE_SUPABASE_URL
@@ -63,7 +73,8 @@ export async function loadSupabaseBackend(): Promise<ShelfBackend> {
   // Row mirrors collection_items by hand: keep it in step with
   // supabase/migrations. A key missing from the row altogether means the
   // column does not exist yet: without paid_cents the page hides the field
-  // (0003); without id the shelf reads but refuses to write (0004).
+  // (0003); without id the shelf reads but refuses to write (0004); without
+  // edition the Info window has no edition to offer (0006).
   type Row = {
     id?: string
     game_id: string
@@ -74,6 +85,8 @@ export async function loadSupabaseBackend(): Promise<ShelfBackend> {
     notes?: string | null
     sold_cents?: number | null
     sold_on?: string | null
+    edition?: Edition | null
+    barcode?: string | null
   }
   const toItem = (r: Row): CollectionItem => {
     const copies = 'id' in r
@@ -87,8 +100,16 @@ export async function loadSupabaseBackend(): Promise<ShelfBackend> {
       notes: copies ? (r.notes ?? null) : undefined,
       sold_cents: copies ? (r.sold_cents ?? null) : undefined,
       sold_on: copies ? (r.sold_on ?? null) : undefined,
+      edition: 'edition' in r ? (r.edition ?? null) : undefined,
+      barcode: 'barcode' in r ? (r.barcode ?? null) : undefined,
     }
   }
+
+  // A scanned copy names its edition and barcode; on a store from before
+  // 0006 the insert is refused for those columns and goes again without them,
+  // so the copy is on the shelf either way.
+  const insertCopies = (rows: (NewCopy & { user_id: string })[]) =>
+    retryWithoutColumns(rows, BARCODE_COLUMNS, (r) => retryOnClockSkew(() => client.from('collection_items').insert(r).select()))
 
   return {
     async getUser() {
@@ -174,11 +195,11 @@ export async function loadSupabaseBackend(): Promise<ShelfBackend> {
     async addCopy(copy) {
       const user_id = await uid()
       // The store names the copy, so the row comes back rather than a count.
-      const { data, error } = await retryOnClockSkew(() =>
-        client.from('collection_items').insert({ user_id, ...copy }).select().single(),
-      )
+      const { data, error } = await insertCopies([{ user_id, ...copy }])
       check(error)
-      return toItem(data as Row)
+      const row = (data as Row[] | null)?.[0]
+      if (!row) throw new Error('The copy was not saved; try again')
+      return toItem(row)
     },
     async addCopies(copies) {
       const user_id = await uid()
@@ -187,7 +208,7 @@ export async function loadSupabaseBackend(): Promise<ShelfBackend> {
       // and leaves the earlier ones in place, which the review list can show.
       for (let start = 0; start < copies.length; start += IMPORT_CHUNK) {
         const chunk = copies.slice(start, start + IMPORT_CHUNK).map((c) => ({ user_id, ...c }))
-        const { data, error } = await retryOnClockSkew(() => client.from('collection_items').insert(chunk).select())
+        const { data, error } = await insertCopies(chunk)
         check(error)
         out.push(...((data ?? []) as Row[]).map(toItem))
       }
@@ -204,6 +225,18 @@ export async function loadSupabaseBackend(): Promise<ShelfBackend> {
       const user_id = await uid()
       const { error } = await retryOnClockSkew(() =>
         client.from('collection_items').delete().eq('id', id).eq('user_id', user_id),
+      )
+      check(error)
+    },
+    async listBarcodePairs() {
+      const { data, error } = await retryOnClockSkew(() => client.from('barcode_reports').select('code,game_id'))
+      check(error)
+      return (data ?? []) as BarcodePair[]
+    },
+    async saveBarcodePair(code, gameId) {
+      const user_id = await uid()
+      const { error } = await retryOnClockSkew(() =>
+        client.from('barcode_reports').upsert({ user_id, code, game_id: gameId, created_at: new Date().toISOString() }, { onConflict: 'user_id,code' }),
       )
       check(error)
     },

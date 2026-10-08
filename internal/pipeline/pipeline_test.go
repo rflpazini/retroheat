@@ -32,6 +32,7 @@ games:
   - id: silent-hill-2-ps2
     title: "Silent Hill 2"
     ebay: {query: "Silent Hill 2 PS2"}
+    barcodes: [{code: "083717200253"}, {code: "083717200505", variant: greatest-hits}]
   - id: god-hand-ps2
     title: "God Hand"
     ebay: {query: "God Hand PS2"}
@@ -74,6 +75,7 @@ func TestRunWritesEveryDataFile(t *testing.T) {
 	for _, rel := range []string{
 		"meta.json",
 		"catalog.json",
+		"barcodes.json",
 		filepath.Join("latest", "ps2.json"),
 		filepath.Join("trending", "ps2.json"),
 		filepath.Join("trending", "all.json"),
@@ -655,6 +657,32 @@ func TestRunSplitsTheCatalogAndWritesAPriceIndex(t *testing.T) {
 	}
 	if !strings.Contains(string(cat), `"title"`) || !strings.Contains(string(cat), `"platform"`) {
 		t.Error("catalog.json lost the fields a list needs")
+	}
+	if strings.Contains(string(cat), "083717200253") {
+		t.Error("catalog.json carries barcodes; only the scanner needs them, from barcodes.json")
+	}
+
+	// Codes are keyed in the 13-digit form a scanner reports, and a reprint's
+	// code says which reprint it is.
+	rawCodes, err := os.ReadFile(filepath.Join(dataDir, "barcodes.json"))
+	if err != nil {
+		t.Fatalf("no barcode index: %v", err)
+	}
+	var codes snapshot.Barcodes
+	if err := json.Unmarshal(rawCodes, &codes); err != nil {
+		t.Fatal(err)
+	}
+	want := map[string]snapshot.BarcodeEntry{
+		"0083717200253": {ID: "silent-hill-2-ps2"},
+		"0083717200505": {ID: "silent-hill-2-ps2", Variant: catalog.VariantGreatestHits},
+	}
+	if len(codes.Codes) != len(want) {
+		t.Errorf("barcodes.json = %+v, want %+v", codes.Codes, want)
+	}
+	for code, e := range want {
+		if codes.Codes[code] != e {
+			t.Errorf("barcodes.json[%s] = %+v, want %+v", code, codes.Codes[code], e)
+		}
 	}
 
 	detail, err := os.ReadFile(filepath.Join(dataDir, "games", "god-hand-ps2.json"))

@@ -59,3 +59,22 @@ export function explainError(error: ApiError): string {
   if (error.code === '23505') return 'That name is taken.'
   return skewMessage(error)
 }
+
+/**
+ * Runs a write, and when the store refuses it for naming one of the given
+ * columns, which a site deployed ahead of its migration will do, runs it
+ * once more with those columns left out. The write that matters (a copy on
+ * the shelf) lands; only what the new columns would have added is lost.
+ */
+export async function retryWithoutColumns<R extends object, T>(
+  rows: R[],
+  columns: string[],
+  run: (rows: R[]) => PromiseLike<ApiResult<T>>,
+): Promise<ApiResult<T>> {
+  const result = await run(rows)
+  const error = result.error
+  if (!error || !(error.code === 'PGRST204' || /schema cache/i.test(error.message))) return result
+  if (!columns.some((c) => error.message.includes(`'${c}'`))) return result
+  const trimmed = rows.map((r) => Object.fromEntries(Object.entries(r).filter(([k]) => !columns.includes(k))) as R)
+  return run(trimmed)
+}

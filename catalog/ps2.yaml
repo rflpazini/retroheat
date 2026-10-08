@@ -16,6 +16,8 @@ games:
     ebay:
       query: "Silent Hill 2 (ps2, \"playstation 2\")"
       negative: ["greatest hits", "hd collection", "silent hill 3", "silent hill 4", "xbox", "restless dreams"]
+    barcodes:
+      - {code: "083717200253"}
   - id: silent-hill-3-ps2
     title: "Silent Hill 3"
     info:
@@ -31,6 +33,8 @@ games:
     ebay:
       query: "Silent Hill 3 (ps2, \"playstation 2\")"
       negative: ["hd collection", "silent hill 2", "soundtrack only"]
+    barcodes:
+      - {code: "083717200529"}
   - id: silent-hill-4-the-room-ps2
     title: "Silent Hill 4: The Room"
     info:
@@ -46,6 +50,8 @@ games:
     ebay:
       query: "Silent Hill 4 The Room (ps2, \"playstation 2\")"
       negative: ["xbox", "silent hill 2", "silent hill 3"]
+    barcodes:
+      - {code: "083717200826"}
   - id: rule-of-rose-ps2
     title: "Rule of Rose"
     info:
@@ -61,6 +67,8 @@ games:
     ebay:
       query: "Rule of Rose (ps2, \"playstation 2\")"
       negative: ["soundtrack only", "repro"]
+    barcodes:
+      - {code: "730865530205"}
   - id: haunting-ground-ps2
     title: "Haunting Ground"
     info:
@@ -76,6 +84,8 @@ games:
     ebay:
       query: "Haunting Ground (ps2, \"playstation 2\")"
       negative: ["demento"]
+    barcodes:
+      - {code: "013388260492"}
   - id: kuon-ps2
     title: "Kuon"
     info:
@@ -91,6 +101,8 @@ games:
     ebay:
       query: "Kuon (ps2, \"playstation 2\")"
       negative: ["japan import", "ntsc-j"]
+    barcodes:
+      - {code: "093992092207"}
   - id: obscure-ps2
     title: "Obscure"
     info:
@@ -121,6 +133,8 @@ games:
     ebay:
       query: "Obscure The Aftermath (ps2, \"playstation 2\")"
       negative: ["wii", "psp"]
+    barcodes:
+      - {code: "893384000403"}
   - id: god-hand-ps2
     title: "God Hand"
     info:
@@ -167,6 +181,8 @@ games:
     ebay:
       query: "Fatal Frame (ps2, \"playstation 2\")"
       negative: ["fatal frame 2", "fatal frame 3", "crimson butterfly", "tormented", "xbox"]
+    barcodes:
+      - {code: "018946010243"}
   - id: fatal-frame-2-crimson-butterfly-ps2
     title: "Fatal Frame II: Crimson Butterfly"
     info:
@@ -182,6 +198,8 @@ games:
     ebay:
       query: "Fatal Frame 2 Crimson Butterfly (ps2, \"playstation 2\")"
       negative: ["xbox", "director's cut", "fatal frame 3"]
+    barcodes:
+      - {code: "018946010335"}
   - id: fatal-frame-3-the-tormented-ps2
     title: "Fatal Frame III: The Tormented"
     info:
@@ -197,6 +215,8 @@ games:
     ebay:
       query: "Fatal Frame 3 The Tormented (ps2, \"playstation 2\")"
       negative: ["fatal frame 2"]
+    barcodes:
+      - {code: "018946010410"}
   - id: siren-ps2
     title: "Siren"
     info:
@@ -212,6 +232,8 @@ games:
     ebay:
       query: "Siren (ps2, \"playstation 2\")"
       negative: ["siren 2", "blood curse", "ps3", "forbidden siren 2"]
+    barcodes:
+      - {code: "711719735526"}
   - id: shadow-of-the-colossus-ps2
     title: "Shadow of the Colossus"
     info:
@@ -228,6 +250,8 @@ games:
     ebay:
       query: "Shadow of the Colossus (ps2, \"playstation 2\")"
       negative: ["greatest hits", "ico bundle", "ps3", "hd collection"]
+    barcodes:
+      - {code: "711719747222", variant: greatest-hits}
   - id: ico-ps2
     title: "Ico"
     info:
@@ -243,6 +267,8 @@ games:
     ebay:
       query: "Ico (ps2, \"playstation 2\")"
       negative: ["shadow of the colossus", "ps3", "hd collection", "greatest hits"]
+    barcodes:
+      - {code: "711719711322"}
   - id: okami-ps2
     title: "Okami"
     info:
@@ -258,6 +284,8 @@ games:
     ebay:
       query: "Okami (ps2, \"playstation 2\")"
       negative: ["okamiden", "wii", "hd", "greatest hits"]
+    barcodes:
+      - {code: "013388260591"}
   - id: gitaroo-man-ps2
     title: "Gitaroo Man"
     info:
@@ -288,6 +316,8 @@ games:
     ebay:
       query: "Katamari Damacy PS2"
       negative: ["we love katamari", "beautiful katamari", "greatest hits"]
+    barcodes:
+      - {code: "722674100243"}
   - id: we-love-katamari-ps2
     title: "We Love Katamari"
     info:
@@ -303,6 +333,8 @@ games:
     ebay:
       query: "We Love Katamari (ps2, \"playstation 2\")"
       negative: ["katamari damacy original"]
+    barcodes:
+      - {code: "722674100380"}
   - id: persona-3-fes-ps2
     title: "Persona 3 FES"
     info:
@@ -318,6 +350,8 @@ games:
     ebay:
       query: "Persona 3 FES (ps2, \"playstation 2\")"
       negative: ["portable", "psp", "persona 4"]
+    barcodes:
+      - {code: "730865530267"}
   - id: persona-4-ps2
     title: "Persona 4"
     info:
@@ -333,6 +367,8 @@ games:
     ebay:
       query: "Persona 4 (ps2, \"playstation 2\")"
       negative: ["golden", "vita", "arena", "dancing", "persona 3"]
+    barcodes:
+      - {code: "730865530304"}
   - id: shin-megami-tensei-nocturne-ps2
     title: "Shin Megami Tensei: Nocturne"
     info:
@@ -348,6 +384,8 @@ games:
     ebay:
       query: "Shin Megami Tensei Nocturne (ps2, \"playstation 2\")"
       negative: ["digital devil saga", "persona"]
+    barcodes:
+      - {code: "730865530069"}
   - id: digital-devil-saga-ps2
     title: "Shin Megami Tensei: Digital Devil Saga"
     info:
@@ -363,6 +401,8 @@ games:
     ebay:
       query: "Digital Devil Saga (ps2, \"playstation 2\")"
       negative: ["digital devil saga 2", "avatar tuner 2"]
+    barcodes:
+      - {code: "730865530076"}
   - id: digital-devil-saga-2-ps2
     title: "Shin Megami Tensei: Digital Devil Saga 2"
     info:
@@ -378,6 +418,8 @@ games:
     ebay:
       query: "Digital Devil Saga 2 PS2"
       negative: []
+    barcodes:
+      - {code: "730865530120"}
   - id: devil-summoner-raidou-kuzunoha-ps2
     title: "Devil Summoner: Raidou Kuzunoha vs. The Soulless Army"
     info:
@@ -393,6 +435,8 @@ games:
     ebay:
       query: "Raidou Kuzunoha Soulless Army (ps2, \"playstation 2\")"
       negative: ["king abaddon"]
+    barcodes:
+      - {code: "730865530199"}
   - id: suikoden-3-ps2
     title: "Suikoden III"
     info:
@@ -422,6 +466,8 @@ games:
     ebay:
       query: "Suikoden IV (ps2, \"playstation 2\")"
       negative: ["suikoden iii", "suikoden v", "tactics"]
+    barcodes:
+      - {code: "083717201076"}
   - id: suikoden-5-ps2
     title: "Suikoden V"
     info:
@@ -451,6 +497,8 @@ games:
     ebay:
       query: "Suikoden Tactics PS2"
       negative: []
+    barcodes:
+      - {code: "083717201366"}
   - id: xenosaga-episode-1-ps2
     title: "Xenosaga Episode I"
     info:
@@ -466,6 +514,8 @@ games:
     ebay:
       query: "Xenosaga Episode I (ps2, \"playstation 2\")"
       negative: ["episode ii", "episode iii", "episode 2", "episode 3"]
+    barcodes:
+      - {code: "722674021364", variant: greatest-hits}
   - id: xenosaga-episode-2-ps2
     title: "Xenosaga Episode II"
     info:
@@ -481,6 +531,8 @@ games:
     ebay:
       query: "Xenosaga Episode II (ps2, \"playstation 2\")"
       negative: ["episode i ", "episode iii", "episode 3"]
+    barcodes:
+      - {code: "722674100175"}
   - id: xenosaga-episode-3-ps2
     title: "Xenosaga Episode III"
     info:
@@ -496,6 +548,8 @@ games:
     ebay:
       query: "Xenosaga Episode III (ps2, \"playstation 2\")"
       negative: ["episode i ", "episode ii"]
+    barcodes:
+      - {code: "722674100557"}
   - id: shadow-hearts-ps2
     title: "Shadow Hearts"
     info:
@@ -511,6 +565,8 @@ games:
     ebay:
       query: "Shadow Hearts (ps2, \"playstation 2\")"
       negative: ["covenant", "new world", "koudelka"]
+    barcodes:
+      - {code: "031719268719"}
   - id: shadow-hearts-covenant-ps2
     title: "Shadow Hearts: Covenant"
     info:
@@ -541,6 +597,8 @@ games:
     ebay:
       query: "Shadow Hearts From the New World (ps2, \"playstation 2\")"
       negative: ["covenant"]
+    barcodes:
+      - {code: "853466001025"}
   - id: valkyrie-profile-2-silmeria-ps2
     title: "Valkyrie Profile 2: Silmeria"
     info:
@@ -571,6 +629,8 @@ games:
     ebay:
       query: "Star Ocean Till the End of Time PS2"
       negative: ["greatest hits", "first departure", "second evolution"]
+    barcodes:
+      - {code: "662248903095"}
   - id: rogue-galaxy-ps2
     title: "Rogue Galaxy"
     info:
@@ -586,6 +646,8 @@ games:
     ebay:
       query: "Rogue Galaxy (ps2, \"playstation 2\")"
       negative: ["ps4"]
+    barcodes:
+      - {code: "711719749028"}
   - id: dark-cloud-2-ps2
     title: "Dark Cloud 2"
     info:
@@ -601,6 +663,8 @@ games:
     ebay:
       query: "Dark Cloud 2 (ps2, \"playstation 2\")"
       negative: ["dark cloud 1", "greatest hits", "ps4"]
+    barcodes:
+      - {code: "711719721321"}
   - id: odin-sphere-ps2
     title: "Odin Sphere"
     info:
@@ -646,6 +710,8 @@ games:
     ebay:
       query: "Disgaea Hour of Darkness (ps2, \"playstation 2\")"
       negative: ["disgaea 2", "psp", "afternoon of darkness"]
+    barcodes:
+      - {code: "730865530052"}
   - id: disgaea-2-cursed-memories-ps2
     title: "Disgaea 2: Cursed Memories"
     info:
@@ -661,6 +727,8 @@ games:
     ebay:
       query: "Disgaea 2 Cursed Memories (ps2, \"playstation 2\")"
       negative: ["dark hero days", "psp"]
+    barcodes:
+      - {code: "857823001062"}
   - id: phantom-brave-ps2
     title: "Phantom Brave"
     info:
@@ -676,6 +744,9 @@ games:
     ebay:
       query: "Phantom Brave (ps2, \"playstation 2\")"
       negative: ["hermuda", "wii", "we meet again"]
+    barcodes:
+      - {code: "730865530083"}
+      - {code: "730865530106"}
   - id: la-pucelle-tactics-ps2
     title: "La Pucelle: Tactics"
     info:
@@ -691,6 +762,8 @@ games:
     ebay:
       query: "La Pucelle Tactics (ps2, \"playstation 2\")"
       negative: ["ragnarok", "psp"]
+    barcodes:
+      - {code: "859292000034"}
   - id: makai-kingdom-ps2
     title: "Makai Kingdom: Chronicles of the Sacred Tome"
     info:
@@ -706,6 +779,8 @@ games:
     ebay:
       query: "Makai Kingdom (ps2, \"playstation 2\")"
       negative: ["psp"]
+    barcodes:
+      - {code: "730865530151"}
   - id: ar-tonelico-ps2
     title: "Ar tonelico: Melody of Elemia"
     info:
@@ -721,6 +796,8 @@ games:
     ebay:
       query: "Ar tonelico Melody of Elemia (ps2, \"playstation 2\")"
       negative: ["ar tonelico 2", "qoga"]
+    barcodes:
+      - {code: "857823001079"}
   - id: ar-tonelico-2-ps2
     title: "Ar tonelico II: Melody of Metafalica"
     info:
@@ -736,6 +813,8 @@ games:
     ebay:
       query: "Ar tonelico II Melody of Metafalica (ps2, \"playstation 2\")"
       negative: ["melody of elemia"]
+    barcodes:
+      - {code: "857823001437"}
   - id: mana-khemia-ps2
     title: "Mana Khemia: Alchemists of Al-Revis"
     info:
@@ -751,6 +830,9 @@ games:
     ebay:
       query: "Mana Khemia Alchemists of Al-Revis (ps2, \"playstation 2\")"
       negative: ["mana khemia 2", "psp"]
+    barcodes:
+      - {code: "857823001420"}
+      - {code: "857823001444"}
   - id: steambot-chronicles-ps2
     title: "Steambot Chronicles"
     info:
@@ -766,6 +848,8 @@ games:
     ebay:
       query: "Steambot Chronicles (ps2, \"playstation 2\")"
       negative: ["psp"]
+    barcodes:
+      - {code: "730865530175"}
   - id: growlanser-generations-ps2
     title: "Growlanser Generations"
     info:
@@ -780,6 +864,9 @@ games:
     ebay:
       query: "Growlanser Generations (ps2, \"playstation 2\")"
       negative: ["heritage of war", "wayfarer"]
+    barcodes:
+      - {code: "735366207588"}
+      - {code: "735366307585"}
   - id: growlanser-heritage-of-war-ps2
     title: "Growlanser: Heritage of War"
     info:
@@ -795,6 +882,8 @@ games:
     ebay:
       query: "Growlanser Heritage of War (ps2, \"playstation 2\")"
       negative: ["generations"]
+    barcodes:
+      - {code: "730865530229"}
   - id: metal-gear-solid-3-subsistence-ps2
     title: "Metal Gear Solid 3: Subsistence"
     info:
@@ -825,6 +914,8 @@ games:
     ebay:
       query: "Zone of the Enders 2nd Runner (ps2, \"playstation 2\")"
       negative: ["hd collection", "ps3"]
+    barcodes:
+      - {code: "083717200536"}
   - id: devil-may-cry-3-special-edition-ps2
     title: "Devil May Cry 3: Special Edition"
     info:
@@ -840,6 +931,9 @@ games:
     ebay:
       query: "Devil May Cry 3 Special Edition (ps2, \"playstation 2\")"
       negative: ["hd collection", "greatest hits", "dante's awakening standard"]
+    barcodes:
+      - {code: "013388260416"}
+      - {code: "013388260652", variant: greatest-hits}
   - id: resident-evil-outbreak-ps2
     title: "Resident Evil Outbreak"
     info:
@@ -885,6 +979,8 @@ games:
     ebay:
       query: "Gradius V (ps2, \"playstation 2\")"
       negative: ["gradius 3", "collection"]
+    barcodes:
+      - {code: "083717200604"}
   - id: r-type-final-ps2
     title: "R-Type Final"
     info:
@@ -900,6 +996,8 @@ games:
     ebay:
       query: "R-Type Final (ps2, \"playstation 2\")"
       negative: ["r-type final 2", "ps4"]
+    barcodes:
+      - {code: "788687500197"}
   - id: raiden-iii-ps2
     title: "Raiden III"
     info:
@@ -915,6 +1013,8 @@ games:
     ebay:
       query: "Raiden III (ps2, \"playstation 2\")"
       negative: ["raiden iv", "raiden v"]
+    barcodes:
+      - {code: "695771700114"}
   - id: castlevania-lament-of-innocence-ps2
     title: "Castlevania: Lament of Innocence"
     info:
@@ -930,6 +1030,8 @@ games:
     ebay:
       query: "Castlevania Lament of Innocence (ps2, \"playstation 2\")"
       negative: ["curse of darkness"]
+    barcodes:
+      - {code: "083717200635"}
   - id: castlevania-curse-of-darkness-ps2
     title: "Castlevania: Curse of Darkness"
     info:
@@ -945,6 +1047,8 @@ games:
     ebay:
       query: "Castlevania Curse of Darkness (ps2, \"playstation 2\")"
       negative: ["lament of innocence", "xbox"]
+    barcodes:
+      - {code: "083717201359"}
   - id: contra-shattered-soldier-ps2
     title: "Contra: Shattered Soldier"
     info:
@@ -960,6 +1064,8 @@ games:
     ebay:
       query: "Contra Shattered Soldier (ps2, \"playstation 2\")"
       negative: ["neo contra"]
+    barcodes:
+      - {code: "083717200468"}
   - id: marvel-vs-capcom-2-ps2
     title: "Marvel vs. Capcom 2"
     info:
@@ -990,6 +1096,8 @@ games:
     ebay:
       query: "Capcom vs SNK 2 (ps2, \"playstation 2\")"
       negative: ["dreamcast", "xbox", "gamecube", "eo"]
+    barcodes:
+      - {code: "013388260058"}
   - id: guilty-gear-xx-accent-core-ps2
     title: "Guilty Gear XX Accent Core"
     info:
@@ -1005,6 +1113,8 @@ games:
     ebay:
       query: "Guilty Gear XX Accent Core (ps2, \"playstation 2\")"
       negative: ["plus", "wii"]
+    barcodes:
+      - {code: "893610001013"}
   - id: the-warriors-ps2
     title: "The Warriors"
     info:
@@ -1022,6 +1132,8 @@ games:
       negative: ["psp", "xbox"]
       # A one-word title: every "Warriors" game shares it, so the phrase is required.
       require: ["the warriors"]
+    barcodes:
+      - {code: "710425271632"}
   - id: bully-ps2
     title: "Bully"
     info:
@@ -1037,6 +1149,8 @@ games:
     ebay:
       query: "Bully (ps2, \"playstation 2\")"
       negative: ["scholarship edition", "wii", "xbox", "ant bully"]
+    barcodes:
+      - {code: "710425278075"}
   - id: def-jam-fight-for-ny-ps2
     title: "Def Jam: Fight for NY"
     info:
@@ -1052,6 +1166,8 @@ games:
     ebay:
       query: "Def Jam Fight for NY (ps2, \"playstation 2\")"
       negative: ["vendetta", "xbox", "gamecube", "takeover", "psp"]
+    barcodes:
+      - {code: "014633147544"}
   - id: killer7-ps2
     title: "killer7"
     info:
@@ -1082,6 +1198,8 @@ games:
     ebay:
       query: "Gungrave (ps2, \"playstation 2\")"
       negative: ["overdose", "gore", "ps4"]
+    barcodes:
+      - {code: "010086630282"}
   - id: gungrave-overdose-ps2
     title: "Gungrave: Overdose"
     info:
@@ -1096,6 +1214,8 @@ games:
     ebay:
       query: "Gungrave Overdose PS2"
       negative: []
+    barcodes:
+      - {code: "859292000058"}
   - id: blood-will-tell-ps2
     title: "Blood Will Tell: Tezuka Osamu's Dororo"
     info:
@@ -1126,6 +1246,8 @@ games:
     ebay:
       query: "Chulip PS2"
       negative: []
+    barcodes:
+      - {code: "719593080060"}
   - id: way-of-the-samurai-2-ps2
     title: "Way of the Samurai 2"
     info:
@@ -1156,6 +1278,8 @@ games:
     ebay:
       query: "Front Mission 4 (ps2, \"playstation 2\")"
       negative: ["front mission 5", "evolved"]
+    barcodes:
+      - {code: "662248904016"}
   - id: ring-of-red-ps2
     title: "Ring of Red"
     info:
@@ -1186,6 +1310,8 @@ games:
     ebay:
       query: "Klonoa 2 Lunatea's Veil (ps2, \"playstation 2\")"
       negative: ["door to phantomile", "wii", "switch"]
+    barcodes:
+      - {code: "722674021081"}
   - id: timesplitters-future-perfect-ps2
     title: "TimeSplitters: Future Perfect"
     info:
@@ -1217,6 +1343,8 @@ games:
     ebay:
       query: "Dragon Quest VIII PS2"
       negative: ["greatest hits", "3ds", "android"]
+    barcodes:
+      - {code: "662248905013"}
   - id: gta-san-andreas-ps2
     title: "Grand Theft Auto: San Andreas"
     info:
@@ -1230,6 +1358,9 @@ games:
     ebay:
       query: "Grand Theft Auto San Andreas PS2"
       negative: ["vice city", "liberty city", "grand theft auto iii", "grand theft auto 3", "gta 3", "gta iii", "trilogy", "definitive", "xbox", "pc", "ps3", "ps4"]
+    barcodes:
+      - {code: "710425274107"}
+      - {code: "710425278884"}
   - id: gta-vice-city-ps2
     title: "Grand Theft Auto: Vice City"
     info:
@@ -1243,6 +1374,9 @@ games:
     ebay:
       query: "Grand Theft Auto Vice City PS2"
       negative: ["san andreas", "liberty city", "vice city stories", "grand theft auto iii", "grand theft auto 3", "trilogy", "definitive", "xbox", "pc", "ps3", "ps4", "psp"]
+    barcodes:
+      - {code: "710425271458"}
+      - {code: "710425273889", variant: greatest-hits}
   - id: gta-iii-ps2
     title: "Grand Theft Auto III"
     info:
@@ -1269,6 +1403,8 @@ games:
     ebay:
       query: "Kingdom Hearts PS2 -\"chain of memories\""
       negative: ["kingdom hearts 2", "kingdom hearts ii", "chain of memories", "hd", "remix", "ps3", "ps4", "birth by sleep", "psp", "gba", "ds"]
+    barcodes:
+      - {code: "662248902012"}
   - id: kingdom-hearts-2-ps2
     title: "Kingdom Hearts 2"
     info:
@@ -1295,6 +1431,8 @@ games:
     ebay:
       query: "Kingdom Hearts Re Chain of Memories PS2"
       negative: ["gba", "game boy", "hd", "ps3", "ps4"]
+    barcodes:
+      - {code: "662248908250"}
   - id: final-fantasy-x-ps2
     title: "Final Fantasy X"
     info:
@@ -1308,6 +1446,8 @@ games:
     ebay:
       query: "Final Fantasy X PS2 -X-2"
       negative: ["x-2", "x2", "hd remaster", "ps3", "ps4", "switch", "vita", "xii", "xi", "international"]
+    barcodes:
+      - {code: "662248901077"}
   - id: final-fantasy-x-2-ps2
     title: "Final Fantasy X-2"
     info:
@@ -1321,6 +1461,8 @@ games:
     ebay:
       query: "Final Fantasy X-2 PS2"
       negative: ["hd remaster", "ps3", "ps4", "switch", "vita", "international"]
+    barcodes:
+      - {code: "662248903057"}
   - id: final-fantasy-xii-ps2
     title: "Final Fantasy XII"
     info:
@@ -1334,6 +1476,9 @@ games:
     ebay:
       query: "Final Fantasy XII PS2"
       negative: ["final fantasy x", "final fantasy xi", "x-2", "zodiac age", "ps4", "switch", "xbox", "pc", "international", "revenant wings", "ds"]
+    barcodes:
+      - {code: "662248904078"}
+      - {code: "662248906140"}
   - id: metal-gear-solid-2-sons-of-liberty-ps2
     title: "Metal Gear Solid 2: Sons of Liberty"
     info:
@@ -1347,6 +1492,8 @@ games:
     ebay:
       query: "Metal Gear Solid 2 Sons of Liberty PS2"
       negative: ["substance", "hd collection", "xbox", "ps3", "pc", "essential collection"]
+    barcodes:
+      - {code: "083717200215"}
   - id: metal-gear-solid-3-snake-eater-ps2
     title: "Metal Gear Solid 3: Snake Eater"
     info:
@@ -1360,6 +1507,8 @@ games:
     ebay:
       query: "Metal Gear Solid 3 Snake Eater PS2 -subsistence"
       negative: ["subsistence", "hd collection", "ps3", "3ds", "essential collection"]
+    barcodes:
+      - {code: "083717200734"}
   - id: resident-evil-4-ps2
     title: "Resident Evil 4"
     info:
@@ -1373,6 +1522,9 @@ games:
     ebay:
       query: "Resident Evil 4 (ps2, \"playstation 2\")"
       negative: ["gamecube", "wii", "hd", "ps3", "ps4", "xbox", "pc", "remake", "vr"]
+    barcodes:
+      - {code: "013388260560"}
+      - {code: "013388990481"}
   - id: resident-evil-code-veronica-x-ps2
     title: "Resident Evil Code: Veronica X"
     info:
@@ -1386,6 +1538,8 @@ games:
     ebay:
       query: "Resident Evil Code Veronica X (ps2, \"playstation 2\")"
       negative: ["dreamcast", "gamecube", "hd", "ps3", "ps4", "xbox"]
+    barcodes:
+      - {code: "013388260034"}
   - id: devil-may-cry-ps2
     title: "Devil May Cry"
     info:
@@ -1399,6 +1553,8 @@ games:
     ebay:
       query: "Devil May Cry PS2 -collection"
       negative: ["devil may cry 2", "devil may cry 3", "dmc2", "dmc3", "hd collection", "ps3", "ps4", "xbox", "pc"]
+    barcodes:
+      - {code: "013388260041", variant: greatest-hits}
   - id: god-of-war-ps2
     title: "God of War"
     info:
@@ -1412,6 +1568,8 @@ games:
     ebay:
       query: "God of War PS2"
       negative: ["god of war 2", "god of war ii", "collection", "ps3", "ps4", "chains of olympus", "ghost of sparta", "psp", "ascension", "ragnarok", "1 & 2", "1 and 2", "1 2"]
+    barcodes:
+      - {code: "711719739920"}
   - id: god-of-war-2-ps2
     title: "God of War 2"
     info:
@@ -1425,6 +1583,8 @@ games:
     ebay:
       query: "God of War II PS2"
       negative: ["collection", "ps3", "ps4", "chains of olympus", "ghost of sparta", "psp"]
+    barcodes:
+      - {code: "711719748120"}
   - id: jak-and-daxter-the-precursor-legacy-ps2
     title: "Jak and Daxter: The Precursor Legacy"
     info:
@@ -1438,6 +1598,8 @@ games:
     ebay:
       query: "Jak and Daxter Precursor Legacy PS2"
       negative: ["jak ii", "jak 2", "jak 3", "jak x", "lost frontier", "collection", "ps3", "vita", "psp"]
+    barcodes:
+      - {code: "711719712428", variant: greatest-hits}
   - id: jak-ii-ps2
     title: "Jak II"
     info:
@@ -1451,6 +1613,8 @@ games:
     ebay:
       query: "Jak II PS2"
       negative: ["jak 3", "jak x", "precursor legacy", "lost frontier", "collection", "ps3", "vita"]
+    barcodes:
+      - {code: "711719726524"}
   - id: jak-3-ps2
     title: "Jak 3"
     info:
@@ -1464,6 +1628,8 @@ games:
     ebay:
       query: "Jak 3 PS2"
       negative: ["jak x", "precursor legacy", "lost frontier", "collection", "ps3", "vita"]
+    barcodes:
+      - {code: "711719733027"}
   - id: ratchet-and-clank-ps2
     title: "Ratchet & Clank"
     info:
@@ -1477,6 +1643,8 @@ games:
     ebay:
       query: "Ratchet Clank PS2 -\"going commando\" -\"up your arsenal\" -deadlocked"
       negative: ["going commando", "up your arsenal", "deadlocked", "size matters", "collection", "ps3", "ps4", "ps5", "psp", "vita", "future", "all 4 one", "into the nexus"]
+    barcodes:
+      - {code: "711719719922"}
   - id: ratchet-and-clank-going-commando-ps2
     title: "Ratchet & Clank: Going Commando"
     info:
@@ -1490,6 +1658,8 @@ games:
     ebay:
       query: "Ratchet Clank Going Commando PS2"
       negative: ["collection", "ps3", "vita"]
+    barcodes:
+      - {code: "711719726821"}
   - id: ratchet-and-clank-up-your-arsenal-ps2
     title: "Ratchet & Clank: Up Your Arsenal"
     info:
@@ -1503,6 +1673,8 @@ games:
     ebay:
       query: "Ratchet Clank Up Your Arsenal PS2"
       negative: ["collection", "ps3", "vita"]
+    barcodes:
+      - {code: "711719735250", variant: greatest-hits}
   - id: ratchet-deadlocked-ps2
     title: "Ratchet: Deadlocked"
     info:
@@ -1516,6 +1688,8 @@ games:
     ebay:
       query: "Ratchet Deadlocked PS2"
       negative: ["ps3", "collection"]
+    barcodes:
+      - {code: "711719746522"}
   - id: sly-cooper-and-the-thievius-raccoonus-ps2
     title: "Sly Cooper and the Thievius Raccoonus"
     info:
@@ -1529,6 +1703,8 @@ games:
     ebay:
       query: "Sly Cooper Thievius Raccoonus (ps2, \"playstation 2\")"
       negative: ["sly 2", "sly 3", "band of thieves", "honor among thieves", "collection", "ps3", "vita", "thieves in time"]
+    barcodes:
+      - {code: "711719719823"}
   - id: sly-2-band-of-thieves-ps2
     title: "Sly 2: Band of Thieves"
     info:
@@ -1542,6 +1718,8 @@ games:
     ebay:
       query: "Sly 2 Band of Thieves (ps2, \"playstation 2\")"
       negative: ["sly 3", "collection", "ps3", "vita"]
+    barcodes:
+      - {code: "711719731627", variant: greatest-hits}
   - id: sly-3-honor-among-thieves-ps2
     title: "Sly 3: Honor Among Thieves"
     info:
@@ -1555,6 +1733,8 @@ games:
     ebay:
       query: "Sly 3 Honor Among Thieves PS2"
       negative: ["collection", "ps3", "vita"]
+    barcodes:
+      - {code: "711719746423"}
   - id: dark-cloud-ps2
     title: "Dark Cloud"
     info:
@@ -1568,6 +1748,8 @@ games:
     ebay:
       query: "Dark Cloud PS2 -chronicle"
       negative: ["dark cloud 2", "dark chronicle", "ps4"]
+    barcodes:
+      - {code: "711719711124"}
   - id: gran-turismo-3-a-spec-ps2
     title: "Gran Turismo 3: A-Spec"
     info:
@@ -1581,6 +1763,8 @@ games:
     ebay:
       query: "Gran Turismo 3 A-Spec PS2"
       negative: ["gran turismo 4", "concept", "bundle"]
+    barcodes:
+      - {code: "711719710226"}
   - id: gran-turismo-4-ps2
     title: "Gran Turismo 4"
     info:
@@ -1594,6 +1778,8 @@ games:
     ebay:
       query: "Gran Turismo 4 PS2 -prologue"
       negative: ["prologue", "gran turismo 3", "online"]
+    barcodes:
+      - {code: "711719732822"}
   - id: tekken-5-ps2
     title: "Tekken 5"
     info:
@@ -1607,6 +1793,8 @@ games:
     ebay:
       query: "Tekken 5 (ps2, \"playstation 2\")"
       negative: ["dark resurrection", "psp", "ps3", "tekken tag", "tekken 4"]
+    barcodes:
+      - {code: "722674100229"}
   - id: tekken-tag-tournament-ps2
     title: "Tekken Tag Tournament"
     info:
@@ -1620,6 +1808,8 @@ games:
     ebay:
       query: "Tekken Tag Tournament PS2"
       negative: ["tag tournament 2", "tag 2", "ps3", "wii u", "xbox", "arcade"]
+    barcodes:
+      - {code: "722674021036"}
   - id: soulcalibur-iii-ps2
     title: "Soulcalibur III"
     info:
@@ -1633,6 +1823,8 @@ games:
     ebay:
       query: "Soul Calibur III (ps2, \"playstation 2\")"
       negative: ["soul calibur ii", "soul calibur 2", "soul calibur iv", "soul calibur 4", "arcade edition", "ps3", "xbox"]
+    barcodes:
+      - {code: "722674100359"}
   - id: virtua-fighter-4-evolution-ps2
     title: "Virtua Fighter 4: Evolution"
     info:
@@ -1672,6 +1864,8 @@ games:
     ebay:
       query: "Need for Speed Most Wanted (ps2, \"playstation 2\")"
       negative: ["xbox", "gamecube", "pc", "psp", "ds", "gba", "ps3", "black edition", "underground", "carbon", "hot pursuit"]
+    barcodes:
+      - {code: "014633148213"}
   - id: ssx-3-ps2
     title: "SSX 3"
     info:
@@ -1685,6 +1879,8 @@ games:
     ebay:
       query: "SSX 3 (ps2, \"playstation 2\")"
       negative: ["xbox", "gamecube", "gba", "tricky", "on tour"]
+    barcodes:
+      - {code: "014633147100"}
   - id: ssx-tricky-ps2
     title: "SSX Tricky"
     info:
@@ -1698,6 +1894,8 @@ games:
     ebay:
       query: "SSX Tricky (ps2, \"playstation 2\")"
       negative: ["xbox", "gamecube", "gba", "ssx 3", "on tour"]
+    barcodes:
+      - {code: "014633143591"}
   - id: tony-hawks-pro-skater-3-ps2
     title: "Tony Hawk's Pro Skater 3"
     info:
@@ -1711,6 +1909,8 @@ games:
     ebay:
       query: "Tony Hawk's Pro Skater 3 PS2"
       negative: ["xbox", "gamecube", "pc", "ps1", "playstation 1", "n64", "gba", "pro skater 4", "underground"]
+    barcodes:
+      - {code: "047875801851"}
   - id: tony-hawks-pro-skater-4-ps2
     title: "Tony Hawk's Pro Skater 4"
     info:
@@ -1724,6 +1924,8 @@ games:
     ebay:
       query: "Tony Hawk's Pro Skater 4 PS2"
       negative: ["xbox", "gamecube", "pc", "ps1", "playstation 1", "gba", "pro skater 3", "underground"]
+    barcodes:
+      - {code: "047875804258"}
   - id: tony-hawks-underground-ps2
     title: "Tony Hawk's Underground"
     info:
@@ -1737,6 +1939,8 @@ games:
     ebay:
       query: "Tony Hawk's Underground PS2"
       negative: ["underground 2", "xbox", "gamecube", "pc", "gba", "american wasteland"]
+    barcodes:
+      - {code: "047875806399"}
   - id: star-wars-battlefront-ps2
     title: "Star Wars: Battlefront"
     info:
@@ -1750,6 +1954,8 @@ games:
     ebay:
       query: "Star Wars Battlefront PS2"
       negative: ["battlefront ii", "battlefront 2", "xbox", "pc", "psp", "ps4", "renegade", "elite"]
+    barcodes:
+      - {code: "023272324353"}
   - id: star-wars-battlefront-ii-ps2
     title: "Star Wars: Battlefront II"
     info:
@@ -1763,6 +1969,8 @@ games:
     ebay:
       query: "Star Wars Battlefront II PS2"
       negative: ["xbox", "pc", "psp", "ps4", "renegade", "elite"]
+    barcodes:
+      - {code: "023272328351"}
   - id: ace-combat-04-shattered-skies-ps2
     title: "Ace Combat 04: Shattered Skies"
     info:
@@ -1789,6 +1997,8 @@ games:
     ebay:
       query: "Ace Combat 5 Unsung War PS2"
       negative: ["ace combat 04", "ace combat 4", "ace combat zero", "shattered skies", "belkan", "flight stick", "flightstick"]
+    barcodes:
+      - {code: "722674100168"}
   - id: ace-combat-zero-the-belkan-war-ps2
     title: "Ace Combat Zero: The Belkan War"
     info:
@@ -1802,6 +2012,8 @@ games:
     ebay:
       query: "Ace Combat Zero Belkan War (ps2, \"playstation 2\")"
       negative: ["ace combat 5", "ace combat 04", "ace combat 4", "unsung war", "shattered skies"]
+    barcodes:
+      - {code: "722674100366"}
   - id: onimusha-warlords-ps2
     title: "Onimusha: Warlords"
     info:
@@ -1815,6 +2027,8 @@ games:
     ebay:
       query: "Onimusha Warlords PS2"
       negative: ["onimusha 2", "onimusha 3", "dawn of dreams", "blade warriors", "ps4", "xbox one", "switch", "pc", "remaster"]
+    barcodes:
+      - {code: "013388260010", variant: greatest-hits}
   - id: onimusha-2-samurais-destiny-ps2
     title: "Onimusha 2: Samurai's Destiny"
     info:
@@ -1841,6 +2055,8 @@ games:
     ebay:
       query: "Onimusha 3 Demon Siege (ps2, \"playstation 2\")"
       negative: ["onimusha 2", "dawn of dreams", "warlords", "blade warriors", "pc"]
+    barcodes:
+      - {code: "013388260249"}
   - id: onimusha-dawn-of-dreams-ps2
     title: "Onimusha: Dawn of Dreams"
     info:
@@ -1867,6 +2083,8 @@ games:
     ebay:
       query: "Maximo Ghosts to Glory (ps2, \"playstation 2\")"
       negative: ["army of zin"]
+    barcodes:
+      - {code: "013388260065"}
   - id: maximo-vs-army-of-zin-ps2
     title: "Maximo vs. Army of Zin"
     info:
@@ -1893,6 +2111,8 @@ games:
     ebay:
       query: "Dragon Ball Z Budokai 3 (ps2, \"playstation 2\")"
       negative: ["tenkaichi", "budokai 2", "budokai 1", "hd collection", "ps3", "xbox", "gamecube", "infinite world"]
+    barcodes:
+      - {code: "742725256293"}
   - id: dragon-ball-z-budokai-tenkaichi-3-ps2
     title: "Dragon Ball Z: Budokai Tenkaichi 3"
     info:
@@ -1904,6 +2124,8 @@ games:
     ebay:
       query: "Dragon Ball Z Budokai Tenkaichi 3 (ps2, \"playstation 2\")"
       negative: ["wii", "tenkaichi 2", "tenkaichi 1", "sparking", "ps3", "xbox"]
+    barcodes:
+      - {code: "742725275577"}
   - id: yakuza-ps2
     title: "Yakuza"
     info:
@@ -1943,6 +2165,8 @@ games:
     ebay:
       query: "Tales of the Abyss (ps2, \"playstation 2\")"
       negative: ["3ds", "nintendo"]
+    barcodes:
+      - {code: "722674100519"}
   - id: tales-of-legendia-ps2
     title: "Tales of Legendia"
     info:
@@ -1956,6 +2180,8 @@ games:
     ebay:
       query: "Tales of Legendia (ps2, \"playstation 2\")"
       negative: ["abyss", "symphonia"]
+    barcodes:
+      - {code: "722674100342"}
   - id: wild-arms-3-ps2
     title: "Wild Arms 3"
     info:
@@ -1969,6 +2195,8 @@ games:
     ebay:
       query: "Wild Arms 3 (ps2, \"playstation 2\")"
       negative: ["wild arms 4", "wild arms 5", "alter code", "ps4"]
+    barcodes:
+      - {code: "711719720324"}
   - id: wild-arms-4-ps2
     title: "Wild Arms 4"
     info:
@@ -1982,6 +2210,8 @@ games:
     ebay:
       query: "Wild Arms 4 (ps2, \"playstation 2\")"
       negative: ["wild arms 3", "wild arms 5", "alter code"]
+    barcodes:
+      - {code: "853466001018"}
   - id: wild-arms-5-ps2
     title: "Wild Arms 5"
     info:
@@ -1995,6 +2225,8 @@ games:
     ebay:
       query: "Wild Arms 5 (ps2, \"playstation 2\")"
       negative: ["wild arms 3", "wild arms 4", "alter code"]
+    barcodes:
+      - {code: "853466001063"}
   - id: wild-arms-alter-code-f-ps2
     title: "Wild Arms Alter Code: F"
     info:
@@ -2021,6 +2253,8 @@ games:
     ebay:
       query: "Grandia III (ps2, \"playstation 2\")"
       negative: ["grandia ii", "grandia 2", "xtreme", "dreamcast"]
+    barcodes:
+      - {code: "662248906010"}
   - id: grandia-xtreme-ps2
     title: "Grandia Xtreme"
     info:
@@ -2034,6 +2268,8 @@ games:
     ebay:
       query: "Grandia Xtreme (ps2, \"playstation 2\")"
       negative: ["grandia ii", "grandia 2", "grandia iii", "grandia 3"]
+    barcodes:
+      - {code: "695981100131"}
   - id: breath-of-fire-dragon-quarter-ps2
     title: "Breath of Fire: Dragon Quarter"
     info:
@@ -2058,6 +2294,8 @@ games:
     ebay:
       query: "hack Infection (ps2, \"playstation 2\")"
       negative: ["mutation", "outbreak", "quarantine", "g.u.", "gu", "rebirth", "reminisce", "redemption", "last recode"]
+    barcodes:
+      - {code: "045557180119"}
   - id: dot-hack-gu-rebirth-ps2
     title: ".hack//G.U. Vol. 1: Rebirth"
     info:
@@ -2082,6 +2320,8 @@ games:
     ebay:
       query: "Magna Carta Tears of Blood (ps2, \"playstation 2\")"
       negative: ["magna carta 2", "xbox 360"]
+    barcodes:
+      - {code: "730865530168"}
   - id: radiata-stories-ps2
     title: "Radiata Stories"
     info:
@@ -2094,6 +2334,8 @@ games:
       about_url: "https://en.wikipedia.org/wiki/Radiata_Stories"
     ebay:
       query: "Radiata Stories PS2"
+    barcodes:
+      - {code: "662248905099"}
   - id: okage-shadow-king-ps2
     title: "Okage: Shadow King"
     info:
@@ -2106,6 +2348,8 @@ games:
     ebay:
       query: "Okage Shadow King (ps2, \"playstation 2\")"
       negative: ["ps4"]
+    barcodes:
+      - {code: "711719712923"}
   - id: shinobi-ps2
     title: "Shinobi"
     info:
@@ -2119,6 +2363,8 @@ games:
     ebay:
       query: "Shinobi (ps2, \"playstation 2\") -nightshade"
       negative: ["nightshade", "3ds", "ps1", "playstation 1", "saturn", "genesis", "sega master", "revenge of shinobi", "shadow dancer", "legions"]
+    barcodes:
+      - {code: "010086630169"}
   - id: manhunt-ps2
     title: "Manhunt"
     info:
@@ -2132,6 +2378,8 @@ games:
     ebay:
       query: "Manhunt (ps2, \"playstation 2\")"
       negative: ["manhunt 2", "xbox", "pc", "psp", "wii"]
+    barcodes:
+      - {code: "710425272561"}
   - id: red-dead-revolver-ps2
     title: "Red Dead Revolver"
     info:
@@ -2158,6 +2406,8 @@ games:
     ebay:
       query: "Killzone PS2 -liberation"
       negative: ["killzone 2", "killzone 3", "liberation", "mercenary", "shadow fall", "ps3", "ps4", "psp", "vita", "hd"]
+    barcodes:
+      - {code: "711719740223"}
   - id: twisted-metal-black-ps2
     title: "Twisted Metal: Black"
     info:
@@ -2171,6 +2421,8 @@ games:
     ebay:
       query: "Twisted Metal Black PS2"
       negative: ["online", "head on", "ps4", "ps1", "playstation 1"]
+    barcodes:
+      - {code: "711719710127"}
   - id: midnight-club-3-dub-edition-ps2
     title: "Midnight Club 3: DUB Edition"
     info:
@@ -2184,6 +2436,8 @@ games:
     ebay:
       query: "Midnight Club 3 DUB Edition (ps2, \"playstation 2\")"
       negative: ["remix", "xbox", "psp", "midnight club ii", "midnight club 2", "los angeles"]
+    barcodes:
+      - {code: "710425275609"}
   - id: mortal-kombat-deception-ps2
     title: "Mortal Kombat: Deception"
     info:
@@ -2210,6 +2464,8 @@ games:
     ebay:
       query: "Mortal Kombat Armageddon PS2"
       negative: ["xbox", "wii", "deception", "deadly alliance", "shaolin monks", "kollector"]
+    barcodes:
+      - {code: "031719269358"}
   - id: mortal-kombat-shaolin-monks-ps2
     title: "Mortal Kombat: Shaolin Monks"
     info:
@@ -2236,6 +2492,8 @@ games:
     ebay:
       query: "Spider-Man 2 PS2"
       negative: ["xbox", "gamecube", "pc", "psp", "ds", "gba", "spider-man 3", "ultimate", "web of shadows", "friend or foe"]
+    barcodes:
+      - {code: "047875805859", variant: greatest-hits}
   - id: the-simpsons-hit-and-run-ps2
     title: "The Simpsons: Hit & Run"
     info:
@@ -2249,6 +2507,8 @@ games:
     ebay:
       query: "Simpsons Hit Run (ps2, \"playstation 2\")"
       negative: ["xbox", "gamecube", "pc", "road rage", "game", "skateboarding"]
+    barcodes:
+      - {code: "020626721110"}
   - id: prince-of-persia-the-sands-of-time-ps2
     title: "Prince of Persia: The Sands of Time"
     info:
@@ -2262,6 +2522,8 @@ games:
     ebay:
       query: "Prince of Persia Sands of Time PS2"
       negative: ["warrior within", "two thrones", "xbox", "gamecube", "pc", "gba", "trilogy", "hd", "ps3"]
+    barcodes:
+      - {code: "008888321590"}
   - id: crash-bandicoot-the-wrath-of-cortex-ps2
     title: "Crash Bandicoot: The Wrath of Cortex"
     info:
@@ -2275,6 +2537,8 @@ games:
     ebay:
       query: "Crash Bandicoot Wrath of Cortex PS2"
       negative: ["xbox", "gamecube", "twinsanity", "nitro kart", "tag team"]
+    barcodes:
+      - {code: "020626712552", variant: greatest-hits}
   - id: champions-of-norrath-ps2
     title: "Champions of Norrath"
     info:
@@ -2288,6 +2552,8 @@ games:
     ebay:
       query: "Champions of Norrath (ps2, \"playstation 2\")"
       negative: ["return to arms"]
+    barcodes:
+      - {code: "814582404428"}
   - id: champions-return-to-arms-ps2
     title: "Champions: Return to Arms"
     info:
@@ -2314,6 +2580,9 @@ games:
     ebay:
       query: "Baldur's Gate Dark Alliance PS2"
       negative: ["dark alliance ii", "dark alliance 2", "xbox", "gamecube", "gba", "ps4", "switch"]
+    barcodes:
+      - {code: "020626714570"}
+      - {code: "077708513002"}
   - id: baldurs-gate-dark-alliance-ii-ps2
     title: "Baldur's Gate: Dark Alliance II"
     info:
@@ -2366,6 +2635,8 @@ games:
     ebay:
       query: "Def Jam Vendetta (ps2, \"playstation 2\")"
       negative: ["gamecube", "fight for ny", "icon"]
+    barcodes:
+      - {code: "014633144291"}
   - id: nba-street-vol-2-ps2
     title: "NBA Street Vol. 2"
     info:
@@ -2379,6 +2650,8 @@ games:
     ebay:
       query: "NBA Street Vol 2 (ps2, \"playstation 2\")"
       negative: ["xbox", "gamecube", "v3", "vol 3", "homecourt"]
+    barcodes:
+      - {code: "014633146196"}
   - id: rez-ps2
     title: "Rez"
     info:
@@ -2405,6 +2678,8 @@ games:
     ebay:
       query: "Amplitude (ps2, \"playstation 2\")"
       negative: ["ps4", "ps3", "frequency"]
+    barcodes:
+      - {code: "711719725824"}
   - id: sky-odyssey-ps2
     title: "Sky Odyssey"
     info:
@@ -2416,6 +2691,8 @@ games:
       about_url: "https://en.wikipedia.org/wiki/Sky_Odyssey"
     ebay:
       query: "Sky Odyssey PS2"
+    barcodes:
+      - {code: "047875800618"}
   - id: clock-tower-3-ps2
     title: "Clock Tower 3"
     info:
@@ -2429,6 +2706,8 @@ games:
     ebay:
       query: "Clock Tower 3 (ps2, \"playstation 2\")"
       negative: ["clock tower 2", "clock tower ii", "ps1", "playstation 1", "haunting ground"]
+    barcodes:
+      - {code: "013388260171"}
   - id: echo-night-beyond-ps2
     title: "Echo Night: Beyond"
     info:
@@ -2442,6 +2721,8 @@ games:
     ebay:
       query: "Echo Night Beyond (ps2, \"playstation 2\")"
       negative: ["ps1", "playstation 1"]
+    barcodes:
+      - {code: "093992092009"}
   - id: ape-escape-2-ps2
     title: "Ape Escape 2"
     info:
@@ -2455,6 +2736,8 @@ games:
     ebay:
       query: "Ape Escape 2 (ps2, \"playstation 2\")"
       negative: ["ape escape 3", "pumped", "million monkeys", "ps4"]
+    barcodes:
+      - {code: "711719393221"}
   - id: ape-escape-3-ps2
     title: "Ape Escape 3"
     info:
@@ -2468,6 +2751,8 @@ games:
     ebay:
       query: "Ape Escape 3 (ps2, \"playstation 2\")"
       negative: ["ape escape 2", "pumped", "million monkeys"]
+    barcodes:
+      - {code: "711719750123"}
   - id: timesplitters-2-ps2
     title: "TimeSplitters 2"
     info:
@@ -2481,6 +2766,8 @@ games:
     ebay:
       query: "TimeSplitters 2 (ps2, \"playstation 2\")"
       negative: ["xbox", "gamecube", "future perfect"]
+    barcodes:
+      - {code: "788687500081"}
   - id: zone-of-the-enders-ps2
     title: "Zone of the Enders"
     info:
@@ -2494,6 +2781,8 @@ games:
     ebay:
       query: "Zone of the Enders (ps2, \"playstation 2\") -\"2nd runner\""
       negative: ["2nd runner", "second runner", "hd collection", "ps3", "xbox", "fist of mars", "gba", "mars"]
+    barcodes:
+      - {code: "083717200161"}
   - id: silent-hill-shattered-memories-ps2
     title: "Silent Hill: Shattered Memories"
     info:
@@ -2523,6 +2812,8 @@ games:
     ebay:
       query: "Futurama (ps2, \"playstation 2\")"
       negative: ["xbox", "dvd", "blu-ray", "season", "comic", "figure"]
+    barcodes:
+      - {code: "020626721080"}
   - id: dot-hack-quarantine-ps2
     title: ".hack//Quarantine"
     info:
@@ -2533,6 +2824,8 @@ games:
     ebay:
       query: "hack Quarantine (ps2, \"playstation 2\")"
       negative: ["infection", "mutation", "outbreak", "g.u.", "gu", "rebirth", "reminisce", "redemption", "last recode", "ps4"]
+    barcodes:
+      - {code: "045557180140"}
   - id: robot-alchemic-drive-ps2
     title: "Robot Alchemic Drive"
     info:
@@ -2548,6 +2841,8 @@ games:
     ebay:
       query: "Robot Alchemic Drive (ps2, \"playstation 2\")"
       negative: ["earth defense force"]
+    barcodes:
+      - {code: "695981100124"}
   - id: silent-hill-origins-ps2
     title: "Silent Hill: Origins"
     info:
@@ -2562,6 +2857,8 @@ games:
     ebay:
       query: "Silent Hill Origins (ps2, \"playstation 2\")"
       negative: ["psp", "shattered memories", "silent hill 2", "silent hill 3", "silent hill 4", "homecoming", "downpour"]
+    barcodes:
+      - {code: "083717201724"}
   - id: samurai-western-ps2
     title: "Samurai Western"
     info:
@@ -2575,6 +2872,8 @@ games:
     ebay:
       query: "Samurai Western (ps2, \"playstation 2\")"
       negative: ["way of the samurai", "samurai warriors"]
+    barcodes:
+      - {code: "730865530144"}
   - id: ghost-in-the-shell-stand-alone-complex-ps2
     title: "Ghost in the Shell: Stand Alone Complex"
     info:
@@ -2588,6 +2887,8 @@ games:
     ebay:
       query: "Ghost in the Shell Stand Alone Complex (ps2, \"playstation 2\")"
       negative: ["psp", "ps1", "playstation 1", "dvd", "blu-ray", "manga"]
+    barcodes:
+      - {code: "045557180294"}
   - id: predator-concrete-jungle-ps2
     title: "Predator: Concrete Jungle"
     info:
@@ -2614,6 +2915,8 @@ games:
     ebay:
       query: "Red Ninja End of Honor (ps2, \"playstation 2\")"
       negative: ["xbox"]
+    barcodes:
+      - {code: "020626721660"}
   - id: the-punisher-ps2
     title: "The Punisher"
     info:
@@ -2626,6 +2929,8 @@ games:
     ebay:
       query: "Punisher (ps2, \"playstation 2\")"
       negative: ["xbox", "pc", "nes", "genesis", "dvd", "blu-ray", "comic", "figure", "war zone"]
+    barcodes:
+      - {code: "752919460498"}
   - id: drakengard-2-ps2
     title: "Drakengard 2"
     info:
@@ -2668,6 +2973,8 @@ games:
       why: "Eidos published it in North America under its Fresh Games label, and the disc was the only way to play it until the September 2024 PS4 and PS5 re-release."
     ebay:
       query: "Mister Mosquito (ps2, \"playstation 2\")"
+    barcodes:
+      - {code: "788687500104"}
   - id: armored-core-last-raven-ps2
     title: "Armored Core: Last Raven"
     info:
@@ -2681,6 +2988,8 @@ games:
     ebay:
       query: "Armored Core Last Raven (ps2, \"playstation 2\")"
       negative: ["portable", "psp", "nexus", "nine breaker", "silent line", "another age", "armored core 2", "armored core 3", "ps3", "xbox"]
+    barcodes:
+      - {code: "093992097608"}
   - id: resident-evil-dead-aim-ps2
     title: "Resident Evil: Dead Aim"
     info:
@@ -2708,6 +3017,8 @@ games:
     ebay:
       query: "Fallout Brotherhood of Steel (ps2, \"playstation 2\")"
       negative: ["xbox", "fallout 3", "fallout 4", "new vegas", "fallout 76", "ps3", "ps4"]
+    barcodes:
+      - {code: "020626719889"}
   - id: bloody-roar-4-ps2
     title: "Bloody Roar 4"
     info:
@@ -2721,6 +3032,8 @@ games:
     ebay:
       query: "Bloody Roar 4 (ps2, \"playstation 2\")"
       negative: ["bloody roar 3", "bloody roar 2", "primal fury", "extreme", "gamecube", "xbox", "ps1"]
+    barcodes:
+      - {code: "083717200642"}
   - id: cold-fear-ps2
     title: "Cold Fear"
     info:
@@ -2733,6 +3046,8 @@ games:
     ebay:
       query: "Cold Fear (ps2, \"playstation 2\")"
       negative: ["xbox", "pc"]
+    barcodes:
+      - {code: "008888322214"}
   - id: parappa-the-rapper-2-ps2
     title: "PaRappa the Rapper 2"
     info:
@@ -2746,6 +3061,8 @@ games:
     ebay:
       query: "PaRappa the Rapper 2 (ps2, \"playstation 2\")"
       negative: ["ps1", "playstation 1", "psp", "remastered", "ps4", "pen"]
+    barcodes:
+      - {code: "711719716723"}
   - id: kings-field-the-ancient-city-ps2
     title: "King's Field: The Ancient City"
     info:
@@ -2761,6 +3078,8 @@ games:
     ebay:
       query: "King's Field The Ancient City (ps2, \"playstation 2\")"
       negative: ["ps1", "playstation 1", "kings field ii", "kings field iii"]
+    barcodes:
+      - {code: "093992089603"}
   - id: stella-deus-the-gate-of-eternity-ps2
     title: "Stella Deus: The Gate of Eternity"
     info:
@@ -2773,6 +3092,8 @@ games:
       about_url: "https://en.wikipedia.org/wiki/Stella_Deus:_The_Gate_of_Eternity"
     ebay:
       query: "Stella Deus (ps2, \"playstation 2\")"
+    barcodes:
+      - {code: "730865530113"}
   - id: dot-hack-outbreak-ps2
     title: ".hack//Outbreak"
     info:
@@ -2783,6 +3104,8 @@ games:
     ebay:
       query: "hack Outbreak (ps2, \"playstation 2\")"
       negative: ["infection", "mutation", "quarantine", "g.u.", "gu", "rebirth", "reminisce", "redemption", "last recode", "ps4"]
+    barcodes:
+      - {code: "045557180133"}
   - id: mana-khemia-2-fall-of-alchemy-ps2
     title: "Mana Khemia 2: Fall of Alchemy"
     info:
@@ -2796,6 +3119,8 @@ games:
     ebay:
       query: "Mana Khemia 2 (ps2, \"playstation 2\")"
       negative: ["al-revis", "student alliance", "psp", "ochita", "gakuen", "art collection"]
+    barcodes:
+      - {code: "857823001321"}
   - id: armored-core-nine-breaker-ps2
     title: "Armored Core: Nine Breaker"
     info:
@@ -2809,6 +3134,8 @@ games:
     ebay:
       query: "Armored Core Nine Breaker (ps2, \"playstation 2\")"
       negative: ["nexus", "last raven", "silent line", "another age", "armored core 2", "armored core 3", "formula front", "ps3", "xbox", "psp"]
+    barcodes:
+      - {code: "093992097103"}
   - id: forever-kingdom-ps2
     title: "Forever Kingdom"
     info:
@@ -2822,6 +3149,8 @@ games:
     ebay:
       query: "Forever Kingdom (ps2, \"playstation 2\")"
       negative: ["kingdom hearts"]
+    barcodes:
+      - {code: "093992089504"}
   - id: manhunt-2-ps2
     title: "Manhunt 2"
     info:
@@ -2836,6 +3165,8 @@ games:
     ebay:
       query: "Manhunt 2 (ps2, \"playstation 2\")"
       negative: ["manhunt 1", "psp", "wii", "pc", "xbox"]
+    barcodes:
+      - {code: "710425371455"}
   - id: the-suffering-ps2
     title: "The Suffering"
     info:
@@ -2849,6 +3180,8 @@ games:
     ebay:
       query: "The Suffering (ps2, \"playstation 2\")"
       negative: ["ties that bind", "xbox", "pc"]
+    barcodes:
+      - {code: "031719269228"}
   - id: sakura-wars-so-long-my-love-ps2
     title: "Sakura Wars: So Long, My Love"
     info:
@@ -2864,6 +3197,8 @@ games:
     ebay:
       query: "Sakura Wars So Long My Love (ps2, \"playstation 2\")"
       negative: ["wii", "ps4", "taisen", "hot blood"]
+    barcodes:
+      - {code: "857823001352"}
   - id: metal-saga-ps2
     title: "Metal Saga"
     info:
@@ -2877,6 +3212,8 @@ games:
     ebay:
       query: "Metal Saga (ps2, \"playstation 2\")"
       negative: ["xeno", "metal gear", "ps4"]
+    barcodes:
+      - {code: "730865530182"}
   - id: persona-3-ps2
     title: "Persona 3"
     info:
@@ -2930,6 +3267,8 @@ games:
     ebay:
       query: "(\"sky gunner\", skygunner) (ps2, \"playstation 2\")"
       negative: ["sky odyssey"]
+    barcodes:
+      - {code: "730865530038"}
   - id: dragon-ball-z-infinite-world-ps2
     title: "Dragon Ball Z: Infinite World"
     info:
@@ -2943,6 +3282,8 @@ games:
     ebay:
       query: "Dragon Ball Z Infinite World (ps2, \"playstation 2\")"
       negative: ["budokai", "tenkaichi", "hd collection", "not us", "ps3", "xbox"]
+    barcodes:
+      - {code: "742725277151"}
   - id: wizardry-tale-of-the-forsaken-land-ps2
     title: "Wizardry: Tale of the Forsaken Land"
     info:
@@ -2956,6 +3297,8 @@ games:
     ebay:
       query: "Wizardry (ps2, \"playstation 2\")"
       negative: ["pc", "ibm", "werdna", "nes", "snes", "apple"]
+    barcodes:
+      - {code: "730865530014"}
   - id: mobile-suit-gundam-gundam-vs-zeta-gundam-ps2
     title: "Mobile Suit Gundam: Gundam vs. Zeta Gundam"
     info:
@@ -2968,6 +3311,8 @@ games:
     ebay:
       query: "Gundam vs Zeta Gundam (ps2, \"playstation 2\")"
       negative: ["federation vs zeon", "journey to jaburo", "encounters in space", "zeonic front", "never ending tomorrow", "seed", "crossfire", "target in sight", "dynasty warriors", "extreme vs", "aeug", "ps3", "psp", "xbox", "dvd", "blu-ray"]
+    barcodes:
+      - {code: "045557180157"}
   - id: armored-core-nexus-ps2
     title: "Armored Core: Nexus"
     info:
@@ -2981,6 +3326,8 @@ games:
     ebay:
       query: "Armored Core Nexus (ps2, \"playstation 2\")"
       negative: ["armored core 2", "another age", "armored core 3", "silent line", "nine breaker", "last raven", "formula front", "project phantasma", "master of arena", "ps1", "ps3", "ps4", "ps5", "xbox", "psp"]
+    barcodes:
+      - {code: "093992092306"}
   - id: grand-theft-auto-vice-city-stories-ps2
     title: "Grand Theft Auto: Vice City Stories"
     info:
@@ -2993,6 +3340,8 @@ games:
     ebay:
       query: "Vice City Stories (ps2, \"playstation 2\")"
       negative: ["psp", "liberty city", "san andreas", "grand theft auto iii", "grand theft auto 3", "gta iii", "gta 3", "trilogy", "definitive", "chinatown", "xbox", "pc", "ps3", "ps4"]
+    barcodes:
+      - {code: "710425371363"}
   - id: the-suffering-ties-that-bind-ps2
     title: "The Suffering: Ties That Bind"
     info:
