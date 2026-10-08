@@ -1,9 +1,10 @@
 # RetroHeat
 
 A daily momentum board for collectible retro games. It tracks a curated list of
-PlayStation 2, GameCube, PSP, PS Vita, Nintendo 64, Dreamcast, Game Boy, Game
-Boy Color and Game Boy Advance titles, and ranks them by how fast their prices
-are moving — plus, where a contributor has written one, a note explaining *why*.
+PlayStation 2, PlayStation 3, GameCube, PSP, PS Vita, Nintendo 64, Dreamcast,
+Game Boy, Game Boy Color and Game Boy Advance titles, and ranks them by how
+fast their prices are moving — plus, where a contributor has written one, a
+note explaining *why*.
 
 Every price site worth using either paywalls its movers list, sorts it by dollar
 change so the same expensive games appear every week, or never says what drove a
@@ -296,3 +297,9 @@ Adding a game, or explaining why one is moving, is a one-file pull request. See
 
 MIT. Not affiliated with eBay, PriceCharting, Sony, Nintendo, Sega, or any
 publisher named in the catalog.
+
+The console wordmarks on the boards are trademarks of Sony, Nintendo and
+Sega, shown only to say which console a board is about. They are redrawn from
+public-domain text logos on Wikimedia Commons and from Simple Icons (sources in
+`web/src/components/platform-marks.ts`), are not covered by the MIT licence,
+and are not part of the published registry.

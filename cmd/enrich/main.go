@@ -70,6 +70,7 @@ const (
 
 var platformLabel = map[catalog.Platform]string{
 	catalog.PS2:       "PlayStation 2",
+	catalog.PS3:       "PlayStation 3",
 	catalog.GameCube:  "GameCube",
 	catalog.PSP:       "PlayStation Portable",
 	catalog.Vita:      "PlayStation Vita",
@@ -82,6 +83,7 @@ var platformLabel = map[catalog.Platform]string{
 
 var platformQID = map[catalog.Platform]string{
 	catalog.PS2:       "Q10680",
+	catalog.PS3:       "Q10683",
 	catalog.GameCube:  "Q182172",
 	catalog.PSP:       "Q170325",
 	catalog.Vita:      "Q188808",
@@ -95,6 +97,7 @@ var platformQID = map[catalog.Platform]string{
 // platformLaunch is the first year a game could have shipped on each console.
 var platformLaunch = map[catalog.Platform]int{
 	catalog.PS2:       2000,
+	catalog.PS3:       2006,
 	catalog.GameCube:  2001,
 	catalog.PSP:       2004,
 	catalog.Vita:      2011,

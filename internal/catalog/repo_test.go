@@ -64,6 +64,7 @@ func TestEveryQueryIsPlatformScoped(t *testing.T) {
 	}
 	hints := map[catalog.Platform][]string{
 		catalog.PS2:       {"ps2", "playstation 2"},
+		catalog.PS3:       {"ps3", "playstation 3"},
 		catalog.GameCube:  {"gamecube", "game cube", "gcn"},
 		catalog.PSP:       {"psp"},
 		catalog.Vita:      {"vita"},

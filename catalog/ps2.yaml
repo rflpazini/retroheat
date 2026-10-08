@@ -989,7 +989,7 @@ games:
       why: "Moderate supply, but sustained tournament interest and a long gap without re-release keep it expensive."
     ebay:
       query: "Capcom vs SNK 2 PS2"
-      negative: ["dreamcast", "xbox"]
+      negative: ["dreamcast", "xbox", "gamecube", "eo"]
   - id: guilty-gear-xx-accent-core-ps2
     title: "Guilty Gear XX Accent Core"
     info:
@@ -1004,7 +1004,7 @@ games:
       why: "A late, small print run of one specific revision, so it is scarcer than the game itself."
     ebay:
       query: "Guilty Gear XX Accent Core PS2"
-      negative: ["plus r", "wii"]
+      negative: ["plus", "wii"]
   - id: the-warriors-ps2
     title: "The Warriors"
     info:
@@ -2492,3 +2492,502 @@ games:
     ebay:
       query: "Zone of the Enders PS2 -\"2nd runner\""
       negative: ["2nd runner", "second runner", "hd collection", "ps3", "xbox", "fist of mars", "gba", "mars"]
+  - id: silent-hill-shattered-memories-ps2
+    title: "Silent Hill: Shattered Memories"
+    info:
+      developer: "Climax Studios"
+      publisher: "Konami"
+      year: 2010
+      genre: "Survival horror"
+      about: "Silent Hill: Shattered Memories is a 2009 survival horror game developed by Climax Studios and published by Konami. It was released in December for the Wii and ported to the PlayStation 2 and PlayStation Portable platforms in January 2010."
+      about_url: "https://en.wikipedia.org/wiki/Silent_Hill:_Shattered_Memories"
+      trivia: "A reimagining of the first Silent Hill, it was the first game in the series to make heavy use of dynamic music, composed by Akira Yamaoka."
+      why: "The last Silent Hill released on PS2, it arrived in January 2010, more than three years after the PS3 launched, when the PS2 disc market was winding down."
+    ebay:
+      query: "Silent Hill Shattered Memories (ps2, \"playstation 2\")"
+      negative: ["wii", "psp", "origins", "homecoming", "downpour"]
+  - id: futurama-ps2
+    title: "Futurama"
+    info:
+      developer: "Unique Development Studios"
+      publisher: "Vivendi Universal Games"
+      year: 2003
+      genre: "Platformer"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/2/2f/Futurama-ps2-cover.jpg"
+      about: "Futurama is a 3D platform video game based on the science fiction animated series of the same name. It was developed by Unique Development Studios and published by SCi Games in Europe and Oceania and by Vivendi Universal Games in North America for the PlayStation 2 and Xbox, both of which use cel-shading technology."
+      about_url: "https://en.wikipedia.org/wiki/Futurama_%28video_game%29"
+      trivia: "The show's original voice cast recorded the game, and series composer Christopher Tyng wrote its soundtrack."
+      why: "It sold poorly and had a very limited print run, and the show's cancellation soon after release meant it was never reprinted, so it became one of the rarest PS2 discs."
+    ebay:
+      query: "Futurama (ps2, \"playstation 2\")"
+      negative: ["xbox", "dvd", "blu-ray", "season", "comic", "figure"]
+  - id: dot-hack-quarantine-ps2
+    title: ".hack//Quarantine"
+    info:
+      developer: "CyberConnect2"
+      publisher: "Bandai"
+      year: 2004
+      genre: "Action role-playing"
+    ebay:
+      query: "hack Quarantine (ps2, \"playstation 2\")"
+      negative: ["infection", "mutation", "outbreak", "g.u.", "gu", "rebirth", "reminisce", "redemption", "last recode", "ps4"]
+  - id: robot-alchemic-drive-ps2
+    title: "Robot Alchemic Drive"
+    info:
+      developer: "Sandlot"
+      publisher: "Enix"
+      year: 2002
+      genre: "Action"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/f/fb/RADcover.jpg"
+      about: "Robot Alchemic Drive or R.A.D., sold in Japan as Gigantic Drive is a 2002 action-adventure mecha fighting video game developed by Sandlot and published by Enix for the PlayStation 2."
+      about_url: "https://en.wikipedia.org/wiki/Robot_Alchemic_Drive"
+      trivia: "You mostly play as the giant robot's human pilot rather than the robot itself, a design from Sandlot, the studio behind Earth Defense Force."
+      why: "It sold poorly on its 2002 release and is now considered a niche title, so few North American copies exist for the cult following it later found."
+    ebay:
+      query: "Robot Alchemic Drive (ps2, \"playstation 2\")"
+      negative: ["earth defense force"]
+  - id: silent-hill-origins-ps2
+    title: "Silent Hill: Origins"
+    info:
+      developer: "Climax Studios"
+      publisher: "Konami"
+      year: 2008
+      genre: "Survival horror"
+      about: "Silent Hill: Origins is a 2007 survival horror game developed by Climax Studios and published by Konami. It was released worldwide in late 2007 for the PlayStation Portable, beginning in early November with the United Kingdom."
+      about_url: "https://en.wikipedia.org/wiki/Silent_Hill:_Origins"
+      trivia: "Development moved from Climax's Los Angeles studio to its British team in Portsmouth, which redid the script, monsters and level design."
+      why: "The PS2 version was a port released four months after the PSP original and more than a year after the PS3 launched, so it reached a shrinking PS2 audience."
+    ebay:
+      query: "Silent Hill Origins (ps2, \"playstation 2\")"
+      negative: ["psp", "shattered memories", "silent hill 2", "silent hill 3", "silent hill 4", "homecoming", "downpour"]
+  - id: samurai-western-ps2
+    title: "Samurai Western"
+    info:
+      developer: "Acquire"
+      publisher: "Atlus"
+      year: 2005
+      genre: "Action-adventure"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/2/22/Samurai_Western.jpg"
+      about: "Samurai Western is an action-adventure video game, made by Acquire games company, released for the PlayStation 2 in 2005."
+      about_url: "https://en.wikipedia.org/wiki/Samurai_Western"
+    ebay:
+      query: "Samurai Western (ps2, \"playstation 2\")"
+      negative: ["way of the samurai", "samurai warriors"]
+  - id: ghost-in-the-shell-stand-alone-complex-ps2
+    title: "Ghost in the Shell: Stand Alone Complex"
+    info:
+      developer: "Cavia"
+      publisher: "Bandai"
+      year: 2004
+      genre: "Shooter"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/a/ac/Ghost_in_the_Shell_SAC_Coverart.jpg"
+      about: "Ghost in the Shell: Stand Alone Complex is a third-person shooter video game developed by Cavia and published by Sony Computer Entertainment for the PlayStation 2. It is based on the cyberpunk anime of the same name."
+      about_url: "https://en.wikipedia.org/wiki/Ghost_in_the_Shell:_Stand_Alone_Complex_%282004_video_game%29"
+    ebay:
+      query: "Ghost in the Shell Stand Alone Complex (ps2, \"playstation 2\")"
+      negative: ["psp", "ps1", "playstation 1", "dvd", "blu-ray", "manga"]
+  - id: predator-concrete-jungle-ps2
+    title: "Predator: Concrete Jungle"
+    info:
+      developer: "Eurocom"
+      publisher: "Vivendi Universal Games"
+      year: 2005
+      genre: "Action-adventure"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/5/57/Predator_concrete_jungle_PS2.jpg"
+      about: "Predator: Concrete Jungle is a 2005 action video game developed by Eurocom for the PlayStation 2 and Xbox consoles. In the game the player controls a disgraced Predator who must regain his honor by killing the humans who have stolen his technology."
+      about_url: "https://en.wikipedia.org/wiki/Predator:_Concrete_Jungle"
+    ebay:
+      query: "Predator Concrete Jungle (ps2, \"playstation 2\")"
+      negative: ["xbox", "dvd", "blu-ray", "extinction"]
+  - id: red-ninja-end-of-honor-ps2
+    title: "Red Ninja: End of Honor"
+    info:
+      developer: "Tranji Studios"
+      publisher: "Vivendi Universal Games"
+      year: 2005
+      genre: "Action-adventure"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/f/fa/Red_Ninja_box_art.jpg"
+      about: "Red Ninja: End of Honor, known in Japan as Kurenai Shinobu: Kekka no Mai , is a 2005 video game for the PlayStation 2 and Xbox platforms, created in a collaboration between the game developer Tranji Studios and the film writer Shinsuke Sato. It was published by Vivendi Universal Games."
+      about_url: "https://en.wikipedia.org/wiki/Red_Ninja:_End_of_Honor"
+    ebay:
+      query: "Red Ninja End of Honor (ps2, \"playstation 2\")"
+      negative: ["xbox"]
+  - id: the-punisher-ps2
+    title: "The Punisher"
+    info:
+      developer: "Volition"
+      publisher: "THQ"
+      year: 2005
+      genre: "Third-person shooter"
+      about: "The Punisher is a 2005 third-person shooter action-adventure game developed by Volition and published by THQ, based on the Marvel Comics character the Punisher."
+      about_url: "https://en.wikipedia.org/wiki/The_Punisher_%282005_video_game%29"
+    ebay:
+      query: "Punisher (ps2, \"playstation 2\")"
+      negative: ["xbox", "pc", "nes", "genesis", "dvd", "blu-ray", "comic", "figure", "war zone"]
+  - id: drakengard-2-ps2
+    title: "Drakengard 2"
+    info:
+      developer: "Cavia"
+      publisher: "Ubisoft"
+      year: 2006
+      genre: "Action role-playing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/a/aa/Drakengard_2_Coverart.png"
+      about: "Drakengard 2, known in Japan as Drag-On Dragoon 2: Sealed Red, Immoral Black, is a 2005 action role-playing video game developed by Cavia and published by Square Enix in Japan and Ubisoft in all other territories for the PlayStation 2. It is the second entry in the Drakengard series, set after the events of the original Drakengard."
+      about_url: "https://en.wikipedia.org/wiki/Drakengard_2"
+    ebay:
+      query: "Drakengard 2 (ps2, \"playstation 2\")"
+      negative: ["drakengard 3", "nier", "ps3", "ps4"]
+  - id: drakengard-ps2
+    title: "Drakengard"
+    info:
+      developer: "Cavia"
+      publisher: "Square Enix"
+      year: 2004
+      genre: "Action role-playing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/f/fb/Drakengard_US_Cover_art.png"
+      about: "Drakengard, known in Japan as Drag-On Dragoon, is a 2003 action role-playing video game developed by Cavia and published by Square Enix for the PlayStation 2. The game is the first installment of the Drakengard series and features a mixture of ground-based hack-and-slash, aerial combat, and role-playing elements which have become a staple of the series."
+      about_url: "https://en.wikipedia.org/wiki/Drakengard_%28video_game%29"
+      trivia: "Director Yoko Taro set the game's dark tone, and references to incest and sexual taboos were censored in the Western localization."
+      why: "NieR spun off from this game's fifth ending, and the first Drakengard has had no console release beyond the PS2 disc, so NieR fans looking for its roots buy the original."
+    ebay:
+      query: "Drakengard (ps2, \"playstation 2\")"
+      negative: ["drakengard 2", "drakengard ii", "drakengard 3", "nier", "ps3", "ps4"]
+  - id: mister-mosquito-ps2
+    title: "Mister Mosquito"
+    info:
+      developer: "Zoom"
+      publisher: "Eidos Interactive"
+      year: 2002
+      genre: "Action"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/6/63/Mister_Mosquito_Coverart.png"
+      about: "Mister Mosquito, spelled Mr Moskeeto in PAL regions and known in Japan as Ka , is a stealth video game developed by Zoom and published by Sony Computer Entertainment for the PlayStation 2."
+      about_url: "https://en.wikipedia.org/wiki/Mister_Mosquito"
+      trivia: "The goal is to drink enough of the Yamada family's blood over one summer for the mosquito to hibernate through autumn and winter."
+      why: "Eidos published it in North America under its Fresh Games label, and the disc was the only way to play it until the September 2024 PS4 and PS5 re-release."
+    ebay:
+      query: "Mister Mosquito (ps2, \"playstation 2\")"
+  - id: armored-core-last-raven-ps2
+    title: "Armored Core: Last Raven"
+    info:
+      developer: "FromSoftware"
+      publisher: "Agetec"
+      year: 2006
+      genre: "Action"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/1/1d/Armored_Core_-_Last_Raven.jpg"
+      about: "Armored Core: Last Raven is a 2005 mecha-based vehicular combat game developed by FromSoftware. It is part of the Armored Core series and is a direct sequel to Armored Core: Nexus (2004)."
+      about_url: "https://en.wikipedia.org/wiki/Armored_Core:_Last_Raven"
+    ebay:
+      query: "Armored Core Last Raven (ps2, \"playstation 2\")"
+      negative: ["portable", "psp", "nexus", "nine breaker", "silent line", "another age", "armored core 2", "armored core 3", "ps3", "xbox"]
+  - id: resident-evil-dead-aim-ps2
+    title: "Resident Evil: Dead Aim"
+    info:
+      developer: "Cavia"
+      publisher: "Capcom"
+      year: 2003
+      genre: "Light-gun shooter"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/a/a5/Residentevildeadaim.jpg"
+      about: "Resident Evil: Dead Aim is a light gun shooter video game developed by Cavia and published by Capcom. It is the third Gun Survivor title in the Resident Evil series, and the fourth and final installment in the Gun Survivor series."
+      about_url: "https://en.wikipedia.org/wiki/Resident_Evil:_Dead_Aim"
+    ebay:
+      query: "Resident Evil Dead Aim (ps2, \"playstation 2\")"
+      negative: ["guncon", "survivor", "outbreak", "code veronica", "resident evil 4"]
+  - id: fallout-brotherhood-of-steel-ps2
+    title: "Fallout: Brotherhood of Steel"
+    info:
+      developer: "Interplay Entertainment"
+      publisher: "Interplay Entertainment"
+      year: 2004
+      genre: "Action role-playing"
+      about: "Fallout: Brotherhood of Steel is a 2004 action role-playing game developed and published by Interplay Entertainment. It was released for the PlayStation 2 and Xbox, and was the first entry in the Fallout series to be released for home video game consoles."
+      about_url: "https://en.wikipedia.org/wiki/Fallout:_Brotherhood_of_Steel"
+      trivia: "Bethesda's Todd Howard later said that for Fallout 3's purposes, Brotherhood of Steel never happened, and its planned sequel was cancelled."
+      why: "As the first Fallout released for consoles and one Bethesda keeps out of the series canon, it draws Fallout completists to the PS2 and Xbox discs."
+    ebay:
+      query: "Fallout Brotherhood of Steel (ps2, \"playstation 2\")"
+      negative: ["xbox", "fallout 3", "fallout 4", "new vegas", "fallout 76", "ps3", "ps4"]
+  - id: bloody-roar-4-ps2
+    title: "Bloody Roar 4"
+    info:
+      developer: "Hudson Soft"
+      publisher: "Konami"
+      year: 2003
+      genre: "Fighting"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/5/5e/Bloody_Roar_4_cover_art.jpg"
+      about: "Bloody Roar 4 is a fighting game developed by Eighting and Hudson Soft in 2003."
+      about_url: "https://en.wikipedia.org/wiki/Bloody_Roar_4"
+    ebay:
+      query: "Bloody Roar 4 (ps2, \"playstation 2\")"
+      negative: ["bloody roar 3", "bloody roar 2", "primal fury", "extreme", "gamecube", "xbox", "ps1"]
+  - id: cold-fear-ps2
+    title: "Cold Fear"
+    info:
+      developer: "Darkworks"
+      publisher: "Ubisoft"
+      year: 2005
+      genre: "Survival horror"
+      about: "Cold Fear is a 2005 survival horror third-person shooter video game developed by Darkworks and published by Ubisoft for PlayStation 2, Xbox and Microsoft Windows. It was Darkworks' second game, after Alone in the Dark: The New Nightmare in 2001."
+      about_url: "https://en.wikipedia.org/wiki/Cold_Fear"
+    ebay:
+      query: "Cold Fear (ps2, \"playstation 2\")"
+      negative: ["xbox", "pc"]
+  - id: parappa-the-rapper-2-ps2
+    title: "PaRappa the Rapper 2"
+    info:
+      developer: "NanaOn-Sha"
+      publisher: "Sony Computer Entertainment"
+      year: 2002
+      genre: "Music"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/d/db/PaRappa_the_Rapper_2_Coverart.png"
+      about: "PaRappa the Rapper 2 is a 2001 rhythm video game developed by NanaOn-Sha and published by Sony Computer Entertainment for the PlayStation 2. It is the third and most recent title in the PaRappa the Rapper series, following Um Jammer Lammy."
+      about_url: "https://en.wikipedia.org/wiki/PaRappa_the_Rapper_2"
+    ebay:
+      query: "PaRappa the Rapper 2 (ps2, \"playstation 2\")"
+      negative: ["ps1", "playstation 1", "psp", "remastered", "ps4", "pen"]
+  - id: kings-field-the-ancient-city-ps2
+    title: "King's Field: The Ancient City"
+    info:
+      developer: "FromSoftware"
+      publisher: "Agetec"
+      year: 2002
+      genre: "Role-playing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/9/91/King%27s_Field_IV.jpg"
+      about: "King's Field IV, released in North America as King's Field: The Ancient City, is a 2001 action role-playing game developed by FromSoftware for the PlayStation 2. It is the fourth entry in the King's Field series."
+      about_url: "https://en.wikipedia.org/wiki/King%27s_Field_IV"
+      trivia: "Sold in Japan as King's Field IV, it reached North America through Agetec in 2002 and Europe through Metro3D a year later."
+      why: "One of FromSoftware's first-person dungeon crawlers from before Demon's Souls, it is sought by Souls fans tracing the studio's roots."
+    ebay:
+      query: "King's Field The Ancient City (ps2, \"playstation 2\")"
+      negative: ["ps1", "playstation 1", "kings field ii", "kings field iii"]
+  - id: stella-deus-the-gate-of-eternity-ps2
+    title: "Stella Deus: The Gate of Eternity"
+    info:
+      developer: "Pinegrow"
+      publisher: "Atlus"
+      year: 2005
+      genre: "Tactical role-playing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/5/56/Stella_Deus_-_The_Gate_of_Eternity_Coverart.png"
+      about: "Stella Deus: The Gate of Eternity is a 2004 tactical role-playing game co-developed by Atlus and Pinegrow for the PlayStation 2. It was published in Japan and North America by Atlus, and in Europe by 505 Games."
+      about_url: "https://en.wikipedia.org/wiki/Stella_Deus:_The_Gate_of_Eternity"
+    ebay:
+      query: "Stella Deus (ps2, \"playstation 2\")"
+  - id: dot-hack-outbreak-ps2
+    title: ".hack//Outbreak"
+    info:
+      developer: "CyberConnect2"
+      publisher: "Bandai"
+      year: 2003
+      genre: "Action role-playing"
+    ebay:
+      query: "hack Outbreak (ps2, \"playstation 2\")"
+      negative: ["infection", "mutation", "quarantine", "g.u.", "gu", "rebirth", "reminisce", "redemption", "last recode", "ps4"]
+  - id: mana-khemia-2-fall-of-alchemy-ps2
+    title: "Mana Khemia 2: Fall of Alchemy"
+    info:
+      developer: "Gust"
+      publisher: "NIS America"
+      year: 2009
+      genre: "Role-playing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/b/bf/Mana_Khemia_2.jpg"
+      about: "Mana Khemia 2: Fall of Alchemy is a role-playing video game developed by Japanese developer Gust Co. Ltd. for the PlayStation 2. A \"Portable+\" version for PlayStation Portable was released on 1 October 2009."
+      about_url: "https://en.wikipedia.org/wiki/Mana_Khemia_2:_Fall_of_Alchemy"
+    ebay:
+      query: "Mana Khemia 2 (ps2, \"playstation 2\")"
+      negative: ["al-revis", "student alliance", "psp", "ochita", "gakuen", "art collection"]
+  - id: armored-core-nine-breaker-ps2
+    title: "Armored Core: Nine Breaker"
+    info:
+      developer: "FromSoftware"
+      publisher: "Agetec"
+      year: 2005
+      genre: "Action"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/d/de/Armored_Core_-_Nine_Breaker.jpg"
+      about: "Armored Core: Nine Breaker is a 2004 third-person shooter video game developed by FromSoftware for the PlayStation 2."
+      about_url: "https://en.wikipedia.org/wiki/Armored_Core:_Nine_Breaker"
+    ebay:
+      query: "Armored Core Nine Breaker (ps2, \"playstation 2\")"
+      negative: ["nexus", "last raven", "silent line", "another age", "armored core 2", "armored core 3", "formula front", "ps3", "xbox", "psp"]
+  - id: forever-kingdom-ps2
+    title: "Forever Kingdom"
+    info:
+      developer: "FromSoftware"
+      publisher: "Agetec"
+      year: 2002
+      genre: "Action role-playing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/3/32/Forever_Kingdom.jpg"
+      about: "Forever Kingdom, known in Japan as Evergrace II, is an action role-playing game released for the PlayStation 2 by FromSoftware."
+      about_url: "https://en.wikipedia.org/wiki/Forever_Kingdom"
+    ebay:
+      query: "Forever Kingdom (ps2, \"playstation 2\")"
+      negative: ["kingdom hearts"]
+  - id: manhunt-2-ps2
+    title: "Manhunt 2"
+    info:
+      developer: "Rockstar London"
+      publisher: "Rockstar Games"
+      year: 2007
+      genre: "Stealth"
+      about: "Manhunt 2 is a 2007 stealth game by Rockstar Games. It was developed by Rockstar London for Microsoft Windows and PlayStation 2, Rockstar Leeds for the PlayStation Portable, and Rockstar Toronto for the Wii."
+      about_url: "https://en.wikipedia.org/wiki/Manhunt_2"
+      trivia: "To get an M rating instead of Adults Only, Rockstar blurred the executions and removed the scoring system that rewarded brutal kills."
+      why: "Its Adults Only rating and bans in Britain, Ireland and Germany made it notorious, and only the edited M-rated version was ever sold on PS2."
+    ebay:
+      query: "Manhunt 2 (ps2, \"playstation 2\")"
+      negative: ["manhunt 1", "psp", "wii", "pc", "xbox"]
+  - id: the-suffering-ps2
+    title: "The Suffering"
+    info:
+      developer: "Surreal Software"
+      publisher: "Midway Games"
+      year: 2004
+      genre: "Survival horror"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/c/c6/The_Suffering_coverart.jpg"
+      about: "The Suffering is a first-person/third-person shooter horror video game developed by Surreal Software for PlayStation 2, Xbox and Microsoft Windows. Stan Winston studios helped with the game's design."
+      about_url: "https://en.wikipedia.org/wiki/The_Suffering_%28video_game%29"
+    ebay:
+      query: "The Suffering (ps2, \"playstation 2\")"
+      negative: ["ties that bind", "xbox", "pc"]
+  - id: sakura-wars-so-long-my-love-ps2
+    title: "Sakura Wars: So Long, My Love"
+    info:
+      developer: "Sega"
+      publisher: "NIS America"
+      year: 2010
+      genre: "Tactical role-playing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/3/33/Sakura_Wars-_So_Long%2C_My_Love_-_Cover.jpg"
+      about: "Sakura Wars: So Long, My Love is a cross-genre video game developed by Sega and Red Entertainment for the PlayStation 2, with a later port for the Wii developed by Idea Factory. The fifth installment in the main Sakura Wars series, it was released in 2005 in Japan by Sega, and in 2010 in North America and Europe by NIS America, being the first Sakura Wars game to be localized in English."
+      about_url: "https://en.wikipedia.org/wiki/Sakura_Wars:_So_Long%2C_My_Love"
+      trivia: "Its New York setting was first planned for Sakura Wars 4 on the Dreamcast, until the console's discontinuation moved it to this game."
+      why: "The first Sakura Wars localized in English, it stayed the only one for a decade, since the series had no new entry until the 2019 soft reboot."
+    ebay:
+      query: "Sakura Wars So Long My Love (ps2, \"playstation 2\")"
+      negative: ["wii", "ps4", "taisen", "hot blood"]
+  - id: metal-saga-ps2
+    title: "Metal Saga"
+    info:
+      developer: "Success"
+      publisher: "Atlus"
+      year: 2006
+      genre: "Role-playing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/b/b5/Metal_Saga.jpeg"
+      about: "Metal Saga, known in Japan as Metal Saga: Sajin no Kusari , is a post-apocalyptic role-playing video game developed by Success and published by Atlus and Success."
+      about_url: "https://en.wikipedia.org/wiki/Metal_Saga"
+    ebay:
+      query: "Metal Saga (ps2, \"playstation 2\")"
+      negative: ["xeno", "metal gear", "ps4"]
+  - id: persona-3-ps2
+    title: "Persona 3"
+    info:
+      developer: "Atlus"
+      publisher: "Atlus"
+      year: 2007
+      genre: "Role-playing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/4/47/Persona3cover.jpg"
+      about: "Persona 3, released outside Japan as Shin Megami Tensei: Persona 3, is a 2006 role-playing video game developed by Atlus. It is the fourth main installment in the Persona series."
+      about_url: "https://en.wikipedia.org/wiki/Persona_3"
+    ebay:
+      query: "Persona 3 (ps2, \"playstation 2\")"
+      negative: ["fes", "portable", "psp", "reload", "dancing", "persona 4", "nocturne", "ps4", "switch", "xbox", "pc"]
+  - id: outrun-2006-coast-2-coast-ps2
+    title: "OutRun 2006: Coast 2 Coast"
+    info:
+      developer: "Sumo Digital"
+      publisher: "Sega"
+      year: 2006
+      genre: "Racing"
+      about: "OutRun 2006: Coast 2 Coast, released as OutRun 2 SP in Japan, is a 2006 racing video game developed by Sumo Digital and published by Sega for home consoles."
+      about_url: "https://en.wikipedia.org/wiki/OutRun_2006:_Coast_2_Coast"
+    ebay:
+      query: "OutRun 2006 Coast 2 Coast (ps2, \"playstation 2\")"
+      negative: ["psp", "xbox", "pc"]
+  - id: the-x-files-resist-or-serve-ps2
+    title: "The X-Files: Resist or Serve"
+    info:
+      developer: "Black Ops Entertainment"
+      publisher: "Vivendi Universal Games"
+      year: 2004
+      genre: "Survival horror"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/c/c9/Xfilesresistorserve.jpg"
+      about: "The X-Files: Resist or Serve is a 2004 survival horror game developed by Black Ops Entertainment and published by Vivendi Universal Games for the PlayStation 2. It is the third video game based on the television series The X-Files, after The X-Files: Unrestricted Access (1997) and The X-Files Game (1998)."
+      about_url: "https://en.wikipedia.org/wiki/The_X-Files:_Resist_or_Serve"
+      trivia: "David Duchovny and Gillian Anderson voice Mulder and Scully, and the script was written by Thomas Schnauz, who wrote two episodes of the series."
+      why: "The planned Xbox version was cancelled, so this PS2 disc is the only release, and both X-Files collectors and survival-horror fans compete for it."
+    ebay:
+      query: "X-Files Resist or Serve (ps2, \"playstation 2\")"
+      negative: ["dvd", "blu-ray", "ps1", "pc", "season"]
+  - id: skygunner-ps2
+    title: "SkyGunner"
+    info:
+      developer: "PixelArts"
+      publisher: "Atlus"
+      year: 2002
+      genre: "Combat flight simulator"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/6/6d/SkyGunner_Box_Art.jpg"
+      about: "SkyGunner is a third-person combat flight simulation video game developed by PixelArts and published by Sony Computer Entertainment for the PlayStation 2. The game's setting and art style has elements of steampunk."
+      about_url: "https://en.wikipedia.org/wiki/SkyGunner"
+    ebay:
+      query: "(\"sky gunner\", skygunner) (ps2, \"playstation 2\")"
+      negative: ["sky odyssey"]
+  - id: dragon-ball-z-infinite-world-ps2
+    title: "Dragon Ball Z: Infinite World"
+    info:
+      developer: "Dimps"
+      publisher: "Atari"
+      year: 2008
+      genre: "Fighting"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/3/39/Dragon_Ball_Z_Infinite_World.jpg"
+      about: "Dragon Ball Z: Infinite World is a fighting video game for the PlayStation 2 based on the Dragon Ball franchise. The game was developed by Dimps, and published in North America by Atari, and in Europe and Japan by Namco Bandai Games under the Bandai label."
+      about_url: "https://en.wikipedia.org/wiki/Dragon_Ball_Z:_Infinite_World"
+    ebay:
+      query: "Dragon Ball Z Infinite World (ps2, \"playstation 2\")"
+      negative: ["budokai", "tenkaichi", "hd collection", "not us", "ps3", "xbox"]
+  - id: wizardry-tale-of-the-forsaken-land-ps2
+    title: "Wizardry: Tale of the Forsaken Land"
+    info:
+      developer: "Racjin"
+      publisher: "Atlus"
+      year: 2001
+      genre: "Role-playing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/c/ce/Wizardry-TaleOfTheForsakenLandPS2.JPG"
+      about: "Wizardry: Tale of the Forsaken Land is a 2001 PlayStation 2 role-playing video game and a spin-off of the Wizardry series, published by Atlus."
+      about_url: "https://en.wikipedia.org/wiki/Wizardry:_Tale_of_the_Forsaken_Land"
+    ebay:
+      query: "Wizardry (ps2, \"playstation 2\")"
+      negative: ["pc", "ibm", "werdna", "nes", "snes", "apple"]
+  - id: mobile-suit-gundam-gundam-vs-zeta-gundam-ps2
+    title: "Mobile Suit Gundam: Gundam vs. Zeta Gundam"
+    info:
+      developer: "Capcom"
+      publisher: "Bandai"
+      year: 2005
+      genre: "Third-person shooter"
+      about: "Mobile Suit Gundam: Gundam vs. Zeta Gundam is a third-person shooter published in 2004 for PlayStation 2 and GameCube. It takes place seven years after the One Year War Gundam storyline."
+      about_url: "https://en.wikipedia.org/wiki/Mobile_Suit_Gundam:_Gundam_vs._Zeta_Gundam"
+    ebay:
+      query: "Gundam vs Zeta Gundam (ps2, \"playstation 2\")"
+      negative: ["federation vs zeon", "journey to jaburo", "encounters in space", "zeonic front", "never ending tomorrow", "seed", "crossfire", "target in sight", "dynasty warriors", "extreme vs", "aeug", "ps3", "psp", "xbox", "dvd", "blu-ray"]
+  - id: armored-core-nexus-ps2
+    title: "Armored Core: Nexus"
+    info:
+      developer: "FromSoftware"
+      publisher: "Agetec"
+      year: 2004
+      genre: "Action"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/6/6a/Armored_Core_-_Nexus_cover.jpg"
+      about: "Armored Core: Nexus is a 2004 third-person shooter video game developed by FromSoftware for the PlayStation 2. It is the eighth entry in the Armored Core series and a sequel to 2003's Silent Line: Armored Core."
+      about_url: "https://en.wikipedia.org/wiki/Armored_Core:_Nexus"
+    ebay:
+      query: "Armored Core Nexus (ps2, \"playstation 2\")"
+      negative: ["armored core 2", "another age", "armored core 3", "silent line", "nine breaker", "last raven", "formula front", "project phantasma", "master of arena", "ps1", "ps3", "ps4", "ps5", "xbox", "psp"]
+  - id: grand-theft-auto-vice-city-stories-ps2
+    title: "Grand Theft Auto: Vice City Stories"
+    info:
+      developer: "Rockstar Leeds"
+      publisher: "Rockstar Games"
+      year: 2007
+      genre: "Action-adventure"
+      about: "Grand Theft Auto: Vice City Stories is a 2006 action-adventure game developed by Rockstar Leeds and Rockstar North, and published by Rockstar Games. The tenth entry in the Grand Theft Auto series, the game was initially released as a PlayStation Portable exclusive in October 2006."
+      about_url: "https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Vice_City_Stories"
+    ebay:
+      query: "Vice City Stories (ps2, \"playstation 2\")"
+      negative: ["psp", "liberty city", "san andreas", "grand theft auto iii", "grand theft auto 3", "gta iii", "gta 3", "trilogy", "definitive", "chinatown", "xbox", "pc", "ps3", "ps4"]

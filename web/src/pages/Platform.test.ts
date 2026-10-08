@@ -60,6 +60,7 @@ describe('sortGames', () => {
 describe('isPlatform', () => {
   it('accepts every tracked console, including the Game Boy line', () => {
     expect(isPlatform('ps2')).toBe(true)
+    expect(isPlatform('ps3')).toBe(true)
     expect(isPlatform('dreamcast')).toBe(true)
     expect(isPlatform('gb')).toBe(true)
     expect(isPlatform('gbc')).toBe(true)

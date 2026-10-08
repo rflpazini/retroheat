@@ -351,6 +351,41 @@ func TestMentionsIgnoresThePlatformsOwnNumber(t *testing.T) {
 	}
 }
 
+// "PlayStation 3" carries a 3 the same way. Audited on 7 October 2026 before
+// the platform was added, 66 of the 87 listings kept for Resistance 3 were
+// the first two games, each naming the console in full.
+func TestMentionsIgnoresPlayStation3AsASequelNumber(t *testing.T) {
+	t.Parallel()
+	notThisGame := map[string]string{
+		"Resistance: Fall of Man (PlayStation 3 PS3, 2006) CIB Complete":                  "Resistance 3",
+		"Resistance 2 (Sony PlayStation 3 PS3) 2008 Complete CIB Black Label With Manual": "Resistance 3",
+		"Uncharted: Drake's Fortune (PlayStation 3, PS3) Complete CIB w/Manual Tested":    "Uncharted 3: Drake's Deception",
+		"Killzone 2 Sony Playstation3 Complete":                                           "Killzone 3",
+		"Ninja Gaiden Sigma (PlayStation 3) w/ manual":                                    "Ninja Gaiden 3",
+		"Disgaea 4 A Promise Unforgotten PS 3 Complete":                                   "Disgaea 3: Absence of Justice",
+		"Dead Space (Sony PlayStation Three) Complete":                                    "Dead Space 3",
+	}
+	for listing, game := range notThisGame {
+		if classify.Mentions(listing, game) {
+			t.Errorf("Mentions(%q, %q) = true, want false", listing, game)
+		}
+	}
+	stillThisGame := map[string]string{
+		"Resistance  3  (PlayStation 3,  PS3, 2011) Brand New Factory Sealed": "Resistance 3",
+		"Uncharted 3 Drake's Deception Sony PlayStation 3 PS3 Complete":       "Uncharted 3: Drake's Deception",
+		"Disgaea 3 Absence of Justice PS3 CIB":                                "Disgaea 3: Absence of Justice",
+		"Demon's Souls (Sony PlayStation 3 PS3, 2009) Disc Only":              "Demon's Souls",
+		// A PS2 game with a 3 in its title is still found when a seller
+		// mentions the later console.
+		"Devil May Cry 3 PS2 also plays on PlayStation 3": "Devil May Cry 3",
+	}
+	for listing, game := range stillThisGame {
+		if !classify.Mentions(listing, game) {
+			t.Errorf("Mentions(%q, %q) = false, want true", listing, game)
+		}
+	}
+}
+
 func TestClassifyRejectsSlabsDemosMerchandiseAndPartialSets(t *testing.T) {
 	t.Parallel()
 	rejected := []string{

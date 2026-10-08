@@ -22,6 +22,7 @@ const shelf = [
   game('Metroid II: Return of Samus', 'gb'),
   game('Shantae', 'gbc'),
   game('Metroid Fusion', 'gba'),
+  game('Folklore', 'ps3'),
 ]
 
 const titles = (q: string) => rank(q, shelf).map((h) => h.item.title)
@@ -71,6 +72,12 @@ describe('rank', () => {
     expect(parse('shantae gbc')).toEqual({ words: ['shantae'], platform: 'gbc' })
     expect(parse('shantae gameboycolor')).toEqual({ words: ['shantae'], platform: 'gbc' })
     expect(parse('fusion gameboyadvance')).toEqual({ words: ['fusion'], platform: 'gba' })
+  })
+
+  it('keeps the two PlayStation home consoles apart', () => {
+    expect(titles('folklore ps3')).toEqual(['Folklore'])
+    expect(titles('folklore ps2')).toEqual([])
+    expect(parse('folklore playstation3')).toEqual({ words: ['folklore'], platform: 'ps3' })
   })
 
   it('falls back to developer, publisher and year', () => {

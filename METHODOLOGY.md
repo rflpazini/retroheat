@@ -31,8 +31,9 @@ difference. Roman numerals, ordinals and spelled-out numbers are treated as
 equal, so "Shenmue II", "Shenmue 2" and "3rd Strike" all match.
 
 A number in the listing has to be the game's number. "Dark Cloud (Sony
-PlayStation 2)" is not Dark Cloud 2 and "Silent Hill Origins PlayStation 2" is
-not Silent Hill 2, so the platform's own name is set aside before the check;
+PlayStation 2)" is not Dark Cloud 2, "Silent Hill Origins PlayStation 2" is
+not Silent Hill 2 and "Resistance: Fall of Man (PlayStation 3)" is not
+Resistance 3, so the platform's own name is set aside before the check;
 Nintendo 64 is left alone because its games carry the 64 in their titles. A
 two-word title needs both words, since half of "Suikoden Tactics" is how "La
 Pucelle Tactics" would get counted.

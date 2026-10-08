@@ -47,6 +47,7 @@ const PLATFORM_ALIASES: Record<string, Platform> = (() => {
     m[fold(PLATFORM_LABELS[p]).replace(/ /g, '')] = p
   }
   m.playstation2 = 'ps2'
+  m.playstation3 = 'ps3'
   m.gc = 'gamecube'
   m.ngc = 'gamecube'
   m.psvita = 'vita'

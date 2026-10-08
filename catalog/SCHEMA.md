@@ -1,7 +1,8 @@
 # Catalog format
 
-Each platform has one file: `ps2.yaml`, `gamecube.yaml`, `psp.yaml`,
-`vita.yaml`, `n64.yaml`, `dreamcast.yaml`, `gb.yaml`, `gbc.yaml`, `gba.yaml`.
+Each platform has one file: `ps2.yaml`, `ps3.yaml`, `gamecube.yaml`,
+`psp.yaml`, `vita.yaml`, `n64.yaml`, `dreamcast.yaml`, `gb.yaml`, `gbc.yaml`,
+`gba.yaml`.
 Keeping them separate keeps pull request diffs small.
 
 ```yaml
@@ -13,7 +14,7 @@ games:
     variant: black-label     # optional, defaults to none
     igdb_id: 1904            # optional
     ebay:
-      query: "Silent Hill 2 PS2"
+      query: "Silent Hill 2 (ps2, \"playstation 2\")"
       negative: ["greatest hits", "hd collection", "silent hill 3"]
 ```
 
@@ -34,9 +35,10 @@ in a pull request is caught immediately.
 
 ### Naming the platform in a query
 
-eBay's search matches words, so `Silent Hill 2 PS2` is enough for a console
-whose sellers all write it the same way. Game Boy sellers do not: the same
-cartridge is listed as "Game Boy", "Gameboy", "GBA" or "Game Boy Advance".
+eBay's search matches words, so a query has to name the console the way its
+sellers do, in every spelling they use. Game Boy sellers are the clearest case:
+the same cartridge is listed as "Game Boy", "Gameboy", "GBA" or "Game Boy
+Advance".
 eBay accepts a group of alternatives in parentheses, separated by commas, so
 the Game Boy files end every query with the group for their console:
 
@@ -48,6 +50,32 @@ Measured on 15 September 2026, that group returned the 200-listing page cap
 for Metroid Fusion where the plain phrase "Game Boy Advance" returned 154 and
 "Gameboy Advance" 37. Use `(gameboy, "game boy")` for `gb.yaml` and
 `(gbc, "game boy color", "gameboy color")` for `gbc.yaml`.
+
+The same group matters wherever sellers spell a console two ways, because of
+how eBay reads a query with an exclusion in it. A plain `Banjo-Kazooie N64`
+also returns listings that only say "Nintendo 64"; add one negative and eBay
+matches every word literally, so those listings vanish. Measured on 7 October
+2026 with the same negatives on both sides: `Demon's Souls PS3` returned 60
+listings and `Demon's Souls (ps3, "playstation 3")` 85, Folklore 73 against
+104; across 31 PlayStation 2 entries the group raised the listings found from
+828 to 1,156 and brought three thin games up to a price. Entries added since
+then end in `(ps2, "playstation 2")`, `(ps3, "playstation 3")` or
+`(n64, "nintendo 64")` where sellers commonly use the long name. The older
+`PS2` and `N64` entries still use the abbreviation alone; moving them shifts
+every one of their medians at once, so it is a change for its own commit.
+GameCube and Dreamcast sellers write the console's name the same way nearly
+every time, and those files keep the plain form. PSP and Vita were not
+measured; one Vita entry needed `(vita, psvita)` to find a seller who wrote
+"PSVITA", so check the audit for listings the plain form missed.
+
+Two things are particular to PlayStation 3. eBay reads the 3 in "PlayStation
+3" as the 3 in a title, so a search for `Resistance 3 PS3` came back with 148
+listings of the first two games out of 200; the collector drops them, but they
+crowd the page, so a third game in a series should name the earlier ones in
+`negative` (`"fall of man"`, `"resistance 2"`). And the search also returns
+the same title on other consoles (`Demon's Souls` for PS5, `NCAA Football 14`
+for Xbox 360), so a game that exists elsewhere takes `"xbox"`, `"ps4"` or
+`"ps5"` as negatives.
 
 ## Adding a game
 

@@ -12,6 +12,7 @@ import {
   type LatestGame,
   type Platform as PlatformID,
 } from '@/lib/types'
+import { PlatformMark } from '@/components/PlatformMark'
 import { Sparkline } from '@/components/Sparkline'
 import { TrendPill, TrendStatus } from '@/components/TrendPill'
 import { Window, WindowPane } from '@/components/Window'
@@ -120,11 +121,20 @@ export function Platform() {
     // A board added to the catalog has no file until the scheduled collector
     // has run once. That is a state to explain, not a failure to report.
     if (file.error === '404') {
+      // Laid out as an alert, picture on the left; the sentence beside it names the console.
       return (
-        <Message
-          title="No prices yet"
-          detail={`${label} was added to the catalog, but the collector has not priced it yet. It runs twice a day, so this board fills in after its next run.`}
-        />
+        <Window title="No prices yet">
+          <div className="flex flex-wrap items-start gap-x-5 gap-y-3">
+            <PlatformMark platform={platform} decorative />
+            <div>
+              <p className="pixel mb-2 text-[0.6rem]">No prices yet</p>
+              <p className="max-w-md text-xs">
+                {label} was added to the catalog, but the collector has not priced it yet. It runs twice a day, so
+                this board fills in after its next run.
+              </p>
+            </div>
+          </div>
+        </Window>
       )
     }
     return <LoadError what={`the ${platform} board`} />
@@ -142,10 +152,18 @@ export function Platform() {
   return (
     <div className="flex flex-col gap-4 lg:min-h-0 lg:flex-1">
       <Window title={`${label} — price board`} bodyClassName="p-0" stripe order={0} fill>
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b-2 border-[var(--border)] p-3">
-          <p className="eyebrow">
-            {file.data.games.length} games · median and mode asking price · as of {file.data.as_of}
-          </p>
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b-2 border-[var(--border)] px-3 py-2">
+          {/*
+            Where Get Info put a file's icon: top left, ahead of the facts
+            about it. The floor is the tallest mark, so the strip is one
+            height on every board and the table does not jump between them.
+          */}
+          <div className="flex min-h-[1.8em] flex-wrap items-center gap-x-4 gap-y-2">
+            <PlatformMark platform={platform} />
+            <p className="eyebrow">
+              {file.data.games.length} games · median and mode asking price · as of {file.data.as_of}
+            </p>
+          </div>
           <div className="flex flex-wrap items-center gap-3">
             {CONDITIONS.map((c) => (
               <span key={c} className="flex items-center gap-1.5">
