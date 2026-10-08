@@ -87,7 +87,7 @@ games:
       trivia: "The only Valkyria Chronicles game never re-released on any other platform."
       why: "A modest print run and no remaster, unlike the first and fourth games, make it the expensive one of the series."
     ebay:
-      query: "Valkyria Chronicles II PSP"
+      query: "Valkyria Chronicles (ii, 2) PSP"
       negative: ["ps3", "valkyria chronicles 1", "valkyria chronicles 4"]
   - id: jeanne-darc-psp
     title: "Jeanne d'Arc"
@@ -146,7 +146,7 @@ games:
       trivia: "The first two Ys games in one remake, with three selectable soundtracks."
       why: "A small XSEED pressing that was never repeated on a console."
     ebay:
-      query: "Ys I II Chronicles PSP"
+      query: "Ys Chronicles PSP"
       negative: ["ys seven", "oath in felghana"]
   - id: trails-in-the-sky-psp
     title: "The Legend of Heroes: Trails in the Sky"
@@ -479,6 +479,8 @@ games:
       negative: ["gba"]
   - id: corpse-party-psp
     title: "Corpse Party"
+    # North America only got it on PSN; the UMD is Japanese.
+    region: NTSC-J
     info:
       about: "Corpse Party, released in Japan as Corpse Party: BloodCovered, is a horror adventure game developed by Team GrisGris and published by Xseed Games for Microsoft Windows. Originally developed as Corpse Party: NewChapter for Japanese mobile phones, it is a remake of the 1996 NEC PC-9801 video game Corpse-Party, and the second game in the Corpse Party series."
       about_url: "https://en.wikipedia.org/wiki/Corpse_Party_%282008_video_game%29"
@@ -1045,7 +1047,7 @@ games:
       about_url: "https://en.wikipedia.org/wiki/The_3rd_Birthday"
     ebay:
       query: "3rd Birthday PSP"
-      negative: ["parasite eve", "twisted edition"]
+      negative: ["twisted edition"]
   - id: final-fantasy-iv-the-complete-collection-psp
     title: "Final Fantasy IV: The Complete Collection"
     info:
@@ -1339,3 +1341,757 @@ games:
     ebay:
       query: "Ghost in the Shell Stand Alone Complex PSP"
       negative: ["ps2", "playstation 2", "ps1", "umd video", "compilation", "dvd", "blu-ray"]
+  - id: fate-extra-psp
+    title: "Fate/Extra"
+    info:
+      developer: "Type-Moon"
+      publisher: "Aksys Games"
+      year: 2011
+      genre: "Role-playing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/3/34/Fate_Extra_Cover_Art.png"
+      about: "Fate/Extra is a dungeon crawler role-playing game developed by Type-Moon and Imageepoch and published by Marvelous Entertainment. It was first released for the PlayStation Portable in Japan on July 22, 2010."
+      about_url: "https://en.wikipedia.org/wiki/Fate%2FExtra"
+    ebay:
+      query: "Fate Extra (psp, \"playstation portable\")"
+      negative: ["ccc", "record", "extella", "last encore", "blu-ray", "dvd"]
+  - id: dj-max-fever-psp
+    title: "DJ Max Fever"
+    info:
+      developer: "Pentavision"
+      publisher: "PM Studios"
+      year: 2009
+      genre: "Music"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/2/22/DJ_Max_Fever_Coverart.png"
+      about: "DJ Max Fever is a music game for the PlayStation Portable developed by Pentavision and PM Studios. It was released in 2009."
+      about_url: "https://en.wikipedia.org/wiki/DJ_Max_Fever"
+    ebay:
+      query: "(djmax, \"dj max\") Fever (psp, \"playstation portable\")"
+      negative: ["portable 3", "respect", "ps4", "switch"]
+  - id: djmax-portable-3-psp
+    title: "DJMax Portable 3"
+    info:
+      developer: "Pentavision"
+      publisher: "PM Studios"
+      year: 2010
+      genre: "Music"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/3/3b/PSP-DJMax-Portable3-Firstprint-Korea.jpg"
+      about: "DJMax Portable 3 is a music game for the PlayStation Portable published and developed by Pentavision in South Korea, and is a sequel to the earlier DJMax Portable games. DJMax Portable 3 was announced shortly after DJMax Technika 2 was announced."
+      about_url: "https://en.wikipedia.org/wiki/DJMax_Portable_3"
+    ebay:
+      query: "(djmax, \"dj max\") Portable 3 (psp, \"playstation portable\")"
+      negative: ["fever", "respect", "black square", "ps4", "switch"]
+  - id: growlanser-wayfarer-of-time-psp
+    title: "Growlanser: Wayfarer of Time"
+    info:
+      developer: "Career Soft"
+      publisher: "Atlus"
+      genre: "Tactical role-playing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/e/e8/Growlanserwayfareroftimeboxart.jpg"
+      about: "Growlanser: Wayfarer of Time is a tactical role-playing game developed by Career Soft and published by Atlus. It was originally released for the PlayStation 2 in Japan in December 2003, and later for the PlayStation Portable in Japan in August 2011 and in North America in July 2012."
+      about_url: "https://en.wikipedia.org/wiki/Growlanser:_Wayfarer_of_Time"
+      year: 2012
+    ebay:
+      query: "Growlanser Wayfarer (psp, \"playstation portable\")"
+      negative: ["ps2"]
+  - id: hammerin-hero-psp
+    title: "Hammerin' Hero"
+    info:
+      developer: "Irem"
+      publisher: "Atlus"
+      year: 2009
+      genre: "Platformer"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/9/95/Hammerin%27_Hero_Cover.jpg"
+      about: "Hammerin' Hero, known in Japan as Ikuze! Gen-San: Yuuyake Daiku Monogatari and in Europe as GenSan, is a 2008 platform video game for the PlayStation Portable handheld."
+      about_url: "https://en.wikipedia.org/wiki/Hammerin%27_Hero"
+    ebay:
+      query: "Hammerin (psp, \"playstation portable\")"
+      negative: ["harry"]
+  - id: summon-night-5-psp
+    title: "Summon Night 5"
+    info:
+      developer: "Felistella"
+      publisher: "Gaijinworks"
+      year: 2015
+      genre: "Tactical role-playing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/e/e4/Summon_Night_5_boxart.png"
+      about: "Summon Night 5 is a tactical role-playing game in the long-running Summon Night series of video games. It is the first and only original entry to be developed by Felistella and published by Bandai Namco Games, following original developer, Flight-Plan's, closure in 2010, and original publisher Banpresto being acquired by Bandai Namco."
+      about_url: "https://en.wikipedia.org/wiki/Summon_Night_5"
+    ebay:
+      query: "Summon Night 5 (psp, \"playstation portable\")"
+      negative: ["swordcraft", "lost borders", "gba"]
+  - id: class-of-heroes-2-psp
+    title: "Class of Heroes 2"
+    info:
+      publisher: "Gaijinworks"
+      genre: "Role-playing"
+      year: 2013
+    ebay:
+      query: "Class of Heroes 2 (psp, \"playstation portable\")"
+      negative: ["2g", "ps3", "class of heroes 3"]
+  - id: gungnir-psp
+    title: "Gungnir"
+    info:
+      developer: "Sting"
+      publisher: "Atlus"
+      year: 2012
+      genre: "Tactical role-playing"
+      about: "Gungnir is a tactical role-playing game developed by Sting Entertainment and published by Atlus. It is Episode IX of the Dept."
+      about_url: "https://en.wikipedia.org/wiki/Gungnir_%28video_game%29"
+    ebay:
+      query: "Gungnir (psp, \"playstation portable\")"
+      negative: []
+  - id: the-legend-of-heroes-a-tear-of-vermillion-psp
+    title: "The Legend of Heroes: A Tear of Vermillion"
+    info:
+      developer: "Nihon Falcom"
+      publisher: "Bandai"
+      genre: "Role-playing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/e/ea/Loh4_The_Legend_of_Heroes_A_Tear_of_Vermillion.jpg"
+      about: "The Legend of Heroes: A Tear of Vermillion, known as The Legend of Heroes IV: Akai Shizuku in Japan, is a 1996 role-playing video game developed by Nihon Falcom. It is the fourth game in The Legend of Heroes series, and the second in the Gagharv trilogy."
+      about_url: "https://en.wikipedia.org/wiki/The_Legend_of_Heroes:_A_Tear_of_Vermillion"
+      year: 2005
+    ebay:
+      query: "Legend Heroes Tear (psp, \"playstation portable\")"
+      negative: []
+  - id: the-legend-of-heroes-ii-prophecy-of-the-moonlight-witch-psp
+    title: "The Legend of Heroes II: Prophecy of the Moonlight Witch"
+    info:
+      developer: "Nihon Falcom"
+      publisher: "Namco Bandai Games"
+      genre: "Role-playing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/f/f0/Loh3_The_Legend_of_Heroes_II_Prophecy_of_the_Moonlight_Witch.jpg"
+      about: "The Legend of Heroes II: Prophecy of the Moonlight Witch, known as The Legend of Heroes III: Shiroki Majo in Japan, is a 1994 role-playing video game developed by Nihon Falcom. It is the third game in The Legend of Heroes series, and the first in the Gagharv trilogy; however, it was retitled to include a \"two\" in the title for its North American release."
+      about_url: "https://en.wikipedia.org/wiki/The_Legend_of_Heroes_II:_Prophecy_of_the_Moonlight_Witch"
+      year: 2006
+    ebay:
+      query: "Moonlight Witch (psp, \"playstation portable\")"
+      negative: ["switch", "ps4", "ps5", "pc"]
+  - id: ys-the-ark-of-napishtim-psp
+    title: "Ys: The Ark of Napishtim"
+    info:
+      developer: "Konami"
+      publisher: "Konami"
+      genre: "Action role-playing"
+      about: "Ys VI: The Ark of Napishtim is a 2003 action role-playing game developed and published by Nihon Falcom."
+      about_url: "https://en.wikipedia.org/wiki/Ys_VI:_The_Ark_of_Napishtim"
+      year: 2006
+    ebay:
+      query: "Ys Napishtim (psp, \"playstation portable\")"
+      negative: ["ps2", "pc"]
+  - id: wild-arms-xf-psp
+    title: "Wild Arms XF"
+    info:
+      developer: "Media.Vision"
+      publisher: "Xseed Games"
+      year: 2008
+      genre: "Tactical role-playing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/1/1a/Wild_Arms_XF.jpg"
+      about: "Wild Arms XF is a game in the Wild Arms series, the first for the PlayStation Portable."
+      about_url: "https://en.wikipedia.org/wiki/Wild_Arms_XF"
+    ebay:
+      query: "Wild Arms XF (psp, \"playstation portable\")"
+      negative: ["ps1", "ps2", "alter code"]
+  - id: valkyrie-profile-lenneth-psp
+    title: "Valkyrie Profile: Lenneth"
+    info:
+      developer: "Tose"
+      publisher: "Square Enix"
+      genre: "Role-playing"
+      about: "Valkyrie Profile is a role-playing video game developed by tri-Ace and published by Enix for the PlayStation. It was released on December 22, 1999 in Japan and on August 29, 2000 in North America."
+      about_url: "https://en.wikipedia.org/wiki/Valkyrie_Profile_%28video_game%29"
+      year: 2006
+    ebay:
+      query: "Valkyrie Profile Lenneth (psp, \"playstation portable\")"
+      negative: ["silmeria", "covenant", "ps1", "ps4", "ps5"]
+  - id: final-fantasy-anniversary-edition-psp
+    title: "Final Fantasy Anniversary Edition"
+    info:
+      developer: "Square Enix"
+      publisher: "Square Enix"
+      genre: "Role-playing"
+      about: "Final Fantasy is a 1987 role-playing video game developed and published by Square for the Nintendo Entertainment System. It is the first game in Square's Final Fantasy series, created by Hironobu Sakaguchi."
+      about_url: "https://en.wikipedia.org/wiki/Final_Fantasy_%28video_game%29"
+      year: 2007
+    ebay:
+      query: "Final Fantasy Anniversary (psp, \"playstation portable\")"
+      negative: ["final fantasy ii", "final fantasy 2", "dissidia", "tactics", "crisis core", "complete collection", "origins", "dawn of souls"]
+  - id: final-fantasy-ii-anniversary-edition-psp
+    title: "Final Fantasy II Anniversary Edition"
+    info:
+      developer: "Square Enix"
+      publisher: "Square Enix"
+      genre: "Role-playing"
+      year: 2007
+      about: "Final Fantasy II is a 1988 role-playing video game developed and published by Square for the Family Computer as the second installment of the Final Fantasy series. It was ported to and remade for WonderSwan Color, PlayStation, Game Boy Advance, PlayStation Portable, and mobile phones."
+      about_url: "https://en.wikipedia.org/wiki/Final_Fantasy_II"
+    ebay:
+      query: "Final Fantasy (ii, 2) Anniversary (psp, \"playstation portable\")"
+      negative: ["dissidia", "tactics", "origins", "dawn of souls"]
+  - id: phantasy-star-portable-psp
+    title: "Phantasy Star Portable"
+    info:
+      developer: "Sonic Team"
+      publisher: "Sega"
+      year: 2009
+      genre: "Action role-playing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/9/95/Phantasy_star_portable_box.jpg"
+      about: "Phantasy Star Portable is an action role-playing game co-developed by Sonic Team and Alfa System, and published by Sega for the PlayStation Portable."
+      about_url: "https://en.wikipedia.org/wiki/Phantasy_Star_Portable"
+    ebay:
+      query: "Phantasy Star Portable (psp, \"playstation portable\")"
+      negative: ["portable 2", "infinity", "online", "universe"]
+  - id: phantasy-star-portable-2-psp
+    title: "Phantasy Star Portable 2"
+    info:
+      developer: "Alfa System"
+      publisher: "Sega"
+      year: 2010
+      genre: "Action role-playing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/0/03/Phantasy_Star_Portable_2_Cover.jpg"
+      about: "Phantasy Star Portable 2 is a video game for the PlayStation Portable, produced by Alfa System and published by Sega. It is the sequel to Phantasy Star Portable and was released for the PlayStation Portable in Japan on December 3, 2009."
+      about_url: "https://en.wikipedia.org/wiki/Phantasy_Star_Portable_2"
+    ebay:
+      query: "Phantasy Star Portable 2 (psp, \"playstation portable\")"
+      negative: ["infinity", "online", "universe"]
+  - id: mana-khemia-student-alliance-psp
+    title: "Mana Khemia: Student Alliance"
+    info:
+      developer: "Gust Co. Ltd."
+      publisher: "NIS America"
+      year: 2009
+      genre: "Role-playing"
+      about: "Mana Khemia: Alchemists of Al-Revis is a role-playing video game developed by Gust Co. Ltd. in 2007 for the PlayStation 2. The game is the ninth entry to Gust's Atelier series and incorporates elements of standard turn-based combat and alchemy."
+      about_url: "https://en.wikipedia.org/wiki/Mana_Khemia:_Alchemists_of_Al-Revis"
+    ebay:
+      query: "Mana Khemia (psp, \"playstation portable\")"
+      negative: ["ps2", "al-revis", "fall of alchemy"]
+  - id: zhp-unlosing-ranger-vs-darkdeath-evilman-psp
+    title: "Z.H.P. Unlosing Ranger vs. Darkdeath Evilman"
+    info:
+      developer: "Nippon Ichi Software"
+      publisher: "NIS America"
+      year: 2010
+      genre: "Tactical role-playing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/a/a3/ZhpUnlosingRanger.jpg"
+      about: "Z.H.P. Unlosing Ranger VS Darkdeath Evilman is a tactical role-playing roguelite video game developed and published by Nippon Ichi Software."
+      about_url: "https://en.wikipedia.org/wiki/Z.H.P._Unlosing_Ranger_VS_Darkdeath_Evilman"
+    ebay:
+      query: "Unlosing Ranger (psp, \"playstation portable\")"
+      negative: []
+  - id: gladiator-begins-psp
+    title: "Gladiator Begins"
+    info:
+      publisher: "Aksys Games"
+      year: 2010
+      genre: "Fighting"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/d/df/Gladiator_Begins_US_Cover.jpg"
+      about: "Gladiator Begins is a fighting game developed by Japanese studio GOSHOW and published in Japan by Acquire on January 14, 2010, and in North America by Aksys Games on September 14."
+      about_url: "https://en.wikipedia.org/wiki/Gladiator_Begins"
+      developer: "Goshow"
+    ebay:
+      query: "Gladiator Begins (psp, \"playstation portable\")"
+      negative: []
+  - id: steambot-chronicles-battle-tournament-psp
+    title: "Steambot Chronicles: Battle Tournament"
+    info:
+      developer: "Irem"
+      publisher: "Atlus"
+      year: 2009
+      genre: "Action-adventure"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/f/fd/Steambot_Chronicles_Battle_Tournament_Box_Art.JPG"
+      about: "Steambot Chronicles: Battle Tournament is an action-adventure game for the PlayStation Portable handheld that features a sandbox style of play."
+      about_url: "https://en.wikipedia.org/wiki/Steambot_Chronicles:_Battle_Tournament"
+    ebay:
+      query: "Steambot (psp, \"playstation portable\")"
+      negative: ["ps2", "blokus"]
+  - id: harvest-moon-hero-of-leaf-valley-psp
+    title: "Harvest Moon: Hero of Leaf Valley"
+    info:
+      developer: "Marvelous Entertainment"
+      publisher: "Natsume"
+      year: 2010
+      genre: "Simulation"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/0/0b/Harvest_Moon_Hero_of_Leaf_Valley_Cover.jpg"
+      about: "Harvest Moon: Hero of Leaf Valley, known in Japan as Bokujō Monogatari: Sugar Mura to Minna no Negai , is a video game in the farm simulation series Harvest Moon for PlayStation Portable, developed by Marvelous Interactive Inc. and published by Natsume Inc. in the U.S."
+      about_url: "https://en.wikipedia.org/wiki/Harvest_Moon:_Hero_of_Leaf_Valley"
+    ebay:
+      query: "Harvest Moon Leaf Valley (psp, \"playstation portable\")"
+      negative: []
+  - id: popolocrois-psp
+    title: "PoPoLoCrois"
+    info:
+      developer: "G-Artists"
+      publisher: "Agetec"
+      year: 2005
+      genre: "Role-playing"
+    ebay:
+      query: "Popolocrois (psp, \"playstation portable\")"
+      negative: []
+  - id: hakuoki-demon-of-the-fleeting-blossom-psp
+    title: "Hakuoki: Demon of the Fleeting Blossom"
+    info:
+      developer: "Idea Factory"
+      publisher: "Aksys Games"
+      year: 2012
+      genre: "Visual novel"
+    ebay:
+      query: "(hakuoki, hakuouki) Fleeting Blossom (psp, \"playstation portable\")"
+      negative: ["3ds", "vita", "kyoto winds", "edo blossoms", "warriors", "memories"]
+  - id: hakuoki-warriors-of-the-shinsengumi-psp
+    title: "Hakuoki: Warriors of the Shinsengumi"
+    info:
+      developer: "Idea Factory"
+      publisher: "Aksys Games"
+      year: 2013
+    ebay:
+      query: "(hakuoki, hakuouki) Warriors (psp, \"playstation portable\")"
+      negative: ["ps3", "fleeting blossom", "3ds", "vita"]
+  - id: sweet-fuse-at-your-side-psp
+    title: "Sweet Fuse: At Your Side"
+    info:
+      developer: "Comcept"
+      publisher: "Aksys Games"
+      year: 2013
+      genre: "Visual novel"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/7/70/Sweet_Fuse_At_Your_Side_PSP.jpg"
+      about: "Sweet Fuse: At Your Side, released in Japan as Bomb Decision , is an otome visual novel for the PlayStation Portable. The game can also be played on the PlayStation Vita by being downloaded from the PlayStation Store."
+      about_url: "https://en.wikipedia.org/wiki/Sweet_Fuse:_At_Your_Side"
+    ebay:
+      query: "Sweet Fuse (psp, \"playstation portable\")"
+      negative: []
+  - id: monster-hunter-freedom-psp
+    title: "Monster Hunter Freedom"
+    info:
+      developer: "Capcom"
+      publisher: "Capcom"
+      year: 2006
+      genre: "Action role-playing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/0/03/MonsterHunterFreedom-NorthAmericanVersion-FrontCover.jpg"
+      about: "Monster Hunter Freedom is a 2005 action role-playing game developed and published by Capcom for the PlayStation Portable."
+      about_url: "https://en.wikipedia.org/wiki/Monster_Hunter_Freedom"
+    ebay:
+      query: "Monster Hunter Freedom (psp, \"playstation portable\")"
+      negative: ["freedom 2", "unite", "portable 3rd"]
+  - id: dragon-ball-z-tenkaichi-tag-team-psp
+    title: "Dragon Ball Z: Tenkaichi Tag Team"
+    info:
+      developer: "Spike"
+      publisher: "Namco Bandai Games"
+      year: 2010
+      genre: "Fighting"
+    ebay:
+      query: "Tenkaichi Tag Team (psp, \"playstation portable\")"
+      negative: []
+  - id: dragon-ball-z-shin-budokai-another-road-psp
+    title: "Dragon Ball Z: Shin Budokai - Another Road"
+    info:
+      developer: "Dimps"
+      publisher: "Atari"
+      genre: "Fighting"
+      year: 2007
+    ebay:
+      query: "Shin Budokai Another Road (psp, \"playstation portable\")"
+      negative: []
+  - id: naruto-shippuden-ultimate-ninja-impact-psp
+    title: "Naruto Shippuden: Ultimate Ninja Impact"
+    info:
+      developer: "CyberConnect2"
+      publisher: "Namco Bandai Games"
+      year: 2011
+      genre: "Fighting"
+    ebay:
+      query: "Naruto Ultimate Ninja Impact (psp, \"playstation portable\")"
+      negative: ["ps3", "ps4", "storm"]
+  - id: yu-gi-oh-gx-tag-force-psp
+    title: "Yu-Gi-Oh! GX Tag Force"
+    info:
+      genre: "Card game"
+      developer: "Konami"
+      publisher: "Konami"
+      year: 2006
+    ebay:
+      query: "GX Tag Force (psp, \"playstation portable\")"
+      negative: ["tag force 2", "tag force 3", "5d's", "5ds", "evolution", "switch", "pc"]
+  - id: yu-gi-oh-gx-tag-force-2-psp
+    title: "Yu-Gi-Oh! GX Tag Force 2"
+    info:
+      year: 2007
+      genre: "Card game"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/3/31/Yu-Gi-Oh%21_GX_Tag_Force_2_cover_art.webp"
+      about: "Yu-Gi-Oh! GX Tag Force 2 is a 2007 digital collectible card game based on the Yu-Gi-Oh! series, developed by Konami and released on PlayStation Portable format in September 2007."
+      about_url: "https://en.wikipedia.org/wiki/Yu-Gi-Oh%21_GX_Tag_Force_2"
+      developer: "Konami"
+      publisher: "Konami"
+    ebay:
+      query: "GX Tag Force 2 (psp, \"playstation portable\")"
+      negative: ["tag force 3", "5d's", "5ds", "switch", "pc"]
+  - id: yu-gi-oh-5ds-tag-force-4-psp
+    title: "Yu-Gi-Oh! 5D's Tag Force 4"
+    info:
+      developer: "Konami"
+      publisher: "Konami"
+      year: 2009
+      genre: "Card game"
+    ebay:
+      query: "Tag Force 4 (psp, \"playstation portable\")"
+      negative: ["tag force 5", "tag force 6", "switch", "pc"]
+  - id: yu-gi-oh-5ds-tag-force-5-psp
+    title: "Yu-Gi-Oh! 5D's Tag Force 5"
+    info:
+      developer: "Konami"
+      publisher: "Konami"
+      year: 2010
+      genre: "Card game"
+    ebay:
+      query: "Tag Force 5 (psp, \"playstation portable\")"
+      negative: ["tag force 4", "tag force 6", "switch", "pc"]
+  - id: dead-or-alive-paradise-psp
+    title: "Dead or Alive Paradise"
+    info:
+      developer: "Project Venus"
+      publisher: "Tecmo Koei"
+      year: 2010
+      genre: "Sports"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/b/bd/Dead_or_Alive_Paradise_Cover_Art.jpg"
+      about: "Dead or Alive Paradise is a 2010 video game developed by Project Venus and published by Tecmo Koei for the PlayStation Portable as part of the Dead or Alive series."
+      about_url: "https://en.wikipedia.org/wiki/Dead_or_Alive_Paradise"
+    ebay:
+      query: "Dead Alive Paradise (psp, \"playstation portable\")"
+      negative: ["xtreme", "xbox", "ps4", "venus"]
+  - id: def-jam-fight-for-ny-the-takeover-psp
+    title: "Def Jam: Fight for NY - The Takeover"
+    info:
+      developer: "AKI Corporation"
+      publisher: "Electronic Arts"
+      year: 2006
+      genre: "Fighting"
+      about: "Def Jam: Fight for NY is a 3D fighting video game developed by AKI Corporation and EA Canada and published by EA Games. It was released for the GameCube, PlayStation 2, and Xbox on September 21, 2004."
+      about_url: "https://en.wikipedia.org/wiki/Def_Jam:_Fight_for_NY"
+    ebay:
+      query: "Def Jam Takeover (psp, \"playstation portable\")"
+      negative: ["ps2", "gamecube", "xbox", "icon", "vendetta"]
+  - id: mortal-kombat-unchained-psp
+    title: "Mortal Kombat: Unchained"
+    info:
+      developer: "Just Games Interactive"
+      publisher: "Midway Games"
+      year: 2006
+      genre: "Fighting"
+      about: "Mortal Kombat: Deception is a 2004 fighting game developed and published by Midway. The sixth main installment in the Mortal Kombat franchise and sequel to Mortal Kombat: Deadly Alliance (2002), it was released for the PlayStation 2 (PS2) and Xbox in October 2004, the GameCube in March 2005, and for the PlayStation Portable (PSP) as Mortal Kombat: Unchained in November 2006."
+      about_url: "https://en.wikipedia.org/wiki/Mortal_Kombat:_Deception"
+    ebay:
+      query: "Mortal Kombat Unchained (psp, \"playstation portable\")"
+      negative: ["deception", "ps2", "xbox", "gamecube"]
+  - id: metal-slug-xx-psp
+    title: "Metal Slug XX"
+    info:
+      developer: "SNK Playmore"
+      publisher: "Atlus"
+      year: 2010
+      genre: "Run and gun"
+      about: "Metal Slug 7 is a run and gun video game developed by SNK Playmore for the Nintendo DS. It is the seventh and final title in the main Metal Slug series."
+      about_url: "https://en.wikipedia.org/wiki/Metal_Slug_7"
+    ebay:
+      query: "Metal Slug XX (psp, \"playstation portable\")"
+      negative: ["xbox", "anthology", "metal slug 7", "ds"]
+  - id: metal-slug-anthology-psp
+    title: "Metal Slug Anthology"
+    info:
+      developer: "Terminal Reality"
+      publisher: "SNK Playmore"
+      year: 2007
+      genre: "Shoot 'em up"
+      about: "Metal Slug Anthology is a video game compilation for the PlayStation 2, PlayStation Portable, PC and the Wii. The Wii version boasts different controller configurations, most taking advantage of the Wii Remote, with the Japanese version supporting the Classic Controller and all regional variants supporting the GameCube controller."
+      about_url: "https://en.wikipedia.org/wiki/Metal_Slug_Anthology"
+    ebay:
+      query: "Metal Slug Anthology (psp, \"playstation portable\")"
+      negative: ["wii", "ps2", "metal slug xx"]
+  - id: gradius-collection-psp
+    title: "Gradius Collection"
+    info:
+      developer: "Konami"
+      publisher: "Konami"
+      genre: "Shoot 'em up"
+      year: 2006
+    ebay:
+      query: "Gradius Collection (psp, \"playstation portable\")"
+      negative: []
+  - id: samurai-shodown-anthology-psp
+    title: "Samurai Shodown Anthology"
+    info:
+      developer: "Terminal Reality"
+      publisher: "SNK Playmore"
+      year: 2009
+      genre: "Fighting"
+      about: "Samurai Shodown Anthology is a 2008 fighting game compilation featuring the Samurai Shodown series released by SNK Playmore for the PlayStation 2, PlayStation Portable and Wii. This release does not include Samurai Shodown V Special, which made significant changes to the original release."
+      about_url: "https://en.wikipedia.org/wiki/Samurai_Shodown_Anthology"
+    ebay:
+      query: "Samurai Shodown Anthology (psp, \"playstation portable\")"
+      negative: ["ps2", "wii"]
+  - id: power-stone-collection-psp
+    title: "Power Stone Collection"
+    info:
+      developer: "Klein Computer Entertainment"
+      publisher: "Capcom"
+      genre: "Fighting"
+      about: "Power Stone is a 1999 arcade fighting game developed and published by Capcom, released on the Sega NAOMI arcade board and ported to the Dreamcast home console. It consists of battles in three-dimensional environments and contains objects that could be picked up and used."
+      about_url: "https://en.wikipedia.org/wiki/Power_Stone_%28video_game%29"
+      year: 2006
+    ebay:
+      query: "Power Stone Collection (psp, \"playstation portable\")"
+      negative: ["dreamcast", "fighting collection"]
+  - id: ultimate-ghosts-n-goblins-psp
+    title: "Ultimate Ghosts 'n Goblins"
+    info:
+      developer: "Tose"
+      publisher: "Capcom"
+      year: 2006
+      genre: "Hack and slash"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/2/26/PSP-UltimateGhostsnGoblins-USVersion-FrontCover.jpg"
+      about: "Ultimate Ghosts 'n Goblins is a video game in Capcom's Ghosts 'n Goblins series, developed by Tose and published by Capcom. It was released for the PlayStation Portable on August 3, 2006, in Japan and August 29, 2006, in North America."
+      about_url: "https://en.wikipedia.org/wiki/Ultimate_Ghosts_%27n_Goblins"
+    ebay:
+      query: "Ultimate Ghosts Goblins (psp, \"playstation portable\")"
+      negative: []
+  - id: gitaroo-man-lives-psp
+    title: "Gitaroo Man Lives!"
+    info:
+      developer: "iNiS"
+      publisher: "Koei"
+      genre: "Music"
+      about: "Gitaroo Man is a rhythm video game developed by iNiS and published by Koei for PlayStation 2. It features visual production by Mitsuru Nakamura and an original soundtrack by Japanese band COIL."
+      about_url: "https://en.wikipedia.org/wiki/Gitaroo_Man"
+      year: 2006
+    ebay:
+      query: "Gitaroo (psp, \"playstation portable\")"
+      negative: ["ps2"]
+  - id: parappa-the-rapper-psp
+    title: "PaRappa the Rapper"
+    info:
+      developer: "Epics"
+      publisher: "Sony Computer Entertainment"
+      genre: "Rhythm"
+      about: "PaRappa the Rapper is a rhythm video game developed by NanaOn-Sha and published by Sony Computer Entertainment for the PlayStation. It was originally released in Japan in 1996 and worldwide in 1997."
+      about_url: "https://en.wikipedia.org/wiki/PaRappa_the_Rapper"
+      year: 2007
+    ebay:
+      query: "Parappa (psp, \"playstation portable\")"
+      negative: ["ps1", "ps4", "um jammer", "rapper 2"]
+  - id: outrun-2006-coast-2-coast-psp
+    title: "OutRun 2006: Coast 2 Coast"
+    info:
+      developer: "Sumo Digital"
+      publisher: "Sega"
+      year: 2006
+      genre: "Racing"
+      about: "OutRun 2006: Coast 2 Coast, released as OutRun 2 SP in Japan, is a 2006 racing video game developed by Sumo Digital and published by Sega for home consoles."
+      about_url: "https://en.wikipedia.org/wiki/OutRun_2006:_Coast_2_Coast"
+    ebay:
+      query: "(outrun, \"out run\") 2006 (psp, \"playstation portable\")"
+      negative: ["ps2", "xbox", "pc"]
+  - id: street-supremacy-psp
+    title: "Street Supremacy"
+    info:
+      developer: "Genki"
+      year: 2006
+      genre: "Racing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/6/63/Street_Supremacy_cover.jpeg"
+      about: "Street Supremacy is a racing video game developed by Genki and published by Konami in North America, Europe and Australia. It is part of the Tokyo Xtreme Racer series, despite not being named as such."
+      about_url: "https://en.wikipedia.org/wiki/Street_Supremacy"
+      publisher: "Konami"
+    ebay:
+      query: "Street Supremacy (psp, \"playstation portable\")"
+      negative: []
+  - id: ace-combat-joint-assault-psp
+    title: "Ace Combat: Joint Assault"
+    info:
+      developer: "Access Games"
+      publisher: "Namco Bandai Games"
+      year: 2010
+      genre: "Combat flight simulator"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/8/80/Ace_Combat_Joint_Assault.png"
+      about: "Ace Combat: Joint Assault is a 2010 combat flight simulation video game developed by Project Aces and Access Games and published by Namco Bandai Games for the PlayStation Portable. It is the second in the Ace Combat franchise to be released for the PlayStation Portable and the fourth for a portable platform."
+      about_url: "https://en.wikipedia.org/wiki/Ace_Combat:_Joint_Assault"
+    ebay:
+      query: "Ace Combat Joint Assault (psp, \"playstation portable\")"
+      negative: []
+  - id: armored-core-formula-front-psp
+    title: "Armored Core: Formula Front"
+    info:
+      developer: "FromSoftware"
+      publisher: "Agetec"
+      year: 2005
+      genre: "Action"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/d/d2/PSPArmoredCoreFomulaOneFrontCover.jpg"
+      about: "Armored Core: Formula Front is a mecha video game developed by FromSoftware and published by Agetec."
+      about_url: "https://en.wikipedia.org/wiki/Armored_Core:_Formula_Front"
+    ebay:
+      query: "Armored Core Formula Front (psp, \"playstation portable\")"
+      negative: ["ps2", "last raven", "silent line", "armored core 3"]
+  - id: metal-gear-solid-digital-graphic-novel-psp
+    title: "Metal Gear Solid: Digital Graphic Novel"
+    info:
+      developer: "Kojima Productions"
+      publisher: "Konami"
+      genre: "Interactive comic"
+      year: 2006
+    ebay:
+      query: "Metal Gear Digital Graphic Novel (psp, \"playstation portable\")"
+      negative: ["dvd", "bande"]
+  - id: tenchu-shadow-assassins-psp
+    title: "Tenchu: Shadow Assassins"
+    info:
+      developer: "Acquire"
+      publisher: "Ubisoft"
+      year: 2009
+      genre: "Stealth"
+      about: "Tenchu: Shadow Assassins is a stealth game developed by Acquire and published by FromSoftware in Japan and Ubisoft worldwide for the Wii in 2008 and the PlayStation Portable in 2009."
+      about_url: "https://en.wikipedia.org/wiki/Tenchu:_Shadow_Assassins"
+    ebay:
+      query: "Tenchu Shadow Assassins (psp, \"playstation portable\")"
+      negative: ["wii"]
+  - id: shadow-of-destiny-psp
+    title: "Shadow of Destiny"
+    info:
+      developer: "Konami"
+      publisher: "Konami"
+      genre: "Adventure"
+      about: "Shadow of Memories is a mystery adventure game developed by Konami Computer Entertainment Tokyo and published by Konami. Originally released for the PlayStation 2 in 2001, it was later ported to Xbox and Microsoft Windows in 2002."
+      about_url: "https://en.wikipedia.org/wiki/Shadow_of_Memories"
+      year: 2010
+    ebay:
+      query: "Shadow of Destiny (psp, \"playstation portable\")"
+      negative: ["ps2", "xbox", "pc"]
+  - id: dead-head-fred-psp
+    title: "Dead Head Fred"
+    info:
+      developer: "Vicious Cycle Software"
+      publisher: "D3 Publisher"
+      year: 2007
+      genre: "Action-adventure"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/7/7e/DeadHeadFredCover.jpg"
+      about: "Dead Head Fred is a 2007 action-adventure game for the PlayStation Portable, developed by Vicious Cycle Software and published by D3 Publisher. It was released in North America on August 28, 2007, and is powered by Vicious Cycle's proprietary Vicious Engine."
+      about_url: "https://en.wikipedia.org/wiki/Dead_Head_Fred"
+    ebay:
+      query: "Dead Head Fred (psp, \"playstation portable\")"
+      negative: []
+  - id: death-jr-psp
+    title: "Death Jr."
+    info:
+      developer: "Backbone Entertainment"
+      publisher: "Konami"
+      year: 2005
+      genre: "Action-adventure"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/2/2a/Death_Jr._Coverart.png"
+      about: "Death Jr. is a 2005 video game for the PlayStation Portable. The PSP iteration was the first PSP game shown publicly and advertised as a killer-app."
+      about_url: "https://en.wikipedia.org/wiki/Death_Jr."
+    ebay:
+      query: "Death Jr (psp, \"playstation portable\")"
+      negative: ["root of evil", "death jr 2", "death jr. 2", "wii"]
+  - id: obscure-the-aftermath-psp
+    title: "Obscure: The Aftermath"
+    info:
+      developer: "Mighty Rocket Studio"
+      publisher: "Ignition Entertainment"
+      year: 2009
+      genre: "Survival horror"
+      about: "Obscure II, known in North America as Obscure: The Aftermath, is a survival horror video game developed by Hydravision Entertainment and published by Playlogic in PAL regions and Ignition in North America for Microsoft Windows, PlayStation 2 and Wii. It is the sequel to the 2004 video game Obscure."
+      about_url: "https://en.wikipedia.org/wiki/Obscure_II"
+    ebay:
+      query: "Obscure Aftermath (psp, \"playstation portable\")"
+      negative: ["ps2", "wii", "pc"]
+  - id: chili-con-carnage-psp
+    title: "Chili Con Carnage"
+    info:
+      developer: "Deadline Games"
+      publisher: "Eidos Interactive"
+      year: 2007
+      genre: "Third-person shooter"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/9/9c/Chili_Con_Carnage.jpg"
+      about: "Chili Con Carnage is a 2007 action/adventure third-person shooter video game released exclusively for the PlayStation Portable. It was developed by Deadline Games and published by Sci Entertainment in Europe and by Eidos in North America."
+      about_url: "https://en.wikipedia.org/wiki/Chili_Con_Carnage"
+    ebay:
+      query: "Chili Con Carnage (psp, \"playstation portable\")"
+      negative: []
+  - id: the-warriors-psp
+    title: "The Warriors"
+    info:
+      developer: "Rockstar Leeds"
+      publisher: "Rockstar Games"
+      year: 2007
+      genre: "Beat 'em up"
+      about: "The Warriors is a 2005 beat 'em up video game developed by Rockstar Toronto and published by Rockstar Games. Based on the 1979 film of the same name; it was released in October 2005 for the PlayStation 2 and Xbox, and February 2007 for the PlayStation Portable; the PSP port was developed by Rockstar Leeds."
+      about_url: "https://en.wikipedia.org/wiki/The_Warriors_%28video_game%29"
+    ebay:
+      query: "\"the warriors\" (psp, \"playstation portable\")"
+      negative: ["dynasty", "orochi", "ps2", "xbox", "ps4", "dvd", "blu-ray"]
+  - id: manhunt-2-psp
+    title: "Manhunt 2"
+    info:
+      developer: "Rockstar Leeds"
+      publisher: "Rockstar Games"
+      year: 2007
+      genre: "Stealth"
+      about: "Manhunt 2 is a 2007 stealth game by Rockstar Games. It was developed by Rockstar London for Microsoft Windows and PlayStation 2, Rockstar Leeds for the PlayStation Portable, and Rockstar Toronto for the Wii."
+      about_url: "https://en.wikipedia.org/wiki/Manhunt_2"
+    ebay:
+      query: "Manhunt 2 (psp, \"playstation portable\")"
+      negative: ["ps2", "wii", "pc"]
+  - id: gun-showdown-psp
+    title: "Gun Showdown"
+    info:
+      developer: "Rebellion Developments"
+      publisher: "Activision"
+      year: 2006
+      genre: "Action-adventure"
+      about: "Gun is a 2005 Western-themed action-adventure video game developed by Neversoft and published by Activision for the PlayStation 2, Xbox, GameCube, Windows, and Xbox 360 as a launch title."
+      about_url: "https://en.wikipedia.org/wiki/Gun_%28video_game%29"
+    ebay:
+      query: "Gun Showdown (psp, \"playstation portable\")"
+      negative: []
+  - id: scarface-money-power-respect-psp
+    title: "Scarface: Money. Power. Respect."
+    info:
+      developer: "FarSight Studios"
+      publisher: "Sierra Entertainment"
+      year: 2006
+      genre: "Turn-based strategy"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/f/f8/ScarfaceMPR.jpg"
+      about: "Scarface: Money. Power. Respect. is a 2006 video game released for the PlayStation Portable and Windows Mobile, based on the 1983 film starring Al Pacino."
+      about_url: "https://en.wikipedia.org/wiki/Scarface:_Money._Power._Respect."
+    ebay:
+      query: "Scarface (psp, \"playstation portable\")"
+      negative: ["world is yours", "ps2", "xbox", "wii", "pc", "dvd", "blu-ray", "4k"]
+  - id: spider-man-3-psp
+    title: "Spider-Man 3"
+    info:
+      developer: "Vicarious Visions"
+      publisher: "Activision"
+      year: 2007
+      genre: "Action-adventure"
+      about: "Spider-Man 3 is a 2007 action-adventure game loosely based on the 2007 film of the same name. The game is the sequel to 2004's Spider-Man 2, itself based on the 2004 film of the same name."
+      about_url: "https://en.wikipedia.org/wiki/Spider-Man_3_%28video_game%29"
+    ebay:
+      query: "(spider-man, spiderman) 3 (psp, \"playstation portable\")"
+      negative: ["ps2", "ps3", "xbox", "wii", "ds", "gba", "dvd", "blu-ray"]
+  - id: dantes-inferno-psp
+    title: "Dante's Inferno"
+    info:
+      developer: "Artificial Mind and Movement"
+      publisher: "Electronic Arts"
+      year: 2010
+      genre: "Action-adventure"
+      about: "Dante's Inferno is a 2010 action-adventure game developed by Visceral Games and published by Electronic Arts. The game was released for PlayStation 3, Xbox 360 and PlayStation Portable in February 2010."
+      about_url: "https://en.wikipedia.org/wiki/Dante%27s_Inferno_%28video_game%29"
+    ebay:
+      query: "Inferno (psp, \"playstation portable\")"
+      negative: ["ps3", "xbox", "dvd", "blu-ray", "comic"]
+  - id: pangya-fantasy-golf-psp
+    title: "Pangya: Fantasy Golf"
+    info:
+      publisher: "Tomy"
+      year: 2009
+      genre: "Sports"
+    ebay:
+      query: "Pangya (psp, \"playstation portable\")"
+      negative: ["wii"]
