@@ -190,22 +190,6 @@ games:
     ebay:
       query: "Tearaway Vita"
       negative: ["unfolded", "ps4"]
-  - id: soul-sacrifice-delta-vita
-    title: "Soul Sacrifice Delta"
-    region: PAL
-    info:
-      developer: "Marvelous"
-      publisher: "Sony Computer Entertainment"
-      year: 2014
-      genre: "Action-adventure"
-      about: "Soul Sacrifice is a 2013 action role-playing video game developed by Marvelous AQL and Japan Studio and published by Sony Computer Entertainment for the PlayStation Vita."
-      about_url: "https://en.wikipedia.org/wiki/Soul_Sacrifice_%28video_game%29"
-      cover_url: "https://upload.wikimedia.org/wikipedia/en/8/80/Soul_Sacrifice_NA_boxart.jpg"
-      trivia: "In North America the expanded Delta version was sold only as a download."
-      why: "No US disc exists, so physical copies are European or Japanese imports."
-    ebay:
-      query: "Soul Sacrifice Delta Vita"
-      negative: ["soul sacrifice original"]
   - id: freedom-wars-vita
     title: "Freedom Wars"
     info:
@@ -266,18 +250,6 @@ games:
     ebay:
       query: "WipEout 2048 Vita"
       negative: ["omega collection", "ps4", "pure", "pulse"]
-  - id: severed-vita
-    title: "Severed"
-    info:
-      developer: "Drinkbox Studios"
-      year: 2016
-      genre: "Action-adventure"
-      about: "Severed is an action-adventure video game developed and published by DrinkBox Studios for the PlayStation Vita, iOS, Wii U, Nintendo 3DS and Nintendo Switch. It was released on April 26, 2016, in North America and Europe for the PlayStation Vita and it was released on Wii U and iOS on September 22, 2016."
-      about_url: "https://en.wikipedia.org/wiki/Severed_%28video_game%29"
-      cover_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Severed_video_game_logo.png/330px-Severed_video_game_logo.png"
-    ebay:
-      query: "Severed Vita"
-      negative: ["limited run only ps4", "switch"]
   - id: salt-and-sanctuary-vita
     title: "Salt and Sanctuary"
     info:
@@ -304,19 +276,6 @@ games:
     ebay:
       query: "Spelunky Vita"
       negative: ["ps4", "switch", "spelunky 2"]
-  - id: rogue-legacy-vita
-    title: "Rogue Legacy"
-    info:
-      developer: "Cellar Door Games"
-      publisher: "Cellar Door Games"
-      year: 2013
-      genre: "Platformer"
-      about: "Rogue Legacy is a 2013 platform game with roguelike elements developed and published by Cellar Door Games. The game was released for Microsoft Windows, Linux, OS X, PlayStation 3, PlayStation 4, PlayStation Vita, Xbox One, Nintendo Switch, and iOS."
-      about_url: "https://en.wikipedia.org/wiki/Rogue_Legacy"
-      cover_url: "https://upload.wikimedia.org/wikipedia/en/e/ef/Rogue_Legacy_cover_art.jpg"
-    ebay:
-      query: "Rogue Legacy Vita"
-      negative: ["ps4", "rogue legacy 2", "switch"]
   - id: trails-of-cold-steel-vita
     title: "The Legend of Heroes: Trails of Cold Steel"
     info:
@@ -362,25 +321,8 @@ games:
     ebay:
       query: "Toukiden Kiwami Vita"
       negative: ["toukiden 2", "the age of demons", "ps4"]
-  - id: atelier-ayesha-plus-vita
-    title: "Atelier Ayesha Plus: The Alchemist of Dusk"
-    region: PAL
-    info:
-      developer: "Gust"
-      publisher: "Koei Tecmo"
-      year: 2015
-      genre: "Role-playing"
-      about: "Atelier Ayesha: The Alchemist of Dusk is a Japanese role-playing video game developed by Gust Co. Ltd. The character designs are by Hidari. It is the fourteenth title in the Atelier series, coming after Atelier Meruru, but has a storyline independent from previous titles in the series."
-      about_url: "https://en.wikipedia.org/wiki/Atelier_Ayesha:_The_Alchemist_of_Dusk"
-      cover_url: "https://upload.wikimedia.org/wikipedia/en/5/58/AtelierAyesha.jpg"
-      trivia: "The Vita version was sold in North America only as a download."
-      why: "No US disc exists, so physical copies are European imports."
-    ebay:
-      query: "Atelier Ayesha Plus Vita"
-      negative: ["escha", "shallie", "ps3"]
   - id: atelier-escha-logy-plus-vita
     title: "Atelier Escha & Logy Plus"
-    region: PAL
     info:
       developer: "Gust"
       publisher: "Koei Tecmo"
@@ -392,24 +334,10 @@ games:
       trivia: "The Vita version was sold in North America only as a download."
       why: "No US disc exists, so physical copies are European imports."
     ebay:
-      query: "Atelier Escha and Logy Plus Vita"
+      query: "Atelier Escha Logy Plus (vita, psvita)"
       negative: ["ayesha", "shallie", "ps3"]
-  - id: digimon-story-cyber-sleuth-vita
-    title: "Digimon Story: Cyber Sleuth"
-    region: PAL
-    info:
-      developer: "Media.Vision"
-      publisher: "Bandai Namco Entertainment"
-      year: 2016
-      genre: "Role-playing"
-      about: "Digimon Story: Cyber Sleuth is a role-playing video game developed by Media.Vision and published by Bandai Namco Entertainment that was released in Japan on March 12, 2015 for PlayStation Vita and PlayStation 4. Part of the Digimon franchise, the game is the fifth installment in the Digimon Story series, following 2011's Super Xros Wars, and the first to be released on home consoles."
-      about_url: "https://en.wikipedia.org/wiki/Digimon_Story:_Cyber_Sleuth"
-      cover_url: "https://upload.wikimedia.org/wikipedia/en/b/b1/Digimon_Story%2C_Cyber_Sleuth.jpeg"
-      trivia: "The Vita version was sold in North America only as a download; the PS4 disc was the physical release."
-      why: "No US Vita disc exists, so physical copies are European or Asian imports."
-    ebay:
-      query: "Digimon Story Cyber Sleuth Vita"
-      negative: ["hackers memory", "ps4", "switch", "complete edition"]
+      # "Atelier ... Plus" is every Vita Atelier; the name sets this one apart.
+      require: ["escha"]
   - id: demon-gaze-vita
     title: "Demon Gaze"
     info:
@@ -647,32 +575,6 @@ games:
     ebay:
       query: "Atelier Totori Plus Vita"
       negative: ["ps3", "dx", "ps4", "switch"]
-  - id: atelier-meruru-plus-vita
-    title: "Atelier Meruru Plus: The Apprentice of Arland"
-    region: NTSC-J
-    info:
-      developer: "Gust Co. Ltd."
-      publisher: "Nippon Ichi Software"
-      year: 2011
-      genre: "Role-playing"
-      cover_url: "https://upload.wikimedia.org/wikipedia/en/e/e5/Atelier_Meruru_cover.jpg"
-      about: "Atelier Meruru: The Apprentice of Arland is a Japanese role-playing video game developed by Gust Co. Ltd. It was released for PlayStation 3 on June 23, 2011, in Japan. Atelier Meruru is the thirteenth installment in the Atelier series, and it continues the series' emphasis on item creation and synthesis."
-      about_url: "https://en.wikipedia.org/wiki/Atelier_Meruru:_The_Apprentice_of_Arland"
-    ebay:
-      query: "Atelier Meruru Plus Vita"
-      negative: ["ps3", "dx", "ps4", "switch"]
-  - id: atelier-rorona-plus-vita
-    title: "Atelier Rorona Plus: The Alchemist of Arland"
-    info:
-      developer: "Gust Co. Ltd."
-      publisher: "Nippon Ichi Software"
-      genre: "Role-playing"
-      cover_url: "https://upload.wikimedia.org/wikipedia/en/8/81/Atelier-Rorona_2010_06-17-10_22.jpg_500.jpg"
-      about: "Atelier Rorona: The Alchemist of Arland is a Japanese role-playing video game developed by Gust Co. Ltd. It first released for the PlayStation 3 on June 25, 2009, in Japan and was later re-released under the PlayStation 3 the Best label on September 23, 2010."
-      about_url: "https://en.wikipedia.org/wiki/Atelier_Rorona:_The_Alchemist_of_Arland"
-    ebay:
-      query: "Atelier Rorona Plus Vita"
-      negative: ["ps3", "dx", "ps4", "switch", "3ds"]
   - id: atelier-shallie-plus-vita
     title: "Atelier Shallie Plus: Alchemists of the Dusk Sea"
     info:
@@ -773,19 +675,6 @@ games:
     ebay:
       query: "God of War Collection Vita"
       negative: ["ps3", "origins", "saga", "ps4"]
-  - id: ratchet-and-clank-collection-vita
-    title: "Ratchet & Clank Collection"
-    info:
-      developer: "Insomniac Games"
-      publisher: "Sony Interactive Entertainment"
-      year: 2012
-      genre: "Platformer"
-      cover_url: "https://upload.wikimedia.org/wikipedia/en/8/80/Ratchet_and_Clank_HD_Trilogy.jpg"
-      about: "Ratchet & Clank Collection is a 2012 video game compilation developed by Idol Minds and published by Sony Computer Entertainment for the PlayStation 3. It includes high-definition remasters of the first three games of the Ratchet & Clank series originally developed for the PlayStation 2."
-      about_url: "https://en.wikipedia.org/wiki/Ratchet_&_Clank_Collection"
-    ebay:
-      query: "Ratchet and Clank Collection Vita"
-      negative: ["ps3", "ps4"]
   - id: assassins-creed-iii-liberation-vita
     title: "Assassin's Creed III: Liberation"
     info:
@@ -864,19 +753,8 @@ games:
     ebay:
       query: "BlazBlue Chrono Phantasma Extend Vita"
       negative: ["ps3", "ps4", "xbox", "pc", "central fiction", "continuum shift"]
-  - id: hatsune-miku-project-diva-f-vita
-    title: "Hatsune Miku: Project DIVA f"
-    info:
-      developer: "Crypton Future Media"
-      publisher: "Sega"
-      year: 2012
-      genre: "Music"
-      cover_url: "https://upload.wikimedia.org/wikipedia/en/b/b8/Next_Hatsune_Miku_Project_DIVA.png"
-      about: "Hatsune Miku: Project DIVA f is a 2012 rhythm game created by Sega and Crypton Future Media for the PlayStation Vita and PlayStation 3."
-      about_url: "https://en.wikipedia.org/wiki/Hatsune_Miku:_Project_Diva_F"
-    ebay:
-      query: "Hatsune Miku Project Diva f Vita"
-      negative: ["f 2nd", "project diva x", "ps3", "ps4", "future tone", "mega mix", "megamix", "switch", "japan", "japanese"]
+      # The Vita also had plain Chrono Phantasma, three words of this title.
+      require: ["extend"]
   - id: hatsune-miku-project-diva-f-2nd-vita
     title: "Hatsune Miku: Project DIVA f 2nd"
     info:
@@ -1261,3 +1139,759 @@ games:
     ebay:
       query: "Utawarerumono Mask of Deception Vita"
       negative: ["truth", "prelude", "lullaby", "ps4", "pc"]
+  - id: ar-nosurge-plus-vita
+    title: "Ar nosurge Plus"
+    info:
+      developer: "Gust"
+      publisher: "Koei Tecmo"
+      year: 2015
+      genre: "Role-playing"
+      about: "Ar nosurge: Ode to an Unborn Star is a Japanese role-playing video game developed by Gust and published by Koei Tecmo. Directed by Akira Tsuchiya, the game takes the anime art style of Gust's flagship Atelier video game series and puts it into a science fiction space opera-type setting."
+      about_url: "https://en.wikipedia.org/wiki/Ar_Nosurge"
+    ebay:
+      query: "Nosurge (vita, psvita)"
+      negative: ["ps3", "ps4", "switch", "dx", "ciel", "pc", "steam"]
+  - id: a-rose-in-the-twilight-vita
+    title: "A Rose in the Twilight"
+    info:
+      developer: "Nippon Ichi Software"
+      publisher: "NIS America"
+      year: 2017
+      genre: "Puzzle-platformer"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/0/0c/A_Rose_in_the_Twilight_video_game_cover.jpg"
+      about: "A Rose in the Twilight is a puzzle-platform game with horror elements. It was created by Japanese game developer Nippon Ichi Software for the PlayStation Vita and Microsoft Windows."
+      about_url: "https://en.wikipedia.org/wiki/A_Rose_in_the_Twilight"
+    ebay:
+      query: "Rose Twilight (vita, psvita)"
+      negative: ["pc", "steam"]
+  - id: breach-and-clear-vita
+    title: "Breach & Clear"
+    info:
+      developer: "Mighty Rabbit Studios"
+      publisher: "Limited Run Games"
+      year: 2015
+      genre: "Turn-based strategy"
+      about: "Breach & Clear is a turn-based strategy action role-playing game developed by Mighty Rabbit Studios and published by Gun Media. The player is in control of four special forces units who must enter an area and kill all enemies in it."
+      about_url: "https://en.wikipedia.org/wiki/Breach_&_Clear"
+    ebay:
+      query: "Breach Clear (vita, psvita)"
+      negative: ["deadline", "ps4", "xbox", "pc", "steam"]
+  - id: papers-please-vita
+    title: "Papers, Please"
+    info:
+      developer: "Lucas Pope"
+      publisher: "Limited Run Games"
+      year: 2020
+      genre: "Simulation"
+      about: "Papers, Please is a 2013 puzzle simulation video game by Lucas Pope, developed and published independently through his production company 3909 LLC. The game was released on August 8, 2013, for Microsoft Windows and OS X, for Linux on February 12, 2014, and for iOS on December 12, 2014."
+      about_url: "https://en.wikipedia.org/wiki/Papers%2C_Please"
+    ebay:
+      query: "Papers Please (vita, psvita)"
+      negative: ["ps4", "switch", "xbox", "pc", "steam"]
+  - id: super-meat-boy-vita
+    title: "Super Meat Boy"
+    info:
+      developer: "Team Meat"
+      publisher: "Limited Run Games"
+      genre: "Platformer"
+      about: "Super Meat Boy is a 2010 platformer game developed and published by American indie studio Team Meat. It was designed by Edmund McMillen and Tommy Refenes as the successor to Meat Boy, a 2008 Flash game designed by McMillen and Jonathan McEntee."
+      about_url: "https://en.wikipedia.org/wiki/Super_Meat_Boy"
+    ebay:
+      query: "Super Meat Boy (vita, psvita)"
+      negative: ["forever", "ps4", "switch", "xbox", "wii u", "pc", "steam", "collector's edition"]
+  - id: metal-slug-3-vita
+    title: "Metal Slug 3"
+    info:
+      developer: "SNK"
+      publisher: "Limited Run Games"
+      genre: "Run and gun"
+      about: "Metal Slug 3 is a 2000 run and gun video game developed and published by SNK for the Neo Geo arcade and home systems. It is the sequel to Metal Slug 2/Metal Slug X."
+      about_url: "https://en.wikipedia.org/wiki/Metal_Slug_3"
+      year: 2019
+    ebay:
+      query: "Metal Slug 3 (vita, psvita)"
+      negative: ["ps4", "ps3", "ps2", "xbox", "switch", "anthology", "pc", "steam"]
+  - id: oddworld-new-n-tasty-vita
+    title: "Oddworld: New 'n' Tasty"
+    info:
+      developer: "Just Add Water"
+      publisher: "Limited Run Games"
+      year: 2016
+      genre: "Platformer"
+      about: "Oddworld: New 'n' Tasty! is a 2014 cinematic platform video game developed by Just Add Water and published by Oddworld Inhabitants as a \"ground-up remake\" of Oddworld: Abe's Oddysee. The game was released in North America on 22 July 2014 and in Europe on 23 July 2014 for the PlayStation 4."
+      about_url: "https://en.wikipedia.org/wiki/Oddworld:_New_%27n%27_Tasty%21"
+    ebay:
+      query: "Oddworld Tasty (vita, psvita)"
+      negative: ["ps4", "ps3", "switch", "xbox", "wii u", "pc", "soulstorm", "munch", "munch's", "wrath"]
+  - id: oddworld-strangers-wrath-vita
+    title: "Oddworld: Stranger's Wrath"
+    info:
+      developer: "Oddworld Inhabitants"
+      publisher: "Limited Run Games"
+      genre: "Action-adventure"
+      about: "Oddworld: Stranger's Wrath is an action-adventure video game developed by Oddworld Inhabitants and published by Electronic Arts for the Xbox."
+      about_url: "https://en.wikipedia.org/wiki/Oddworld:_Stranger%27s_Wrath"
+      year: 2016
+    ebay:
+      query: "Oddworld Wrath (vita, psvita)"
+      negative: ["xbox", "ps3", "switch", "pc", "steam", "tasty", "munch", "munch's"]
+  - id: oddworld-munchs-oddysee-vita
+    title: "Oddworld: Munch's Oddysee"
+    info:
+      developer: "Oddworld Inhabitants"
+      publisher: "Limited Run Games"
+      genre: "Platformer"
+      about: "Oddworld: Munch's Oddysee is a 2001 platform video game developed by Oddworld Inhabitants and originally published by Microsoft Game Studios for the Xbox where it was released as a launch title."
+      about_url: "https://en.wikipedia.org/wiki/Oddworld:_Munch%27s_Oddysee"
+      year: 2018
+    ebay:
+      query: "Oddworld (munch, munchs, \"munch's\") (vita, psvita)"
+      negative: ["xbox", "ps3", "switch", "pc", "steam", "tasty", "wrath"]
+  - id: bloodstained-curse-of-the-moon-vita
+    title: "Bloodstained: Curse of the Moon"
+    info:
+      developer: "Inti Creates"
+      publisher: "Limited Run Games"
+      year: 2019
+      genre: "Platformer"
+      about: "Bloodstained: Curse of the Moon is a 2018 platform game developed and published by Inti Creates. It is a companion title to developer ArtPlay's 2019 game Bloodstained: Ritual of the Night and was conceived to fulfill the promise for a retro-style accompaniment to Ritual of the Night after its Kickstarter campaign exceeded crowdfunding goals."
+      about_url: "https://en.wikipedia.org/wiki/Bloodstained:_Curse_of_the_Moon"
+    ebay:
+      query: "Bloodstained Curse Moon (vita, psvita)"
+      negative: ["ps4", "switch", "xbox", "3ds", "pc", "steam", "ritual of the night", "curse of the moon 2", "classic edition"]
+  - id: the-house-in-fata-morgana-vita
+    title: "The House in Fata Morgana"
+    info:
+      developer: "Novectacle"
+      publisher: "Limited Run Games"
+      year: 2019
+      genre: "Visual novel"
+      about: "The House in Fata Morgana is a visual novel video game developed by Novectacle. It was released for Microsoft Windows and iOS by Novectacle in 2012 and 2014 in Japan, and for Microsoft Windows by MangaGamer in 2016 internationally."
+      about_url: "https://en.wikipedia.org/wiki/The_House_in_Fata_Morgana"
+    ebay:
+      query: "Fata Morgana (vita, psvita)"
+      negative: ["ps4", "switch", "pc", "steam", "collector's edition"]
+  - id: shovel-knight-vita
+    title: "Shovel Knight"
+    info:
+      developer: "Yacht Club Games"
+      publisher: "Yacht Club Games"
+      year: 2016
+      genre: "Platformer"
+      about: "Shovel Knight is a platform game developed and published by Yacht Club Games. Development was crowdfunded and the game was released for Nintendo 3DS, Wii U, and Windows in June 2014."
+      about_url: "https://en.wikipedia.org/wiki/Shovel_Knight"
+    ebay:
+      query: "Shovel Knight (vita, psvita)"
+      negative: ["3ds", "wii u", "ps4", "ps3", "switch", "xbox", "pc", "steam", "treasure trove", "pocket dungeon", "showdown"]
+  - id: va-11-hall-a-vita
+    title: "VA-11 Hall-A"
+    info:
+      developer: "Sukeban Games"
+      year: 2018
+      genre: "Visual novel"
+      about: "VA-11 Hall-A: Cyberpunk Bartender Action is a 2016 visual novel developed by Venezuelan studio Sukeban Games and published by Ysbryd Games. The game was initially released for Microsoft Windows, OS X, and Linux on June 21, 2016, and ports were later released for PlayStation Vita, PlayStation 4, and Nintendo Switch, with the Vita port developed by Wolfgame and published by Limited Run Games."
+      about_url: "https://en.wikipedia.org/wiki/VA-11_Hall-A"
+      publisher: "Limited Run Games"
+    ebay:
+      query: "(\"va-11\", va11, \"va 11\", \"hall-a\") (vita, psvita)"
+      negative: ["ps4", "switch", "pc", "steam", "collector's edition"]
+  - id: undertale-vita
+    title: "Undertale"
+    info:
+      developer: "Toby Fox"
+      publisher: "Fangamer"
+      year: 2018
+      genre: "Role-playing"
+      about: "Undertale is a 2015 role-playing video game created by American indie developer Toby Fox. The player controls a child who has fallen into the Underground: a large, secluded region under the surface of the Earth, separated by a magical barrier."
+      about_url: "https://en.wikipedia.org/wiki/Undertale"
+    ebay:
+      query: "Undertale (vita, psvita)"
+      negative: ["ps4", "switch", "xbox", "pc", "steam", "deltarune", "collector's edition"]
+  - id: soldner-x-2-final-prototype-vita
+    title: "Söldner-X 2: Final Prototype"
+    info:
+      genre: "Shoot 'em up"
+      developer: "SideQuest Studios"
+      publisher: "Limited Run Games"
+      year: 2016
+    ebay:
+      query: "(soldner, söldner) (vita, psvita)"
+      negative: ["ps3", "ps4", "pc", "steam"]
+  - id: f1-2011-vita
+    title: "F1 2011"
+    info:
+      developer: "Sumo Digital"
+      publisher: "Codemasters"
+      year: 2012
+      genre: "Racing"
+      about: "F1 2011 is a video game developed by Codemasters based on the 2011 Formula One season. The game was released in 2011 on Microsoft Windows, the Nintendo 3DS, PlayStation 3, and Xbox 360, with a 2012 release on the PlayStation Vita as a launch title for the system."
+      about_url: "https://en.wikipedia.org/wiki/F1_2011_%28video_game%29"
+    ebay:
+      query: "F1 2011 (vita, psvita)"
+      negative: ["ps3", "xbox", "3ds", "pc"]
+  - id: night-trap-vita
+    title: "Night Trap"
+    info:
+      developer: "Digital Pictures"
+      publisher: "Limited Run Games"
+      year: 2018
+      genre: "Interactive movie"
+      about: "Night Trap is a 1992 interactive movie developed by Digital Pictures and published by Sega for the Sega CD. Presented primarily through full-motion video (FMV), Night Trap has the player observe a group of teenage girls having a sleepover at a house which, unbeknownst to them, is infested with vampires."
+      about_url: "https://en.wikipedia.org/wiki/Night_Trap"
+    ebay:
+      query: "Night Trap (vita, psvita)"
+      negative: ["ps4", "xbox", "switch", "pc", "steam"]
+  - id: supremacy-mma-unrestricted-vita
+    title: "Supremacy MMA: Unrestricted"
+    info:
+      developer: "Kung Fu Factory"
+      publisher: "505 Games"
+      year: 2012
+      genre: "Fighting"
+      about: "Supremacy MMA is a fighting video game developed by Kung Fu Factory and published by 505 Games. The game was released on September 20, 2011 in North America, September 23 in Europe, and September 29 in Australia for the PlayStation 3 and Xbox 360 game consoles. It was also ported to the PlayStation Vita on March 27, 2012 in North America, and May 11 in Europe, under the title Supremacy MMA: Unrestricted, with several exclusive venues, 2 exclusive fighters and both of the Pre-order DLC fighters."
+      about_url: "https://en.wikipedia.org/wiki/Supremacy_MMA"
+    ebay:
+      query: "Supremacy MMA (vita, psvita)"
+      negative: ["ps3", "xbox"]
+  - id: rabi-ribi-vita
+    title: "Rabi-Ribi"
+    info:
+      developer: "CreSpirit"
+      publisher: "Limited Run Games"
+      year: 2018
+      genre: "Metroidvania"
+      about: "Rabi-Ribi is a 2016 side-scrolling video game developed and published by CreSpirit. The game was initially crowdfunded, and despite only reaching half of its funding goal, it released for Windows in January 2016, and was ported to the PlayStation 4 and PS Vita in 2017."
+      about_url: "https://en.wikipedia.org/wiki/Rabi-Ribi"
+    ebay:
+      query: "(rabi, rabiribi, \"rabi-ribi\") (vita, psvita)"
+      negative: ["ps4", "switch", "pc", "steam"]
+  - id: dariusburst-chronicle-saviours-vita
+    title: "Dariusburst: Chronicle Saviours"
+    info:
+      publisher: "Limited Run Games"
+      genre: "Shoot 'em up"
+      about: "Dariusburst is a horizontal scrolling shooter developed by Pyramid and published by Taito. Forming part of the Darius series, it was released for the PlayStation Portable on December 24, 2009."
+      about_url: "https://en.wikipedia.org/wiki/Dariusburst"
+      developer: "Pyramid"
+      year: 2017
+    ebay:
+      query: "(dariusburst, \"darius burst\") (vita, psvita)"
+      negative: ["ps4", "psp", "switch", "pc", "steam", "second prologue", "cozmic"]
+  - id: the-king-of-fighters-97-global-match-vita
+    title: "The King of Fighters '97 Global Match"
+    info:
+      developer: "SNK"
+      publisher: "Limited Run Games"
+      genre: "Fighting"
+      about: "The King of Fighters '97, often shortened as KOF '97, is a 1997 fighting video game developed and published by SNK for the Neo Geo arcade and home platforms. It is the fourth game in The King of Fighters (KOF) series."
+      about_url: "https://en.wikipedia.org/wiki/The_King_of_Fighters_%2797"
+      year: 2019
+    ebay:
+      query: "(kof, \"king of fighters\") 97 (vita, psvita)"
+      negative: ["ps4", "pc", "steam"]
+  - id: nurse-love-addiction-vita
+    title: "Nurse Love Addiction"
+    info:
+      developer: "Kogado Studio"
+      publisher: "Limited Run Games"
+      year: 2018
+      genre: "Visual novel"
+    ebay:
+      query: "Nurse Love Addiction (vita, psvita)"
+      negative: ["syndrome", "pc", "steam"]
+  - id: iconoclasts-vita
+    title: "Iconoclasts"
+    info:
+      year: 2019
+      genre: "Metroidvania"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/1/1d/Iconoclasts_Cover.jpg"
+      about: "Iconoclasts is a platform game by Swedish developer Joakim \"Konjak\" Sandberg and published by Bifrost Entertainment."
+      about_url: "https://en.wikipedia.org/wiki/Iconoclasts_%28video_game%29"
+      developer: "Joakim Sandberg"
+      publisher: "Limited Run Games"
+    ebay:
+      query: "Iconoclasts (vita, psvita)"
+      negative: ["ps4", "switch", "pc", "steam"]
+  - id: ray-gigant-vita
+    title: "Ray Gigant"
+    info:
+      developer: "Experience"
+      year: 2017
+      genre: "Role-playing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/f/f1/Ray_Gigant_decalless_box_art.jpeg"
+      about: "Ray Gigant is a role-playing video game developed by Experience."
+      about_url: "https://en.wikipedia.org/wiki/Ray_Gigant"
+      publisher: "Limited Run Games"
+    ebay:
+      query: "Ray Gigant (vita, psvita)"
+      negative: ["pc", "steam"]
+  - id: skullgirls-2nd-encore-vita
+    title: "Skullgirls 2nd Encore"
+    info:
+      developer: "Lab Zero Games"
+      publisher: "Limited Run Games"
+      year: 2016
+      genre: "Fighting"
+      about: "Skullgirls is a 2012 fighting video game developed by Reverge Labs and published by Autumn Games, originally released digitally for PlayStation 3 and Xbox 360 and ported to various other home and portable systems afterwards. A 2D fighter, Skullgirls consist of team-based fights and revolves around the \"Skull Heart\", an artifact which grants wishes for women."
+      about_url: "https://en.wikipedia.org/wiki/Skullgirls"
+    ebay:
+      query: "Skullgirls (vita, psvita)"
+      negative: ["ps4", "ps3", "switch", "xbox", "pc", "steam"]
+  - id: london-detective-mysteria-vita
+    title: "London Detective Mysteria"
+    info:
+      developer: "Karin Entertainment"
+      publisher: "Limited Run Games"
+      year: 2019
+      genre: "Visual novel"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/1/17/Eikoku_Tantei_Mysteria_Coverart.png"
+      about: "London Detective Mysteria is a 2013 otome visual novel video game for the PlayStation Portable created by Karin Entertainment and published by Marvelous in Japan."
+      about_url: "https://en.wikipedia.org/wiki/London_Detective_Mysteria"
+    ebay:
+      query: "London Detective Mysteria (vita, psvita)"
+      negative: ["pc", "steam"]
+  - id: xeodrifter-vita
+    title: "Xeodrifter"
+    info:
+      developer: "Renegade Kid"
+      publisher: "Limited Run Games"
+      year: 2016
+      genre: "Metroidvania"
+      about: "Xeodrifter is a 2014 Metroidvania video game developed and published by Renegade Kid for the Nintendo 3DS and Microsoft Windows. A Wii U port of the game was released 2015, and after Gambitious Digital Entertainment acquired the rights to the Microsoft Windows version of the game, it was also released on PlayStation 4 and PlayStation Vita in 2015."
+      about_url: "https://en.wikipedia.org/wiki/Xeodrifter"
+    ebay:
+      query: "Xeodrifter (vita, psvita)"
+      negative: ["ps4", "switch", "3ds", "wii u", "pc"]
+  - id: senran-kagura-bon-appetit-full-course-vita
+    title: "Senran Kagura: Bon Appétit! Full Course"
+    info:
+      developer: "Meteorise"
+      publisher: "Limited Run Games"
+      year: 2018
+      genre: "Rhythm"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/d/de/Official_digital_store_art_of_Senran_Kagura_Bon_Appetit.jpg"
+      about: "Senran Kagura: Bon Appétit! is a 2014 cooking-themed rhythm video game and a spinoff in the Senran Kagura series."
+      about_url: "https://en.wikipedia.org/wiki/Senran_Kagura:_Bon_App%C3%A9tit%21"
+    ebay:
+      query: "Senran Kagura Bon (vita, psvita)"
+      negative: ["ps4", "pc", "steam", "shinovi", "estival", "peach beach", "peach ball", "burst", "reflexions"]
+  - id: yomawari-night-alone-vita
+    title: "Yomawari: Night Alone"
+    info:
+      developer: "Nippon Ichi Software"
+      publisher: "NIS America"
+      year: 2016
+      genre: "Survival horror"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/f/f4/Yomawari.jpg"
+      about: "Yomawari: Night Alone is a survival horror video game created and developed by Nippon Ichi Software for the PlayStation Vita and Steam. The game was released in Japan on October 29, 2015 and in English in October 2016."
+      about_url: "https://en.wikipedia.org/wiki/Yomawari:_Night_Alone"
+    ebay:
+      query: "Yomawari Night Alone (vita, psvita)"
+      negative: ["midnight shadows", "lost in the dark", "long night", "ps4", "switch", "pc", "steam", "limited edition"]
+  - id: yomawari-midnight-shadows-vita
+    title: "Yomawari: Midnight Shadows"
+    info:
+      developer: "Nippon Ichi Software"
+      publisher: "NIS America"
+      year: 2017
+      genre: "Survival horror"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/4/48/Yomawari_Midnight_Shadows_cover_art.jpg"
+      about: "Yomawari: Midnight Shadows is a survival horror video game developed and published by Nippon Ichi Software for PlayStation 4, PlayStation Vita and Microsoft Windows via Steam. The game is a sequel to Yomawari: Night Alone, which originally released in 2015 in Japan."
+      about_url: "https://en.wikipedia.org/wiki/Yomawari:_Midnight_Shadows"
+    ebay:
+      query: "Yomawari Midnight Shadows (vita, psvita)"
+      negative: ["night alone", "lost in the dark", "long night", "ps4", "switch", "pc", "steam", "limited edition"]
+  - id: muv-luv-vita
+    title: "Muv-Luv"
+    info:
+      developer: "âge"
+      publisher: "PQube"
+      year: 2018
+      genre: "Visual novel"
+    ebay:
+      query: "(muv, muvluv, \"muv-luv\") (vita, psvita)"
+      negative: ["alternative", "photonflowers", "photonmelodies", "ps4", "switch", "pc", "steam"]
+  - id: muv-luv-alternative-vita
+    title: "Muv-Luv Alternative"
+    info:
+      developer: "âge"
+      publisher: "PQube"
+      year: 2018
+      genre: "Visual novel"
+    ebay:
+      query: "(muv, muvluv, \"muv-luv\") Alternative (vita, psvita)"
+      negative: ["total eclipse", "ps4", "switch", "pc", "steam"]
+      require: ["alternative"]
+  - id: sly-cooper-thieves-in-time-vita
+    title: "Sly Cooper: Thieves in Time"
+    info:
+      developer: "Sanzaru Games"
+      publisher: "Sony Computer Entertainment"
+      year: 2013
+      genre: "Platformer"
+      about: "Sly Cooper: Thieves in Time is a 2013 stealth action video game developed by Sanzaru Games and published by Sony Computer Entertainment for the PlayStation 3 and PlayStation Vita. The fourth installment in the Sly Cooper series, it is the first game in the series to not be developed by Sucker Punch Productions."
+      about_url: "https://en.wikipedia.org/wiki/Sly_Cooper:_Thieves_in_Time"
+    ebay:
+      query: "Sly Thieves Time (vita, psvita)"
+      negative: ["ps3", "ps2", "ps4", "collection"]
+  - id: hyperdimension-neptunia-re-birth2-vita
+    title: "Hyperdimension Neptunia Re;Birth2"
+    info:
+      developer: "Felistella"
+      publisher: "Idea Factory International"
+      year: 2015
+      genre: "Role-playing"
+      about: "Hyperdimension Neptunia mk2 is a 2011 role-playing video game developed by Idea Factory and Compile Heart, the second installment in the Hyperdimension Neptunia franchise."
+      about_url: "https://en.wikipedia.org/wiki/Hyperdimension_Neptunia_mk2"
+    ebay:
+      query: "Neptunia (rebirth2, birth2, \"rebirth 2\", \"birth 2\", \"sisters generation\") (vita, psvita)"
+      negative: ["rebirth1", "birth1", "rebirth 1", "birth 1", "rebirth3", "birth3", "rebirth 3", "birth 3", "v generation", "pc", "steam", "limited edition"]
+  - id: hyperdimension-neptunia-re-birth3-vita
+    title: "Hyperdimension Neptunia Re;Birth3"
+    info:
+      developer: "Felistella"
+      publisher: "Idea Factory International"
+      year: 2015
+      genre: "Role-playing"
+      about: "Hyperdimension Neptunia Victory is an action role-playing game developed and published by Idea Factory with the assistance of Compile Heart. It is the third installment in the Hyperdimension Neptunia franchise."
+      about_url: "https://en.wikipedia.org/wiki/Hyperdimension_Neptunia_Victory"
+    ebay:
+      query: "Neptunia (rebirth3, birth3, \"rebirth 3\", \"birth 3\", \"v generation\") (vita, psvita)"
+      negative: ["rebirth1", "birth1", "rebirth 1", "birth 1", "rebirth2", "birth2", "rebirth 2", "birth 2", "sisters generation", "pc", "steam", "limited edition"]
+  - id: hyperdimension-neptunia-u-action-unleashed-vita
+    title: "Hyperdimension Neptunia U: Action Unleashed"
+    info:
+      developer: "Tamsoft"
+      publisher: "Idea Factory International"
+      year: 2015
+      genre: "Hack and slash"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/d/d7/HyperdimensionNeptuniaU.jpg"
+      about: "Hyperdimension Neptunia U: Action Unleashed is a hack and slash video game developed by Compile Heart and Tamsoft and published by Idea Factory International."
+      about_url: "https://en.wikipedia.org/wiki/Hyperdimension_Neptunia_U:_Action_Unleashed"
+    ebay:
+      query: "Neptunia Action Unleashed (vita, psvita)"
+      negative: ["pc", "steam", "limited edition"]
+  - id: superdimension-neptune-vs-sega-hard-girls-vita
+    title: "Superdimension Neptune VS Sega Hard Girls"
+    info:
+      developer: "Felistella"
+      publisher: "Idea Factory International"
+      year: 2016
+      genre: "Role-playing"
+    ebay:
+      query: "Sega Hard Girls (vita, psvita)"
+      negative: ["pc", "steam", "dvd", "blu-ray", "limited edition"]
+  - id: hyperdevotion-noire-vita
+    title: "Hyperdevotion Noire"
+    info:
+      developer: "Sting"
+      publisher: "Idea Factory International"
+      year: 2015
+      genre: "Tactical role-playing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/9/97/HyperdevotionNoire.jpg"
+      about: "Hyperdevotion Noire: Goddess Black Heart is a 2014 tactical role-playing game developed by Compile Heart and Sting Entertainment. The game is a spin-off title of the Hyperdimension Neptunia game series featuring Noire as the main character."
+      about_url: "https://en.wikipedia.org/wiki/Hyperdevotion_Noire:_Goddess_Black_Heart"
+    ebay:
+      query: "Hyperdevotion Noire (vita, psvita)"
+      negative: ["pc", "steam", "limited edition"]
+  - id: megatagmension-blanc-neptune-vs-zombies-vita
+    title: "MegaTagmension Blanc + Neptune VS Zombies"
+    info:
+      developer: "Tamsoft"
+      publisher: "Idea Factory International"
+      year: 2016
+      genre: "Hack and slash"
+    ebay:
+      query: "Megatagmension (vita, psvita)"
+      negative: ["pc", "steam", "limited edition"]
+  - id: gal-gun-double-peace-vita
+    title: "Gal*Gun: Double Peace"
+    info:
+      developer: "Inti Creates"
+      publisher: "PQube"
+      year: 2016
+      genre: "Rail shooter"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/1/1f/Gal_Gun_Double_Peace_boxart.png"
+      about: "Gal Gun: Double Peace is a rail shooter bishōjo video game developed by Inti Creates. The game was released on PlayStation 4 and PlayStation Vita in Japan in August 2015, in Europe in July 2016, and in North America in August."
+      about_url: "https://en.wikipedia.org/wiki/Gal_Gun:_Double_Peace"
+    ebay:
+      query: "Double Peace (vita, psvita)"
+      negative: ["ps4", "switch", "pc", "steam", "happiness edition"]
+  - id: valkyrie-drive-bhikkhuni-vita
+    title: "Valkyrie Drive: Bhikkhuni"
+    info:
+      developer: "Meteorise"
+      publisher: "PQube"
+      year: 2016
+      genre: "Action"
+    ebay:
+      query: "Valkyrie Drive (vita, psvita)"
+      negative: ["pc", "steam", "dvd", "blu-ray", "mermaid", "liberator's edition"]
+  - id: retro-city-rampage-dx-vita
+    title: "Retro City Rampage DX"
+    info:
+      developer: "Vblank Entertainment"
+      publisher: "Vblank Entertainment"
+      year: 2015
+      genre: "Action-adventure"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/9/97/Retro_City_Rampage_cover.png"
+      about: "Retro City Rampage is an action-adventure game developed by Vblank Entertainment. It is a parody of retro games and 1980s and 1990s pop culture, as well as Grand Theft Auto and similar games."
+      about_url: "https://en.wikipedia.org/wiki/Retro_City_Rampage"
+    ebay:
+      query: "Retro City Rampage (vita, psvita)"
+      negative: ["ps4", "switch", "3ds", "wii u", "wii", "xbox", "pc", "steam", "shakedown"]
+  - id: guacamelee-vita
+    title: "Guacamelee!"
+    info:
+      developer: "DrinkBox Studios"
+      publisher: "Limited Run Games"
+      year: 2019
+      genre: "Metroidvania"
+      about: "Guacamelee! is a Metroidvania action platforming video game developed and published by DrinkBox Studios, initially launched in April 2013 for platforms PlayStation 3 and PlayStation Vita and was later ported to Windows in August and to OS X and Linux in February 2014."
+      about_url: "https://en.wikipedia.org/wiki/Guacamelee%21"
+    ebay:
+      query: "Guacamelee (vita, psvita)"
+      negative: ["guacamelee 2", "super turbo", "one two punch", "one-two punch", "ps4", "ps3", "switch", "xbox", "wii u", "pc", "steam"]
+  - id: period-cube-vita
+    title: "Period: Cube"
+    info:
+      developer: "Otomate"
+      publisher: "Aksys Games"
+      year: 2017
+      genre: "Visual novel"
+    ebay:
+      query: "Period Cube (vita, psvita)"
+      negative: []
+  - id: super-hydorah-vita
+    title: "Super Hydorah"
+    info:
+      year: 2018
+      genre: "Shoot 'em up"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/7/72/Super_Hydorah_cover_art.jpg"
+      about: "Super Hydorah is a 2017 independent side-scrolling shoot 'em up video game developed by Locomalito and published by Abylight Studios. It features a 16-32 bit era look and feel as well as a CRT Monitor effect."
+      about_url: "https://en.wikipedia.org/wiki/Super_Hydorah"
+      developer: "Locomalito"
+      publisher: "Limited Run Games"
+    ebay:
+      query: "Hydorah (vita, psvita)"
+      negative: ["ps4", "switch", "xbox", "pc", "steam"]
+  - id: ys-origin-vita
+    title: "Ys Origin"
+    info:
+      developer: "Nihon Falcom"
+      publisher: "Limited Run Games"
+      genre: "Action role-playing"
+      about: "Ys Origin is a 2006 action role-playing game developed and published by Nihon Falcom. It was originally released for Microsoft Windows in Japan on December 21, 2006."
+      about_url: "https://en.wikipedia.org/wiki/Ys_Origin"
+      year: 2017
+    ebay:
+      query: "Ys Origin (vita, psvita)"
+      negative: ["ps4", "xbox", "switch", "pc", "steam", "collector's edition"]
+  - id: shakedown-hawaii-vita
+    title: "Shakedown: Hawaii"
+    info:
+      developer: "Vblank Entertainment"
+      publisher: "Vblank Entertainment"
+      year: 2019
+      genre: "Action-adventure"
+      about: "Shakedown: Hawaii is a 2019 open world action-adventure video game developed by Canadian studio Vblank Entertainment. Like its predecessor Retro City Rampage, it is a parody of multiple subjects, including retro games, 1980s pop culture, manipulative business practices, and Grand Theft Auto and similar games."
+      about_url: "https://en.wikipedia.org/wiki/Shakedown:_Hawaii"
+    ebay:
+      query: "Shakedown Hawaii (vita, psvita)"
+      negative: ["ps4", "switch", "3ds", "pc", "steam", "retro city"]
+  - id: hakuoki-edo-blossoms-vita
+    title: "Hakuoki: Edo Blossoms"
+    info:
+      developer: "Otomate"
+      publisher: "Idea Factory International"
+      year: 2018
+      genre: "Visual novel"
+    ebay:
+      query: "Hakuoki Edo Blossoms (vita, psvita)"
+      negative: ["kyoto winds", "switch", "pc", "steam", "limited edition"]
+  - id: hakuoki-kyoto-winds-vita
+    title: "Hakuoki: Kyoto Winds"
+    info:
+      developer: "Otomate"
+      publisher: "Idea Factory International"
+      year: 2017
+      genre: "Visual novel"
+    ebay:
+      query: "Hakuoki Kyoto Winds (vita, psvita)"
+      negative: ["edo blossoms", "switch", "pc", "steam", "limited edition"]
+  - id: grand-kingdom-vita
+    title: "Grand Kingdom"
+    info:
+      publisher: "NIS America"
+      year: 2016
+      genre: "Tactical role-playing"
+      about: "Grand Kingdom is a tactical role-playing video game developed by Monochrome Corporation for the PlayStation 4 and PlayStation Vita. It was published by Spike Chunsoft in Japan in 2015, and NIS America in the West in 2016."
+      about_url: "https://en.wikipedia.org/wiki/Grand_Kingdom"
+      developer: "Monochrome Corporation"
+    ebay:
+      query: "Grand Kingdom (vita, psvita)"
+      negative: ["ps4", "limited edition", "grand edition"]
+  - id: code-realize-guardian-of-rebirth-vita
+    title: "Code: Realize ~Guardian of Rebirth~"
+    info:
+      developer: "Otomate"
+      publisher: "Aksys Games"
+      year: 2015
+      genre: "Visual novel"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/9/95/Crguardian.jpg"
+      about: "Code: Realize − Guardian of Rebirth is an otome visual novel video game developed by Otomate for PlayStation Vita, released in 2014 in Japan and in 2015 in North America and Europe. The game features a steampunk aesthetic and a cast of literary and historical figures, including Arsène Lupin, Abraham Van Helsing, Victor Frankenstein, Impey Barbicane, and Count Saint-Germain."
+      about_url: "https://en.wikipedia.org/wiki/Code:_Realize"
+    ebay:
+      query: "Guardian Rebirth (vita, psvita)"
+      negative: ["future blessings", "wintertide", "bouquet", "ps4", "switch", "pc", "steam"]
+  - id: collar-x-malice-vita
+    title: "Collar x Malice"
+    info:
+      developer: "Otomate"
+      publisher: "Aksys Games"
+      year: 2017
+      genre: "Visual novel"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/f/f5/Collar_x_Malice_cover_art.png"
+      about: "Collar × Malice is a visual novel video game developed and published by Idea Factory under their Otomate brand. It was released for PlayStation Vita on August 18, 2016, in Japan, and by Aksys Games in North America and Europe on July 28, 2017."
+      about_url: "https://en.wikipedia.org/wiki/Collar_%C3%97_Malice"
+    ebay:
+      query: "Collar Malice (vita, psvita)"
+      negative: ["unlimited", "ps4", "switch", "pc", "steam", "limited edition"]
+  - id: norn9-var-commons-vita
+    title: "Norn9: Var Commons"
+    info:
+      developer: "Otomate"
+      publisher: "Aksys Games"
+      year: 2015
+      genre: "Visual novel"
+      about: "Norn9 is a 2013 otome game for PlayStation Portable. It was developed by Otomate and published by Idea Factory."
+      about_url: "https://en.wikipedia.org/wiki/Norn9"
+    ebay:
+      query: "(norn9, \"norn 9\") (vita, psvita)"
+      negative: ["switch", "ps4", "pc"]
+  - id: bad-apple-wars-vita
+    title: "Bad Apple Wars"
+    info:
+      developer: "Otomate"
+      publisher: "Aksys Games"
+      year: 2017
+      genre: "Visual novel"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/8/8c/Bad_Apple_Wars_Cover_Art.webp"
+      about: "Bad Apple Wars is an otome visual novel video game developed by Otomate, exclusively released for the PlayStation Vita by Idea Factory in 2015 in Japan and by Aksys Games in 2017 in North America and Europe. The game follows a student named Rinka who, after dying in an accident, wakes up in an afterlife modelled around a high school setting."
+      about_url: "https://en.wikipedia.org/wiki/Bad_Apple_Wars"
+    ebay:
+      query: "Bad Apple Wars (vita, psvita)"
+      negative: []
+  - id: lone-survivor-vita
+    title: "Lone Survivor"
+    info:
+      developer: "Superflat Games"
+      publisher: "Limited Run Games"
+      year: 2016
+      genre: "Survival horror"
+      about: "Lone Survivor is a 2012 survival horror video game developed and published by Superflat Games. It was originally released as a Flash game for Microsoft Windows and OS X in 2012."
+      about_url: "https://en.wikipedia.org/wiki/Lone_Survivor_%28video_game%29"
+    ebay:
+      query: "Lone Survivor (vita, psvita)"
+      negative: ["ps4", "ps3", "wii u", "pc", "steam", "dvd", "blu-ray", "book"]
+  - id: utawarerumono-mask-of-truth-vita
+    title: "Utawarerumono: Mask of Truth"
+    info:
+      year: 2017
+      genre: "Visual novel"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/2/2c/Utawarerumono-_Futari_no_Hakuoro_game_cover.jpg"
+      about: "Utawarerumono: Mask of Truth is a Japanese tactical role-playing visual novel developed by Aquaplus, which first released in September 2016 for the PlayStation 3, PlayStation 4 and PlayStation Vita."
+      about_url: "https://en.wikipedia.org/wiki/Utawarerumono:_Mask_of_Truth"
+      developer: "Aquaplus"
+      publisher: "Atlus"
+    ebay:
+      query: "Utawarerumono Truth (vita, psvita)"
+      negative: ["deception", "prelude", "lullaby", "ps4", "pc", "steam"]
+  - id: disgaea-4-a-promise-revisited-vita
+    title: "Disgaea 4: A Promise Revisited"
+    info:
+      developer: "Nippon Ichi Software"
+      publisher: "NIS America"
+      year: 2014
+      genre: "Tactical role-playing"
+      about: "Disgaea 4: A Promise Unforgotten is a 2011 tactical role-playing video game for the PlayStation 3 and the fourth in the Disgaea series by Nippon Ichi Software. The game tells the story of Valvatorez, a former tyrant leading a party to rebel against the president of the Netherworld."
+      about_url: "https://en.wikipedia.org/wiki/Disgaea_4"
+    ebay:
+      query: "Disgaea 4 (vita, psvita)"
+      negative: ["ps3", "ps4", "switch", "pc", "steam", "disgaea 3", "disgaea 5", "limited edition"]
+  - id: toukiden-2-vita
+    title: "Toukiden 2"
+    info:
+      developer: "Omega Force"
+      publisher: "Koei Tecmo"
+      year: 2017
+      genre: "Action role-playing"
+      about: "Toukiden 2 (討鬼伝2) is a 2016 action role-playing game developed by Omega Force and published by Koei Tecmo for Microsoft Windows, PlayStation 3, PlayStation 4, and PlayStation Vita."
+      about_url: "https://en.wikipedia.org/wiki/Toukiden_2"
+    ebay:
+      query: "Toukiden 2 (vita, psvita)"
+      negative: ["kiwami", "age of demons", "ps4", "ps3", "pc", "steam"]
+  - id: ninja-gaiden-sigma-2-plus-vita
+    title: "Ninja Gaiden Sigma 2 Plus"
+    info:
+      developer: "Team Ninja"
+      publisher: "Tecmo Koei"
+      genre: "Hack and slash"
+      about: "Ninja Gaiden Sigma 2, stylized as Ninja Gaiden Σ2, is a 2009 action-adventure game developed by Team Ninja and published by Tecmo Koei for the PlayStation 3. It is a port of the 2008 Xbox 360 video game Ninja Gaiden II."
+      about_url: "https://en.wikipedia.org/wiki/Ninja_Gaiden_Sigma_2"
+      year: 2013
+    ebay:
+      query: "Ninja Gaiden Sigma 2 (vita, psvita)"
+      negative: ["ps3", "ps4", "xbox", "switch", "master collection"]
+  - id: shantae-half-genie-hero-vita
+    title: "Shantae: Half-Genie Hero"
+    info:
+      developer: "WayForward Technologies"
+      publisher: "XSEED Games"
+      year: 2016
+      genre: "Platformer"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/9/9c/Shantae_Half-Genie_Hero.png"
+      about: "Shantae: Half-Genie Hero is a 2016 platform video game developed and published by WayForward Technologies. It is the fourth game in the Shantae series, following Shantae and the Pirate's Curse (2014)."
+      about_url: "https://en.wikipedia.org/wiki/Shantae:_Half-Genie_Hero"
+    ebay:
+      query: "Shantae (vita, psvita)"
+      negative: ["ps4", "switch", "xbox", "wii u", "pc", "steam", "risky", "pirate", "sirens", "ultimate edition"]
+  - id: summon-night-6-lost-borders-vita
+    title: "Summon Night 6: Lost Borders"
+    info:
+      year: 2017
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/a/a7/Summon_Night_6_cover.png"
+      about: "Summon Night 6: Lost Borders is a tactical role-playing game for the PlayStation Vita and PlayStation 4 video game consoles. The game was released in Japan on March 10, 2016, and was released in North America on October 31, 2017 and Europe on November 15, 2017 by publisher Gaijinworks."
+      about_url: "https://en.wikipedia.org/wiki/Summon_Night_6"
+      developer: "Media.Vision"
+      publisher: "Gaijinworks"
+      genre: "Tactical role-playing"
+    ebay:
+      query: "Summon Night 6 (vita, psvita)"
+      negative: ["ps4", "wonderful edition"]
+  - id: death-mark-vita
+    title: "Death Mark"
+    info:
+      developer: "Experience"
+      year: 2018
+      genre: "Visual novel"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/4/43/Spirit_Hunter_Death_Mark_cover_art.png"
+      about: "Spirit Hunter: Death Mark is a horror visual novel adventure game developed and published by Experience, and is the first entry in the Spirit Hunter series. It was originally released in June 2017 for PlayStation Vita in Japan, and was later ported to PlayStation 4, Nintendo Switch and Xbox One."
+      about_url: "https://en.wikipedia.org/wiki/Spirit_Hunter:_Death_Mark"
+      publisher: "Aksys Games"
+    ebay:
+      query: "Death Mark (vita, psvita)"
+      negative: ["ps4", "switch", "pc", "steam", "death mark ii", "death mark 2", "limited edition"]
+  - id: sorcery-saga-vita
+    title: "Sorcery Saga"
+    info:
+      developer: "Compile Heart"
+      publisher: "Aksys Games"
+      year: 2013
+      genre: "Role-playing"
+      cover_url: "https://upload.wikimedia.org/wikipedia/en/8/88/Sorcery_Saga_Curse_of_the_Great_Curry_God_boxart.png"
+      about: "Sorcery Saga: Curse of the Great Curry God is a video game developed by Compile Heart for the PlayStation Vita. It is based on the original Madou Monogatari released in 1989."
+      about_url: "https://en.wikipedia.org/wiki/Sorcery_Saga:_Curse_of_the_Great_Curry_God"
+    ebay:
+      query: "Sorcery Saga (vita, psvita)"
+      negative: ["limited edition"]
