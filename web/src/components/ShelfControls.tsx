@@ -159,7 +159,7 @@ const ownKey = '-ml-0.5 w-[7.75rem] justify-between gap-1.5 px-2 data-[popup-ope
   page's region. A menu's own "return focus to the trigger" is a no-op on a
   detached element, which is why this has to be explicit.
 */
-async function keepingFocus(control: HTMLElement | null, action: () => Promise<void>) {
+async function keepingFocus(control: HTMLElement | null, action: () => Promise<unknown>) {
   const row = control?.closest<HTMLElement>('tr, [data-shelf-row]') ?? null
   const neighbour = (row?.nextElementSibling ?? row?.previousElementSibling) as HTMLElement | null
   const anchor = control?.closest<HTMLElement>('[data-shelf-anchor]') ?? null

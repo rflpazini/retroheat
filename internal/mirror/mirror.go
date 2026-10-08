@@ -235,6 +235,42 @@ func (s *Supabase) ShelfCounts(ctx context.Context) ([]ShelfCount, error) {
 	}
 }
 
+// BarcodeReport is one person's pairing of a scanned code with a game, made
+// when the scanner did not know the code. The person is kept only as an
+// opaque id, so agreement can be counted; nothing names them.
+type BarcodeReport struct {
+	Code   string `json:"code"`
+	GameID string `json:"game_id"`
+	UserID string `json:"user_id"`
+}
+
+// BarcodeReports reads every pairing a page at a time, ordered so pages never
+// overlap. Only the service role can read across people.
+func (s *Supabase) BarcodeReports(ctx context.Context) ([]BarcodeReport, error) {
+	var all []BarcodeReport
+	for offset := 0; ; offset += s.pageSize {
+		q := url.Values{
+			"select": {"code,game_id,user_id"},
+			"order":  {"code.asc,user_id.asc"},
+			"limit":  {fmt.Sprint(s.pageSize)},
+			"offset": {fmt.Sprint(offset)},
+		}
+		req, err := http.NewRequestWithContext(ctx, http.MethodGet, s.baseURL+"/rest/v1/barcode_reports?"+q.Encode(), nil)
+		if err != nil {
+			return nil, err
+		}
+		s.authorize(req)
+		var page []BarcodeReport
+		if err := s.do(req, &page); err != nil {
+			return nil, fmt.Errorf("read barcode reports at offset %d: %w", offset, err)
+		}
+		if len(page) == 0 {
+			return all, nil
+		}
+		all = append(all, page...)
+	}
+}
+
 func (s *Supabase) authorize(req *http.Request) {
 	req.Header.Set("apikey", s.key)
 	req.Header.Set("Authorization", "Bearer "+s.key)

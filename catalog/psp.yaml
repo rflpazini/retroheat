@@ -15,6 +15,8 @@ games:
     ebay:
       query: "Crisis Core Final Fantasy VII PSP"
       negative: ["reunion", "ps4", "switch", "umd only lot"]
+    barcodes:
+      - {code: "662248907222"}
   - id: persona-3-portable-psp
     title: "Persona 3 Portable"
     info:
@@ -31,6 +33,8 @@ games:
       query: "Persona 3 Portable PSP"
       # The 2023 ports and their Limited Run discs are not the UMD.
       negative: ["fes", "ps2", "switch", "reload", "ps4", "playstation 4", "xbox", "limited run", "lrg"]
+    barcodes:
+      - {code: "730865600144"}
   - id: persona-2-innocent-sin-psp
     title: "Persona 2: Innocent Sin"
     info:
@@ -59,6 +63,8 @@ games:
     ebay:
       query: "Tactics Ogre Let Us Cling Together PSP"
       negative: ["reborn", "snes", "ps1", "switch"]
+    barcodes:
+      - {code: "662248910321"}
   - id: final-fantasy-tactics-war-of-the-lions-psp
     title: "Final Fantasy Tactics: The War of the Lions"
     info:
@@ -74,6 +80,8 @@ games:
     ebay:
       query: "Final Fantasy Tactics War of the Lions PSP"
       negative: ["ps1", "ios", "advance"]
+    barcodes:
+      - {code: "662248907116"}
   - id: valkyria-chronicles-2-psp
     title: "Valkyria Chronicles II"
     info:
@@ -104,6 +112,8 @@ games:
     ebay:
       query: "Jeanne d'Arc PSP"
       negative: []
+    barcodes:
+      - {code: "711719870029"}
   - id: ys-seven-psp
     title: "Ys Seven"
     info:
@@ -119,6 +129,8 @@ games:
     ebay:
       query: "Ys Seven PSP"
       negative: ["oath in felghana", "ys i ii", "pc", "steam"]
+    barcodes:
+      - {code: "853466001346"}
   - id: ys-the-oath-in-felghana-psp
     title: "Ys: The Oath in Felghana"
     info:
@@ -134,6 +146,9 @@ games:
     ebay:
       query: "Ys The Oath in Felghana PSP"
       negative: ["ys seven", "chronicles", "pc"]
+    barcodes:
+      - {code: "853466001353"}
+      - {code: "853466001391"}
   - id: ys-i-ii-chronicles-psp
     title: "Ys I & II Chronicles"
     info:
@@ -165,6 +180,8 @@ games:
       # "the 3rd" is the third game; "the Best" and "Best Selection" are the
       # Japanese budget reprints.
       negative: ["second chapter", "sc", "the 3rd", "3rd", "pc", "steam", "the best", "best selection"]
+    barcodes:
+      - {code: "853466001377"}
   - id: gurumin-psp
     title: "Gurumin: A Monstrous Adventure"
     info:
@@ -180,6 +197,8 @@ games:
     ebay:
       query: "Gurumin PSP"
       negative: ["3ds", "pc"]
+    barcodes:
+      - {code: "859292000225"}
   - id: half-minute-hero-psp
     title: "Half-Minute Hero"
     info:
@@ -195,6 +214,8 @@ games:
     ebay:
       query: "Half-Minute Hero PSP"
       negative: ["second coming", "xbox", "steam"]
+    barcodes:
+      - {code: "853466001230"}
   - id: castlevania-dracula-x-chronicles-psp
     title: "Castlevania: The Dracula X Chronicles"
     info:
@@ -209,6 +230,8 @@ games:
     ebay:
       query: "Castlevania Dracula X Chronicles PSP"
       negative: ["rondo of blood pc engine", "requiem"]
+    barcodes:
+      - {code: "083717260363"}
   - id: metal-gear-solid-peace-walker-psp
     title: "Metal Gear Solid: Peace Walker"
     info:
@@ -224,6 +247,8 @@ games:
     ebay:
       query: "Metal Gear Solid Peace Walker PSP"
       negative: ["hd collection", "ps3", "xbox", "portable ops"]
+    barcodes:
+      - {code: "083717260578"}
   - id: metal-gear-solid-portable-ops-psp
     title: "Metal Gear Solid: Portable Ops"
     info:
@@ -239,6 +264,9 @@ games:
     ebay:
       query: "Metal Gear Solid Portable Ops PSP"
       negative: ["peace walker", "plus"]
+    barcodes:
+      - {code: "083717260318"}
+      - {code: "083717260394"}
   - id: monster-hunter-freedom-unite-psp
     title: "Monster Hunter Freedom Unite"
     info:
@@ -254,6 +282,8 @@ games:
     ebay:
       query: "Monster Hunter Freedom Unite PSP"
       negative: ["freedom 2", "portable 3rd", "ios"]
+    barcodes:
+      - {code: "013388270163"}
   - id: patapon-3-psp
     title: "Patapon 3"
     info:
@@ -269,6 +299,8 @@ games:
     ebay:
       query: "Patapon 3 PSP"
       negative: ["patapon 1", "patapon 2", "remastered", "ps4"]
+    barcodes:
+      - {code: "711719875123"}
   - id: patapon-2-psp
     title: "Patapon 2"
     info:
@@ -284,6 +316,8 @@ games:
     ebay:
       query: "Patapon 2 PSP"
       negative: ["patapon 3", "remastered", "ps4"]
+    barcodes:
+      - {code: "711719873228"}
   - id: locoroco-psp
     title: "LocoRoco"
     info:
@@ -329,6 +363,8 @@ games:
     ebay:
       query: "God of War Chains of Olympus PSP"
       negative: ["ghost of sparta", "ps3", "collection"]
+    barcodes:
+      - {code: "711719865322"}
   - id: god-of-war-ghost-of-sparta-psp
     title: "God of War: Ghost of Sparta"
     info:
@@ -344,6 +380,8 @@ games:
     ebay:
       query: "God of War Ghost of Sparta PSP"
       negative: ["chains of olympus", "ps3", "collection"]
+    barcodes:
+      - {code: "711719873723"}
   - id: daxter-psp
     title: "Daxter"
     info:
@@ -359,6 +397,8 @@ games:
     ebay:
       query: "Daxter PSP"
       negative: ["jak", "ps2"]
+    barcodes:
+      - {code: "711719861829"}
   - id: syphon-filter-dark-mirror-psp
     title: "Syphon Filter: Dark Mirror"
     info:
@@ -374,6 +414,8 @@ games:
     ebay:
       query: "Syphon Filter Dark Mirror PSP"
       negative: ["logan's shadow", "ps2"]
+    barcodes:
+      - {code: "711719864127"}
   - id: wipeout-pure-psp
     title: "Wipeout Pure"
     info:
@@ -389,6 +431,8 @@ games:
     ebay:
       query: "Wipeout Pure PSP"
       negative: ["pulse", "2048", "hd", "omega"]
+    barcodes:
+      - {code: "711719861225"}
   - id: kingdom-hearts-birth-by-sleep-psp
     title: "Kingdom Hearts: Birth by Sleep"
     info:
@@ -404,6 +448,8 @@ games:
     ebay:
       query: "Kingdom Hearts Birth by Sleep PSP"
       negative: ["final mix", "ps3", "2.5 remix", "hd"]
+    barcodes:
+      - {code: "662248910086"}
   - id: dissidia-012-final-fantasy-psp
     title: "Dissidia 012 Final Fantasy"
     info:
@@ -434,6 +480,8 @@ games:
     ebay:
       query: "Class of Heroes PSP"
       negative: ["class of heroes 2", "class of heroes 3"]
+    barcodes:
+      - {code: "730865600069"}
   - id: riviera-the-promised-land-psp
     title: "Riviera: The Promised Land"
     info:
@@ -448,6 +496,8 @@ games:
     ebay:
       query: "Riviera The Promised Land PSP"
       negative: ["gba", "wonderswan"]
+    barcodes:
+      - {code: "730865600021"}
   - id: knights-in-the-nightmare-psp
     title: "Knights in the Nightmare"
     info:
@@ -462,6 +512,8 @@ games:
     ebay:
       query: "Knights in the Nightmare PSP"
       negative: ["ds"]
+    barcodes:
+      - {code: "730865600151"}
   - id: yggdra-union-psp
     title: "Yggdra Union"
     info:
@@ -477,6 +529,8 @@ games:
     ebay:
       query: "Yggdra Union PSP"
       negative: ["gba"]
+    barcodes:
+      - {code: "730865600052"}
   - id: corpse-party-psp
     title: "Corpse Party"
     info:
@@ -507,6 +561,8 @@ games:
     ebay:
       query: "Silent Hill Shattered Memories PSP"
       negative: ["wii", "ps2", "origins"]
+    barcodes:
+      - {code: "083717260493"}
   - id: silent-hill-origins-psp
     title: "Silent Hill: Origins"
     info:
@@ -522,6 +578,8 @@ games:
     ebay:
       query: "Silent Hill Origins PSP"
       negative: ["ps2", "shattered memories"]
+    barcodes:
+      - {code: "083717260233"}
   - id: gta-vice-city-stories-psp
     title: "Grand Theft Auto: Vice City Stories"
     info:
@@ -537,6 +595,8 @@ games:
     ebay:
       query: "Grand Theft Auto Vice City Stories PSP"
       negative: ["liberty city stories", "ps2", "ps3"]
+    barcodes:
+      - {code: "710425279768"}
   - id: gta-liberty-city-stories-psp
     title: "Grand Theft Auto: Liberty City Stories"
     info:
@@ -552,6 +612,8 @@ games:
     ebay:
       query: "Grand Theft Auto Liberty City Stories PSP"
       negative: ["vice city stories", "ps2"]
+    barcodes:
+      - {code: "710425236969"}
   - id: prinny-can-i-really-be-the-hero-psp
     title: "Prinny: Can I Really Be the Hero?"
     info:
@@ -567,6 +629,8 @@ games:
     ebay:
       query: "Prinny Can I Really Be the Hero PSP"
       negative: ["prinny 2", "switch"]
+    barcodes:
+      - {code: "857823001468"}
   - id: disgaea-afternoon-of-darkness-psp
     title: "Disgaea: Afternoon of Darkness"
     info:
@@ -581,6 +645,8 @@ games:
     ebay:
       query: "Disgaea Afternoon of Darkness PSP"
       negative: ["ps2", "hour of darkness", "disgaea 2"]
+    barcodes:
+      - {code: "857823001253"}
   - id: star-ocean-first-departure-psp
     title: "Star Ocean: First Departure"
     info:
@@ -595,6 +661,8 @@ games:
     ebay:
       query: "Star Ocean First Departure PSP"
       negative: ["second evolution", "r ", "ps4", "switch"]
+    barcodes:
+      - {code: "662248908199"}
   - id: brave-story-new-traveler-psp
     title: "Brave Story: New Traveler"
     info:
@@ -610,6 +678,8 @@ games:
     ebay:
       query: "Brave Story New Traveler PSP"
       negative: []
+    barcodes:
+      - {code: "853466001056"}
   - id: undead-knights-psp
     title: "Undead Knights"
     info:
@@ -637,6 +707,8 @@ games:
     ebay:
       query: "Dissidia Final Fantasy PSP -duodecim"
       negative: ["duodecim", "nt", "ps4", "arcade"]
+    barcodes:
+      - {code: "662248909028"}
   - id: ratchet-and-clank-size-matters-psp
     title: "Ratchet & Clank: Size Matters"
     info:
@@ -650,6 +722,8 @@ games:
     ebay:
       query: "Ratchet Clank Size Matters PSP"
       negative: ["ps2"]
+    barcodes:
+      - {code: "711719863328"}
   - id: jak-and-daxter-the-lost-frontier-psp
     title: "Jak and Daxter: The Lost Frontier"
     info:
@@ -663,6 +737,8 @@ games:
     ebay:
       query: "Jak and Daxter Lost Frontier PSP"
       negative: ["ps2"]
+    barcodes:
+      - {code: "711719863427"}
   - id: secret-agent-clank-psp
     title: "Secret Agent Clank"
     info:
@@ -676,6 +752,8 @@ games:
     ebay:
       query: "Secret Agent Clank PSP"
       negative: ["ps2"]
+    barcodes:
+      - {code: "711719869726"}
   - id: monster-hunter-freedom-2-psp
     title: "Monster Hunter Freedom 2"
     info:
@@ -689,6 +767,8 @@ games:
     ebay:
       query: "Monster Hunter Freedom 2 PSP -unite"
       negative: ["unite", "freedom 1", "portable 3rd", "japan"]
+    barcodes:
+      - {code: "013388270132"}
   - id: patapon-psp
     title: "Patapon"
     info:
@@ -702,6 +782,8 @@ games:
     ebay:
       query: "Patapon PSP"
       negative: ["patapon 2", "patapon 3", "ps4", "remastered"]
+    barcodes:
+      - {code: "711719871125"}
   - id: locoroco-2-psp
     title: "LocoRoco 2"
     info:
@@ -715,6 +797,8 @@ games:
     ebay:
       query: "LocoRoco 2 PSP"
       negative: ["ps4", "remastered", "midnight carnival"]
+    barcodes:
+      - {code: "711719873129"}
   - id: lumines-ii-psp
     title: "Lumines II"
     info:
@@ -728,6 +812,8 @@ games:
     ebay:
       query: "Lumines II PSP"
       negative: ["lumines plus", "ps2", "remastered"]
+    barcodes:
+      - {code: "712725003234"}
   - id: wipeout-pulse-psp
     title: "Wipeout Pulse"
     info:
@@ -741,6 +827,8 @@ games:
     ebay:
       query: "Wipeout Pulse PSP"
       negative: ["pure", "ps2", "hd"]
+    barcodes:
+      - {code: "711719871224"}
   - id: gran-turismo-psp
     title: "Gran Turismo"
     info:
@@ -754,6 +842,8 @@ games:
     ebay:
       query: "Gran Turismo PSP"
       negative: ["ps1", "ps2", "ps3", "ps4", "ps5", "playstation 1", "playstation 2", "playstation 3", "playstation 4", "gran turismo 2", "gran turismo 3", "gran turismo 4", "gran turismo 5", "gran turismo 6", "gran turismo 7", "sport"]
+    barcodes:
+      - {code: "711719863229"}
   - id: ridge-racer-psp
     title: "Ridge Racer"
     info:
@@ -780,6 +870,8 @@ games:
     ebay:
       query: "Tekken Dark Resurrection PSP"
       negative: ["ps3", "tekken 6"]
+    barcodes:
+      - {code: "722674150194"}
   - id: tekken-6-psp
     title: "Tekken 6"
     info:
@@ -793,6 +885,8 @@ games:
     ebay:
       query: "Tekken 6 PSP"
       negative: ["ps3", "xbox", "dark resurrection"]
+    barcodes:
+      - {code: "722674150330"}
   - id: soulcalibur-broken-destiny-psp
     title: "Soulcalibur: Broken Destiny"
     info:
@@ -805,6 +899,8 @@ games:
       about_url: "https://en.wikipedia.org/wiki/Soulcalibur:_Broken_Destiny"
     ebay:
       query: "Soul Calibur Broken Destiny PSP"
+    barcodes:
+      - {code: "722674150309"}
   - id: street-fighter-alpha-3-max-psp
     title: "Street Fighter Alpha 3 MAX"
     info:
@@ -817,6 +913,8 @@ games:
     ebay:
       query: "Street Fighter Alpha 3 Max PSP"
       negative: ["ps1", "playstation 1", "dreamcast", "saturn", "gba", "upper"]
+    barcodes:
+      - {code: "013388270033"}
   - id: darkstalkers-chronicle-the-chaos-tower-psp
     title: "Darkstalkers Chronicle: The Chaos Tower"
     info:
@@ -852,6 +950,8 @@ games:
     ebay:
       query: "Capcom Classics Collection Reloaded PSP"
       negative: ["remixed", "ps2", "xbox"]
+    barcodes:
+      - {code: "013388270118"}
   - id: mega-man-powered-up-psp
     title: "Mega Man Powered Up"
     info:
@@ -865,6 +965,8 @@ games:
     ebay:
       query: "Mega Man Powered Up PSP"
       negative: ["maverick hunter"]
+    barcodes:
+      - {code: "013388270071"}
   - id: mega-man-maverick-hunter-x-psp
     title: "Mega Man Maverick Hunter X"
     info:
@@ -891,6 +993,8 @@ games:
     ebay:
       query: "Resistance Retribution PSP"
       negative: ["ps3", "fall of man", "resistance 2", "resistance 3", "burning skies"]
+    barcodes:
+      - {code: "711719866824"}
   - id: syphon-filter-logans-shadow-psp
     title: "Syphon Filter: Logan's Shadow"
     info:
@@ -904,6 +1008,8 @@ games:
     ebay:
       query: "Syphon Filter Logan's Shadow PSP"
       negative: ["dark mirror", "ps2", "ps1", "playstation 1", "omega strain"]
+    barcodes:
+      - {code: "711719860624"}
   - id: killzone-liberation-psp
     title: "Killzone: Liberation"
     info:
@@ -917,6 +1023,8 @@ games:
     ebay:
       query: "Killzone Liberation PSP"
       negative: ["ps2", "ps3", "mercenary", "vita"]
+    barcodes:
+      - {code: "711719864622"}
   - id: star-wars-battlefront-ii-psp
     title: "Star Wars: Battlefront II"
     info:
@@ -930,6 +1038,8 @@ games:
     ebay:
       query: "Star Wars Battlefront II PSP"
       negative: ["ps2", "xbox", "pc", "renegade squadron", "elite squadron", "ps4"]
+    barcodes:
+      - {code: "023272328399", variant: greatest-hits}
   - id: star-wars-battlefront-renegade-squadron-psp
     title: "Star Wars Battlefront: Renegade Squadron"
     info:
@@ -943,6 +1053,8 @@ games:
     ebay:
       query: "Star Wars Battlefront Renegade Squadron PSP"
       negative: ["elite squadron", "battlefront ii", "battlefront 2"]
+    barcodes:
+      - {code: "023272331399"}
   - id: gta-chinatown-wars-psp
     title: "Grand Theft Auto: Chinatown Wars"
     info:
@@ -956,6 +1068,8 @@ games:
     ebay:
       query: "Grand Theft Auto Chinatown Wars PSP"
       negative: ["ds", "nintendo ds", "ios", "android", "vice city", "liberty city"]
+    barcodes:
+      - {code: "710425336928"}
   - id: burnout-legends-psp
     title: "Burnout Legends"
     info:
@@ -969,6 +1083,8 @@ games:
     ebay:
       query: "Burnout Legends PSP"
       negative: ["dominator", "ds", "nintendo ds"]
+    barcodes:
+      - {code: "014633151220"}
   - id: burnout-dominator-psp
     title: "Burnout Dominator"
     info:
@@ -982,6 +1098,8 @@ games:
     ebay:
       query: "Burnout Dominator PSP"
       negative: ["legends", "ps2"]
+    barcodes:
+      - {code: "014633156362"}
   - id: midnight-club-3-dub-edition-psp
     title: "Midnight Club 3: DUB Edition"
     info:
@@ -995,6 +1113,8 @@ games:
     ebay:
       query: "Midnight Club 3 DUB Edition PSP"
       negative: ["ps2", "xbox", "remix", "la remix"]
+    barcodes:
+      - {code: "710425236976"}
   - id: need-for-speed-most-wanted-5-1-0-psp
     title: "Need for Speed: Most Wanted 5-1-0"
     info:
@@ -1008,6 +1128,9 @@ games:
     ebay:
       query: "Need for Speed Most Wanted 5-1-0 PSP"
       negative: ["ps2", "xbox", "gamecube", "carbon", "underground"]
+    barcodes:
+      - {code: "014633149401"}
+      - {code: "014633169195"}
   - id: shin-megami-tensei-persona-psp
     title: "Shin Megami Tensei: Persona"
     info:
@@ -1033,6 +1156,8 @@ games:
     ebay:
       query: "Star Ocean Second Evolution PSP"
       negative: ["first departure", "ps1", "playstation 1", "ps4"]
+    barcodes:
+      - {code: "662248908205"}
   - id: the-3rd-birthday-psp
     title: "The 3rd Birthday"
     info:
@@ -1058,6 +1183,8 @@ games:
     ebay:
       query: "Final Fantasy IV Complete Collection PSP"
       negative: ["ds", "nintendo ds", "gba", "snes", "super nintendo", "ps1", "playstation 1", "advance", "chronicles", "anthology", "pixel remaster"]
+    barcodes:
+      - {code: "662248910451"}
   - id: lunar-silver-star-harmony-psp
     title: "Lunar: Silver Star Harmony"
     info:
@@ -1071,6 +1198,9 @@ games:
     ebay:
       query: "Lunar Silver Star Harmony PSP"
       negative: ["ps1", "playstation 1", "saturn", "sega cd", "eternal blue", "dragon song", "ds", "gba", "legend"]
+    barcodes:
+      - {code: "853466001247"}
+      - {code: "853466001315"}
   - id: hexyz-force-psp
     title: "Hexyz Force"
     info:
@@ -1083,6 +1213,8 @@ games:
       about_url: "https://en.wikipedia.org/wiki/Hexyz_Force"
     ebay:
       query: "Hexyz Force PSP"
+    barcodes:
+      - {code: "730865600137"}
   - id: blazblue-calamity-trigger-portable-psp
     title: "BlazBlue: Calamity Trigger Portable"
     info:

@@ -118,6 +118,7 @@ type Game struct {
 	IGDBID   int       `yaml:"igdb_id,omitempty" json:"igdb_id,omitempty"`
 	Ebay     EbayHints `yaml:"ebay" json:"-"`
 	Info     *Info     `yaml:"info,omitempty" json:"info,omitempty"`
+	Barcodes []Barcode `yaml:"barcodes,omitempty" json:"-"`
 	Platform Platform  `yaml:"-" json:"platform"`
 }
 
@@ -188,6 +189,7 @@ var idRe = regexp.MustCompile(`^[a-z0-9][a-z0-9-]*$`)
 
 func Validate(games []Game) error {
 	seen := make(map[string]bool, len(games))
+	barcodeOwner := map[string]string{}
 	var errs []error
 	// Every problem is reported, not just the first, so a contributor fixes
 	// them in one round trip rather than one CI run per mistake.
@@ -228,6 +230,7 @@ func Validate(games []Game) error {
 				errs = append(errs, fmt.Errorf("%s: cover_url must be https", g.ID))
 			}
 		}
+		errs = append(errs, validateBarcodes(g, barcodeOwner)...)
 	}
 	return errors.Join(errs...)
 }

@@ -697,6 +697,45 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     expect(state.copyOf(priced.id)?.paid_cents).toBe(1234)
   })
 
+  it('shows the barcode a copy was scanned from and saves which edition it is', async () => {
+    if (!priced) return
+    const { backend, state } = memoryBackend({
+      user: testUser,
+      collection: [{ game_id: priced.id, condition: 'cib', added_at: '2026-09-07T00:00:00Z', barcode: '0083717200505' }],
+    })
+    renderShell('/collection', <Route path="collection" element={<Collection />} />, backend)
+    const user = userEvent.setup()
+
+    await user.click(await screen.findByRole('button', { name: ownAs(priced.title, 'Complete') }))
+    await user.click(await screen.findByRole('menuitem', { name: /get info/i }))
+    const dialog = await screen.findByRole('dialog', { name: `${priced.title} Info` })
+    expect(dialog.textContent).toContain('Scanned from 0 83717 20050 5')
+    const editions = within(dialog).getByRole('group', { name: 'Edition' })
+    expect(within(editions).getByRole('button', { name: 'Standard' }).getAttribute('aria-pressed')).toBe('true')
+    await user.click(within(editions).getByRole('button', { name: 'Greatest Hits' }))
+    await user.click(within(dialog).getByRole('button', { name: /^save$/i }))
+    await waitFor(() => expect(state.copyOf(priced.id)?.edition).toBe('greatest-hits'))
+  })
+
+  it('offers no edition on a store from before migration 0006', async () => {
+    if (!priced) return
+    const { backend } = memoryBackend({
+      user: testUser,
+      collection: [{ game_id: priced.id, condition: 'loose', added_at: '2026-09-07T00:00:00Z' }],
+    })
+    // Rows come back without the edition and barcode keys, as an older store's do.
+    const list = backend.listCollection
+    backend.listCollection = async () =>
+      (await list()).map(({ edition: _e, barcode: _b, ...rest }) => rest)
+    renderShell('/collection', <Route path="collection" element={<Collection />} />, backend)
+    const user = userEvent.setup()
+
+    await user.click(await screen.findByRole('button', { name: ownAs(priced.title, 'Loose') }))
+    await user.click(await screen.findByRole('menuitem', { name: /get info/i }))
+    const dialog = await screen.findByRole('dialog', { name: `${priced.title} Info` })
+    expect(within(dialog).queryByRole('group', { name: 'Edition' })).toBeNull()
+  })
+
   it('refuses a day it cannot read and notes over 500 characters, and keeps the window open', async () => {
     if (!priced) return
     const { backend, state } = memoryBackend({

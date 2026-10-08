@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { ScanBarcode } from 'lucide-react'
 import { useAccount } from '@/lib/account'
 import { useJson } from '@/lib/data'
 import { rank } from '@/lib/search'
@@ -91,6 +92,13 @@ export function QuickAdd({ mode, variant = 'window' }: { mode: 'save' | 'own'; v
     // On a phone the field takes the strip's first line for itself.
     return (
       <div className="flex min-w-0 basis-full flex-wrap items-center gap-x-3 gap-y-2 sm:flex-1 sm:basis-0">
+        {mode === 'own' && (
+          // The box in hand has its barcode on the back; scanning it beats typing the title.
+          <button type="button" className={`${shelfButton} h-7 py-0`} onClick={account.openScan}>
+            <ScanBarcode className="size-3.5" aria-hidden />
+            Scan
+          </button>
+        )}
         <label className="min-w-0 flex-1 basis-[16rem]">
           <span className="sr-only">{label}</span>
           <input

@@ -123,6 +123,54 @@ type Catalog struct {
 	Games []CatalogGame `json:"games"`
 }
 
+// BarcodeEntry is what a scanned code resolves to: the game, and the edition
+// the box was printed as when there is one.
+type BarcodeEntry struct {
+	ID      string          `json:"id"`
+	Variant catalog.Variant `json:"variant,omitempty"`
+}
+
+// Barcodes is barcodes.json, keyed by the 13-digit form of each code so a
+// scanner can look one up without knowing how the box printed it. Only the
+// scanner fetches it, which is why the codes are not in catalog.json.
+type Barcodes struct {
+	AsOf  string                  `json:"as_of"`
+	Codes map[string]BarcodeEntry `json:"codes"`
+}
+
+// BarcodesFrom indexes every code in the catalog. A code without a variant of
+// its own was printed on the entry's edition, so a black-label entry's codes
+// say black label. Validate has already refused malformed and shared codes.
+func BarcodesFrom(asOf string, games []catalog.Game) Barcodes {
+	b := Barcodes{AsOf: asOf, Codes: map[string]BarcodeEntry{}}
+	for _, g := range games {
+		for _, bc := range g.Barcodes {
+			code, ok := catalog.NormalizeGTIN(bc.Code)
+			if !ok {
+				continue
+			}
+			v := bc.Variant
+			if v == "" {
+				v = g.Variant
+			}
+			if v == catalog.VariantNone {
+				v = ""
+			}
+			b.Codes[code] = BarcodeEntry{ID: g.ID, Variant: v}
+		}
+	}
+	return b
+}
+
+// WriteBarcodes stores the index compactly; the map's keys are written in
+// order, so an unchanged catalog writes the same bytes.
+func WriteBarcodes(dataDir string, b Barcodes) error {
+	if b.Codes == nil {
+		b.Codes = map[string]BarcodeEntry{}
+	}
+	return writeJSONWith(filepath.Join(dataDir, "barcodes.json"), b, false)
+}
+
 // GameDetail is games/<id>.json: everything a game page shows beyond the
 // prices, fetched by the one page that needs it.
 type GameDetail struct {

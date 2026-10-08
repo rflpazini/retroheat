@@ -19,6 +19,11 @@ priced in USD above $3, capped at 200 results.
 One call per game is deliberate. Pagination would multiply the daily API budget
 for very little accuracy, and the free tier allows 5,000 calls a day.
 
+The barcodes the site's scanner reads come from the same API, through a
+separate tool (`cmd/barcodes`) that is run by hand and spends only what the
+collector leaves of the day's calls. They identify a box and nothing more:
+no price is ever computed from them, and the collector never asks for them.
+
 ## 3. Sorting listings by condition
 
 A listing must first name the game. A keyword search also returns storefront

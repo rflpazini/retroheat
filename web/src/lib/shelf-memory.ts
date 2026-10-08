@@ -1,4 +1,4 @@
-import type { AuthEvent, AuthUser, CollectionItem, CopyPatch, NewCopy, Profile, SavedGame, ShelfBackend } from '@/lib/shelf'
+import type { AuthEvent, AuthUser, BarcodePair, CollectionItem, CopyPatch, NewCopy, Profile, SavedGame, ShelfBackend } from '@/lib/shelf'
 import { onShelf } from '@/lib/shelf'
 
 export interface MemoryState {
@@ -9,6 +9,8 @@ export interface MemoryState {
   saved: Map<string, SavedGame>
   /** Every copy, sold ones included, by its own id. */
   collection: Map<string, CollectionItem>
+  /** Barcodes paired with games by hand: code to game id. */
+  barcodePairs: Map<string, string>
   /** The copies of a game still on the shelf, in the order they were added. */
   copiesOf(gameId: string): CollectionItem[]
   /** The first such copy, for tests that speak of "the" copy of a game. */
@@ -46,6 +48,7 @@ export function memoryBackend(
     profile?: Profile | null
     /** Shelf names other people already hold. */
     takenSlugs?: string[]
+    barcodePairs?: BarcodePair[]
   } = {},
 ): { backend: ShelfBackend; state: MemoryState } {
   const listeners = new Set<(user: AuthUser | null, event: AuthEvent) => void>()
@@ -54,7 +57,13 @@ export function memoryBackend(
   }
   let copies = 0
   const nextId = () => `copy-${++copies}`
-  const seeded = (seed.collection ?? []).map((c) => ({ ...c, id: c.id ?? nextId(), paid_cents: c.paid_cents ?? null }))
+  const seeded = (seed.collection ?? []).map((c) => ({
+    ...c,
+    id: c.id ?? nextId(),
+    paid_cents: c.paid_cents ?? null,
+    edition: c.edition ?? null,
+    barcode: c.barcode ?? null,
+  }))
   const savedRows = (seed.saved ?? []).map((s): SavedGame =>
     typeof s === 'string' ? { game_id: s, created_at: SEED_DAY, target_cents: null } : { ...s, target_cents: s.target_cents ?? null },
   )
@@ -63,6 +72,7 @@ export function memoryBackend(
     profile: seed.profile ?? null,
     saved: new Map(savedRows.map((s) => [s.game_id, s])),
     collection: new Map(seeded.map((c) => [c.id, c])),
+    barcodePairs: new Map((seed.barcodePairs ?? []).map((p) => [p.code, p.game_id])),
     copiesOf(gameId) {
       return [...state.collection.values()].filter((c) => c.game_id === gameId && onShelf(c))
     },
@@ -140,6 +150,8 @@ export function memoryBackend(
         notes: copy.notes ?? null,
         sold_cents: null,
         sold_on: null,
+        edition: copy.edition ?? null,
+        barcode: copy.barcode ?? null,
       }
       state.collection.set(item.id!, item)
       return item
@@ -159,6 +171,14 @@ export function memoryBackend(
       requireUser()
       state.collection.delete(id)
     },
+    async listBarcodePairs() {
+      requireUser()
+      return [...state.barcodePairs].map(([code, game_id]) => ({ code, game_id }))
+    },
+    async saveBarcodePair(code, gameId) {
+      requireUser()
+      state.barcodePairs.set(code, gameId)
+    },
     async getProfile() {
       requireUser()
       return state.profile
@@ -173,6 +193,7 @@ export function memoryBackend(
       state.deleted = true
       state.saved.clear()
       state.collection.clear()
+      state.barcodePairs.clear()
       state.profile = null
       state.user = null
       emit('signed-out')

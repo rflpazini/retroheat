@@ -85,13 +85,16 @@ describe('readRows', () => {
 
   it('reads its own export back by game id, and leaves sold copies where they are', () => {
     const items: CollectionItem[] = [
-      { id: 'c1', game_id: 'bully-ps2', condition: 'loose', added_at: '2026-09-07T00:00:00Z', paid_cents: 1250, acquired_on: '2024-10-08', notes: 'hi' },
+      { id: 'c1', game_id: 'bully-ps2', condition: 'loose', added_at: '2026-09-07T00:00:00Z', paid_cents: 1250, acquired_on: '2024-10-08', notes: 'hi', edition: 'greatest-hits', barcode: '0083717200505' },
       { id: 'c2', game_id: 'okami-ps2', condition: 'cib', added_at: '2026-09-01T00:00:00Z', paid_cents: 1000, sold_cents: 4000, sold_on: '2026-09-12' },
     ]
     const byId = new Map(catalog.map((g) => [g.id, g]))
     const rows = readRows('retroheat', parseCSV(collectionCSV(items, byId, new Map())))
-    expect(rows[0]).toMatchObject({ game_id: 'bully-ps2', platform: 'ps2', condition: 'loose', paid_cents: 1250, acquired_on: '2024-10-08', notes: 'hi' })
+    expect(rows[0]).toMatchObject({ game_id: 'bully-ps2', platform: 'ps2', condition: 'loose', paid_cents: 1250, acquired_on: '2024-10-08', notes: 'hi', edition: 'greatest-hits', barcode: '0083717200505' })
     expect(rows[1].skip).toMatch(/sold/i)
+    expect(rows[1].edition).toBeUndefined()
+    const [copy] = toCopies(matchRows(rows.slice(0, 1), catalog, {}))
+    expect(copy).toMatchObject({ edition: 'greatest-hits', barcode: '0083717200505' })
   })
 })
 

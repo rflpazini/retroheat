@@ -1,5 +1,5 @@
 import { headlineFromMap } from '@/lib/format'
-import type { Condition, PriceEntry } from '@/lib/types'
+import type { Condition, Edition, PriceEntry } from '@/lib/types'
 
 /** The signed-in person, reduced to what the menu bar shows. */
 export interface AuthUser {
@@ -32,6 +32,14 @@ export interface CollectionItem {
   sold_cents?: number | null
   /** The day the copy was sold, YYYY-MM-DD. Set, the copy has left the shelf. */
   sold_on?: string | null
+  /**
+   * Which printing the copy is (Greatest Hits, Player's Choice…); null for
+   * the first one or when unknown, absent (undefined) when the store
+   * predates migration 0006.
+   */
+  edition?: Edition | null
+  /** The barcode scanned off the box, as 13 digits; null when the copy was not scanned. */
+  barcode?: string | null
 }
 
 /** A copy still on the shelf, as opposed to one that was sold. */
@@ -72,10 +80,22 @@ export interface SavedGame {
 
 /** What a new copy is created from; the store adds the id and the date. */
 export type NewCopy = Pick<CollectionItem, 'game_id' | 'condition'> &
-  Partial<Pick<CollectionItem, 'paid_cents' | 'acquired_on' | 'notes'>>
+  Partial<Pick<CollectionItem, 'paid_cents' | 'acquired_on' | 'notes' | 'edition' | 'barcode'>>
 
 /** The fields of a copy a person can change after it is on the shelf. */
-export type CopyPatch = Partial<Pick<CollectionItem, 'condition' | 'paid_cents' | 'acquired_on' | 'notes' | 'sold_cents' | 'sold_on'>>
+export type CopyPatch = Partial<
+  Pick<CollectionItem, 'condition' | 'paid_cents' | 'acquired_on' | 'notes' | 'sold_cents' | 'sold_on' | 'edition'>
+>
+
+/** The columns a store gains with migration 0006; a write naming them is retried without them on an older store. */
+export const BARCODE_COLUMNS = ['edition', 'barcode']
+
+/** A barcode the catalog did not know, paired with a game by the person holding the box. */
+export interface BarcodePair {
+  /** 13 digits. */
+  code: string
+  game_id: string
+}
 
 /** The most a copy can be recorded as costing, matching the database check. */
 export const MAX_PAID_CENTS = 100_000_000
@@ -109,6 +129,10 @@ export interface ShelfBackend {
   addCopies(copies: NewCopy[]): Promise<CollectionItem[]>
   updateCopy(id: string, patch: CopyPatch): Promise<void>
   removeCopy(id: string): Promise<void>
+  /** The barcodes this person paired with games by hand. */
+  listBarcodePairs(): Promise<BarcodePair[]>
+  /** Remembers, or with a new game corrects, which game a barcode belongs to. */
+  saveBarcodePair(code: string, gameId: string): Promise<void>
   /** The sharing choices, or null when the person never made any. */
   getProfile(): Promise<Profile | null>
   /** Saves the sharing choices; a name someone else holds is refused with "That name is taken." */
