@@ -8,7 +8,6 @@ import (
 	"reflect"
 	"strings"
 	"testing"
-	"time"
 
 	"github.com/rflpazini/retroheat/internal/budget"
 	"github.com/rflpazini/retroheat/internal/catalog"
@@ -540,39 +539,5 @@ func TestReviewKeepsWhatItConfirmedWhenEbayStops(t *testing.T) {
 	}
 	if len(notes) != 1 || !strings.Contains(notes[0], "did not answer") {
 		t.Errorf("notes = %v, want Okami's failed answer noted", notes)
-	}
-}
-
-func TestCollectorReserveCountsTheRunsBeforeTheReset(t *testing.T) {
-	t.Parallel()
-	reset := time.Date(2026, 10, 9, 7, 0, 0, 0, time.UTC)
-	for _, c := range []struct {
-		now  time.Time
-		runs int
-	}{
-		{time.Date(2026, 10, 8, 7, 30, 0, 0, time.UTC), 2}, // both of the day's runs to come
-		{time.Date(2026, 10, 8, 14, 0, 0, 0, time.UTC), 1}, // the evening run only
-		{time.Date(2026, 10, 8, 22, 0, 0, 0, time.UTC), 1}, // none left, but a run by hand may come
-		{time.Date(2026, 10, 9, 8, 0, 0, 0, time.UTC), 2},  // past the reset: the next day's two
-	} {
-		r := reset
-		if c.now.After(reset) {
-			r = reset.Add(24 * time.Hour)
-		}
-		if got := collectorReserve(c.now, r, 1000); got != c.runs*(1000+perRunMargin) {
-			t.Errorf("at %s: reserve = %d, want %d runs' worth", c.now.Format("15:04"), got, c.runs)
-		}
-	}
-}
-
-// The reserve is only right while it knows the collector's schedule.
-func TestScrapeTimesMatchTheWorkflow(t *testing.T) {
-	t.Parallel()
-	raw, err := os.ReadFile(filepath.Join("..", "..", ".github", "workflows", "scrape.yml"))
-	if err != nil {
-		t.Fatal(err)
-	}
-	if !strings.Contains(string(raw), `cron: "23 9,21 * * *"`) {
-		t.Error("scrape.yml's schedule changed; update scrapeTimes in cmd/barcodes/main.go to match")
 	}
 }

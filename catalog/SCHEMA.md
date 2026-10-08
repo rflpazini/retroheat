@@ -206,7 +206,10 @@ region are kept: eBay's product for a US game sometimes carries only the
 European box's code, and some old products carry a filler code (one half
 printed twice) that is on no box. The searches use the collector's daily
 quota, so by default a run leaves a catalog's worth of calls for every
-scheduled collector run before the quota resets, and resumes from
+scheduled collector run that has not finished since the quota last reset.
+GitHub starts those runs hours late, so the tool asks the repository's
+Actions history which have run rather than trusting the clock, and counts
+both as still to come when it cannot read it. It resumes from
 `.cache/barcodes.json` the next day. `-platforms`, `-only`, `-limit` and
 `-dry-run` narrow a run; `-v` prints what each entry got and what was turned
 down.
