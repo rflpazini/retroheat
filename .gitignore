@@ -16,3 +16,6 @@ web/*.tsbuildinfo
 # unanchored "collector" would also match the cmd/collector source directory.
 /retroheat
 /collector
+
+# What cmd/barcodes learned from eBay, so a run can resume the next day.
+/.cache/
