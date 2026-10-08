@@ -248,7 +248,7 @@ games:
       why: "Enormous supply keeps carts cheap; complete boxed copies carry almost all of the value."
     ebay:
       query: "Super Mario 64 N64"
-      negative: ["ds", "3d all stars", "shindou", "repro"]
+      negative: ["ds", "3d all stars", "shindou", "repro", "paper mario", "mario kart", "mario party", "mario golf", "dr mario", "dr. mario", "smash bros", "smash brothers", "cursed mirror"]
     barcodes:
       - {code: "045496870010"}
   - id: zelda-ocarina-of-time-n64
@@ -1198,7 +1198,7 @@ games:
       about_url: "https://en.wikipedia.org/wiki/San_Francisco_Rush:_Extreme_Racing"
     ebay:
       query: "San Francisco Rush N64 -\"rush 2\""
-      negative: ["rush 2", "ps1", "playstation 1", "arcade"]
+      negative: ["rush 2", "2049", "ps1", "playstation 1", "arcade"]
     barcodes:
       - {code: "031719199723"}
   - id: rush-2-extreme-racing-usa-n64
