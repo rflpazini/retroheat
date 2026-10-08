@@ -84,10 +84,14 @@ describe.skipIf(!present)('collector output matches the frontend contract', () =
           if ('mode_cents' in price) expect(typeof price.mode_cents).toBe('number')
           // Each priced condition charts its own column once there is a line
           // to draw. On the first day of real collection a game has one point
-          // and no sparkline, so the requirement follows the history.
+          // and no sparkline, so the requirement follows the history. A line
+          // only joins points of the newest series version, so after a version
+          // bump the older points do not count.
           const historyFile = path.join(dataDir, 'history', `${g.id}.json`)
           if (fs.existsSync(historyFile)) {
-            const points = read<HistoryFile>(`history/${g.id}.json`).points.filter((p) => p[c] != null)
+            const all = read<HistoryFile>(`history/${g.id}.json`).points
+            const current = all.at(-1)?.v ?? 0
+            const points = all.filter((p) => (p.v ?? 0) === current && p[c] != null)
             if (points.length > 1) {
               expect(Array.isArray(g.sparks[c])).toBe(true)
               expect(g.sparks[c]!.length).toBeGreaterThan(1)

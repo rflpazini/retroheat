@@ -230,9 +230,13 @@ describe.skipIf(!present)('the shelf pages against real collector output', () =>
     await waitFor(() => expect(document.body.textContent).toMatch(/shelf value over time/i))
     await waitFor(() => expect(document.body.textContent).toMatch(/1 of 2 copies have a price history/i))
     expect(document.body.textContent).toMatch(/the paid line covers 1 of those 1/i)
-    // The history has more than one day, so the line has a start and today's figure.
-    const history = JSON.parse(fs.readFileSync(path.join(dataDir, `history/${priced.id}.json`), 'utf8')) as { points: { d: string }[] }
-    if (history.points.length >= 2) {
+    // The history has more than one day, so the line has a start and today's
+    // figure. The line only joins points of the newest series version.
+    const history = JSON.parse(fs.readFileSync(path.join(dataDir, `history/${priced.id}.json`), 'utf8')) as {
+      points: { d: string; v?: number; loose?: number | null }[]
+    }
+    const current = history.points.at(-1)?.v ?? 0
+    if (history.points.filter((p) => (p.v ?? 0) === current && p.loose != null).length >= 2) {
       expect(document.body.textContent).toMatch(/since /i)
       expect(document.body.textContent).toContain(money(priced.prices.loose!.median_cents))
     }
