@@ -52,6 +52,9 @@ type Summary struct {
 	Removed     int
 	// Skipped counts records for games that have since left the catalog.
 	Skipped int
+	// OlderSearch counts archives written before classify.SearchVersion,
+	// left alone because a different search fetched them.
+	OlderSearch int
 }
 
 // Run reads every archive under ArchiveDir, judges each game's listings with
@@ -94,6 +97,10 @@ func Run(o Options) (Summary, error) {
 			return sum, err
 		}
 		if (o.From != "" && day < o.From) || (o.To != "" && day > o.To) {
+			continue
+		}
+		if r.SeriesVersion < classify.SearchVersion {
+			sum.OlderSearch++
 			continue
 		}
 		sum.Runs++

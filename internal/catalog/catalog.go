@@ -108,6 +108,11 @@ type Info struct {
 type EbayHints struct {
 	Query    string   `yaml:"query" json:"query"`
 	Negative []string `yaml:"negative,omitempty" json:"negative,omitempty"`
+	// Require lists words every listing title must contain. It is for a game
+	// whose title is another game's plus a word: half the words of "Soul
+	// Sacrifice Delta" are in "Soul Sacrifice", and no exclusion can remove
+	// the original without removing the game itself.
+	Require []string `yaml:"require,omitempty" json:"require,omitempty"`
 }
 
 type Game struct {
@@ -210,6 +215,11 @@ func Validate(games []Game) error {
 		}
 		if strings.TrimSpace(g.Ebay.Query) == "" {
 			errs = append(errs, fmt.Errorf("%s: ebay.query is required", g.ID))
+		}
+		for _, r := range g.Ebay.Require {
+			if strings.TrimSpace(r) == "" {
+				errs = append(errs, fmt.Errorf("%s: ebay.require has an empty term", g.ID))
+			}
 		}
 		if !slices.Contains(variants, g.Variant) {
 			errs = append(errs, fmt.Errorf("%s: unknown variant %q", g.ID, g.Variant))

@@ -18,6 +18,16 @@ func (b *Budget) Allow(cost int) bool {
 	return true
 }
 
+// AllowBeyond spends cost only if reserve calls would still be left after it,
+// so an optional call never takes a call a later required one needs.
+func (b *Budget) AllowBeyond(cost, reserve int) bool {
+	if b.limit > 0 && b.used+cost+reserve > b.limit {
+		return false
+	}
+	b.used += cost
+	return true
+}
+
 func (b *Budget) Used() int { return b.used }
 
 func (b *Budget) Remaining() int {

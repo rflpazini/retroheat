@@ -124,6 +124,8 @@ func run() int {
 		slog.Int("ok", res.OK),
 		slog.Int("stale", res.Stale),
 		slog.Int("failed", res.Failed),
+		slog.Int("too_few_listings", res.Unpriced),
+		slog.Int("widened", res.Widened),
 		slog.Int("api_calls", res.APICalls),
 	)
 

@@ -6,6 +6,7 @@ import (
 	"regexp"
 	"slices"
 	"strings"
+	"sync"
 )
 
 type Condition string
@@ -32,7 +33,16 @@ type Result struct {
 // and refactors that leave every classification identical do not bump it.
 //
 // 2 (2026-09-08): a bare cartridge or card listing counts as loose.
-const SeriesVersion = 2
+// 3 (2026-10-08): queries name the console in every spelling sellers use, a
+// listing must name the entry's console, and a game the first search cannot
+// price gets a second, wider one.
+const SeriesVersion = 3
+
+// SearchVersion is the first SeriesVersion whose searches are today's. A replay
+// judges archived listings again, and that cannot stand in for the listings a
+// different search would have found, so archives written before it are not
+// replayed. Bump it with SeriesVersion whenever the searches themselves change.
+const SearchVersion = 3
 
 // Media is how a platform packaged its games, which changes what a manual
 // implies. A disc "with manual" sits in its case, so the copy is complete; a
@@ -192,6 +202,55 @@ func match(text string, phrases []string, words []*regexp.Regexp) (string, bool)
 // Classify buckets a listing for Cased media by its title alone. See
 // ClassifyMedia.
 func Classify(title string) Result { return ClassifyMedia(title, Cased) }
+
+// ClassifyFor buckets a listing for a named game. When the game's own title
+// holds a word or phrase the rules read, the title is set aside before the
+// rules run: every listing of Under the Skin says "skin", which otherwise
+// marks a skin or decal, every listing of Ape Escape: On the Loose says
+// "loose", and every listing of Castlevania Double Pack says "double pack".
+// Only the title itself is set aside, once, so "On the Loose PSP Loose" still
+// reads as loose.
+func ClassifyFor(title, gameTitle string, media Media) Result {
+	t := strings.ToLower(title)
+	if re := ownTitleRe(gameTitle); re != nil {
+		if loc := re.FindStringIndex(t); loc != nil {
+			t = t[:loc[0]] + " " + t[loc[1]:]
+		}
+	}
+	return ClassifyMedia(t, media)
+}
+
+var (
+	// ruleWordRe and rulePhrases are every word and phrase a rule above reads.
+	ruleWordRe  = slices.Concat(junkRe, newRe, cibRe, looseRe, boxRe)
+	rulePhrases = slices.Concat(junkPhrases, newPhrases, cibPhrases, loosePhrases)
+	titleWordRe = regexp.MustCompile(`[a-z0-9]+`)
+
+	ownMu    sync.Mutex
+	ownCache = map[string]*regexp.Regexp{}
+)
+
+// ownTitleRe matches the game's title in a listing, punctuation aside, or is
+// nil when the title holds nothing the rules read.
+func ownTitleRe(gameTitle string) *regexp.Regexp {
+	ownMu.Lock()
+	defer ownMu.Unlock()
+	if re, ok := ownCache[gameTitle]; ok {
+		return re
+	}
+	lower := strings.ToLower(gameTitle)
+	reads := slices.ContainsFunc(ruleWordRe, func(re *regexp.Regexp) bool { return re.MatchString(lower) }) ||
+		slices.ContainsFunc(rulePhrases, func(p string) bool { return strings.Contains(lower, p) })
+	var re *regexp.Regexp
+	if words := titleWordRe.FindAllString(lower, -1); reads && len(words) > 0 {
+		for i, w := range words {
+			words[i] = regexp.QuoteMeta(w)
+		}
+		re = regexp.MustCompile(`\b` + strings.Join(words, `[^a-z0-9]+`) + `\b`)
+	}
+	ownCache[gameTitle] = re
+	return re
+}
 
 // ClassifyMedia buckets a listing by its title alone. The marketplace's own
 // condition field is deliberately ignored: reproduction cartridges and

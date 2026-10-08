@@ -830,3 +830,115 @@ func TestRunKeepsYesterdaysShelfCountsWhenItCannotCount(t *testing.T) {
 		t.Errorf("after a count below the floor, shelf = %+v, want none", g.Shelf)
 	}
 }
+
+// wideningProvider finds too little with its first search for the games in
+// thin, and enough once the wider search is merged in.
+type wideningProvider struct {
+	listingProvider
+	thin      map[string]bool
+	wideErr   error
+	wideCalls atomic.Int32
+}
+
+func (p *wideningProvider) Listings(ctx context.Context, g catalog.Game) (provider.Sample, error) {
+	s, err := p.listingProvider.Listings(ctx, g)
+	if p.thin[g.ID] {
+		s.Listings = s.Listings[:2]
+	}
+	return s, err
+}
+
+func (p *wideningProvider) HasWideSearch(g catalog.Game) bool { return p.thin[g.ID] }
+
+func (p *wideningProvider) WideListings(ctx context.Context, g catalog.Game) (provider.Sample, error) {
+	p.wideCalls.Add(1)
+	if p.wideErr != nil {
+		return provider.Sample{}, p.wideErr
+	}
+	s, err := p.listingProvider.Listings(ctx, g)
+	s.Query = "wide " + g.Ebay.Query
+	return s, err
+}
+
+func TestRunWidensTheSearchForAGameItCouldNotPrice(t *testing.T) {
+	t.Parallel()
+	dataDir, catalogDir := setup(t)
+	rawDir := t.TempDir()
+
+	p := &wideningProvider{thin: map[string]bool{"god-hand-ps2": true}}
+	o := opts(dataDir, catalogDir, p)
+	o.RawDir = rawDir
+	res, err := pipeline.Run(context.Background(), o)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if res.OK != 2 || res.Widened != 1 || res.APICalls != 3 {
+		t.Errorf("result = %+v, want both priced, one widened, three calls", res)
+	}
+	if got := p.wideCalls.Load(); got != 1 {
+		t.Errorf("wide searches = %d, want 1: a game the first search priced needs no second", got)
+	}
+
+	files, _ := filepath.Glob(filepath.Join(rawDir, "raw-*.json.gz"))
+	run, err := rawarchive.Read(files[0])
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, g := range run.Games {
+		switch g.ID {
+		case "god-hand-ps2":
+			// Two from the first search, ten from the wider one, two of them
+			// the same items: the record keeps each item once.
+			if g.Wide != "wide God Hand PS2" || len(g.Listings) != 10 {
+				t.Errorf("widened record = wide %q with %d listings, want the wide query and 10 distinct listings", g.Wide, len(g.Listings))
+			}
+		case "silent-hill-2-ps2":
+			if g.Wide != "" {
+				t.Errorf("unwidened record carries wide query %q", g.Wide)
+			}
+		}
+	}
+}
+
+// The wider search is optional; the first search of every later game is not.
+// With one call to spare per game, a thin game early in the run must stay
+// unpriced rather than take the call the next game needs.
+func TestRunNeverWidensWithTheBudgetLaterGamesNeed(t *testing.T) {
+	t.Parallel()
+	dataDir, catalogDir := setup(t)
+
+	// Catalog order puts silent-hill-2 first.
+	p := &wideningProvider{thin: map[string]bool{"silent-hill-2-ps2": true}}
+	o := opts(dataDir, catalogDir, p)
+	o.Budget = budget.New(2)
+	res, err := pipeline.Run(context.Background(), o)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if got := p.wideCalls.Load(); got != 0 {
+		t.Errorf("wide searches = %d, want 0 with no budget beyond the remaining games", got)
+	}
+	if res.OK != 1 || res.Unpriced != 1 || res.APICalls != 2 {
+		t.Errorf("result = %+v, want god-hand priced and silent-hill-2 unpriced in two calls", res)
+	}
+}
+
+func TestRunStopsWhenTheWideSearchIsRateLimited(t *testing.T) {
+	t.Parallel()
+	dataDir, catalogDir := setup(t)
+
+	p := &wideningProvider{
+		thin:    map[string]bool{"silent-hill-2-ps2": true, "god-hand-ps2": true},
+		wideErr: fmt.Errorf("ebay search: %w", provider.ErrRateLimited),
+	}
+	res, err := pipeline.Run(context.Background(), opts(dataDir, catalogDir, p))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if got := p.wideCalls.Load(); got != 1 {
+		t.Errorf("wide searches = %d, want 1: a rate limit stops every later call", got)
+	}
+	if res.Failed != 2 || res.Unpriced != 0 {
+		t.Errorf("result = %+v, want both failed and neither counted as too few listings", res)
+	}
+}

@@ -11,6 +11,7 @@ import (
 
 	"github.com/rflpazini/retroheat/internal/budget"
 	"github.com/rflpazini/retroheat/internal/catalog"
+	"github.com/rflpazini/retroheat/internal/classify"
 	"github.com/rflpazini/retroheat/internal/history"
 	"github.com/rflpazini/retroheat/internal/pipeline"
 	"github.com/rflpazini/retroheat/internal/provider"
@@ -109,7 +110,12 @@ func historyBytes(t *testing.T, dataDir string) map[string]string {
 
 func writeArchive(t *testing.T, rawDir string, at time.Time, games map[string][]provider.Listing) {
 	t.Helper()
-	run := &rawarchive.Run{Schema: rawarchive.Schema, GeneratedAt: at.Format(time.RFC3339), Source: ebay.Name, SeriesVersion: 1}
+	writeArchiveVersion(t, rawDir, at, classify.SeriesVersion, games)
+}
+
+func writeArchiveVersion(t *testing.T, rawDir string, at time.Time, version int, games map[string][]provider.Listing) {
+	t.Helper()
+	run := &rawarchive.Run{Schema: rawarchive.Schema, GeneratedAt: at.Format(time.RFC3339), Source: ebay.Name, SeriesVersion: version}
 	for id, ls := range games {
 		run.Record(id, id, ls, nil)
 	}
@@ -279,6 +285,32 @@ func TestReplayHonoursTheDateBounds(t *testing.T) {
 	}
 	if sum.Runs != 1 || sum.Added != 2 {
 		t.Errorf("summary = %+v, want only the second day replayed", sum)
+	}
+}
+
+// An archive from before the searches changed holds what an older query
+// found. Judging it again cannot say what today's query would have found, so
+// it must not be restamped as a point of the current series.
+func TestReplayLeavesArchivesFromAnOlderSearchAlone(t *testing.T) {
+	t.Parallel()
+	dataDir, catalogDir, rawDir := setup(t)
+	g := catalog.Game{ID: "god-hand-ps2", Title: "God Hand"}
+	writeArchiveVersion(t, rawDir, runDay, classify.SearchVersion-1, map[string][]provider.Listing{"god-hand-ps2": goodListings(g)})
+	writeArchive(t, rawDir, runDay.AddDate(0, 0, 1), map[string][]provider.Listing{"god-hand-ps2": goodListings(g)})
+
+	sum, err := replay.Run(replay.Options{ArchiveDir: rawDir, DataDir: dataDir, CatalogDir: catalogDir, Now: runDay.AddDate(0, 0, 1)})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if sum.OlderSearch != 1 || sum.Runs != 1 || sum.Added != 1 {
+		t.Errorf("summary = %+v, want the older archive left alone and only the newer day added", sum)
+	}
+	hf, err := history.Read(filepath.Join(dataDir, "history"), "god-hand-ps2")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(hf.Points) != 1 || hf.Points[0].Date != "2026-09-02" {
+		t.Errorf("points = %+v, want only the day the current search fetched", hf.Points)
 	}
 }
 

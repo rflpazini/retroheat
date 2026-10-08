@@ -117,7 +117,24 @@ func (c *Client) Quotes(ctx context.Context, g catalog.Game) ([]provider.Quote, 
 // Listings runs the game's search and returns every result as the pipeline
 // archives it: id, title, price in cents and currency, nothing judged yet.
 func (c *Client) Listings(ctx context.Context, g catalog.Game) (provider.Sample, error) {
-	query := BuildQuery(g)
+	return c.sample(ctx, BuildQuery(g))
+}
+
+// HasWideSearch and WideListings satisfy provider.WideningProvider with the
+// WideQuery search.
+func (c *Client) HasWideSearch(g catalog.Game) bool { return WideQuery(g) != "" }
+
+func (c *Client) WideListings(ctx context.Context, g catalog.Game) (provider.Sample, error) {
+	q := WideQuery(g)
+	if q == "" {
+		return provider.Sample{}, fmt.Errorf("%s: no wider search than %q", g.ID, BuildQuery(g))
+	}
+	return c.sample(ctx, q)
+}
+
+var _ provider.WideningProvider = (*Client)(nil)
+
+func (c *Client) sample(ctx context.Context, query string) (provider.Sample, error) {
 	items, err := c.search(ctx, query)
 	if err != nil {
 		return provider.Sample{}, err
@@ -144,9 +161,11 @@ var _ provider.ListingProvider = (*Client)(nil)
 // force now and aggregates the survivors into one quote per condition.
 func QuotesFromListings(g catalog.Game, ls []provider.Listing) ([]provider.Quote, error) {
 	buckets := map[classify.Condition][]int64{}
+	var tally tally
 	media := mediaOf(g)
 	for _, l := range ls {
 		v := judge(l, g, media)
+		tally.add(v)
 		if !v.keep || l.PriceCents <= 0 {
 			continue
 		}
@@ -167,9 +186,67 @@ func QuotesFromListings(g catalog.Game, ls []provider.Listing) ([]provider.Quote
 		}
 	}
 	if len(quotes) == 0 {
-		return nil, fmt.Errorf("%s: %w", g.ID, provider.ErrNoData)
+		return nil, fmt.Errorf("%s: %w (%s)", g.ID, provider.ErrNoData, tally.String(len(ls)))
 	}
 	return quotes, nil
+}
+
+// tally counts what became of a game's listings, so a game that cannot be
+// priced says why: a search that found nothing, a few copies spread over
+// three conditions, or a page of imports are different problems.
+type tally struct {
+	kept    map[classify.Condition]int
+	skipped map[string]int
+}
+
+func (t *tally) add(v verdict) {
+	if v.keep {
+		if t.kept == nil {
+			t.kept = map[classify.Condition]int{}
+		}
+		t.kept[v.condition]++
+		return
+	}
+	reason := v.label
+	if r, ok := strings.CutPrefix(reason, "skip:"); ok {
+		reason = r
+	} else if strings.HasPrefix(reason, "reject:") {
+		reason = "rejected"
+	}
+	if t.skipped == nil {
+		t.skipped = map[string]int{}
+	}
+	t.skipped[reason]++
+}
+
+// String reads like "14 listings, kept 2 loose, 2 cib, 2 new (a price needs 4
+// of one condition); skipped 6 unknown, 2 rejected". Reasons are listed in a
+// fixed order so two runs compare by eye.
+func (t tally) String(n int) string {
+	if n == 0 {
+		return "the search found no listings"
+	}
+	var kept, skipped []string
+	for _, c := range []classify.Condition{classify.Loose, classify.CIB, classify.New} {
+		if k := t.kept[c]; k > 0 {
+			kept = append(kept, fmt.Sprintf("%d %s", k, c))
+		}
+	}
+	for _, r := range []string{"unknown", "region", "platform", "not-this-game", "negative", "rejected", "currency"} {
+		if k := t.skipped[r]; k > 0 {
+			skipped = append(skipped, fmt.Sprintf("%d %s", k, r))
+		}
+	}
+	s := fmt.Sprintf("%d listings, ", n)
+	if len(kept) == 0 {
+		s += "none kept"
+	} else {
+		s += fmt.Sprintf("kept %s (a price needs %d of one condition)", strings.Join(kept, ", "), aggregate.MinSample)
+	}
+	if len(skipped) > 0 {
+		s += "; skipped " + strings.Join(skipped, ", ")
+	}
+	return s
 }
 
 // verdict is the whole judgement of one listing, in the words the audit
@@ -188,10 +265,12 @@ func judge(l provider.Listing, g catalog.Game, media classify.Media) verdict {
 		return verdict{label: "skip:negative"}
 	case foreign(l.Title, g):
 		return verdict{label: "skip:region"}
-	case !classify.Mentions(l.Title, g.Title):
+	case !namesPlatform(l.Title, g.Platform):
+		return verdict{label: "skip:platform"}
+	case !classify.Mentions(l.Title, g.Title), !hasRequired(l.Title, g.Ebay.Require):
 		return verdict{label: "skip:not-this-game"}
 	}
-	res := classify.ClassifyMedia(l.Title, media)
+	res := classify.ClassifyFor(l.Title, g.Title, media)
 	switch {
 	case res.Rejected:
 		return verdict{label: "reject:" + res.Reason}
