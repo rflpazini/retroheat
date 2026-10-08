@@ -99,7 +99,8 @@ go run ./cmd/collector -platforms ps2 -data ./data -catalog ./catalog
 
 Start with one platform and `-audit` to see how real listings are being
 classified before running the whole catalog. The free tier allows 5,000 calls a
-day and the collector spends one per game.
+day and the collector spends one per game, plus a second, wider search for each
+game the first could not price (about 5% of the catalog).
 
 While a Production keyset is still pending, a Sandbox keyset plus
 `EBAY_BASE_URL=https://api.sandbox.ebay.com` runs the same pipeline against
@@ -171,8 +172,9 @@ and jobs queued on the hour are the ones most often delayed or dropped.
 
 A scheduled workflow runs the collector twice a day and commits the JSON it
 produces; a second workflow rebuilds the site. Public repositories get unlimited
-GitHub Actions minutes, and the free eBay tier allows 5,000 calls a day against
-a catalog of a few hundred games.
+GitHub Actions minutes, and the free eBay tier allows 5,000 calls a day: two
+runs over a catalog of about 1,600 games spend some 3,400 of them, which leaves
+room for audits and the barcode index.
 
 The daily data commit doubles as repository activity, which is what keeps
 GitHub from disabling the schedule after 60 days of quiet. The raw listing

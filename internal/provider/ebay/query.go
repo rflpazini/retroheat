@@ -30,6 +30,65 @@ func BuildQuery(g catalog.Game) string {
 	return b.String()
 }
 
+// WideQuery is the second search for a game the first one could not price: the
+// entry's query with every group of alternatives cut to its first one and no
+// exclusions. eBay matches each word of a query literally once it holds an
+// exclusion or a group, so "Garou Mark of the Wolves" misses the listing that
+// says "Garou: MOTW"; a plain query lets eBay match spellings and drop a word
+// when few listings carry them all. That also brings in other games and other
+// consoles, so the exclusions still apply to every title locally, and a title
+// that never names the entry's console is dropped. It returns "" when the
+// first search already was the plain one.
+func WideQuery(g catalog.Game) string {
+	q := groupRe.ReplaceAllStringFunc(strings.TrimSpace(g.Ebay.Query), func(group string) string {
+		first, _, _ := strings.Cut(strings.Trim(group, "()"), ",")
+		return strings.Trim(strings.TrimSpace(first), `"`)
+	})
+	q = strings.Join(strings.Fields(q), " ")
+	if q == BuildQuery(g) {
+		return ""
+	}
+	return q
+}
+
+var groupRe = regexp.MustCompile(`\([^()]*\)`)
+
+// platformNames is every way sellers write each console in a title. The long
+// names are matched even when glued to a neighbour ("GameCube2002", "2PS2"),
+// which is how eBay itself reads them; the short ones need a word of their
+// own, and a console number must not run on into a year ("Sony PlayStation,
+// 2001" is the first PlayStation). Handhelds that also play an earlier one's
+// cartridges accept its name: a Game Boy Color cartridge is often listed as
+// plain "Game Boy".
+var platformNames = map[catalog.Platform]*regexp.Regexp{
+	catalog.PS2:       regexp.MustCompile(`(ps ?2|play ?station ?(2|two))([^0-9]|$)`),
+	catalog.PS3:       regexp.MustCompile(`(ps ?3|play ?station ?(3|three))([^0-9]|$)`),
+	catalog.GameCube:  regexp.MustCompile(`game ?cube|\b(gcn|ngc|gc)\b`),
+	catalog.PSP:       regexp.MustCompile(`psp|play ?station portable|\bumd\b`),
+	catalog.Vita:      regexp.MustCompile(`vita|\bpsv\b`),
+	catalog.N64:       regexp.MustCompile(`(n64|nintendo ?64)([^0-9]|$)|\bn 64\b`),
+	catalog.Dreamcast: regexp.MustCompile(`dream ?cast|\bdc\b`),
+	catalog.GB:        regexp.MustCompile(`game ?boy|\b(gb|dmg)\b`),
+	catalog.GBC:       regexp.MustCompile(`game ?boy|gbc|\bgb\b`),
+	catalog.GBA:       regexp.MustCompile(`game ?boy|gba|\bgb\b`),
+}
+
+var notAlnum = regexp.MustCompile(`[^a-z0-9]+`)
+
+// namesPlatform reports whether a listing title names the entry's console in
+// any spelling sellers use. A widened search returns the same game on other
+// consoles, and a title that never says which console it is for cannot be
+// told apart from them. A literal search finds a few honest titles that leave
+// the console out (eBay also matches the listing's item specifics); dropping
+// those costs about one kept listing in three thousand.
+func namesPlatform(title string, p catalog.Platform) bool {
+	re, ok := platformNames[p]
+	if !ok {
+		return true
+	}
+	return re.MatchString(notAlnum.ReplaceAllString(strings.ToLower(title), " "))
+}
+
 // excluded reports whether a listing title contains one of the catalog's
 // negative terms as whole words. Substring matching would make "episode i"
 // exclude "Episode II" and "Episode III", which is exactly the sequel the term
@@ -50,6 +109,17 @@ func excluded(title string, negatives []string) bool {
 }
 
 var apostrophes = strings.NewReplacer("'", "", "’", "", "‘", "")
+
+// hasRequired reports whether a listing title contains every one of the
+// entry's required words, matched the way exclusions are.
+func hasRequired(title string, required []string) bool {
+	for _, r := range required {
+		if strings.TrimSpace(r) != "" && !excluded(title, []string{r}) {
+			return false
+		}
+	}
+	return true
+}
 
 // Terms that mark a copy from another region. The catalog tracks the North
 // American release unless an entry says otherwise, and a Japanese Mario Kart
@@ -81,6 +151,16 @@ var (
 // an exclusion, since its listings are described with those very words.
 func foreign(title string, g catalog.Game) bool {
 	title = madeInJapan.Replace(strings.ToLower(title))
+	// A region word in the game's own name says nothing about the copy:
+	// every listing of PGA European Tour says "European".
+	own := strings.ToLower(g.Title)
+	for _, terms := range [][]string{japaneseTerms, palTerms, otherTerms} {
+		for _, t := range terms {
+			if re := negativeRe(t); re.MatchString(own) {
+				title = re.ReplaceAllString(title, " ")
+			}
+		}
+	}
 	switch g.Region {
 	case catalog.RegionPAL:
 		return excluded(title, japaneseTerms)

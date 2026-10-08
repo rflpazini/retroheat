@@ -50,11 +50,31 @@ type Listing struct {
 	Currency   string
 }
 
-// Sample is everything one search returned for a game, with the query that
-// found it.
+// Sample is everything the searches for a game returned, with the query that
+// found them. Wide is the second, wider query when one was run; its listings
+// are merged into Listings.
 type Sample struct {
 	Query    string
+	Wide     string
 	Listings []Listing
+}
+
+// Merge adds a wider search's listings to the sample, skipping any item the
+// first search already returned.
+func (s Sample) Merge(wide Sample) Sample {
+	seen := make(map[string]bool, len(s.Listings))
+	for _, l := range s.Listings {
+		seen[l.ItemID] = true
+	}
+	out := Sample{Query: s.Query, Wide: wide.Query, Listings: append([]Listing(nil), s.Listings...)}
+	for _, l := range wide.Listings {
+		if l.ItemID != "" && seen[l.ItemID] {
+			continue
+		}
+		seen[l.ItemID] = true
+		out.Listings = append(out.Listings, l)
+	}
+	return out
 }
 
 // ListingProvider is a Provider that separates fetching from judging, so the
@@ -64,6 +84,15 @@ type ListingProvider interface {
 	Provider
 	Listings(ctx context.Context, g catalog.Game) (Sample, error)
 	QuotesFromListings(g catalog.Game, ls []Listing) ([]Quote, error)
+}
+
+// WideningProvider is a ListingProvider with a second, wider search for a game
+// its first search could not price. HasWideSearch costs nothing; it says
+// whether WideListings would search anything different.
+type WideningProvider interface {
+	ListingProvider
+	HasWideSearch(g catalog.Game) bool
+	WideListings(ctx context.Context, g catalog.Game) (Sample, error)
 }
 
 var (

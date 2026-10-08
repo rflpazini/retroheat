@@ -667,6 +667,34 @@ func TestBareOnlyAppliesWhenNothingElseDoes(t *testing.T) {
 	}
 }
 
+// A word that is part of the game's own name says nothing about the copy.
+func TestClassifyForSetsAsideTheGamesOwnWords(t *testing.T) {
+	t.Parallel()
+	cases := []struct {
+		listing, game string
+		want          classify.Result
+	}{
+		{"Under the Skin PS2 CIB Complete", "Under the Skin", classify.Result{Condition: classify.CIB, Reason: `\bcib\b`}},
+		{"Under the Skin (Sony PlayStation 2, 2004) Disc Only", "Under the Skin", classify.Result{Condition: classify.Loose, Reason: "disc only"}},
+		// Without its own word, "On the Loose" is a bare listing, not a loose one.
+		{"Ape Escape On the Loose PSP", "Ape Escape: On the Loose", classify.Result{Condition: classify.Unknown, Reason: "no-match"}},
+		{"Ape Escape On the Loose PSP Complete CIB", "Ape Escape: On the Loose", classify.Result{Condition: classify.CIB, Reason: `\bcib\b`}},
+		// Only the title is set aside: a condition word after it still counts.
+		{"Ape Escape On the Loose PSP Loose", "Ape Escape: On the Loose", classify.Result{Condition: classify.Loose, Reason: `\bloose\b`}},
+		{"Final Fantasy IV The Complete Collection PSP Complete", "Final Fantasy IV: The Complete Collection", classify.Result{Condition: classify.CIB, Reason: `\bcomplete\b`}},
+		{"Final Fantasy IV The Complete Collection PSP", "Final Fantasy IV: The Complete Collection", classify.Result{Condition: classify.Unknown, Reason: "no-match"}},
+		{"Castlevania Double Pack GBA Complete CIB", "Castlevania Double Pack", classify.Result{Condition: classify.CIB, Reason: `\bcib\b`}},
+		// Other games keep every rule.
+		{"Castlevania Aria of Sorrow GBA double pack", "Castlevania: Aria of Sorrow", classify.Result{Rejected: true, Reason: "double pack"}},
+		{"Silent Hill 2 PS2 skin decal", "Silent Hill 2", classify.Result{Rejected: true, Reason: `\bskin\b`}},
+	}
+	for _, c := range cases {
+		if got := classify.ClassifyFor(c.listing, c.game, classify.Cased); got != c.want {
+			t.Errorf("ClassifyFor(%q, %q) = %+v, want %+v", c.listing, c.game, got, c.want)
+		}
+	}
+}
+
 // Naming a manual, box, case or insert without fitting a rule is ambiguity,
 // not bareness; those titles keep being dropped.
 func TestATitleThatNamesAPartIsNotBare(t *testing.T) {

@@ -56,10 +56,15 @@ type Options struct {
 }
 
 type Result struct {
-	Tracked  int
-	OK       int
-	Stale    int
+	Tracked int
+	OK      int
+	Stale   int
+	// Failed counts every game left unpriced; Unpriced is the part of it
+	// whose searches worked but found too few usable listings.
 	Failed   int
+	Unpriced int
+	// Widened counts the games that needed a second, wider search.
+	Widened  int
 	APICalls int
 }
 
@@ -130,20 +135,35 @@ func Run(ctx context.Context, o Options) (Result, error) {
 	}
 	var mirrored []mirror.Row
 
-	for _, g := range games {
+	for i, g := range games {
 		var (
-			quotes []provider.Quote
-			err    error
+			quotes  []provider.Quote
+			widened bool
+			err     error
 		)
 		if rateLimited {
 			err = provider.ErrRateLimited
 			raw.Record(g.ID, "", nil, err)
-		} else if quotes, err = priceOne(ctx, o, g, raw); errors.Is(err, provider.ErrRateLimited) {
-			log.Error("provider rate limited; not calling it again this run", slog.String("game", g.ID))
-			rateLimited = true
+		} else {
+			reserve := (len(games) - i - 1) * o.Provider.CostPerGame()
+			if quotes, widened, err = priceOne(ctx, o, g, raw, reserve); errors.Is(err, provider.ErrRateLimited) {
+				log.Error("provider rate limited; not calling it again this run", slog.String("game", g.ID))
+				rateLimited = true
+			}
+		}
+		if widened {
+			res.Widened++
 		}
 		if err != nil {
-			log.Warn("pricing failed", slog.String("game", g.ID), slog.String("err", err.Error()))
+			// Too few listings is the market, not a fault: thin games are
+			// expected and say why at info level, so a real failure (a
+			// search that errored) still stands out as a warning.
+			if errors.Is(err, provider.ErrNoData) {
+				log.Info("too few listings to price", slog.String("game", g.ID), slog.String("why", err.Error()))
+				res.Unpriced++
+			} else {
+				log.Warn("pricing failed", slog.String("game", g.ID), slog.String("err", err.Error()))
+			}
 			res.Failed++
 			if carried, ok := carryOver(previous[g.Platform], g.ID); ok {
 				carried.Stale = true
@@ -373,24 +393,48 @@ func writeCatalogFiles(dataDir, asOf string, games []catalog.Game, anns map[stri
 }
 
 // priceOne prices a game and, when archiving, records exactly one entry for
-// it: the listings it saw, or the error that kept it from seeing any.
-func priceOne(ctx context.Context, o Options, g catalog.Game, raw *rawarchive.Run) ([]provider.Quote, error) {
-	if !o.Budget.Allow(o.Provider.CostPerGame()) {
+// it: the listings it saw, or the error that kept it from seeing any. reserve
+// is what the games still to come need from the budget; the wider second
+// search only spends what lies beyond it, so a thin game early in the run
+// never costs a later game its only search.
+func priceOne(ctx context.Context, o Options, g catalog.Game, raw *rawarchive.Run, reserve int) (quotes []provider.Quote, widened bool, err error) {
+	cost := o.Provider.CostPerGame()
+	if !o.Budget.Allow(cost) {
 		err := fmt.Errorf("api budget exhausted")
 		raw.Record(g.ID, "", nil, err)
-		return nil, err
+		return nil, false, err
 	}
 	lp, ok := o.Provider.(provider.ListingProvider)
-	if !ok || raw == nil {
-		return nonEmpty(o.Provider.Quotes(ctx, g))
+	if !ok {
+		quotes, err := nonEmpty(o.Provider.Quotes(ctx, g))
+		return quotes, false, err
 	}
 	sample, err := lp.Listings(ctx, g)
 	if err != nil {
 		raw.Record(g.ID, "", nil, err)
-		return nil, err
+		return nil, false, err
 	}
-	raw.Record(g.ID, sample.Query, sample.Listings, nil)
-	return nonEmpty(lp.QuotesFromListings(g, sample.Listings))
+	quotes, err = nonEmpty(lp.QuotesFromListings(g, sample.Listings))
+	if wp, ok := lp.(provider.WideningProvider); ok && errors.Is(err, provider.ErrNoData) &&
+		wp.HasWideSearch(g) && o.Budget.AllowBeyond(cost, reserve) {
+		wide, werr := wp.WideListings(ctx, g)
+		switch {
+		case errors.Is(werr, provider.ErrRateLimited):
+			// Every later call would fail the same way; the run must know.
+			err = werr
+		case werr != nil:
+			// The first search's verdict stands.
+		default:
+			sample = sample.Merge(wide)
+			widened = true
+			quotes, err = nonEmpty(lp.QuotesFromListings(g, sample.Listings))
+			if err != nil {
+				err = fmt.Errorf("%w, after the wider search %q", err, wide.Query)
+			}
+		}
+	}
+	raw.RecordSample(g.ID, sample)
+	return quotes, widened, err
 }
 
 func nonEmpty(quotes []provider.Quote, err error) ([]provider.Quote, error) {

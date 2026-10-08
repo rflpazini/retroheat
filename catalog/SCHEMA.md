@@ -29,6 +29,7 @@ games:
 | `igdb_id` | no | Reserved for a future IGDB link-up; cover art comes from `info.cover_url` |
 | `ebay.query` | yes | Search terms; **must name the platform** (see below for the Game Boy line) |
 | `ebay.negative` | no | Terms that disqualify a listing |
+| `ebay.require` | no | Words every listing must contain (see below) |
 
 Parsing is strict: an unknown key fails CI rather than being ignored, so a typo
 in a pull request is caught immediately.
@@ -60,13 +61,40 @@ listings and `Demon's Souls (ps3, "playstation 3")` 85, Folklore 73 against
 104; across 31 PlayStation 2 entries the group raised the listings found from
 828 to 1,156 and brought three thin games up to a price. Entries added since
 then end in `(ps2, "playstation 2")`, `(ps3, "playstation 3")` or
-`(n64, "nintendo 64")` where sellers commonly use the long name. The older
-`PS2` and `N64` entries still use the abbreviation alone; moving them shifts
-every one of their medians at once, so it is a change for its own commit.
-GameCube and Dreamcast sellers write the console's name the same way nearly
-every time, and those files keep the plain form. PSP and Vita were not
-measured; one Vita entry needed `(vita, psvita)` to find a seller who wrote
-"PSVITA", so check the audit for listings the plain form missed.
+`(n64, "nintendo 64")` where sellers commonly use the long name.
+
+The older entries were measured the same way on 8 October 2026, every one
+against the same morning's run. Every Nintendo 64 entry gained (kept listings
+7,015 to 8,142) and moved to the group. PlayStation 2 entries whose search
+returned fewer than the 200-listing page gained 35% (125 entries, 4,242 to
+5,732) and moved; the 46 that already filled the page lost 6%, since the group
+only reshuffles a full page, and they keep `PS2` alone. GameCube, PSP and Vita
+changed by under 2% either way and keep the plain form; new entries for them
+may use `(gamecube, "game cube")`, `(psp, "playstation portable")` and
+`(vita, psvita)`, which one Vita entry needed for a seller who wrote "PSVITA".
+Dreamcast sellers write the name one way.
+
+Keep the words before the group few and spelled the way every seller spells
+them. "Beyond Good and Evil GameCube" with an exclusion misses every listing
+that says "Beyond Good & Evil", and a roman numeral misses the sellers who
+write the digit; a group covers both, `Lost Kingdoms (ii, 2)`. A game the
+first search cannot price gets a second, wider one with the same words and no
+exclusions or groups, so a thin game still has a chance, but a precise first
+query is cheaper and cleaner.
+
+### Requiring a word
+
+A listing counts as the game when half the title's words appear in it, which
+is wrong for a game whose title is another game's plus one word: "Soul
+Sacrifice Delta" shares two of its three words with "Soul Sacrifice", and no
+exclusion can remove the original without removing the game. Name the word in
+`require`, matched as a whole word like the exclusions:
+
+```yaml
+    ebay:
+      query: "Soul Sacrifice Delta (vita, psvita)"
+      require: ["delta"]
+```
 
 Two things are particular to PlayStation 3. eBay reads the 3 in "PlayStation
 3" as the 3 in a title, so a search for `Resistance 3 PS3` came back with 148

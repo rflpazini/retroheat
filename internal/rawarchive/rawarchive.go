@@ -38,6 +38,9 @@ type Run struct {
 type Game struct {
 	ID    string `json:"id"`
 	Query string `json:"q"`
+	// Wide is the second, wider search run for a game the first could not
+	// price; its listings are merged into Listings.
+	Wide string `json:"wq,omitempty"`
 	// Err is set when the search failed and no listings were seen, so a
 	// replay can tell "not fetched" from "fetched and nothing usable".
 	Err      string    `json:"err,omitempty"`
@@ -62,6 +65,14 @@ func (r *Run) Record(id, query string, ls []provider.Listing, err error) {
 		g.Err = err.Error()
 	}
 	r.Games = append(r.Games, g)
+}
+
+// RecordSample appends the listings one game's searches returned.
+func (r *Run) RecordSample(id string, s provider.Sample) {
+	if r == nil {
+		return
+	}
+	r.Games = append(r.Games, Game{ID: id, Query: s.Query, Wide: s.Wide, Listings: FromListings(s.Listings)})
 }
 
 // Day is the UTC calendar day the run happened on, the date its points carry.

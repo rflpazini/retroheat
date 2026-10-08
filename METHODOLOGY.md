@@ -19,6 +19,21 @@ priced in USD above $3, capped at 200 results.
 One call per game is deliberate. Pagination would multiply the daily API budget
 for very little accuracy, and the free tier allows 5,000 calls a day.
 
+Once a query holds an exclusion, eBay matches every one of its words
+literally. That keeps sequels and other consoles off the page, and it also
+misses the seller who wrote "Beyond Good & Evil" for "Beyond Good and Evil"
+or "PlayStation 2" for "PS2". So queries name the console in each spelling
+sellers use (see `catalog/SCHEMA.md`), and a game the first search cannot
+price gets a **second, wider search**: the same words with no exclusions and
+one spelling of the console, which lets eBay match spellings and drop a word
+when few listings carry them all. Its results are merged with the first
+search's, each item once, and judged by the same rules, the exclusions
+included. On 8 October 2026 the wider search ran for 54 of the 65 games the
+first one could not price and brought 7 of them to a price; the console
+spellings brought 3 more. It only spends
+calls the rest of the run does not need: a thin game early in the catalog
+never costs a later game its first search.
+
 ## 3. Sorting listings by condition
 
 A listing must first name the game. A keyword search also returns storefront
@@ -36,7 +51,18 @@ not Silent Hill 2 and "Resistance: Fall of Man (PlayStation 3)" is not
 Resistance 3, so the platform's own name is set aside before the check;
 Nintendo 64 is left alone because its games carry the 64 in their titles. A
 two-word title needs both words, since half of "Suikoden Tactics" is how "La
-Pucelle Tactics" would get counted.
+Pucelle Tactics" would get counted. When a game's title is another game's plus
+one word, half its words always match the other game ("Soul Sacrifice Delta",
+"Soul Sacrifice"), so the entry names the word in `require` and a listing
+without it is dropped.
+
+A listing must also name the console, in any spelling sellers use ("PS2",
+"PlayStation 2", "Nintendo 64", "N64", "Game Cube", "PS Vita"). The wider
+search returns the same game on other consoles, and a title that never says
+which console it is for cannot be told apart from them. The literal search
+finds a few honest titles that leave the console out, since eBay also matches
+a listing's item specifics; on the 8 October run the rule cost 8 of about 49,600
+kept listings.
 
 It must also be the release the catalog tracks. Entries are the North American
 release unless they say otherwise, so for those a title that says Japan, JPN,
@@ -180,6 +206,14 @@ flagged `stale` rather than dropped, so a board never develops holes. If fewer
 than half the tracked games price successfully, the run exits non-zero so the
 workflow fails loudly instead of publishing a half-empty board.
 
+A game whose searches worked but found too few usable listings is the market,
+not a fault, and the log says so at info level with the count behind it:
+`too few listings to price game=cannon-spike-dreamcast why="... (6 listings,
+kept 1 cib, 1 new (a price needs 4 of one condition); skipped 1 unknown, 1
+region, 2 rejected)"`. A warning means a search itself failed. The closing
+`done` line counts both (`failed`, of which `too_few_listings`) and how many
+games needed the wider search (`widened`).
+
 ## 8. Known limits
 
 - **Asking, not sold.** The single most important caveat. See the README.
@@ -212,7 +246,8 @@ carries `series_version` so a bump can be confirmed on the live site.
 
 **The raw archive.** Each scheduled run writes one compressed file holding
 every listing it saw, per game, before judging any of it: item id, title,
-price and currency, plus the query and, for games that failed, the error. At
+price and currency, plus the query, the wider query when one ran (`wq`, its
+listings merged into the same list) and, for games that failed, the error. At
 about 400 KB per run the files are published as assets of a monthly
 prerelease named `raw-YYYY-MM` rather than committed. The format (`schema` 1):
 
@@ -235,7 +270,9 @@ Replay judges the archived listings with the current rules and the current
 catalog entry, replaces the points for the days it covers, stamped with the
 current version, and leaves every other point alone; the next scheduled run
 rebuilds the boards. Two limits: it cannot recover listings a different search
-query would have returned, and once weeks have been compacted a range should
+query would have returned, which is why archives written before
+`classify.SearchVersion` (version 3, when the searches changed) are left
+alone rather than restamped, and once weeks have been compacted a range should
 be replayed whole, because a week is folded again from whatever days were
 replayed. A day the archive cannot price is left as it was and counted,
 because the archive does not cover every run that ever wrote a point;

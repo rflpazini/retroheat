@@ -11,6 +11,7 @@ import (
 	"os"
 	"time"
 
+	"github.com/rflpazini/retroheat/internal/classify"
 	"github.com/rflpazini/retroheat/internal/replay"
 )
 
@@ -57,6 +58,10 @@ func run() int {
 	}
 	fmt.Printf("replay: %d archives read; %d history files %s: %d points replaced, %d added, %d removed, %d unpriceable days kept; %d records for games no longer tracked\n",
 		sum.Runs, sum.Games, verb, sum.Replaced, sum.Added, sum.Removed, sum.Unpriceable, sum.Skipped)
+	if sum.OlderSearch > 0 {
+		fmt.Printf("replay: %d archives were fetched by an older search (before series version %d) and were left alone.\n",
+			sum.OlderSearch, classify.SearchVersion)
+	}
 	if sum.Unpriceable > 0 && !*prune {
 		fmt.Println("replay: some days could not be priced from the archive and were left as they were; rerun with -prune to remove them (the commit then needs a `Data-Reset: <reason>` trailer).")
 	}
