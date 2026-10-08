@@ -25,7 +25,7 @@ describe('collectionCSV', () => {
   it('writes one row per copy with money in dollars, days as YYYY-MM-DD, and a header the importer knows', () => {
     const items: CollectionItem[] = [
       { id: 'c1', game_id: 'bully-ps2', condition: 'loose', added_at: '2026-09-07T00:00:00Z', paid_cents: 1250, acquired_on: '2024-10-08', notes: 'Flea market, "mint"' },
-      { id: 'c2', game_id: 'bully-ps2', condition: 'cib', added_at: '2026-09-08T00:00:00Z', paid_cents: null },
+      { id: 'c2', game_id: 'bully-ps2', condition: 'cib', added_at: '2026-09-08T00:00:00Z', paid_cents: null, edition: 'greatest-hits', barcode: '0083717200505' },
       { id: 'c3', game_id: 'okami-ps2', condition: 'cib', added_at: '2026-09-01T00:00:00Z', paid_cents: 1000, sold_cents: 4000, sold_on: '2026-09-12' },
       { id: 'c4', game_id: 'gone-ps2', condition: 'new', added_at: '2026-09-01T00:00:00Z' },
     ]
@@ -33,7 +33,9 @@ describe('collectionCSV', () => {
     expect(rows[0]).toEqual(COLLECTION_HEADER)
     expect(rows).toHaveLength(5)
     const bully = rows.find((r) => r[0] === 'c1')!
-    expect(bully).toEqual(['c1', 'bully-ps2', 'Bully', 'ps2', 'NTSC-U', 'loose', '12.50', '2024-10-08', '', '', 'Flea market, "mint"', '15.00', '2026-09-07T00:00:00Z'])
+    expect(bully).toEqual(['c1', 'bully-ps2', 'Bully', 'ps2', 'NTSC-U', 'loose', '12.50', '2024-10-08', '', '', 'Flea market, "mint"', '15.00', '2026-09-07T00:00:00Z', '', ''])
+    // The printing and the barcode a scanned copy came from ride at the end.
+    expect(rows.find((r) => r[0] === 'c2')!.slice(-2)).toEqual(['greatest-hits', '0083717200505'])
     const sold = rows.find((r) => r[0] === 'c3')!
     expect(sold.slice(5, 10)).toEqual(['cib', '10.00', '', '40.00', '2026-09-12'])
     // A game the catalog no longer names still exports, by id, with no price.

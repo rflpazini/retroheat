@@ -40,6 +40,22 @@ export const CONDITION_LABELS: Record<Condition, string> = {
   new: 'Sealed',
 }
 
+/**
+ * Which printing of a release a copy is: the catalog's variants
+ * (internal/catalog/catalog.go) without "none", which is null on a copy.
+ * A Greatest Hits box and a black label share a game but not a barcode.
+ */
+export type Edition = 'black-label' | 'greatest-hits' | 'players-choice' | 'platinum'
+
+export const EDITIONS: Edition[] = ['black-label', 'greatest-hits', 'players-choice', 'platinum']
+
+export const EDITION_LABELS: Record<Edition, string> = {
+  'black-label': 'Black Label',
+  'greatest-hits': 'Greatest Hits',
+  'players-choice': "Player's Choice",
+  platinum: 'Platinum',
+}
+
 export interface Price {
   median_cents: number
   /** Most common whole-dollar price point. Absent when the provider supplies a single figure. */

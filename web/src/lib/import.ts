@@ -1,9 +1,10 @@
+import { normalizeBarcode } from '@/lib/barcode'
 import { parseDay } from '@/lib/day'
 import { parseMoney } from '@/lib/format'
 import { platformOf } from '@/lib/report'
 import { fold, score } from '@/lib/search'
 import { onShelf, type CollectionItem, type NewCopy } from '@/lib/shelf'
-import { CONDITIONS, CONDITION_LABELS, type CatalogGame, type Condition, type Platform } from '@/lib/types'
+import { CONDITIONS, CONDITION_LABELS, EDITIONS, type CatalogGame, type Condition, type Edition, type Platform } from '@/lib/types'
 
 /*
   Bringing a shelf in from another tool. Files are read by header name, never
@@ -25,6 +26,9 @@ export interface ImportRow {
   paid_cents: number | null
   acquired_on: string | null
   notes: string | null
+  /** Which printing, and the barcode it was scanned from; only RetroHeat's own export carries them. */
+  edition?: Edition | null
+  barcode?: string | null
   /** RetroHeat's own export names the game outright. */
   game_id?: string
   /** Why the row will not come in, when it will not. */
@@ -173,6 +177,11 @@ export function readRows(format: ImportFormat, records: string[][]): ImportRow[]
         notes: col(record, 'notes'),
         game_id,
       }
+      // Read when the export had them; an unknown edition or a mangled code is dropped, not guessed.
+      const edition = col(record, 'edition')
+      if (EDITIONS.includes(edition as Edition)) row.edition = edition as Edition
+      const barcode = normalizeBarcode(col(record, 'barcode') ?? '')
+      if (barcode) row.barcode = barcode
       if (col(record, 'sold_on') || col(record, 'sold')) row.skip = 'Sold copy; it stays where it is'
       else if (!row.condition) row.skip = `Condition "${cond ?? ''}" is not loose, cib or new`
       return row
@@ -276,9 +285,11 @@ export function matchRows(
 
 /** The copies the matches make, for the shelf to add. */
 export function toCopies(matches: Match[]): NewCopy[] {
-  return matches.flatMap((m) =>
-    m.kind === 'match' && m.row.condition
-      ? [{ game_id: m.game.id, condition: m.row.condition, paid_cents: m.row.paid_cents, acquired_on: m.row.acquired_on, notes: m.row.notes }]
-      : [],
-  )
+  return matches.flatMap((m) => {
+    if (m.kind !== 'match' || !m.row.condition) return []
+    const copy: NewCopy = { game_id: m.game.id, condition: m.row.condition, paid_cents: m.row.paid_cents, acquired_on: m.row.acquired_on, notes: m.row.notes }
+    if (m.row.edition) copy.edition = m.row.edition
+    if (m.row.barcode) copy.barcode = m.row.barcode
+    return [copy]
+  })
 }

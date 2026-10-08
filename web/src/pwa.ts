@@ -13,8 +13,9 @@ import { UPDATE_READY } from '@/lib/online'
 
 // What a search and a shelf need, fetched once when the browser is idle so
 // they sit in the cache before the signal goes: the boot set plus the light
-// catalog and the price index, about 370 KB gzipped.
-const WARM = ['meta.json', 'trending/all.json', 'catalog.json', 'prices.json']
+// catalog, the price index and the barcodes the scanner looks up, about
+// 400 KB gzipped.
+const WARM = ['meta.json', 'trending/all.json', 'catalog.json', 'prices.json', 'barcodes.json']
 
 function warm() {
   const run = () => {

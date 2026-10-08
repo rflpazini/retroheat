@@ -4,6 +4,7 @@ import type { Loadable } from '@/lib/data'
 import {
   onShelf,
   type AuthUser,
+  type BarcodePair,
   type CollectionItem,
   type CopyPatch,
   type NewCopy,
@@ -12,9 +13,22 @@ import {
   type ShelfBackend,
 } from '@/lib/shelf'
 import { isAuthEnabled, loadSupabaseBackend } from '@/lib/supabase'
-import type { Condition } from '@/lib/types'
+import type { Condition, Edition } from '@/lib/types'
 
 export type AccountStatus = 'disabled' | 'loading' | 'signed-out' | 'signed-in'
+
+/** What a copy may carry beyond its game and condition when it joins the shelf. */
+export interface AddCopyExtra {
+  paid_cents?: number | null
+  edition?: Edition | null
+  /** The barcode it was scanned from, as 13 digits. */
+  barcode?: string | null
+  /**
+   * Skip the window asking what it cost. The scanner asks for the price
+   * itself, and a window popping up between two boxes would stop the run.
+   */
+  quiet?: boolean
+}
 
 export interface Account {
   status: AccountStatus
@@ -44,11 +58,13 @@ export interface Account {
   owned: (gameId: string) => CollectionItem | undefined
   /** Sets the first copy's condition, adds a copy when there is none, or with null takes every copy off the shelf. */
   setOwned: (gameId: string, condition: Condition | null) => Promise<void>
-  addCopy: (gameId: string, condition: Condition) => Promise<void>
+  /** Puts one more copy on the shelf and returns it as the store named it; null when the write failed (the status strip says why). */
+  addCopy: (gameId: string, condition: Condition, extra?: AddCopyExtra) => Promise<CollectionItem | null>
   /** Puts many copies on the shelf (an import) and says how many landed; throws with the store's words when it fails. */
   addCopies: (copies: NewCopy[]) => Promise<number>
   updateCopy: (copyId: string, patch: CopyPatch) => Promise<void>
-  removeCopy: (copyId: string) => Promise<void>
+  /** Takes a copy off the shelf; true once the store has deleted it, false when it did not (the status strip says why) or nothing was there. */
+  removeCopy: (copyId: string) => Promise<boolean>
   /** Records what a copy cost, or forgets it with null. */
   setPaid: (copyId: string, cents: number | null) => Promise<void>
   /** The copy just added to the shelf, for the window that asks what it cost; null when none. */
@@ -65,6 +81,14 @@ export interface Account {
   sharingOpen: boolean
   openSharing: () => void
   closeSharing: () => void
+  /** Whether the barcode scanner is open; opening it signed out asks to sign in instead. */
+  scanOpen: boolean
+  openScan: () => void
+  closeScan: () => void
+  /** The barcodes this person paired with games by hand; empty when the store has none or cannot say. */
+  barcodePairs: () => Promise<BarcodePair[]>
+  /** Remembers which game a barcode belongs to; says on the status strip when it could not. */
+  saveBarcodePair: (code: string, gameId: string) => Promise<void>
   /** Set when the lists came from the copy kept on this device because the network failed; says when that copy was saved. */
   offline: { at: string } | null
   /** The last failed write, in the backend's words; cleared by the next success. */
@@ -104,10 +128,10 @@ const disabled: Account = {
   copiesOf: () => [],
   owned: () => undefined,
   setOwned: noop,
-  addCopy: noop,
+  addCopy: async () => null,
   addCopies: async () => 0,
   updateCopy: noop,
-  removeCopy: noop,
+  removeCopy: async () => false,
   setPaid: noop,
   pendingAdd: null,
   dismissAdd: () => {},
@@ -119,6 +143,11 @@ const disabled: Account = {
   sharingOpen: false,
   openSharing: () => {},
   closeSharing: () => {},
+  scanOpen: false,
+  openScan: () => {},
+  closeScan: () => {},
+  barcodePairs: async () => [],
+  saveBarcodePair: noop,
   offline: null,
   error: null,
   signInError: null,
@@ -301,14 +330,16 @@ function AccountState({
   const [infoCopy, setInfoCopy] = useState<Account['infoCopy']>(null)
   const [profile, setProfile] = useState<Loadable<Profile | null>>({ status: 'ready', data: null })
   const [sharingOpen, setSharingOpen] = useState(false)
+  const [scanOpen, setScanOpen] = useState(false)
   // A failed write's message belongs to the page it happened on; leaving the
   // page gives the status strip back to the price caveat. The same goes for
-  // the windows about one copy or the shelf's sharing.
+  // the windows about one copy, the shelf's sharing and the scanner.
   useEffect(() => {
     setError(null)
     setPendingAdd(null)
     setInfoCopy(null)
     setSharingOpen(false)
+    setScanOpen(false)
   }, [location.pathname])
   const [signInError, setSignInError] = useState<string | null>(null)
   const savedRef = useRef(saved)
@@ -529,17 +560,32 @@ function AccountState({
   const inFlight = useRef(new Set<string>())
 
   const addCopy = useCallback(
-    async (gameId: string, condition: Condition) => {
+    async (gameId: string, condition: Condition, extra: AddCopyExtra = {}): Promise<CollectionItem | null> => {
       const r = await ready()
-      if (!r) return
+      if (!r) return null
+      const { quiet, ...fields } = extra
+      // Only what was given goes to the store, so an ordinary add never names
+      // a column a store from before 0006 lacks.
+      const copy: NewCopy = { game_id: gameId, condition }
+      if (fields.paid_cents != null) copy.paid_cents = fields.paid_cents
+      if (fields.edition) copy.edition = fields.edition
+      if (fields.barcode) copy.barcode = fields.barcode
       const temp = `pending-${++tempSeq.current}`
       inFlight.current.add(temp)
       patchShelf((next) =>
-        next.set(temp, { id: temp, game_id: gameId, condition, added_at: new Date().toISOString(), paid_cents: null }),
+        next.set(temp, {
+          id: temp,
+          game_id: gameId,
+          condition,
+          added_at: new Date().toISOString(),
+          paid_cents: copy.paid_cents ?? null,
+          edition: copy.edition ?? null,
+          barcode: copy.barcode ?? null,
+        }),
       )
       const from = locationRef.current.pathname
       try {
-        const row = await r.b.addCopy({ game_id: gameId, condition })
+        const row = await r.b.addCopy(copy)
         patchShelf((next) => {
           next.delete(temp)
           next.set(keyOf(row), row)
@@ -547,10 +593,12 @@ function AccountState({
         setError(null)
         // The copy gets the window asking what it cost once the write has
         // landed, and only if the visitor is still on the same page.
-        if (row.id && locationRef.current.pathname === from) setPendingAdd({ copy_id: row.id, game_id: gameId, condition })
+        if (!quiet && row.id && locationRef.current.pathname === from) setPendingAdd({ copy_id: row.id, game_id: gameId, condition })
+        return row
       } catch (e) {
         patchShelf((next) => next.delete(temp))
         setError(messageOf(e))
+        return null
       } finally {
         inFlight.current.delete(temp)
       }
@@ -601,18 +649,20 @@ function AccountState({
   )
 
   const removeCopy = useCallback(
-    async (copyId: string) => {
+    async (copyId: string): Promise<boolean> => {
       const r = await ready()
-      if (!r || inFlight.current.has(copyId)) return
+      if (!r || inFlight.current.has(copyId)) return false
       const before = r.shelf.get(copyId)
-      if (!before) return
+      if (!before) return false
       patchShelf((next) => next.delete(copyId))
       try {
         await r.b.removeCopy(copyId)
         setError(null)
+        return true
       } catch (e) {
         patchShelf((next) => next.set(copyId, before))
         setError(messageOf(e))
+        return false
       }
     },
     [ready, patchShelf],
@@ -625,7 +675,10 @@ function AccountState({
       const copies = copiesIn(cur.data, gameId)
       if (condition) {
         const first = copies[0]
-        if (!first) return addCopy(gameId, condition)
+        if (!first) {
+          await addCopy(gameId, condition)
+          return
+        }
         if (!first.id) {
           setError(COPIES_MIGRATION)
           return
@@ -664,6 +717,43 @@ function AccountState({
     })()
   }, [ensure])
   const closeSharing = useCallback(() => setSharingOpen(false), [])
+
+  // Scanning adds copies, so it is for a signed-in shelf; anyone else is
+  // asked to sign in first, the way every other add control does.
+  const statusRef = useRef(status)
+  statusRef.current = status
+  const openScan = useCallback(() => {
+    if (statusRef.current === 'signed-in') {
+      setScanOpen(true)
+      return
+    }
+    void ensure().catch(() => {})
+    setSignInOpen(true)
+  }, [ensure])
+  const closeScan = useCallback(() => setScanOpen(false), [])
+
+  // A store from before 0006 has no pairings to give; the scanner then
+  // knows only the catalog's barcodes, which is no reason to say anything.
+  const barcodePairs = useCallback(async (): Promise<BarcodePair[]> => {
+    try {
+      const b = await ensure()
+      return await b.listBarcodePairs()
+    } catch {
+      return []
+    }
+  }, [ensure])
+  const saveBarcodePair = useCallback(
+    async (code: string, gameId: string) => {
+      try {
+        const b = await ensure()
+        await b.saveBarcodePair(code, gameId)
+      } catch (e) {
+        // The copy itself landed; only the pairing is missing, and the strip says so.
+        setError(`the barcode pairing (${messageOf(e)})`)
+      }
+    },
+    [ensure],
+  )
   const saveProfile = useCallback(
     async (p: Profile) => {
       const b = await ensure()
@@ -717,6 +807,11 @@ function AccountState({
       sharingOpen,
       openSharing,
       closeSharing,
+      scanOpen,
+      openScan,
+      closeScan,
+      barcodePairs,
+      saveBarcodePair,
       offline,
       error,
       signInError,
@@ -750,6 +845,11 @@ function AccountState({
     sharingOpen,
     openSharing,
     closeSharing,
+    scanOpen,
+    openScan,
+    closeScan,
+    barcodePairs,
+    saveBarcodePair,
     offline,
     error,
     signInError,

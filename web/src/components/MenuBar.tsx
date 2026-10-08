@@ -70,6 +70,7 @@ export function MenuBar({
     account.status === 'signed-in'
       ? [
           'separator',
+          { label: 'Scan Barcode…', onSelect: account.openScan },
           { label: 'Export Collection…', onSelect: () => void exportList('collection').catch(console.error) },
           { label: 'Export Saved Games…', onSelect: () => void exportList('saved').catch(console.error) },
           { label: 'Import Collection…', onSelect: () => setImportOpen(true) },

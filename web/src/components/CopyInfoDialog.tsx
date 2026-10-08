@@ -1,11 +1,21 @@
 import { useEffect, useRef, useState } from 'react'
 import { useAccount } from '@/lib/account'
+import { formatBarcode } from '@/lib/barcode'
 import { useJson } from '@/lib/data'
 import { parseDay, today } from '@/lib/day'
 import { takeReturnFocus } from '@/lib/focus'
 import { conditionColor, moneyExact, parseMoney } from '@/lib/format'
 import { MAX_NOTES, MAX_PAID_CENTS, type CopyPatch } from '@/lib/shelf'
-import { CONDITIONS, CONDITION_LABELS, PLATFORM_SHORT, type Condition, type GameDetail } from '@/lib/types'
+import {
+  CONDITIONS,
+  CONDITION_LABELS,
+  EDITIONS,
+  EDITION_LABELS,
+  PLATFORM_SHORT,
+  type Condition,
+  type Edition,
+  type GameDetail,
+} from '@/lib/types'
 import { defaultRing, macButton, macField } from '@/components/mac'
 import { MacCheckbox } from '@/components/MacCheckbox'
 
@@ -32,6 +42,7 @@ export function CopyInfoDialog({ copyId, sell, onClose }: { copyId: string; sell
   const restoreRef = useRef<Element | null>(null)
 
   const [condition, setCondition] = useState<Condition>(copy?.condition ?? 'cib')
+  const [edition, setEdition] = useState<Edition | null>(copy?.edition ?? null)
   const [paid, setPaid] = useState(money(copy?.paid_cents))
   const [acquired, setAcquired] = useState(copy?.acquired_on ?? '')
   const [notes, setNotes] = useState(copy?.notes ?? '')
@@ -57,6 +68,7 @@ export function CopyInfoDialog({ copyId, sell, onClose }: { copyId: string; sell
   if (!copy) return null
   const game = detail.status === 'ready' ? detail.data : null
   const title = game?.title ?? copy.game_id
+  const editions = copy.edition !== undefined
 
   function readMoney(text: string, what: string): number | null | false {
     if (!text.trim()) return null
@@ -110,6 +122,8 @@ export function CopyInfoDialog({ copyId, sell, onClose }: { copyId: string; sell
       sold_cents: soldCents,
       sold_on: soldDay,
     }
+    // A store from before 0006 has no edition column; the field is not offered there.
+    if (editions) patch.edition = edition
     onClose()
     await account.updateCopy(copyId, patch)
   }
@@ -159,6 +173,31 @@ export function CopyInfoDialog({ copyId, sell, onClose }: { copyId: string; sell
                 ))}
               </div>
             </div>
+
+            {editions && (
+              <div>
+                <span className="eyebrow mb-1.5 block">Edition</span>
+                {/* The printing: a Greatest Hits box is the same game as the black label, but not the same copy. */}
+                <div className="flex flex-wrap" role="group" aria-label="Edition">
+                  {[null, ...EDITIONS].map((e) => (
+                    <button
+                      key={e ?? 'none'}
+                      type="button"
+                      aria-pressed={edition === e}
+                      className={toggle(edition === e)}
+                      onClick={() => setEdition(e)}
+                    >
+                      {e ? EDITION_LABELS[e] : 'Standard'}
+                    </button>
+                  ))}
+                </div>
+                {copy.barcode && (
+                  <p className="eyebrow mt-1.5">
+                    Scanned from <span className="tabular">{formatBarcode(copy.barcode)}</span>
+                  </p>
+                )}
+              </div>
+            )}
 
             <div className="grid grid-cols-2 gap-4">
               <label className="block">
