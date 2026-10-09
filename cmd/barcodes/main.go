@@ -50,33 +50,6 @@ type cacheFile struct {
 	Products map[string]ebay.Product `json:"products"`
 }
 
-// scrapeTimes are the collector's scheduled runs, in UTC, as the cron in
-// .github/workflows/scrape.yml has them ("23 9,21 * * *"); a test keeps the
-// two in step. eBay's daily quota resets once a day, so every one of these
-// still to come before the reset needs its calls left over.
-var scrapeTimes = []time.Duration{9*time.Hour + 23*time.Minute, 21*time.Hour + 23*time.Minute}
-
-// perRunMargin is room above one call per game for a run's token and retries.
-const perRunMargin = 100
-
-// collectorReserve is how many calls to leave for the collector: a catalog's
-// worth for each scheduled run between now and the quota's reset, and never
-// less than one run's worth, for a run started by hand.
-func collectorReserve(now, reset time.Time, games int) int {
-	if !reset.After(now) {
-		reset = now.Add(24 * time.Hour)
-	}
-	runs := 0
-	for day := now.UTC().Truncate(24 * time.Hour); day.Before(reset); day = day.Add(24 * time.Hour) {
-		for _, at := range scrapeTimes {
-			if t := day.Add(at); t.After(now) && t.Before(reset) {
-				runs++
-			}
-		}
-	}
-	return max(runs, 1) * (games + perRunMargin)
-}
-
 // failuresInARow is how many games in a row may fail before the run stops:
 // one bad answer is that game's problem, a run of them is eBay's.
 const failuresInARow = 5
@@ -90,7 +63,8 @@ func run() int {
 		force       = flag.Bool("force", false, "ask again about entries that already list barcodes; codes are only ever added (-rejudge removes)")
 		dryRun      = flag.Bool("dry-run", false, "ask eBay and report, but do not edit the catalog")
 		budgetN     = flag.Int("budget", 0, "most Browse calls to spend (0: what is left today minus -reserve)")
-		reserve     = flag.Int("reserve", -1, "calls to leave for the collector when -budget is 0 (-1: a catalog's worth for every scheduled run before the quota resets)")
+		reserve     = flag.Int("reserve", -1, "calls to leave for the collector when -budget is 0 (-1: a catalog's worth for every scheduled scrape that has not finished since the quota reset)")
+		repo        = flag.String("repo", "", "GitHub owner/name whose scrape history says which runs are done (default: the checkout's origin)")
 		minListings = flag.Int("min-listings", 3, "kept listings a product needs before its codes are trusted")
 		maxProducts = flag.Int("max-products", 4, "most products read per search")
 		cachePath   = flag.String("cache", "./.cache/barcodes.json", "what earlier runs learned, so a run can resume")
@@ -162,7 +136,14 @@ func run() int {
 		}
 		keep := *reserve
 		if keep < 0 {
-			keep = collectorReserve(time.Now(), reset, len(games))
+			now := time.Now()
+			finished, err := scrapeHistory(ctx, *repo, *catalogDir, quotaDayStart(now, reset))
+			if err != nil {
+				fmt.Fprintf(os.Stderr, "barcodes: cannot tell which of today's scrapes have run (%v), so both count as still to come\n", err)
+			}
+			due := scrapesDue(now, reset, finished)
+			keep = due * (len(games) + perRunMargin)
+			fmt.Fprintf(os.Stderr, "barcodes: %d scheduled scrape(s) still to run before the quota resets\n", due)
 		}
 		calls = left - keep
 		if calls <= 0 {
