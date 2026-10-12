@@ -1,6 +1,6 @@
 {
  "platform": "ps3",
- "as_of": "2026-10-11",
+ "as_of": "2026-10-12",
  "source": "ebay-browse",
  "price_kind": "asking",
  "games": [
@@ -20,28 +20,40 @@
     "cib": {
      "median_cents": 4999,
      "mode_cents": 5000,
-     "q1_cents": 3999,
-     "q3_cents": 5500,
-     "n": 18
+     "q1_cents": 3997,
+     "q3_cents": 5700,
+     "n": 17
+    },
+    "new": {
+     "median_cents": 44450,
+     "q1_cents": 25750,
+     "q3_cents": 44950,
+     "n": 4
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
      2400,
      2400,
-     2400
+     2400,
+     2450
     ],
     "cib": [
      4999,
      4999,
+     4999,
      4999
+    ],
+    "new": [
+     44700,
+     44575
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "folklore-ps3",
@@ -53,15 +65,15 @@
      "median_cents": 11999,
      "mode_cents": 12000,
      "q1_cents": 9500,
-     "q3_cents": 14999,
-     "n": 18
+     "q3_cents": 15499,
+     "n": 17
     },
     "cib": {
-     "median_cents": 16000,
+     "median_cents": 15999,
      "mode_cents": 15000,
      "q1_cents": 15000,
      "q3_cents": 17500,
-     "n": 46
+     "n": 47
     },
     "new": {
      "median_cents": 23730,
@@ -70,11 +82,12 @@
      "n": 5
     }
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": -0.01,
+   "pct_7d": 0.01,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     11999,
      11999,
      11999,
      11999
@@ -82,16 +95,18 @@
     "cib": [
      15999,
      16000,
+     16000,
      16000
     ],
     "new": [
+     23730,
      23730,
      23730,
      23730
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "ncaa-football-14-ps3",
@@ -100,18 +115,18 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1847,
+     "median_cents": 1895,
      "mode_cents": 2000,
-     "q1_cents": 1499,
-     "q3_cents": 1999,
-     "n": 18
+     "q1_cents": 1599,
+     "q3_cents": 2000,
+     "n": 17
     },
     "cib": {
-     "median_cents": 2469,
-     "mode_cents": 2000,
-     "q1_cents": 1972,
+     "median_cents": 2487,
+     "mode_cents": 2500,
+     "q1_cents": 1984,
      "q3_cents": 2999,
-     "n": 86
+     "n": 88
     },
     "new": {
      "median_cents": 7749,
@@ -121,16 +136,18 @@
      "n": 6
     }
    },
-   "pct_1d": -0.72,
-   "pct_7d": null,
+   "pct_1d": 0.73,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
      1897,
      1872,
-     1847
+     1847,
+     1871
     ],
     "cib": [
+     2487,
      2487,
      2487,
      2487
@@ -138,11 +155,12 @@
     "new": [
      7749,
      7749,
+     7749,
      7749
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "saw-ii-flesh-and-blood-ps3",
@@ -151,24 +169,25 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 30750,
-     "q1_cents": 20999,
-     "q3_cents": 35000,
-     "n": 6
+     "median_cents": 32500,
+     "q1_cents": 24499,
+     "q3_cents": 42250,
+     "n": 5
     }
    },
-   "pct_1d": -5.38,
-   "pct_7d": null,
+   "pct_1d": 5.69,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
+     32500,
      32500,
      32500,
      32500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "spider-man-web-of-shadows-ps3",
@@ -177,11 +196,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 19250,
+     "median_cents": 20000,
      "mode_cents": 17500,
      "q1_cents": 17495,
      "q3_cents": 29995,
-     "n": 6
+     "n": 7
     },
     "cib": {
      "median_cents": 28995,
@@ -191,23 +210,25 @@
      "n": 13
     }
    },
-   "pct_1d": -0.01,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": -0.01,
    "pct_30d": null,
    "sparks": {
     "loose": [
      21000,
      20500,
+     20000,
      20000
     ],
     "cib": [
      28999,
      28999,
-     28999
+     28999,
+     28997
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "x-men-origins-wolverine-uncaged-edition-ps3",
@@ -216,25 +237,26 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 22999,
+     "median_cents": 22050,
      "mode_cents": 25000,
      "q1_cents": 20000,
      "q3_cents": 24999,
-     "n": 11
+     "n": 12
     }
    },
-   "pct_1d": 6.72,
-   "pct_7d": null,
+   "pct_1d": -4.13,
+   "pct_7d": 3.32,
    "pct_30d": null,
    "sparks": {
     "cib": [
      21100,
      21325,
-     21550
+     21550,
+     21800
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "puppeteer-ps3",
@@ -252,39 +274,42 @@
     "cib": {
      "median_cents": 19999,
      "mode_cents": 20000,
-     "q1_cents": 18999,
-     "q3_cents": 23900,
-     "n": 23
+     "q1_cents": 19297,
+     "q3_cents": 24000,
+     "n": 21
     },
     "new": {
-     "median_cents": 24750,
-     "q1_cents": 20000,
+     "median_cents": 21500,
+     "q1_cents": 19250,
      "q3_cents": 28250,
-     "n": 4
+     "n": 5
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": -0.01,
    "pct_30d": null,
    "sparks": {
     "loose": [
      16500,
      16500,
-     16500
+     16500,
+     16850
     ],
     "cib": [
      20000,
      20000,
+     19999,
      19999
     ],
     "new": [
+     24750,
      24750,
      24750,
      24750
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "tornado-outbreak-ps3",
@@ -300,18 +325,19 @@
      "n": 8
     }
    },
-   "pct_1d": -4.76,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": -2.38,
    "pct_30d": null,
    "sparks": {
     "cib": [
      21000,
      21000,
-     21000
+     21000,
+     20500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "yakuza-dead-souls-ps3",
@@ -327,25 +353,26 @@
      "n": 9
     },
     "cib": {
-     "median_cents": 20000,
+     "median_cents": 19999,
      "mode_cents": 20000,
      "q1_cents": 18275,
-     "q3_cents": 22750,
+     "q3_cents": 22500,
      "n": 25
     },
     "new": {
-     "median_cents": 27499,
+     "median_cents": 24999,
      "mode_cents": 30000,
-     "q1_cents": 19945,
+     "q1_cents": 19447,
      "q3_cents": 31499,
-     "n": 8
+     "n": 9
     }
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": -0.01,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     14249,
      14249,
      14249,
      14249
@@ -353,16 +380,18 @@
     "cib": [
      20000,
      20000,
+     20000,
      20000
     ],
     "new": [
      25000,
      26250,
-     27499
+     27499,
+     26250
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "best-of-playstation-network-vol-1-ps3",
@@ -385,10 +414,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
+     20000,
      20000,
      20000,
      20000
@@ -396,11 +426,12 @@
     "new": [
      26748,
      26748,
+     26748,
      26748
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "splatterhouse-ps3",
@@ -416,34 +447,44 @@
      "n": 7
     },
     "cib": {
-     "median_cents": 19999,
+     "median_cents": 20000,
      "mode_cents": 20000,
-     "q1_cents": 18573,
+     "q1_cents": 19999,
      "q3_cents": 20000,
-     "n": 8
+     "n": 6
+    },
+    "new": {
+     "median_cents": 49900,
+     "mode_cents": 42500,
+     "q1_cents": 42500,
+     "q3_cents": 57900,
+     "n": 5
     }
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": 0.01,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
      10400,
      10600,
+     10800,
      10800
     ],
     "cib": [
      20000,
      20000,
-     19999
+     19999,
+     20000
     ],
     "new": [
+     42500,
      42500,
      42500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "armored-core-verdict-day-ps3",
@@ -467,17 +508,22 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
+    "loose": [
+     14995,
+     14995
+    ],
     "cib": [
+     19250,
      19250,
      19250,
      19250
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "spider-man-shattered-dimensions-ps3",
@@ -486,37 +532,39 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 14997,
+     "median_cents": 14998,
      "mode_cents": 15000,
-     "q1_cents": 13738,
+     "q1_cents": 13999,
      "q3_cents": 14999,
-     "n": 5
+     "n": 6
     },
     "cib": {
      "median_cents": 20000,
      "mode_cents": 20000,
-     "q1_cents": 19995,
-     "q3_cents": 22499,
-     "n": 23
+     "q1_cents": 19847,
+     "q3_cents": 22250,
+     "n": 24
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
      14997,
      14748,
+     14997,
      14997
     ],
     "cib": [
+     20000,
      20000,
      20000,
      20000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "armored-core-for-answer-ps3",
@@ -532,18 +580,19 @@
      "n": 8
     }
    },
-   "pct_1d": 0.01,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": 20.05,
    "pct_30d": null,
    "sparks": {
     "cib": [
      12495,
      13747,
-     14999
+     14999,
+     15000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "asuras-wrath-ps3",
@@ -554,23 +603,24 @@
     "loose": {
      "median_cents": 12999,
      "mode_cents": 13000,
-     "q1_cents": 12249,
+     "q1_cents": 11999,
      "q3_cents": 14999,
      "n": 12
     },
     "cib": {
-     "median_cents": 17250,
+     "median_cents": 16500,
      "mode_cents": 14000,
-     "q1_cents": 14750,
+     "q1_cents": 14500,
      "q3_cents": 19999,
-     "n": 28
+     "n": 30
     }
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": -4.35,
+   "pct_7d": -2.82,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     13000,
      13000,
      13000,
      13000
@@ -578,11 +628,12 @@
     "cib": [
      17750,
      17500,
+     17250,
      17250
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "spider-man-edge-of-time-ps3",
@@ -591,25 +642,26 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 17950,
+     "median_cents": 18200,
      "mode_cents": 17000,
      "q1_cents": 16999,
      "q3_cents": 19999,
      "n": 14
     }
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": 1.39,
+   "pct_7d": -0.69,
    "pct_30d": null,
    "sparks": {
     "cib": [
      18200,
      18075,
-     17950
+     17950,
+     18075
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "the-godfather-the-dons-edition-ps3",
@@ -617,23 +669,16 @@
    "region": "NTSC-U",
    "variant": "none",
    "prices": {
-    "loose": {
-     "median_cents": 11239,
-     "mode_cents": 12500,
-     "q1_cents": 9749,
-     "q3_cents": 12489,
-     "n": 4
-    },
     "cib": {
-     "median_cents": 17750,
+     "median_cents": 17999,
      "mode_cents": 20000,
-     "q1_cents": 16995,
+     "q1_cents": 17206,
      "q3_cents": 20000,
-     "n": 14
+     "n": 13
     }
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": 1.4,
+   "pct_7d": 1.43,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -644,11 +689,12 @@
     "cib": [
      17500,
      17625,
+     17750,
      17750
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "saw-ps3",
@@ -657,21 +703,22 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 9999,
+     "median_cents": 10499,
      "mode_cents": 10000,
-     "q1_cents": 9747,
-     "q3_cents": 13500,
-     "n": 9
+     "q1_cents": 9995,
+     "q3_cents": 15000,
+     "n": 7
     }
    },
-   "pct_1d": -4.76,
-   "pct_7d": null,
+   "pct_1d": 5,
+   "pct_7d": 2.5,
    "pct_30d": null,
    "sparks": {
     "cib": [
      9999,
      10249,
-     9999
+     9999,
+     10249
     ],
     "new": [
      25500,
@@ -679,7 +726,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "50-cent-blood-on-the-sand-ps3",
@@ -688,24 +735,25 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 17444,
-     "q1_cents": 13899,
-     "q3_cents": 18999,
-     "n": 7
+     "median_cents": 17987,
+     "q1_cents": 15722,
+     "q3_cents": 20700,
+     "n": 5
     }
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": 3.11,
+   "pct_7d": -1.51,
    "pct_30d": null,
    "sparks": {
     "cib": [
      17987,
      17716,
-     17444
+     17444,
+     17716
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "drakengard-3-ps3",
@@ -732,16 +780,18 @@
    "sparks": {
     "cib": [
      15500,
+     15500,
      15500
     ],
     "new": [
      19800,
      19599,
+     19398,
      19398
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "the-legend-of-spyro-dawn-of-the-dragon-ps3",
@@ -756,18 +806,19 @@
      "n": 6
     }
    },
-   "pct_1d": -5.35,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": -2.67,
    "pct_30d": null,
    "sparks": {
     "cib": [
      13999,
      13999,
-     13999
+     13999,
+     13625
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "afro-samurai-ps3",
@@ -790,34 +841,37 @@
      "n": 21
     },
     "new": {
-     "median_cents": 46250,
+     "median_cents": 39500,
      "q1_cents": 31750,
-     "q3_cents": 68000,
-     "n": 4
+     "q3_cents": 66750,
+     "n": 5
     }
    },
-   "pct_1d": 3.7,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
      8900,
      8900,
-     8900
+     8900,
+     9175
     ],
     "cib": [
      13999,
      13750,
+     13999,
      13999
     ],
     "new": [
+     46250,
      46250,
      46250,
      46250
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "captain-america-super-soldier-ps3",
@@ -826,10 +880,10 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 9500,
-     "q1_cents": 8499,
-     "q3_cents": 10450,
-     "n": 5
+     "median_cents": 9250,
+     "q1_cents": 7999,
+     "q3_cents": 9900,
+     "n": 6
     },
     "cib": {
      "median_cents": 13999,
@@ -840,10 +894,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     9500,
      9500,
      9500,
      9500
@@ -851,11 +906,12 @@
     "cib": [
      13999,
      13999,
+     13999,
      13999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "trinity-souls-of-zill-oll-ps3",
@@ -872,17 +928,18 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
+     13999,
      13999,
      13999,
      13999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "alice-madness-returns-ps3",
@@ -891,25 +948,26 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 12899,
-     "mode_cents": 12500,
-     "q1_cents": 12250,
+     "median_cents": 12799,
+     "mode_cents": 12000,
+     "q1_cents": 12000,
      "q3_cents": 15000,
-     "n": 32
+     "n": 33
     }
    },
-   "pct_1d": 0.78,
-   "pct_7d": null,
+   "pct_1d": -0.78,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
+     12799,
      12799,
      12799,
      12799
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "silent-hill-downpour-ps3",
@@ -925,11 +983,11 @@
      "n": 7
     },
     "cib": {
-     "median_cents": 10650,
+     "median_cents": 10900,
      "mode_cents": 11000,
-     "q1_cents": 10000,
-     "q3_cents": 11999,
-     "n": 14
+     "q1_cents": 10224,
+     "q3_cents": 12250,
+     "n": 12
     },
     "new": {
      "median_cents": 37500,
@@ -939,28 +997,31 @@
      "n": 5
     }
    },
-   "pct_1d": -1.39,
-   "pct_7d": null,
+   "pct_1d": 2.35,
+   "pct_7d": -0.46,
    "pct_30d": null,
    "sparks": {
     "loose": [
      8499,
      8375,
-     8250
+     8250,
+     8125
     ],
     "cib": [
      10900,
      10850,
-     10800
+     10800,
+     10850
     ],
     "new": [
      37450,
      37450,
-     37450
+     37450,
+     37475
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "3d-dot-game-heroes-ps3",
@@ -970,16 +1031,16 @@
    "prices": {
     "loose": {
      "median_cents": 9000,
-     "mode_cents": 8500,
-     "q1_cents": 8248,
+     "mode_cents": 8000,
+     "q1_cents": 8000,
      "q3_cents": 11450,
      "n": 9
     },
     "cib": {
      "median_cents": 12000,
      "mode_cents": 13000,
-     "q1_cents": 11000,
-     "q3_cents": 13999,
+     "q1_cents": 10999,
+     "q3_cents": 13700,
      "n": 58
     },
     "new": {
@@ -990,11 +1051,12 @@
      "n": 6
     }
    },
-   "pct_1d": -7.66,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     9000,
      9000,
      9000,
      9000
@@ -1002,16 +1064,18 @@
     "cib": [
      12000,
      12498,
+     12000,
      12000
     ],
     "new": [
+     24500,
      24500,
      24500,
      24500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "family-guy-back-to-the-multiverse-ps3",
@@ -1028,17 +1092,18 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
+     12000,
      12000,
      12000,
      12000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "transformers-war-for-cybertron-ps3",
@@ -1047,9 +1112,9 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 8499,
+     "median_cents": 7499,
      "q1_cents": 6212,
-     "q3_cents": 10750,
+     "q3_cents": 9750,
      "n": 4
     },
     "cib": {
@@ -1060,23 +1125,25 @@
      "n": 13
     }
    },
-   "pct_1d": -1.63,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": -1.72,
    "pct_30d": null,
    "sparks": {
     "loose": [
      7000,
      7750,
-     8499
+     8499,
+     7999
     ],
     "cib": [
      11799,
      11745,
-     11691
+     11691,
+     11596
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "majin-and-the-forsaken-kingdom-ps3",
@@ -1098,11 +1165,12 @@
      "n": 16
     }
    },
-   "pct_1d": 0.43,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": -0.21,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     8989,
      8989,
      8989,
      8989
@@ -1110,11 +1178,12 @@
     "cib": [
      11825,
      11788,
+     11800,
      11800
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "wet-ps3",
@@ -1123,25 +1192,26 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 8999,
+     "median_cents": 8900,
      "mode_cents": 10000,
      "q1_cents": 7500,
      "q3_cents": 9988,
      "n": 19
     },
     "cib": {
-     "median_cents": 11499,
+     "median_cents": 11496,
      "mode_cents": 10000,
      "q1_cents": 10499,
-     "q3_cents": 13000,
+     "q3_cents": 12495,
      "n": 30
     }
    },
-   "pct_1d": -0.01,
-   "pct_7d": null,
+   "pct_1d": -0.03,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     8999,
      8999,
      8999,
      8999
@@ -1149,11 +1219,12 @@
     "cib": [
      11500,
      11500,
+     11500,
      11500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "armored-core-4-ps3",
@@ -1169,17 +1240,18 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 5.54,
    "pct_30d": null,
    "sparks": {
     "cib": [
      9000,
      9250,
+     9499,
      9499
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "dynasty-warriors-gundam-3-ps3",
@@ -1195,18 +1267,19 @@
      "n": 7
     }
    },
-   "pct_1d": 1.23,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
      10250,
      10188,
+     10250,
      10250
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "the-simpsons-game-ps3",
@@ -1221,42 +1294,45 @@
      "n": 5
     },
     "cib": {
-     "median_cents": 11994,
+     "median_cents": 11995,
      "mode_cents": 12000,
-     "q1_cents": 10598,
+     "q1_cents": 10999,
      "q3_cents": 16000,
-     "n": 11
+     "n": 10
     },
     "new": {
      "median_cents": 29999,
-     "mode_cents": 29900,
+     "mode_cents": 30000,
      "q1_cents": 26999,
      "q3_cents": 37995,
      "n": 11
     }
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": 0.01,
+   "pct_7d": 4.41,
    "pct_30d": null,
    "sparks": {
     "loose": [
      6850,
      6875,
+     6900,
      6900
     ],
     "cib": [
      11487,
      11741,
+     11994,
      11994
     ],
     "new": [
+     29999,
      29999,
      29999,
      29999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "killer-is-dead-ps3",
@@ -1272,17 +1348,18 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0.24,
    "pct_30d": null,
    "sparks": {
     "cib": [
      10449,
      10462,
+     10474,
      10474
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "college-hoops-2k8-ps3",
@@ -1305,11 +1382,12 @@
      "n": 33
     }
    },
-   "pct_1d": 0.47,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": 0.24,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     7997,
      7997,
      7997,
      7997
@@ -1317,11 +1395,12 @@
     "cib": [
      10450,
      10450,
-     10450
+     10450,
+     10475
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "blitz-the-league-ii-ps3",
@@ -1336,30 +1415,32 @@
      "n": 5
     },
     "cib": {
-     "median_cents": 8999,
-     "mode_cents": 10000,
-     "q1_cents": 7899,
+     "median_cents": 8775,
+     "mode_cents": 8000,
+     "q1_cents": 7749,
      "q3_cents": 10000,
-     "n": 13
+     "n": 12
     }
    },
-   "pct_1d": 0.85,
-   "pct_7d": null,
+   "pct_1d": -2.49,
+   "pct_7d": 3.5,
    "pct_30d": null,
    "sparks": {
     "loose": [
      7970,
      8455,
+     8940,
      8940
     ],
     "cib": [
      8550,
      8737,
-     8923
+     8923,
+     8849
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "ar-nosurge-ode-to-an-unborn-star-ps3",
@@ -1376,17 +1457,18 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
+     9997,
      9997,
      9997,
      9997
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "lollipop-chainsaw-ps3",
@@ -1397,23 +1479,24 @@
     "cib": {
      "median_cents": 9999,
      "mode_cents": 10000,
-     "q1_cents": 9898,
-     "q3_cents": 9999,
-     "n": 18
+     "q1_cents": 9936,
+     "q3_cents": 10000,
+     "n": 20
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0.02,
    "pct_30d": null,
    "sparks": {
     "cib": [
      9997,
      9998,
+     9999,
      9999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "time-and-eternity-ps3",
@@ -1422,25 +1505,26 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 9099,
+     "median_cents": 9299,
      "mode_cents": 8500,
      "q1_cents": 8499,
      "q3_cents": 11999,
-     "n": 10
+     "n": 9
     }
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": 2.2,
+   "pct_7d": -13.62,
    "pct_30d": null,
    "sparks": {
     "cib": [
      10649,
      9874,
-     9099
+     9099,
+     9199
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "transformers-fall-of-cybertron-ps3",
@@ -1449,18 +1533,18 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 4974,
+     "median_cents": 4999,
      "mode_cents": 4900,
      "q1_cents": 4949,
-     "q3_cents": 5500,
-     "n": 4
+     "q3_cents": 6350,
+     "n": 5
     },
     "cib": {
-     "median_cents": 8750,
+     "median_cents": 8499,
      "mode_cents": 8500,
-     "q1_cents": 7000,
+     "q1_cents": 6500,
      "q3_cents": 11000,
-     "n": 10
+     "n": 11
     },
     "new": {
      "median_cents": 10000,
@@ -1470,23 +1554,29 @@
      "n": 7
     }
    },
-   "pct_1d": 2.95,
-   "pct_7d": null,
+   "pct_1d": -2.87,
+   "pct_7d": 0.02,
    "pct_30d": null,
    "sparks": {
+    "loose": [
+     4974,
+     4987
+    ],
     "cib": [
      8497,
      8498,
+     8499,
      8499
     ],
     "new": [
+     10000,
      10000,
      10000,
      10000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "white-knight-chronicles-ii-ps3",
@@ -1504,7 +1594,7 @@
     "cib": {
      "median_cents": 8399,
      "mode_cents": 7000,
-     "q1_cents": 7000,
+     "q1_cents": 6999,
      "q3_cents": 9998,
      "n": 53
     },
@@ -1516,10 +1606,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": -1.19,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     5500,
      5500,
      5500,
      5500
@@ -1527,16 +1618,18 @@
     "cib": [
      8500,
      8450,
+     8399,
      8399
     ],
     "new": [
+     14000,
      14000,
      14000,
      14000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "back-to-the-future-the-game-ps3",
@@ -1549,7 +1642,7 @@
      "mode_cents": 8500,
      "q1_cents": 7499,
      "q3_cents": 9999,
-     "n": 14
+     "n": 15
     },
     "new": {
      "median_cents": 19997,
@@ -1560,10 +1653,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
+     8500,
      8500,
      8500,
      8500
@@ -1571,11 +1665,12 @@
     "new": [
      19997,
      19997,
+     19997,
      19997
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "deadpool-ps3",
@@ -1590,11 +1685,11 @@
      "n": 4
     },
     "cib": {
-     "median_cents": 7499,
+     "median_cents": 7749,
      "mode_cents": 7500,
-     "q1_cents": 7250,
-     "q3_cents": 8164,
-     "n": 12
+     "q1_cents": 7499,
+     "q3_cents": 8295,
+     "n": 10
     },
     "new": {
      "median_cents": 15000,
@@ -1603,11 +1698,12 @@
      "n": 5
     }
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": 3.33,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     7097,
      7097,
      7097,
      7097
@@ -1615,16 +1711,18 @@
     "cib": [
      7499,
      7499,
+     7499,
      7499
     ],
     "new": [
+     15000,
      15000,
      15000,
      15000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "ar-tonelico-qoga-knell-of-ar-ciel-ps3",
@@ -1641,17 +1739,18 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
+     8749,
      8749,
      8749,
      8749
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "blur-ps3",
@@ -1666,30 +1765,32 @@
      "n": 5
     },
     "cib": {
-     "median_cents": 8229,
+     "median_cents": 8459,
      "mode_cents": 8000,
      "q1_cents": 7700,
      "q3_cents": 9548,
-     "n": 20
+     "n": 21
     }
    },
-   "pct_1d": -2.72,
-   "pct_7d": null,
+   "pct_1d": 2.79,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
      5450,
      5875,
+     6299,
      6299
     ],
     "cib": [
+     8459,
      8459,
      8459,
      8459
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "castlevania-lords-of-shadow-collection-ps3",
@@ -1698,25 +1799,26 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 7997,
+     "median_cents": 7597,
      "mode_cents": 8000,
-     "q1_cents": 5198,
+     "q1_cents": 4099,
      "q3_cents": 7999,
      "n": 8
     }
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": -5,
+   "pct_7d": -0.03,
    "pct_30d": null,
    "sparks": {
     "cib": [
      7999,
      7998,
+     7997,
      7997
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "el-shaddai-ascension-of-the-metatron-ps3",
@@ -1732,9 +1834,9 @@
     },
     "cib": {
      "median_cents": 7500,
-     "mode_cents": 7500,
+     "mode_cents": 8000,
      "q1_cents": 6500,
-     "q3_cents": 7897,
+     "q3_cents": 7995,
      "n": 17
     },
     "new": {
@@ -1746,15 +1848,17 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
      3498,
      3461,
+     3423,
      3423
     ],
     "cib": [
+     7500,
      7500,
      7500,
      7500
@@ -1762,11 +1866,12 @@
     "new": [
      9974,
      9974,
+     9974,
      9974
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "god-of-war-origins-collection-ps3",
@@ -1777,16 +1882,16 @@
     "loose": {
      "median_cents": 4999,
      "mode_cents": 5000,
-     "q1_cents": 4899,
+     "q1_cents": 4499,
      "q3_cents": 5299,
-     "n": 7
+     "n": 11
     },
     "cib": {
-     "median_cents": 7498,
+     "median_cents": 7100,
      "mode_cents": 8000,
      "q1_cents": 6500,
      "q3_cents": 7999,
-     "n": 37
+     "n": 38
     },
     "new": {
      "median_cents": 11499,
@@ -1796,28 +1901,31 @@
      "n": 13
     }
    },
-   "pct_1d": 4.14,
-   "pct_7d": null,
+   "pct_1d": -5.31,
+   "pct_7d": 2.14,
    "pct_30d": null,
    "sparks": {
     "loose": [
      5000,
      5000,
+     4999,
      4999
     ],
     "cib": [
      7000,
      7100,
-     7200
+     7200,
+     7150
     ],
     "new": [
+     11500,
      11500,
      11500,
      11500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "no-more-heroes-heroes-paradise-ps3",
@@ -1834,17 +1942,18 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
+     7500,
      7500,
      7500,
      7500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "marvel-ultimate-alliance-ps3",
@@ -1867,23 +1976,25 @@
      "n": 16
     }
    },
-   "pct_1d": -3.83,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": -4.95,
    "pct_30d": null,
    "sparks": {
     "loose": [
      5000,
      5250,
+     5500,
      5500
     ],
     "cib": [
      7995,
      7871,
-     7747
+     7747,
+     7599
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "arcana-heart-3-love-max-ps3",
@@ -1906,11 +2017,12 @@
     "new": [
      6999,
      6999,
+     6999,
      6999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "the-saboteur-ps3",
@@ -1926,18 +2038,19 @@
      "n": 5
     },
     "cib": {
-     "median_cents": 6574,
+     "median_cents": 6499,
      "mode_cents": 10000,
      "q1_cents": 5500,
      "q3_cents": 8150,
-     "n": 20
+     "n": 21
     }
    },
-   "pct_1d": -3.66,
-   "pct_7d": null,
+   "pct_1d": -1.14,
+   "pct_7d": -0.56,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     4547,
      4547,
      4547,
      4547
@@ -1945,11 +2058,12 @@
     "cib": [
      6649,
      6737,
-     6649
+     6649,
+     6612
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "the-amazing-spider-man-ps3",
@@ -1965,29 +2079,31 @@
     },
     "cib": {
      "median_cents": 6500,
-     "mode_cents": 8000,
-     "q1_cents": 4799,
-     "q3_cents": 7999,
-     "n": 27
+     "mode_cents": 7000,
+     "q1_cents": 4899,
+     "q3_cents": 8000,
+     "n": 25
     }
    },
-   "pct_1d": -7.13,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": -3.57,
    "pct_30d": null,
    "sparks": {
     "loose": [
      3999,
      3976,
-     3952
+     3952,
+     3938
     ],
     "cib": [
      7000,
      7000,
-     6999
+     6999,
+     6750
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "atelier-shallie-alchemists-of-the-dusk-sea-ps3",
@@ -2010,10 +2126,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
+     3938,
      3938,
      3938,
      3938
@@ -2021,11 +2138,12 @@
     "new": [
      3297,
      3297,
+     3297,
      3297
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "marvel-ultimate-alliance-2-ps3",
@@ -2033,12 +2151,6 @@
    "region": "NTSC-U",
    "variant": "none",
    "prices": {
-    "loose": {
-     "median_cents": 3845,
-     "q1_cents": 3097,
-     "q3_cents": 4997,
-     "n": 4
-    },
     "cib": {
      "median_cents": 5148,
      "mode_cents": 5000,
@@ -2048,7 +2160,7 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -2059,11 +2171,12 @@
     "cib": [
      5148,
      5148,
+     5148,
      5148
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "prince-of-persia-classic-trilogy-hd-ps3",
@@ -2072,25 +2185,26 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 6698,
-     "mode_cents": 6500,
-     "q1_cents": 6499,
-     "q3_cents": 6999,
-     "n": 6
+     "median_cents": 6999,
+     "mode_cents": 7000,
+     "q1_cents": 6448,
+     "q3_cents": 7249,
+     "n": 5
     }
    },
-   "pct_1d": 3.05,
-   "pct_7d": null,
+   "pct_1d": 4.49,
+   "pct_7d": 1.52,
    "pct_30d": null,
    "sparks": {
     "cib": [
      6500,
      6500,
-     6500
+     6500,
+     6599
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "the-chronicles-of-riddick-assault-on-dark-athena-ps3",
@@ -2105,18 +2219,19 @@
      "n": 6
     },
     "cib": {
-     "median_cents": 6099,
+     "median_cents": 6050,
      "mode_cents": 6000,
      "q1_cents": 5999,
-     "q3_cents": 7499,
-     "n": 27
+     "q3_cents": 6999,
+     "n": 26
     }
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": -0.8,
+   "pct_7d": 1.25,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     3749,
      3749,
      3749,
      3749
@@ -2124,11 +2239,12 @@
     "cib": [
      6000,
      6050,
-     6099
+     6099,
+     6075
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "resonance-of-fate-ps3",
@@ -2144,8 +2260,8 @@
      "n": 20
     }
    },
-   "pct_1d": -8.26,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": -2.16,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -2155,11 +2271,12 @@
     "cib": [
      5748,
      5872,
-     5748
+     5748,
+     5624
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "cross-edge-ps3",
@@ -2182,10 +2299,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     3725,
      3725,
      3725,
      3725
@@ -2193,11 +2311,12 @@
     "cib": [
      5997,
      5997,
+     5997,
      5997
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "driver-san-francisco-ps3",
@@ -2220,11 +2339,12 @@
      "n": 25
     }
    },
-   "pct_1d": 4.26,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     3748,
      3748,
      3748,
      3748
@@ -2232,11 +2352,12 @@
     "cib": [
      5990,
      5868,
+     5990,
      5990
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "james-bond-007-blood-stone-ps3",
@@ -2251,18 +2372,19 @@
      "n": 4
     },
     "cib": {
-     "median_cents": 4498,
+     "median_cents": 4495,
      "mode_cents": 4000,
      "q1_cents": 3999,
      "q3_cents": 6799,
-     "n": 14
+     "n": 15
     }
    },
-   "pct_1d": -0.04,
-   "pct_7d": null,
+   "pct_1d": -0.07,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     2247,
      2247,
      2247,
      2247
@@ -2270,11 +2392,12 @@
     "cib": [
      4498,
      4499,
+     4498,
      4498
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "ncaa-basketball-10-ps3",
@@ -2298,10 +2421,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": -1.85,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     4797,
      4797,
      4797,
      4797
@@ -2309,11 +2433,12 @@
     "cib": [
      5460,
      5410,
+     5359,
      5359
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "ratchet-and-clank-collection-ps3",
@@ -2324,9 +2449,9 @@
     "loose": {
      "median_cents": 3499,
      "mode_cents": 3500,
-     "q1_cents": 3175,
-     "q3_cents": 3699,
-     "n": 22
+     "q1_cents": 3188,
+     "q3_cents": 3750,
+     "n": 21
     },
     "cib": {
      "median_cents": 5488,
@@ -2343,11 +2468,12 @@
      "n": 27
     }
    },
-   "pct_1d": -0.2,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": -0.09,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     3499,
      3499,
      3499,
      3499
@@ -2355,16 +2481,18 @@
     "cib": [
      5499,
      5499,
-     5499
+     5499,
+     5494
     ],
     "new": [
      5945,
      5945,
-     5945
+     5945,
+     5968
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "dragon-ball-raging-blast-2-ps3",
@@ -2382,28 +2510,30 @@
     "cib": {
      "median_cents": 5000,
      "mode_cents": 6000,
-     "q1_cents": 4299,
+     "q1_cents": 4249,
      "q3_cents": 5999,
-     "n": 22
+     "n": 21
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
      3100,
      3120,
+     3140,
      3140
     ],
     "cib": [
+     5000,
      5000,
      5000,
      5000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "eternal-sonata-ps3",
@@ -2414,23 +2544,24 @@
     "cib": {
      "median_cents": 5000,
      "mode_cents": 5000,
-     "q1_cents": 4599,
-     "q3_cents": 6499,
-     "n": 15
+     "q1_cents": 4549,
+     "q3_cents": 6625,
+     "n": 17
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": -9.07,
    "pct_30d": null,
    "sparks": {
     "cib": [
      5499,
      5250,
+     5000,
      5000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "sly-cooper-thieves-in-time-ps3",
@@ -2460,27 +2591,30 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": -1.74,
    "pct_30d": null,
    "sparks": {
     "loose": [
      3949,
      4124,
+     3949,
      3949
     ],
     "cib": [
      5000,
      4957,
+     4913,
      4913
     ],
     "new": [
      10999,
      11499,
+     11999,
      11999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "x-men-destiny-ps3",
@@ -2504,10 +2638,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     4250,
      4250,
      4250,
      4250
@@ -2515,11 +2650,12 @@
     "cib": [
      4999,
      4999,
+     4999,
      4999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "spec-ops-the-line-ps3",
@@ -2535,11 +2671,11 @@
      "n": 4
     },
     "cib": {
-     "median_cents": 4999,
+     "median_cents": 5247,
      "mode_cents": 5500,
-     "q1_cents": 4348,
+     "q1_cents": 4500,
      "q3_cents": 6250,
-     "n": 13
+     "n": 12
     },
     "new": {
      "median_cents": 12824,
@@ -2549,11 +2685,12 @@
      "n": 5
     }
    },
-   "pct_1d": 0.99,
-   "pct_7d": null,
+   "pct_1d": 4.96,
+   "pct_7d": 1.53,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     3500,
      3500,
      3500,
      3500
@@ -2561,16 +2698,18 @@
     "cib": [
      4900,
      4925,
-     4950
+     4950,
+     4975
     ],
     "new": [
+     12824,
      12824,
      12824,
      12824
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "dantes-inferno-divine-edition-ps3",
@@ -2589,8 +2728,8 @@
      "median_cents": 5000,
      "mode_cents": 5000,
      "q1_cents": 4500,
-     "q3_cents": 6995,
-     "n": 71
+     "q3_cents": 6948,
+     "n": 73
     },
     "new": {
      "median_cents": 20000,
@@ -2600,10 +2739,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     3497,
      3497,
      3497,
      3497
@@ -2611,16 +2751,18 @@
     "cib": [
      5000,
      5000,
+     5000,
      5000
     ],
     "new": [
+     20000,
      20000,
      20000,
      20000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "the-amazing-spider-man-2-ps3",
@@ -2629,25 +2771,26 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 5000,
+     "median_cents": 4998,
      "mode_cents": 5000,
-     "q1_cents": 4495,
-     "q3_cents": 5500,
-     "n": 7
+     "q1_cents": 4247,
+     "q3_cents": 5398,
+     "n": 8
     }
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": -0.04,
+   "pct_7d": -2.87,
    "pct_30d": null,
    "sparks": {
     "cib": [
      5148,
      5074,
+     5000,
      5000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "armored-core-v-ps3",
@@ -2664,17 +2807,18 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     4899,
      4899,
      4899,
      4899
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "shadows-of-the-damned-ps3",
@@ -2705,27 +2849,30 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 8.91,
    "pct_30d": null,
    "sparks": {
     "loose": [
      2499,
      2499,
-     2499
+     2499,
+     2500
     ],
     "cib": [
      4499,
      4700,
+     4900,
      4900
     ],
     "new": [
+     7777,
      7777,
      7777,
      7777
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "the-sly-collection-ps3",
@@ -2734,17 +2881,17 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 4348,
+     "median_cents": 3495,
      "q1_cents": 3198,
      "q3_cents": 5650,
-     "n": 4
+     "n": 5
     },
     "cib": {
      "median_cents": 4499,
      "mode_cents": 4000,
      "q1_cents": 4000,
-     "q3_cents": 5149,
-     "n": 69
+     "q3_cents": 5050,
+     "n": 68
     },
     "new": {
      "median_cents": 5499,
@@ -2755,14 +2902,16 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
      4348,
+     4348,
      4348
     ],
     "cib": [
+     4499,
      4499,
      4499,
      4499
@@ -2770,11 +2919,12 @@
     "new": [
      5499,
      5499,
+     5499,
      5499
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "the-house-of-the-dead-overkill-extended-cut-ps3",
@@ -2797,10 +2947,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
+     4500,
      4500,
      4500,
      4500
@@ -2808,11 +2959,12 @@
     "new": [
      6950,
      6950,
+     6950,
      6950
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "disgaea-d2-a-brighter-darkness-ps3",
@@ -2836,10 +2988,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     1950,
      1950,
      1950,
      1950
@@ -2847,11 +3000,12 @@
     "cib": [
      3500,
      3500,
+     3500,
      3500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "the-king-of-fighters-xiii-ps3",
@@ -2875,10 +3029,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     2475,
      2475,
      2475,
      2475
@@ -2886,11 +3041,12 @@
     "cib": [
      4500,
      4500,
+     4500,
      4500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "jak-and-daxter-collection-ps3",
@@ -2906,25 +3062,26 @@
      "n": 15
     },
     "cib": {
-     "median_cents": 3400,
+     "median_cents": 3350,
      "mode_cents": 3000,
      "q1_cents": 3000,
-     "q3_cents": 4000,
-     "n": 13
+     "q3_cents": 3999,
+     "n": 14
     },
     "new": {
-     "median_cents": 4040,
+     "median_cents": 4079,
      "mode_cents": 4000,
      "q1_cents": 3899,
-     "q3_cents": 4998,
-     "n": 12
+     "q3_cents": 5498,
+     "n": 13
     }
    },
-   "pct_1d": -6.85,
-   "pct_7d": null,
+   "pct_1d": -1.47,
+   "pct_7d": -3.42,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     2150,
      2150,
      2150,
      2150
@@ -2932,16 +3089,18 @@
     "cib": [
      3650,
      3650,
-     3650
+     3650,
+     3525
     ],
     "new": [
+     4040,
      4040,
      4040,
      4040
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "catherine-ps3",
@@ -2957,18 +3116,19 @@
      "n": 10
     },
     "cib": {
-     "median_cents": 3499,
+     "median_cents": 3900,
      "mode_cents": 4000,
      "q1_cents": 2750,
      "q3_cents": 4000,
      "n": 13
     }
    },
-   "pct_1d": -12.46,
-   "pct_7d": null,
+   "pct_1d": 11.46,
+   "pct_7d": -1.23,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     1273,
      1273,
      1273,
      1273
@@ -2976,11 +3136,12 @@
     "cib": [
      3998,
      3998,
-     3997
+     3997,
+     3949
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "the-legend-of-heroes-trails-of-cold-steel-ps3",
@@ -3010,11 +3171,12 @@
      "n": 6
     }
    },
-   "pct_1d": -1.1,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": -0.55,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     2500,
      2500,
      2500,
      2500
@@ -3022,16 +3184,18 @@
     "cib": [
      3994,
      3994,
-     3994
+     3994,
+     3972
     ],
     "new": [
+     7200,
      7200,
      7200,
      7200
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "hyperdimension-neptunia-mk2-ps3",
@@ -3047,11 +3211,10 @@
      "n": 6
     },
     "cib": {
-     "median_cents": 2900,
-     "mode_cents": 3500,
+     "median_cents": 2850,
      "q1_cents": 2699,
      "q3_cents": 3495,
-     "n": 7
+     "n": 6
     },
     "new": {
      "median_cents": 4895,
@@ -3061,11 +3224,12 @@
      "n": 7
     }
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": -1.72,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     2000,
      2000,
      2000,
      2000
@@ -3073,16 +3237,18 @@
     "cib": [
      2900,
      2900,
+     2900,
      2900
     ],
     "new": [
+     4895,
      4895,
      4895,
      4895
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "the-ico-and-shadow-of-the-colossus-collection-ps3",
@@ -3091,36 +3257,38 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 3500,
+     "median_cents": 3598,
      "mode_cents": 3500,
-     "q1_cents": 2799,
+     "q1_cents": 3050,
      "q3_cents": 3997,
-     "n": 13
+     "n": 12
     },
     "new": {
-     "median_cents": 9243,
-     "q1_cents": 8250,
-     "q3_cents": 11749,
-     "n": 8
+     "median_cents": 9485,
+     "q1_cents": 8500,
+     "q3_cents": 12498,
+     "n": 7
     }
    },
-   "pct_1d": -5.28,
-   "pct_7d": null,
+   "pct_1d": 2.8,
+   "pct_7d": -1.3,
    "pct_30d": null,
    "sparks": {
     "cib": [
      3695,
      3695,
-     3695
+     3695,
+     3647
     ],
     "new": [
      9000,
      9000,
-     9000
+     9000,
+     9122
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "hyperdimension-neptunia-ps3",
@@ -3150,11 +3318,12 @@
      "n": 10
     }
    },
-   "pct_1d": 3.27,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": 1.63,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     1999,
      1999,
      1999,
      1999
@@ -3162,16 +3331,18 @@
     "cib": [
      3000,
      3000,
-     3000
+     3000,
+     3049
     ],
     "new": [
+     12499,
      12499,
      12499,
      12499
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "metal-gear-solid-hd-collection-ps3",
@@ -3191,7 +3362,7 @@
      "mode_cents": 3000,
      "q1_cents": 2999,
      "q3_cents": 3999,
-     "n": 69
+     "n": 71
     },
     "new": {
      "median_cents": 4900,
@@ -3202,15 +3373,17 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
      2675,
      2675,
-     2675
+     2675,
+     2587
     ],
     "cib": [
+     3499,
      3499,
      3499,
      3499
@@ -3218,11 +3391,12 @@
     "new": [
      4900,
      4900,
+     4900,
      4900
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "silent-hill-hd-collection-ps3",
@@ -3233,9 +3407,9 @@
     "cib": {
      "median_cents": 2500,
      "mode_cents": 2500,
-     "q1_cents": 2450,
+     "q1_cents": 2475,
      "q3_cents": 3000,
-     "n": 22
+     "n": 21
     },
     "new": {
      "median_cents": 2999,
@@ -3246,10 +3420,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
+     2500,
      2500,
      2500,
      2500
@@ -3257,11 +3432,12 @@
     "new": [
      2999,
      2987,
+     2999,
      2999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "transformers-devastation-ps3",
@@ -3284,10 +3460,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
+     2649,
      2649,
      2649,
      2649
@@ -3295,11 +3472,12 @@
     "new": [
      3999,
      3999,
+     3999,
      3999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "hatsune-miku-project-diva-f-2nd-ps3",
@@ -3322,10 +3500,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
+     6500,
      6500,
      6500,
      6500
@@ -3333,11 +3512,12 @@
     "new": [
      11495,
      11495,
+     11495,
      11495
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "persona-4-arena-ultimax-ps3",
@@ -3353,18 +3533,19 @@
      "n": 15
     },
     "cib": {
-     "median_cents": 4599,
-     "mode_cents": 4600,
+     "median_cents": 4549,
+     "mode_cents": 6000,
      "q1_cents": 3499,
      "q3_cents": 5977,
-     "n": 15
+     "n": 14
     }
    },
-   "pct_1d": 2.22,
-   "pct_7d": null,
+   "pct_1d": -1.09,
+   "pct_7d": -0.54,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     1999,
      1999,
      1999,
      1999
@@ -3372,11 +3553,12 @@
     "cib": [
      4599,
      4549,
-     4599
+     4599,
+     4574
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "atelier-rorona-plus-the-alchemist-of-arland-ps3",
@@ -3399,11 +3581,12 @@
     "new": [
      3499,
      3499,
+     3499,
      3499
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "atelier-totori-the-adventurer-of-arland-ps3",
@@ -3412,11 +3595,11 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 2997,
+     "median_cents": 2996,
      "mode_cents": 3000,
      "q1_cents": 2500,
-     "q3_cents": 3295,
-     "n": 7
+     "q3_cents": 3147,
+     "n": 8
     },
     "new": {
      "median_cents": 3499,
@@ -3426,11 +3609,12 @@
      "n": 6
     }
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": -0.03,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
+     2997,
      2997,
      2997,
      2997
@@ -3438,11 +3622,12 @@
     "new": [
      3499,
      3499,
+     3499,
      3499
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "dragon-ball-z-budokai-hd-collection-ps3",
@@ -3472,10 +3657,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     4500,
      4500,
      4500,
      4500
@@ -3483,16 +3669,18 @@
     "cib": [
      5499,
      5499,
+     5499,
      5499
     ],
     "new": [
+     6994,
      6994,
      6994,
      6994
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "ratchet-and-clank-into-the-nexus-ps3",
@@ -3501,25 +3689,26 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 7250,
+     "median_cents": 7000,
      "mode_cents": 7000,
      "q1_cents": 6999,
      "q3_cents": 7999,
-     "n": 18
+     "n": 19
     }
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": -3.45,
+   "pct_7d": 1.79,
    "pct_30d": null,
    "sparks": {
     "cib": [
      7000,
      7125,
-     7250
+     7250,
+     7125
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "metal-gear-solid-the-legacy-collection-ps3",
@@ -3528,37 +3717,39 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 5988,
+     "median_cents": 5999,
      "mode_cents": 6000,
-     "q1_cents": 5048,
-     "q3_cents": 7250,
-     "n": 29
+     "q1_cents": 5000,
+     "q3_cents": 7499,
+     "n": 27
     },
     "new": {
      "median_cents": 10050,
      "mode_cents": 12000,
-     "q1_cents": 8997,
+     "q1_cents": 8948,
      "q3_cents": 13499,
      "n": 24
     }
    },
-   "pct_1d": -0.18,
-   "pct_7d": null,
+   "pct_1d": 0.18,
+   "pct_7d": -0.02,
    "pct_30d": null,
    "sparks": {
     "cib": [
      6000,
      6000,
+     5999,
      5999
     ],
     "new": [
+     10050,
      10050,
      10050,
      10050
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "magus-ps3",
@@ -3581,11 +3772,12 @@
     "new": [
      40000,
      40000,
+     40000,
      40000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "rambo-the-video-game-ps3",
@@ -3626,17 +3818,18 @@
      "n": 5
     },
     "new": {
-     "median_cents": 9000,
-     "q1_cents": 3995,
-     "q3_cents": 10500,
-     "n": 6
+     "median_cents": 10000,
+     "q1_cents": 5997,
+     "q3_cents": 12750,
+     "n": 5
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
+     2999,
      2999,
      2999,
      2999
@@ -3644,11 +3837,12 @@
     "new": [
      10000,
      9500,
-     9000
+     9000,
+     9500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "dynasty-warriors-gundam-2-ps3",
@@ -3663,17 +3857,18 @@
      "n": 5
     }
    },
-   "pct_1d": 14.28,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "cib": [
      12250,
-     13125
+     13125,
+     13999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "splinter-cell-classic-trilogy-hd-ps3",
@@ -3688,17 +3883,18 @@
      "n": 4
     }
    },
-   "pct_1d": -0.54,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "cib": [
      7993,
-     7972
+     7972,
+     7950
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "fist-of-the-north-star-kens-rage-ps3",
@@ -3714,18 +3910,19 @@
      "n": 4
     }
    },
-   "pct_1d": -9.27,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": -4.63,
    "pct_30d": null,
    "sparks": {
     "cib": [
      6999,
      6999,
-     6999
+     6999,
+     6675
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "deadly-premonition-ps3",
@@ -3738,21 +3935,22 @@
      "mode_cents": 5000,
      "q1_cents": 4999,
      "q3_cents": 5999,
-     "n": 21
+     "n": 20
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
+     5499,
      5499,
      5499,
      5499
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "dynasty-warriors-gundam-ps3",
@@ -3761,23 +3959,24 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 8250,
-     "q1_cents": 7250,
+     "median_cents": 8000,
+     "q1_cents": 6750,
      "q3_cents": 8999,
-     "n": 4
+     "n": 5
     }
    },
-   "pct_1d": 0,
+   "pct_1d": -3.03,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
     "cib": [
      8250,
+     8250,
      8250
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "cartoon-network-punch-time-explosion-xl-ps3",
@@ -3793,17 +3992,18 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
+     10499,
      10499,
      10499,
      10499
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "dengeki-bunko-fighting-climax-ps3",
@@ -3825,11 +4025,12 @@
     "new": [
      11000,
      11000,
+     11000,
      11000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "time-crisis-razing-storm-ps3",
@@ -3840,9 +4041,9 @@
     "cib": {
      "median_cents": 5999,
      "mode_cents": 6000,
-     "q1_cents": 5250,
-     "q3_cents": 6000,
-     "n": 20
+     "q1_cents": 5499,
+     "q3_cents": 7595,
+     "n": 23
     },
     "new": {
      "median_cents": 9000,
@@ -3852,10 +4053,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
+     5999,
      5999,
      5999,
      5999
@@ -3863,11 +4065,12 @@
     "new": [
      9000,
      9000,
+     9000,
      9000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "aquapazza-ps3",
@@ -3884,17 +4087,18 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
+     7246,
      7246,
      7246,
      7246
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "class-of-heroes-2g-ps3",
@@ -3917,11 +4121,12 @@
     "new": [
      6248,
      6248,
+     6248,
      6248
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "way-of-the-samurai-3-ps3",
@@ -3943,22 +4148,24 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
      3500,
      3450,
+     3400,
      3400
     ],
     "cib": [
+     7200,
      7200,
      7200,
      7200
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "def-jam-icon-ps3",
@@ -3975,28 +4182,30 @@
     "cib": {
      "median_cents": 4999,
      "mode_cents": 5000,
-     "q1_cents": 4249,
-     "q3_cents": 8250,
-     "n": 9
+     "q1_cents": 3999,
+     "q3_cents": 7000,
+     "n": 10
     }
    },
-   "pct_1d": -4.78,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": -2.38,
    "pct_30d": null,
    "sparks": {
     "loose": [
      3395,
      3496,
+     3597,
      3597
     ],
     "cib": [
      5250,
      5250,
-     5250
+     5250,
+     5125
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "under-defeat-hd-ps3",
@@ -4019,11 +4228,12 @@
     "new": [
      5699,
      5699,
+     5699,
      5699
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "ratatouille-ps3",
@@ -4046,10 +4256,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     5000,
      5000,
      5000,
      5000
@@ -4057,11 +4268,12 @@
     "cib": [
      6899,
      6899,
+     6899,
      6899
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "the-awakened-fate-ultimatum-ps3",
@@ -4084,11 +4296,12 @@
     "new": [
      6999,
      6999,
+     6999,
      6999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "the-incredible-hulk-ps3",
@@ -4099,9 +4312,9 @@
     "loose": {
      "median_cents": 7999,
      "mode_cents": 8000,
-     "q1_cents": 7499,
+     "q1_cents": 7747,
      "q3_cents": 12500,
-     "n": 14
+     "n": 13
     },
     "cib": {
      "median_cents": 12107,
@@ -4112,10 +4325,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": -0.89,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     7999,
      7999,
      7999,
      7999
@@ -4123,11 +4337,12 @@
     "cib": [
      12216,
      12162,
+     12107,
      12107
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "spider-man-3-ps3",
@@ -4148,25 +4363,34 @@
      "q1_cents": 5250,
      "q3_cents": 7970,
      "n": 5
+    },
+    "new": {
+     "median_cents": 17998,
+     "mode_cents": 18000,
+     "q1_cents": 16498,
+     "q3_cents": 24000,
+     "n": 4
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 26.71,
    "pct_30d": null,
    "sparks": {
     "loose": [
      4000,
      4000,
-     4000
+     4000,
+     3875
     ],
     "cib": [
      5500,
      6235,
+     6969,
      6969
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "ninja-gaiden-3-razors-edge-ps3",
@@ -4189,23 +4413,25 @@
      "n": 6
     }
    },
-   "pct_1d": -2.94,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": -0.75,
    "pct_30d": null,
    "sparks": {
     "cib": [
      3350,
      3375,
-     3350
+     3350,
+     3325
     ],
     "new": [
+     7750,
      7750,
      7750,
      7750
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "x-blades-ps3",
@@ -4222,17 +4448,18 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
+     9995,
      9995,
      9995,
      9995
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "prison-break-the-conspiracy-ps3",
@@ -4253,11 +4480,12 @@
    "sparks": {
     "cib": [
      5249,
+     5249,
      5249
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "jojos-bizarre-adventure-all-star-battle-ps3",
@@ -4273,17 +4501,18 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     5499,
      5499,
      5499,
      5499
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "warhammer-40k-space-marine-ps3",
@@ -4313,10 +4542,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": -5.56,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     2499,
      2499,
      2499,
      2499
@@ -4324,16 +4554,18 @@
     "cib": [
      4500,
      4375,
+     4250,
      4250
     ],
     "new": [
+     7972,
      7972,
      7972,
      7972
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "neverdead-ps3",
@@ -4349,18 +4581,19 @@
      "n": 11
     }
    },
-   "pct_1d": 2.85,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": 1.43,
    "pct_30d": null,
    "sparks": {
     "cib": [
      8750,
      8750,
-     8750
+     8750,
+     8875
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "bleach-soul-resurreccion-ps3",
@@ -4383,23 +4616,25 @@
      "n": 14
     }
    },
-   "pct_1d": -6.18,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": -3.18,
    "pct_30d": null,
    "sparks": {
     "loose": [
      2593,
      2551,
+     2509,
      2509
     ],
     "cib": [
      3999,
      3997,
-     3995
+     3995,
+     3872
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "the-legend-of-heroes-trails-of-cold-steel-ii-ps3",
@@ -4408,11 +4643,11 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 3599,
-     "mode_cents": 3000,
-     "q1_cents": 3000,
+     "median_cents": 4047,
+     "mode_cents": 4500,
+     "q1_cents": 3299,
      "q3_cents": 4499,
-     "n": 7
+     "n": 6
     },
     "new": {
      "median_cents": 7247,
@@ -4421,11 +4656,12 @@
      "n": 8
     }
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": 12.45,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
+     3599,
      3599,
      3599,
      3599
@@ -4433,11 +4669,12 @@
     "new": [
      7747,
      7497,
+     7247,
      7247
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "alone-in-the-dark-inferno-ps3",
@@ -4446,25 +4683,26 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 4000,
+     "median_cents": 3900,
      "mode_cents": 5000,
-     "q1_cents": 3350,
-     "q3_cents": 4997,
-     "n": 9
+     "q1_cents": 3200,
+     "q3_cents": 4995,
+     "n": 10
     }
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": -2.5,
+   "pct_7d": 1.28,
    "pct_30d": null,
    "sparks": {
     "cib": [
      3900,
      3950,
-     4000
+     4000,
+     3950
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "ride-to-hell-retribution-ps3",
@@ -4486,23 +4724,25 @@
      "n": 4
     }
    },
-   "pct_1d": 7.22,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": 3.62,
    "pct_30d": null,
    "sparks": {
     "cib": [
      5388,
      5388,
-     5388
+     5388,
+     5583
     ],
     "new": [
+     9750,
      9750,
      9750,
      9750
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "tmnt-mutants-in-manhattan-ps3",
@@ -4536,11 +4776,11 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 3000,
+     "median_cents": 3247,
      "mode_cents": 3000,
-     "q1_cents": 2900,
-     "q3_cents": 3890,
-     "n": 7
+     "q1_cents": 2948,
+     "q3_cents": 3845,
+     "n": 8
     },
     "new": {
      "median_cents": 9199,
@@ -4550,11 +4790,12 @@
      "n": 6
     }
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": 8.23,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
+     3000,
      3000,
      3000,
      3000
@@ -4562,11 +4803,12 @@
     "new": [
      9199,
      8849,
+     9199,
      9199
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "the-guided-fate-paradox-ps3",
@@ -4596,10 +4838,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     2100,
      2100,
      2100,
      2100
@@ -4607,16 +4850,18 @@
     "cib": [
      4949,
      4949,
+     4949,
      4949
     ],
     "new": [
+     6500,
      6500,
      6500,
      6500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "atelier-meruru-the-apprentice-of-arland-ps3",
@@ -4640,22 +4885,24 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0.22,
    "pct_30d": null,
    "sparks": {
     "cib": [
      2295,
      2298,
+     2300,
      2300
     ],
     "new": [
+     3999,
      3999,
      3999,
      3999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "silent-hill-homecoming-ps3",
@@ -4680,16 +4927,17 @@
     "new": {
      "median_cents": 2499,
      "mode_cents": 2500,
-     "q1_cents": 2196,
+     "q1_cents": 2197,
      "q3_cents": 2995,
-     "n": 44
+     "n": 42
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": -1.42,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     1500,
      1500,
      1500,
      1500
@@ -4697,16 +4945,18 @@
     "cib": [
      2049,
      2035,
+     2020,
      2020
     ],
     "new": [
+     2499,
      2499,
      2499,
      2499
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   },
   {
    "id": "transformers-rise-of-the-dark-spark-ps3",
@@ -4730,21 +4980,23 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     1699,
      1699,
      1699,
      1699
     ],
     "new": [
      4750,
+     4750,
      4750
     ]
    },
    "stale": false,
-   "as_of": "2026-10-11"
+   "as_of": "2026-10-12"
   }
  ]
 }

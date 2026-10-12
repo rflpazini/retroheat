@@ -1,47 +1,235 @@
 {
  "board": "dreamcast",
- "as_of": "2026-10-11",
+ "as_of": "2026-10-12",
  "entries": [
   {
-   "id": "carrier-dreamcast",
-   "title": "Carrier",
+   "id": "toy-story-2-dreamcast",
+   "title": "Toy Story 2: Buzz Lightyear to the Rescue",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 7500,
+   "price_cents": 8799,
    "prices": {
     "loose": 2499,
-    "cib": 7500,
-    "new": 11999
+    "cib": 8799
    },
-   "pct_1d": 7.16,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": 15.03,
    "pct_30d": null,
-   "score": 7.16,
+   "score": 15.03,
    "spark": [
-    7500,
-    7250,
-    7500
+    7649,
+    8224,
+    8799,
+    8799
    ]
   },
   {
-   "id": "virtua-tennis-dreamcast",
-   "title": "Virtua Tennis",
+   "id": "bangai-o-dreamcast",
+   "title": "Bangai-O",
+   "platform": "dreamcast",
+   "headline_condition": "loose",
+   "price_cents": 7499,
+   "prices": {
+    "loose": 7499
+   },
+   "pct_1d": 0,
+   "pct_7d": 11.1,
+   "pct_30d": null,
+   "score": 11.1,
+   "spark": [
+    6750,
+    7125,
+    7499,
+    7499
+   ]
+  },
+  {
+   "id": "shenmue-dreamcast",
+   "title": "Shenmue",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 1796,
+   "price_cents": 5499,
    "prices": {
-    "loose": 999,
-    "cib": 1796,
-    "new": 3897
+    "loose": 4000,
+    "cib": 5499
    },
-   "pct_1d": 5.65,
-   "pct_7d": null,
+   "pct_1d": -0.02,
+   "pct_7d": 9.98,
    "pct_30d": null,
-   "score": 5.65,
+   "score": 9.98,
    "spark": [
-    1798,
-    1749,
-    1796
+    5000,
+    5250,
+    5499,
+    5499
+   ]
+  },
+  {
+   "id": "tony-hawks-pro-skater-2-dreamcast",
+   "title": "Tony Hawk's Pro Skater 2",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 2350,
+   "prices": {
+    "loose": 1250,
+    "cib": 2350
+   },
+   "pct_1d": 6.82,
+   "pct_7d": 8.33,
+   "pct_30d": null,
+   "score": 8.33,
+   "spark": [
+    2100,
+    2225,
+    2200,
+    2275
+   ]
+  },
+  {
+   "id": "mortal-kombat-gold-dreamcast",
+   "title": "Mortal Kombat Gold",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 7000,
+   "prices": {
+    "loose": 3999,
+    "cib": 7000
+   },
+   "pct_1d": 0,
+   "pct_7d": 7.69,
+   "pct_30d": null,
+   "score": 7.69,
+   "spark": [
+    6500,
+    6750,
+    7000,
+    7000
+   ]
+  },
+  {
+   "id": "tech-romancer-dreamcast",
+   "title": "Tech Romancer",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 17500,
+   "prices": {
+    "cib": 17500
+   },
+   "pct_1d": -7.65,
+   "pct_7d": 7.21,
+   "pct_30d": null,
+   "score": 7.21,
+   "spark": [
+    16999,
+    17975,
+    18950,
+    18225
+   ]
+  },
+  {
+   "id": "sonic-adventure-dreamcast",
+   "title": "Sonic Adventure",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 7499,
+   "prices": {
+    "loose": 4497,
+    "cib": 7499,
+    "new": 19000
+   },
+   "pct_1d": 0,
+   "pct_7d": 7.13,
+   "pct_30d": null,
+   "score": 7.13,
+   "spark": [
+    7000,
+    7250,
+    7499,
+    7499
+   ]
+  },
+  {
+   "id": "ready-2-rumble-boxing-round-2-dreamcast",
+   "title": "Ready 2 Rumble Boxing: Round 2",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 4100,
+   "prices": {
+    "loose": 2475,
+    "cib": 4100
+   },
+   "pct_1d": -9.89,
+   "pct_7d": 6.88,
+   "pct_30d": null,
+   "score": 6.88,
+   "spark": [
+    4000,
+    4225,
+    4450,
+    4275
+   ]
+  },
+  {
+   "id": "star-wars-episode-i-racer-dreamcast",
+   "title": "Star Wars Episode I: Racer",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 4248,
+   "prices": {
+    "loose": 2050,
+    "cib": 4248
+   },
+   "pct_1d": 0,
+   "pct_7d": 6.2,
+   "pct_30d": null,
+   "score": 6.2,
+   "spark": [
+    4000,
+    4124,
+    4248,
+    4248
+   ]
+  },
+  {
+   "id": "jet-grind-radio-dreamcast",
+   "title": "Jet Grind Radio",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 10250,
+   "prices": {
+    "loose": 5647,
+    "cib": 10250,
+    "new": 19999
+   },
+   "pct_1d": 0,
+   "pct_7d": 4.38,
+   "pct_30d": null,
+   "score": 4.38,
+   "spark": [
+    9700,
+    9850,
+    10000,
+    10125
+   ]
+  },
+  {
+   "id": "daytona-usa-dreamcast",
+   "title": "Daytona USA",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 10949,
+   "prices": {
+    "cib": 10949
+   },
+   "pct_1d": 0,
+   "pct_7d": 4.29,
+   "pct_30d": null,
+   "score": 4.29,
+   "spark": [
+    10499,
+    10724,
+    10949,
+    10949
    ]
   },
   {
@@ -54,14 +242,15 @@
     "loose": 8999,
     "cib": 19998
    },
-   "pct_1d": 5.26,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": 2.63,
    "pct_30d": null,
-   "score": 5.26,
+   "score": 2.63,
    "spark": [
     18999,
     18999,
-    18999
+    18999,
+    19499
    ]
   },
   {
@@ -75,74 +264,15 @@
     "cib": 6895,
     "new": 10499
    },
-   "pct_1d": 3.72,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": 1.87,
    "pct_30d": null,
-   "score": 3.72,
+   "score": 1.87,
    "spark": [
     6648,
     6648,
-    6648
-   ]
-  },
-  {
-   "id": "jet-grind-radio-dreamcast",
-   "title": "Jet Grind Radio",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 10250,
-   "prices": {
-    "loose": 5499,
-    "cib": 10250,
-    "new": 19999
-   },
-   "pct_1d": 2.5,
-   "pct_7d": null,
-   "pct_30d": null,
-   "score": 2.5,
-   "spark": [
-    9700,
-    9850,
-    10000
-   ]
-  },
-  {
-   "id": "ready-2-rumble-boxing-round-2-dreamcast",
-   "title": "Ready 2 Rumble Boxing: Round 2",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 4550,
-   "prices": {
-    "loose": 2495,
-    "cib": 4550
-   },
-   "pct_1d": 2.25,
-   "pct_7d": null,
-   "pct_30d": null,
-   "score": 2.25,
-   "spark": [
-    4000,
-    4225,
-    4450
-   ]
-  },
-  {
-   "id": "confidential-mission-dreamcast",
-   "title": "Confidential Mission",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 10000,
-   "prices": {
-    "cib": 10000
-   },
-   "pct_1d": 1.01,
-   "pct_7d": null,
-   "pct_30d": null,
-   "score": 1.01,
-   "spark": [
-    9900,
-    9900,
-    9900
+    6648,
+    6772
    ]
   },
   {
@@ -156,14 +286,36 @@
     "cib": 3325,
     "new": 9999
    },
-   "pct_1d": 0.79,
-   "pct_7d": null,
+   "pct_1d": 0,
+   "pct_7d": 0.39,
    "pct_30d": null,
-   "score": 0.79,
+   "score": 0.39,
    "spark": [
     3299,
     3299,
-    3299
+    3299,
+    3312
+   ]
+  },
+  {
+   "id": "power-stone-dreamcast",
+   "title": "Power Stone",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 9997,
+   "prices": {
+    "loose": 6499,
+    "cib": 9997
+   },
+   "pct_1d": 0,
+   "pct_7d": 0.02,
+   "pct_30d": null,
+   "score": 0.02,
+   "spark": [
+    9995,
+    9996,
+    9997,
+    9997
    ]
   },
   {
@@ -177,54 +329,15 @@
     "cib": 14999,
     "new": 28455
    },
-   "pct_1d": 0.03,
-   "pct_7d": null,
-   "pct_30d": null,
-   "score": 0.03,
-   "spark": [
-    14995,
-    14995,
-    14995
-   ]
-  },
-  {
-   "id": "shenmue-dreamcast",
-   "title": "Shenmue",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 5500,
-   "prices": {
-    "loose": 4000,
-    "cib": 5500
-   },
-   "pct_1d": 0.02,
-   "pct_7d": null,
-   "pct_30d": null,
-   "score": 0.02,
-   "spark": [
-    5000,
-    5250,
-    5499
-   ]
-  },
-  {
-   "id": "18-wheeler-american-pro-trucker-dreamcast",
-   "title": "18 Wheeler: American Pro Trucker",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 2999,
-   "prices": {
-    "loose": 1499,
-    "cib": 2999
-   },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0.01,
    "pct_30d": null,
-   "score": 0,
+   "score": 0.01,
    "spark": [
-    3497,
-    3248,
-    2999
+    14995,
+    14995,
+    14995,
+    14997
    ]
   },
   {
@@ -232,39 +345,21 @@
    "title": "Alien Front Online",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 3097,
+   "price_cents": 2999,
    "prices": {
     "loose": 2500,
-    "cib": 3097,
+    "cib": 2999,
     "new": 8000
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": -3.16,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    3097,
     3097,
     3097,
     3097
-   ]
-  },
-  {
-   "id": "bangai-o-dreamcast",
-   "title": "Bangai-O",
-   "platform": "dreamcast",
-   "headline_condition": "loose",
-   "price_cents": 7499,
-   "prices": {
-    "loose": 7499
-   },
-   "pct_1d": 0,
-   "pct_7d": null,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    6750,
-    7125,
-    7499
    ]
   },
   {
@@ -279,33 +374,32 @@
     "new": 12999
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    4999,
     4999,
     4999,
     4999
    ]
   },
   {
-   "id": "bomberman-online-dreamcast",
-   "title": "Bomberman Online",
+   "id": "buzz-lightyear-of-star-command-dreamcast",
+   "title": "Buzz Lightyear of Star Command",
    "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 7999,
+   "headline_condition": "loose",
+   "price_cents": 2150,
    "prices": {
-    "loose": 3939,
-    "cib": 7999
+    "loose": 2150
    },
    "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    8249,
-    8124,
-    7999
+    2150,
+    2150
    ]
   },
   {
@@ -318,10 +412,11 @@
     "cib": 5000
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    5000,
     5000,
     5000,
     5000
@@ -338,13 +433,36 @@
     "cib": 7094
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
     7094,
     7094,
+    7094,
     7094
+   ]
+  },
+  {
+   "id": "carrier-dreamcast",
+   "title": "Carrier",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 7500,
+   "prices": {
+    "loose": 2499,
+    "cib": 7500,
+    "new": 11999
+   },
+   "pct_1d": 0,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    7500,
+    7250,
+    7500,
+    7500
    ]
   },
   {
@@ -357,10 +475,11 @@
     "cib": 4199
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    4199,
     4199,
     4199,
     4199
@@ -371,20 +490,41 @@
    "title": "ChuChu Rocket!",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 3500,
+   "price_cents": 3750,
    "prices": {
     "loose": 2000,
-    "cib": 3500,
+    "cib": 3750,
     "new": 4699
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": 7.14,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
     3500,
     3500,
+    3500,
     3500
+   ]
+  },
+  {
+   "id": "confidential-mission-dreamcast",
+   "title": "Confidential Mission",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 9900,
+   "prices": {
+    "cib": 9900
+   },
+   "pct_1d": -1,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    9900,
+    9900,
+    9900,
+    9900
    ]
   },
   {
@@ -398,10 +538,11 @@
     "cib": 5999
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    5999,
     5999,
     5999,
     5999
@@ -412,59 +553,21 @@
    "title": "Crazy Taxi",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 4997,
+   "price_cents": 4999,
    "prices": {
-    "loose": 2450,
-    "cib": 4997,
-    "new": 12988
+    "loose": 2398,
+    "cib": 4999,
+    "new": 12494
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": 0.04,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    4997,
     4997,
     4997,
     4997
-   ]
-  },
-  {
-   "id": "cyber-troopers-virtual-on-oratorio-tangram-dreamcast",
-   "title": "Cyber Troopers Virtual-On Oratorio Tangram",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 6499,
-   "prices": {
-    "loose": 3800,
-    "cib": 6499
-   },
-   "pct_1d": 0,
-   "pct_7d": null,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    6999,
-    6749,
-    6499
-   ]
-  },
-  {
-   "id": "daytona-usa-dreamcast",
-   "title": "Daytona USA",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 10949,
-   "prices": {
-    "cib": 10949
-   },
-   "pct_1d": 0,
-   "pct_7d": null,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    10499,
-    10724,
-    10949
    ]
   },
   {
@@ -478,33 +581,265 @@
     "cib": 4500
    },
    "pct_1d": 0,
-   "pct_7d": null,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    4500,
     4500,
     4500,
     4500
    ]
   },
   {
-   "id": "death-crimson-ox-dreamcast",
-   "title": "Death Crimson OX",
+   "id": "grand-theft-auto-2-dreamcast",
+   "title": "Grand Theft Auto 2",
    "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 6999,
+   "headline_condition": "loose",
+   "price_cents": 3499,
    "prices": {
-    "loose": 3600,
-    "cib": 6999
+    "loose": 3499
    },
-   "pct_1d": 0,
-   "pct_7d": null,
+   "pct_1d": 0.32,
+   "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    3488,
+    3488,
+    3488,
+    3488
+   ]
+  },
+  {
+   "id": "ooga-booga-dreamcast",
+   "title": "Ooga Booga",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 4999,
+   "prices": {
+    "cib": 4999,
+    "new": 5988
+   },
+   "pct_1d": 3.09,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    4849,
+    4849,
+    4849,
+    4849
+   ]
+  },
+  {
+   "id": "skies-of-arcadia-dreamcast",
+   "title": "Skies of Arcadia",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 19000,
+   "prices": {
+    "loose": 12500,
+    "cib": 19000
+   },
+   "pct_1d": 5.56,
+   "pct_7d": -1.32,
+   "pct_30d": null,
+   "score": -1.32,
+   "spark": [
+    19000,
+    18750,
+    18500,
+    18750
+   ]
+  },
+  {
+   "id": "armada-dreamcast",
+   "title": "Armada",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 4670,
+   "prices": {
+    "loose": 1795,
+    "cib": 4670,
+    "new": 8999
+   },
+   "pct_1d": 0,
+   "pct_7d": -1.76,
+   "pct_30d": null,
+   "score": -1.76,
+   "spark": [
+    4840,
+    4840,
+    4840,
+    4755
+   ]
+  },
+  {
+   "id": "alone-in-the-dark-the-new-nightmare-dreamcast",
+   "title": "Alone in the Dark: The New Nightmare",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 7299,
+   "prices": {
+    "cib": 7299
+   },
+   "pct_1d": 0,
+   "pct_7d": -2,
+   "pct_30d": null,
+   "score": -2,
+   "spark": [
+    7500,
+    7450,
+    7400,
+    7350
+   ]
+  },
+  {
+   "id": "evil-dead-hail-to-the-king-dreamcast",
+   "title": "Evil Dead: Hail to the King",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 7499,
+   "prices": {
+    "loose": 2999,
+    "cib": 7499
+   },
+   "pct_1d": 4.17,
+   "pct_7d": -2,
+   "pct_30d": null,
+   "score": -2,
+   "spark": [
+    7499,
+    7349,
+    7199,
+    7349
+   ]
+  },
+  {
+   "id": "sword-of-the-berserk-guts-rage-dreamcast",
+   "title": "Sword of the Berserk: Guts' Rage",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 10500,
+   "prices": {
+    "loose": 4500,
+    "cib": 10500,
+    "new": 23500
+   },
+   "pct_1d": 5,
+   "pct_7d": -2.38,
+   "pct_30d": null,
+   "score": -2.38,
+   "spark": [
+    10500,
+    10250,
+    10000,
+    10250
+   ]
+  },
+  {
+   "id": "street-fighter-iii-double-impact-dreamcast",
+   "title": "Street Fighter III: Double Impact",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 8500,
+   "prices": {
+    "loose": 3949,
+    "cib": 8500
+   },
+   "pct_1d": 0.01,
+   "pct_7d": -2.77,
+   "pct_30d": null,
+   "score": -2.77,
+   "spark": [
+    8953,
+    8932,
+    8910,
+    8705
+   ]
+  },
+  {
+   "id": "bomberman-online-dreamcast",
+   "title": "Bomberman Online",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 7999,
+   "prices": {
+    "loose": 3939,
+    "cib": 7999
+   },
+   "pct_1d": 0,
+   "pct_7d": -3.03,
+   "pct_30d": null,
+   "score": -3.03,
+   "spark": [
+    8249,
+    8124,
+    7999,
+    7999
+   ]
+  },
+  {
+   "id": "ferrari-f355-challenge-dreamcast",
+   "title": "Ferrari F355 Challenge",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 4250,
+   "prices": {
+    "cib": 4250
+   },
+   "pct_1d": 6.25,
+   "pct_7d": -5.26,
+   "pct_30d": null,
+   "score": -5.26,
+   "spark": [
+    4750,
+    4750,
+    4750,
+    4500
+   ]
+  },
+  {
+   "id": "cyber-troopers-virtual-on-oratorio-tangram-dreamcast",
+   "title": "Cyber Troopers Virtual-On Oratorio Tangram",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 6499,
+   "prices": {
+    "loose": 3800,
+    "cib": 6499
+   },
+   "pct_1d": 0,
+   "pct_7d": -7.14,
+   "pct_30d": null,
+   "score": -7.14,
+   "spark": [
     6999,
-    6999,
-    6999
+    6749,
+    6499,
+    6499
+   ]
+  },
+  {
+   "id": "18-wheeler-american-pro-trucker-dreamcast",
+   "title": "18 Wheeler: American Pro Trucker",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 2999,
+   "prices": {
+    "loose": 1499,
+    "cib": 2999
+   },
+   "pct_1d": 0,
+   "pct_7d": -14.24,
+   "pct_30d": null,
+   "score": -14.24,
+   "spark": [
+    3497,
+    3248,
+    2999,
+    2999
    ]
   }
  ]
