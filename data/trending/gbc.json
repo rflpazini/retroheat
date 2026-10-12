@@ -9,6 +9,7 @@
    "headline_condition": "cib",
    "price_cents": 24999,
    "prices": {
+    "loose": 4550,
     "cib": 24999
    },
    "pct_1d": 0,
@@ -230,63 +231,43 @@
    ]
   },
   {
-   "id": "mickeys-speedway-usa-gbc",
-   "title": "Mickey's Speedway USA",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 1450,
-   "prices": {
-    "loose": 1450
-   },
-   "pct_1d": 0,
-   "pct_7d": 1.79,
-   "pct_30d": null,
-   "score": 1.79,
-   "spark": [
-    1400,
-    1400,
-    1400,
-    1425
-   ]
-  },
-  {
    "id": "wario-land-ii-gbc",
    "title": "Wario Land II",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 4547,
+   "price_cents": 4499,
    "prices": {
-    "loose": 4547
+    "loose": 4499
    },
-   "pct_1d": -1.04,
-   "pct_7d": 1.07,
+   "pct_1d": -2.09,
+   "pct_7d": 0.53,
    "pct_30d": null,
-   "score": 1.07,
+   "score": 0.53,
    "spark": [
     4499,
     4523,
     4547,
-    4547
+    4523
    ]
   },
   {
-   "id": "dragon-warrior-monsters-gbc",
-   "title": "Dragon Warrior Monsters",
+   "id": "star-wars-episode-i-racer-gbc",
+   "title": "Star Wars Episode I: Racer",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 3449,
+   "price_cents": 1725,
    "prices": {
-    "loose": 3449
+    "loose": 1725
    },
-   "pct_1d": 1.47,
-   "pct_7d": 0.74,
+   "pct_1d": 0,
+   "pct_7d": 0.41,
    "pct_30d": null,
-   "score": 0.74,
+   "score": 0.41,
    "spark": [
-    3399,
-    3424,
-    3399,
-    3424
+    1712,
+    1706,
+    1712,
+    1719
    ]
   },
   {
@@ -294,19 +275,19 @@
    "title": "Sabrina the Animated Series: Zapped!",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 1600,
+   "price_cents": 1598,
    "prices": {
-    "loose": 1600
+    "loose": 1598
    },
-   "pct_1d": 0,
-   "pct_7d": 0.31,
+   "pct_1d": -0.13,
+   "pct_7d": 0.25,
    "pct_30d": null,
-   "score": 0.31,
+   "score": 0.25,
    "spark": [
     1595,
     1598,
     1600,
-    1600
+    1599
    ]
   },
   {
@@ -369,35 +350,15 @@
    ]
   },
   {
-   "id": "bionic-commando-elite-forces-gbc",
-   "title": "Bionic Commando: Elite Forces",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 3497,
-   "prices": {
-    "loose": 3497
-   },
-   "pct_1d": 0,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    3497,
-    3497,
-    3497,
-    3497
-   ]
-  },
-  {
    "id": "blaster-master-enemy-below-gbc",
    "title": "Blaster Master: Enemy Below",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 6274,
+   "price_cents": 6249,
    "prices": {
-    "loose": 6274
+    "loose": 6249
    },
-   "pct_1d": 0.4,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
@@ -534,11 +495,11 @@
    "title": "Déjà Vu I & II",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 6500,
+   "price_cents": 6648,
    "prices": {
-    "loose": 6500
+    "loose": 6648
    },
-   "pct_1d": 8.33,
+   "pct_1d": 10.8,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
@@ -547,46 +508,6 @@
     6000,
     6000,
     6000
-   ]
-  },
-  {
-   "id": "dexters-laboratory-robot-rampage-gbc",
-   "title": "Dexter's Laboratory: Robot Rampage",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 1158,
-   "prices": {
-    "loose": 1158
-   },
-   "pct_1d": 0,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    1158,
-    1158,
-    1158,
-    1158
-   ]
-  },
-  {
-   "id": "dracula-crazy-vampire-gbc",
-   "title": "Dracula: Crazy Vampire",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 2500,
-   "prices": {
-    "loose": 2500
-   },
-   "pct_1d": 0,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    2500,
-    2500,
-    2500,
-    2500
    ]
   },
   {
@@ -631,6 +552,48 @@
    ]
   },
   {
+   "id": "dragon-warrior-iii-gbc",
+   "title": "Dragon Warrior III",
+   "platform": "gbc",
+   "headline_condition": "cib",
+   "price_cents": 19250,
+   "prices": {
+    "loose": 6499,
+    "cib": 19250,
+    "new": 45000
+   },
+   "pct_1d": 0,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    19250,
+    19250,
+    19250,
+    19250
+   ]
+  },
+  {
+   "id": "dragon-warrior-monsters-2-taras-adventure-gbc",
+   "title": "Dragon Warrior Monsters 2: Tara's Adventure",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 5499,
+   "prices": {
+    "loose": 5499
+   },
+   "pct_1d": 4.76,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    5249,
+    5249,
+    5249,
+    5249
+   ]
+  },
+  {
    "id": "lufia-the-legend-returns-gbc",
    "title": "Lufia: The Legend Returns",
    "platform": "gbc",
@@ -671,6 +634,46 @@
    ]
   },
   {
+   "id": "mega-man-xtreme-gbc",
+   "title": "Mega Man Xtreme",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 5000,
+   "prices": {
+    "loose": 5000
+   },
+   "pct_1d": 0.02,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    4999,
+    4999,
+    4999,
+    4999
+   ]
+  },
+  {
+   "id": "monster-rancher-battle-card-gbc",
+   "title": "Monster Rancher Battle Card",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 1299,
+   "prices": {
+    "loose": 1299
+   },
+   "pct_1d": 1.41,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    1281,
+    1281,
+    1281,
+    1281
+   ]
+  },
+  {
    "id": "wendy-every-witch-way-gbc",
    "title": "Wendy: Every Witch Way",
    "platform": "gbc",
@@ -691,25 +694,44 @@
    ]
   },
   {
-   "id": "pokemon-crystal-gbc",
-   "title": "Pokémon Crystal",
+   "id": "blade-gbc",
+   "title": "Blade",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 3999,
+   "prices": {
+    "loose": 3999
+   },
+   "pct_1d": 3.2,
+   "pct_7d": -1.55,
+   "pct_30d": null,
+   "score": -1.55,
+   "spark": [
+    3999,
+    3937,
+    3875,
+    3937
+   ]
+  },
+  {
+   "id": "pokemon-gold-gbc",
+   "title": "Pokémon Gold",
    "platform": "gbc",
    "headline_condition": "cib",
-   "price_cents": 98748,
+   "price_cents": 32750,
    "prices": {
-    "loose": 18999,
-    "cib": 98748,
-    "new": 249995
+    "loose": 7120,
+    "cib": 32750
    },
-   "pct_1d": 1.28,
-   "pct_7d": -1.38,
+   "pct_1d": 10.09,
+   "pct_7d": -1.56,
    "pct_30d": null,
-   "score": -1.38,
+   "score": -1.56,
    "spark": [
-    99500,
-    98500,
-    97500,
-    98124
+    31999,
+    31499,
+    30999,
+    31499
    ]
   },
   {
@@ -730,26 +752,6 @@
     2850,
     2800,
     2850
-   ]
-  },
-  {
-   "id": "blade-gbc",
-   "title": "Blade",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 3875,
-   "prices": {
-    "loose": 3875
-   },
-   "pct_1d": 0,
-   "pct_7d": -3.1,
-   "pct_30d": null,
-   "score": -3.1,
-   "spark": [
-    3999,
-    3937,
-    3875,
-    3875
    ]
   }
  ]
