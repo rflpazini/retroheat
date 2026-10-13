@@ -1,6 +1,6 @@
 {
  "board": "n64",
- "as_of": "2026-10-12",
+ "as_of": "2026-10-13",
  "entries": [
   {
    "id": "cruisn-world-n64",
@@ -20,6 +20,7 @@
     9999,
     11437,
     12874,
+    12874,
     12874
    ]
   },
@@ -30,18 +31,19 @@
    "headline_condition": "cib",
    "price_cents": 15450,
    "prices": {
-    "loose": 4574,
+    "loose": 4500,
     "cib": 15450
    },
-   "pct_1d": -2.82,
-   "pct_7d": 15.01,
+   "pct_1d": 0,
+   "pct_7d": 18.86,
    "pct_30d": null,
-   "score": 15.01,
+   "score": 18.86,
    "spark": [
     12999,
     13724,
     14449,
-    14950
+    14950,
+    15450
    ]
   },
   {
@@ -62,6 +64,7 @@
     8097,
     8548,
     8999,
+    8999,
     8999
    ]
   },
@@ -70,18 +73,19 @@
    "title": "Donkey Kong 64",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 15000,
+   "price_cents": 13900,
    "prices": {
     "loose": 3499,
-    "cib": 15000
+    "cib": 13900
    },
-   "pct_1d": 0.01,
+   "pct_1d": -7.33,
    "pct_7d": 7.91,
    "pct_30d": null,
    "score": 7.91,
    "spark": [
     13900,
     14450,
+    14999,
     14999,
     14999
    ]
@@ -93,7 +97,7 @@
    "headline_condition": "cib",
    "price_cents": 7000,
    "prices": {
-    "loose": 1799,
+    "loose": 1774,
     "cib": 7000,
     "new": 31051
    },
@@ -105,7 +109,30 @@
     6500,
     6750,
     7000,
+    7000,
     7000
+   ]
+  },
+  {
+   "id": "zelda-ocarina-of-time-n64",
+   "title": "The Legend of Zelda: Ocarina of Time",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 21195,
+   "prices": {
+    "loose": 6773,
+    "cib": 21195
+   },
+   "pct_1d": 0,
+   "pct_7d": 7.31,
+   "pct_30d": null,
+   "score": 7.31,
+   "spark": [
+    19751,
+    20473,
+    20000,
+    20598,
+    21195
    ]
   },
   {
@@ -117,36 +144,16 @@
    "prices": {
     "loose": 3999
    },
-   "pct_1d": 0.05,
-   "pct_7d": 5.63,
+   "pct_1d": 0,
+   "pct_7d": 5.65,
    "pct_30d": null,
-   "score": 5.63,
+   "score": 5.65,
    "spark": [
     3785,
     3892,
     3997,
-    3998
-   ]
-  },
-  {
-   "id": "zelda-ocarina-of-time-n64",
-   "title": "The Legend of Zelda: Ocarina of Time",
-   "platform": "n64",
-   "headline_condition": "cib",
-   "price_cents": 21195,
-   "prices": {
-    "loose": 6649,
-    "cib": 21195
-   },
-   "pct_1d": 5.98,
-   "pct_7d": 4.29,
-   "pct_30d": null,
-   "score": 4.29,
-   "spark": [
-    19751,
-    20473,
-    20000,
-    20598
+    3998,
+    3999
    ]
   },
   {
@@ -160,35 +167,15 @@
     "cib": 9499
    },
    "pct_1d": 0,
-   "pct_7d": 4.17,
+   "pct_7d": 5.56,
    "pct_30d": null,
-   "score": 4.17,
+   "score": 5.56,
    "spark": [
     8999,
     9124,
     9249,
-    9374
-   ]
-  },
-  {
-   "id": "goldeneye-007-n64",
-   "title": "GoldenEye 007",
-   "platform": "n64",
-   "headline_condition": "cib",
-   "price_cents": 9499,
-   "prices": {
-    "loose": 3499,
-    "cib": 9499
-   },
-   "pct_1d": 1.06,
-   "pct_7d": 3.37,
-   "pct_30d": null,
-   "score": 3.37,
-   "spark": [
-    8996,
-    9098,
-    9199,
-    9299
+    9374,
+    9499
    ]
   },
   {
@@ -200,36 +187,16 @@
    "prices": {
     "loose": 40500
    },
-   "pct_1d": 12.5,
-   "pct_7d": 2.78,
+   "pct_1d": 0,
+   "pct_7d": 5.56,
    "pct_30d": null,
-   "score": 2.78,
+   "score": 5.56,
    "spark": [
     36000,
     37000,
     36000,
-    37000
-   ]
-  },
-  {
-   "id": "san-francisco-rush-extreme-racing-n64",
-   "title": "San Francisco Rush: Extreme Racing",
-   "platform": "n64",
-   "headline_condition": "cib",
-   "price_cents": 5750,
-   "prices": {
-    "loose": 1599,
-    "cib": 5750
-   },
-   "pct_1d": 4.55,
-   "pct_7d": 2.37,
-   "pct_30d": null,
-   "score": 2.37,
-   "spark": [
-    5495,
-    5623,
-    5500,
-    5625
+    37000,
+    38000
    ]
   },
   {
@@ -237,20 +204,21 @@
    "title": "Mortal Kombat Trilogy",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 11000,
+   "price_cents": 11500,
    "prices": {
     "loose": 3500,
-    "cib": 11000
+    "cib": 11500
    },
-   "pct_1d": -4.35,
-   "pct_7d": 2.27,
+   "pct_1d": 4.55,
+   "pct_7d": 4.55,
    "pct_30d": null,
-   "score": 2.27,
+   "score": 4.55,
    "spark": [
     11000,
     11250,
     11500,
-    11250
+    11250,
+    11500
    ]
   },
   {
@@ -263,15 +231,16 @@
     "loose": 2500,
     "cib": 6999
    },
-   "pct_1d": 3.69,
-   "pct_7d": 1.92,
+   "pct_1d": 0,
+   "pct_7d": 3.85,
    "pct_30d": null,
-   "score": 1.92,
+   "score": 3.85,
    "spark": [
     6500,
     6500,
     6500,
-    6625
+    6625,
+    6750
    ]
   },
   {
@@ -279,20 +248,21 @@
    "title": "Diddy Kong Racing",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 11997,
+   "price_cents": 11995,
    "prices": {
-    "loose": 3049,
-    "cib": 11997
+    "loose": 3000,
+    "cib": 11995
    },
-   "pct_1d": 4.9,
-   "pct_7d": 1.91,
+   "pct_1d": -0.02,
+   "pct_7d": 3.83,
    "pct_30d": null,
-   "score": 1.91,
+   "score": 3.83,
    "spark": [
     11437,
     11656,
     11437,
-    11656
+    11656,
+    11875
    ]
   },
   {
@@ -307,14 +277,15 @@
     "new": 41250
    },
    "pct_1d": 0,
-   "pct_7d": 1.61,
+   "pct_7d": 3.21,
    "pct_30d": null,
-   "score": 1.61,
+   "score": 3.21,
    "spark": [
     7750,
     7750,
     7750,
-    7875
+    7875,
+    7999
    ]
   },
   {
@@ -322,40 +293,64 @@
    "title": "Scooby-Doo! Classic Creep Capers",
    "platform": "n64",
    "headline_condition": "loose",
-   "price_cents": 3149,
+   "price_cents": 3220,
    "prices": {
-    "loose": 3149
+    "loose": 3220
    },
-   "pct_1d": 2.41,
-   "pct_7d": 1.27,
+   "pct_1d": 2.25,
+   "pct_7d": 2.5,
    "pct_30d": null,
-   "score": 1.27,
+   "score": 2.5,
    "spark": [
     3000,
     3000,
     3000,
-    3038
+    3038,
+    3075
    ]
   },
   {
-   "id": "mario-party-n64",
-   "title": "Mario Party",
+   "id": "goldeneye-007-n64",
+   "title": "GoldenEye 007",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 12249,
+   "price_cents": 8999,
    "prices": {
-    "loose": 3948,
-    "cib": 12249
+    "loose": 3499,
+    "cib": 8999
    },
-   "pct_1d": -7.55,
-   "pct_7d": 1.02,
+   "pct_1d": -5.26,
+   "pct_7d": 2.26,
    "pct_30d": null,
-   "score": 1.02,
+   "score": 2.26,
    "spark": [
-    12249,
-    12374,
-    12499,
-    12374
+    8996,
+    9098,
+    9199,
+    9299,
+    9199
+   ]
+  },
+  {
+   "id": "san-francisco-rush-extreme-racing-n64",
+   "title": "San Francisco Rush: Extreme Racing",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 5498,
+   "prices": {
+    "loose": 1600,
+    "cib": 5498
+   },
+   "pct_1d": -4.38,
+   "pct_7d": 0.09,
+   "pct_30d": null,
+   "score": 0.09,
+   "spark": [
+    5495,
+    5623,
+    5500,
+    5625,
+    5500
    ]
   },
   {
@@ -363,19 +358,20 @@
    "title": "San Francisco Rush 2049",
    "platform": "n64",
    "headline_condition": "loose",
-   "price_cents": 4999,
+   "price_cents": 4899,
    "prices": {
-    "loose": 4999
+    "loose": 4899
    },
-   "pct_1d": -0.02,
-   "pct_7d": 0.1,
+   "pct_1d": -2,
+   "pct_7d": 0.08,
    "pct_30d": null,
-   "score": 0.1,
+   "score": 0.08,
    "spark": [
     4995,
     4998,
     5000,
-    5000
+    5000,
+    4999
    ]
   },
   {
@@ -385,7 +381,7 @@
    "headline_condition": "cib",
    "price_cents": 5999,
    "prices": {
-    "loose": 1699,
+    "loose": 1700,
     "cib": 5999
    },
    "pct_1d": 0,
@@ -395,6 +391,7 @@
    "spark": [
     5997,
     5998,
+    5999,
     5999,
     5999
    ]
@@ -416,7 +413,30 @@
     3397,
     3198,
     3397,
+    3398,
     3398
+   ]
+  },
+  {
+   "id": "yoshis-story-n64",
+   "title": "Yoshi's Story",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 12999,
+   "prices": {
+    "loose": 2999,
+    "cib": 12999
+   },
+   "pct_1d": 0.01,
+   "pct_7d": 0.02,
+   "pct_30d": null,
+   "score": 0.02,
+   "spark": [
+    12996,
+    12897,
+    12996,
+    12997,
+    12998
    ]
   },
   {
@@ -424,18 +444,19 @@
    "title": "Mario Kart 64",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 14000,
+   "price_cents": 15000,
    "prices": {
-    "loose": 4995,
-    "cib": 14000
+    "loose": 4900,
+    "cib": 15000
    },
-   "pct_1d": 0,
+   "pct_1d": 7.14,
    "pct_7d": 0.01,
    "pct_30d": null,
    "score": 0.01,
    "spark": [
     13998,
     14998,
+    14000,
     14000,
     14000
    ]
@@ -447,10 +468,10 @@
    "headline_condition": "cib",
    "price_cents": 22997,
    "prices": {
-    "loose": 3400,
+    "loose": 3299,
     "cib": 22997
    },
-   "pct_1d": -0.01,
+   "pct_1d": 0,
    "pct_7d": 0.01,
    "pct_30d": null,
    "score": 0.01,
@@ -458,28 +479,8 @@
     22995,
     22996,
     22997,
+    22997,
     22997
-   ]
-  },
-  {
-   "id": "yoshis-story-n64",
-   "title": "Yoshi's Story",
-   "platform": "n64",
-   "headline_condition": "cib",
-   "price_cents": 12998,
-   "prices": {
-    "loose": 2999,
-    "cib": 12998
-   },
-   "pct_1d": 0,
-   "pct_7d": 0.01,
-   "pct_30d": null,
-   "score": 0.01,
-   "spark": [
-    12996,
-    12897,
-    12996,
-    12997
    ]
   },
   {
@@ -487,12 +488,12 @@
    "title": "Super Mario 64",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 15401,
+   "price_cents": 14997,
    "prices": {
     "loose": 4500,
-    "cib": 15401
+    "cib": 14997
    },
-   "pct_1d": 2.7,
+   "pct_1d": -2.62,
    "pct_7d": 0.01,
    "pct_30d": null,
    "score": 0.01,
@@ -500,6 +501,7 @@
     14996,
     14997,
     14996,
+    14997,
     14997
    ]
   },
@@ -513,7 +515,7 @@
     "loose": 1999,
     "cib": 5997
    },
-   "pct_1d": -0.03,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
@@ -521,7 +523,52 @@
     5999,
     5999,
     5999,
+    5999,
     5999
+   ]
+  },
+  {
+   "id": "1080-snowboarding-n64",
+   "title": "1080° Snowboarding",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 5999,
+   "prices": {
+    "loose": 1583,
+    "cib": 5999
+   },
+   "pct_1d": 0,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    6482,
+    6482,
+    6482,
+    6482,
+    6482
+   ]
+  },
+  {
+   "id": "banjo-kazooie-n64",
+   "title": "Banjo-Kazooie",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 14999,
+   "prices": {
+    "loose": 3500,
+    "cib": 14999
+   },
+   "pct_1d": 0,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    14999,
+    14999,
+    14999,
+    14999,
+    14999
    ]
   },
   {
@@ -534,11 +581,12 @@
     "loose": 4250,
     "cib": 14499
    },
-   "pct_1d": 1.75,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    14249,
     14249,
     14249,
     14249,
@@ -546,252 +594,157 @@
    ]
   },
   {
-   "id": "battlezone-rise-of-the-black-dogs-n64",
-   "title": "Battlezone: Rise of the Black Dogs",
+   "id": "fighting-force-64-n64",
+   "title": "Fighting Force 64",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 16500,
+   "prices": {
+    "loose": 4475,
+    "cib": 16500
+   },
+   "pct_1d": 5.31,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    15668,
+    15668,
+    15668,
+    15668,
+    15668
+   ]
+  },
+  {
+   "id": "harvest-moon-64-n64",
+   "title": "Harvest Moon 64",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 27450,
+   "prices": {
+    "loose": 9250,
+    "cib": 27450
+   },
+   "pct_1d": 5.58,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    27450,
+    27450,
+    27450,
+    27450,
+    27450
+   ]
+  },
+  {
+   "id": "quest-64-n64",
+   "title": "Quest 64",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 10250,
+   "prices": {
+    "loose": 2999,
+    "cib": 10250
+   },
+   "pct_1d": 2.5,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    10000,
+    10000,
+    10000,
+    10000,
+    10000
+   ]
+  },
+  {
+   "id": "south-park-n64",
+   "title": "South Park",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 13500,
+   "prices": {
+    "loose": 2599,
+    "cib": 13500,
+    "new": 39500
+   },
+   "pct_1d": 2.27,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    13200,
+    13200,
+    13200,
+    13200,
+    13200
+   ]
+  },
+  {
+   "id": "star-wars-rogue-squadron-n64",
+   "title": "Star Wars: Rogue Squadron",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 6650,
+   "prices": {
+    "loose": 1900,
+    "cib": 6650
+   },
+   "pct_1d": 2.31,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    6500,
+    6500,
+    6500,
+    6500,
+    6500
+   ]
+  },
+  {
+   "id": "super-smash-bros-n64",
+   "title": "Super Smash Bros.",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 20400,
+   "prices": {
+    "loose": 5499,
+    "cib": 20400
+   },
+   "pct_1d": 2,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    20000,
+    20200,
+    20000,
+    20000,
+    20000
+   ]
+  },
+  {
+   "id": "tonic-trouble-n64",
+   "title": "Tonic Trouble",
    "platform": "n64",
    "headline_condition": "loose",
-   "price_cents": 5999,
+   "price_cents": 3015,
    "prices": {
-    "loose": 5999
+    "loose": 3015
    },
-   "pct_1d": 6.23,
+   "pct_1d": 0.5,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    5647,
-    5647,
-    5647,
-    5647
-   ]
-  },
-  {
-   "id": "penny-racers-n64",
-   "title": "Penny Racers",
-   "platform": "n64",
-   "headline_condition": "loose",
-   "price_cents": 2699,
-   "prices": {
-    "loose": 2699
-   },
-   "pct_1d": 1.5,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    2659,
-    2659,
-    2659,
-    2659
-   ]
-  },
-  {
-   "id": "rat-attack-n64",
-   "title": "Rat Attack!",
-   "platform": "n64",
-   "headline_condition": "cib",
-   "price_cents": 107091,
-   "prices": {
-    "loose": 16946,
-    "cib": 107091
-   },
-   "pct_1d": 2.79,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    104183,
-    104183,
-    104183,
-    104183
-   ]
-  },
-  {
-   "id": "tony-hawks-pro-skater-2-n64",
-   "title": "Tony Hawk's Pro Skater 2",
-   "platform": "n64",
-   "headline_condition": "cib",
-   "price_cents": 6999,
-   "prices": {
-    "loose": 2499,
-    "cib": 6999
-   },
-   "pct_1d": 1.43,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    6900,
-    6900,
-    6900,
-    6900
-   ]
-  },
-  {
-   "id": "tony-hawks-pro-skater-3-n64",
-   "title": "Tony Hawk's Pro Skater 3",
-   "platform": "n64",
-   "headline_condition": "loose",
-   "price_cents": 8500,
-   "prices": {
-    "loose": 8500,
-    "new": 30000
-   },
-   "pct_1d": 3.03,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    8499,
-    8499,
-    8499,
-    8499
-   ]
-  },
-  {
-   "id": "wave-race-64-n64",
-   "title": "Wave Race 64",
-   "platform": "n64",
-   "headline_condition": "cib",
-   "price_cents": 7950,
-   "prices": {
-    "loose": 1799,
-    "cib": 7950
-   },
-   "pct_1d": 2.91,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    7950,
-    7963,
-    7950,
-    7950
-   ]
-  },
-  {
-   "id": "wcw-nwo-revenge-n64",
-   "title": "WCW/nWo Revenge",
-   "platform": "n64",
-   "headline_condition": "cib",
-   "price_cents": 7499,
-   "prices": {
-    "loose": 1495,
-    "cib": 7499
-   },
-   "pct_1d": 3.43,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    7250,
-    7250,
-    7250,
-    7250
-   ]
-  },
-  {
-   "id": "worms-armageddon-n64",
-   "title": "Worms Armageddon",
-   "platform": "n64",
-   "headline_condition": "cib",
-   "price_cents": 99999,
-   "prices": {
-    "loose": 28750,
-    "cib": 99999
-   },
-   "pct_1d": 2.56,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    97499,
-    97499,
-    97499,
-    97499
-   ]
-  },
-  {
-   "id": "zelda-majoras-mask-n64",
-   "title": "The Legend of Zelda: Majora's Mask",
-   "platform": "n64",
-   "headline_condition": "cib",
-   "price_cents": 27999,
-   "prices": {
-    "loose": 12051,
-    "cib": 27999,
-    "new": 350000
-   },
-   "pct_1d": 0.9,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    27999,
-    27999,
-    27999,
-    27999
-   ]
-  },
-  {
-   "id": "starcraft-64-n64",
-   "title": "StarCraft 64",
-   "platform": "n64",
-   "headline_condition": "loose",
-   "price_cents": 14250,
-   "prices": {
-    "loose": 14250
-   },
-   "pct_1d": 1.79,
-   "pct_7d": -0.86,
-   "pct_30d": null,
-   "score": -0.86,
-   "spark": [
-    14499,
-    14499,
-    14499,
-    14375
-   ]
-  },
-  {
-   "id": "f-zero-x-n64",
-   "title": "F-Zero X",
-   "platform": "n64",
-   "headline_condition": "cib",
-   "price_cents": 19349,
-   "prices": {
-    "loose": 4999,
-    "cib": 19349
-   },
-   "pct_1d": 4.87,
-   "pct_7d": -1.19,
-   "pct_30d": null,
-   "score": -1.19,
-   "spark": [
-    18900,
-    18675,
-    18450,
-    18675
-   ]
-  },
-  {
-   "id": "deadly-arts-n64",
-   "title": "Deadly Arts",
-   "platform": "n64",
-   "headline_condition": "loose",
-   "price_cents": 4800,
-   "prices": {
-    "loose": 4800
-   },
-   "pct_1d": 3.27,
-   "pct_7d": -1.58,
-   "pct_30d": null,
-   "score": -1.58,
-   "spark": [
-    4800,
-    4680,
-    4648,
-    4724
+    3015,
+    3015,
+    3015,
+    3008,
+    3015
    ]
   },
   {
@@ -799,60 +752,213 @@
    "title": "Turok 2: Seeds of Evil",
    "platform": "n64",
    "headline_condition": "cib",
-   "price_cents": 4495,
+   "price_cents": 4497,
    "prices": {
     "loose": 1499,
-    "cib": 4495
+    "cib": 4497
    },
-   "pct_1d": 5.81,
-   "pct_7d": -2.31,
+   "pct_1d": 0.04,
+   "pct_7d": 0,
    "pct_30d": null,
-   "score": -2.31,
+   "score": 0,
    "spark": [
     4495,
     4391,
     4287,
-    4391
+    4391,
+    4495
    ]
   },
   {
-   "id": "clayfighter-63-1-3-n64",
-   "title": "ClayFighter 63⅓",
+   "id": "vigilante-8-2nd-offense-n64",
+   "title": "Vigilante 8: 2nd Offense",
    "platform": "n64",
    "headline_condition": "loose",
-   "price_cents": 3299,
+   "price_cents": 3599,
    "prices": {
-    "loose": 3299
+    "loose": 3599
    },
-   "pct_1d": 1.51,
-   "pct_7d": -4.17,
+   "pct_1d": 8.24,
+   "pct_7d": 0,
    "pct_30d": null,
-   "score": -4.17,
+   "score": 0,
    "spark": [
-    3600,
-    3800,
-    3600,
-    3450
+    6442,
+    6442,
+    6442,
+    6442,
+    6442
    ]
   },
   {
-   "id": "road-rash-64-n64",
-   "title": "Road Rash 64",
+   "id": "aidyn-chronicles-the-first-mage-n64",
+   "title": "Aidyn Chronicles: The First Mage",
    "platform": "n64",
    "headline_condition": "loose",
-   "price_cents": 5250,
+   "price_cents": 6947,
    "prices": {
-    "loose": 5250
+    "loose": 6947
    },
-   "pct_1d": 5.02,
-   "pct_7d": -9.65,
+   "pct_1d": 0,
+   "pct_7d": -0.74,
    "pct_30d": null,
-   "score": -9.65,
+   "score": -0.74,
    "spark": [
-    5949,
-    5724,
-    5499,
-    5375
+    6999,
+    6973,
+    6947,
+    6947,
+    6947
+   ]
+  },
+  {
+   "id": "mystical-ninja-starring-goemon-n64",
+   "title": "Mystical Ninja Starring Goemon",
+   "platform": "n64",
+   "headline_condition": "loose",
+   "price_cents": 12394,
+   "prices": {
+    "loose": 12394
+   },
+   "pct_1d": 3.3,
+   "pct_7d": -1.69,
+   "pct_30d": null,
+   "score": -1.69,
+   "spark": [
+    12499,
+    12322,
+    12288,
+    12216,
+    12288
+   ]
+  },
+  {
+   "id": "blues-brothers-2000-n64",
+   "title": "Blues Brothers 2000",
+   "platform": "n64",
+   "headline_condition": "loose",
+   "price_cents": 3824,
+   "prices": {
+    "loose": 3824
+   },
+   "pct_1d": 0.63,
+   "pct_7d": -2.51,
+   "pct_30d": null,
+   "score": -2.51,
+   "spark": [
+    3949,
+    3949,
+    3949,
+    3900,
+    3850
+   ]
+  },
+  {
+   "id": "vigilante-8-n64",
+   "title": "Vigilante 8",
+   "platform": "n64",
+   "headline_condition": "loose",
+   "price_cents": 3410,
+   "prices": {
+    "loose": 3410
+   },
+   "pct_1d": 2.56,
+   "pct_7d": -2.57,
+   "pct_30d": null,
+   "score": -2.57,
+   "spark": [
+    3500,
+    3500,
+    3500,
+    3455,
+    3410
+   ]
+  },
+  {
+   "id": "clayfighter-sculptors-cut-n64",
+   "title": "ClayFighter: Sculptor's Cut",
+   "platform": "n64",
+   "headline_condition": "loose",
+   "price_cents": 174950,
+   "prices": {
+    "loose": 174950
+   },
+   "pct_1d": 2.91,
+   "pct_7d": -2.83,
+   "pct_30d": null,
+   "score": -2.83,
+   "spark": [
+    174950,
+    172475,
+    170000,
+    170000,
+    170000
+   ]
+  },
+  {
+   "id": "mario-party-3-n64",
+   "title": "Mario Party 3",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 17111,
+   "prices": {
+    "loose": 5918,
+    "cib": 17111
+   },
+   "pct_1d": 12.39,
+   "pct_7d": -4.93,
+   "pct_30d": null,
+   "score": -4.93,
+   "spark": [
+    17999,
+    17555,
+    17111,
+    16168,
+    17111
+   ]
+  },
+  {
+   "id": "mega-man-64-n64",
+   "title": "Mega Man 64",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 28750,
+   "prices": {
+    "loose": 12500,
+    "cib": 28750
+   },
+   "pct_1d": 4.55,
+   "pct_7d": -8.33,
+   "pct_30d": null,
+   "score": -8.33,
+   "spark": [
+    29999,
+    28750,
+    27500,
+    27500,
+    27500
+   ]
+  },
+  {
+   "id": "tony-hawks-pro-skater-n64",
+   "title": "Tony Hawk's Pro Skater",
+   "platform": "n64",
+   "headline_condition": "cib",
+   "price_cents": 6299,
+   "prices": {
+    "loose": 1500,
+    "cib": 6299
+   },
+   "pct_1d": 14.53,
+   "pct_7d": -8.72,
+   "pct_30d": null,
+   "score": -8.72,
+   "spark": [
+    6299,
+    6025,
+    5750,
+    5750,
+    5750
    ]
   }
  ]

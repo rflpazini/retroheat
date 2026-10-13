@@ -1,6 +1,6 @@
 {
  "platform": "vita",
- "as_of": "2026-10-12",
+ "as_of": "2026-10-13",
  "source": "ebay-browse",
  "price_kind": "asking",
  "games": [
@@ -13,15 +13,15 @@
     "loose": {
      "median_cents": 3175,
      "mode_cents": 3000,
-     "q1_cents": 2500,
-     "q3_cents": 4398,
+     "q1_cents": 2600,
+     "q3_cents": 4299,
      "n": 84
     },
     "cib": {
-     "median_cents": 4200,
-     "q1_cents": 3750,
-     "q3_cents": 5248,
-     "n": 5
+     "median_cents": 4450,
+     "q1_cents": 4000,
+     "q3_cents": 4999,
+     "n": 6
     },
     "new": {
      "median_cents": 14999,
@@ -31,7 +31,7 @@
      "n": 9
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 5.95,
    "pct_7d": -15.98,
    "pct_30d": null,
    "sparks": {
@@ -39,11 +39,13 @@
      3087,
      3112,
      3087,
-     3112
+     3112,
+     3137
     ],
     "cib": [
      4999,
      4550,
+     4200,
      4200,
      4200
     ],
@@ -51,11 +53,12 @@
      14999,
      14999,
      14999,
+     14999,
      14999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "ys-memories-of-celceta-vita",
@@ -73,7 +76,7 @@
     "cib": {
      "median_cents": 3699,
      "mode_cents": 4000,
-     "q1_cents": 2250,
+     "q1_cents": 2150,
      "q3_cents": 3999,
      "n": 8
     },
@@ -93,9 +96,11 @@
      2500,
      2500,
      2500,
+     2500,
      2500
     ],
     "cib": [
+     3699,
      3699,
      3699,
      3699,
@@ -105,11 +110,12 @@
      4500,
      4500,
      4500,
+     4500,
      4500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "muramasa-rebirth-vita",
@@ -118,14 +124,14 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 6000,
+     "median_cents": 6093,
      "mode_cents": 6000,
-     "q1_cents": 5545,
+     "q1_cents": 5600,
      "q3_cents": 8000,
-     "n": 35
+     "n": 34
     },
     "cib": {
-     "median_cents": 8998,
+     "median_cents": 8498,
      "q1_cents": 5950,
      "q3_cents": 12000,
      "n": 8
@@ -137,23 +143,26 @@
      "n": 5
     }
    },
-   "pct_1d": -5.28,
-   "pct_7d": 5.73,
+   "pct_1d": -5.56,
+   "pct_7d": 2.86,
    "pct_30d": null,
    "sparks": {
     "loose": [
      6093,
      6093,
      6093,
-     6047
+     6047,
+     6093
     ],
     "cib": [
      8748,
      9124,
      9500,
-     9249
+     9249,
+     8998
     ],
     "new": [
+     11999,
      11999,
      11999,
      11999,
@@ -161,7 +170,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "dragons-crown-vita",
@@ -191,17 +200,19 @@
      2522,
      2511,
      2500,
+     2500,
      2500
     ],
     "cib": [
      4500,
      4750,
      5000,
+     5000,
      5000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "odin-sphere-leifthrasir-vita",
@@ -217,7 +228,7 @@
      "n": 6
     }
    },
-   "pct_1d": -4.38,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -225,11 +236,12 @@
      8000,
      8000,
      8000,
+     8000,
      8000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "danganronpa-trigger-happy-havoc-vita",
@@ -238,11 +250,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 3550,
+     "median_cents": 3600,
      "mode_cents": 3500,
      "q1_cents": 3200,
-     "q3_cents": 6000,
-     "n": 26
+     "q3_cents": 6500,
+     "n": 25
     },
     "cib": {
      "median_cents": 4750,
@@ -258,7 +270,7 @@
      "n": 9
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
@@ -266,9 +278,15 @@
      3550,
      3550,
      3550,
+     3550,
      3550
     ],
+    "cib": [
+     4750,
+     4750
+    ],
     "new": [
+     11999,
      11999,
      11999,
      11999,
@@ -276,7 +294,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "danganronpa-2-goodbye-despair-vita",
@@ -307,17 +325,19 @@
      3550,
      3525,
      3550,
+     3550,
      3550
     ],
     "new": [
      9000,
      8500,
      8000,
-     8500
+     8500,
+     9000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "danganronpa-another-episode-ultra-despair-girls-vita",
@@ -333,18 +353,19 @@
      "n": 34
     },
     "new": {
-     "median_cents": 6999,
+     "median_cents": 7000,
      "mode_cents": 7000,
-     "q1_cents": 5495,
-     "q3_cents": 7444,
-     "n": 9
+     "q1_cents": 4995,
+     "q3_cents": 7488,
+     "n": 10
     }
    },
-   "pct_1d": 1.78,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     4000,
      4000,
      4000,
      4000,
@@ -354,11 +375,12 @@
      6999,
      7000,
      7000,
+     7000,
      7000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "zero-escape-virtues-last-reward-vita",
@@ -374,7 +396,7 @@
      "n": 16
     }
    },
-   "pct_1d": 5,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -382,11 +404,12 @@
      1999,
      1999,
      1999,
+     1999,
      1999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "steins-gate-vita",
@@ -395,11 +418,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 4150,
+     "median_cents": 4300,
      "mode_cents": 5000,
-     "q1_cents": 3474,
-     "q3_cents": 4898,
-     "n": 8
+     "q1_cents": 3748,
+     "q3_cents": 4995,
+     "n": 7
     },
     "cib": {
      "median_cents": 4449,
@@ -415,11 +438,12 @@
      "n": 7
     }
    },
-   "pct_1d": -1.11,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     3999,
      3999,
      3999,
      3999,
@@ -429,9 +453,11 @@
      4499,
      4499,
      4499,
+     4499,
      4499
     ],
     "new": [
+     5000,
      5000,
      5000,
      5000,
@@ -439,7 +465,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "corpse-party-blood-drive-vita",
@@ -477,9 +503,11 @@
      3999,
      3998,
      3997,
+     3997,
      3997
     ],
     "cib": [
+     4999,
      4999,
      4999,
      4999,
@@ -489,11 +517,12 @@
      6497,
      6497,
      6497,
+     6497,
      6497
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "gravity-rush-vita",
@@ -502,11 +531,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 4300,
+     "median_cents": 4399,
      "mode_cents": 4000,
-     "q1_cents": 3800,
-     "q3_cents": 6127,
-     "n": 30
+     "q1_cents": 3900,
+     "q3_cents": 6164,
+     "n": 29
     },
     "cib": {
      "median_cents": 6999,
@@ -524,22 +553,25 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": -5,
+   "pct_7d": -10,
    "pct_30d": null,
    "sparks": {
     "loose": [
      4450,
      4425,
      4450,
-     4425
+     4425,
+     4399
     ],
     "cib": [
      7777,
      7777,
      7777,
-     7388
+     7388,
+     6999
     ],
     "new": [
+     21000,
      21000,
      21000,
      21000,
@@ -547,7 +579,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "tearaway-vita",
@@ -569,11 +601,11 @@
      "n": 4
     },
     "new": {
-     "median_cents": 5561,
+     "median_cents": 5531,
      "mode_cents": 5000,
-     "q1_cents": 5000,
-     "q3_cents": 9580,
-     "n": 9
+     "q1_cents": 4999,
+     "q3_cents": 9161,
+     "n": 10
     }
    },
    "pct_1d": 0,
@@ -584,11 +616,13 @@
      3399,
      3449,
      3499,
+     3499,
      3499
     ],
     "cib": [
      3499,
      3625,
+     3750,
      3750,
      3750
     ],
@@ -596,11 +630,12 @@
      5531,
      5531,
      5531,
+     5531,
      5531
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "freedom-wars-vita",
@@ -611,30 +646,31 @@
     "loose": {
      "median_cents": 1499,
      "mode_cents": 1000,
-     "q1_cents": 1155,
-     "q3_cents": 1800,
-     "n": 86
+     "q1_cents": 1166,
+     "q3_cents": 1845,
+     "n": 85
     },
     "cib": {
-     "median_cents": 1999,
+     "median_cents": 1725,
      "mode_cents": 2000,
-     "q1_cents": 1399,
-     "q3_cents": 3999,
-     "n": 11
+     "q1_cents": 1135,
+     "q3_cents": 2249,
+     "n": 8
     },
     "new": {
      "median_cents": 2497,
      "mode_cents": 3000,
-     "q1_cents": 2049,
-     "q3_cents": 3000,
-     "n": 29
+     "q1_cents": 1999,
+     "q3_cents": 3281,
+     "n": 31
     }
    },
-   "pct_1d": -11.12,
-   "pct_7d": -5.96,
+   "pct_1d": -13.71,
+   "pct_7d": -10,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     1499,
      1499,
      1499,
      1499,
@@ -644,17 +680,19 @@
      2499,
      2475,
      2450,
-     2350
+     2350,
+     2249
     ],
     "new": [
      2498,
      2499,
      2499,
-     2499
+     2499,
+     2498
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "killzone-mercenary-vita",
@@ -663,10 +701,10 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 3395,
+     "median_cents": 3495,
      "mode_cents": 3500,
      "q1_cents": 2694,
-     "q3_cents": 4051,
+     "q3_cents": 4176,
      "n": 28
     },
     "cib": {
@@ -685,9 +723,11 @@
      3226,
      3263,
      3300,
-     3348
+     3348,
+     3395
     ],
     "cib": [
+     7999,
      7999,
      7999,
      7999,
@@ -695,7 +735,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "uncharted-golden-abyss-vita",
@@ -711,31 +751,33 @@
      "n": 74
     },
     "cib": {
-     "median_cents": 5424,
-     "q1_cents": 4495,
+     "median_cents": 5250,
+     "q1_cents": 3600,
      "q3_cents": 6000,
-     "n": 6
+     "n": 7
     }
    },
-   "pct_1d": 0,
-   "pct_7d": -1.54,
+   "pct_1d": -3.21,
+   "pct_7d": -3.09,
    "pct_30d": null,
    "sparks": {
     "loose": [
      2697,
      2673,
      2697,
-     2749
+     2749,
+     2800
     ],
     "cib": [
      5597,
      5597,
      5597,
-     5511
+     5511,
+     5424
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "wipeout-2048-vita",
@@ -751,11 +793,11 @@
      "n": 29
     },
     "cib": {
-     "median_cents": 3399,
+     "median_cents": 3799,
      "mode_cents": 3000,
-     "q1_cents": 2748,
+     "q1_cents": 2997,
      "q3_cents": 5999,
-     "n": 8
+     "n": 7
     },
     "new": {
      "median_cents": 6999,
@@ -765,13 +807,14 @@
      "n": 5
     }
    },
-   "pct_1d": 0,
-   "pct_7d": -5.26,
+   "pct_1d": 11.77,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
      2355,
      2425,
+     2495,
      2495,
      2495
     ],
@@ -779,9 +822,11 @@
      3799,
      3799,
      3799,
-     3599
+     3599,
+     3799
     ],
     "new": [
+     6999,
      6999,
      6999,
      6999,
@@ -789,7 +834,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "salt-and-sanctuary-vita",
@@ -812,11 +857,12 @@
      12999,
      12999,
      12999,
+     12999,
      12999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "spelunky-vita",
@@ -840,11 +886,12 @@
      10499,
      10499,
      10499,
+     10499,
      10499
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "trails-of-cold-steel-vita",
@@ -855,9 +902,9 @@
     "loose": {
      "median_cents": 4999,
      "mode_cents": 5000,
-     "q1_cents": 3425,
-     "q3_cents": 6069,
-     "n": 37
+     "q1_cents": 3499,
+     "q3_cents": 6000,
+     "n": 38
     },
     "cib": {
      "median_cents": 4847,
@@ -867,14 +914,14 @@
      "n": 8
     },
     "new": {
-     "median_cents": 6950,
+     "median_cents": 6900,
      "mode_cents": 7000,
-     "q1_cents": 6400,
-     "q3_cents": 7497,
-     "n": 8
+     "q1_cents": 6000,
+     "q3_cents": 7000,
+     "n": 7
     }
    },
-   "pct_1d": -11.79,
+   "pct_1d": 0,
    "pct_7d": -4.4,
    "pct_30d": null,
    "sparks": {
@@ -882,11 +929,13 @@
      4997,
      4998,
      4999,
+     4999,
      4999
     ],
     "cib": [
      5748,
      5622,
+     5495,
      5495,
      5495
     ],
@@ -894,11 +943,12 @@
      6900,
      6925,
      6950,
+     6950,
      6950
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "trails-of-cold-steel-2-vita",
@@ -907,13 +957,13 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 7499,
-     "q1_cents": 5007,
-     "q3_cents": 12999,
-     "n": 7
+     "median_cents": 7000,
+     "q1_cents": 3704,
+     "q3_cents": 11449,
+     "n": 8
     }
    },
-   "pct_1d": 7.13,
+   "pct_1d": -6.65,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -921,11 +971,12 @@
      7000,
      7000,
      7000,
+     7000,
      7000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "toukiden-kiwami-vita",
@@ -934,14 +985,14 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 2499,
+     "median_cents": 2400,
      "mode_cents": 2500,
-     "q1_cents": 2000,
-     "q3_cents": 2996,
-     "n": 20
+     "q1_cents": 1999,
+     "q3_cents": 2949,
+     "n": 19
     }
    },
-   "pct_1d": 0,
+   "pct_1d": -3.96,
    "pct_7d": 2,
    "pct_30d": null,
    "sparks": {
@@ -949,11 +1000,12 @@
      2450,
      2475,
      2499,
+     2499,
      2499
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "atelier-escha-logy-plus-vita",
@@ -976,11 +1028,12 @@
      15448,
      15722,
      15995,
+     15995,
      15995
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "demon-gaze-vita",
@@ -1009,11 +1062,12 @@
      "n": 16
     }
    },
-   "pct_1d": -3.52,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     2498,
      2498,
      2498,
      2498,
@@ -1023,9 +1077,11 @@
      2897,
      2897,
      2897,
+     2897,
      2897
     ],
     "new": [
+     7427,
      7427,
      7427,
      7427,
@@ -1033,7 +1089,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "operation-abyss-new-tokyo-legacy-vita",
@@ -1063,16 +1119,18 @@
      4500,
      4500,
      4500,
+     4500,
      4500
     ],
     "new": [
      10250,
      9125,
+     8000,
      8000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "akibas-trip-undead-and-undressed-vita",
@@ -1083,13 +1141,13 @@
     "loose": {
      "median_cents": 4000,
      "mode_cents": 4000,
-     "q1_cents": 3444,
-     "q3_cents": 4341,
-     "n": 8
+     "q1_cents": 3488,
+     "q3_cents": 4400,
+     "n": 7
     },
     "cib": {
      "median_cents": 4595,
-     "q1_cents": 3900,
+     "q1_cents": 3750,
      "q3_cents": 6174,
      "n": 5
     },
@@ -1100,11 +1158,12 @@
      "n": 7
     }
    },
-   "pct_1d": -3.22,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     4000,
      4000,
      4000,
      4000,
@@ -1114,9 +1173,11 @@
      4748,
      4748,
      4748,
+     4748,
      4748
     ],
     "new": [
+     9999,
      9999,
      9999,
      9999,
@@ -1124,7 +1185,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "senran-kagura-shinovi-versus-vita",
@@ -1147,17 +1208,19 @@
      "n": 6
     }
    },
-   "pct_1d": -11.54,
-   "pct_7d": -0.62,
+   "pct_1d": 0,
+   "pct_7d": -1.27,
    "pct_30d": null,
    "sparks": {
     "loose": [
      5925,
      5925,
      5925,
-     5888
+     5888,
+     5850
     ],
     "new": [
+     12000,
      12000,
      12000,
      12000,
@@ -1165,7 +1228,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "senran-kagura-estival-versus-vita",
@@ -1187,11 +1250,12 @@
      "n": 7
     }
    },
-   "pct_1d": 2.06,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     10000,
      10000,
      10000,
      10000,
@@ -1201,11 +1265,12 @@
      11998,
      11998,
      11998,
+     11998,
      11998
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "god-eater-2-rage-burst-vita",
@@ -1229,11 +1294,12 @@
      2500,
      2500,
      2500,
+     2500,
      2500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "sword-art-online-hollow-realization-vita",
@@ -1256,11 +1322,12 @@
      3283,
      3283,
      3283,
+     3283,
      3283
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "jak-and-daxter-collection-vita",
@@ -1274,21 +1341,32 @@
      "q1_cents": 4499,
      "q3_cents": 5000,
      "n": 22
+    },
+    "new": {
+     "median_cents": 6198,
+     "q1_cents": 5047,
+     "q3_cents": 10700,
+     "n": 4
     }
    },
-   "pct_1d": -2.04,
-   "pct_7d": 1.02,
+   "pct_1d": 0,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
      4899,
      4949,
      4999,
-     4949
+     4949,
+     4899
+    ],
+    "new": [
+     6198,
+     6198
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "sly-cooper-collection-vita",
@@ -1319,9 +1397,11 @@
      5000,
      5000,
      5000,
+     5000,
      5000
     ],
     "new": [
+     8431,
      8431,
      8431,
      8431,
@@ -1329,7 +1409,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "littlebigplanet-vita",
@@ -1338,11 +1418,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 2500,
-     "mode_cents": 2000,
+     "median_cents": 2550,
+     "mode_cents": 3000,
      "q1_cents": 1999,
      "q3_cents": 2999,
-     "n": 25
+     "n": 24
     },
     "cib": {
      "median_cents": 3000,
@@ -1365,9 +1445,11 @@
      2500,
      2550,
      2550,
-     2525
+     2525,
+     2550
     ],
     "cib": [
+     3000,
      3000,
      3000,
      3000,
@@ -1377,11 +1459,12 @@
      6000,
      5650,
      5300,
-     5650
+     5650,
+     6000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "soul-sacrifice-vita",
@@ -1394,12 +1477,12 @@
      "mode_cents": 1500,
      "q1_cents": 1500,
      "q3_cents": 2500,
-     "n": 48
+     "n": 46
     },
     "cib": {
      "median_cents": 2897,
      "mode_cents": 2900,
-     "q1_cents": 2150,
+     "q1_cents": 2100,
      "q3_cents": 3550,
      "n": 12
     },
@@ -1411,7 +1494,7 @@
      "n": 17
     }
    },
-   "pct_1d": -0.07,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -1419,9 +1502,11 @@
      1995,
      1997,
      1999,
+     1999,
      1999
     ],
     "cib": [
+     2899,
      2899,
      2899,
      2899,
@@ -1431,11 +1516,12 @@
      3999,
      3999,
      3999,
+     3999,
      3999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "zero-escape-zero-time-dilemma-vita",
@@ -1473,9 +1559,11 @@
      2928,
      2939,
      2950,
+     2950,
      2950
     ],
     "cib": [
+     3195,
      3195,
      3195,
      3195,
@@ -1485,11 +1573,12 @@
      4397,
      4397,
      4397,
+     4397,
      4397
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "zero-escape-the-nonary-games-vita",
@@ -1511,11 +1600,12 @@
      "n": 5
     }
    },
-   "pct_1d": -3.63,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     6225,
      6225,
      6225,
      6225,
@@ -1525,11 +1615,12 @@
      10000,
      10000,
      10000,
-     9988
+     9988,
+     9975
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "toukiden-the-age-of-demons-vita",
@@ -1540,9 +1631,9 @@
     "loose": {
      "median_cents": 1705,
      "mode_cents": 1500,
-     "q1_cents": 1482,
+     "q1_cents": 1466,
      "q3_cents": 1999,
-     "n": 58
+     "n": 56
     },
     "cib": {
      "median_cents": 1800,
@@ -1560,9 +1651,11 @@
      1700,
      1703,
      1705,
+     1705,
      1705
     ],
     "cib": [
+     1800,
      1800,
      1800,
      1800,
@@ -1570,7 +1663,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "demon-gaze-ii-vita",
@@ -1592,7 +1685,7 @@
      "n": 4
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
@@ -1600,11 +1693,16 @@
      9647,
      9647,
      9647,
+     9647,
      9647
+    ],
+    "cib": [
+     9000,
+     9000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "atelier-totori-plus-vita",
@@ -1628,11 +1726,12 @@
      2199,
      2199,
      2199,
+     2199,
      2199
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "atelier-shallie-plus-vita",
@@ -1662,9 +1761,11 @@
      10249,
      10249,
      10249,
+     10249,
      10249
     ],
     "new": [
+     10749,
      10749,
      10749,
      10749,
@@ -1672,7 +1773,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "sword-art-online-hollow-fragment-vita",
@@ -1683,9 +1784,9 @@
     "loose": {
      "median_cents": 1418,
      "mode_cents": 1400,
-     "q1_cents": 1197,
-     "q3_cents": 2999,
-     "n": 42
+     "q1_cents": 1140,
+     "q3_cents": 2997,
+     "n": 41
     },
     "cib": {
      "median_cents": 1750,
@@ -1702,9 +1803,11 @@
      1418,
      1418,
      1418,
+     1418,
      1418
     ],
     "cib": [
+     1750,
      1750,
      1750,
      1750,
@@ -1712,7 +1815,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "sword-art-online-lost-song-vita",
@@ -1725,7 +1828,7 @@
      "mode_cents": 1500,
      "q1_cents": 1499,
      "q3_cents": 2495,
-     "n": 47
+     "n": 46
     },
     "cib": {
      "median_cents": 1999,
@@ -1750,9 +1853,11 @@
      1699,
      1724,
      1749,
-     1724
+     1724,
+     1699
     ],
     "cib": [
+     1999,
      1999,
      1999,
      1999,
@@ -1762,11 +1867,12 @@
      3000,
      3000,
      3000,
+     3000,
      3000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "persona-4-dancing-all-night-vita",
@@ -1782,13 +1888,13 @@
      "n": 16
     },
     "cib": {
-     "median_cents": 7999,
-     "q1_cents": 4900,
-     "q3_cents": 9499,
-     "n": 4
+     "median_cents": 5850,
+     "q1_cents": 4323,
+     "q3_cents": 8999,
+     "n": 6
     }
    },
-   "pct_1d": 0,
+   "pct_1d": -26.87,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -1796,9 +1902,11 @@
      4700,
      4850,
      4700,
+     4700,
      4700
     ],
     "cib": [
+     7999,
      7999,
      7999,
      7999,
@@ -1806,7 +1914,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "tales-of-hearts-r-vita",
@@ -1843,9 +1951,11 @@
      4999,
      4750,
      4750,
-     4875
+     4875,
+     4999
     ],
     "cib": [
+     7249,
      7249,
      7249,
      7249,
@@ -1855,11 +1965,12 @@
      10625,
      10625,
      10625,
+     10625,
      10625
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "final-fantasy-x-x-2-hd-remaster-vita",
@@ -1882,24 +1993,26 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": -4.13,
+   "pct_7d": -8.3,
    "pct_30d": null,
    "sparks": {
     "loose": [
      2999,
      2999,
      2999,
-     2875
+     2875,
+     2750
     ],
     "new": [
      9999,
      9873,
      9747,
-     9873
+     9873,
+     9999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "metal-gear-solid-hd-collection-vita",
@@ -1930,6 +2043,7 @@
      4019,
      4019,
      4019,
+     4019,
      4019
     ],
     "cib": [
@@ -1941,11 +2055,12 @@
      7499,
      7499,
      7499,
+     7499,
      7499
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "god-of-war-collection-vita",
@@ -1955,7 +2070,7 @@
    "prices": {
     "loose": {
      "median_cents": 5290,
-     "mode_cents": 4300,
+     "mode_cents": 5500,
      "q1_cents": 4299,
      "q3_cents": 6500,
      "n": 19
@@ -1965,15 +2080,9 @@
      "q1_cents": 8499,
      "q3_cents": 210200,
      "n": 5
-    },
-    "new": {
-     "median_cents": 15000,
-     "q1_cents": 9450,
-     "q3_cents": 21250,
-     "n": 4
     }
    },
-   "pct_1d": 22.22,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -1981,9 +2090,11 @@
      5290,
      5290,
      5290,
+     5290,
      5290
     ],
     "cib": [
+     8999,
      8999,
      8999,
      8999,
@@ -1997,7 +2108,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "assassins-creed-iii-liberation-vita",
@@ -2035,9 +2146,11 @@
      1500,
      1500,
      1500,
+     1500,
      1500
     ],
     "cib": [
+     2000,
      2000,
      2000,
      2000,
@@ -2047,11 +2160,12 @@
      4391,
      4391,
      4391,
+     4391,
      4391
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "dead-or-alive-5-plus-vita",
@@ -2066,7 +2180,7 @@
      "n": 4
     }
    },
-   "pct_1d": 5.6,
+   "pct_1d": 0,
    "pct_7d": 3.79,
    "pct_30d": null,
    "sparks": {
@@ -2074,11 +2188,12 @@
      5198,
      5297,
      5395,
+     5395,
      5395
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "mortal-kombat-vita",
@@ -2091,7 +2206,7 @@
      "mode_cents": 2000,
      "q1_cents": 1999,
      "q3_cents": 2808,
-     "n": 68
+     "n": 69
     },
     "cib": {
      "median_cents": 3500,
@@ -2109,30 +2224,33 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": 4.69,
+   "pct_7d": 9.38,
    "pct_30d": null,
    "sparks": {
     "loose": [
      2398,
      2399,
      2399,
+     2400,
      2400
     ],
     "cib": [
      3200,
      3200,
      3200,
-     3350
+     3350,
+     3500
     ],
     "new": [
      9950,
      9975,
      9999,
+     9999,
      9999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "street-fighter-x-tekken-vita",
@@ -2162,17 +2280,19 @@
      2947,
      2923,
      2898,
+     2898,
      2898
     ],
     "new": [
      8215,
      8215,
      8215,
-     8823
+     8823,
+     9431
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "ultimate-marvel-vs-capcom-3-vita",
@@ -2181,11 +2301,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 2822,
+     "median_cents": 2900,
      "mode_cents": 3000,
-     "q1_cents": 2399,
+     "q1_cents": 2450,
      "q3_cents": 3500,
-     "n": 68
+     "n": 65
     },
     "cib": {
      "median_cents": 3500,
@@ -2201,12 +2321,13 @@
      "n": 5
     }
    },
-   "pct_1d": 0.03,
+   "pct_1d": 0,
    "pct_7d": 0.03,
    "pct_30d": null,
    "sparks": {
     "loose": [
      2899,
+     2900,
      2900,
      2900,
      2900
@@ -2215,17 +2336,19 @@
      3498,
      3499,
      3499,
+     3499,
      3499
     ],
     "new": [
      15499,
      15499,
      15499,
-     11749
+     11749,
+     7999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "hatsune-miku-project-diva-f-2nd-vita",
@@ -2234,18 +2357,19 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 3472,
+     "median_cents": 3450,
      "mode_cents": 3500,
-     "q1_cents": 2799,
+     "q1_cents": 2699,
      "q3_cents": 5999,
-     "n": 14
+     "n": 13
     }
    },
-   "pct_1d": 0.64,
+   "pct_1d": -0.63,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     3472,
      3472,
      3472,
      3472,
@@ -2257,7 +2381,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "hatsune-miku-project-diva-x-vita",
@@ -2266,14 +2390,14 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 4000,
-     "mode_cents": 4000,
+     "median_cents": 7400,
+     "mode_cents": 3900,
      "q1_cents": 3899,
      "q3_cents": 13560,
-     "n": 7
+     "n": 6
     }
    },
-   "pct_1d": -45.95,
+   "pct_1d": 85,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -2281,11 +2405,12 @@
      7400,
      7400,
      7400,
+     7400,
      7400
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "dragon-quest-builders-vita",
@@ -2309,11 +2434,12 @@
      1354,
      1357,
      1359,
+     1359,
      1359
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "minecraft-vita",
@@ -2336,25 +2462,27 @@
      "n": 5
     }
    },
-   "pct_1d": 13.64,
-   "pct_7d": 3.41,
+   "pct_1d": 0,
+   "pct_7d": 6.82,
    "pct_30d": null,
    "sparks": {
     "loose": [
      4399,
      4549,
      4399,
-     4549
+     4549,
+     4699
     ],
     "new": [
      5745,
      5620,
      5495,
+     5495,
      5495
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "resistance-burning-skies-vita",
@@ -2376,7 +2504,7 @@
      "n": 4
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
@@ -2384,11 +2512,16 @@
      2392,
      2405,
      2417,
+     2417,
      2417
+    ],
+    "cib": [
+     4150,
+     4150
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "call-of-duty-black-ops-declassified-vita",
@@ -2400,8 +2533,8 @@
      "median_cents": 1844,
      "mode_cents": 1500,
      "q1_cents": 1500,
-     "q3_cents": 2190,
-     "n": 115
+     "q3_cents": 2195,
+     "n": 113
     },
     "cib": {
      "median_cents": 3599,
@@ -2417,7 +2550,7 @@
      "n": 8
     }
    },
-   "pct_1d": 4.35,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -2425,9 +2558,11 @@
      1800,
      1822,
      1844,
+     1844,
      1844
     ],
     "cib": [
+     3449,
      3449,
      3449,
      3449,
@@ -2437,11 +2572,12 @@
      7997,
      7997,
      7997,
+     7997,
      7997
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "need-for-speed-most-wanted-vita",
@@ -2465,10 +2601,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": 0,
+   "pct_7d": -0.04,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     1999,
      1999,
      1999,
      1999,
@@ -2478,11 +2615,12 @@
      2500,
      2500,
      2500,
-     2500
+     2500,
+     2499
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "rayman-origins-vita",
@@ -2498,19 +2636,20 @@
      "n": 33
     }
    },
-   "pct_1d": 14.75,
-   "pct_7d": 1.78,
+   "pct_1d": 0,
+   "pct_7d": 3.52,
    "pct_30d": null,
    "sparks": {
     "loose": [
      2074,
      2111,
      2074,
-     2111
+     2111,
+     2147
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "rayman-legends-vita",
@@ -2548,9 +2687,11 @@
      2499,
      2499,
      2499,
+     2499,
      2499
     ],
     "cib": [
+     2499,
      2499,
      2499,
      2499,
@@ -2560,11 +2701,12 @@
      3919,
      3960,
      4000,
+     4000,
      4000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "ys-viii-lacrimosa-of-dana-vita",
@@ -2595,9 +2737,11 @@
      9000,
      9000,
      9000,
+     9000,
      9000
     ],
     "new": [
+     30000,
      30000,
      30000,
      30000,
@@ -2605,7 +2749,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "stranger-of-sword-city-vita",
@@ -2621,11 +2765,11 @@
      "n": 15
     },
     "new": {
-     "median_cents": 6995,
+     "median_cents": 6730,
      "mode_cents": 10000,
-     "q1_cents": 4200,
-     "q3_cents": 9997,
-     "n": 13
+     "q1_cents": 4900,
+     "q3_cents": 9995,
+     "n": 14
     }
    },
    "pct_1d": 0,
@@ -2636,9 +2780,11 @@
      3499,
      3499,
      3499,
+     3499,
      3499
     ],
     "new": [
+     6995,
      6995,
      6995,
      6995,
@@ -2646,7 +2792,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "dungeon-travelers-2-vita",
@@ -2669,24 +2815,26 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": 2.28,
+   "pct_7d": 4.54,
    "pct_30d": null,
    "sparks": {
     "loose": [
      6095,
      6095,
      6095,
-     6234
+     6234,
+     6372
     ],
     "new": [
      6497,
      6248,
      5999,
+     5999,
      5999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "criminal-girls-invite-only-vita",
@@ -2715,9 +2863,11 @@
      7009,
      8257,
      9505,
+     9505,
      9505
     ],
     "new": [
+     18000,
      18000,
      18000,
      18000,
@@ -2725,7 +2875,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "root-letter-vita",
@@ -2755,9 +2905,11 @@
      3900,
      3900,
      3900,
+     3900,
      3900
     ],
     "new": [
+     6999,
      6999,
      6999,
      6999,
@@ -2765,7 +2917,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "world-of-final-fantasy-vita",
@@ -2776,9 +2928,9 @@
     "loose": {
      "median_cents": 3000,
      "mode_cents": 3000,
-     "q1_cents": 2600,
+     "q1_cents": 2499,
      "q3_cents": 3238,
-     "n": 16
+     "n": 17
     },
     "new": {
      "median_cents": 3935,
@@ -2796,9 +2948,11 @@
      3150,
      3075,
      3000,
+     3000,
      3000
     ],
     "new": [
+     3935,
      3935,
      3935,
      3935,
@@ -2806,7 +2960,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "superbeat-xonic-vita",
@@ -2836,9 +2990,11 @@
      3100,
      3100,
      3100,
+     3100,
      3100
     ],
     "new": [
+     3500,
      3500,
      3500,
      3500,
@@ -2846,7 +3002,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "hyperdimension-neptunia-re-birth1-vita",
@@ -2855,10 +3011,10 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 4999,
-     "q1_cents": 3499,
+     "median_cents": 5249,
+     "q1_cents": 4050,
      "q3_cents": 8000,
-     "n": 7
+     "n": 6
     },
     "new": {
      "median_cents": 8499,
@@ -2868,11 +3024,12 @@
      "n": 5
     }
    },
-   "pct_1d": -4.76,
+   "pct_1d": 5,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     4999,
      4999,
      4999,
      4999,
@@ -2882,11 +3039,12 @@
      8499,
      8499,
      8499,
+     8499,
      8499
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "criminal-girls-2-party-favors-vita",
@@ -2909,11 +3067,12 @@
      15199,
      15199,
      15199,
+     15199,
      15199
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "silent-hill-book-of-memories-vita",
@@ -2922,14 +3081,14 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 7749,
-     "mode_cents": 7000,
-     "q1_cents": 7000,
-     "q3_cents": 8604,
+     "median_cents": 8000,
+     "mode_cents": 8000,
+     "q1_cents": 7150,
+     "q3_cents": 9250,
      "n": 12
     }
    },
-   "pct_1d": -3.14,
+   "pct_1d": 3.24,
    "pct_7d": 3.33,
    "pct_30d": null,
    "sparks": {
@@ -2937,11 +3096,12 @@
      7499,
      7624,
      7749,
+     7749,
      7749
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "tokyo-xanadu-vita",
@@ -2971,15 +3131,17 @@
      7269,
      7269,
      7269,
+     7269,
      7269
     ],
     "new": [
+     6150,
      6150,
      6150
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "chaos-child-vita",
@@ -3002,11 +3164,12 @@
      5500,
      5500,
      5500,
+     5500,
      5500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "psycho-pass-mandatory-happiness-vita",
@@ -3036,9 +3199,11 @@
      4200,
      4200,
      4200,
+     4200,
      4200
     ],
     "new": [
+     4499,
      4499,
      4499,
      4499,
@@ -3046,7 +3211,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "ninja-gaiden-sigma-plus-vita",
@@ -3059,7 +3224,7 @@
      "mode_cents": 2200,
      "q1_cents": 2199,
      "q3_cents": 3350,
-     "n": 25
+     "n": 24
     },
     "cib": {
      "median_cents": 4340,
@@ -3083,9 +3248,11 @@
      2500,
      2500,
      2500,
+     2500,
      2500
     ],
     "cib": [
+     4340,
      4340,
      4340,
      4340,
@@ -3095,11 +3262,12 @@
      7099,
      7099,
      7099,
-     7149
+     7149,
+     7199
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "shiren-the-wanderer-the-tower-of-fortune-and-the-dice-of-fate-vita",
@@ -3123,11 +3291,12 @@
      4946,
      4946,
      4946,
+     4946,
      4946
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "mary-skelter-nightmares-vita",
@@ -3157,9 +3326,11 @@
      9250,
      9250,
      9250,
+     9250,
      9250
     ],
     "new": [
+     15000,
      15000,
      15000,
      15000,
@@ -3167,7 +3338,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "danganronpa-v3-killing-harmony-vita",
@@ -3191,11 +3362,12 @@
      15000,
      15000,
      15000,
+     15000,
      15000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "natural-doctrine-vita",
@@ -3219,11 +3391,12 @@
      5500,
      5500,
      5500,
+     5500,
      5500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "the-amazing-spider-man-vita",
@@ -3240,18 +3413,19 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": -1.91,
+   "pct_7d": -3.83,
    "pct_30d": null,
    "sparks": {
     "loose": [
      6499,
      6499,
      6499,
-     6375
+     6375,
+     6250
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "djmax-technika-tune-vita",
@@ -3266,7 +3440,7 @@
      "n": 4
     }
    },
-   "pct_1d": -5.27,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -3274,11 +3448,12 @@
      4747,
      4747,
      4747,
+     4747,
      4747
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "utawarerumono-mask-of-deception-vita",
@@ -3309,9 +3484,11 @@
      4500,
      4500,
      4500,
+     4500,
      4500
     ],
     "new": [
+     6849,
      6849,
      6849,
      6849,
@@ -3319,7 +3496,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "papers-please-vita",
@@ -3343,11 +3520,12 @@
      25000,
      25000,
      25000,
+     25000,
      25000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "metal-slug-3-vita",
@@ -3371,11 +3549,12 @@
      14000,
      14000,
      14000,
+     14000,
      14000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "oddworld-new-n-tasty-vita",
@@ -3398,11 +3577,12 @@
      9999,
      10250,
      10500,
-     10250
+     10250,
+     9999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "oddworld-strangers-wrath-vita",
@@ -3426,11 +3606,12 @@
      8287,
      8393,
      8287,
-     8393
+     8393,
+     8499
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "oddworld-munchs-oddysee-vita",
@@ -3453,25 +3634,27 @@
      "n": 18
     }
    },
-   "pct_1d": 7.14,
-   "pct_7d": 3.76,
+   "pct_1d": 0,
+   "pct_7d": 5,
    "pct_30d": null,
    "sparks": {
     "loose": [
      4999,
      5062,
      5124,
-     5187
+     5187,
+     5249
     ],
     "new": [
      5948,
      6173,
      6398,
+     6398,
      6398
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "bloodstained-curse-of-the-moon-vita",
@@ -3495,11 +3678,12 @@
      12000,
      12125,
      12250,
+     12250,
      12250
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "the-house-in-fata-morgana-vita",
@@ -3521,11 +3705,12 @@
    "sparks": {
     "new": [
      11242,
+     11242,
      11242
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "shovel-knight-vita",
@@ -3549,11 +3734,12 @@
      10874,
      10874,
      10874,
+     10874,
      10874
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "va-11-hall-a-vita",
@@ -3583,17 +3769,19 @@
      12999,
      12999,
      12999,
+     12999,
      12999
     ],
     "new": [
      9249,
      9225,
      9200,
+     9200,
      9200
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "soldner-x-2-final-prototype-vita",
@@ -3617,11 +3805,12 @@
      3500,
      3500,
      3500,
+     3500,
      3500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "f1-2011-vita",
@@ -3645,11 +3834,12 @@
      4000,
      4000,
      4000,
+     4000,
      4000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "night-trap-vita",
@@ -3680,9 +3870,11 @@
      11698,
      11698,
      11698,
+     11698,
      11698
     ],
     "new": [
+     8000,
      8000,
      8000,
      8000,
@@ -3690,7 +3882,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "rabi-ribi-vita",
@@ -3714,11 +3906,12 @@
      7500,
      7500,
      7500,
+     7500,
      7500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "dariusburst-chronicle-saviours-vita",
@@ -3749,9 +3942,11 @@
      4835,
      4835,
      4835,
+     4835,
      4835
     ],
     "new": [
+     5498,
      5498,
      5498,
      5498,
@@ -3759,7 +3954,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "the-king-of-fighters-97-global-match-vita",
@@ -3790,17 +3985,19 @@
      10000,
      10000,
      10000,
+     10000,
      10000
     ],
     "new": [
      10472,
      10484,
      10495,
+     10495,
      10495
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "nurse-love-addiction-vita",
@@ -3830,9 +4027,11 @@
      9250,
      9250,
      9250,
+     9250,
      9250
     ],
     "new": [
+     9999,
      9999,
      9999,
      9999,
@@ -3840,7 +4039,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "iconoclasts-vita",
@@ -3864,11 +4063,12 @@
      8049,
      8049,
      8049,
+     8049,
      8049
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "ray-gigant-vita",
@@ -3898,9 +4098,11 @@
      6249,
      6249,
      6249,
+     6249,
      6249
     ],
     "new": [
+     5899,
      5899,
      5899,
      5899,
@@ -3908,7 +4110,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "skullgirls-2nd-encore-vita",
@@ -3932,11 +4134,12 @@
      8747,
      8747,
      8747,
+     8747,
      8747
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "london-detective-mysteria-vita",
@@ -3960,11 +4163,12 @@
      9750,
      9750,
      9750,
-     9875
+     9875,
+     9999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "xeodrifter-vita",
@@ -3988,11 +4192,12 @@
      3999,
      3999,
      3999,
+     3999,
      3999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "senran-kagura-bon-appetit-full-course-vita",
@@ -4071,9 +4276,11 @@
      6300,
      6300,
      6300,
+     6300,
      6300
     ],
     "new": [
+     5550,
      5550,
      5550,
      5550,
@@ -4081,7 +4288,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "muv-luv-alternative-vita",
@@ -4111,9 +4318,11 @@
      6526,
      6526,
      6526,
+     6526,
      6526
     ],
     "new": [
+     6999,
      6999,
      6999,
      6999,
@@ -4121,7 +4330,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "sly-cooper-thieves-in-time-vita",
@@ -4158,9 +4367,11 @@
      3199,
      3237,
      3275,
-     3281
+     3281,
+     3287
     ],
     "cib": [
+     4899,
      4899,
      4899,
      4899,
@@ -4168,11 +4379,12 @@
     ],
     "new": [
      6499,
+     6499,
      6499
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "hyperdimension-neptunia-re-birth2-vita",
@@ -4201,7 +4413,7 @@
      "n": 7
     }
    },
-   "pct_1d": null,
+   "pct_1d": 0,
    "pct_7d": null,
    "pct_30d": null,
    "sparks": {
@@ -4209,9 +4421,15 @@
      5350,
      5350,
      5350,
+     5350,
      5350
     ],
+    "cib": [
+     5498,
+     5498
+    ],
     "new": [
+     5999,
      5999,
      5999,
      5999,
@@ -4219,7 +4437,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "hyperdimension-neptunia-re-birth3-vita",
@@ -4248,30 +4466,33 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": -3.32,
+   "pct_7d": -6.66,
    "pct_30d": null,
    "sparks": {
     "loose": [
      6090,
      6090,
      6090,
-     6093
+     6093,
+     6095
     ],
     "cib": [
      7498,
      7498,
      7498,
-     7249
+     7249,
+     6999
     ],
     "new": [
      14150,
      13725,
      13300,
+     13300,
      13300
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "hyperdimension-neptunia-u-action-unleashed-vita",
@@ -4295,11 +4516,12 @@
      4500,
      4500,
      4500,
+     4500,
      4500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "superdimension-neptune-vs-sega-hard-girls-vita",
@@ -4330,9 +4552,11 @@
      5500,
      5500,
      5500,
+     5500,
      5500
     ],
     "new": [
+     11495,
      11495,
      11495,
      11495,
@@ -4340,7 +4564,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "hyperdevotion-noire-vita",
@@ -4370,9 +4594,11 @@
      3500,
      3500,
      3500,
+     3500,
      3500
     ],
     "new": [
+     6248,
      6248,
      6248,
      6248,
@@ -4380,7 +4606,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "megatagmension-blanc-neptune-vs-zombies-vita",
@@ -4389,11 +4615,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 3449,
+     "median_cents": 3399,
      "mode_cents": 2500,
-     "q1_cents": 2599,
-     "q3_cents": 4495,
-     "n": 26
+     "q1_cents": 2550,
+     "q3_cents": 4498,
+     "n": 25
     },
     "new": {
      "median_cents": 3999,
@@ -4403,11 +4629,12 @@
      "n": 9
     }
    },
-   "pct_1d": 0,
+   "pct_1d": -1.45,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     3449,
      3449,
      3449,
      3449,
@@ -4417,11 +4644,12 @@
      3999,
      3999,
      3999,
+     3999,
      3999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "gal-gun-double-peace-vita",
@@ -4445,11 +4673,12 @@
      3500,
      3500,
      3500,
+     3500,
      3500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "retro-city-rampage-dx-vita",
@@ -4472,11 +4701,12 @@
      "n": 23
     }
    },
-   "pct_1d": -0.04,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     4995,
      4995,
      4995,
      4995,
@@ -4486,11 +4716,12 @@
      4999,
      4999,
      4999,
+     4999,
      4999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "period-cube-vita",
@@ -4520,9 +4751,11 @@
      5748,
      5748,
      5748,
+     5748,
      5748
     ],
     "new": [
+     7900,
      7900,
      7900,
      7900,
@@ -4530,7 +4763,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "super-hydorah-vita",
@@ -4561,9 +4794,11 @@
      4750,
      4750,
      4750,
+     4750,
      4750
     ],
     "new": [
+     5000,
      5000,
      5000,
      5000,
@@ -4571,7 +4806,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "ys-origin-vita",
@@ -4602,9 +4837,11 @@
      5497,
      5497,
      5497,
+     5497,
      5497
     ],
     "new": [
+     6000,
      6000,
      6000,
      6000,
@@ -4612,7 +4849,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "shakedown-hawaii-vita",
@@ -4636,11 +4873,12 @@
      4299,
      4299,
      4299,
+     4299,
      4299
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "hakuoki-edo-blossoms-vita",
@@ -4663,11 +4901,12 @@
      6599,
      6599,
      6599,
+     6599,
      6599
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "hakuoki-kyoto-winds-vita",
@@ -4698,9 +4937,11 @@
      2500,
      2500,
      2500,
+     2500,
      2500
     ],
     "new": [
+     3995,
      3995,
      3995,
      3995,
@@ -4708,7 +4949,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "grand-kingdom-vita",
@@ -4739,9 +4980,11 @@
      3000,
      3000,
      3000,
+     3000,
      3000
     ],
     "new": [
+     5000,
      5000,
      5000,
      5000,
@@ -4749,7 +4992,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "code-realize-guardian-of-rebirth-vita",
@@ -4758,14 +5001,14 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1995,
+     "median_cents": 1997,
      "mode_cents": 2000,
-     "q1_cents": 1598,
+     "q1_cents": 1670,
      "q3_cents": 2500,
-     "n": 29
+     "n": 28
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 0.1,
    "pct_7d": -0.2,
    "pct_30d": null,
    "sparks": {
@@ -4773,11 +5016,12 @@
      1999,
      1997,
      1995,
+     1995,
      1995
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "collar-x-malice-vita",
@@ -4808,9 +5052,11 @@
      2500,
      2500,
      2500,
+     2500,
      2500
     ],
     "new": [
+     2999,
      2999,
      2999,
      2999,
@@ -4818,7 +5064,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "norn9-var-commons-vita",
@@ -4834,14 +5080,14 @@
      "n": 20
     },
     "cib": {
-     "median_cents": 1999,
+     "median_cents": 2097,
      "mode_cents": 2000,
-     "q1_cents": 1500,
+     "q1_cents": 1999,
      "q3_cents": 3300,
-     "n": 7
+     "n": 6
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 4.9,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -4849,9 +5095,11 @@
      1997,
      1996,
      1997,
+     1997,
      1997
     ],
     "cib": [
+     1999,
      1999,
      1999,
      1999,
@@ -4859,7 +5107,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "bad-apple-wars-vita",
@@ -4889,9 +5137,11 @@
      4326,
      4489,
      4652,
+     4652,
      4652
     ],
     "new": [
+     6745,
      6745,
      6745,
      6745,
@@ -4899,7 +5149,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "lone-survivor-vita",
@@ -4914,7 +5164,7 @@
      "n": 4
     }
    },
-   "pct_1d": 7.63,
+   "pct_1d": 0,
    "pct_7d": 5.36,
    "pct_30d": null,
    "sparks": {
@@ -4922,11 +5172,12 @@
      5599,
      5749,
      5899,
+     5899,
      5899
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "utawarerumono-mask-of-truth-vita",
@@ -4957,9 +5208,11 @@
      3999,
      3999,
      3999,
+     3999,
      3999
     ],
     "new": [
+     4999,
      4999,
      4999,
      4999,
@@ -4967,7 +5220,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "disgaea-4-a-promise-revisited-vita",
@@ -4989,17 +5242,19 @@
      "n": 6
     }
    },
-   "pct_1d": -6.51,
-   "pct_7d": -1.72,
+   "pct_1d": 0,
+   "pct_7d": -3.45,
    "pct_30d": null,
    "sparks": {
     "loose": [
      2900,
      2850,
      2900,
-     2850
+     2850,
+     2800
     ],
     "new": [
+     6098,
      6098,
      6098,
      6098,
@@ -5007,7 +5262,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "toukiden-2-vita",
@@ -5023,7 +5278,7 @@
      "n": 8
     }
    },
-   "pct_1d": -3.82,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -5031,11 +5286,12 @@
      6495,
      6495,
      6495,
+     6495,
      6495
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "ninja-gaiden-sigma-2-plus-vita",
@@ -5064,7 +5320,7 @@
      "n": 6
     }
    },
-   "pct_1d": -17.86,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -5072,9 +5328,11 @@
      2500,
      2550,
      2600,
+     2600,
      2600
     ],
     "cib": [
+     7000,
      7000,
      7000,
      7000,
@@ -5084,11 +5342,12 @@
      5999,
      5999,
      5999,
+     5999,
      5999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "shantae-half-genie-hero-vita",
@@ -5097,14 +5356,14 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 4250,
+     "median_cents": 4500,
      "mode_cents": 5000,
-     "q1_cents": 3342,
-     "q3_cents": 4975,
-     "n": 8
+     "q1_cents": 3299,
+     "q3_cents": 5000,
+     "n": 7
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 5.88,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -5112,11 +5371,12 @@
      4250,
      4250,
      4250,
+     4250,
      4250
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "summon-night-6-lost-borders-vita",
@@ -5140,11 +5400,12 @@
      6999,
      6999,
      6999,
+     6999,
      6999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "death-mark-vita",
@@ -5175,9 +5436,11 @@
      2982,
      2991,
      2999,
+     2999,
      2999
     ],
     "new": [
+     3915,
      3915,
      3915,
      3915,
@@ -5185,7 +5448,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   },
   {
    "id": "sorcery-saga-vita",
@@ -5216,17 +5479,19 @@
      2895,
      2895,
      2895,
+     2895,
      2895
     ],
     "new": [
      5500,
      5500,
      5500,
-     5250
+     5250,
+     4999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-12"
+   "as_of": "2026-10-13"
   }
  ]
 }

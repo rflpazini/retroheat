@@ -1,6 +1,6 @@
 {
  "board": "vita",
- "as_of": "2026-10-12",
+ "as_of": "2026-10-13",
  "entries": [
   {
    "id": "criminal-girls-invite-only-vita",
@@ -19,6 +19,7 @@
    "spark": [
     7009,
     8257,
+    9505,
     9505,
     9505
    ]
@@ -41,7 +42,31 @@
     4500,
     4750,
     5000,
+    5000,
     5000
+   ]
+  },
+  {
+   "id": "mortal-kombat-vita",
+   "title": "Mortal Kombat",
+   "platform": "vita",
+   "headline_condition": "cib",
+   "price_cents": 3500,
+   "prices": {
+    "loose": 2400,
+    "cib": 3500,
+    "new": 9999
+   },
+   "pct_1d": 0,
+   "pct_7d": 9.38,
+   "pct_30d": null,
+   "score": 9.38,
+   "spark": [
+    3200,
+    3200,
+    3200,
+    3350,
+    3500
    ]
   },
   {
@@ -62,6 +87,7 @@
     4326,
     4489,
     4652,
+    4652,
     4652
    ]
   },
@@ -74,7 +100,7 @@
    "prices": {
     "loose": 3559,
     "cib": 3750,
-    "new": 5561
+    "new": 5531
    },
    "pct_1d": 0,
    "pct_7d": 7.17,
@@ -84,112 +110,8 @@
     3499,
     3625,
     3750,
+    3750,
     3750
-   ]
-  },
-  {
-   "id": "muramasa-rebirth-vita",
-   "title": "Muramasa Rebirth",
-   "platform": "vita",
-   "headline_condition": "cib",
-   "price_cents": 8998,
-   "prices": {
-    "loose": 6000,
-    "cib": 8998,
-    "new": 11999
-   },
-   "pct_1d": -5.28,
-   "pct_7d": 5.73,
-   "pct_30d": null,
-   "score": 5.73,
-   "spark": [
-    8748,
-    9124,
-    9500,
-    9249
-   ]
-  },
-  {
-   "id": "lone-survivor-vita",
-   "title": "Lone Survivor",
-   "platform": "vita",
-   "headline_condition": "loose",
-   "price_cents": 6349,
-   "prices": {
-    "loose": 6349
-   },
-   "pct_1d": 7.63,
-   "pct_7d": 5.36,
-   "pct_30d": null,
-   "score": 5.36,
-   "spark": [
-    5599,
-    5749,
-    5899,
-    5899
-   ]
-  },
-  {
-   "id": "mortal-kombat-vita",
-   "title": "Mortal Kombat",
-   "platform": "vita",
-   "headline_condition": "cib",
-   "price_cents": 3500,
-   "prices": {
-    "loose": 2400,
-    "cib": 3500,
-    "new": 9999
-   },
-   "pct_1d": 0,
-   "pct_7d": 4.69,
-   "pct_30d": null,
-   "score": 4.69,
-   "spark": [
-    3200,
-    3200,
-    3200,
-    3350
-   ]
-  },
-  {
-   "id": "dead-or-alive-5-plus-vita",
-   "title": "Dead or Alive 5 Plus",
-   "platform": "vita",
-   "headline_condition": "loose",
-   "price_cents": 5697,
-   "prices": {
-    "loose": 5697
-   },
-   "pct_1d": 5.6,
-   "pct_7d": 3.79,
-   "pct_30d": null,
-   "score": 3.79,
-   "spark": [
-    5198,
-    5297,
-    5395,
-    5395
-   ]
-  },
-  {
-   "id": "oddworld-munchs-oddysee-vita",
-   "title": "Oddworld: Munch's Oddysee",
-   "platform": "vita",
-   "headline_condition": "loose",
-   "price_cents": 5624,
-   "prices": {
-    "loose": 5624,
-    "new": 6398
-   },
-   "pct_1d": 7.14,
-   "pct_7d": 3.76,
-   "pct_30d": null,
-   "score": 3.76,
-   "spark": [
-    4999,
-    5062,
-    5124,
-    5187
    ]
   },
   {
@@ -202,35 +124,59 @@
     "loose": 4999,
     "new": 5495
    },
-   "pct_1d": 13.64,
-   "pct_7d": 3.41,
+   "pct_1d": 0,
+   "pct_7d": 6.82,
    "pct_30d": null,
-   "score": 3.41,
+   "score": 6.82,
    "spark": [
     4399,
     4549,
     4399,
-    4549
+    4549,
+    4699
    ]
   },
   {
-   "id": "silent-hill-book-of-memories-vita",
-   "title": "Silent Hill: Book of Memories",
+   "id": "lone-survivor-vita",
+   "title": "Lone Survivor",
    "platform": "vita",
    "headline_condition": "loose",
-   "price_cents": 7749,
+   "price_cents": 6349,
    "prices": {
-    "loose": 7749
+    "loose": 6349
    },
-   "pct_1d": -3.14,
-   "pct_7d": 3.33,
+   "pct_1d": 0,
+   "pct_7d": 5.36,
    "pct_30d": null,
-   "score": 3.33,
+   "score": 5.36,
    "spark": [
-    7499,
-    7624,
-    7749,
-    7749
+    5599,
+    5749,
+    5899,
+    5899,
+    5899
+   ]
+  },
+  {
+   "id": "oddworld-munchs-oddysee-vita",
+   "title": "Oddworld: Munch's Oddysee",
+   "platform": "vita",
+   "headline_condition": "loose",
+   "price_cents": 5624,
+   "prices": {
+    "loose": 5624,
+    "new": 6398
+   },
+   "pct_1d": 0,
+   "pct_7d": 5,
+   "pct_30d": null,
+   "score": 5,
+   "spark": [
+    4999,
+    5062,
+    5124,
+    5187,
+    5249
    ]
   },
   {
@@ -244,34 +190,36 @@
     "new": 5999
    },
    "pct_1d": 0,
-   "pct_7d": 2.28,
+   "pct_7d": 4.54,
    "pct_30d": null,
-   "score": 2.28,
+   "score": 4.54,
    "spark": [
     6095,
     6095,
     6095,
-    6234
+    6234,
+    6372
    ]
   },
   {
-   "id": "toukiden-kiwami-vita",
-   "title": "Toukiden: Kiwami",
+   "id": "dead-or-alive-5-plus-vita",
+   "title": "Dead or Alive 5 Plus",
    "platform": "vita",
    "headline_condition": "loose",
-   "price_cents": 2499,
+   "price_cents": 5697,
    "prices": {
-    "loose": 2499
+    "loose": 5697
    },
    "pct_1d": 0,
-   "pct_7d": 2,
+   "pct_7d": 3.79,
    "pct_30d": null,
-   "score": 2,
+   "score": 3.79,
    "spark": [
-    2450,
-    2475,
-    2499,
-    2499
+    5198,
+    5297,
+    5395,
+    5395,
+    5395
    ]
   },
   {
@@ -283,35 +231,81 @@
    "prices": {
     "loose": 2295
    },
-   "pct_1d": 14.75,
-   "pct_7d": 1.78,
+   "pct_1d": 0,
+   "pct_7d": 3.52,
    "pct_30d": null,
-   "score": 1.78,
+   "score": 3.52,
    "spark": [
     2074,
     2111,
     2074,
-    2111
+    2111,
+    2147
    ]
   },
   {
-   "id": "jak-and-daxter-collection-vita",
-   "title": "Jak and Daxter Collection",
+   "id": "silent-hill-book-of-memories-vita",
+   "title": "Silent Hill: Book of Memories",
    "platform": "vita",
    "headline_condition": "loose",
-   "price_cents": 4897,
+   "price_cents": 8000,
    "prices": {
-    "loose": 4897
+    "loose": 8000
    },
-   "pct_1d": -2.04,
-   "pct_7d": 1.02,
+   "pct_1d": 3.24,
+   "pct_7d": 3.33,
    "pct_30d": null,
-   "score": 1.02,
+   "score": 3.33,
    "spark": [
-    4899,
-    4949,
-    4999,
-    4949
+    7499,
+    7624,
+    7749,
+    7749,
+    7749
+   ]
+  },
+  {
+   "id": "muramasa-rebirth-vita",
+   "title": "Muramasa Rebirth",
+   "platform": "vita",
+   "headline_condition": "cib",
+   "price_cents": 8498,
+   "prices": {
+    "loose": 6093,
+    "cib": 8498,
+    "new": 11999
+   },
+   "pct_1d": -5.56,
+   "pct_7d": 2.86,
+   "pct_30d": null,
+   "score": 2.86,
+   "spark": [
+    8748,
+    9124,
+    9500,
+    9249,
+    8998
+   ]
+  },
+  {
+   "id": "toukiden-kiwami-vita",
+   "title": "Toukiden: Kiwami",
+   "platform": "vita",
+   "headline_condition": "loose",
+   "price_cents": 2400,
+   "prices": {
+    "loose": 2400
+   },
+   "pct_1d": -3.96,
+   "pct_7d": 2,
+   "pct_30d": null,
+   "score": 2,
+   "spark": [
+    2450,
+    2475,
+    2499,
+    2499,
+    2499
    ]
   },
   {
@@ -331,6 +325,7 @@
    "spark": [
     2982,
     2991,
+    2999,
     2999,
     2999
    ]
@@ -352,6 +347,7 @@
     1354,
     1357,
     1359,
+    1359,
     1359
    ]
   },
@@ -362,16 +358,17 @@
    "headline_condition": "cib",
    "price_cents": 3500,
    "prices": {
-    "loose": 2822,
+    "loose": 2900,
     "cib": 3500,
     "new": 7999
    },
-   "pct_1d": 0.03,
+   "pct_1d": 0,
    "pct_7d": 0.03,
    "pct_30d": null,
    "score": 0.03,
    "spark": [
     3498,
+    3499,
     3499,
     3499,
     3499
@@ -388,11 +385,12 @@
     "cib": 4595,
     "new": 9999
    },
-   "pct_1d": -3.22,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    4748,
     4748,
     4748,
     4748,
@@ -418,6 +416,7 @@
     2000,
     2000,
     2000,
+    2000,
     2000
    ]
   },
@@ -436,6 +435,7 @@
    "pct_30d": null,
    "score": 0,
    "spark": [
+    10249,
     10249,
     10249,
     10249,
@@ -459,6 +459,7 @@
     2199,
     2199,
     2199,
+    2199,
     2199
    ]
   },
@@ -473,11 +474,12 @@
     "cib": 3599,
     "new": 7997
    },
-   "pct_1d": 4.35,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    3449,
     3449,
     3449,
     3449,
@@ -499,6 +501,7 @@
    "pct_30d": null,
    "score": 0,
    "spark": [
+    2500,
     2500,
     2500,
     2500,
@@ -524,6 +527,7 @@
     4999,
     4999,
     4999,
+    4999,
     4999
    ]
   },
@@ -545,6 +549,7 @@
     3550,
     3525,
     3550,
+    3550,
     3550
    ]
   },
@@ -556,9 +561,9 @@
    "price_cents": 4071,
    "prices": {
     "loose": 4071,
-    "new": 6999
+    "new": 7000
    },
-   "pct_1d": 1.78,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
@@ -566,7 +571,28 @@
     4000,
     4000,
     4000,
+    4000,
     4000
+   ]
+  },
+  {
+   "id": "danganronpa-trigger-happy-havoc-vita",
+   "title": "Danganronpa: Trigger Happy Havoc",
+   "platform": "vita",
+   "headline_condition": "cib",
+   "price_cents": 4750,
+   "prices": {
+    "loose": 3600,
+    "cib": 4750,
+    "new": 11999
+   },
+   "pct_1d": 0,
+   "pct_7d": null,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    4750,
+    4750
    ]
   },
   {
@@ -587,106 +613,111 @@
     4835,
     4835,
     4835,
+    4835,
     4835
    ]
   },
   {
-   "id": "god-of-war-collection-vita",
-   "title": "God of War Collection",
+   "id": "demon-gaze-ii-vita",
+   "title": "Demon Gaze II",
    "platform": "vita",
    "headline_condition": "cib",
-   "price_cents": 10999,
+   "price_cents": 9000,
    "prices": {
-    "loose": 5290,
-    "cib": 10999,
-    "new": 15000
+    "loose": 9647,
+    "cib": 9000
    },
-   "pct_1d": 22.22,
+   "pct_1d": 0,
+   "pct_7d": null,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    9000,
+    9000
+   ]
+  },
+  {
+   "id": "demon-gaze-vita",
+   "title": "Demon Gaze",
+   "platform": "vita",
+   "headline_condition": "cib",
+   "price_cents": 2795,
+   "prices": {
+    "loose": 2498,
+    "cib": 2795,
+    "new": 7427
+   },
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    8999,
-    8999,
-    8999,
-    8999
+    2897,
+    2897,
+    2897,
+    2897,
+    2897
    ]
   },
   {
-   "id": "hatsune-miku-project-diva-f-2nd-vita",
-   "title": "Hatsune Miku: Project DIVA f 2nd",
+   "id": "hatsune-miku-project-diva-x-vita",
+   "title": "Hatsune Miku: Project DIVA X",
    "platform": "vita",
    "headline_condition": "loose",
-   "price_cents": 3472,
+   "price_cents": 7400,
    "prices": {
-    "loose": 3472
+    "loose": 7400
    },
-   "pct_1d": 0.64,
+   "pct_1d": 85,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    3472,
-    3472,
-    3472,
-    3472
+    7400,
+    7400,
+    7400,
+    7400,
+    7400
    ]
   },
   {
-   "id": "senran-kagura-estival-versus-vita",
-   "title": "Senran Kagura: Estival Versus",
+   "id": "hyperdimension-neptunia-re-birth1-vita",
+   "title": "Hyperdimension Neptunia Re;Birth1",
    "platform": "vita",
    "headline_condition": "loose",
-   "price_cents": 10000,
+   "price_cents": 5249,
    "prices": {
-    "loose": 10000,
-    "new": 12000
-   },
-   "pct_1d": 2.06,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    10000,
-    10000,
-    10000,
-    10000
-   ]
-  },
-  {
-   "id": "trails-of-cold-steel-2-vita",
-   "title": "The Legend of Heroes: Trails of Cold Steel II",
-   "platform": "vita",
-   "headline_condition": "loose",
-   "price_cents": 7499,
-   "prices": {
-    "loose": 7499
-   },
-   "pct_1d": 7.13,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    7000,
-    7000,
-    7000,
-    7000
-   ]
-  },
-  {
-   "id": "zero-escape-virtues-last-reward-vita",
-   "title": "Zero Escape: Virtue's Last Reward",
-   "platform": "vita",
-   "headline_condition": "loose",
-   "price_cents": 2099,
-   "prices": {
-    "loose": 2099
+    "loose": 5249,
+    "new": 8499
    },
    "pct_1d": 5,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    4999,
+    4999,
+    4999,
+    4999,
+    4999
+   ]
+  },
+  {
+   "id": "norn9-var-commons-vita",
+   "title": "Norn9: Var Commons",
+   "platform": "vita",
+   "headline_condition": "cib",
+   "price_cents": 2097,
+   "prices": {
+    "loose": 1997,
+    "cib": 2097
+   },
+   "pct_1d": 4.9,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    1999,
     1999,
     1999,
     1999,
@@ -694,15 +725,59 @@
    ]
   },
   {
+   "id": "shantae-half-genie-hero-vita",
+   "title": "Shantae: Half-Genie Hero",
+   "platform": "vita",
+   "headline_condition": "loose",
+   "price_cents": 4500,
+   "prices": {
+    "loose": 4500
+   },
+   "pct_1d": 5.88,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    4250,
+    4250,
+    4250,
+    4250,
+    4250
+   ]
+  },
+  {
+   "id": "wipeout-2048-vita",
+   "title": "WipEout 2048",
+   "platform": "vita",
+   "headline_condition": "cib",
+   "price_cents": 3799,
+   "prices": {
+    "loose": 2495,
+    "cib": 3799,
+    "new": 6999
+   },
+   "pct_1d": 11.77,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    3799,
+    3799,
+    3799,
+    3599,
+    3799
+   ]
+  },
+  {
    "id": "code-realize-guardian-of-rebirth-vita",
    "title": "Code: Realize ~Guardian of Rebirth~",
    "platform": "vita",
    "headline_condition": "loose",
-   "price_cents": 1995,
+   "price_cents": 1997,
    "prices": {
-    "loose": 1995
+    "loose": 1997
    },
-   "pct_1d": 0,
+   "pct_1d": 0.1,
    "pct_7d": -0.2,
    "pct_30d": null,
    "score": -0.2,
@@ -710,8 +785,37 @@
     1999,
     1997,
     1995,
+    1995,
     1995
    ]
+  },
+  {
+   "id": "persona-4-golden-vita",
+   "title": "Persona 4 Golden",
+   "platform": "vita",
+   "headline_condition": "cib",
+   "price_cents": 4450,
+   "prices": {
+    "loose": 3175,
+    "cib": 4450,
+    "new": 14999
+   },
+   "pct_1d": 5.95,
+   "pct_7d": -15.98,
+   "pct_30d": null,
+   "score": -15.98,
+   "spark": [
+    4999,
+    4550,
+    4200,
+    4200,
+    4200
+   ],
+   "annotation": {
+    "date": "2021-03-29",
+    "note": "The PS Vita store closure announcement made physical carts the only lasting way to own Vita games.",
+    "source_url": "https://www.retrotechlab.com/ps-vita-price-guide-2026/"
+   }
   }
  ]
 }
