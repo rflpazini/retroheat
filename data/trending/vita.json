@@ -60,7 +60,7 @@
    "prices": {
     "loose": 5000,
     "cib": 10999,
-    "new": 15000
+    "new": 9999
    },
    "pct_1d": 0,
    "pct_7d": 22.22,
@@ -107,12 +107,12 @@
    "title": "Resistance: Burning Skies",
    "platform": "vita",
    "headline_condition": "cib",
-   "price_cents": 4999,
+   "price_cents": 5000,
    "prices": {
-    "loose": 2482,
-    "cib": 4999
+    "loose": 2495,
+    "cib": 5000
    },
-   "pct_1d": 0,
+   "pct_1d": 0.02,
    "pct_7d": 20.46,
    "pct_30d": null,
    "score": 20.46,
@@ -251,12 +251,12 @@
    "title": "Dragon's Crown",
    "platform": "vita",
    "headline_condition": "cib",
-   "price_cents": 5000,
+   "price_cents": 5500,
    "prices": {
     "loose": 2544,
-    "cib": 5000
+    "cib": 5500
    },
-   "pct_1d": 0,
+   "pct_1d": 10,
    "pct_7d": 11.11,
    "pct_30d": null,
    "score": 11.11,
@@ -375,13 +375,13 @@
    "title": "Ys: Memories of Celceta",
    "platform": "vita",
    "headline_condition": "cib",
-   "price_cents": 3899,
+   "price_cents": 3949,
    "prices": {
     "loose": 2550,
-    "cib": 3899,
+    "cib": 3949,
     "new": 4500
    },
-   "pct_1d": 0,
+   "pct_1d": 1.28,
    "pct_7d": 5.41,
    "pct_30d": null,
    "score": 5.41,
@@ -716,31 +716,6 @@
    ]
   },
   {
-   "id": "danganronpa-2-goodbye-despair-vita",
-   "title": "Danganronpa 2: Goodbye Despair",
-   "platform": "vita",
-   "headline_condition": "loose",
-   "price_cents": 3550,
-   "prices": {
-    "loose": 3550,
-    "new": 9000
-   },
-   "pct_1d": 0,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    3550,
-    3525,
-    3550,
-    3550,
-    3550,
-    3550,
-    3550,
-    3550
-   ]
-  },
-  {
    "id": "danganronpa-another-episode-ultra-despair-girls-vita",
    "title": "Danganronpa Another Episode: Ultra Despair Girls",
    "platform": "vita",
@@ -766,75 +741,28 @@
    ]
   },
   {
-   "id": "danganronpa-trigger-happy-havoc-vita",
-   "title": "Danganronpa: Trigger Happy Havoc",
-   "platform": "vita",
-   "headline_condition": "cib",
-   "price_cents": 4750,
-   "prices": {
-    "loose": 3550,
-    "cib": 4750,
-    "new": 11999
-   },
-   "pct_1d": 0,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    4750,
-    4750,
-    4750,
-    4750,
-    4750
-   ]
-  },
-  {
-   "id": "dariusburst-chronicle-saviours-vita",
-   "title": "Dariusburst: Chronicle Saviours",
+   "id": "final-fantasy-x-x-2-hd-remaster-vita",
+   "title": "Final Fantasy X/X-2 HD Remaster",
    "platform": "vita",
    "headline_condition": "loose",
-   "price_cents": 4835,
+   "price_cents": 3000,
    "prices": {
-    "loose": 4835,
-    "new": 5498
+    "loose": 3000,
+    "new": 9999
    },
-   "pct_1d": 0,
+   "pct_1d": 0.03,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    4835,
-    4835,
-    4835,
-    4835,
-    4835,
-    4835,
-    4835,
-    4835
-   ]
-  },
-  {
-   "id": "demon-gaze-ii-vita",
-   "title": "Demon Gaze II",
-   "platform": "vita",
-   "headline_condition": "loose",
-   "price_cents": 9647,
-   "prices": {
-    "loose": 9647
-   },
-   "pct_1d": 0,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    9647,
-    9647,
-    9647,
-    9647,
-    9647,
-    9647,
-    9647,
-    9647
+    2999,
+    2999,
+    2999,
+    2875,
+    2750,
+    2750,
+    2750,
+    2999
    ]
   },
   {
@@ -863,6 +791,57 @@
    ]
   },
   {
+   "id": "operation-abyss-new-tokyo-legacy-vita",
+   "title": "Operation Abyss: New Tokyo Legacy",
+   "platform": "vita",
+   "headline_condition": "loose",
+   "price_cents": 4999,
+   "prices": {
+    "loose": 4999,
+    "new": 8000
+   },
+   "pct_1d": 11.09,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    4500,
+    4500,
+    4500,
+    4500,
+    4500,
+    4500,
+    4500,
+    4500
+   ]
+  },
+  {
+   "id": "wipeout-2048-vita",
+   "title": "WipEout 2048",
+   "platform": "vita",
+   "headline_condition": "cib",
+   "price_cents": 4899,
+   "prices": {
+    "loose": 2495,
+    "cib": 4899,
+    "new": 6999
+   },
+   "pct_1d": 28.95,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    3799,
+    3799,
+    3799,
+    3599,
+    3799,
+    3799,
+    3799,
+    3799
+   ]
+  },
+  {
    "id": "code-realize-guardian-of-rebirth-vita",
    "title": "Code: Realize ~Guardian of Rebirth~",
    "platform": "vita",
@@ -884,6 +863,30 @@
     1995,
     1997,
     1997
+   ]
+  },
+  {
+   "id": "dragon-quest-builders-vita",
+   "title": "Dragon Quest Builders",
+   "platform": "vita",
+   "headline_condition": "loose",
+   "price_cents": 1354,
+   "prices": {
+    "loose": 1354
+   },
+   "pct_1d": 0.37,
+   "pct_7d": -0.37,
+   "pct_30d": null,
+   "score": -0.37,
+   "spark": [
+    1354,
+    1357,
+    1359,
+    1359,
+    1359,
+    1359,
+    1349,
+    1349
    ]
   },
   {
@@ -962,54 +965,29 @@
    ]
   },
   {
-   "id": "demon-gaze-vita",
-   "title": "Demon Gaze",
+   "id": "hyperdimension-neptunia-re-birth3-vita",
+   "title": "Hyperdimension Neptunia Re;Birth3",
    "platform": "vita",
    "headline_condition": "cib",
-   "price_cents": 2795,
+   "price_cents": 7498,
    "prices": {
-    "loose": 2512,
-    "cib": 2795,
-    "new": 7499
+    "loose": 6299,
+    "cib": 7498,
+    "new": 13300
    },
-   "pct_1d": 0,
-   "pct_7d": -3.52,
+   "pct_1d": 7.13,
+   "pct_7d": -6.66,
    "pct_30d": null,
-   "score": -3.52,
+   "score": -6.66,
    "spark": [
-    2897,
-    2897,
-    2897,
-    2897,
-    2897,
-    2795,
-    2795,
-    2795
-   ]
-  },
-  {
-   "id": "disgaea-4-a-promise-revisited-vita",
-   "title": "Disgaea 4: A Promise Revisited",
-   "platform": "vita",
-   "headline_condition": "loose",
-   "price_cents": 2700,
-   "prices": {
-    "loose": 2700,
-    "new": 6098
-   },
-   "pct_1d": 0,
-   "pct_7d": -6.9,
-   "pct_30d": null,
-   "score": -6.9,
-   "spark": [
-    2900,
-    2850,
-    2900,
-    2850,
-    2800,
-    2800,
-    2800,
-    2700
+    7498,
+    7498,
+    7498,
+    7249,
+    6999,
+    6999,
+    6999,
+    6999
    ]
   },
   {
@@ -1019,7 +997,7 @@
    "headline_condition": "cib",
    "price_cents": 8000,
    "prices": {
-    "loose": 4450,
+    "loose": 4399,
     "cib": 8000,
     "new": 21000
    },
@@ -1045,7 +1023,7 @@
    "headline_condition": "cib",
    "price_cents": 2999,
    "prices": {
-    "loose": 1800,
+    "loose": 1844,
     "cib": 2999,
     "new": 7997
    },
