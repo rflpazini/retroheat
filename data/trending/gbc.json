@@ -1,6 +1,6 @@
 {
  "board": "gbc",
- "as_of": "2026-10-16",
+ "as_of": "2026-10-17",
  "entries": [
   {
    "id": "magi-nation-gbc",
@@ -23,6 +23,7 @@
     3200,
     3499,
     3499,
+    3749,
     3749
    ]
   },
@@ -47,7 +48,58 @@
     4748,
     4748,
     5495,
+    5495,
     5495
+   ]
+  },
+  {
+   "id": "blade-gbc",
+   "title": "Blade",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 4375,
+   "prices": {
+    "loose": 4375
+   },
+   "pct_1d": 0,
+   "pct_7d": 11.13,
+   "pct_30d": null,
+   "score": 11.13,
+   "spark": [
+    3999,
+    3937,
+    3875,
+    3937,
+    3999,
+    3999,
+    4375,
+    4375,
+    4375
+   ]
+  },
+  {
+   "id": "spider-man-2-the-sinister-six-gbc",
+   "title": "Spider-Man 2: The Sinister Six",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 2200,
+   "prices": {
+    "loose": 2200
+   },
+   "pct_1d": 0,
+   "pct_7d": 10,
+   "pct_30d": null,
+   "score": 10,
+   "spark": [
+    2000,
+    2000,
+    2000,
+    2050,
+    2000,
+    2100,
+    2100,
+    2100,
+    2200
    ]
   },
   {
@@ -55,15 +107,15 @@
    "title": "Yu-Gi-Oh! Dark Duel Stories",
    "platform": "gbc",
    "headline_condition": "cib",
-   "price_cents": 6837,
+   "price_cents": 6000,
    "prices": {
-    "loose": 1100,
-    "cib": 6837
+    "loose": 1099,
+    "cib": 6000
    },
-   "pct_1d": 0,
-   "pct_7d": 13.95,
+   "pct_1d": -12.24,
+   "pct_7d": 9.41,
    "pct_30d": null,
-   "score": 13.95,
+   "score": 9.41,
    "spark": [
     6000,
     6249,
@@ -72,31 +124,8 @@
     6498,
     6498,
     6837,
+    6837,
     6837
-   ]
-  },
-  {
-   "id": "pokemon-puzzle-challenge-gbc",
-   "title": "Pokémon Puzzle Challenge",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 4998,
-   "prices": {
-    "loose": 4998
-   },
-   "pct_1d": 0,
-   "pct_7d": 11.07,
-   "pct_30d": null,
-   "score": 11.07,
-   "spark": [
-    4500,
-    4625,
-    4749,
-    4625,
-    4749,
-    4749,
-    4997,
-    4998
    ]
   },
   {
@@ -110,10 +139,10 @@
     "cib": 27995,
     "new": 69995
    },
-   "pct_1d": 7.48,
-   "pct_7d": 10.61,
+   "pct_1d": 0,
+   "pct_7d": 9.33,
    "pct_30d": null,
-   "score": 10.61,
+   "score": 9.33,
    "spark": [
     23548,
     23823,
@@ -122,31 +151,33 @@
     24097,
     24097,
     26046,
+    26046,
     26046
    ]
   },
   {
-   "id": "blade-gbc",
-   "title": "Blade",
+   "id": "pokemon-puzzle-challenge-gbc",
+   "title": "Pokémon Puzzle Challenge",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 4375,
+   "price_cents": 4997,
    "prices": {
-    "loose": 4375
+    "loose": 4997
    },
-   "pct_1d": 0,
-   "pct_7d": 9.4,
+   "pct_1d": -0.02,
+   "pct_7d": 8.06,
    "pct_30d": null,
-   "score": 9.4,
+   "score": 8.06,
    "spark": [
-    3999,
-    3937,
-    3875,
-    3937,
-    3999,
-    3999,
-    4375,
-    4375
+    4500,
+    4625,
+    4749,
+    4625,
+    4749,
+    4749,
+    4997,
+    4998,
+    4998
    ]
   },
   {
@@ -156,7 +187,7 @@
    "headline_condition": "cib",
    "price_cents": 13499,
    "prices": {
-    "loose": 2599,
+    "loose": 2500,
     "cib": 13499
    },
    "pct_1d": 0,
@@ -171,6 +202,7 @@
     12499,
     12499,
     12499,
+    13499,
     13499
    ]
   },
@@ -183,7 +215,7 @@
    "prices": {
     "loose": 4800
    },
-   "pct_1d": 6.43,
+   "pct_1d": 0,
    "pct_7d": 6.8,
    "pct_30d": null,
    "score": 6.8,
@@ -195,6 +227,7 @@
     4223,
     4223,
     4223,
+    4510,
     4510
    ]
   },
@@ -207,7 +240,7 @@
    "prices": {
     "loose": 8499
    },
-   "pct_1d": -5.56,
+   "pct_1d": 0,
    "pct_7d": 5.88,
    "pct_30d": null,
    "score": 5.88,
@@ -219,6 +252,7 @@
     8499,
     8499,
     8999,
+    8999,
     8999
    ]
   },
@@ -227,13 +261,12 @@
    "title": "Super Mario Bros. Deluxe",
    "platform": "gbc",
    "headline_condition": "cib",
-   "price_cents": 8995,
+   "price_cents": 8497,
    "prices": {
     "loose": 3000,
-    "cib": 8995,
-    "new": 42190
+    "cib": 8497
    },
-   "pct_1d": 0,
+   "pct_1d": -5.54,
    "pct_7d": 5.85,
    "pct_30d": null,
    "score": 5.85,
@@ -245,31 +278,35 @@
     8995,
     8995,
     8995,
+    8995,
     8995
    ]
   },
   {
-   "id": "mario-golf-gbc",
-   "title": "Mario Golf",
+   "id": "zelda-oracle-of-seasons-gbc",
+   "title": "The Legend of Zelda: Oracle of Seasons",
    "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 3500,
+   "headline_condition": "cib",
+   "price_cents": 24995,
    "prices": {
-    "loose": 3500
+    "loose": 7000,
+    "cib": 24995,
+    "new": 62900
    },
-   "pct_1d": 0,
-   "pct_7d": 5.42,
+   "pct_1d": 5.25,
+   "pct_7d": 5.55,
    "pct_30d": null,
-   "score": 5.42,
+   "score": 5.55,
    "spark": [
-    3320,
-    3410,
-    3498,
-    3499,
-    3499,
-    3499,
-    3500,
-    3500
+    22499,
+    22500,
+    22499,
+    22499,
+    22499,
+    22499,
+    22499,
+    22500,
+    23748
    ]
   },
   {
@@ -277,14 +314,14 @@
    "title": "Power Quest",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 2789,
+   "price_cents": 2778,
    "prices": {
-    "loose": 2789
+    "loose": 2778
    },
-   "pct_1d": 0,
-   "pct_7d": 5.25,
+   "pct_1d": -0.39,
+   "pct_7d": 5.44,
    "pct_30d": null,
-   "score": 5.25,
+   "score": 5.44,
    "spark": [
     2650,
     2645,
@@ -293,55 +330,33 @@
     2778,
     2778,
     2778,
+    2789,
     2789
    ]
   },
   {
-   "id": "batman-beyond-return-of-the-joker-gbc",
-   "title": "Batman Beyond: Return of the Joker",
+   "id": "dragons-lair-gbc",
+   "title": "Dragon's Lair",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 2149,
+   "price_cents": 2999,
    "prices": {
-    "loose": 2149
-   },
-   "pct_1d": -1.2,
-   "pct_7d": 5.17,
-   "pct_30d": null,
-   "score": 5.17,
-   "spark": [
-    2068,
-    2101,
-    2134,
-    2167,
-    2199,
-    2199,
-    2199,
-    2175
-   ]
-  },
-  {
-   "id": "spider-man-2-the-sinister-six-gbc",
-   "title": "Spider-Man 2: The Sinister Six",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 2200,
-   "prices": {
-    "loose": 2200
+    "loose": 2999
    },
    "pct_1d": 0,
-   "pct_7d": 5,
+   "pct_7d": 5.23,
    "pct_30d": null,
-   "score": 5,
+   "score": 5.23,
    "spark": [
-    2000,
-    2000,
-    2000,
-    2050,
-    2000,
-    2100,
-    2100,
-    2100
+    2900,
+    2850,
+    2800,
+    2850,
+    2800,
+    2800,
+    2800,
+    2999,
+    2999
    ]
   },
   {
@@ -353,7 +368,7 @@
    "prices": {
     "loose": 5499
    },
-   "pct_1d": -3.53,
+   "pct_1d": 0,
    "pct_7d": 4.76,
    "pct_30d": null,
    "score": 4.76,
@@ -363,6 +378,7 @@
     5249,
     5249,
     5249,
+    5499,
     5499,
     5499,
     5499
@@ -375,7 +391,7 @@
    "headline_condition": "cib",
    "price_cents": 6999,
    "prices": {
-    "loose": 3199,
+    "loose": 3247,
     "cib": 6999
    },
    "pct_1d": 0,
@@ -390,102 +406,8 @@
     6700,
     6700,
     6700,
+    6999,
     6999
-   ]
-  },
-  {
-   "id": "dragons-lair-gbc",
-   "title": "Dragon's Lair",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 2999,
-   "prices": {
-    "loose": 2999
-   },
-   "pct_1d": 0,
-   "pct_7d": 3.41,
-   "pct_30d": null,
-   "score": 3.41,
-   "spark": [
-    2900,
-    2850,
-    2800,
-    2850,
-    2800,
-    2800,
-    2800,
-    2999
-   ]
-  },
-  {
-   "id": "pokemon-trading-card-game-gbc",
-   "title": "Pokémon Trading Card Game",
-   "platform": "gbc",
-   "headline_condition": "cib",
-   "price_cents": 16999,
-   "prices": {
-    "loose": 3499,
-    "cib": 16999
-   },
-   "pct_1d": 0,
-   "pct_7d": 3.03,
-   "pct_30d": null,
-   "score": 3.03,
-   "spark": [
-    16499,
-    16499,
-    16499,
-    16749,
-    16999
-   ]
-  },
-  {
-   "id": "pocket-bomberman-gbc",
-   "title": "Pocket Bomberman",
-   "platform": "gbc",
-   "headline_condition": "cib",
-   "price_cents": 9500,
-   "prices": {
-    "loose": 1999,
-    "cib": 9500
-   },
-   "pct_1d": -2.56,
-   "pct_7d": 2.63,
-   "pct_30d": null,
-   "score": 2.63,
-   "spark": [
-    9500,
-    9625,
-    9750,
-    9750,
-    9750,
-    9750,
-    9750,
-    9750
-   ]
-  },
-  {
-   "id": "deja-vu-i-and-ii-gbc",
-   "title": "Déjà Vu I & II",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 6295,
-   "prices": {
-    "loose": 6295
-   },
-   "pct_1d": 4.92,
-   "pct_7d": 2.47,
-   "pct_30d": null,
-   "score": 2.47,
-   "spark": [
-    6000,
-    6000,
-    6000,
-    6000,
-    6000,
-    6148,
-    6148,
-    6148
    ]
   },
   {
@@ -493,15 +415,15 @@
    "title": "Pokémon Gold",
    "platform": "gbc",
    "headline_condition": "cib",
-   "price_cents": 49995,
+   "price_cents": 29999,
    "prices": {
     "loose": 6999,
-    "cib": 49995
+    "cib": 29999
    },
-   "pct_1d": 0,
-   "pct_7d": 2.35,
+   "pct_1d": -40,
+   "pct_7d": 3.97,
    "pct_30d": null,
-   "score": 2.35,
+   "score": 3.97,
    "spark": [
     31999,
     31499,
@@ -510,7 +432,33 @@
     31999,
     30999,
     32750,
+    32750,
     32750
+   ]
+  },
+  {
+   "id": "batman-beyond-return-of-the-joker-gbc",
+   "title": "Batman Beyond: Return of the Joker",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 2175,
+   "prices": {
+    "loose": 2175
+   },
+   "pct_1d": 1.21,
+   "pct_7d": 3.52,
+   "pct_30d": null,
+   "score": 3.52,
+   "spark": [
+    2068,
+    2101,
+    2134,
+    2167,
+    2199,
+    2199,
+    2199,
+    2175,
+    2175
    ]
   },
   {
@@ -522,10 +470,10 @@
    "prices": {
     "loose": 12490
    },
-   "pct_1d": -0.04,
-   "pct_7d": 2,
+   "pct_1d": 0,
+   "pct_7d": 3.05,
    "pct_30d": null,
-   "score": 2,
+   "score": 3.05,
    "spark": [
     12250,
     12125,
@@ -534,7 +482,81 @@
     12250,
     12495,
     12495,
+    12495,
     12495
+   ]
+  },
+  {
+   "id": "pokemon-trading-card-game-gbc",
+   "title": "Pokémon Trading Card Game",
+   "platform": "gbc",
+   "headline_condition": "cib",
+   "price_cents": 16499,
+   "prices": {
+    "loose": 3499,
+    "cib": 16499
+   },
+   "pct_1d": -2.94,
+   "pct_7d": 3.03,
+   "pct_30d": null,
+   "score": 3.03,
+   "spark": [
+    16499,
+    16499,
+    16499,
+    16749,
+    16999,
+    16999
+   ]
+  },
+  {
+   "id": "mario-golf-gbc",
+   "title": "Mario Golf",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 3500,
+   "prices": {
+    "loose": 3500
+   },
+   "pct_1d": 0,
+   "pct_7d": 2.64,
+   "pct_30d": null,
+   "score": 2.64,
+   "spark": [
+    3320,
+    3410,
+    3498,
+    3499,
+    3499,
+    3499,
+    3500,
+    3500,
+    3500
+   ]
+  },
+  {
+   "id": "deja-vu-i-and-ii-gbc",
+   "title": "Déjà Vu I & II",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 6000,
+   "prices": {
+    "loose": 6000
+   },
+   "pct_1d": -4.69,
+   "pct_7d": 2.47,
+   "pct_30d": null,
+   "score": 2.47,
+   "spark": [
+    6000,
+    6000,
+    6000,
+    6000,
+    6000,
+    6148,
+    6148,
+    6148,
+    6148
    ]
   },
   {
@@ -558,54 +580,109 @@
     1158,
     1158,
     1158,
+    1175,
     1175
    ]
   },
   {
-   "id": "grand-theft-auto-gbc",
-   "title": "Grand Theft Auto",
+   "id": "pocket-bomberman-gbc",
+   "title": "Pocket Bomberman",
    "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 4195,
+   "headline_condition": "cib",
+   "price_cents": 9500,
    "prices": {
-    "loose": 4195
+    "loose": 1999,
+    "cib": 9500
    },
-   "pct_1d": 2.37,
-   "pct_7d": 1.26,
+   "pct_1d": 0,
+   "pct_7d": 1.3,
    "pct_30d": null,
-   "score": 1.26,
+   "score": 1.3,
    "spark": [
-    4195,
-    4222,
-    4248,
-    4399,
-    4248,
-    4248,
-    4248
+    9500,
+    9625,
+    9750,
+    9750,
+    9750,
+    9750,
+    9750,
+    9750,
+    9750
    ]
   },
   {
-   "id": "hamtaro-ham-hams-unite-gbc",
-   "title": "Hamtaro: Ham-Hams Unite!",
+   "id": "pokemon-crystal-gbc",
+   "title": "Pokémon Crystal",
    "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 4299,
+   "headline_condition": "cib",
+   "price_cents": 98748,
    "prices": {
-    "loose": 4299
+    "loose": 19000,
+    "cib": 98748
    },
    "pct_1d": 0,
-   "pct_7d": 0.21,
+   "pct_7d": 0.25,
    "pct_30d": null,
-   "score": 0.21,
+   "score": 0.25,
    "spark": [
-    4290,
-    4293,
-    4290,
-    4290,
-    4290,
-    4295,
-    4295,
-    4299
+    99500,
+    98500,
+    97500,
+    97500,
+    97500,
+    97500,
+    97500,
+    98748,
+    98748
+   ]
+  },
+  {
+   "id": "sabrina-zapped-gbc",
+   "title": "Sabrina the Animated Series: Zapped!",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 1610,
+   "prices": {
+    "loose": 1610
+   },
+   "pct_1d": 0.63,
+   "pct_7d": 0.13,
+   "pct_30d": null,
+   "score": 0.13,
+   "spark": [
+    1595,
+    1598,
+    1600,
+    1599,
+    1598,
+    1598,
+    1598,
+    1598,
+    1600
+   ]
+  },
+  {
+   "id": "aliens-thanatos-encounter-gbc",
+   "title": "Aliens: Thanatos Encounter",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 5948,
+   "prices": {
+    "loose": 5948
+   },
+   "pct_1d": 10.23,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    5948,
+    5948,
+    5948,
+    5948,
+    5948,
+    5948,
+    5948,
+    5948
    ]
   },
   {
@@ -622,6 +699,7 @@
    "pct_30d": null,
    "score": 0,
    "spark": [
+    4000,
     4000,
     4000,
     4000,
@@ -653,6 +731,7 @@
     25500,
     25500,
     25500,
+    25500,
     25500
    ]
   },
@@ -663,7 +742,7 @@
    "headline_condition": "cib",
    "price_cents": 13249,
    "prices": {
-    "loose": 3474,
+    "loose": 3449,
     "cib": 13249
    },
    "pct_1d": 0,
@@ -671,6 +750,7 @@
    "pct_30d": null,
    "score": 0,
    "spark": [
+    13249,
     13249,
     13249,
     13249,
@@ -699,6 +779,7 @@
     1799,
     1799,
     1799,
+    1800,
     1800
    ]
   },
@@ -716,6 +797,7 @@
    "pct_30d": null,
    "score": 0,
    "spark": [
+    19499,
     19499,
     19499,
     19499,
@@ -748,6 +830,7 @@
     17000,
     17000,
     17000,
+    17000,
     17000
    ]
   },
@@ -772,6 +855,7 @@
     3999,
     3999,
     3999,
+    3999,
     3999
    ]
   },
@@ -782,7 +866,7 @@
    "headline_condition": "cib",
    "price_cents": 8499,
    "prices": {
-    "loose": 2725,
+    "loose": 2699,
     "cib": 8499
    },
    "pct_1d": 0,
@@ -797,31 +881,8 @@
     8499,
     8499,
     8499,
+    8499,
     8499
-   ]
-  },
-  {
-   "id": "mega-man-xtreme-gbc",
-   "title": "Mega Man Xtreme",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 5000,
-   "prices": {
-    "loose": 5000
-   },
-   "pct_1d": 0.02,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    4999,
-    4999,
-    4999,
-    4999,
-    4999,
-    4999,
-    4999,
-    4999
    ]
   },
   {
@@ -829,11 +890,11 @@
    "title": "Shantae",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 70000,
+   "price_cents": 80999,
    "prices": {
-    "loose": 70000
+    "loose": 80999
    },
-   "pct_1d": 0,
+   "pct_1d": 15.71,
    "pct_7d": -0,
    "pct_30d": null,
    "score": -0,
@@ -844,6 +905,7 @@
     70000,
     70000,
     70000,
+    69999,
     69999,
     69999
    ]
@@ -866,6 +928,7 @@
     2500,
     2500,
     2500,
+    2499,
     2499,
     2499,
     2499,
@@ -893,55 +956,108 @@
     2500,
     2499,
     2499,
+    2499,
     2499
    ]
   },
   {
-   "id": "legend-of-the-river-king-2-gbc",
-   "title": "Legend of the River King 2",
+   "id": "mega-man-xtreme-2-gbc",
+   "title": "Mega Man Xtreme 2",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 9990,
+   "price_cents": 5349,
    "prices": {
-    "loose": 9990
+    "loose": 5349
    },
-   "pct_1d": 0.45,
-   "pct_7d": -0.1,
+   "pct_1d": 4.88,
+   "pct_7d": -0.97,
    "pct_30d": null,
-   "score": -0.1,
+   "score": -0.97,
    "spark": [
-    10000,
-    10000,
-    10000,
-    10000,
-    10000,
-    9995,
-    9995,
-    9990
+    5100,
+    5150,
+    5100,
+    5100,
+    5100,
+    5100,
+    5100,
+    5100,
+    5100
    ]
   },
   {
-   "id": "grand-theft-auto-2-gbc",
-   "title": "Grand Theft Auto 2",
+   "id": "conkers-pocket-tales-gbc",
+   "title": "Conker's Pocket Tales",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 5000,
+   "price_cents": 2250,
    "prices": {
-    "loose": 5000
+    "loose": 2250
    },
-   "pct_1d": 0.02,
-   "pct_7d": -0.14,
+   "pct_1d": 0,
+   "pct_7d": -1.1,
    "pct_30d": null,
-   "score": -0.14,
+   "score": -1.1,
    "spark": [
-    4999,
-    4999,
-    4999,
-    4999,
-    4999,
-    4992,
-    4992,
-    4992
+    2299,
+    2275,
+    2250,
+    2225,
+    2250,
+    2250,
+    2250,
+    2250,
+    2250
+   ]
+  },
+  {
+   "id": "robopon-sun-version-gbc",
+   "title": "Robopon: Sun Version",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 8773,
+   "prices": {
+    "loose": 8773
+   },
+   "pct_1d": 2.64,
+   "pct_7d": -1.27,
+   "pct_30d": null,
+   "score": -1.27,
+   "spark": [
+    8999,
+    8886,
+    8773,
+    8773,
+    8773,
+    8773,
+    8773,
+    8773,
+    8773
+   ]
+  },
+  {
+   "id": "dragon-warrior-monsters-2-cobis-journey-gbc",
+   "title": "Dragon Warrior Monsters 2: Cobi's Journey",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 5499,
+   "prices": {
+    "loose": 5499
+   },
+   "pct_1d": 4.76,
+   "pct_7d": -1.93,
+   "pct_30d": null,
+   "score": -1.93,
+   "spark": [
+    5499,
+    5607,
+    5714,
+    5714,
+    5714,
+    5714,
+    5714,
+    5499,
+    5499
    ]
   },
   {
@@ -965,6 +1081,7 @@
     2500,
     2450,
     2450,
+    2450,
     2450
    ]
   },
@@ -977,7 +1094,7 @@
    "prices": {
     "loose": 6250
    },
-   "pct_1d": 4.17,
+   "pct_1d": 0,
    "pct_7d": -3.85,
    "pct_30d": null,
    "score": -3.85,
@@ -989,80 +1106,59 @@
     6500,
     6500,
     6500,
+    6250,
     6250
    ]
   },
   {
-   "id": "pokemon-silver-gbc",
-   "title": "Pokémon Silver",
+   "id": "blaster-master-enemy-below-gbc",
+   "title": "Blaster Master: Enemy Below",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 5824,
+   "prices": {
+    "loose": 5824
+   },
+   "pct_1d": 7.87,
+   "pct_7d": -5.85,
+   "pct_30d": null,
+   "score": -5.85,
+   "spark": [
+    6249,
+    6186,
+    6249,
+    6249,
+    6249,
+    6249,
+    6249,
+    6249,
+    5824
+   ]
+  },
+  {
+   "id": "metal-gear-solid-gbc",
+   "title": "Metal Gear Solid",
    "platform": "gbc",
    "headline_condition": "cib",
-   "price_cents": 36995,
+   "price_cents": 36000,
    "prices": {
-    "loose": 7497,
-    "cib": 36995
+    "loose": 13000,
+    "cib": 36000
    },
-   "pct_1d": 8.41,
-   "pct_7d": -11.72,
+   "pct_1d": 2.86,
+   "pct_7d": -5.85,
    "pct_30d": null,
-   "score": -11.72,
+   "score": -5.85,
    "spark": [
-    39648,
-    39319,
-    38990,
-    38990,
-    38990,
-    37995,
-    35000,
-    35000
-   ]
-  },
-  {
-   "id": "perfect-dark-gbc",
-   "title": "Perfect Dark",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 3480,
-   "prices": {
-    "loose": 3480
-   },
-   "pct_1d": 0.87,
-   "pct_7d": -12.1,
-   "pct_30d": null,
-   "score": -12.1,
-   "spark": [
-    3992,
-    3751,
-    3509,
-    3509,
-    3509,
-    3509,
-    3509,
-    3509
-   ]
-  },
-  {
-   "id": "xena-warrior-princess-gbc",
-   "title": "Xena: Warrior Princess",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 13999,
-   "prices": {
-    "loose": 13999
-   },
-   "pct_1d": 75.01,
-   "pct_7d": -42.86,
-   "pct_30d": null,
-   "score": -42.86,
-   "spark": [
-    13999,
-    13999,
-    13999,
-    13999,
-    13999,
-    13999,
-    7999,
-    7999
+    38700,
+    39300,
+    38700,
+    38700,
+    38700,
+    38700,
+    37500,
+    37000,
+    37000
    ]
   }
  ]
