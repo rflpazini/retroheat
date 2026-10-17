@@ -88,7 +88,7 @@
    "headline_condition": "cib",
    "price_cents": 2499,
    "prices": {
-    "loose": 1275,
+    "loose": 1250,
     "cib": 2499
    },
    "pct_1d": 0,
@@ -160,17 +160,44 @@
    ]
   },
   {
+   "id": "sonic-adventure-dreamcast",
+   "title": "Sonic Adventure",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 7797,
+   "prices": {
+    "loose": 4499,
+    "cib": 7797,
+    "new": 19000
+   },
+   "pct_1d": 3.27,
+   "pct_7d": 7.54,
+   "pct_30d": null,
+   "score": 7.54,
+   "spark": [
+    7000,
+    7250,
+    7499,
+    7499,
+    7499,
+    7500,
+    7508,
+    7550,
+    7797
+   ]
+  },
+  {
    "id": "chuchu-rocket-dreamcast",
    "title": "ChuChu Rocket!",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 3750,
+   "price_cents": 3500,
    "prices": {
     "loose": 2250,
-    "cib": 3750,
+    "cib": 3500,
     "new": 4844
    },
-   "pct_1d": 0,
+   "pct_1d": -6.67,
    "pct_7d": 7.14,
    "pct_30d": null,
    "score": 7.14,
@@ -184,32 +211,6 @@
     3750,
     3750,
     3750
-   ]
-  },
-  {
-   "id": "skies-of-arcadia-dreamcast",
-   "title": "Skies of Arcadia",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 19950,
-   "prices": {
-    "loose": 12500,
-    "cib": 19950
-   },
-   "pct_1d": 0,
-   "pct_7d": 6.4,
-   "pct_30d": null,
-   "score": 6.4,
-   "spark": [
-    19000,
-    18750,
-    18500,
-    18750,
-    19000,
-    19450,
-    19450,
-    19450,
-    19950
    ]
   },
   {
@@ -235,6 +236,32 @@
     7500,
     8500,
     8500
+   ]
+  },
+  {
+   "id": "skies-of-arcadia-dreamcast",
+   "title": "Skies of Arcadia",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 19900,
+   "prices": {
+    "loose": 12500,
+    "cib": 19900
+   },
+   "pct_1d": -0.25,
+   "pct_7d": 6.13,
+   "pct_30d": null,
+   "score": 6.13,
+   "spark": [
+    19000,
+    18750,
+    18500,
+    18750,
+    19000,
+    19450,
+    19450,
+    19450,
+    19900
    ]
   },
   {
@@ -313,33 +340,6 @@
     4199,
     4199,
     4399
-   ]
-  },
-  {
-   "id": "sonic-adventure-dreamcast",
-   "title": "Sonic Adventure",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 7550,
-   "prices": {
-    "loose": 4499,
-    "cib": 7550,
-    "new": 19000
-   },
-   "pct_1d": 0,
-   "pct_7d": 4.14,
-   "pct_30d": null,
-   "score": 4.14,
-   "spark": [
-    7000,
-    7250,
-    7499,
-    7499,
-    7499,
-    7500,
-    7508,
-    7550,
-    7550
    ]
   },
   {
@@ -479,12 +479,12 @@
    "title": "Power Stone 2",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 17000,
+   "price_cents": 17301,
    "prices": {
-    "loose": 7950,
-    "cib": 17000
+    "loose": 7899,
+    "cib": 17301
    },
-   "pct_1d": 0,
+   "pct_1d": 1.77,
    "pct_7d": 2.88,
    "pct_30d": null,
    "score": 2.88,
@@ -634,11 +634,11 @@
    "title": "Tech Romancer",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 18225,
+   "price_cents": 17500,
    "prices": {
-    "cib": 18225
+    "cib": 17500
    },
-   "pct_1d": 0,
+   "pct_1d": -3.98,
    "pct_7d": 1.39,
    "pct_30d": null,
    "score": 1.39,
@@ -652,6 +652,33 @@
     18225,
     18225,
     18225
+   ]
+  },
+  {
+   "id": "tomb-raider-the-last-revelation-dreamcast",
+   "title": "Tomb Raider: The Last Revelation",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 1775,
+   "prices": {
+    "loose": 1099,
+    "cib": 1775,
+    "new": 4500
+   },
+   "pct_1d": 4.41,
+   "pct_7d": 0.06,
+   "pct_30d": null,
+   "score": 0.06,
+   "spark": [
+    1698,
+    1698,
+    1697,
+    1697,
+    1697,
+    1697,
+    1697,
+    1699,
+    1699
    ]
   },
   {
@@ -703,80 +730,57 @@
    ]
   },
   {
-   "id": "confidential-mission-dreamcast",
-   "title": "Confidential Mission",
+   "id": "dynamite-cop-dreamcast",
+   "title": "Dynamite Cop",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 9900,
+   "price_cents": 14995,
    "prices": {
-    "cib": 9900
+    "loose": 9814,
+    "cib": 14995,
+    "new": 29999
    },
-   "pct_1d": 0,
+   "pct_1d": 3.43,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    9900,
-    9900,
-    9900,
-    9900,
-    9900,
-    9900,
-    9900,
-    9900,
-    9900
+    14995,
+    14995,
+    14995,
+    14997,
+    14999,
+    14999,
+    14999,
+    14997,
+    14995
    ]
   },
   {
-   "id": "death-crimson-ox-dreamcast",
-   "title": "Death Crimson OX",
+   "id": "legacy-of-kain-soul-reaver-dreamcast",
+   "title": "Legacy of Kain: Soul Reaver",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 6999,
+   "price_cents": 3325,
    "prices": {
-    "loose": 3745,
-    "cib": 6999
+    "loose": 1995,
+    "cib": 3325,
+    "new": 9999
    },
-   "pct_1d": 0,
+   "pct_1d": 0.79,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    6999,
-    6999,
-    6999,
-    6999,
-    6999,
-    6999,
-    6999,
-    6999,
-    6999
-   ]
-  },
-  {
-   "id": "dino-crisis-dreamcast",
-   "title": "Dino Crisis",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 14500,
-   "prices": {
-    "loose": 5995,
-    "cib": 14500
-   },
-   "pct_1d": 0,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    12499,
-    12499,
-    12499,
-    12499,
-    12499,
-    12499,
-    12499,
-    12499,
-    12499
+    3299,
+    3299,
+    3299,
+    3312,
+    3325,
+    3325,
+    3325,
+    3299,
+    3299
    ]
   },
   {
@@ -831,13 +835,40 @@
    ]
   },
   {
+   "id": "tony-hawks-pro-skater-dreamcast",
+   "title": "Tony Hawk's Pro Skater",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 2499,
+   "prices": {
+    "loose": 1275,
+    "cib": 2499,
+    "new": 9954
+   },
+   "pct_1d": 11.07,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    2000,
+    2000,
+    2000,
+    2000,
+    2000,
+    2000,
+    2000,
+    2000,
+    2000
+   ]
+  },
+  {
    "id": "zombie-revenge-dreamcast",
    "title": "Zombie Revenge",
    "platform": "dreamcast",
    "headline_condition": "cib",
    "price_cents": 7149,
    "prices": {
-    "loose": 3994,
+    "loose": 3860,
     "cib": 7149
    },
    "pct_1d": 13.49,
@@ -930,6 +961,31 @@
    ]
   },
   {
+   "id": "gauntlet-legends-dreamcast",
+   "title": "Gauntlet Legends",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 9599,
+   "prices": {
+    "cib": 9599
+   },
+   "pct_1d": 0.52,
+   "pct_7d": -0.52,
+   "pct_30d": null,
+   "score": -0.52,
+   "spark": [
+    9599,
+    9599,
+    9599,
+    9599,
+    9599,
+    9549,
+    9549,
+    9549,
+    9549
+   ]
+  },
+  {
    "id": "bomberman-online-dreamcast",
    "title": "Bomberman Online",
    "platform": "dreamcast",
@@ -985,14 +1041,14 @@
    "title": "Daytona USA",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 10497,
+   "price_cents": 10999,
    "prices": {
-    "cib": 10497
+    "cib": 10999
    },
-   "pct_1d": 0,
-   "pct_7d": -2.12,
+   "pct_1d": 4.78,
+   "pct_7d": -2.1,
    "pct_30d": null,
-   "score": -2.12,
+   "score": -2.1,
    "spark": [
     10499,
     10724,
@@ -1002,7 +1058,7 @@
     10749,
     10749,
     10499,
-    10497
+    10499
    ]
   },
   {
@@ -1059,32 +1115,6 @@
    ]
   },
   {
-   "id": "18-wheeler-american-pro-trucker-dreamcast",
-   "title": "18 Wheeler: American Pro Trucker",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 2999,
-   "prices": {
-    "loose": 1499,
-    "cib": 2999
-   },
-   "pct_1d": 0,
-   "pct_7d": -7.67,
-   "pct_30d": null,
-   "score": -7.67,
-   "spark": [
-    3497,
-    3248,
-    2999,
-    2999,
-    2999,
-    2999,
-    2999,
-    2999,
-    2999
-   ]
-  },
-  {
    "id": "elemental-gimmick-gear-dreamcast",
    "title": "Elemental Gimmick Gear",
    "platform": "dreamcast",
@@ -1108,32 +1138,6 @@
     18248,
     16495,
     16495
-   ]
-  },
-  {
-   "id": "space-channel-5-dreamcast",
-   "title": "Space Channel 5",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 6450,
-   "prices": {
-    "loose": 2503,
-    "cib": 6450,
-    "new": 11999
-   },
-   "pct_1d": 7.5,
-   "pct_7d": -13.67,
-   "pct_30d": null,
-   "score": -13.67,
-   "spark": [
-    6950,
-    6950,
-    6950,
-    6725,
-    6500,
-    6500,
-    6000,
-    6000
    ]
   }
  ]
