@@ -1,21 +1,41 @@
 {
  "board": "dreamcast",
- "as_of": "2026-10-17",
+ "as_of": "2026-10-18",
  "entries": [
+  {
+   "id": "bangai-o-dreamcast",
+   "title": "Bangai-O",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 14642,
+   "prices": {
+    "loose": 7672,
+    "cib": 14642
+   },
+   "pct_1d": 22.02,
+   "pct_7d": null,
+   "pct_30d": null,
+   "score": 22.02,
+   "spark": [
+    14742,
+    13371,
+    14642
+   ]
+  },
   {
    "id": "cyber-troopers-virtual-on-oratorio-tangram-dreamcast",
    "title": "Cyber Troopers Virtual-On Oratorio Tangram",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 7848,
+   "price_cents": 7997,
    "prices": {
     "loose": 3800,
-    "cib": 7848
+    "cib": 7997
    },
-   "pct_1d": -1.86,
-   "pct_7d": 14.08,
+   "pct_1d": 1.9,
+   "pct_7d": 20.76,
    "pct_30d": null,
-   "score": 14.08,
+   "score": 20.76,
    "spark": [
     6999,
     6749,
@@ -25,60 +45,8 @@
     6499,
     6499,
     7349,
-    7699
-   ]
-  },
-  {
-   "id": "jet-grind-radio-dreamcast",
-   "title": "Jet Grind Radio",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 11650,
-   "prices": {
-    "loose": 5900,
-    "cib": 11650,
-    "new": 19999
-   },
-   "pct_1d": 4.96,
-   "pct_7d": 12.68,
-   "pct_30d": null,
-   "score": 12.68,
-   "spark": [
-    9700,
-    9850,
-    10000,
-    10125,
-    10250,
-    10499,
-    11099,
-    11099,
-    11099
-   ]
-  },
-  {
-   "id": "metropolis-street-racer-dreamcast",
-   "title": "Metropolis Street Racer",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 4495,
-   "prices": {
-    "loose": 2499,
-    "cib": 4495
-   },
-   "pct_1d": 0,
-   "pct_7d": 12.4,
-   "pct_30d": null,
-   "score": 12.4,
-   "spark": [
-    3999,
-    3999,
-    3999,
-    3999,
-    3999,
-    4099,
-    4099,
-    4099,
-    4495
+    7699,
+    7848
    ]
   },
   {
@@ -92,9 +60,9 @@
     "cib": 2499
    },
    "pct_1d": 0,
-   "pct_7d": 12.31,
+   "pct_7d": 13.59,
    "pct_30d": null,
-   "score": 12.31,
+   "score": 13.59,
    "spark": [
     2100,
     2225,
@@ -103,6 +71,7 @@
     2200,
     2350,
     2350,
+    2499,
     2499,
     2499
    ]
@@ -119,9 +88,9 @@
     "new": 11999
    },
    "pct_1d": 0,
-   "pct_7d": 10.34,
+   "pct_7d": 13.33,
    "pct_30d": null,
-   "score": 10.34,
+   "score": 13.33,
    "spark": [
     7500,
     7250,
@@ -131,7 +100,117 @@
     7500,
     7500,
     7500,
-    8000
+    8000,
+    8500
+   ]
+  },
+  {
+   "id": "sonic-shuffle-dreamcast",
+   "title": "Sonic Shuffle",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 8500,
+   "prices": {
+    "cib": 8500
+   },
+   "pct_1d": 0,
+   "pct_7d": 13.33,
+   "pct_30d": null,
+   "score": 13.33,
+   "spark": [
+    8500,
+    8000,
+    7500,
+    7500,
+    7500,
+    7500,
+    7500,
+    8500,
+    8500,
+    8500
+   ]
+  },
+  {
+   "id": "tony-hawks-pro-skater-dreamcast",
+   "title": "Tony Hawk's Pro Skater",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 2499,
+   "prices": {
+    "loose": 1399,
+    "cib": 2499,
+    "new": 9954
+   },
+   "pct_1d": 0,
+   "pct_7d": 12.5,
+   "pct_30d": null,
+   "score": 12.5,
+   "spark": [
+    2000,
+    2000,
+    2000,
+    2000,
+    2000,
+    2000,
+    2000,
+    2000,
+    2000,
+    2250
+   ]
+  },
+  {
+   "id": "metropolis-street-racer-dreamcast",
+   "title": "Metropolis Street Racer",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 4200,
+   "prices": {
+    "loose": 2499,
+    "cib": 4200
+   },
+   "pct_1d": -6.56,
+   "pct_7d": 12.4,
+   "pct_30d": null,
+   "score": 12.4,
+   "spark": [
+    3999,
+    3999,
+    3999,
+    3999,
+    3999,
+    4099,
+    4099,
+    4099,
+    4495,
+    4495
+   ]
+  },
+  {
+   "id": "jet-grind-radio-dreamcast",
+   "title": "Jet Grind Radio",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 11099,
+   "prices": {
+    "loose": 5900,
+    "cib": 11099,
+    "new": 19999
+   },
+   "pct_1d": -4.73,
+   "pct_7d": 10.99,
+   "pct_30d": null,
+   "score": 10.99,
+   "spark": [
+    9700,
+    9850,
+    10000,
+    10125,
+    10250,
+    10499,
+    11099,
+    11099,
+    11099,
+    11099
    ]
   },
   {
@@ -156,34 +235,81 @@
     4507,
     4899,
     4899,
+    4899,
     4899
    ]
   },
   {
-   "id": "sonic-adventure-dreamcast",
-   "title": "Sonic Adventure",
+   "id": "dino-crisis-dreamcast",
+   "title": "Dino Crisis",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 7797,
+   "price_cents": 14500,
    "prices": {
-    "loose": 4499,
-    "cib": 7797,
-    "new": 19000
+    "loose": 5995,
+    "cib": 14500
    },
-   "pct_1d": 3.27,
-   "pct_7d": 7.54,
+   "pct_1d": 7.41,
+   "pct_7d": 8.01,
    "pct_30d": null,
-   "score": 7.54,
+   "score": 8.01,
    "spark": [
-    7000,
-    7250,
-    7499,
-    7499,
-    7499,
-    7500,
-    7508,
-    7550,
-    7797
+    12499,
+    12499,
+    12499,
+    12499,
+    12499,
+    12499,
+    12499,
+    12499,
+    12499,
+    13500
+   ]
+  },
+  {
+   "id": "rayman-2-the-great-escape-dreamcast",
+   "title": "Rayman 2: The Great Escape",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 7248,
+   "prices": {
+    "loose": 3499,
+    "cib": 7248
+   },
+   "pct_1d": null,
+   "pct_7d": 7.98,
+   "pct_30d": null,
+   "score": 7.98,
+   "spark": [
+    6250,
+    6749
+   ]
+  },
+  {
+   "id": "skies-of-arcadia-dreamcast",
+   "title": "Skies of Arcadia",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 19450,
+   "prices": {
+    "loose": 12500,
+    "cib": 19450
+   },
+   "pct_1d": -2.26,
+   "pct_7d": 7.57,
+   "pct_30d": null,
+   "score": 7.57,
+   "spark": [
+    19000,
+    18750,
+    18500,
+    18750,
+    19000,
+    19450,
+    19450,
+    19450,
+    19900,
+    19900
    ]
   },
   {
@@ -197,7 +323,7 @@
     "cib": 3500,
     "new": 4844
    },
-   "pct_1d": -6.67,
+   "pct_1d": 0,
    "pct_7d": 7.14,
    "pct_30d": null,
    "score": 7.14,
@@ -210,58 +336,8 @@
     3750,
     3750,
     3750,
+    3750,
     3750
-   ]
-  },
-  {
-   "id": "sonic-shuffle-dreamcast",
-   "title": "Sonic Shuffle",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 8500,
-   "prices": {
-    "cib": 8500
-   },
-   "pct_1d": 0,
-   "pct_7d": 6.25,
-   "pct_30d": null,
-   "score": 6.25,
-   "spark": [
-    8500,
-    8000,
-    7500,
-    7500,
-    7500,
-    7500,
-    7500,
-    8500,
-    8500
-   ]
-  },
-  {
-   "id": "skies-of-arcadia-dreamcast",
-   "title": "Skies of Arcadia",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 19900,
-   "prices": {
-    "loose": 12500,
-    "cib": 19900
-   },
-   "pct_1d": -0.25,
-   "pct_7d": 6.13,
-   "pct_30d": null,
-   "score": 6.13,
-   "spark": [
-    19000,
-    18750,
-    18500,
-    18750,
-    19000,
-    19450,
-    19450,
-    19450,
-    19900
    ]
   },
   {
@@ -288,33 +364,8 @@
     4499,
     4499,
     4748,
+    4748,
     4748
-   ]
-  },
-  {
-   "id": "marvel-vs-capcom-2-dreamcast",
-   "title": "Marvel vs. Capcom 2",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 18999,
-   "prices": {
-    "loose": 7799,
-    "cib": 18999
-   },
-   "pct_1d": -5,
-   "pct_7d": 5.26,
-   "pct_30d": null,
-   "score": 5.26,
-   "spark": [
-    18999,
-    18999,
-    18999,
-    19499,
-    19998,
-    19998,
-    19998,
-    19998,
-    19998
    ]
   },
   {
@@ -339,7 +390,63 @@
     4199,
     4199,
     4199,
+    4399,
     4399
+   ]
+  },
+  {
+   "id": "evil-dead-hail-to-the-king-dreamcast",
+   "title": "Evil Dead: Hail to the King",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 7499,
+   "prices": {
+    "loose": 3000,
+    "cib": 7499
+   },
+   "pct_1d": 0,
+   "pct_7d": 4.17,
+   "pct_30d": null,
+   "score": 4.17,
+   "spark": [
+    7499,
+    7349,
+    7199,
+    7349,
+    7499,
+    7499,
+    7499,
+    7499,
+    7499,
+    7499
+   ]
+  },
+  {
+   "id": "sonic-adventure-dreamcast",
+   "title": "Sonic Adventure",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 7599,
+   "prices": {
+    "loose": 4499,
+    "cib": 7599,
+    "new": 19000
+   },
+   "pct_1d": -2.54,
+   "pct_7d": 3.97,
+   "pct_30d": null,
+   "score": 3.97,
+   "spark": [
+    7000,
+    7250,
+    7499,
+    7499,
+    7499,
+    7500,
+    7508,
+    7550,
+    7797,
+    7797
    ]
   },
   {
@@ -353,7 +460,7 @@
     "cib": 6648,
     "new": 11249
    },
-   "pct_1d": -3.58,
+   "pct_1d": 0,
    "pct_7d": 3.72,
    "pct_30d": null,
    "score": 3.72,
@@ -362,6 +469,7 @@
     6648,
     6648,
     6772,
+    6895,
     6895,
     6895,
     6895,
@@ -379,7 +487,7 @@
     "loose": 2500,
     "cib": 4500
    },
-   "pct_1d": -3.18,
+   "pct_1d": 0,
    "pct_7d": 3.29,
    "pct_30d": null,
    "score": 3.29,
@@ -391,6 +499,7 @@
     4500,
     4500,
     4500,
+    4648,
     4648,
     4648
    ]
@@ -418,112 +527,8 @@
     4999,
     4999,
     4999,
+    4999,
     4999
-   ]
-  },
-  {
-   "id": "unreal-tournament-dreamcast",
-   "title": "Unreal Tournament",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 3297,
-   "prices": {
-    "loose": 1500,
-    "cib": 3297,
-    "new": 6750
-   },
-   "pct_1d": 0,
-   "pct_7d": 3.06,
-   "pct_30d": null,
-   "score": 3.06,
-   "spark": [
-    3297,
-    3297,
-    3297,
-    3297,
-    3297,
-    3398,
-    3398,
-    3398,
-    3398
-   ]
-  },
-  {
-   "id": "mortal-kombat-gold-dreamcast",
-   "title": "Mortal Kombat Gold",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 6900,
-   "prices": {
-    "loose": 3999,
-    "cib": 6900
-   },
-   "pct_1d": -0.72,
-   "pct_7d": 2.96,
-   "pct_30d": null,
-   "score": 2.96,
-   "spark": [
-    6500,
-    6750,
-    7000,
-    7000,
-    7000,
-    7000,
-    6950,
-    6950,
-    6950
-   ]
-  },
-  {
-   "id": "power-stone-2-dreamcast",
-   "title": "Power Stone 2",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 17301,
-   "prices": {
-    "loose": 7899,
-    "cib": 17301
-   },
-   "pct_1d": 1.77,
-   "pct_7d": 2.88,
-   "pct_30d": null,
-   "score": 2.88,
-   "spark": [
-    17301,
-    17301,
-    17301,
-    17301,
-    17301,
-    17799,
-    17799,
-    17799,
-    17799
-   ]
-  },
-  {
-   "id": "shenmue-dreamcast",
-   "title": "Shenmue",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 5399,
-   "prices": {
-    "loose": 4000,
-    "cib": 5399
-   },
-   "pct_1d": -1.84,
-   "pct_7d": 2.84,
-   "pct_30d": null,
-   "score": 2.84,
-   "spark": [
-    5000,
-    5250,
-    5499,
-    5500,
-    5500,
-    5500,
-    5500,
-    5500,
-    5399
    ]
   },
   {
@@ -548,33 +553,8 @@
     2444,
     2444,
     2444,
+    2497,
     2497
-   ]
-  },
-  {
-   "id": "evil-dead-hail-to-the-king-dreamcast",
-   "title": "Evil Dead: Hail to the King",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 7499,
-   "prices": {
-    "loose": 3000,
-    "cib": 7499
-   },
-   "pct_1d": 0,
-   "pct_7d": 2.04,
-   "pct_30d": null,
-   "score": 2.04,
-   "spark": [
-    7499,
-    7349,
-    7199,
-    7349,
-    7499,
-    7499,
-    7499,
-    7499,
-    7499
    ]
   },
   {
@@ -599,6 +579,7 @@
     4700,
     4700,
     4999,
+    4999,
     4999
    ]
   },
@@ -607,13 +588,13 @@
    "title": "Blue Stinger",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 5200,
+   "price_cents": 5100,
    "prices": {
     "loose": 2799,
-    "cib": 5200,
+    "cib": 5100,
     "new": 12999
    },
-   "pct_1d": 1.96,
+   "pct_1d": -1.92,
    "pct_7d": 2.02,
    "pct_30d": null,
    "score": 2.02,
@@ -626,32 +607,83 @@
     4999,
     5100,
     5100,
+    5100,
     5100
    ]
   },
   {
-   "id": "tech-romancer-dreamcast",
-   "title": "Tech Romancer",
+   "id": "kiss-psycho-circus-the-nightmare-child-dreamcast",
+   "title": "KISS Psycho Circus: The Nightmare Child",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 17500,
+   "price_cents": 3495,
    "prices": {
-    "cib": 17500
+    "loose": 1999,
+    "cib": 3495,
+    "new": 7995
    },
-   "pct_1d": -3.98,
+   "pct_1d": 0,
    "pct_7d": 1.39,
    "pct_30d": null,
    "score": 1.39,
    "spark": [
-    16999,
-    17975,
-    18950,
-    18225,
-    17500,
-    18225,
-    18225,
-    18225,
-    18225
+    3495,
+    3471,
+    3447,
+    3447,
+    3447,
+    3447,
+    3447,
+    3495,
+    3495,
+    3495
+   ]
+  },
+  {
+   "id": "zombie-revenge-dreamcast",
+   "title": "Zombie Revenge",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 7149,
+   "prices": {
+    "loose": 3860,
+    "cib": 7149
+   },
+   "pct_1d": 0,
+   "pct_7d": 1.07,
+   "pct_30d": null,
+   "score": 1.07,
+   "spark": [
+    7000,
+    6650,
+    7000,
+    7075
+   ]
+  },
+  {
+   "id": "daytona-usa-dreamcast",
+   "title": "Daytona USA",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 11199,
+   "prices": {
+    "cib": 11199
+   },
+   "pct_1d": 1.82,
+   "pct_7d": 0.46,
+   "pct_30d": null,
+   "score": 0.46,
+   "spark": [
+    10499,
+    10724,
+    10949,
+    10849,
+    10749,
+    10749,
+    10749,
+    10499,
+    10499,
+    10999
    ]
   },
   {
@@ -659,16 +691,16 @@
    "title": "Tomb Raider: The Last Revelation",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 1775,
+   "price_cents": 1795,
    "prices": {
     "loose": 1099,
-    "cib": 1775,
+    "cib": 1795,
     "new": 4500
    },
-   "pct_1d": 4.41,
-   "pct_7d": 0.06,
+   "pct_1d": 1.13,
+   "pct_7d": 0.18,
    "pct_30d": null,
-   "score": 0.06,
+   "score": 0.18,
    "spark": [
     1698,
     1698,
@@ -678,7 +710,87 @@
     1697,
     1697,
     1699,
-    1699
+    1699,
+    1700
+   ]
+  },
+  {
+   "id": "fur-fighters-dreamcast",
+   "title": "Fur Fighters",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 4997,
+   "prices": {
+    "cib": 4997
+   },
+   "pct_1d": 0.02,
+   "pct_7d": 0.02,
+   "pct_30d": null,
+   "score": 0.02,
+   "spark": [
+    4996,
+    4996,
+    4996,
+    4996,
+    4996,
+    4997,
+    4997,
+    4997,
+    4997,
+    4997
+   ]
+  },
+  {
+   "id": "18-wheeler-american-pro-trucker-dreamcast",
+   "title": "18 Wheeler: American Pro Trucker",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 2439,
+   "prices": {
+    "loose": 1499,
+    "cib": 2439
+   },
+   "pct_1d": 0,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    3497,
+    3248,
+    2999,
+    2999,
+    2999,
+    2999,
+    2999,
+    2999,
+    2999,
+    2999
+   ]
+  },
+  {
+   "id": "alone-in-the-dark-the-new-nightmare-dreamcast",
+   "title": "Alone in the Dark: The New Nightmare",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 7400,
+   "prices": {
+    "cib": 7400
+   },
+   "pct_1d": 0,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    7500,
+    7450,
+    7400,
+    7350,
+    7299,
+    7299,
+    7299,
+    7299,
+    7299,
+    7400
    ]
   },
   {
@@ -695,6 +807,7 @@
    "pct_30d": null,
    "score": 0,
    "spark": [
+    2150,
     2150,
     2150,
     2150,
@@ -726,212 +839,88 @@
     5000,
     5000,
     5000,
+    5000,
     5000
    ]
   },
   {
-   "id": "dynamite-cop-dreamcast",
-   "title": "Dynamite Cop",
+   "id": "confidential-mission-dreamcast",
+   "title": "Confidential Mission",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 14995,
+   "price_cents": 9450,
    "prices": {
-    "loose": 9814,
-    "cib": 14995,
-    "new": 29999
-   },
-   "pct_1d": 3.43,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    14995,
-    14995,
-    14995,
-    14997,
-    14999,
-    14999,
-    14999,
-    14997,
-    14995
-   ]
-  },
-  {
-   "id": "legacy-of-kain-soul-reaver-dreamcast",
-   "title": "Legacy of Kain: Soul Reaver",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 3325,
-   "prices": {
-    "loose": 1995,
-    "cib": 3325,
-    "new": 9999
-   },
-   "pct_1d": 0.79,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    3299,
-    3299,
-    3299,
-    3312,
-    3325,
-    3325,
-    3325,
-    3299,
-    3299
-   ]
-  },
-  {
-   "id": "record-of-lodoss-war-dreamcast",
-   "title": "Record of Lodoss War",
-   "platform": "dreamcast",
-   "headline_condition": "loose",
-   "price_cents": 5149,
-   "prices": {
-    "loose": 5149
-   },
-   "pct_1d": 3,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    4999,
-    4999,
-    4999,
-    4999,
-    4999,
-    4999,
-    4999,
-    4999,
-    4999
-   ]
-  },
-  {
-   "id": "time-stalkers-dreamcast",
-   "title": "Time Stalkers",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 4500,
-   "prices": {
-    "loose": 2599,
-    "cib": 4500
-   },
-   "pct_1d": 0.02,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    4499,
-    4499,
-    4499,
-    4499,
-    4499,
-    4499,
-    4499,
-    4499,
-    4499
-   ]
-  },
-  {
-   "id": "tony-hawks-pro-skater-dreamcast",
-   "title": "Tony Hawk's Pro Skater",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 2499,
-   "prices": {
-    "loose": 1275,
-    "cib": 2499,
-    "new": 9954
-   },
-   "pct_1d": 11.07,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    2000,
-    2000,
-    2000,
-    2000,
-    2000,
-    2000,
-    2000,
-    2000,
-    2000
-   ]
-  },
-  {
-   "id": "zombie-revenge-dreamcast",
-   "title": "Zombie Revenge",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 7149,
-   "prices": {
-    "loose": 3860,
-    "cib": 7149
-   },
-   "pct_1d": 13.49,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    7000,
-    6650,
-    7000
-   ]
-  },
-  {
-   "id": "virtua-tennis-dreamcast",
-   "title": "Virtua Tennis",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 1799,
-   "prices": {
-    "loose": 999,
-    "cib": 1799,
-    "new": 3897
-   },
-   "pct_1d": 0.06,
-   "pct_7d": -0.06,
-   "pct_30d": null,
-   "score": -0.06,
-   "spark": [
-    1798,
-    1749,
-    1796,
-    1772,
-    1748,
-    1748,
-    1748,
-    1748,
-    1748
-   ]
-  },
-  {
-   "id": "crazy-taxi-2-dreamcast",
-   "title": "Crazy Taxi 2",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 5897,
-   "prices": {
-    "loose": 3499,
-    "cib": 5897
+    "cib": 9450
    },
    "pct_1d": 0,
-   "pct_7d": -0.18,
+   "pct_7d": 0,
    "pct_30d": null,
-   "score": -0.18,
+   "score": 0,
    "spark": [
-    5999,
-    5999,
-    5999,
-    5999,
-    5999,
-    5994,
-    5994,
-    5994,
-    5988
+    9900,
+    9900,
+    9900,
+    9900,
+    9900,
+    9900,
+    9900,
+    9900,
+    9900,
+    9900
+   ]
+  },
+  {
+   "id": "death-crimson-ox-dreamcast",
+   "title": "Death Crimson OX",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 6999,
+   "prices": {
+    "loose": 3745,
+    "cib": 6999
+   },
+   "pct_1d": 0,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    6999,
+    6999,
+    6999,
+    6999,
+    6999,
+    6999,
+    6999,
+    6999,
+    6999,
+    6999
+   ]
+  },
+  {
+   "id": "hydro-thunder-dreamcast",
+   "title": "Hydro Thunder",
+   "platform": "dreamcast",
+   "headline_condition": "loose",
+   "price_cents": 3000,
+   "prices": {
+    "loose": 3000,
+    "new": 13500
+   },
+   "pct_1d": 0.03,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    3000,
+    3000,
+    3000,
+    3000,
+    3000,
+    3000,
+    3000,
+    3000,
+    3000,
+    3000
    ]
   },
   {
@@ -957,32 +946,62 @@
     7094,
     7094,
     7073,
+    7073,
     7073
    ]
   },
   {
-   "id": "gauntlet-legends-dreamcast",
-   "title": "Gauntlet Legends",
+   "id": "tokyo-xtreme-racer-dreamcast",
+   "title": "Tokyo Xtreme Racer",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 9599,
+   "price_cents": 3275,
    "prices": {
-    "cib": 9599
+    "loose": 6500,
+    "cib": 3275
    },
-   "pct_1d": 0.52,
-   "pct_7d": -0.52,
+   "pct_1d": 3.97,
+   "pct_7d": -1.39,
    "pct_30d": null,
-   "score": -0.52,
+   "score": -1.39,
    "spark": [
-    9599,
-    9599,
-    9599,
-    9599,
-    9599,
-    9549,
-    9549,
-    9549,
-    9549
+    3448,
+    3448,
+    3448,
+    3448,
+    3448,
+    3448,
+    3400,
+    3400,
+    3400,
+    3400
+   ]
+  },
+  {
+   "id": "crazy-taxi-2-dreamcast",
+   "title": "Crazy Taxi 2",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 5897,
+   "prices": {
+    "loose": 3499,
+    "cib": 5897
+   },
+   "pct_1d": 0,
+   "pct_7d": -1.7,
+   "pct_30d": null,
+   "score": -1.7,
+   "spark": [
+    5999,
+    5999,
+    5999,
+    5999,
+    5999,
+    5994,
+    5994,
+    5994,
+    5988,
+    5897
    ]
   },
   {
@@ -992,13 +1011,12 @@
    "headline_condition": "cib",
    "price_cents": 7749,
    "prices": {
-    "loose": 3859,
     "cib": 7749
    },
    "pct_1d": 0,
-   "pct_7d": -1.54,
+   "pct_7d": -3.13,
    "pct_30d": null,
-   "score": -1.54,
+   "score": -3.13,
    "spark": [
     8249,
     8124,
@@ -1008,57 +1026,8 @@
     7999,
     7999,
     7999,
-    7999
-   ]
-  },
-  {
-   "id": "alone-in-the-dark-the-new-nightmare-dreamcast",
-   "title": "Alone in the Dark: The New Nightmare",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 7400,
-   "prices": {
-    "cib": 7400
-   },
-   "pct_1d": 0,
-   "pct_7d": -2.03,
-   "pct_30d": null,
-   "score": -2.03,
-   "spark": [
-    7500,
-    7450,
-    7400,
-    7350,
-    7299,
-    7299,
-    7299,
-    7299,
-    7299
-   ]
-  },
-  {
-   "id": "daytona-usa-dreamcast",
-   "title": "Daytona USA",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 10999,
-   "prices": {
-    "cib": 10999
-   },
-   "pct_1d": 4.78,
-   "pct_7d": -2.1,
-   "pct_30d": null,
-   "score": -2.1,
-   "spark": [
-    10499,
-    10724,
-    10949,
-    10849,
-    10749,
-    10749,
-    10749,
-    10499,
-    10499
+    7999,
+    7749
    ]
   },
   {
@@ -1085,7 +1054,35 @@
     3000,
     2999,
     2999,
+    2999,
     2999
+   ]
+  },
+  {
+   "id": "street-fighter-iii-double-impact-dreamcast",
+   "title": "Street Fighter III: Double Impact",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 8500,
+   "prices": {
+    "loose": 3999,
+    "cib": 8500
+   },
+   "pct_1d": 0.01,
+   "pct_7d": -4.61,
+   "pct_30d": null,
+   "score": -4.61,
+   "spark": [
+    8953,
+    8932,
+    8910,
+    8705,
+    8500,
+    8500,
+    8499,
+    8499,
+    8499,
+    8499
    ]
   },
   {
@@ -1111,33 +1108,8 @@
     1697,
     1697,
     1697,
+    1697,
     1697
-   ]
-  },
-  {
-   "id": "elemental-gimmick-gear-dreamcast",
-   "title": "Elemental Gimmick Gear",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 19995,
-   "prices": {
-    "cib": 19995,
-    "new": 24999
-   },
-   "pct_1d": 25.75,
-   "pct_7d": -9.61,
-   "pct_30d": null,
-   "score": -9.61,
-   "spark": [
-    18248,
-    18248,
-    18248,
-    18248,
-    18248,
-    18248,
-    18248,
-    16495,
-    16495
    ]
   }
  ]

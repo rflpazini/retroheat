@@ -1,7 +1,62 @@
 {
  "board": "psp",
- "as_of": "2026-10-17",
+ "as_of": "2026-10-18",
  "entries": [
+  {
+   "id": "the-warriors-psp",
+   "title": "The Warriors",
+   "platform": "psp",
+   "headline_condition": "cib",
+   "price_cents": 3000,
+   "prices": {
+    "loose": 1399,
+    "cib": 3000
+   },
+   "pct_1d": 0,
+   "pct_7d": 20,
+   "pct_30d": null,
+   "score": 20,
+   "spark": [
+    2500,
+    2500,
+    2500,
+    2500,
+    2500,
+    2500,
+    2500,
+    2750,
+    2750,
+    3000
+   ]
+  },
+  {
+   "id": "daxter-psp",
+   "title": "Daxter",
+   "platform": "psp",
+   "headline_condition": "cib",
+   "price_cents": 2349,
+   "prices": {
+    "loose": 1000,
+    "cib": 2349,
+    "new": 3500
+   },
+   "pct_1d": 0,
+   "pct_7d": 17.51,
+   "pct_30d": null,
+   "score": 17.51,
+   "spark": [
+    1999,
+    1999,
+    1999,
+    1999,
+    1999,
+    1999,
+    2000,
+    2000,
+    2000,
+    2349
+   ]
+  },
   {
    "id": "god-of-war-ghost-of-sparta-psp",
    "title": "God of War: Ghost of Sparta",
@@ -11,7 +66,7 @@
    "prices": {
     "cib": 9999
    },
-   "pct_1d": 3.95,
+   "pct_1d": 0,
    "pct_7d": 14.29,
    "pct_30d": null,
    "score": 14.29,
@@ -20,6 +75,7 @@
     9524,
     10299,
     9959,
+    9999,
     9999
    ]
   },
@@ -47,6 +103,7 @@
     3799,
     3999,
     3999,
+    3999,
     3999
    ]
   },
@@ -72,59 +129,8 @@
     1800,
     1800,
     2000,
+    2000,
     2000
-   ]
-  },
-  {
-   "id": "samurai-shodown-anthology-psp",
-   "title": "Samurai Shodown Anthology",
-   "platform": "psp",
-   "headline_condition": "cib",
-   "price_cents": 2672,
-   "prices": {
-    "cib": 2672,
-    "new": 3799
-   },
-   "pct_1d": 0,
-   "pct_7d": 10.98,
-   "pct_30d": null,
-   "score": 10.98,
-   "spark": [
-    2522,
-    2522,
-    2522,
-    2522,
-    2522,
-    2648,
-    2799,
-    2799,
-    2799
-   ]
-  },
-  {
-   "id": "the-warriors-psp",
-   "title": "The Warriors",
-   "platform": "psp",
-   "headline_condition": "cib",
-   "price_cents": 3000,
-   "prices": {
-    "loose": 1399,
-    "cib": 3000
-   },
-   "pct_1d": -50,
-   "pct_7d": 10,
-   "pct_30d": null,
-   "score": 10,
-   "spark": [
-    2500,
-    2500,
-    2500,
-    2500,
-    2500,
-    2500,
-    2500,
-    2750,
-    2750
    ]
   },
   {
@@ -150,34 +156,89 @@
     2499,
     2499,
     2722,
+    2722,
     2722
    ]
   },
   {
-   "id": "dissidia-012-final-fantasy-psp",
-   "title": "Dissidia 012 Final Fantasy",
+   "id": "metal-gear-acid-2-psp",
+   "title": "Metal Gear Acid 2",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 3498,
+   "price_cents": 7699,
    "prices": {
-    "loose": 1500,
-    "cib": 3498,
-    "new": 8495
+    "loose": 3500,
+    "cib": 7699
+   },
+   "pct_1d": 8.45,
+   "pct_7d": 8.45,
+   "pct_30d": null,
+   "score": 8.45,
+   "spark": [
+    7699,
+    7399,
+    7099,
+    7099,
+    7099,
+    7099,
+    7099,
+    7699,
+    7699,
+    7699
+   ]
+  },
+  {
+   "id": "metal-gear-solid-portable-ops-psp",
+   "title": "Metal Gear Solid: Portable Ops",
+   "platform": "psp",
+   "headline_condition": "cib",
+   "price_cents": 2995,
+   "prices": {
+    "loose": 1800,
+    "cib": 2995
+   },
+   "pct_1d": 8.91,
+   "pct_7d": 7.73,
+   "pct_30d": null,
+   "score": 7.73,
+   "spark": [
+    2599,
+    2599,
+    2599,
+    2599,
+    2599,
+    2599,
+    2599,
+    2750,
+    2750,
+    2800
+   ]
+  },
+  {
+   "id": "street-fighter-alpha-3-max-psp",
+   "title": "Street Fighter Alpha 3 MAX",
+   "platform": "psp",
+   "headline_condition": "cib",
+   "price_cents": 2897,
+   "prices": {
+    "loose": 1918,
+    "cib": 2897
    },
    "pct_1d": 0,
-   "pct_7d": 7.66,
+   "pct_7d": 7.42,
    "pct_30d": null,
-   "score": 7.66,
+   "score": 7.42,
    "spark": [
-    3000,
-    3249,
-    3498,
-    3498,
-    3498,
-    3498,
-    3498,
-    3498,
-    3498
+    2795,
+    2745,
+    2695,
+    2695,
+    2695,
+    2695,
+    2695,
+    2895,
+    2895,
+    2895
    ]
   },
   {
@@ -187,7 +248,7 @@
    "headline_condition": "cib",
    "price_cents": 1499,
    "prices": {
-    "loose": 993,
+    "loose": 995,
     "cib": 1499,
     "new": 4495
    },
@@ -204,6 +265,7 @@
     1499,
     1499,
     1499,
+    1499,
     1499
    ]
   },
@@ -212,12 +274,12 @@
    "title": "Ridge Racer",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 1925,
+   "price_cents": 1900,
    "prices": {
     "loose": 999,
-    "cib": 1925
+    "cib": 1900
    },
-   "pct_1d": 0,
+   "pct_1d": -1.3,
    "pct_7d": 7,
    "pct_30d": null,
    "score": 7,
@@ -230,6 +292,7 @@
     1850,
     1900,
     1900,
+    1925,
     1925
    ]
   },
@@ -244,7 +307,7 @@
     "cib": 3408,
     "new": 4899
    },
-   "pct_1d": 6.37,
+   "pct_1d": 0,
    "pct_7d": 6.8,
    "pct_30d": null,
    "score": 6.8,
@@ -257,33 +320,8 @@
     3000,
     3200,
     3204,
+    3204,
     3204
-   ]
-  },
-  {
-   "id": "mana-khemia-student-alliance-psp",
-   "title": "Mana Khemia: Student Alliance",
-   "platform": "psp",
-   "headline_condition": "cib",
-   "price_cents": 3650,
-   "prices": {
-    "loose": 2500,
-    "cib": 3650
-   },
-   "pct_1d": 0,
-   "pct_7d": 6.53,
-   "pct_30d": null,
-   "score": 6.53,
-   "spark": [
-    3800,
-    3800,
-    3800,
-    3800,
-    3800,
-    3800,
-    4048,
-    4048,
-    4048
    ]
   },
   {
@@ -293,11 +331,11 @@
    "headline_condition": "cib",
    "price_cents": 6000,
    "prices": {
-    "loose": 3300,
+    "loose": 3399,
     "cib": 6000,
     "new": 15000
    },
-   "pct_1d": 0.02,
+   "pct_1d": 0,
    "pct_7d": 6.37,
    "pct_30d": null,
    "score": 6.37,
@@ -310,7 +348,35 @@
     5279,
     5279,
     5279,
+    5999,
     5999
+   ]
+  },
+  {
+   "id": "samurai-shodown-anthology-psp",
+   "title": "Samurai Shodown Anthology",
+   "platform": "psp",
+   "headline_condition": "cib",
+   "price_cents": 2672,
+   "prices": {
+    "cib": 2672,
+    "new": 3799
+   },
+   "pct_1d": 0,
+   "pct_7d": 5.95,
+   "pct_30d": null,
+   "score": 5.95,
+   "spark": [
+    2522,
+    2522,
+    2522,
+    2522,
+    2522,
+    2648,
+    2799,
+    2799,
+    2799,
+    2672
    ]
   },
   {
@@ -320,7 +386,7 @@
    "headline_condition": "cib",
    "price_cents": 1799,
    "prices": {
-    "loose": 1196,
+    "loose": 1198,
     "cib": 1799,
     "new": 3960
    },
@@ -337,59 +403,8 @@
     1695,
     1695,
     1799,
+    1799,
     1799
-   ]
-  },
-  {
-   "id": "metal-gear-solid-portable-ops-psp",
-   "title": "Metal Gear Solid: Portable Ops",
-   "platform": "psp",
-   "headline_condition": "cib",
-   "price_cents": 2750,
-   "prices": {
-    "loose": 1800,
-    "cib": 2750
-   },
-   "pct_1d": 0,
-   "pct_7d": 5.81,
-   "pct_30d": null,
-   "score": 5.81,
-   "spark": [
-    2599,
-    2599,
-    2599,
-    2599,
-    2599,
-    2599,
-    2599,
-    2750,
-    2750
-   ]
-  },
-  {
-   "id": "street-fighter-alpha-3-max-psp",
-   "title": "Street Fighter Alpha 3 MAX",
-   "platform": "psp",
-   "headline_condition": "cib",
-   "price_cents": 2897,
-   "prices": {
-    "loose": 1900,
-    "cib": 2897
-   },
-   "pct_1d": 0.07,
-   "pct_7d": 5.46,
-   "pct_30d": null,
-   "score": 5.46,
-   "spark": [
-    2795,
-    2745,
-    2695,
-    2695,
-    2695,
-    2695,
-    2695,
-    2895,
-    2895
    ]
   },
   {
@@ -399,13 +414,13 @@
    "headline_condition": "cib",
    "price_cents": 4999,
    "prices": {
-    "loose": 2897,
+    "loose": 2817,
     "cib": 4999
    },
-   "pct_1d": 2.04,
-   "pct_7d": 5.33,
+   "pct_1d": 0,
+   "pct_7d": 5.35,
    "pct_30d": null,
-   "score": 5.33,
+   "score": 5.35,
    "spark": [
     4650,
     4575,
@@ -415,34 +430,35 @@
     4799,
     4799,
     4819,
-    4819
+    4819,
+    4899
    ]
   },
   {
-   "id": "ys-the-ark-of-napishtim-psp",
-   "title": "Ys: The Ark of Napishtim",
+   "id": "ratchet-and-clank-size-matters-psp",
+   "title": "Ratchet & Clank: Size Matters",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 4999,
+   "price_cents": 1899,
    "prices": {
-    "loose": 2500,
-    "cib": 4999,
-    "new": 14400
+    "loose": 1150,
+    "cib": 1899
    },
-   "pct_1d": 0,
-   "pct_7d": 5.26,
+   "pct_1d": -2.57,
+   "pct_7d": 5.27,
    "pct_30d": null,
-   "score": 5.26,
+   "score": 5.27,
    "spark": [
-    4498,
-    4749,
-    4999,
-    4999,
-    4999,
-    4999,
-    4999,
-    4999,
-    4999
+    1999,
+    1949,
+    1899,
+    1875,
+    1899,
+    1899,
+    1949,
+    1999,
+    1999,
+    1999
    ]
   },
   {
@@ -466,6 +482,7 @@
     9999,
     9999,
     9999,
+    10500,
     10500,
     10500
    ]
@@ -494,60 +511,8 @@
     2199,
     2199,
     2199,
+    2199,
     2199
-   ]
-  },
-  {
-   "id": "metal-gear-acid-2-psp",
-   "title": "Metal Gear Acid 2",
-   "platform": "psp",
-   "headline_condition": "cib",
-   "price_cents": 7099,
-   "prices": {
-    "loose": 3500,
-    "cib": 7099
-   },
-   "pct_1d": -7.79,
-   "pct_7d": 4.05,
-   "pct_30d": null,
-   "score": 4.05,
-   "spark": [
-    7699,
-    7399,
-    7099,
-    7099,
-    7099,
-    7099,
-    7099,
-    7699,
-    7699
-   ]
-  },
-  {
-   "id": "ultimate-ghosts-n-goblins-psp",
-   "title": "Ultimate Ghosts 'n Goblins",
-   "platform": "psp",
-   "headline_condition": "cib",
-   "price_cents": 2645,
-   "prices": {
-    "loose": 1939,
-    "cib": 2645,
-    "new": 7249
-   },
-   "pct_1d": -1.86,
-   "pct_7d": 3.56,
-   "pct_30d": null,
-   "score": 3.56,
-   "spark": [
-    2699,
-    2699,
-    2699,
-    2747,
-    2795,
-    2797,
-    2797,
-    2797,
-    2795
    ]
   },
   {
@@ -561,7 +526,7 @@
     "cib": 2899,
     "new": 5000
    },
-   "pct_1d": -3.33,
+   "pct_1d": 0,
    "pct_7d": 3.41,
    "pct_30d": null,
    "score": 3.41,
@@ -574,59 +539,8 @@
     3000,
     3000,
     3000,
+    2999,
     2999
-   ]
-  },
-  {
-   "id": "final-fantasy-ii-anniversary-edition-psp",
-   "title": "Final Fantasy II Anniversary Edition",
-   "platform": "psp",
-   "headline_condition": "cib",
-   "price_cents": 2597,
-   "prices": {
-    "cib": 2597,
-    "new": 3984
-   },
-   "pct_1d": 0,
-   "pct_7d": 2.85,
-   "pct_30d": null,
-   "score": 2.85,
-   "spark": [
-    2500,
-    2525,
-    2549,
-    2549,
-    2549,
-    2549,
-    2597,
-    2597,
-    2597
-   ]
-  },
-  {
-   "id": "ratchet-and-clank-size-matters-psp",
-   "title": "Ratchet & Clank: Size Matters",
-   "platform": "psp",
-   "headline_condition": "cib",
-   "price_cents": 1949,
-   "prices": {
-    "loose": 1150,
-    "cib": 1949
-   },
-   "pct_1d": -2.5,
-   "pct_7d": 2.57,
-   "pct_30d": null,
-   "score": 2.57,
-   "spark": [
-    1999,
-    1949,
-    1899,
-    1875,
-    1899,
-    1899,
-    1949,
-    1999,
-    1999
    ]
   },
   {
@@ -640,9 +554,9 @@
     "new": 5500
    },
    "pct_1d": 0,
-   "pct_7d": 2.27,
+   "pct_7d": 3.36,
    "pct_30d": null,
-   "score": 2.27,
+   "score": 3.36,
    "spark": [
     2200,
     2200,
@@ -652,7 +566,8 @@
     2200,
     2200,
     2250,
-    2250
+    2250,
+    2274
    ]
   },
   {
@@ -677,7 +592,34 @@
     4499,
     4499,
     4499,
+    4499,
     4499
+   ]
+  },
+  {
+   "id": "fate-extra-psp",
+   "title": "Fate/Extra",
+   "platform": "psp",
+   "headline_condition": "cib",
+   "price_cents": 7999,
+   "prices": {
+    "cib": 7999
+   },
+   "pct_1d": 0,
+   "pct_7d": 2.22,
+   "pct_30d": null,
+   "score": 2.22,
+   "spark": [
+    7825,
+    7825,
+    7825,
+    7825,
+    7825,
+    7825,
+    7825,
+    7825,
+    7825,
+    7999
    ]
   },
   {
@@ -685,12 +627,12 @@
    "title": "Burnout Dominator",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 1999,
+   "price_cents": 1956,
    "prices": {
     "loose": 1250,
-    "cib": 1999
+    "cib": 1956
    },
-   "pct_1d": 0,
+   "pct_1d": -2.15,
    "pct_7d": 2.2,
    "pct_30d": null,
    "score": 2.2,
@@ -703,34 +645,35 @@
     1956,
     1999,
     1999,
+    1999,
     1999
    ]
   },
   {
-   "id": "silent-hill-origins-psp",
-   "title": "Silent Hill: Origins",
+   "id": "final-fantasy-iv-the-complete-collection-psp",
+   "title": "Final Fantasy IV: The Complete Collection",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 8999,
+   "price_cents": 5249,
    "prices": {
-    "loose": 6089,
-    "cib": 8999,
-    "new": 19999
+    "cib": 5249,
+    "new": 7250
    },
-   "pct_1d": 2.86,
-   "pct_7d": 1.41,
+   "pct_1d": 5,
+   "pct_7d": 2.04,
    "pct_30d": null,
-   "score": 1.41,
+   "score": 2.04,
    "spark": [
-    8749,
-    8874,
-    8999,
-    8999,
-    8999,
-    8999,
-    8999,
-    8999,
-    8999
+    4899,
+    4899,
+    4899,
+    4899,
+    4899,
+    4999,
+    4999,
+    4999,
+    4999,
+    4999
    ]
   },
   {
@@ -757,19 +700,20 @@
     2995,
     2997,
     3000,
+    3000,
     3000
    ]
   },
   {
-   "id": "daxter-psp",
-   "title": "Daxter",
+   "id": "crisis-core-final-fantasy-vii-psp",
+   "title": "Crisis Core: Final Fantasy VII",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 2349,
+   "price_cents": 1999,
    "prices": {
-    "loose": 1000,
-    "cib": 2349,
-    "new": 3500
+    "loose": 1200,
+    "cib": 1999,
+    "new": 5000
    },
    "pct_1d": 0,
    "pct_7d": 0.05,
@@ -777,6 +721,7 @@
    "score": 0.05,
    "spark": [
     1999,
+    1974,
     1999,
     1999,
     1999,
@@ -810,7 +755,35 @@
     2499,
     2499,
     2499,
+    2499,
     2499
+   ]
+  },
+  {
+   "id": "burnout-legends-psp",
+   "title": "Burnout Legends",
+   "platform": "psp",
+   "headline_condition": "cib",
+   "price_cents": 1900,
+   "prices": {
+    "loose": 1199,
+    "cib": 1900
+   },
+   "pct_1d": 0,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    1999,
+    1999,
+    1999,
+    1999,
+    1999,
+    1999,
+    1999,
+    1999,
+    1999,
+    1999
    ]
   },
   {
@@ -828,6 +801,7 @@
    "pct_30d": null,
    "score": 0,
    "spark": [
+    1999,
     1999,
     1999,
     1999,
@@ -863,6 +837,7 @@
     2700,
     2700,
     2700,
+    2700,
     2700
    ]
   },
@@ -890,85 +865,64 @@
     2499,
     2499,
     2499,
+    2499,
     2499
    ]
   },
   {
-   "id": "mortal-kombat-unchained-psp",
-   "title": "Mortal Kombat: Unchained",
+   "id": "ultimate-ghosts-n-goblins-psp",
+   "title": "Ultimate Ghosts 'n Goblins",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 3700,
+   "price_cents": 2699,
    "prices": {
-    "loose": 3000,
-    "cib": 3700,
-    "new": 11999
+    "loose": 1939,
+    "cib": 2699,
+    "new": 7249
    },
-   "pct_1d": 2.78,
+   "pct_1d": 2.04,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    4000,
-    4000,
-    4000,
-    4000,
-    4000,
-    4000,
-    4000,
-    4000,
-    4000
+    2699,
+    2699,
+    2699,
+    2747,
+    2795,
+    2797,
+    2797,
+    2797,
+    2795,
+    2699
    ]
   },
   {
-   "id": "the-legend-of-heroes-a-tear-of-vermillion-psp",
-   "title": "The Legend of Heroes: A Tear of Vermillion",
+   "id": "valkyrie-profile-lenneth-psp",
+   "title": "Valkyrie Profile: Lenneth",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 3999,
+   "price_cents": 4299,
    "prices": {
-    "loose": 1949,
-    "cib": 3999
+    "loose": 2000,
+    "cib": 4299,
+    "new": 8495
    },
-   "pct_1d": 0.05,
+   "pct_1d": 3.62,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    3999,
-    3999,
-    3999,
-    3999,
-    3999,
-    3999,
-    3999,
-    3999,
-    3999
-   ]
-  },
-  {
-   "id": "yu-gi-oh-gx-tag-force-2-psp",
-   "title": "Yu-Gi-Oh! GX Tag Force 2",
-   "platform": "psp",
-   "headline_condition": "loose",
-   "price_cents": 4000,
-   "prices": {
-    "loose": 4000
-   },
-   "pct_1d": 0.03,
-   "pct_7d": -0.03,
-   "pct_30d": null,
-   "score": -0.03,
-   "spark": [
-    4000,
-    4000,
-    4000,
-    4000,
-    4000,
-    4000,
-    3999,
-    3999,
-    3999
+    4299,
+    4299,
+    4299,
+    4299,
+    4299,
+    4299,
+    4299,
+    4299,
+    4299,
+    4299
    ]
   },
   {
@@ -976,16 +930,16 @@
    "title": "Patapon",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 1795,
+   "price_cents": 1798,
    "prices": {
     "loose": 1010,
-    "cib": 1795,
+    "cib": 1798,
     "new": 2495
    },
-   "pct_1d": 2.75,
-   "pct_7d": -0.28,
+   "pct_1d": 0.17,
+   "pct_7d": -0.22,
    "pct_30d": null,
-   "score": -0.28,
+   "score": -0.22,
    "spark": [
     1800,
     1800,
@@ -995,59 +949,29 @@
     1798,
     1797,
     1795,
+    1795,
     1795
    ]
   },
   {
-   "id": "trails-in-the-sky-psp",
-   "title": "The Legend of Heroes: Trails in the Sky",
+   "id": "armored-core-formula-front-psp",
+   "title": "Armored Core: Formula Front",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 9500,
+   "price_cents": 5349,
    "prices": {
-    "cib": 9500
+    "loose": 3324,
+    "cib": 5349
    },
-   "pct_1d": 5.56,
-   "pct_7d": -0.91,
+   "pct_1d": 0,
+   "pct_7d": -1.36,
    "pct_30d": null,
-   "score": -0.91,
+   "score": -1.36,
    "spark": [
-    9083,
-    9083,
-    9083,
-    9083,
-    9083,
-    9083,
-    9000,
-    9000,
-    9000
-   ]
-  },
-  {
-   "id": "lumines-ii-psp",
-   "title": "Lumines II",
-   "platform": "psp",
-   "headline_condition": "cib",
-   "price_cents": 1750,
-   "prices": {
-    "loose": 775,
-    "cib": 1750,
-    "new": 2500
-   },
-   "pct_1d": 2.94,
-   "pct_7d": -1.45,
-   "pct_30d": null,
-   "score": -1.45,
-   "spark": [
-    1700,
-    1725,
-    1750,
-    1750,
-    1750,
-    1750,
-    1700,
-    1700,
-    1700
+    5499,
+    5499,
+    5499,
+    5424
    ]
   },
   {
@@ -1074,34 +998,36 @@
     2925,
     2925,
     2925,
+    2925,
     2925
    ]
   },
   {
-   "id": "the-legend-of-heroes-ii-prophecy-of-the-moonlight-witch-psp",
-   "title": "The Legend of Heroes II: Prophecy of the Moonlight Witch",
+   "id": "brave-story-new-traveler-psp",
+   "title": "Brave Story: New Traveler",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 6249,
+   "price_cents": 4104,
    "prices": {
-    "loose": 2450,
-    "cib": 6249,
-    "new": 17499
+    "loose": 1999,
+    "cib": 4104,
+    "new": 12999
    },
-   "pct_1d": 4.17,
-   "pct_7d": -3.68,
+   "pct_1d": 0,
+   "pct_7d": -3.18,
    "pct_30d": null,
-   "score": -3.68,
+   "score": -3.18,
    "spark": [
-    6747,
-    6747,
-    6747,
-    6747,
-    6747,
-    6747,
-    6747,
-    6499,
-    6499
+    4352,
+    4424,
+    4495,
+    4495,
+    4495,
+    4495,
+    4495,
+    4495,
+    4495,
+    4352
    ]
   },
   {
@@ -1116,9 +1042,9 @@
     "new": 4995
    },
    "pct_1d": 0,
-   "pct_7d": -5.02,
+   "pct_7d": -3.45,
    "pct_30d": null,
-   "score": -5.02,
+   "score": -3.45,
    "spark": [
     1450,
     1474,
@@ -1128,7 +1054,115 @@
     1400,
     1400,
     1400,
+    1400,
     1400
+   ]
+  },
+  {
+   "id": "def-jam-fight-for-ny-the-takeover-psp",
+   "title": "Def Jam: Fight for NY - The Takeover",
+   "platform": "psp",
+   "headline_condition": "loose",
+   "price_cents": 8299,
+   "prices": {
+    "loose": 8299
+   },
+   "pct_1d": 0,
+   "pct_7d": -4,
+   "pct_30d": null,
+   "score": -4,
+   "spark": [
+    8750,
+    8375,
+    8500,
+    8500,
+    8500,
+    8400,
+    8400
+   ]
+  },
+  {
+   "id": "wipeout-pure-psp",
+   "title": "Wipeout Pure",
+   "platform": "psp",
+   "headline_condition": "cib",
+   "price_cents": 1050,
+   "prices": {
+    "loose": 799,
+    "cib": 1050,
+    "new": 1571
+   },
+   "pct_1d": 2.44,
+   "pct_7d": -4.67,
+   "pct_30d": null,
+   "score": -4.67,
+   "spark": [
+    1104,
+    1130,
+    1156,
+    1156,
+    1156,
+    1156,
+    1149,
+    1149,
+    1127,
+    1102
+   ]
+  },
+  {
+   "id": "castlevania-dracula-x-chronicles-psp",
+   "title": "Castlevania: The Dracula X Chronicles",
+   "platform": "psp",
+   "headline_condition": "cib",
+   "price_cents": 6030,
+   "prices": {
+    "loose": 3200,
+    "cib": 6030,
+    "new": 14750
+   },
+   "pct_1d": 0.52,
+   "pct_7d": -6.77,
+   "pct_30d": null,
+   "score": -6.77,
+   "spark": [
+    6620,
+    6560,
+    6500,
+    6280,
+    6060,
+    6060,
+    6060,
+    6060,
+    6060,
+    6060
+   ]
+  },
+  {
+   "id": "the-legend-of-heroes-iii-song-of-the-ocean-psp",
+   "title": "The Legend of Heroes III: Song of the Ocean",
+   "platform": "psp",
+   "headline_condition": "cib",
+   "price_cents": 14249,
+   "prices": {
+    "loose": 8997,
+    "cib": 14249,
+    "new": 22500
+   },
+   "pct_1d": 9.61,
+   "pct_7d": -8.77,
+   "pct_30d": null,
+   "score": -8.77,
+   "spark": [
+    14724,
+    14362,
+    14249,
+    14125,
+    14000,
+    13000,
+    13000,
+    13000,
+    13000,
+    13000
    ]
   },
   {
@@ -1141,14 +1175,15 @@
     "cib": 6749
    },
    "pct_1d": 0,
-   "pct_7d": -6.45,
+   "pct_7d": -12.9,
    "pct_30d": null,
-   "score": -6.45,
+   "score": -12.9,
    "spark": [
     7749,
     7749,
     7749,
-    7249
+    7249,
+    6749
    ]
   }
  ]
