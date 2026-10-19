@@ -1,6 +1,6 @@
 {
  "platform": "gamecube",
- "as_of": "2026-10-18",
+ "as_of": "2026-10-19",
  "source": "ebay-browse",
  "price_kind": "asking",
  "games": [
@@ -11,21 +11,21 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 20500,
+     "median_cents": 20250,
      "mode_cents": 20000,
-     "q1_cents": 19999,
+     "q1_cents": 19500,
      "q3_cents": 21997,
-     "n": 15
+     "n": 18
     },
     "cib": {
-     "median_cents": 29000,
+     "median_cents": 29498,
      "mode_cents": 30000,
-     "q1_cents": 26999,
+     "q1_cents": 27250,
      "q3_cents": 32493,
-     "n": 33
+     "n": 32
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 1.72,
    "pct_7d": 0.18,
    "pct_30d": null,
    "sparks": {
@@ -39,6 +39,7 @@
      20000,
      20000,
      20500,
+     20500,
      20500
     ],
     "cib": [
@@ -51,11 +52,12 @@
      28948,
      28995,
      28999,
-     28999
+     28999,
+     29000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "pokemon-xd-gale-of-darkness-gamecube",
@@ -78,7 +80,7 @@
      "n": 48
     }
    },
-   "pct_1d": -2.83,
+   "pct_1d": 0,
    "pct_7d": 3,
    "pct_30d": null,
    "sparks": {
@@ -92,6 +94,7 @@
      19499,
      19499,
      19499,
+     19800,
      19800
     ],
     "cib": [
@@ -104,11 +107,12 @@
      25000,
      25000,
      25000,
+     25750,
      25750
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "pokemon-colosseum-gamecube",
@@ -124,15 +128,15 @@
      "n": 34
     },
     "cib": {
-     "median_cents": 24008,
+     "median_cents": 24495,
      "mode_cents": 25000,
-     "q1_cents": 19950,
+     "q1_cents": 19999,
      "q3_cents": 25995,
-     "n": 36
+     "n": 35
     }
    },
-   "pct_1d": 4.84,
-   "pct_7d": 13.09,
+   "pct_1d": 2.03,
+   "pct_7d": 7.14,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -141,6 +145,7 @@
      15747,
      15621,
      15495,
+     15000,
      15000,
      15000,
      15000,
@@ -157,11 +162,12 @@
      22495,
      22495,
      22700,
+     22900,
      22900
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "skies-of-arcadia-legends-gamecube",
@@ -177,11 +183,11 @@
      "n": 5
     },
     "cib": {
-     "median_cents": 21103,
+     "median_cents": 20995,
      "mode_cents": 20000,
      "q1_cents": 20000,
      "q3_cents": 25000,
-     "n": 12
+     "n": 13
     },
     "new": {
      "median_cents": 42500,
@@ -191,8 +197,8 @@
      "n": 4
     }
    },
-   "pct_1d": 1.19,
-   "pct_7d": -8.24,
+   "pct_1d": -0.51,
+   "pct_7d": -6.43,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -205,6 +211,7 @@
      14100,
      14100,
      14100,
+     13200,
      13200
     ],
     "cib": [
@@ -217,9 +224,11 @@
      21210,
      21210,
      21210,
-     21105
+     21105,
+     21103
     ],
     "new": [
+     40000,
      40000,
      40000,
      40000,
@@ -233,7 +242,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "tales-of-symphonia-gamecube",
@@ -244,32 +253,26 @@
     "loose": {
      "median_cents": 2300,
      "mode_cents": 2500,
-     "q1_cents": 2050,
+     "q1_cents": 2100,
      "q3_cents": 2500,
-     "n": 20
+     "n": 19
     },
     "cib": {
-     "median_cents": 3799,
+     "median_cents": 3847,
      "mode_cents": 4000,
-     "q1_cents": 2999,
+     "q1_cents": 3000,
      "q3_cents": 4499,
-     "n": 59
-    },
-    "new": {
-     "median_cents": 10199,
-     "mode_cents": 10000,
-     "q1_cents": 9989,
-     "q3_cents": 25150,
-     "n": 4
+     "n": 58
     }
    },
-   "pct_1d": -1.25,
-   "pct_7d": 3.01,
+   "pct_1d": 1.26,
+   "pct_7d": 1.47,
    "pct_30d": null,
    "sparks": {
     "loose": [
      2400,
      2350,
+     2300,
      2300,
      2300,
      2300,
@@ -285,6 +288,7 @@
      3688,
      3744,
      3699,
+     3799,
      3799,
      3799,
      3799,
@@ -305,7 +309,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "baten-kaitos-gamecube",
@@ -321,11 +325,11 @@
      "n": 7
     },
     "cib": {
-     "median_cents": 4598,
+     "median_cents": 4500,
      "mode_cents": 4500,
      "q1_cents": 3999,
      "q3_cents": 5600,
-     "n": 56
+     "n": 57
     },
     "new": {
      "median_cents": 12749,
@@ -335,8 +339,8 @@
      "n": 14
     }
    },
-   "pct_1d": 2.18,
-   "pct_7d": -7.16,
+   "pct_1d": -2.13,
+   "pct_7d": -3.72,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -344,6 +348,7 @@
      3163,
      3163,
      3144,
+     3125,
      3125,
      3125,
      3125,
@@ -361,9 +366,11 @@
      4500,
      4500,
      4500,
+     4500,
      4500
     ],
     "new": [
+     12749,
      12749,
      12749,
      12749,
@@ -377,7 +384,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "baten-kaitos-origins-gamecube",
@@ -407,8 +414,8 @@
      "n": 13
     }
    },
-   "pct_1d": 0.64,
-   "pct_7d": -0.64,
+   "pct_1d": 0,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -421,7 +428,8 @@
      5999,
      5999,
      5999,
-     5999
+     5999,
+     5997
     ],
     "cib": [
      8000,
@@ -433,9 +441,11 @@
      7949,
      7949,
      7949,
-     7949
+     7949,
+     8000
     ],
     "new": [
+     13163,
      13163,
      13163,
      13163,
@@ -449,7 +459,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "metroid-prime-gamecube",
@@ -458,21 +468,22 @@
    "variant": "black-label",
    "prices": {
     "loose": {
-     "median_cents": 2499,
-     "q1_cents": 2123,
-     "q3_cents": 3048,
-     "n": 5
+     "median_cents": 2224,
+     "mode_cents": 2000,
+     "q1_cents": 1999,
+     "q3_cents": 2499,
+     "n": 18
     },
     "cib": {
-     "median_cents": 3333,
-     "mode_cents": 2500,
+     "median_cents": 3000,
+     "mode_cents": 3000,
      "q1_cents": 2500,
-     "q3_cents": 5799,
-     "n": 23
+     "q3_cents": 3977,
+     "n": 90
     }
    },
-   "pct_1d": 5.81,
-   "pct_7d": 1.67,
+   "pct_1d": -9.99,
+   "pct_7d": 0.83,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -483,6 +494,7 @@
      2000,
      2000,
      2000,
+     1999,
      1999,
      1999,
      1999
@@ -497,11 +509,12 @@
      3000,
      3000,
      3000,
+     3050,
      3050
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "metroid-prime-2-echoes-gamecube",
@@ -510,28 +523,28 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 3999,
+     "median_cents": 3998,
      "mode_cents": 2000,
      "q1_cents": 1999,
      "q3_cents": 5499,
-     "n": 35
+     "n": 34
     },
     "cib": {
      "median_cents": 7499,
      "mode_cents": 7000,
      "q1_cents": 6499,
-     "q3_cents": 8727,
-     "n": 85
+     "q3_cents": 8553,
+     "n": 83
     },
     "new": {
      "median_cents": 17500,
      "mode_cents": 15000,
      "q1_cents": 14999,
-     "q3_cents": 19499,
-     "n": 18
+     "q3_cents": 19995,
+     "n": 19
     }
    },
-   "pct_1d": 0.92,
+   "pct_1d": 0,
    "pct_7d": -0.91,
    "pct_30d": null,
    "sparks": {
@@ -545,6 +558,7 @@
      3998,
      3998,
      3998,
+     3999,
      3999
     ],
     "cib": [
@@ -556,6 +570,7 @@
      7499,
      7499,
      7447,
+     7431,
      7431,
      7431
     ],
@@ -569,11 +584,12 @@
      17500,
      17500,
      17500,
+     17500,
      17500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "zelda-twilight-princess-gamecube",
@@ -583,7 +599,7 @@
    "prices": {
     "loose": {
      "median_cents": 17850,
-     "mode_cents": 16000,
+     "mode_cents": 18000,
      "q1_cents": 16000,
      "q3_cents": 20000,
      "n": 17
@@ -591,9 +607,9 @@
     "cib": {
      "median_cents": 25000,
      "mode_cents": 25000,
-     "q1_cents": 22999,
-     "q3_cents": 27500,
-     "n": 42
+     "q1_cents": 23550,
+     "q3_cents": 27744,
+     "n": 41
     },
     "new": {
      "median_cents": 50000,
@@ -617,6 +633,7 @@
      16000,
      16498,
      16500,
+     16500,
      16500
     ],
     "cib": [
@@ -627,6 +644,7 @@
      24498,
      24995,
      24997,
+     24999,
      24999,
      24999,
      24999
@@ -641,11 +659,12 @@
      50000,
      50000,
      50000,
+     50000,
      50000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "zelda-wind-waker-gamecube",
@@ -657,26 +676,26 @@
      "median_cents": 7499,
      "mode_cents": 7500,
      "q1_cents": 6495,
-     "q3_cents": 8500,
-     "n": 26
+     "q3_cents": 7999,
+     "n": 27
     },
     "cib": {
-     "median_cents": 9948,
+     "median_cents": 9999,
      "mode_cents": 9000,
-     "q1_cents": 8500,
-     "q3_cents": 11638,
-     "n": 82
+     "q1_cents": 8899,
+     "q3_cents": 11999,
+     "n": 79
     },
     "new": {
-     "median_cents": 31249,
+     "median_cents": 29999,
      "mode_cents": 32500,
      "q1_cents": 23500,
      "q3_cents": 32500,
-     "n": 6
+     "n": 7
     }
    },
-   "pct_1d": 4.72,
-   "pct_7d": 0.05,
+   "pct_1d": 0.51,
+   "pct_7d": 2.72,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -688,6 +707,7 @@
      7499,
      7399,
      7149,
+     6999,
      6999,
      6999
     ],
@@ -701,6 +721,7 @@
      9000,
      9126,
      9495,
+     9500,
      9500
     ],
     "new": [
@@ -713,11 +734,12 @@
      29999,
      29999,
      29999,
+     29999,
      29999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "zelda-collectors-edition-gamecube",
@@ -726,11 +748,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 7492,
+     "median_cents": 7497,
      "mode_cents": 7500,
      "q1_cents": 6999,
      "q3_cents": 8500,
-     "n": 14
+     "n": 15
     },
     "cib": {
      "median_cents": 10999,
@@ -747,8 +769,8 @@
      "n": 11
     }
    },
-   "pct_1d": 6.79,
-   "pct_7d": -5.65,
+   "pct_1d": 0,
+   "pct_7d": -2.82,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -761,7 +783,8 @@
      7443,
      7443,
      7443,
-     7443
+     7443,
+     7487
     ],
     "cib": [
      10599,
@@ -773,9 +796,11 @@
      10000,
      10000,
      10000,
-     10000
+     10000,
+     10300
     ],
     "new": [
+     25000,
      25000,
      25000,
      25000,
@@ -789,7 +814,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "zelda-ocarina-of-time-master-quest-gamecube",
@@ -798,18 +823,18 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 7499,
+     "median_cents": 7500,
      "mode_cents": 6500,
      "q1_cents": 6500,
      "q3_cents": 8000,
-     "n": 13
+     "n": 11
     },
     "cib": {
-     "median_cents": 9617,
+     "median_cents": 9759,
      "mode_cents": 10000,
-     "q1_cents": 8500,
+     "q1_cents": 8750,
      "q3_cents": 10700,
-     "n": 53
+     "n": 52
     },
     "new": {
      "median_cents": 20000,
@@ -819,7 +844,7 @@
      "n": 7
     }
    },
-   "pct_1d": 1.23,
+   "pct_1d": 1.48,
    "pct_7d": -2.65,
    "pct_30d": null,
    "sparks": {
@@ -833,7 +858,8 @@
      7000,
      7499,
      7499,
-     7499
+     7499,
+     7500
     ],
     "cib": [
      9949,
@@ -845,6 +871,7 @@
      9499,
      9499,
      9499,
+     9500,
      9500
     ],
     "new": [
@@ -857,11 +884,12 @@
      20000,
      20000,
      20000,
+     20000,
      20000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "zelda-four-swords-adventures-gamecube",
@@ -878,7 +906,7 @@
     },
     "cib": {
      "median_cents": 13997,
-     "mode_cents": 30000,
+     "mode_cents": 10000,
      "q1_cents": 10500,
      "q3_cents": 24050,
      "n": 25
@@ -891,11 +919,12 @@
      "n": 12
     }
    },
-   "pct_1d": 2.55,
-   "pct_7d": 7.67,
+   "pct_1d": 0,
+   "pct_7d": 5.04,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     6500,
      6500,
      6500,
      6500,
@@ -917,6 +946,7 @@
      13649,
      13649,
      13649,
+     13997,
      13997
     ],
     "new": [
@@ -929,11 +959,12 @@
      35200,
      35200,
      35200,
-     39999
+     39999,
+     42500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "paper-mario-thousand-year-door-gamecube",
@@ -952,18 +983,18 @@
      "median_cents": 6000,
      "mode_cents": 6000,
      "q1_cents": 5000,
-     "q3_cents": 7995,
+     "q3_cents": 7999,
      "n": 82
     },
     "new": {
-     "median_cents": 14999,
+     "median_cents": 15000,
      "mode_cents": 15000,
-     "q1_cents": 13500,
+     "q1_cents": 13999,
      "q3_cents": 17500,
-     "n": 5
+     "n": 4
     }
    },
-   "pct_1d": 0.02,
+   "pct_1d": 0,
    "pct_7d": 0.02,
    "pct_30d": null,
    "sparks": {
@@ -972,6 +1003,7 @@
      3949,
      3899,
      3949,
+     3999,
      3999,
      3999,
      3999,
@@ -989,9 +1021,11 @@
      6000,
      5999,
      5999,
+     6000,
      6000
     ],
     "new": [
+     15000,
      15000,
      15000,
      15000,
@@ -1002,7 +1036,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "super-mario-sunshine-gamecube",
@@ -1011,22 +1045,22 @@
    "variant": "black-label",
    "prices": {
     "loose": {
-     "median_cents": 3997,
+     "median_cents": 3550,
      "mode_cents": 3500,
      "q1_cents": 3499,
-     "q3_cents": 4499,
+     "q3_cents": 4000,
      "n": 26
     },
     "cib": {
-     "median_cents": 5499,
+     "median_cents": 5500,
      "mode_cents": 5000,
-     "q1_cents": 4700,
-     "q3_cents": 6995,
-     "n": 70
+     "q1_cents": 4995,
+     "q3_cents": 6999,
+     "n": 68
     }
    },
-   "pct_1d": -0.02,
-   "pct_7d": -3.96,
+   "pct_1d": 0.02,
+   "pct_7d": -6.19,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -1037,6 +1071,7 @@
      3995,
      3995,
      3995,
+     3997,
      3997,
      3997,
      3997
@@ -1051,11 +1086,12 @@
      5900,
      5716,
      5500,
+     5500,
      5500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "luigis-mansion-gamecube",
@@ -1068,18 +1104,18 @@
      "mode_cents": 5000,
      "q1_cents": 4529,
      "q3_cents": 6000,
-     "n": 29
+     "n": 28
     },
     "cib": {
      "median_cents": 8000,
-     "mode_cents": 7000,
+     "mode_cents": 7500,
      "q1_cents": 6999,
      "q3_cents": 9995,
-     "n": 54
+     "n": 53
     }
    },
-   "pct_1d": 0.01,
-   "pct_7d": 0,
+   "pct_1d": 0,
+   "pct_7d": 0.01,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -1092,6 +1128,7 @@
      5499,
      5020,
      5020,
+     5000,
      5000
     ],
     "cib": [
@@ -1104,11 +1141,12 @@
      7999,
      7999,
      7999,
-     7999
+     7999,
+     8000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "chibi-robo-gamecube",
@@ -1117,10 +1155,10 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 17500,
+     "median_cents": 17750,
      "mode_cents": 17500,
      "q1_cents": 15994,
-     "q3_cents": 18775,
+     "q3_cents": 19275,
      "n": 12
     },
     "cib": {
@@ -1138,7 +1176,7 @@
      "n": 5
     }
    },
-   "pct_1d": -0.91,
+   "pct_1d": 0,
    "pct_7d": -0,
    "pct_30d": null,
    "sparks": {
@@ -1152,6 +1190,7 @@
      17750,
      17750,
      17750,
+     17500,
      17500
     ],
     "cib": [
@@ -1160,6 +1199,7 @@
      27500,
      27500,
      27500,
+     27499,
      27499,
      27499,
      27499,
@@ -1176,11 +1216,12 @@
      55000,
      55000,
      55000,
+     55000,
      55000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "cubivore-gamecube",
@@ -1208,7 +1249,7 @@
      89750
     ]
    },
-   "stale": false,
+   "stale": true,
    "as_of": "2026-10-18"
   },
   {
@@ -1225,7 +1266,7 @@
      "n": 10
     }
    },
-   "pct_1d": 3.93,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -1239,11 +1280,12 @@
      64900,
      64900,
      64900,
+     64900,
      64900
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "custom-robo-gamecube",
@@ -1251,11 +1293,18 @@
    "region": "NTSC-U",
    "variant": "none",
    "prices": {
+    "loose": {
+     "median_cents": 5232,
+     "q1_cents": 4145,
+     "q3_cents": 6284,
+     "n": 4
+    },
     "cib": {
-     "median_cents": 10000,
-     "q1_cents": 8500,
-     "q3_cents": 12500,
-     "n": 7
+     "median_cents": 9500,
+     "mode_cents": 9000,
+     "q1_cents": 8750,
+     "q3_cents": 11895,
+     "n": 8
     },
     "new": {
      "median_cents": 19990,
@@ -1265,8 +1314,8 @@
      "n": 5
     }
    },
-   "pct_1d": 5.26,
-   "pct_7d": 11.12,
+   "pct_1d": -5,
+   "pct_7d": 5.57,
    "pct_30d": null,
    "sparks": {
     "cib": [
@@ -1279,9 +1328,11 @@
      8999,
      9500,
      9500,
-     10000
+     10000,
+     9500
     ],
     "new": [
+     19990,
      19990,
      19990,
      19990,
@@ -1295,7 +1346,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "killer7-gamecube",
@@ -1318,8 +1369,8 @@
      "n": 4
     }
    },
-   "pct_1d": 2.17,
-   "pct_7d": 0.24,
+   "pct_1d": 0,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "cib": [
@@ -1332,9 +1383,11 @@
      10470,
      10470,
      10470,
-     10470
+     10470,
+     10445
     ],
     "new": [
+     15984,
      15984,
      15984,
      15984,
@@ -1348,7 +1401,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "eternal-darkness-gamecube",
@@ -1366,9 +1419,9 @@
     "cib": {
      "median_cents": 14997,
      "mode_cents": 14000,
-     "q1_cents": 13995,
-     "q3_cents": 17500,
-     "n": 18
+     "q1_cents": 13997,
+     "q3_cents": 17244,
+     "n": 20
     },
     "new": {
      "median_cents": 49999,
@@ -1378,11 +1431,12 @@
      "n": 5
     }
    },
-   "pct_1d": 0.01,
+   "pct_1d": 0,
    "pct_7d": 3.44,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     8999,
      8999,
      8999,
      8999,
@@ -1404,6 +1458,7 @@
      14995,
      14995,
      14995,
+     14997,
      14997
     ],
     "new": [
@@ -1416,11 +1471,12 @@
      50000,
      49999,
      49999,
+     49999,
      49999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "resident-evil-4-gamecube",
@@ -1437,10 +1493,10 @@
     },
     "cib": {
      "median_cents": 5999,
-     "mode_cents": 5000,
-     "q1_cents": 4800,
+     "mode_cents": 6000,
+     "q1_cents": 4900,
      "q3_cents": 7999,
-     "n": 59
+     "n": 57
     },
     "new": {
      "median_cents": 28444,
@@ -1449,11 +1505,12 @@
      "n": 6
     }
    },
-   "pct_1d": 0.07,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     3999,
      3999,
      3999,
      3999,
@@ -1475,6 +1532,7 @@
      5999,
      5999,
      5999,
+     5999,
      5999
     ],
     "new": [
@@ -1487,11 +1545,12 @@
      38999,
      38999,
      38999,
-     38999
+     38999,
+     28444
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "resident-evil-remake-gamecube",
@@ -1507,14 +1566,14 @@
      "n": 8
     },
     "cib": {
-     "median_cents": 6000,
+     "median_cents": 6485,
      "mode_cents": 8000,
-     "q1_cents": 5093,
-     "q3_cents": 8000,
-     "n": 31
+     "q1_cents": 5247,
+     "q3_cents": 8250,
+     "n": 29
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 8.08,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -1528,9 +1587,11 @@
      4249,
      4249,
      4249,
-     4249
+     4249,
+     4350
     ],
     "cib": [
+     6000,
      6000,
      6000,
      6000,
@@ -1544,7 +1605,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "resident-evil-zero-gamecube",
@@ -1553,21 +1614,21 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 2429,
+     "median_cents": 2489,
      "mode_cents": 2500,
      "q1_cents": 2000,
-     "q3_cents": 2550,
+     "q3_cents": 2650,
      "n": 24
     },
     "cib": {
-     "median_cents": 2999,
+     "median_cents": 3000,
      "mode_cents": 3000,
-     "q1_cents": 2500,
+     "q1_cents": 2599,
      "q3_cents": 3995,
-     "n": 55
+     "n": 58
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 0.03,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -1581,6 +1642,7 @@
      2489,
      2478,
      2340,
+     2340,
      2340
     ],
     "cib": [
@@ -1593,11 +1655,12 @@
      2999,
      2999,
      2999,
+     2999,
      2999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "pn03-gamecube",
@@ -1608,15 +1671,15 @@
     "loose": {
      "median_cents": 8999,
      "mode_cents": 9000,
-     "q1_cents": 8900,
+     "q1_cents": 8800,
      "q3_cents": 9000,
-     "n": 7
+     "n": 8
     },
     "cib": {
      "median_cents": 13000,
      "mode_cents": 13000,
      "q1_cents": 12000,
-     "q3_cents": 17500,
+     "q3_cents": 17618,
      "n": 19
     }
    },
@@ -1625,6 +1688,7 @@
    "pct_30d": null,
    "sparks": {
     "loose": [
+     8999,
      8999,
      8999,
      8999,
@@ -1646,11 +1710,12 @@
      13000,
      13000,
      13000,
+     13000,
      13000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "viewtiful-joe-gamecube",
@@ -1666,10 +1731,10 @@
      "n": 17
     },
     "cib": {
-     "median_cents": 7188,
+     "median_cents": 7200,
      "mode_cents": 6000,
      "q1_cents": 5999,
-     "q3_cents": 7745,
+     "q3_cents": 7993,
      "n": 13
     },
     "new": {
@@ -1679,8 +1744,8 @@
      "n": 4
     }
    },
-   "pct_1d": 2.04,
-   "pct_7d": 15,
+   "pct_1d": 0.17,
+   "pct_7d": 17.4,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -1691,6 +1756,7 @@
      3000,
      3000,
      3000,
+     2999,
      2999,
      2999,
      2999
@@ -1705,9 +1771,11 @@
      6450,
      6594,
      6900,
-     6900
+     6900,
+     7044
     ],
     "new": [
+     13000,
      13000,
      13000,
      13000,
@@ -1721,7 +1789,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "viewtiful-joe-2-gamecube",
@@ -1744,7 +1812,7 @@
      "n": 13
     }
    },
-   "pct_1d": -3.76,
+   "pct_1d": 0,
    "pct_7d": -0.2,
    "pct_30d": null,
    "sparks": {
@@ -1756,6 +1824,7 @@
      6500,
      6500,
      6500,
+     6487,
      6487,
      6487,
      6487
@@ -1770,11 +1839,12 @@
      9900,
      9900,
      9900,
+     9900,
      9900
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "ikaruga-gamecube",
@@ -1810,9 +1880,11 @@
      8150,
      8000,
      8000,
+     8000,
      8000
     ],
     "new": [
+     51250,
      51250,
      51250,
      51250,
@@ -1826,7 +1898,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "f-zero-gx-gamecube",
@@ -1836,7 +1908,7 @@
    "prices": {
     "loose": {
      "median_cents": 6179,
-     "mode_cents": 5000,
+     "mode_cents": 7000,
      "q1_cents": 5300,
      "q3_cents": 6997,
      "n": 28
@@ -1846,13 +1918,13 @@
      "mode_cents": 10000,
      "q1_cents": 8764,
      "q3_cents": 11500,
-     "n": 49
+     "n": 48
     },
     "new": {
-     "median_cents": 28900,
+     "median_cents": 28750,
      "q1_cents": 25750,
      "q3_cents": 32497,
-     "n": 5
+     "n": 4
     }
    },
    "pct_1d": 0,
@@ -1869,11 +1941,13 @@
      6379,
      6358,
      6329,
-     6329
+     6329,
+     6179
     ],
     "cib": [
      9999,
      10000,
+     9999,
      9999,
      9999,
      9999,
@@ -1890,11 +1964,12 @@
      28750,
      28750,
      28750,
+     28750,
      28750
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "star-fox-adventures-gamecube",
@@ -1903,9 +1978,9 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 3999,
+     "median_cents": 4250,
      "mode_cents": 4000,
-     "q1_cents": 3774,
+     "q1_cents": 3800,
      "q3_cents": 5750,
      "n": 32
     },
@@ -1917,7 +1992,7 @@
      "n": 35
     }
    },
-   "pct_1d": 0.79,
+   "pct_1d": 0,
    "pct_7d": -7.27,
    "pct_30d": null,
    "sparks": {
@@ -1928,6 +2003,7 @@
      4371,
      4495,
      4495,
+     4500,
      4500,
      4500,
      4500,
@@ -1943,11 +2019,12 @@
      7400,
      6999,
      6999,
+     6999,
      6999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "star-fox-assault-gamecube",
@@ -1967,7 +2044,7 @@
      "mode_cents": 8000,
      "q1_cents": 8999,
      "q3_cents": 13000,
-     "n": 77
+     "n": 79
     },
     "new": {
      "median_cents": 26999,
@@ -1976,7 +2053,7 @@
      "n": 5
     }
    },
-   "pct_1d": -0.01,
+   "pct_1d": 0,
    "pct_7d": -0.01,
    "pct_30d": null,
    "sparks": {
@@ -1990,6 +2067,7 @@
      7499,
      7457,
      7457,
+     7419,
      7419
     ],
     "cib": [
@@ -2000,6 +2078,7 @@
      11000,
      11000,
      11000,
+     10999,
      10999,
      10999,
      10999
@@ -2014,11 +2093,12 @@
      26999,
      26999,
      26999,
+     26999,
      26999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "super-smash-bros-melee-gamecube",
@@ -2031,18 +2111,18 @@
      "mode_cents": 5000,
      "q1_cents": 4999,
      "q3_cents": 6000,
-     "n": 45
+     "n": 48
     },
     "cib": {
      "median_cents": 8499,
      "mode_cents": 8000,
-     "q1_cents": 7500,
-     "q3_cents": 10797,
-     "n": 65
+     "q1_cents": 7495,
+     "q3_cents": 10495,
+     "n": 63
     }
    },
    "pct_1d": 0,
-   "pct_7d": 4.28,
+   "pct_7d": 3.33,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -2050,6 +2130,7 @@
      5435,
      5469,
      5485,
+     5500,
      5500,
      5500,
      5500,
@@ -2067,11 +2148,12 @@
      8499,
      8499,
      8499,
+     8499,
      8499
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "mario-kart-double-dash-gamecube",
@@ -2080,22 +2162,22 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 6999,
+     "median_cents": 6784,
      "mode_cents": 7000,
      "q1_cents": 5999,
      "q3_cents": 7499,
-     "n": 29
+     "n": 30
     },
     "cib": {
-     "median_cents": 8398,
+     "median_cents": 8149,
      "mode_cents": 8000,
-     "q1_cents": 7916,
+     "q1_cents": 7900,
      "q3_cents": 9997,
      "n": 88
     }
    },
-   "pct_1d": 2.43,
-   "pct_7d": -1.15,
+   "pct_1d": -2.96,
+   "pct_7d": -1.6,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -2106,6 +2188,7 @@
      6984,
      6984,
      6984,
+     6969,
      6969,
      6969,
      6969
@@ -2120,11 +2203,12 @@
      8350,
      8321,
      8250,
-     8350
+     8350,
+     8250
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "animal-crossing-gamecube",
@@ -2133,28 +2217,22 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 5790,
-     "mode_cents": 4500,
+     "median_cents": 5779,
+     "mode_cents": 6000,
      "q1_cents": 4500,
      "q3_cents": 6499,
-     "n": 46
+     "n": 45
     },
     "cib": {
-     "median_cents": 9000,
+     "median_cents": 8999,
      "mode_cents": 10000,
      "q1_cents": 6999,
-     "q3_cents": 11000,
-     "n": 78
-    },
-    "new": {
-     "median_cents": 33950,
-     "q1_cents": 27125,
-     "q3_cents": 40950,
-     "n": 4
+     "q3_cents": 11248,
+     "n": 77
     }
    },
-   "pct_1d": -2.68,
-   "pct_7d": 5.87,
+   "pct_1d": -0.01,
+   "pct_7d": 3.94,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -2163,6 +2241,7 @@
      5999,
      5889,
      5900,
+     5779,
      5779,
      5779,
      5779,
@@ -2179,6 +2258,7 @@
      8995,
      8997,
      8999,
+     8999,
      8999
     ],
     "new": [
@@ -2187,7 +2267,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "harvest-moon-a-wonderful-life-gamecube",
@@ -2198,22 +2278,23 @@
     "loose": {
      "median_cents": 1899,
      "mode_cents": 2000,
-     "q1_cents": 1610,
-     "q3_cents": 2199,
-     "n": 43
+     "q1_cents": 1597,
+     "q3_cents": 2167,
+     "n": 44
     },
     "cib": {
      "median_cents": 2999,
      "mode_cents": 3000,
      "q1_cents": 2497,
      "q3_cents": 3548,
-     "n": 53
+     "n": 52
     },
     "new": {
-     "median_cents": 9124,
+     "median_cents": 9000,
+     "mode_cents": 9000,
      "q1_cents": 8048,
      "q3_cents": 10373,
-     "n": 4
+     "n": 5
     }
    },
    "pct_1d": 0,
@@ -2230,9 +2311,11 @@
      1949,
      1949,
      1949,
-     1949
+     1949,
+     1899
     ],
     "cib": [
+     2999,
      2999,
      2999,
      2999,
@@ -2254,11 +2337,12 @@
      9125,
      9125,
      9000,
+     9000,
      9000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "harvest-moon-magical-melody-gamecube",
@@ -2267,18 +2351,18 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 2200,
+     "median_cents": 2450,
      "mode_cents": 2000,
-     "q1_cents": 1949,
+     "q1_cents": 1999,
      "q3_cents": 3249,
-     "n": 13
+     "n": 12
     },
     "cib": {
      "median_cents": 3999,
      "mode_cents": 4000,
-     "q1_cents": 3000,
-     "q3_cents": 4699,
-     "n": 12
+     "q1_cents": 2999,
+     "q3_cents": 4899,
+     "n": 11
     },
     "new": {
      "median_cents": 10999,
@@ -2287,11 +2371,12 @@
      "n": 7
     }
    },
-   "pct_1d": -0.52,
-   "pct_7d": -10.65,
+   "pct_1d": 0,
+   "pct_7d": -5.85,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     2200,
      2200,
      2200,
      2200,
@@ -2313,6 +2398,7 @@
      4020,
      4020,
      4020,
+     4020,
      4020
     ],
     "new": [
@@ -2325,11 +2411,12 @@
      9349,
      10999,
      10999,
+     10999,
      10999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "battalion-wars-gamecube",
@@ -2339,16 +2426,16 @@
    "prices": {
     "loose": {
      "median_cents": 2500,
-     "q1_cents": 1880,
+     "q1_cents": 2100,
      "q3_cents": 2950,
      "n": 5
     },
     "cib": {
-     "median_cents": 4299,
+     "median_cents": 4150,
      "mode_cents": 4000,
      "q1_cents": 3999,
-     "q3_cents": 5160,
-     "n": 13
+     "q3_cents": 5000,
+     "n": 12
     },
     "new": {
      "median_cents": 8500,
@@ -2357,7 +2444,7 @@
      "n": 5
     }
    },
-   "pct_1d": 3.59,
+   "pct_1d": -3.47,
    "pct_7d": -3.47,
    "pct_30d": null,
    "sparks": {
@@ -2367,6 +2454,7 @@
      2700,
      2700,
      2700,
+     2500,
      2500,
      2500,
      2500,
@@ -2383,9 +2471,11 @@
      4150,
      4150,
      4150,
+     4150,
      4150
     ],
     "new": [
+     8500,
      8500,
      8500,
      8500,
@@ -2399,7 +2489,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "odama-gamecube",
@@ -2443,6 +2533,7 @@
      2495,
      2495,
      2495,
+     2495,
      2495
     ],
     "cib": [
@@ -2454,6 +2545,7 @@
      3001,
      3001,
      3001,
+     3350,
      3350,
      3350
     ],
@@ -2467,11 +2559,12 @@
      6999,
      6999,
      6999,
+     6999,
      6999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "wario-world-gamecube",
@@ -2487,14 +2580,14 @@
      "n": 53
     },
     "cib": {
-     "median_cents": 11648,
+     "median_cents": 11250,
      "mode_cents": 12000,
      "q1_cents": 10000,
-     "q3_cents": 13900,
-     "n": 22
+     "q3_cents": 13450,
+     "n": 24
     }
    },
-   "pct_1d": 0,
+   "pct_1d": -3.42,
    "pct_7d": 3.54,
    "pct_30d": null,
    "sparks": {
@@ -2505,6 +2598,7 @@
      6999,
      6999,
      6999,
+     6990,
      6990,
      6990,
      6990,
@@ -2520,11 +2614,12 @@
      11300,
      11300,
      11300,
+     11648,
      11648
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "donkey-kong-jungle-beat-gamecube",
@@ -2533,18 +2628,18 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 2398,
+     "median_cents": 2487,
      "mode_cents": 2500,
      "q1_cents": 1899,
-     "q3_cents": 2599,
+     "q3_cents": 2800,
      "n": 35
     },
     "cib": {
-     "median_cents": 3699,
-     "mode_cents": 3500,
-     "q1_cents": 3013,
-     "q3_cents": 4497,
-     "n": 36
+     "median_cents": 3995,
+     "mode_cents": 4000,
+     "q1_cents": 3200,
+     "q3_cents": 4499,
+     "n": 35
     },
     "new": {
      "median_cents": 8999,
@@ -2554,7 +2649,7 @@
      "n": 13
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 8,
    "pct_7d": -2.63,
    "pct_30d": null,
    "sparks": {
@@ -2568,7 +2663,8 @@
      2487,
      2499,
      2499,
-     2499
+     2499,
+     2487
     ],
     "cib": [
      3897,
@@ -2576,6 +2672,7 @@
      3799,
      3799,
      3799,
+     3699,
      3699,
      3699,
      3699,
@@ -2592,11 +2689,12 @@
      8999,
      8999,
      8999,
+     8999,
      8999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "phantasy-star-online-episode-1-2-gamecube",
@@ -2611,18 +2709,19 @@
      "n": 5
     },
     "cib": {
-     "median_cents": 11599,
+     "median_cents": 11299,
      "mode_cents": 10000,
-     "q1_cents": 9997,
-     "q3_cents": 14250,
-     "n": 21
+     "q1_cents": 9999,
+     "q3_cents": 13500,
+     "n": 22
     }
    },
-   "pct_1d": 5.46,
-   "pct_7d": 7.31,
+   "pct_1d": -2.59,
+   "pct_7d": 6.01,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     10000,
      10000,
      10000,
      10000,
@@ -2644,11 +2743,12 @@
      10750,
      10999,
      10999,
+     10999,
      10999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "metal-gear-solid-twin-snakes-gamecube",
@@ -2657,28 +2757,28 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 9745,
+     "median_cents": 9999,
      "mode_cents": 10000,
-     "q1_cents": 7999,
-     "q3_cents": 10000,
-     "n": 10
+     "q1_cents": 7599,
+     "q3_cents": 10250,
+     "n": 9
     },
     "cib": {
-     "median_cents": 14000,
+     "median_cents": 14250,
      "mode_cents": 15000,
      "q1_cents": 12000,
      "q3_cents": 16995,
-     "n": 43
+     "n": 42
     },
     "new": {
-     "median_cents": 35999,
+     "median_cents": 35750,
      "q1_cents": 32500,
      "q3_cents": 39750,
-     "n": 5
+     "n": 4
     }
    },
-   "pct_1d": 1.86,
-   "pct_7d": 3.78,
+   "pct_1d": 1.79,
+   "pct_7d": 5.74,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -2688,6 +2788,7 @@
      9618,
      9495,
      9495,
+     9745,
      9745,
      9745,
      9745,
@@ -2703,9 +2804,11 @@
      13245,
      13490,
      13490,
-     13490
+     13490,
+     13745
     ],
     "new": [
+     35999,
      35999,
      35999,
      35999,
@@ -2719,7 +2822,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "soulcalibur-2-gamecube",
@@ -2735,15 +2838,15 @@
      "n": 8
     },
     "cib": {
-     "median_cents": 3500,
+     "median_cents": 4200,
      "mode_cents": 4500,
-     "q1_cents": 2750,
+     "q1_cents": 2949,
      "q3_cents": 4500,
-     "n": 15
+     "n": 14
     }
    },
-   "pct_1d": 0,
-   "pct_7d": -2.75,
+   "pct_1d": 20,
+   "pct_7d": -1.41,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -2756,6 +2859,7 @@
      2250,
      2000,
      2000,
+     1998,
      1998
     ],
     "cib": [
@@ -2768,11 +2872,12 @@
      3500,
      3500,
      3500,
+     3500,
      3500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "timesplitters-2-gamecube",
@@ -2781,11 +2886,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1799,
-     "mode_cents": 1800,
+     "median_cents": 1800,
+     "mode_cents": 1500,
      "q1_cents": 1500,
-     "q3_cents": 2200,
-     "n": 21
+     "q3_cents": 2199,
+     "n": 22
     },
     "cib": {
      "median_cents": 2800,
@@ -2802,7 +2907,7 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": -3.33,
+   "pct_7d": -6.67,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -2811,6 +2916,7 @@
      1800,
      1800,
      1800,
+     1799,
      1799,
      1799,
      1799,
@@ -2827,7 +2933,8 @@
      2999,
      2999,
      2999,
-     2900
+     2900,
+     2800
     ],
     "new": [
      16500,
@@ -2839,11 +2946,12 @@
      16500,
      16500,
      16500,
-     16500
+     16500,
+     15500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "beyond-good-and-evil-gamecube",
@@ -2867,10 +2975,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": 0,
+   "pct_7d": 0.16,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     4248,
      4248,
      4248,
      4248,
@@ -2892,11 +3001,12 @@
      7099,
      6999,
      6999,
-     6999
+     6999,
+     7060
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "geist-gamecube",
@@ -2926,7 +3036,7 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": -9.09,
+   "pct_7d": -6.98,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -2934,6 +3044,7 @@
      4221,
      4147,
      4073,
+     3999,
      3999,
      3999,
      3999,
@@ -2951,9 +3062,11 @@
      5250,
      5250,
      5000,
+     5000,
      5000
     ],
     "new": [
+     8549,
      8549,
      8549,
      8549,
@@ -2967,7 +3080,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "second-sight-gamecube",
@@ -2997,7 +3110,7 @@
      "n": 5
     }
    },
-   "pct_1d": -3.26,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -3011,9 +3124,11 @@
      1999,
      1999,
      1999,
+     1999,
      1999
     ],
     "cib": [
+     2999,
      2999,
      2999,
      2999,
@@ -3035,11 +3150,12 @@
      5997,
      5997,
      5995,
+     5995,
      5995
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "sonic-adventure-2-battle-gamecube",
@@ -3048,22 +3164,22 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 5445,
+     "median_cents": 5490,
      "mode_cents": 5000,
-     "q1_cents": 4773,
-     "q3_cents": 6549,
-     "n": 56
+     "q1_cents": 4899,
+     "q3_cents": 6599,
+     "n": 55
     },
     "cib": {
      "median_cents": 10000,
      "mode_cents": 10000,
-     "q1_cents": 8500,
+     "q1_cents": 8499,
      "q3_cents": 12999,
      "n": 30
     }
    },
    "pct_1d": 0,
-   "pct_7d": 0.01,
+   "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -3076,6 +3192,7 @@
      5500,
      5500,
      5500,
+     5445,
      5445
     ],
     "cib": [
@@ -3088,11 +3205,12 @@
      10000,
      10000,
      10000,
+     10000,
      10000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "pikmin-gamecube",
@@ -3104,15 +3222,15 @@
      "median_cents": 3933,
      "mode_cents": 4000,
      "q1_cents": 3106,
-     "q3_cents": 4300,
+     "q3_cents": 4350,
      "n": 48
     },
     "cib": {
      "median_cents": 6000,
      "mode_cents": 6000,
      "q1_cents": 5000,
-     "q3_cents": 7099,
-     "n": 45
+     "q3_cents": 6999,
+     "n": 43
     }
    },
    "pct_1d": 0,
@@ -3129,10 +3247,12 @@
      3849,
      3849,
      3849,
-     3860
+     3860,
+     3870
     ],
     "cib": [
      5999,
+     6000,
      6000,
      6000,
      6000,
@@ -3145,7 +3265,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "pikmin-2-gamecube",
@@ -3175,8 +3295,8 @@
      "n": 7
     }
    },
-   "pct_1d": 0.07,
-   "pct_7d": -6.3,
+   "pct_1d": 0,
+   "pct_7d": -6.31,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -3189,6 +3309,7 @@
      4944,
      4944,
      4944,
+     4899,
      4899
     ],
     "cib": [
@@ -3200,6 +3321,7 @@
      7999,
      7850,
      7850,
+     7495,
      7495,
      7495
     ],
@@ -3213,11 +3335,12 @@
      27500,
      24999,
      24999,
+     24999,
      24999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "super-monkey-ball-gamecube",
@@ -3234,7 +3357,7 @@
     },
     "cib": {
      "median_cents": 4499,
-     "mode_cents": 4500,
+     "mode_cents": 5000,
      "q1_cents": 3997,
      "q3_cents": 5729,
      "n": 37
@@ -3261,11 +3384,13 @@
      2500,
      2500,
      2500,
+     2500,
      2500
     ],
     "cib": [
      4449,
      4474,
+     4499,
      4499,
      4499,
      4499,
@@ -3285,11 +3410,12 @@
      8994,
      8994,
      8994,
+     8994,
      8994
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "super-monkey-ball-2-gamecube",
@@ -3298,16 +3424,16 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 2449,
+     "median_cents": 2499,
      "mode_cents": 2500,
-     "q1_cents": 1999,
+     "q1_cents": 2000,
      "q3_cents": 2700,
-     "n": 42
+     "n": 44
     },
     "cib": {
      "median_cents": 3750,
      "mode_cents": 3000,
-     "q1_cents": 3047,
+     "q1_cents": 3000,
      "q3_cents": 4798,
      "n": 68
     },
@@ -3318,8 +3444,8 @@
      "n": 8
     }
    },
-   "pct_1d": -1.29,
-   "pct_7d": -4.91,
+   "pct_1d": 0,
+   "pct_7d": -4.95,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -3330,6 +3456,7 @@
      2499,
      2499,
      2499,
+     2449,
      2449,
      2449,
      2449
@@ -3344,6 +3471,7 @@
      3997,
      3897,
      3897,
+     3799,
      3799
     ],
     "new": [
@@ -3356,11 +3484,12 @@
      10500,
      10500,
      10500,
+     10500,
      10500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "mario-party-4-gamecube",
@@ -3369,11 +3498,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 4700,
+     "median_cents": 4698,
      "mode_cents": 4500,
-     "q1_cents": 4375,
-     "q3_cents": 5748,
-     "n": 37
+     "q1_cents": 4399,
+     "q3_cents": 5000,
+     "n": 39
     },
     "cib": {
      "median_cents": 7995,
@@ -3383,8 +3512,8 @@
      "n": 69
     }
    },
-   "pct_1d": 0.59,
-   "pct_7d": 6.6,
+   "pct_1d": 0,
+   "pct_7d": 3.19,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -3397,7 +3526,8 @@
      4947,
      4899,
      4850,
-     4825
+     4825,
+     4700
     ],
     "cib": [
      7500,
@@ -3409,11 +3539,12 @@
      7997,
      7997,
      7997,
+     7995,
      7995
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "mario-party-5-gamecube",
@@ -3422,22 +3553,22 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 5148,
-     "mode_cents": 6000,
-     "q1_cents": 4550,
-     "q3_cents": 5994,
-     "n": 40
+     "median_cents": 5299,
+     "mode_cents": 5000,
+     "q1_cents": 4699,
+     "q3_cents": 5999,
+     "n": 39
     },
     "cib": {
-     "median_cents": 7997,
+     "median_cents": 7995,
      "mode_cents": 7000,
-     "q1_cents": 7000,
+     "q1_cents": 6999,
      "q3_cents": 10498,
-     "n": 64
+     "n": 63
     }
    },
-   "pct_1d": 0.03,
-   "pct_7d": 0.03,
+   "pct_1d": -0.03,
+   "pct_7d": 0.01,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -3450,7 +3581,8 @@
      5295,
      5295,
      5200,
-     5148
+     5148,
+     5200
     ],
     "cib": [
      7995,
@@ -3462,11 +3594,12 @@
      7999,
      7999,
      7999,
+     7997,
      7997
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "mario-party-6-gamecube",
@@ -3475,7 +3608,7 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 8000,
+     "median_cents": 7718,
      "mode_cents": 7000,
      "q1_cents": 7000,
      "q3_cents": 8700,
@@ -3503,6 +3636,7 @@
      7499,
      7500,
      7500,
+     7750,
      7750
     ],
     "cib": [
@@ -3515,11 +3649,12 @@
      12999,
      13000,
      13000,
+     13000,
      13000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "mario-party-7-gamecube",
@@ -3530,29 +3665,24 @@
     "loose": {
      "median_cents": 4500,
      "mode_cents": 4000,
-     "q1_cents": 3897,
-     "q3_cents": 5497,
-     "n": 40
+     "q1_cents": 3995,
+     "q3_cents": 5499,
+     "n": 39
     },
     "cib": {
-     "median_cents": 6499,
+     "median_cents": 6500,
      "mode_cents": 6000,
-     "q1_cents": 5900,
+     "q1_cents": 5948,
      "q3_cents": 7995,
-     "n": 83
-    },
-    "new": {
-     "median_cents": 33000,
-     "q1_cents": 25998,
-     "q3_cents": 47250,
-     "n": 4
+     "n": 86
     }
    },
-   "pct_1d": -0.02,
-   "pct_7d": -7.1,
+   "pct_1d": 0.02,
+   "pct_7d": -3.77,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     4499,
      4499,
      4499,
      4499,
@@ -3574,6 +3704,7 @@
      6500,
      6500,
      6500,
+     6500,
      6500
     ],
     "new": [
@@ -3586,7 +3717,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "mario-golf-toadstool-tour-gamecube",
@@ -3595,11 +3726,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 2065,
+     "median_cents": 2150,
      "mode_cents": 2000,
      "q1_cents": 1999,
-     "q3_cents": 2695,
-     "n": 63
+     "q3_cents": 2699,
+     "n": 62
     },
     "cib": {
      "median_cents": 3500,
@@ -3609,14 +3740,14 @@
      "n": 56
     },
     "new": {
-     "median_cents": 14500,
-     "mode_cents": 14000,
+     "median_cents": 14999,
+     "mode_cents": 15000,
      "q1_cents": 14000,
-     "q3_cents": 14999,
-     "n": 4
+     "q3_cents": 25999,
+     "n": 7
     }
    },
-   "pct_1d": -1.05,
+   "pct_1d": 0,
    "pct_7d": 0.03,
    "pct_30d": null,
    "sparks": {
@@ -3630,6 +3761,7 @@
      2033,
      2033,
      2000,
+     2065,
      2065
     ],
     "cib": [
@@ -3641,6 +3773,7 @@
      3499,
      3499,
      3499,
+     3500,
      3500,
      3500
     ],
@@ -3654,11 +3787,12 @@
      14500,
      14500,
      14500,
+     14500,
      14500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "mario-power-tennis-gamecube",
@@ -3676,9 +3810,9 @@
     "cib": {
      "median_cents": 5000,
      "mode_cents": 5000,
-     "q1_cents": 4893,
-     "q3_cents": 5893,
-     "n": 33
+     "q1_cents": 4990,
+     "q3_cents": 5999,
+     "n": 34
     }
    },
    "pct_1d": 0,
@@ -3686,6 +3820,7 @@
    "pct_30d": null,
    "sparks": {
     "loose": [
+     3000,
      3000,
      3000,
      3000,
@@ -3707,11 +3842,12 @@
      5000,
      5000,
      5000,
+     5000,
      5000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "mario-superstar-baseball-gamecube",
@@ -3727,15 +3863,15 @@
      "n": 7
     },
     "cib": {
-     "median_cents": 9999,
+     "median_cents": 10000,
      "mode_cents": 10000,
-     "q1_cents": 9399,
-     "q3_cents": 12999,
-     "n": 19
+     "q1_cents": 9848,
+     "q3_cents": 13250,
+     "n": 17
     }
    },
-   "pct_1d": -0.01,
-   "pct_7d": 0,
+   "pct_1d": 0.01,
+   "pct_7d": 0.25,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -3747,6 +3883,7 @@
      6300,
      6300,
      6300,
+     6400,
      6400,
      6400
     ],
@@ -3760,11 +3897,12 @@
      9999,
      9999,
      9999,
-     9999
+     9999,
+     10000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "super-mario-strikers-gamecube",
@@ -3777,14 +3915,14 @@
      "mode_cents": 5500,
      "q1_cents": 5000,
      "q3_cents": 5999,
-     "n": 27
+     "n": 26
     },
     "cib": {
      "median_cents": 7499,
      "mode_cents": 7000,
-     "q1_cents": 6995,
-     "q3_cents": 8799,
-     "n": 70
+     "q1_cents": 6500,
+     "q3_cents": 8199,
+     "n": 69
     },
     "new": {
      "median_cents": 25999,
@@ -3807,9 +3945,11 @@
      5674,
      5674,
      5674,
+     5550,
      5550
     ],
     "cib": [
+     7499,
      7499,
      7499,
      7499,
@@ -3831,11 +3971,12 @@
      25999,
      25999,
      25999,
+     25999,
      25999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "kirby-air-ride-gamecube",
@@ -3846,7 +3987,7 @@
     "loose": {
      "median_cents": 6477,
      "mode_cents": 6000,
-     "q1_cents": 5997,
+     "q1_cents": 5999,
      "q3_cents": 7500,
      "n": 53
     },
@@ -3865,7 +4006,7 @@
      "n": 5
     }
    },
-   "pct_1d": -0.02,
+   "pct_1d": 0,
    "pct_7d": -5.02,
    "pct_30d": null,
    "sparks": {
@@ -3879,6 +4020,7 @@
      6499,
      6499,
      6499,
+     6488,
      6488
     ],
     "cib": [
@@ -3891,9 +4033,11 @@
      9749,
      9499,
      9499,
+     9497,
      9497
     ],
     "new": [
+     47500,
      47500,
      47500,
      47500,
@@ -3907,7 +4051,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "wario-ware-mega-party-games-gamecube",
@@ -3923,17 +4067,18 @@
      "n": 9
     },
     "cib": {
-     "median_cents": 9499,
+     "median_cents": 8799,
      "q1_cents": 6000,
      "q3_cents": 11495,
-     "n": 7
+     "n": 6
     }
    },
-   "pct_1d": 2.7,
+   "pct_1d": -7.37,
    "pct_7d": -11.87,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     5315,
      5315,
      5315,
      5315,
@@ -3955,11 +4100,12 @@
      10495,
      10495,
      9249,
+     9249,
      9249
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "donkey-konga-gamecube",
@@ -3979,7 +4125,7 @@
      "mode_cents": 2500,
      "q1_cents": 2124,
      "q3_cents": 2995,
-     "n": 39
+     "n": 38
     }
    },
    "pct_1d": 0,
@@ -3987,6 +4133,7 @@
    "pct_30d": null,
    "sparks": {
     "loose": [
+     1999,
      1999,
      1999,
      1999,
@@ -4008,11 +4155,12 @@
      2499,
      2499,
      2499,
+     2499,
      2499
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "sonic-adventure-dx-gamecube",
@@ -4021,18 +4169,18 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 4100,
-     "mode_cents": 3500,
+     "median_cents": 4150,
+     "mode_cents": 5000,
      "q1_cents": 3500,
      "q3_cents": 4995,
-     "n": 47
+     "n": 48
     },
     "cib": {
-     "median_cents": 6000,
+     "median_cents": 5999,
      "mode_cents": 6000,
-     "q1_cents": 5249,
+     "q1_cents": 4964,
      "q3_cents": 7597,
-     "n": 28
+     "n": 29
     },
     "new": {
      "median_cents": 15750,
@@ -4042,7 +4190,7 @@
      "n": 10
     }
    },
-   "pct_1d": 0.02,
+   "pct_1d": -0.02,
    "pct_7d": -0.02,
    "pct_30d": null,
    "sparks": {
@@ -4056,7 +4204,8 @@
      4100,
      4100,
      4100,
-     4100
+     4100,
+     4115
     ],
     "cib": [
      6000,
@@ -4064,6 +4213,7 @@
      6000,
      6000,
      6000,
+     5999,
      5999,
      5999,
      5999,
@@ -4080,11 +4230,12 @@
      15000,
      15000,
      15000,
+     15750,
      15750
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "sonic-heroes-gamecube",
@@ -4095,9 +4246,9 @@
     "loose": {
      "median_cents": 3000,
      "mode_cents": 3000,
-     "q1_cents": 2550,
-     "q3_cents": 3500,
-     "n": 58
+     "q1_cents": 2625,
+     "q3_cents": 3550,
+     "n": 57
     },
     "cib": {
      "median_cents": 4499,
@@ -4107,11 +4258,12 @@
      "n": 49
     }
    },
-   "pct_1d": 0.04,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     3000,
      3000,
      3000,
      3000,
@@ -4133,11 +4285,12 @@
      4499,
      4499,
      4499,
+     4499,
      4499
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "sonic-mega-collection-gamecube",
@@ -4146,18 +4299,18 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1447,
-     "mode_cents": 1000,
-     "q1_cents": 1160,
-     "q3_cents": 1699,
-     "n": 34
+     "median_cents": 1495,
+     "mode_cents": 1500,
+     "q1_cents": 1200,
+     "q3_cents": 1750,
+     "n": 31
     },
     "cib": {
      "median_cents": 1799,
      "mode_cents": 1500,
      "q1_cents": 1499,
-     "q3_cents": 2272,
-     "n": 101
+     "q3_cents": 2395,
+     "n": 99
     },
     "new": {
      "median_cents": 6999,
@@ -4167,8 +4320,8 @@
      "n": 5
     }
    },
-   "pct_1d": -0.06,
-   "pct_7d": 0,
+   "pct_1d": 0,
+   "pct_7d": -0.72,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -4181,6 +4334,7 @@
      1495,
      1495,
      1458,
+     1447,
      1447
     ],
     "cib": [
@@ -4192,6 +4346,7 @@
      1850,
      1850,
      1850,
+     1800,
      1800,
      1800
     ],
@@ -4205,11 +4360,12 @@
      6698,
      6698,
      6999,
+     6999,
      6999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "sonic-gems-collection-gamecube",
@@ -4218,10 +4374,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 4995,
-     "q1_cents": 4295,
-     "q3_cents": 6645,
-     "n": 7
+     "median_cents": 4797,
+     "mode_cents": 4000,
+     "q1_cents": 4148,
+     "q3_cents": 6323,
+     "n": 8
     },
     "cib": {
      "median_cents": 7999,
@@ -4231,7 +4388,7 @@
      "n": 13
     }
    },
-   "pct_1d": 5.26,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -4245,9 +4402,11 @@
      4549,
      4549,
      4797,
+     4995,
      4995
     ],
     "cib": [
+     7999,
      7999,
      7999,
      7999,
@@ -4261,7 +4420,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "billy-hatcher-and-the-giant-egg-gamecube",
@@ -4272,7 +4431,7 @@
     "loose": {
      "median_cents": 6499,
      "mode_cents": 6000,
-     "q1_cents": 5984,
+     "q1_cents": 5995,
      "q3_cents": 7995,
      "n": 15
     },
@@ -4285,7 +4444,7 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": -6.86,
+   "pct_7d": -0.09,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -4295,6 +4454,7 @@
      6625,
      6499,
      6499,
+     6249,
      6249,
      6249,
      6249,
@@ -4310,11 +4470,12 @@
      10999,
      10245,
      10245,
-     10245
+     10245,
+     10990
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "resident-evil-2-gamecube",
@@ -4326,18 +4487,18 @@
      "median_cents": 4550,
      "mode_cents": 2000,
      "q1_cents": 2339,
-     "q3_cents": 8444,
+     "q3_cents": 7649,
      "n": 24
     },
     "cib": {
-     "median_cents": 5997,
+     "median_cents": 6000,
      "mode_cents": 4000,
      "q1_cents": 3999,
-     "q3_cents": 17801,
-     "n": 76
+     "q3_cents": 18999,
+     "n": 75
     }
    },
-   "pct_1d": -0.05,
+   "pct_1d": 0.05,
    "pct_7d": 0.08,
    "pct_30d": null,
    "sparks": {
@@ -4346,6 +4507,7 @@
      4699,
      4500,
      4525,
+     4550,
      4550,
      4550,
      4550,
@@ -4363,11 +4525,12 @@
      5995,
      5995,
      6000,
+     6000,
      6000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "resident-evil-3-nemesis-gamecube",
@@ -4376,14 +4539,14 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 17999,
+     "median_cents": 18000,
      "mode_cents": 18000,
-     "q1_cents": 16249,
+     "q1_cents": 16748,
      "q3_cents": 20000,
-     "n": 33
+     "n": 32
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 0.01,
    "pct_7d": -0.01,
    "pct_30d": null,
    "sparks": {
@@ -4407,11 +4570,12 @@
      18000,
      18000,
      18000,
+     17999,
      17999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "resident-evil-code-veronica-x-gamecube",
@@ -4434,11 +4598,12 @@
      "n": 17
     }
    },
-   "pct_1d": 3.06,
-   "pct_7d": -1.48,
+   "pct_1d": 0,
+   "pct_7d": -1.81,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     29499,
      29499,
      29499,
      29499,
@@ -4460,11 +4625,12 @@
      36999,
      36450,
      36450,
+     36450,
      36450
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "prince-of-persia-the-sands-of-time-gamecube",
@@ -4475,9 +4641,9 @@
     "loose": {
      "median_cents": 1800,
      "mode_cents": 2000,
-     "q1_cents": 1348,
-     "q3_cents": 2000,
-     "n": 17
+     "q1_cents": 1330,
+     "q3_cents": 1999,
+     "n": 18
     },
     "cib": {
      "median_cents": 2499,
@@ -4488,7 +4654,7 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": 0,
+   "pct_7d": 0.08,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -4498,6 +4664,7 @@
      1742,
      1742,
      1742,
+     1800,
      1800,
      1800,
      1800,
@@ -4513,11 +4680,12 @@
      2497,
      2497,
      2497,
-     2497
+     2497,
+     2499
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "bloody-roar-primal-fury-gamecube",
@@ -4533,7 +4701,7 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": 4.26,
+   "pct_7d": 5.32,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -4546,11 +4714,12 @@
      4900,
      4900,
      4900,
-     4900
+     4900,
+     4950
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "naruto-clash-of-ninja-gamecube",
@@ -4563,25 +4732,24 @@
      "mode_cents": 1000,
      "q1_cents": 800,
      "q3_cents": 1499,
-     "n": 33
+     "n": 36
     },
     "cib": {
      "median_cents": 1500,
      "mode_cents": 1500,
-     "q1_cents": 1399,
+     "q1_cents": 1395,
      "q3_cents": 1999,
-     "n": 58
+     "n": 62
     },
     "new": {
-     "median_cents": 5299,
-     "mode_cents": 6000,
-     "q1_cents": 4999,
-     "q3_cents": 5999,
-     "n": 6
+     "median_cents": 5099,
+     "q1_cents": 4747,
+     "q3_cents": 5749,
+     "n": 5
     }
    },
    "pct_1d": 0,
-   "pct_7d": -1.9,
+   "pct_7d": -1.83,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -4594,6 +4762,7 @@
      1097,
      1097,
      1049,
+     1049,
      1049
     ],
     "cib": [
@@ -4604,6 +4773,7 @@
      1529,
      1529,
      1527,
+     1500,
      1500,
      1500,
      1500
@@ -4618,11 +4788,12 @@
      5299,
      5299,
      5099,
+     5099,
      5099
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "naruto-clash-of-ninja-2-gamecube",
@@ -4631,11 +4802,11 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1325,
+     "median_cents": 1438,
      "mode_cents": 1500,
      "q1_cents": 1099,
-     "q3_cents": 1500,
-     "n": 50
+     "q3_cents": 1545,
+     "n": 51
     },
     "cib": {
      "median_cents": 2000,
@@ -4666,7 +4837,8 @@
      1350,
      1350,
      1350,
-     1350
+     1350,
+     1371
     ],
     "cib": [
      2000,
@@ -4678,9 +4850,11 @@
      1999,
      1999,
      1999,
+     2000,
      2000
     ],
     "new": [
+     6000,
      6000,
      6000,
      6000,
@@ -4694,7 +4868,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "dragon-ball-z-budokai-2-gamecube",
@@ -4731,9 +4905,11 @@
      3217,
      3217,
      3217,
+     3299,
      3299
     ],
     "cib": [
+     7216,
      7216,
      7216,
      7216,
@@ -4747,7 +4923,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "mega-man-x-collection-gamecube",
@@ -4789,6 +4965,7 @@
      2957,
      2957,
      2957,
+     2957,
      2957
     ],
     "cib": [
@@ -4800,6 +4977,7 @@
      4847,
      4847,
      4847,
+     4999,
      4999,
      4999
     ],
@@ -4813,11 +4991,12 @@
      18425,
      18425,
      15500,
+     15500,
      15500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "mega-man-anniversary-collection-gamecube",
@@ -4826,18 +5005,18 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1495,
+     "median_cents": 1448,
      "mode_cents": 1500,
      "q1_cents": 1100,
-     "q3_cents": 1605,
-     "n": 37
+     "q3_cents": 1550,
+     "n": 38
     },
     "cib": {
-     "median_cents": 2195,
+     "median_cents": 2098,
      "mode_cents": 2000,
-     "q1_cents": 1925,
+     "q1_cents": 1900,
      "q3_cents": 2500,
-     "n": 72
+     "n": 70
     },
     "new": {
      "median_cents": 11700,
@@ -4846,8 +5025,8 @@
      "n": 6
     }
    },
-   "pct_1d": -0.18,
-   "pct_7d": -0.09,
+   "pct_1d": -4.42,
+   "pct_7d": -0.14,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -4857,6 +5036,7 @@
      1496,
      1495,
      1495,
+     1448,
      1448,
      1448,
      1448,
@@ -4872,9 +5052,11 @@
      2195,
      2195,
      2195,
+     2195,
      2195
     ],
     "new": [
+     11700,
      11700,
      11700,
      11700,
@@ -4888,7 +5070,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "mega-man-network-transmission-gamecube",
@@ -4924,7 +5106,8 @@
      2499,
      2499,
      2499,
-     2499
+     2499,
+     2500
     ],
     "cib": [
      4400,
@@ -4936,11 +5119,12 @@
      4450,
      4500,
      4500,
+     4500,
      4500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "mega-man-x-command-mission-gamecube",
@@ -4976,6 +5160,7 @@
      5499,
      5499,
      5499,
+     5499,
      5499
     ],
     "cib": [
@@ -4988,11 +5173,12 @@
      9000,
      9250,
      9250,
+     9250,
      9250
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "spider-man-2-gamecube",
@@ -5029,6 +5215,7 @@
      1499,
      1499,
      1499,
+     1499,
      1499
     ],
     "cib": [
@@ -5041,11 +5228,12 @@
      2500,
      2500,
      2500,
+     2500,
      2500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "the-simpsons-hit-and-run-gamecube",
@@ -5054,22 +5242,22 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 8495,
-     "mode_cents": 8000,
-     "q1_cents": 7825,
-     "q3_cents": 9450,
-     "n": 13
+     "median_cents": 8248,
+     "mode_cents": 7500,
+     "q1_cents": 7500,
+     "q3_cents": 9000,
+     "n": 14
     },
     "cib": {
-     "median_cents": 10500,
+     "median_cents": 10309,
      "mode_cents": 12000,
      "q1_cents": 9499,
-     "q3_cents": 12500,
-     "n": 34
+     "q3_cents": 12250,
+     "n": 36
     }
    },
-   "pct_1d": 1.35,
-   "pct_7d": -0.47,
+   "pct_1d": -1.82,
+   "pct_7d": -2.55,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -5082,7 +5270,8 @@
      8248,
      8248,
      8248,
-     8495
+     8495,
+     8248
     ],
     "cib": [
      10525,
@@ -5094,11 +5283,12 @@
      10550,
      10550,
      10525,
+     10500,
      10500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "need-for-speed-most-wanted-gamecube",
@@ -5109,23 +5299,24 @@
     "loose": {
      "median_cents": 3000,
      "mode_cents": 3000,
-     "q1_cents": 2759,
+     "q1_cents": 2799,
      "q3_cents": 4495,
      "n": 11
     },
     "cib": {
-     "median_cents": 4500,
-     "mode_cents": 4500,
+     "median_cents": 5995,
+     "mode_cents": 6000,
      "q1_cents": 4221,
      "q3_cents": 6250,
      "n": 9
     }
    },
-   "pct_1d": 0,
-   "pct_7d": 9.76,
+   "pct_1d": 33.22,
+   "pct_7d": -2.11,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     3000,
      3000,
      3000,
      3000,
@@ -5147,11 +5338,12 @@
      5094,
      4500,
      4500,
+     4500,
      4500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "burnout-2-point-of-impact-gamecube",
@@ -5159,6 +5351,12 @@
    "region": "NTSC-U",
    "variant": "none",
    "prices": {
+    "loose": {
+     "median_cents": 2249,
+     "q1_cents": 1950,
+     "q3_cents": 2624,
+     "n": 4
+    },
     "cib": {
      "median_cents": 2447,
      "q1_cents": 1599,
@@ -5167,23 +5365,25 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": -4.67,
+   "pct_7d": -9.37,
    "pct_30d": null,
    "sparks": {
     "loose": [
      2624,
      2537,
+     2450,
      2450
     ],
     "cib": [
      2700,
      2700,
      2700,
-     2574
+     2574,
+     2447
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "def-jam-fight-for-ny-gamecube",
@@ -5191,12 +5391,6 @@
    "region": "NTSC-U",
    "variant": "none",
    "prices": {
-    "loose": {
-     "median_cents": 16750,
-     "q1_cents": 14248,
-     "q3_cents": 19200,
-     "n": 4
-    },
     "cib": {
      "median_cents": 23000,
      "mode_cents": 22000,
@@ -5227,11 +5421,12 @@
      23000,
      23000,
      23000,
+     23000,
      23000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "x-men-legends-gamecube",
@@ -5240,22 +5435,22 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1914,
-     "mode_cents": 1800,
+     "median_cents": 1932,
+     "mode_cents": 1700,
      "q1_cents": 1699,
-     "q3_cents": 2299,
-     "n": 18
+     "q3_cents": 2448,
+     "n": 19
     },
     "cib": {
-     "median_cents": 2899,
+     "median_cents": 2949,
      "mode_cents": 3000,
-     "q1_cents": 2450,
+     "q1_cents": 2500,
      "q3_cents": 3284,
-     "n": 21
+     "n": 20
     }
    },
-   "pct_1d": -3.33,
-   "pct_7d": -0.03,
+   "pct_1d": 1.72,
+   "pct_7d": -1.7,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -5268,7 +5463,8 @@
      1993,
      1965,
      1965,
-     1965
+     1965,
+     1932
     ],
     "cib": [
      3000,
@@ -5280,11 +5476,12 @@
      3000,
      2999,
      2999,
-     2999
+     2999,
+     2949
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "tony-hawks-pro-skater-4-gamecube",
@@ -5296,26 +5493,26 @@
      "median_cents": 1199,
      "mode_cents": 1000,
      "q1_cents": 999,
-     "q3_cents": 1497,
+     "q3_cents": 1499,
      "n": 49
     },
     "cib": {
      "median_cents": 1750,
      "mode_cents": 1500,
      "q1_cents": 1500,
-     "q3_cents": 1999,
-     "n": 64
+     "q3_cents": 2000,
+     "n": 67
     },
     "new": {
      "median_cents": 6995,
      "mode_cents": 7000,
-     "q1_cents": 5400,
-     "q3_cents": 7499,
-     "n": 8
+     "q1_cents": 4000,
+     "q3_cents": 7999,
+     "n": 7
     }
    },
-   "pct_1d": 1.16,
-   "pct_7d": 0.65,
+   "pct_1d": 0,
+   "pct_7d": 1.82,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -5328,7 +5525,8 @@
      1150,
      1100,
      1100,
-     1100
+     1100,
+     1150
     ],
     "cib": [
      1699,
@@ -5340,7 +5538,8 @@
      1699,
      1699,
      1705,
-     1710
+     1710,
+     1730
     ],
     "new": [
      6999,
@@ -5352,11 +5551,12 @@
      6995,
      6995,
      6995,
+     6995,
      6995
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "tony-hawks-underground-gamecube",
@@ -5368,15 +5568,15 @@
      "median_cents": 1699,
      "mode_cents": 1700,
      "q1_cents": 1299,
-     "q3_cents": 1999,
+     "q3_cents": 1800,
      "n": 31
     },
     "cib": {
      "median_cents": 2500,
      "mode_cents": 2000,
      "q1_cents": 2000,
-     "q3_cents": 3495,
-     "n": 54
+     "q3_cents": 3497,
+     "n": 52
     }
    },
    "pct_1d": 0,
@@ -5393,6 +5593,7 @@
      1699,
      1699,
      1699,
+     1699,
      1699
     ],
     "cib": [
@@ -5405,11 +5606,12 @@
      2499,
      2500,
      2500,
+     2500,
      2500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "ssx-tricky-gamecube",
@@ -5446,9 +5648,11 @@
      3000,
      3000,
      3000,
+     3000,
      3000
     ],
     "cib": [
+     4000,
      4000,
      4000,
      4000,
@@ -5462,7 +5666,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "ssx-3-gamecube",
@@ -5478,15 +5682,15 @@
      "n": 34
     },
     "cib": {
-     "median_cents": 2625,
+     "median_cents": 2700,
      "mode_cents": 2600,
      "q1_cents": 2499,
      "q3_cents": 3299,
      "n": 30
     }
    },
-   "pct_1d": -2.78,
-   "pct_7d": -2.78,
+   "pct_1d": 2.86,
+   "pct_7d": -0.48,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -5496,6 +5700,7 @@
      1998,
      1998,
      1998,
+     1999,
      1999,
      1999,
      1999,
@@ -5511,11 +5716,12 @@
      2699,
      2699,
      2699,
-     2625
+     2625,
+     2700
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "star-wars-rogue-squadron-ii-rogue-leader-gamecube",
@@ -5531,11 +5737,11 @@
      "n": 23
     },
     "cib": {
-     "median_cents": 2250,
+     "median_cents": 2349,
      "mode_cents": 2000,
      "q1_cents": 1999,
-     "q3_cents": 2699,
-     "n": 70
+     "q3_cents": 2898,
+     "n": 73
     },
     "new": {
      "median_cents": 12999,
@@ -5545,8 +5751,8 @@
      "n": 5
     }
    },
-   "pct_1d": 0,
-   "pct_7d": -7.06,
+   "pct_1d": 4.4,
+   "pct_7d": -8.24,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -5559,6 +5765,7 @@
      1499,
      1499,
      1449,
+     1399,
      1399
     ],
     "cib": [
@@ -5571,6 +5778,7 @@
      2459,
      2412,
      2349,
+     2250,
      2250
     ],
     "new": [
@@ -5580,11 +5788,12 @@
      14000,
      14000,
      14000,
+     12999,
      12999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "star-wars-rogue-squadron-iii-rebel-strike-gamecube",
@@ -5600,11 +5809,11 @@
      "n": 34
     },
     "cib": {
-     "median_cents": 2499,
+     "median_cents": 2500,
      "mode_cents": 3000,
-     "q1_cents": 2155,
+     "q1_cents": 2219,
      "q3_cents": 3000,
-     "n": 41
+     "n": 40
     },
     "new": {
      "median_cents": 7900,
@@ -5613,8 +5822,8 @@
      "n": 5
     }
    },
-   "pct_1d": 0,
-   "pct_7d": -16.62,
+   "pct_1d": 0.04,
+   "pct_7d": -15.92,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -5625,6 +5834,7 @@
      1699,
      1699,
      1699,
+     1800,
      1800,
      1800,
      1800
@@ -5639,9 +5849,11 @@
      2947,
      2499,
      2499,
+     2499,
      2499
     ],
     "new": [
+     7900,
      7900,
      7900,
      7900,
@@ -5655,7 +5867,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "crazy-taxi-gamecube",
@@ -5664,11 +5876,10 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 2475,
-     "mode_cents": 2500,
-     "q1_cents": 2300,
-     "q3_cents": 3149,
-     "n": 8
+     "median_cents": 2450,
+     "q1_cents": 2199,
+     "q3_cents": 3299,
+     "n": 7
     },
     "cib": {
      "median_cents": 4000,
@@ -5680,7 +5891,7 @@
     "new": {
      "median_cents": 19995,
      "mode_cents": 20000,
-     "q1_cents": 11850,
+     "q1_cents": 11600,
      "q3_cents": 29997,
      "n": 5
     }
@@ -5699,7 +5910,8 @@
      2700,
      2700,
      2500,
-     2475
+     2475,
+     2450
     ],
     "cib": [
      4243,
@@ -5709,6 +5921,7 @@
      4243,
      4243,
      4243,
+     4000,
      4000,
      4000,
      4000
@@ -5723,11 +5936,12 @@
      19995,
      19995,
      19995,
+     19995,
      19995
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "ribbit-king-gamecube",
@@ -5768,11 +5982,12 @@
      23995,
      23995,
      23995,
+     23995,
      23995
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "go-go-hypergrind-gamecube",
@@ -5802,11 +6017,12 @@
      28262,
      28262,
      28262,
+     28262,
      28262
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "lost-kingdoms-gamecube",
@@ -5823,7 +6039,7 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": 16.25,
+   "pct_7d": 14.5,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -5836,11 +6052,12 @@
      5999,
      5999,
      5999,
+     5995,
      5995
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "lost-kingdoms-ii-gamecube",
@@ -5892,12 +6109,13 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": 0,
+   "pct_7d": -2.7,
    "pct_30d": null,
    "sparks": {
     "loose": [
      2500,
      2500,
+     2499,
      2499,
      2499,
      2499,
@@ -5917,6 +6135,7 @@
      4750,
      4750,
      4500,
+     4500,
      4500
     ],
     "new": [
@@ -5929,11 +6148,12 @@
      7999,
      7999,
      7999,
+     7999,
      7999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "sphinx-and-the-cursed-mummy-gamecube",
@@ -5957,7 +6177,7 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": 0.78,
+   "pct_7d": 1.4,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -5969,6 +6189,7 @@
      1049,
      1075,
      1075,
+     1100,
      1100,
      1100
     ],
@@ -5982,11 +6203,12 @@
      1911,
      1911,
      1950,
+     1950,
      1950
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "beach-spikers-gamecube",
@@ -6023,9 +6245,11 @@
      2400,
      2495,
      2495,
+     2497,
      2497
     ],
     "cib": [
+     3500,
      3500,
      3500,
      3500,
@@ -6039,7 +6263,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "wave-race-blue-storm-gamecube",
@@ -6055,11 +6279,11 @@
      "n": 48
     },
     "cib": {
-     "median_cents": 2500,
+     "median_cents": 2543,
      "mode_cents": 2500,
      "q1_cents": 2299,
      "q3_cents": 3350,
-     "n": 57
+     "n": 56
     },
     "new": {
      "median_cents": 13399,
@@ -6069,11 +6293,12 @@
      "n": 5
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 1.72,
    "pct_7d": 0.04,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     1500,
      1500,
      1500,
      1500,
@@ -6095,9 +6320,11 @@
      2500,
      2500,
      2500,
+     2500,
      2500
     ],
     "new": [
+     13399,
      13399,
      13399,
      13399,
@@ -6111,7 +6338,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "1080-avalanche-gamecube",
@@ -6134,11 +6361,12 @@
      "n": 27
     }
    },
-   "pct_1d": 8.26,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     1999,
      1999,
      1999,
      1999,
@@ -6160,11 +6388,12 @@
      3654,
      3654,
      3654,
+     3654,
      3654
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "spongebob-squarepants-battle-for-bikini-bottom-gamecube",
@@ -6173,9 +6402,9 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1799,
+     "median_cents": 1800,
      "mode_cents": 1500,
-     "q1_cents": 1549,
+     "q1_cents": 1550,
      "q3_cents": 1999,
      "n": 31
     },
@@ -6201,7 +6430,8 @@
      1825,
      1825,
      1825,
-     1825
+     1825,
+     1800
     ],
     "cib": [
      3150,
@@ -6213,11 +6443,12 @@
      3299,
      3397,
      3495,
+     3496,
      3496
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "ultimate-muscle-legends-vs-new-generation-gamecube",
@@ -6256,11 +6487,12 @@
      25000,
      25000,
      24500,
+     24500,
      24500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "auto-modellista-gamecube",
@@ -6290,11 +6522,12 @@
      7995,
      7995,
      7995,
+     7995,
      7995
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "digimon-rumble-arena-2-gamecube",
@@ -6324,11 +6557,12 @@
      23000,
      23000,
      23000,
+     23750,
      23750
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "gauntlet-dark-legacy-gamecube",
@@ -6363,10 +6597,10 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 5499,
-     "q1_cents": 4948,
-     "q3_cents": 7750,
-     "n": 5
+     "median_cents": 5750,
+     "q1_cents": 4995,
+     "q3_cents": 6999,
+     "n": 6
     },
     "cib": {
      "median_cents": 13249,
@@ -6389,9 +6623,11 @@
      6249,
      5499,
      5499,
+     5499,
      5499
     ],
     "cib": [
+     13249,
      13249,
      13249,
      13249,
@@ -6399,7 +6635,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "pokemon-channel-gamecube",
@@ -6415,14 +6651,14 @@
      "n": 18
     },
     "cib": {
-     "median_cents": 9150,
-     "q1_cents": 6250,
-     "q3_cents": 11000,
-     "n": 8
+     "median_cents": 9499,
+     "q1_cents": 7499,
+     "q3_cents": 12000,
+     "n": 7
     }
    },
-   "pct_1d": 0,
-   "pct_7d": -12.02,
+   "pct_1d": 3.81,
+   "pct_7d": -4.69,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -6435,7 +6671,8 @@
      5999,
      5999,
      5999,
-     5999
+     5999,
+     5849
     ],
     "cib": [
      8800,
@@ -6447,11 +6684,12 @@
      8800,
      8800,
      9150,
+     9150,
      9150
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "animaniacs-the-great-edgar-hunt-gamecube",
@@ -6480,11 +6718,12 @@
      10539,
      10539,
      10539,
+     10539,
      10539
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "alien-hominid-gamecube",
@@ -6500,7 +6739,7 @@
      "n": 9
     }
    },
-   "pct_1d": -4,
+   "pct_1d": 0,
    "pct_7d": -3.85,
    "pct_30d": null,
    "sparks": {
@@ -6514,6 +6753,7 @@
      6250,
      6250,
      6250,
+     6250,
      6250
     ],
     "cib": [
@@ -6523,7 +6763,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "tube-slider-gamecube",
@@ -6546,11 +6786,12 @@
      "n": 10
     }
    },
-   "pct_1d": 0.01,
+   "pct_1d": 0,
    "pct_7d": -5.03,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     7348,
      7348,
      7348,
      7348,
@@ -6572,11 +6813,12 @@
      9497,
      9497,
      9497,
+     9497,
      9497
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "bust-a-move-3000-gamecube",
@@ -6593,7 +6835,7 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": 0.22,
+   "pct_7d": 0.16,
    "pct_30d": null,
    "sparks": {
     "cib": [
@@ -6606,11 +6848,12 @@
      9997,
      9997,
      9997,
+     9997,
      9997
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "shadow-the-hedgehog-gamecube",
@@ -6622,19 +6865,19 @@
      "median_cents": 5995,
      "mode_cents": 5000,
      "q1_cents": 4999,
-     "q3_cents": 7000,
-     "n": 57
+     "q3_cents": 6999,
+     "n": 59
     },
     "cib": {
      "median_cents": 9500,
      "mode_cents": 10000,
-     "q1_cents": 7822,
-     "q3_cents": 11050,
-     "n": 52
+     "q1_cents": 7999,
+     "q3_cents": 11000,
+     "n": 51
     }
    },
-   "pct_1d": 0.01,
-   "pct_7d": -0.26,
+   "pct_1d": 0,
+   "pct_7d": -0.2,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -6647,7 +6890,8 @@
      5844,
      5849,
      5849,
-     5898
+     5898,
+     5995
     ],
     "cib": [
      9513,
@@ -6659,11 +6903,12 @@
      9513,
      9500,
      9500,
+     9500,
      9500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "the-simpsons-road-rage-gamecube",
@@ -6686,7 +6931,7 @@
      "n": 10
     }
    },
-   "pct_1d": -4.54,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -6700,9 +6945,11 @@
      6500,
      6583,
      6583,
-     6583
+     6583,
+     6250
     ],
     "cib": [
+     9349,
      9349,
      9349,
      9349,
@@ -6716,7 +6963,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "chaos-field-gamecube",
@@ -6732,13 +6979,13 @@
      "n": 10
     },
     "cib": {
-     "median_cents": 9500,
-     "q1_cents": 7997,
+     "median_cents": 9650,
+     "q1_cents": 8550,
      "q3_cents": 10000,
-     "n": 7
+     "n": 6
     }
    },
-   "pct_1d": 5.26,
+   "pct_1d": 1.58,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -6750,6 +6997,7 @@
      4400,
      4400,
      4400,
+     4450,
      4450,
      4450,
      4450
@@ -6764,11 +7012,12 @@
      9025,
      9025,
      9025,
+     9025,
      9025
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "mortal-kombat-deception-gamecube",
@@ -6808,11 +7057,12 @@
      9000,
      9000,
      9000,
+     9450,
      9450
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "ultimate-spider-man-gamecube",
@@ -6830,7 +7080,7 @@
     "cib": {
      "median_cents": 7000,
      "mode_cents": 7000,
-     "q1_cents": 6145,
+     "q1_cents": 6400,
      "q3_cents": 9748,
      "n": 17
     }
@@ -6849,6 +7099,7 @@
      4000,
      4000,
      3999,
+     3999,
      3999
     ],
     "cib": [
@@ -6861,11 +7112,12 @@
      7996,
      7996,
      7497,
+     7000,
      7000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "godzilla-destroy-all-monsters-melee-gamecube",
@@ -6874,22 +7126,22 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 4499,
+     "median_cents": 4500,
      "mode_cents": 4500,
-     "q1_cents": 3898,
+     "q1_cents": 3999,
      "q3_cents": 5000,
-     "n": 19
+     "n": 18
     },
     "cib": {
      "median_cents": 6099,
      "mode_cents": 6000,
-     "q1_cents": 5998,
-     "q3_cents": 7999,
-     "n": 23
+     "q1_cents": 5849,
+     "q3_cents": 8497,
+     "n": 24
     }
    },
    "pct_1d": 0,
-   "pct_7d": -1.56,
+   "pct_7d": -5.43,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -6897,6 +7149,7 @@
      4497,
      4497,
      4498,
+     4499,
      4499,
      4499,
      4499,
@@ -6914,11 +7167,12 @@
      6499,
      6399,
      6399,
-     6299
+     6299,
+     6099
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "digimon-world-4-gamecube",
@@ -6955,6 +7209,7 @@
      6200,
      6200,
      6200,
+     6200,
      6200
     ],
     "cib": [
@@ -6967,11 +7222,12 @@
      8750,
      8750,
      8750,
+     8750,
      8750
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "zoids-battle-legends-gamecube",
@@ -7029,11 +7285,12 @@
      6497,
      6000,
      6000,
+     6497,
      6497
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "sonic-riders-gamecube",
@@ -7042,10 +7299,10 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 3600,
+     "median_cents": 3848,
      "mode_cents": 4000,
      "q1_cents": 3200,
-     "q3_cents": 4000,
+     "q3_cents": 4115,
      "n": 18
     },
     "cib": {
@@ -7056,7 +7313,7 @@
      "n": 32
     }
    },
-   "pct_1d": 9.94,
+   "pct_1d": 0,
    "pct_7d": -9.07,
    "pct_30d": null,
    "sparks": {
@@ -7070,6 +7327,7 @@
      3712,
      3682,
      3682,
+     3665,
      3665
     ],
     "cib": [
@@ -7079,6 +7337,7 @@
      5499,
      5499,
      5499,
+     5000,
      5000,
      5000,
      5000,
@@ -7096,7 +7355,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "medabots-infinity-gamecube",
@@ -7111,7 +7370,7 @@
      "n": 12
     }
    },
-   "pct_1d": 5,
+   "pct_1d": 0,
    "pct_7d": 4.17,
    "pct_30d": null,
    "sparks": {
@@ -7125,11 +7384,12 @@
      4800,
      4800,
      5000,
+     5000,
      5000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "capcom-vs-snk-2-eo-gamecube",
@@ -7147,16 +7407,17 @@
     "cib": {
      "median_cents": 4999,
      "mode_cents": 5000,
-     "q1_cents": 4500,
-     "q3_cents": 5599,
+     "q1_cents": 4595,
+     "q3_cents": 5995,
      "n": 23
     }
    },
-   "pct_1d": 0.08,
+   "pct_1d": 0,
    "pct_7d": -0.08,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     2999,
      2999,
      2999,
      2999,
@@ -7178,11 +7439,12 @@
      4999,
      4999,
      4995,
+     4995,
      4995
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "viewtiful-joe-red-hot-rumble-gamecube",
@@ -7211,11 +7473,12 @@
      2999,
      2999,
      2999,
+     2999,
      2999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "donkey-konga-2-gamecube",
@@ -7233,9 +7496,9 @@
     "cib": {
      "median_cents": 2800,
      "mode_cents": 3000,
-     "q1_cents": 2498,
-     "q3_cents": 3499,
-     "n": 35
+     "q1_cents": 2499,
+     "q3_cents": 3500,
+     "n": 36
     },
     "new": {
      "median_cents": 8950,
@@ -7259,9 +7522,11 @@
      1995,
      1995,
      1997,
+     1997,
      1997
     ],
     "cib": [
+     2800,
      2800,
      2800,
      2800,
@@ -7283,11 +7548,12 @@
      8950,
      8950,
      8950,
+     8950,
      8950
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "def-jam-vendetta-gamecube",
@@ -7303,11 +7569,11 @@
      "n": 5
     },
     "cib": {
-     "median_cents": 6250,
+     "median_cents": 6000,
      "mode_cents": 6000,
-     "q1_cents": 5999,
+     "q1_cents": 4999,
      "q3_cents": 6899,
-     "n": 6
+     "n": 7
     },
     "new": {
      "median_cents": 26998,
@@ -7317,8 +7583,8 @@
      "n": 4
     }
    },
-   "pct_1d": 0,
-   "pct_7d": 0,
+   "pct_1d": -4,
+   "pct_7d": -4,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -7329,6 +7595,7 @@
      3899,
      3650,
      3650,
+     3500,
      3500,
      3500,
      3500
@@ -7343,9 +7610,11 @@
      6500,
      6500,
      6250,
-     6250
+     6250,
+     6000
     ],
     "new": [
+     26998,
      26998,
      26998,
      26998,
@@ -7359,7 +7628,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "zatch-bell-mamodo-fury-gamecube",
@@ -7389,11 +7658,12 @@
      11999,
      11999,
      11999,
+     11999,
      11999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "phantasy-star-online-episode-iii-card-revolution-gamecube",
@@ -7410,7 +7680,7 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": 3.72,
+   "pct_7d": 11.13,
    "pct_30d": null,
    "sparks": {
     "cib": [
@@ -7423,11 +7693,12 @@
      6750,
      6995,
      6995,
-     6999
+     6999,
+     7499
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "one-piece-grand-adventure-gamecube",
@@ -7469,7 +7740,7 @@
      "n": 12
     }
    },
-   "pct_1d": 12.5,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -7483,7 +7754,8 @@
      4900,
      4900,
      4900,
-     4900
+     4900,
+     4999
     ],
     "cib": [
      5500,
@@ -7495,11 +7767,12 @@
      5999,
      5999,
      5999,
+     5999,
      5999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "ncaa-college-basketball-2k3-gamecube",
@@ -7508,14 +7781,14 @@
    "variant": "none",
    "prices": {
     "cib": {
-     "median_cents": 31500,
-     "q1_cents": 25500,
+     "median_cents": 28000,
+     "q1_cents": 24000,
      "q3_cents": 43999,
-     "n": 4
+     "n": 5
     }
    },
-   "pct_1d": 0,
-   "pct_7d": 0,
+   "pct_1d": -11.11,
+   "pct_7d": 12,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -7538,11 +7811,12 @@
      24999,
      24999,
      24999,
-     24999
+     24999,
+     28000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "disney-sports-football-gamecube",
@@ -7579,6 +7853,7 @@
      4999,
      4999,
      4999,
+     4999,
      4999
     ],
     "cib": [
@@ -7591,11 +7866,12 @@
      33495,
      26995,
      26995,
+     26995,
      26995
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "samurai-jack-the-shadow-of-aku-gamecube",
@@ -7646,6 +7922,7 @@
      5999,
      5999,
      5999,
+     5999,
      5999
     ],
     "cib": [
@@ -7654,7 +7931,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "evolution-snowboarding-gamecube",
@@ -7684,11 +7961,12 @@
      7749,
      7749,
      7749,
+     7749,
      7749
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "spirits-and-spells-gamecube",
@@ -7718,11 +7996,12 @@
      6999,
      6999,
      6999,
+     6999,
      6999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "harry-potter-and-the-sorcerers-stone-gamecube",
@@ -7758,9 +8037,11 @@
      7000,
      7000,
      7000,
+     7000,
      7000
     ],
     "new": [
+     34999,
      34999,
      34999,
      34999,
@@ -7774,7 +8055,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "buffy-the-vampire-slayer-chaos-bleeds-gamecube",
@@ -7809,7 +8090,7 @@
      "n": 4
     }
    },
-   "pct_1d": 35.86,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -7820,11 +8101,12 @@
      13450,
      13450,
      13450,
+     13450,
      13450
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "batman-dark-tomorrow-gamecube",
@@ -7860,6 +8142,7 @@
      2699,
      3049,
      3314,
+     3314,
      3314
     ],
     "new": [
@@ -7872,11 +8155,12 @@
      14799,
      14799,
      14799,
+     14799,
      14799
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "piglets-big-game-gamecube",
@@ -7887,7 +8171,7 @@
     "loose": {
      "median_cents": 5000,
      "mode_cents": 5000,
-     "q1_cents": 4340,
+     "q1_cents": 4450,
      "q3_cents": 6264,
      "n": 8
     },
@@ -7920,11 +8204,13 @@
      5000,
      5000,
      5000,
+     5000,
      5000
     ],
     "cib": [
      14999,
      14727,
+     14455,
      14455,
      14455,
      14455,
@@ -7944,11 +8230,12 @@
      17500,
      17500,
      17500,
+     17500,
      17500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "disney-sports-soccer-gamecube",
@@ -7964,7 +8251,7 @@
      "n": 6
     }
    },
-   "pct_1d": 21.43,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -7978,11 +8265,12 @@
      3500,
      3500,
      3500,
+     3500,
      3500
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "rayman-3-hoodlum-havoc-gamecube",
@@ -7999,7 +8287,7 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": -4.44,
+   "pct_7d": -6.52,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -8012,11 +8300,12 @@
      4700,
      4700,
      4300,
+     4300,
      4300
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "the-incredible-hulk-ultimate-destruction-gamecube",
@@ -8053,13 +8342,13 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 4247,
-     "q1_cents": 3500,
+     "median_cents": 3999,
+     "q1_cents": 2750,
      "q3_cents": 4747,
-     "n": 4
+     "n": 5
     }
    },
-   "pct_1d": 0,
+   "pct_1d": -5.84,
    "pct_7d": 0,
    "pct_30d": null,
    "sparks": {
@@ -8073,11 +8362,12 @@
      4247,
      4247,
      4247,
+     4247,
      4247
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "spawn-armageddon-gamecube",
@@ -8094,13 +8384,13 @@
     "cib": {
      "median_cents": 5999,
      "mode_cents": 6000,
-     "q1_cents": 4949,
+     "q1_cents": 5049,
      "q3_cents": 6498,
      "n": 8
     },
     "new": {
-     "median_cents": 13000,
-     "q1_cents": 11748,
+     "median_cents": 12495,
+     "q1_cents": 11675,
      "q3_cents": 23799,
      "n": 5
     }
@@ -8119,9 +8409,11 @@
      4500,
      4500,
      4500,
+     4500,
      4500
     ],
     "cib": [
+     5999,
      5999,
      5999,
      5999,
@@ -8143,11 +8435,12 @@
      13000,
      13000,
      13000,
+     13000,
      13000
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "serious-sam-next-encounter-gamecube",
@@ -8164,7 +8457,7 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": -3.8,
+   "pct_7d": -1.94,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -8177,11 +8470,12 @@
      3545,
      3545,
      3545,
+     3545,
      3545
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "bmx-xxx-gamecube",
@@ -8194,16 +8488,10 @@
      "q1_cents": 3800,
      "q3_cents": 4995,
      "n": 5
-    },
-    "cib": {
-     "median_cents": 7597,
-     "q1_cents": 6498,
-     "q3_cents": 7849,
-     "n": 4
     }
    },
    "pct_1d": 0,
-   "pct_7d": 0,
+   "pct_7d": -2.22,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -8216,6 +8504,7 @@
      4495,
      4495,
      4395,
+     4395,
      4395
     ],
     "cib": [
@@ -8227,7 +8516,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "codename-kids-next-door-gamecube",
@@ -8266,30 +8555,32 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 3250,
+     "median_cents": 3000,
      "mode_cents": 3000,
-     "q1_cents": 2549,
+     "q1_cents": 2250,
      "q3_cents": 3790,
-     "n": 12
+     "n": 13
     },
     "cib": {
      "median_cents": 4999,
-     "q1_cents": 3999,
+     "mode_cents": 4000,
+     "q1_cents": 3995,
      "q3_cents": 5999,
      "n": 7
     },
     "new": {
      "median_cents": 122500,
-     "q1_cents": 75000,
+     "q1_cents": 87500,
      "q3_cents": 147499,
      "n": 4
     }
    },
-   "pct_1d": 7.57,
-   "pct_7d": -2.11,
+   "pct_1d": 0,
+   "pct_7d": 0.56,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     3250,
      3250,
      3250,
      3250,
@@ -8311,9 +8602,11 @@
      4647,
      4647,
      4647,
+     4647,
      4647
     ],
     "new": [
+     127500,
      127500,
      127500,
      127500,
@@ -8327,7 +8620,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "nba-street-v3-gamecube",
@@ -8343,19 +8636,21 @@
      "n": 9
     },
     "cib": {
-     "median_cents": 7747,
+     "median_cents": 5499,
+     "mode_cents": 5000,
      "q1_cents": 4999,
      "q3_cents": 11992,
-     "n": 4
+     "n": 5
     }
    },
-   "pct_1d": 0,
+   "pct_1d": -29.02,
    "pct_7d": 72,
    "pct_30d": null,
    "sparks": {
     "loose": [
      3999,
      4000,
+     3999,
      3999,
      3999,
      3999,
@@ -8371,11 +8666,12 @@
      4504,
      5938,
      7372,
+     7747,
      7747
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "puyo-pop-fever-gamecube",
@@ -8404,8 +8700,8 @@
      "n": 4
     }
    },
-   "pct_1d": -9.09,
-   "pct_7d": -9.09,
+   "pct_1d": 0,
+   "pct_7d": -6.98,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -8418,7 +8714,8 @@
      3589,
      3589,
      3589,
-     3589
+     3589,
+     3640
     ],
     "cib": [
      5499,
@@ -8430,9 +8727,11 @@
      5249,
      5249,
      5249,
+     4999,
      4999
     ],
     "new": [
+     9999,
      9999,
      9999,
      9999,
@@ -8446,7 +8745,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "the-grim-adventures-of-billy-and-mandy-gamecube",
@@ -8476,11 +8775,12 @@
      4149,
      4149,
      4149,
+     4149,
      4149
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "dragons-lair-3d-gamecube",
@@ -8504,10 +8804,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": -1.65,
+   "pct_7d": -0.84,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     2700,
      2700,
      2700,
      2700,
@@ -8529,11 +8830,12 @@
      5299,
      5299,
      5299,
+     5299,
      5299
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "one-piece-pirates-carnival-gamecube",
@@ -8570,6 +8872,7 @@
      2999,
      2999,
      2999,
+     2999,
      2999
     ],
     "cib": [
@@ -8582,11 +8885,12 @@
      5499,
      5749,
      5749,
+     5749,
      5749
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "i-ninja-gamecube",
@@ -8615,11 +8919,12 @@
      21247,
      21247,
      21247,
+     21247,
      21247
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "metal-arms-glitch-in-the-system-gamecube",
@@ -8649,11 +8954,12 @@
      4299,
      4299,
      4299,
+     4299,
      4299
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "disneys-hide-and-sneak-gamecube",
@@ -8668,18 +8974,19 @@
      "n": 5
     },
     "cib": {
-     "median_cents": 4434,
+     "median_cents": 4649,
      "mode_cents": 5000,
-     "q1_cents": 3434,
+     "q1_cents": 3649,
      "q3_cents": 4999,
      "n": 4
     }
    },
-   "pct_1d": 0,
+   "pct_1d": 4.85,
    "pct_7d": -2.38,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     3795,
      3795,
      3795,
      3795,
@@ -8700,11 +9007,12 @@
      4542,
      4542,
      4542,
+     4434,
      4434
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "summoner-a-goddess-reborn-gamecube",
@@ -8740,6 +9048,7 @@
      2599,
      2599,
      2599,
+     2599,
      2599
     ],
     "cib": [
@@ -8752,11 +9061,12 @@
      5100,
      5100,
      5100,
+     5100,
      5100
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "scooby-doo-night-of-100-frights-gamecube",
@@ -8772,15 +9082,15 @@
      "n": 13
     },
     "cib": {
-     "median_cents": 6995,
+     "median_cents": 7495,
      "mode_cents": 9000,
-     "q1_cents": 4299,
+     "q1_cents": 5299,
      "q3_cents": 8999,
-     "n": 9
+     "n": 8
     }
    },
-   "pct_1d": -6.67,
-   "pct_7d": 39.93,
+   "pct_1d": 7.15,
+   "pct_7d": 49.93,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -8792,6 +9102,7 @@
      2500,
      2600,
      2600,
+     2499,
      2499,
      2499
     ],
@@ -8805,11 +9116,12 @@
      4999,
      5199,
      6995,
-     6995
+     6995,
+     7495
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "zatch-bell-mamodo-battles-gamecube",
@@ -8825,7 +9137,7 @@
      "n": 15
     }
    },
-   "pct_1d": 3.03,
+   "pct_1d": 0,
    "pct_7d": 4.76,
    "pct_30d": null,
    "sparks": {
@@ -8839,11 +9151,12 @@
      3199,
      3199,
      3300,
+     3300,
      3300
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "wwe-day-of-reckoning-2-gamecube",
@@ -8852,21 +9165,21 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 2999,
+     "median_cents": 3124,
      "mode_cents": 3000,
      "q1_cents": 2999,
-     "q3_cents": 3799,
-     "n": 9
+     "q3_cents": 3798,
+     "n": 10
     },
     "cib": {
-     "median_cents": 4550,
-     "q1_cents": 3999,
-     "q3_cents": 6495,
-     "n": 10
+     "median_cents": 4599,
+     "q1_cents": 4106,
+     "q3_cents": 6995,
+     "n": 9
     }
    },
-   "pct_1d": 0,
-   "pct_7d": -9.43,
+   "pct_1d": 1.08,
+   "pct_7d": -7.09,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -8877,6 +9190,7 @@
      3124,
      3124,
      3124,
+     2999,
      2999,
      2999,
      2999
@@ -8891,11 +9205,12 @@
      5300,
      5000,
      5000,
-     4800
+     4800,
+     4599
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "wwe-day-of-reckoning-gamecube",
@@ -8913,9 +9228,9 @@
     "cib": {
      "median_cents": 2800,
      "mode_cents": 2400,
-     "q1_cents": 2399,
-     "q3_cents": 3287,
-     "n": 19
+     "q1_cents": 2400,
+     "q3_cents": 3244,
+     "n": 21
     }
    },
    "pct_1d": 0,
@@ -8932,10 +9247,12 @@
      2100,
      2100,
      2100,
-     2100
+     2100,
+     2199
     ],
     "cib": [
      2799,
+     2800,
      2800,
      2800,
      2800,
@@ -8948,7 +9265,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "rave-master-gamecube",
@@ -8977,11 +9294,12 @@
      16250,
      16250,
      16250,
+     16250,
      16250
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "baldurs-gate-dark-alliance-gamecube",
@@ -9004,7 +9322,7 @@
      "n": 7
     }
    },
-   "pct_1d": -4.74,
+   "pct_1d": 0,
    "pct_7d": 4.95,
    "pct_30d": null,
    "sparks": {
@@ -9018,6 +9336,7 @@
      2948,
      2948,
      2725,
+     2725,
      2725
     ],
     "cib": [
@@ -9030,11 +9349,12 @@
      4196,
      4196,
      4196,
+     4196,
      4196
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "tmnt-battle-nexus-gamecube",
@@ -9063,11 +9383,12 @@
      4650,
      4650,
      4650,
+     4650,
      4650
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "ed-edd-n-eddy-the-mis-edventures-gamecube",
@@ -9103,9 +9424,11 @@
      2786,
      2786,
      2786,
+     2786,
      2786
     ],
     "cib": [
+     4000,
      4000,
      4000,
      4000,
@@ -9119,7 +9442,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "freaky-flyers-gamecube",
@@ -9149,11 +9472,12 @@
      4999,
      4999,
      4999,
+     4999,
      4999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "hunter-the-reckoning-gamecube",
@@ -9190,6 +9514,7 @@
      3113,
      3113,
      3113,
+     3113,
      3113
     ],
     "cib": [
@@ -9202,11 +9527,12 @@
      2999,
      4499,
      4499,
+     4499,
      4499
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "legacy-of-kain-blood-omen-2-gamecube",
@@ -9217,7 +9543,7 @@
     "loose": {
      "median_cents": 2680,
      "mode_cents": 2500,
-     "q1_cents": 2260,
+     "q1_cents": 2397,
      "q3_cents": 3074,
      "n": 13
     },
@@ -9243,6 +9569,7 @@
      2680,
      2680,
      2680,
+     2680,
      2680
     ],
     "cib": [
@@ -9255,11 +9582,12 @@
      3299,
      3299,
      3299,
+     3299,
      3299
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "bomberman-generation-gamecube",
@@ -9303,7 +9631,8 @@
      2995,
      2995,
      2995,
-     2995
+     2995,
+     2845
     ],
     "cib": [
      4495,
@@ -9314,6 +9643,7 @@
      4495,
      4495,
      4495,
+     3999,
      3999,
      3999
     ],
@@ -9327,11 +9657,12 @@
      8999,
      8999,
      8999,
+     8999,
      8999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "bomberman-jetters-gamecube",
@@ -9374,9 +9705,11 @@
      2249,
      2270,
      2270,
+     2270,
      2270
     ],
     "cib": [
+     3999,
      3999,
      3999,
      3999,
@@ -9398,11 +9731,12 @@
      7497,
      7497,
      7497,
+     7497,
      7497
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "teen-titans-gamecube",
@@ -9420,9 +9754,9 @@
     "cib": {
      "median_cents": 4499,
      "mode_cents": 4500,
-     "q1_cents": 4000,
-     "q3_cents": 5348,
-     "n": 13
+     "q1_cents": 4232,
+     "q3_cents": 5200,
+     "n": 11
     },
     "new": {
      "median_cents": 12700,
@@ -9431,7 +9765,7 @@
      "n": 6
     }
    },
-   "pct_1d": 0.04,
+   "pct_1d": 0,
    "pct_7d": -0.07,
    "pct_30d": null,
    "sparks": {
@@ -9442,6 +9776,7 @@
      2499,
      2499,
      2499,
+     2749,
      2749,
      2749,
      2749,
@@ -9457,6 +9792,7 @@
      4500,
      4498,
      4497,
+     4497,
      4497
     ],
     "new": [
@@ -9469,11 +9805,12 @@
      12500,
      12700,
      12700,
+     12700,
      12700
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "x-men-legends-ii-rise-of-apocalypse-gamecube",
@@ -9495,8 +9832,8 @@
      "n": 5
     }
    },
-   "pct_1d": -4.94,
-   "pct_7d": -0.02,
+   "pct_1d": 0,
+   "pct_7d": -0.08,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -9516,9 +9853,11 @@
      4997,
      4997,
      4997,
-     4997
+     4997,
+     4995
     ],
     "new": [
+     12499,
      12499,
      12499,
      12499,
@@ -9532,7 +9871,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "mystic-heroes-gamecube",
@@ -9556,7 +9895,7 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": -0.06,
+   "pct_7d": -0.03,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -9566,6 +9905,7 @@
      1800,
      1800,
      1800,
+     1848,
      1848,
      1848,
      1848,
@@ -9581,11 +9921,12 @@
      3495,
      3495,
      3495,
+     3495,
      3495
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "harvest-moon-another-wonderful-life-gamecube",
@@ -9594,18 +9935,18 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 2000,
-     "mode_cents": 1900,
-     "q1_cents": 1799,
-     "q3_cents": 2400,
-     "n": 15
+     "median_cents": 1950,
+     "mode_cents": 1800,
+     "q1_cents": 1716,
+     "q3_cents": 2393,
+     "n": 12
     },
     "cib": {
      "median_cents": 3000,
      "mode_cents": 3000,
      "q1_cents": 2999,
-     "q3_cents": 3799,
-     "n": 19
+     "q3_cents": 3695,
+     "n": 18
     },
     "new": {
      "median_cents": 9995,
@@ -9615,8 +9956,8 @@
      "n": 5
     }
    },
-   "pct_1d": -9.09,
-   "pct_7d": -6.06,
+   "pct_1d": 0,
+   "pct_7d": -8.4,
    "pct_30d": null,
    "sparks": {
     "loose": [
@@ -9626,6 +9967,7 @@
      1900,
      1950,
      1950,
+     2000,
      2000,
      2000,
      2000,
@@ -9641,9 +9983,11 @@
      3199,
      3199,
      3199,
-     3100
+     3100,
+     3000
     ],
     "new": [
+     9995,
      9995,
      9995,
      9995,
@@ -9657,7 +10001,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "ddr-mario-mix-gamecube",
@@ -9669,8 +10013,8 @@
      "median_cents": 1997,
      "mode_cents": 2000,
      "q1_cents": 1500,
-     "q3_cents": 2488,
-     "n": 38
+     "q3_cents": 2494,
+     "n": 37
     },
     "cib": {
      "median_cents": 2499,
@@ -9694,9 +10038,11 @@
      1999,
      1999,
      1997,
+     1997,
      1997
     ],
     "cib": [
+     2499,
      2499,
      2499,
      2499,
@@ -9710,7 +10056,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "yu-gi-oh-the-falsebound-kingdom-gamecube",
@@ -9721,9 +10067,9 @@
     "loose": {
      "median_cents": 1999,
      "mode_cents": 2000,
-     "q1_cents": 1661,
-     "q3_cents": 2373,
-     "n": 33
+     "q1_cents": 1550,
+     "q3_cents": 2350,
+     "n": 35
     },
     "cib": {
      "median_cents": 3923,
@@ -9734,10 +10080,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": 15.55,
+   "pct_7d": 11.8,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     1999,
      1999,
      1999,
      1999,
@@ -9759,11 +10106,12 @@
      3923,
      3923,
      3923,
+     3923,
      3923
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "amazing-island-gamecube",
@@ -9793,10 +10141,11 @@
     }
    },
    "pct_1d": 0,
-   "pct_7d": 2.94,
+   "pct_7d": 1.45,
    "pct_30d": null,
    "sparks": {
     "loose": [
+     2398,
      2398,
      2398,
      2398,
@@ -9818,9 +10167,11 @@
      3499,
      3499,
      3499,
+     3499,
      3499
     ],
     "new": [
+     12397,
      12397,
      12397,
      12397,
@@ -9829,7 +10180,7 @@
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "final-fantasy-crystal-chronicles-gamecube",
@@ -9838,17 +10189,17 @@
    "variant": "none",
    "prices": {
     "loose": {
-     "median_cents": 1447,
+     "median_cents": 1399,
      "mode_cents": 1500,
-     "q1_cents": 1235,
+     "q1_cents": 1189,
      "q3_cents": 1788,
-     "n": 20
+     "n": 21
     },
     "cib": {
      "median_cents": 1999,
      "mode_cents": 2000,
-     "q1_cents": 1750,
-     "q3_cents": 2399,
+     "q1_cents": 1678,
+     "q3_cents": 2449,
      "n": 64
     },
     "new": {
@@ -9873,9 +10224,11 @@
      1496,
      1496,
      1495,
+     1447,
      1447
     ],
     "cib": [
+     1999,
      1999,
      1999,
      1999,
@@ -9897,11 +10250,12 @@
      6000,
      5750,
      5750,
+     5750,
      5750
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   },
   {
    "id": "bloodrayne-gamecube",
@@ -9945,11 +10299,13 @@
      1859,
      1859,
      1850,
+     1739,
      1739
     ],
     "cib": [
      2600,
      2550,
+     2500,
      2500,
      2500,
      2500,
@@ -9969,11 +10325,12 @@
      8999,
      8999,
      8999,
+     8999,
      8999
     ]
    },
    "stale": false,
-   "as_of": "2026-10-18"
+   "as_of": "2026-10-19"
   }
  ]
 }
