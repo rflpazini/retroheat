@@ -36,13 +36,13 @@
    "title": "Daxter",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 2499,
+   "price_cents": 2500,
    "prices": {
     "loose": 1000,
-    "cib": 2499,
+    "cib": 2500,
     "new": 3500
    },
-   "pct_1d": -0.04,
+   "pct_1d": 0,
    "pct_7d": 17.51,
    "pct_30d": null,
    "score": 17.51,
@@ -66,12 +66,12 @@
    "title": "Metal Gear Solid: Portable Ops",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 2995,
+   "price_cents": 3000,
    "prices": {
     "loose": 1800,
-    "cib": 2995
+    "cib": 3000
    },
-   "pct_1d": 0,
+   "pct_1d": 0.17,
    "pct_7d": 15.24,
    "pct_30d": null,
    "score": 15.24,
@@ -125,13 +125,13 @@
    "title": "PoPoLoCrois",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 3799,
+   "price_cents": 3999,
    "prices": {
     "loose": 2500,
-    "cib": 3799,
+    "cib": 3999,
     "new": 9499
    },
-   "pct_1d": 0,
+   "pct_1d": 5.26,
    "pct_7d": 12.68,
    "pct_30d": null,
    "score": 12.68,
@@ -270,12 +270,12 @@
    "title": "Ridge Racer",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 1949,
+   "price_cents": 1972,
    "prices": {
     "loose": 999,
-    "cib": 1949
+    "cib": 1972
    },
-   "pct_1d": 2.58,
+   "pct_1d": 3.79,
    "pct_7d": 7,
    "pct_30d": null,
    "score": 7,
@@ -303,7 +303,7 @@
    "prices": {
     "loose": 1954,
     "cib": 3000,
-    "new": 4899
+    "new": 4949
    },
    "pct_1d": -6.37,
    "pct_7d": 6.8,
@@ -357,13 +357,13 @@
    "title": "Dissidia Final Fantasy",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 1650,
+   "price_cents": 1649,
    "prices": {
-    "loose": 1299,
-    "cib": 1650,
+    "loose": 1249,
+    "cib": 1649,
     "new": 3960
    },
-   "pct_1d": -2.94,
+   "pct_1d": -3,
    "pct_7d": 6.14,
    "pct_30d": null,
    "score": 6.14,
@@ -387,12 +387,12 @@
    "title": "Samurai Shodown Anthology",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 2672,
+   "price_cents": 2545,
    "prices": {
-    "cib": 2672,
+    "cib": 2545,
     "new": 3799
    },
-   "pct_1d": 0,
+   "pct_1d": -4.75,
    "pct_7d": 5.95,
    "pct_30d": null,
    "score": 5.95,
@@ -416,12 +416,12 @@
    "title": "Dragon Ball Z: Shin Budokai",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 4799,
+   "price_cents": 4839,
    "prices": {
     "loose": 2795,
-    "cib": 4799
+    "cib": 4839
    },
-   "pct_1d": 3.2,
+   "pct_1d": 4.06,
    "pct_7d": 5.35,
    "pct_30d": null,
    "score": 5.35,
@@ -614,12 +614,12 @@
    "title": "Gran Turismo",
    "platform": "psp",
    "headline_condition": "loose",
-   "price_cents": 2250,
+   "price_cents": 2200,
    "prices": {
-    "loose": 2250,
-    "new": 5500
+    "loose": 2200,
+    "new": 5750
    },
-   "pct_1d": 0,
+   "pct_1d": -2.22,
    "pct_7d": 3.36,
    "pct_30d": null,
    "score": 3.36,
@@ -724,6 +724,64 @@
    ]
   },
   {
+   "id": "star-ocean-first-departure-psp",
+   "title": "Star Ocean: First Departure",
+   "platform": "psp",
+   "headline_condition": "cib",
+   "price_cents": 2825,
+   "prices": {
+    "loose": 1525,
+    "cib": 2825,
+    "new": 5397
+   },
+   "pct_1d": 0.89,
+   "pct_7d": 1.82,
+   "pct_30d": null,
+   "score": 1.82,
+   "spark": [
+    2750,
+    2750,
+    2750,
+    2750,
+    2750,
+    2750,
+    2750,
+    2800,
+    2800,
+    2800,
+    2800,
+    2800
+   ]
+  },
+  {
+   "id": "me-and-my-katamari-psp",
+   "title": "Me & My Katamari",
+   "platform": "psp",
+   "headline_condition": "cib",
+   "price_cents": 2835,
+   "prices": {
+    "cib": 2835
+   },
+   "pct_1d": 1.25,
+   "pct_7d": 0.39,
+   "pct_30d": null,
+   "score": 0.39,
+   "spark": [
+    2645,
+    2717,
+    2789,
+    2789,
+    2789,
+    2789,
+    2650,
+    2650,
+    2650,
+    2800,
+    2800,
+    2800
+   ]
+  },
+  {
    "id": "need-for-speed-most-wanted-5-1-0-psp",
    "title": "Need for Speed: Most Wanted 5-1-0",
    "platform": "psp",
@@ -753,121 +811,32 @@
    ]
   },
   {
-   "id": "blazblue-calamity-trigger-portable-psp",
-   "title": "BlazBlue: Calamity Trigger Portable",
+   "id": "half-minute-hero-psp",
+   "title": "Half-Minute Hero",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 2499,
+   "price_cents": 2789,
    "prices": {
-    "cib": 2499,
-    "new": 5000
+    "cib": 2789,
+    "new": 3500
    },
-   "pct_1d": 0,
+   "pct_1d": 5.05,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    2499,
-    2499,
-    2499,
-    2499,
-    2499,
-    2499,
-    2499,
-    2499,
-    2499,
-    2499,
-    2499,
-    2499
-   ]
-  },
-  {
-   "id": "capcom-classics-collection-reloaded-psp",
-   "title": "Capcom Classics Collection Reloaded",
-   "platform": "psp",
-   "headline_condition": "cib",
-   "price_cents": 1999,
-   "prices": {
-    "cib": 1999,
-    "new": 3499
-   },
-   "pct_1d": 0,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    1999,
-    1999,
-    1999,
-    1999,
-    1999,
-    1999,
-    1999,
-    1999,
-    1999,
-    1999,
-    1999,
-    1999
-   ]
-  },
-  {
-   "id": "capcom-classics-collection-remixed-psp",
-   "title": "Capcom Classics Collection Remixed",
-   "platform": "psp",
-   "headline_condition": "cib",
-   "price_cents": 2199,
-   "prices": {
-    "loose": 1544,
-    "cib": 2199,
-    "new": 3120
-   },
-   "pct_1d": 0,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    2100,
-    2100,
-    2100,
-    2150,
-    2199,
-    2199,
-    2199,
-    2199,
-    2199,
-    2199,
-    2199,
-    2199
-   ]
-  },
-  {
-   "id": "crisis-core-final-fantasy-vii-psp",
-   "title": "Crisis Core: Final Fantasy VII",
-   "platform": "psp",
-   "headline_condition": "cib",
-   "price_cents": 1999,
-   "prices": {
-    "loose": 1200,
-    "cib": 1999,
-    "new": 5000
-   },
-   "pct_1d": 0,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    1999,
-    1974,
-    1999,
-    1999,
-    1999,
-    1999,
-    1999,
-    2000,
-    2000,
-    2000,
-    1999,
-    1999
+    2655,
+    2655,
+    2655,
+    2655,
+    2655,
+    2655,
+    2655,
+    2655,
+    2655,
+    2655,
+    2655,
+    2655
    ]
   },
   {
@@ -936,7 +905,7 @@
    "headline_condition": "cib",
    "price_cents": 1098,
    "prices": {
-    "loose": 625,
+    "loose": 649,
     "cib": 1098,
     "new": 2749
    },
@@ -960,59 +929,58 @@
    ]
   },
   {
-   "id": "castlevania-dracula-x-chronicles-psp",
-   "title": "Castlevania: The Dracula X Chronicles",
+   "id": "naruto-shippuden-ultimate-ninja-impact-psp",
+   "title": "Naruto Shippuden: Ultimate Ninja Impact",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 5999,
+   "price_cents": 2495,
    "prices": {
-    "loose": 3200,
-    "cib": 5999,
-    "new": 14500
+    "loose": 1339,
+    "cib": 2495,
+    "new": 5248
    },
-   "pct_1d": 0,
-   "pct_7d": -1.01,
+   "pct_1d": 0.12,
+   "pct_7d": -0.28,
    "pct_30d": null,
-   "score": -1.01,
+   "score": -0.28,
    "spark": [
-    6620,
-    6560,
-    6500,
-    6280,
-    6060,
-    6060,
-    6060,
-    6060,
-    6060,
-    6060,
-    5999,
-    5999
+    2499,
+    2499,
+    2499,
+    2499,
+    2499,
+    2499,
+    2499,
+    2499,
+    2497,
+    2495,
+    2492,
+    2492
    ]
   },
   {
-   "id": "gta-liberty-city-stories-psp",
-   "title": "Grand Theft Auto: Liberty City Stories",
+   "id": "soulcalibur-broken-destiny-psp",
+   "title": "Soulcalibur: Broken Destiny",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 3549,
+   "price_cents": 3595,
    "prices": {
-    "loose": 1897,
-    "cib": 3549,
-    "new": 8995
+    "loose": 1799,
+    "cib": 3595
    },
-   "pct_1d": 1.4,
-   "pct_7d": -2.7,
+   "pct_1d": 2.71,
+   "pct_7d": -2.64,
    "pct_30d": null,
-   "score": -2.7,
+   "score": -2.64,
    "spark": [
-    3597,
-    3699,
-    3597,
-    3598,
-    3597,
-    3597,
-    3597,
-    3549,
+    3500,
+    3548,
+    3595,
+    3595,
+    3595,
+    3595,
+    3595,
+    3500,
     3500,
     3500,
     3500,
@@ -1028,7 +996,7 @@
    "prices": {
     "loose": 6000,
     "cib": 8999,
-    "new": 20999
+    "new": 19999
    },
    "pct_1d": 2.86,
    "pct_7d": -2.78,
@@ -1050,17 +1018,47 @@
    ]
   },
   {
+   "id": "lumines-ii-psp",
+   "title": "Lumines II",
+   "platform": "psp",
+   "headline_condition": "cib",
+   "price_cents": 1700,
+   "prices": {
+    "loose": 775,
+    "cib": 1700,
+    "new": 3225
+   },
+   "pct_1d": 4.62,
+   "pct_7d": -2.86,
+   "pct_30d": null,
+   "score": -2.86,
+   "spark": [
+    1700,
+    1725,
+    1750,
+    1750,
+    1750,
+    1750,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700,
+    1700
+   ]
+  },
+  {
    "id": "ape-escape-on-the-loose-psp",
    "title": "Ape Escape: On the Loose",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 1474,
+   "price_cents": 1497,
    "prices": {
-    "loose": 1000,
-    "cib": 1474,
+    "loose": 1099,
+    "cib": 1497,
     "new": 4995
    },
-   "pct_1d": 5.29,
+   "pct_1d": 6.93,
    "pct_7d": -3.45,
    "pct_30d": null,
    "score": -3.45,
@@ -1080,62 +1078,33 @@
    ]
   },
   {
-   "id": "burnout-legends-psp",
-   "title": "Burnout Legends",
+   "id": "ultimate-ghosts-n-goblins-psp",
+   "title": "Ultimate Ghosts 'n Goblins",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 1900,
+   "price_cents": 2699,
    "prices": {
-    "loose": 1249,
-    "cib": 1900
+    "loose": 1939,
+    "cib": 2699,
+    "new": 7249
    },
-   "pct_1d": 0,
-   "pct_7d": -4.95,
+   "pct_1d": 2.04,
+   "pct_7d": -3.58,
    "pct_30d": null,
-   "score": -4.95,
+   "score": -3.58,
    "spark": [
-    1999,
-    1999,
-    1999,
-    1999,
-    1999,
-    1999,
-    1999,
-    1999,
-    1999,
-    1999,
-    1900,
-    1900
-   ]
-  },
-  {
-   "id": "class-of-heroes-psp",
-   "title": "Class of Heroes",
-   "platform": "psp",
-   "headline_condition": "cib",
-   "price_cents": 2500,
-   "prices": {
-    "loose": 1700,
-    "cib": 2500,
-    "new": 4795
-   },
-   "pct_1d": 0,
-   "pct_7d": -7.41,
-   "pct_30d": null,
-   "score": -7.41,
-   "spark": [
-    2700,
-    2700,
-    2700,
-    2700,
-    2700,
-    2700,
-    2700,
-    2700,
-    2700,
-    2700,
-    2700,
-    2500
+    2699,
+    2699,
+    2699,
+    2747,
+    2795,
+    2797,
+    2797,
+    2797,
+    2795,
+    2699,
+    2695,
+    2695
    ]
   },
   {
@@ -1143,13 +1112,13 @@
    "title": "Mortal Kombat: Unchained",
    "platform": "psp",
    "headline_condition": "cib",
-   "price_cents": 3850,
+   "price_cents": 3999,
    "prices": {
     "loose": 3000,
-    "cib": 3850,
+    "cib": 3999,
     "new": 11990
    },
-   "pct_1d": 4.05,
+   "pct_1d": 8.08,
    "pct_7d": -7.5,
    "pct_30d": null,
    "score": -7.5,
@@ -1175,7 +1144,7 @@
    "headline_condition": "cib",
    "price_cents": 4104,
    "prices": {
-    "loose": 2300,
+    "loose": 2299,
     "cib": 4104,
     "new": 12999
    },
@@ -1205,9 +1174,9 @@
    "headline_condition": "cib",
    "price_cents": 1239,
    "prices": {
-    "loose": 999,
+    "loose": 1000,
     "cib": 1239,
-    "new": 1749
+    "new": 1699
    },
    "pct_1d": 1.56,
    "pct_7d": -11.44,

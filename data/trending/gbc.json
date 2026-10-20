@@ -9,7 +9,7 @@
    "headline_condition": "cib",
    "price_cents": 49995,
    "prices": {
-    "loose": 7000,
+    "loose": 7062,
     "cib": 49995
    },
    "pct_1d": 0,
@@ -152,11 +152,11 @@
    "title": "Blade",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 4375,
+   "price_cents": 4999,
    "prices": {
-    "loose": 4375
+    "loose": 4999
    },
-   "pct_1d": 0,
+   "pct_1d": 14.26,
    "pct_7d": 9.4,
    "pct_30d": null,
    "score": 9.4,
@@ -262,11 +262,11 @@
    "title": "Crystalis",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 6998,
+   "price_cents": 7000,
    "prices": {
-    "loose": 6998
+    "loose": 7000
    },
-   "pct_1d": 0,
+   "pct_1d": 0.03,
    "pct_7d": 7.62,
    "pct_30d": null,
    "score": 7.62,
@@ -346,11 +346,11 @@
    "title": "Tomb Raider: Curse of the Sword",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 2100,
+   "price_cents": 2000,
    "prices": {
-    "loose": 2100
+    "loose": 2000
    },
-   "pct_1d": 0,
+   "pct_1d": -4.76,
    "pct_7d": 5,
    "pct_30d": null,
    "score": 5,
@@ -374,11 +374,11 @@
    "title": "Mario Golf",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 3650,
+   "price_cents": 3499,
    "prices": {
-    "loose": 3650
+    "loose": 3499
    },
-   "pct_1d": 0,
+   "pct_1d": -4.14,
    "pct_7d": 4.32,
    "pct_30d": null,
    "score": 4.32,
@@ -458,11 +458,11 @@
    "title": "Lufia: The Legend Returns",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 12495,
+   "price_cents": 15450,
    "prices": {
-    "loose": 12495
+    "loose": 15450
    },
-   "pct_1d": 0.04,
+   "pct_1d": 23.7,
    "pct_7d": 1.96,
    "pct_30d": null,
    "score": 1.96,
@@ -486,11 +486,11 @@
    "title": "Mega Man Xtreme 2",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 5199,
+   "price_cents": 5250,
    "prices": {
-    "loose": 5199
+    "loose": 5250
    },
-   "pct_1d": 0,
+   "pct_1d": 0.98,
    "pct_7d": 1.94,
    "pct_30d": null,
    "score": 1.94,
@@ -538,34 +538,6 @@
    ]
   },
   {
-   "id": "hamtaro-ham-hams-unite-gbc",
-   "title": "Hamtaro: Ham-Hams Unite!",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 4397,
-   "prices": {
-    "loose": 4397
-   },
-   "pct_1d": 2.37,
-   "pct_7d": 0.77,
-   "pct_30d": null,
-   "score": 0.77,
-   "spark": [
-    4290,
-    4293,
-    4290,
-    4290,
-    4290,
-    4295,
-    4295,
-    4299,
-    4299,
-    4299,
-    4299,
-    4323
-   ]
-  },
-  {
    "id": "sabrina-zapped-gbc",
    "title": "Sabrina the Animated Series: Zapped!",
    "platform": "gbc",
@@ -594,15 +566,43 @@
    ]
   },
   {
+   "id": "hamtaro-ham-hams-unite-gbc",
+   "title": "Hamtaro: Ham-Hams Unite!",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 4290,
+   "prices": {
+    "loose": 4290
+   },
+   "pct_1d": -0.12,
+   "pct_7d": 0.21,
+   "pct_30d": null,
+   "score": 0.21,
+   "spark": [
+    4290,
+    4293,
+    4290,
+    4290,
+    4290,
+    4295,
+    4295,
+    4299,
+    4299,
+    4299,
+    4299,
+    4299
+   ]
+  },
+  {
    "id": "bomberman-max-red-challenger-gbc",
    "title": "Bomberman Max: Red Challenger",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 1800,
+   "price_cents": 1799,
    "prices": {
-    "loose": 1800
+    "loose": 1799
    },
-   "pct_1d": 0,
+   "pct_1d": -0.06,
    "pct_7d": 0.06,
    "pct_30d": null,
    "score": 0.06,
@@ -901,118 +901,31 @@
    ]
   },
   {
-   "id": "donkey-kong-country-gbc",
-   "title": "Donkey Kong Country",
-   "platform": "gbc",
-   "headline_condition": "cib",
-   "price_cents": 8499,
-   "prices": {
-    "loose": 2698,
-    "cib": 8499
-   },
-   "pct_1d": 0,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    8499,
-    8499,
-    8499,
-    8499,
-    8499,
-    8499,
-    8499,
-    8499,
-    8499,
-    8499,
-    8499,
-    8499
-   ]
-  },
-  {
-   "id": "dracula-crazy-vampire-gbc",
-   "title": "Dracula: Crazy Vampire",
+   "id": "kirby-tilt-n-tumble-gbc",
+   "title": "Kirby Tilt 'n' Tumble",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 2899,
+   "price_cents": 7850,
    "prices": {
-    "loose": 2899
+    "loose": 7850
    },
-   "pct_1d": 0,
+   "pct_1d": 4.68,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    2500,
-    2500,
-    2500,
-    2500,
-    2500,
-    2450,
-    2450,
-    2450,
-    2450,
-    2450,
-    2500,
-    2500
-   ]
-  },
-  {
-   "id": "dragon-warrior-i-and-ii-gbc",
-   "title": "Dragon Warrior I & II",
-   "platform": "gbc",
-   "headline_condition": "cib",
-   "price_cents": 12500,
-   "prices": {
-    "loose": 4999,
-    "cib": 12500
-   },
-   "pct_1d": 0,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    12500,
-    12500,
-    12500,
-    12500,
-    12500,
-    12500,
-    12500,
-    12500,
-    12500,
-    12500,
-    12500,
-    12500
-   ]
-  },
-  {
-   "id": "pokemon-crystal-gbc",
-   "title": "Pokémon Crystal",
-   "platform": "gbc",
-   "headline_condition": "cib",
-   "price_cents": 97500,
-   "prices": {
-    "loose": 18897,
-    "cib": 97500
-   },
-   "pct_1d": 1.3,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    99500,
-    98500,
-    97500,
-    97500,
-    97500,
-    97500,
-    97500,
-    98748,
-    98748,
-    97500,
-    97500,
-    97500
+    7499,
+    7499,
+    7499,
+    7499,
+    7499,
+    7499,
+    7499,
+    7499,
+    7499,
+    7499,
+    7499,
+    7499
    ]
   },
   {
@@ -1072,31 +985,62 @@
    ]
   },
   {
-   "id": "dragon-ball-z-legendary-super-warriors-gbc",
-   "title": "Dragon Ball Z: Legendary Super Warriors",
+   "id": "super-mario-bros-deluxe-gbc",
+   "title": "Super Mario Bros. Deluxe",
    "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 2499,
+   "headline_condition": "cib",
+   "price_cents": 8999,
    "prices": {
-    "loose": 2499
+    "loose": 3000,
+    "cib": 8999,
+    "new": 44740
    },
-   "pct_1d": 0,
-   "pct_7d": -0.04,
+   "pct_1d": 0.02,
+   "pct_7d": 0,
    "pct_30d": null,
-   "score": -0.04,
+   "score": 0,
    "spark": [
-    2500,
-    2500,
-    2500,
-    2500,
-    2500,
-    2499,
-    2499,
-    2499,
-    2499,
-    2499,
-    2499,
-    2499
+    8498,
+    8498,
+    8498,
+    8747,
+    8995,
+    8995,
+    8995,
+    8995,
+    8995,
+    8995,
+    8995,
+    8995
+   ]
+  },
+  {
+   "id": "zelda-links-awakening-dx-gbc",
+   "title": "The Legend of Zelda: Link's Awakening DX",
+   "platform": "gbc",
+   "headline_condition": "cib",
+   "price_cents": 23250,
+   "prices": {
+    "loose": 6500,
+    "cib": 23250
+   },
+   "pct_1d": 8.14,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    21500,
+    21500,
+    21500,
+    21500,
+    21500,
+    21500,
+    21500,
+    21500,
+    21500,
+    21500,
+    21500,
+    21500
    ]
   },
   {
@@ -1128,15 +1072,71 @@
    ]
   },
   {
+   "id": "star-wars-episode-i-racer-gbc",
+   "title": "Star Wars Episode I: Racer",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 1699,
+   "prices": {
+    "loose": 1699
+   },
+   "pct_1d": 2.97,
+   "pct_7d": -0.76,
+   "pct_30d": null,
+   "score": -0.76,
+   "spark": [
+    1712,
+    1706,
+    1712,
+    1719,
+    1712,
+    1699,
+    1699,
+    1699,
+    1699,
+    1699,
+    1699,
+    1699
+   ]
+  },
+  {
+   "id": "dragon-warrior-monsters-gbc",
+   "title": "Dragon Warrior Monsters",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 3399,
+   "prices": {
+    "loose": 3399
+   },
+   "pct_1d": 1.49,
+   "pct_7d": -1.47,
+   "pct_30d": null,
+   "score": -1.47,
+   "spark": [
+    3399,
+    3424,
+    3399,
+    3399,
+    3399,
+    3399,
+    3399,
+    3399,
+    3349,
+    3349,
+    3349,
+    3349
+   ]
+  },
+  {
    "id": "perfect-dark-gbc",
    "title": "Perfect Dark",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 3450,
+   "price_cents": 3350,
    "prices": {
-    "loose": 3450
+    "loose": 3350
    },
-   "pct_1d": 3.76,
+   "pct_1d": 0.75,
    "pct_7d": -1.68,
    "pct_30d": null,
    "score": -1.68,
@@ -1209,6 +1209,34 @@
     19499,
     19499,
     18000
+   ]
+  },
+  {
+   "id": "dragon-warrior-monsters-2-cobis-journey-gbc",
+   "title": "Dragon Warrior Monsters 2: Cobi's Journey",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 5499,
+   "prices": {
+    "loose": 5499
+   },
+   "pct_1d": 10,
+   "pct_7d": -8.14,
+   "pct_30d": null,
+   "score": -8.14,
+   "spark": [
+    5499,
+    5607,
+    5714,
+    5714,
+    5714,
+    5714,
+    5714,
+    5499,
+    5499,
+    5499,
+    5249,
+    5249
    ]
   }
  ]
