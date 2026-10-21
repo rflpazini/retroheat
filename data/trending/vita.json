@@ -144,12 +144,12 @@
    "title": "The Sly Collection",
    "platform": "vita",
    "headline_condition": "loose",
-   "price_cents": 6100,
+   "price_cents": 6050,
    "prices": {
-    "loose": 6100,
+    "loose": 6050,
     "new": 8431
    },
-   "pct_1d": -5.43,
+   "pct_1d": -6.2,
    "pct_7d": 22,
    "pct_30d": null,
    "score": 22,
@@ -201,7 +201,7 @@
    "headline_condition": "cib",
    "price_cents": 8000,
    "prices": {
-    "loose": 4200,
+    "loose": 4300,
     "cib": 8000,
     "new": 20000
    },
@@ -289,7 +289,8 @@
    "headline_condition": "loose",
    "price_cents": 2397,
    "prices": {
-    "loose": 2397
+    "loose": 2397,
+    "new": 5400
    },
    "pct_1d": 0,
    "pct_7d": 11.64,
@@ -432,7 +433,7 @@
    "headline_condition": "cib",
    "price_cents": 3949,
    "prices": {
-    "loose": 2600,
+    "loose": 2550,
     "cib": 3949,
     "new": 4500
    },
@@ -460,11 +461,11 @@
    "title": "Dead or Alive 5 Plus",
    "platform": "vita",
    "headline_condition": "loose",
-   "price_cents": 5697,
+   "price_cents": 5395,
    "prices": {
-    "loose": 5697
+    "loose": 5395
    },
-   "pct_1d": 0,
+   "pct_1d": -5.3,
    "pct_7d": 5.6,
    "pct_30d": null,
    "score": 5.6,
@@ -610,11 +611,11 @@
    "title": "Silent Hill: Book of Memories",
    "platform": "vita",
    "headline_condition": "loose",
-   "price_cents": 7749,
+   "price_cents": 7399,
    "prices": {
-    "loose": 7749
+    "loose": 7399
    },
-   "pct_1d": -3.13,
+   "pct_1d": -7.5,
    "pct_7d": 3.23,
    "pct_30d": null,
    "score": 3.23,
@@ -638,12 +639,12 @@
    "title": "London Detective Mysteria",
    "platform": "vita",
    "headline_condition": "loose",
-   "price_cents": 9750,
+   "price_cents": 9700,
    "prices": {
-    "loose": 9750,
+    "loose": 9700,
     "new": 9999
    },
-   "pct_1d": -2.5,
+   "pct_1d": -3,
    "pct_7d": 3.09,
    "pct_30d": null,
    "score": 3.09,
@@ -999,13 +1000,71 @@
    ]
   },
   {
+   "id": "street-fighter-x-tekken-vita",
+   "title": "Street Fighter X Tekken",
+   "platform": "vita",
+   "headline_condition": "loose",
+   "price_cents": 2898,
+   "prices": {
+    "loose": 2898,
+    "new": 9431
+   },
+   "pct_1d": 0.07,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    2947,
+    2923,
+    2898,
+    2898,
+    2898,
+    2898,
+    2898,
+    2898,
+    2898,
+    2898,
+    2896,
+    2898
+   ]
+  },
+  {
+   "id": "ys-viii-lacrimosa-of-dana-vita",
+   "title": "Ys VIII: Lacrimosa of Dana",
+   "platform": "vita",
+   "headline_condition": "loose",
+   "price_cents": 19999,
+   "prices": {
+    "loose": 19999,
+    "new": 30000
+   },
+   "pct_1d": 122.21,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    9000,
+    9000,
+    9000,
+    9000,
+    9000,
+    9000,
+    9000,
+    9000,
+    9000,
+    9000,
+    9000,
+    9000
+   ]
+  },
+  {
    "id": "soul-sacrifice-vita",
    "title": "Soul Sacrifice",
    "platform": "vita",
    "headline_condition": "cib",
    "price_cents": 2899,
    "prices": {
-    "loose": 1999,
+    "loose": 2000,
     "cib": 2899,
     "new": 3999
    },
@@ -1026,34 +1085,6 @@
     2897,
     2897,
     2897
-   ]
-  },
-  {
-   "id": "dragon-quest-builders-vita",
-   "title": "Dragon Quest Builders",
-   "platform": "vita",
-   "headline_condition": "loose",
-   "price_cents": 1354,
-   "prices": {
-    "loose": 1354
-   },
-   "pct_1d": 0,
-   "pct_7d": -0.37,
-   "pct_30d": null,
-   "score": -0.37,
-   "spark": [
-    1354,
-    1357,
-    1359,
-    1359,
-    1359,
-    1359,
-    1349,
-    1349,
-    1349,
-    1354,
-    1354,
-    1354
    ]
   },
   {
@@ -1083,6 +1114,35 @@
     3550,
     3500,
     3500
+   ]
+  },
+  {
+   "id": "uncharted-golden-abyss-vita",
+   "title": "Uncharted: Golden Abyss",
+   "platform": "vita",
+   "headline_condition": "cib",
+   "price_cents": 5311,
+   "prices": {
+    "loose": 2599,
+    "cib": 5311
+   },
+   "pct_1d": 5.69,
+   "pct_7d": -3.21,
+   "pct_30d": null,
+   "score": -3.21,
+   "spark": [
+    5597,
+    5597,
+    5597,
+    5511,
+    5424,
+    5424,
+    5250,
+    5250,
+    5250,
+    5250,
+    5250,
+    5250
    ]
   },
   {
@@ -1204,13 +1264,42 @@
    ]
   },
   {
+   "id": "mary-skelter-nightmares-vita",
+   "title": "Mary Skelter: Nightmares",
+   "platform": "vita",
+   "headline_condition": "loose",
+   "price_cents": 9250,
+   "prices": {
+    "loose": 9250,
+    "new": 17450
+   },
+   "pct_1d": 8.82,
+   "pct_7d": -8.11,
+   "pct_30d": null,
+   "score": -8.11,
+   "spark": [
+    9250,
+    9250,
+    9250,
+    9250,
+    9250,
+    9250,
+    9250,
+    8500,
+    8500,
+    8500,
+    8500,
+    8500
+   ]
+  },
+  {
    "id": "trails-of-cold-steel-vita",
    "title": "The Legend of Heroes: Trails of Cold Steel",
    "platform": "vita",
    "headline_condition": "cib",
    "price_cents": 4995,
    "prices": {
-    "loose": 4997,
+    "loose": 4995,
     "cib": 4995,
     "new": 6900
    },
@@ -1240,7 +1329,7 @@
    "headline_condition": "cib",
    "price_cents": 3299,
    "prices": {
-    "loose": 1822,
+    "loose": 1800,
     "cib": 3299,
     "new": 7997
    },
