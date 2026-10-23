@@ -73,7 +73,7 @@
    "headline_condition": "cib",
    "price_cents": 4200,
    "prices": {
-    "loose": 1998,
+    "loose": 2000,
     "cib": 4200
    },
    "pct_1d": 0,
@@ -134,13 +134,13 @@
    "title": "Crazy Taxi",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 4492,
+   "price_cents": 4499,
    "prices": {
     "loose": 3299,
-    "cib": 4492,
+    "cib": 4499,
     "new": 19995
    },
-   "pct_1d": 0,
+   "pct_1d": 0.16,
    "pct_7d": 12.13,
    "pct_30d": null,
    "score": 12.13,
@@ -265,7 +265,7 @@
    "headline_condition": "cib",
    "price_cents": 9999,
    "prices": {
-    "loose": 7374,
+    "loose": 7299,
     "cib": 9999,
     "new": 31249
    },
@@ -328,11 +328,11 @@
    "title": "Medabots Infinity",
    "platform": "gamecube",
    "headline_condition": "loose",
-   "price_cents": 5500,
+   "price_cents": 5000,
    "prices": {
-    "loose": 5500
+    "loose": 5000
    },
-   "pct_1d": 0,
+   "pct_1d": -9.09,
    "pct_7d": 9.38,
    "pct_30d": null,
    "score": 9.38,
@@ -418,48 +418,16 @@
    ]
   },
   {
-   "id": "resident-evil-remake-gamecube",
-   "title": "Resident Evil (2002 Remake)",
-   "platform": "gamecube",
-   "headline_condition": "cib",
-   "price_cents": 6485,
-   "prices": {
-    "loose": 4500,
-    "cib": 6485
-   },
-   "pct_1d": -3.81,
-   "pct_7d": 8.08,
-   "pct_30d": null,
-   "score": 8.08,
-   "spark": [
-    6000,
-    6000,
-    6000,
-    6000,
-    6000,
-    6000,
-    6000,
-    6000,
-    6000,
-    6000,
-    6000,
-    6000,
-    6000,
-    6000,
-    6485
-   ]
-  },
-  {
    "id": "pokemon-channel-gamecube",
    "title": "Pokémon Channel",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 9750,
+   "price_cents": 10000,
    "prices": {
     "loose": 5999,
-    "cib": 9750
+    "cib": 10000
    },
-   "pct_1d": 0,
+   "pct_1d": 2.56,
    "pct_7d": 7.94,
    "pct_30d": null,
    "score": 7.94,
@@ -519,12 +487,12 @@
    "title": "Billy Hatcher and the Giant Egg",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 10995,
+   "price_cents": 10999,
    "prices": {
-    "loose": 6499,
-    "cib": 10995
+    "loose": 6500,
+    "cib": 10999
    },
-   "pct_1d": 0.05,
+   "pct_1d": 0.08,
    "pct_7d": 7.27,
    "pct_30d": null,
    "score": 7.27,
@@ -603,7 +571,7 @@
    "headline_condition": "cib",
    "price_cents": 26999,
    "prices": {
-    "loose": 19249,
+    "loose": 18999,
     "cib": 26999
    },
    "pct_1d": 0.93,
@@ -696,13 +664,13 @@
    "title": "The Legend of Zelda: Collector's Edition",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 10300,
+   "price_cents": 10000,
    "prices": {
     "loose": 7487,
-    "cib": 10300,
+    "cib": 10000,
     "new": 25000
    },
-   "pct_1d": -2.82,
+   "pct_1d": -5.65,
    "pct_7d": 5.99,
    "pct_30d": null,
    "score": 5.99,
@@ -729,12 +697,12 @@
    "title": "Chaos Field",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 9444,
+   "price_cents": 8997,
    "prices": {
     "loose": 4450,
-    "cib": 9444
+    "cib": 8997
    },
-   "pct_1d": 0,
+   "pct_1d": -4.73,
    "pct_7d": 5.26,
    "pct_30d": null,
    "score": 5.26,
@@ -793,12 +761,12 @@
    "title": "Pokémon Colosseum",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 24008,
+   "price_cents": 23211,
    "prices": {
-    "loose": 14999,
-    "cib": 24008
+    "loose": 15000,
+    "cib": 23211
    },
-   "pct_1d": 2.07,
+   "pct_1d": -1.32,
    "pct_7d": 4.56,
    "pct_30d": null,
    "score": 4.56,
@@ -825,12 +793,12 @@
    "title": "SSX Tricky",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 4329,
+   "price_cents": 4499,
    "prices": {
     "loose": 3000,
-    "cib": 4329
+    "cib": 4499
    },
-   "pct_1d": 4.09,
+   "pct_1d": 8.18,
    "pct_7d": 3.98,
    "pct_30d": null,
    "score": 3.98,
@@ -853,69 +821,35 @@
    ]
   },
   {
-   "id": "zelda-four-swords-adventures-gamecube",
-   "title": "The Legend of Zelda: Four Swords Adventures",
+   "id": "beyond-good-and-evil-gamecube",
+   "title": "Beyond Good & Evil",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 13998,
+   "price_cents": 7099,
    "prices": {
-    "loose": 6500,
-    "cib": 13998,
-    "new": 45000
+    "loose": 3948,
+    "cib": 7099
    },
-   "pct_1d": 0.01,
-   "pct_7d": 2.55,
+   "pct_1d": 0.55,
+   "pct_7d": 0.87,
    "pct_30d": null,
-   "score": 2.55,
+   "score": 0.87,
    "spark": [
-    13000,
-    13000,
-    13000,
-    13325,
-    13649,
-    13649,
-    13649,
-    13649,
-    13649,
-    13997,
-    13997,
-    13997,
-    13997,
-    13997,
-    13997
-   ]
-  },
-  {
-   "id": "baten-kaitos-gamecube",
-   "title": "Baten Kaitos: Eternal Wings and the Lost Ocean",
-   "platform": "gamecube",
-   "headline_condition": "cib",
-   "price_cents": 4598,
-   "prices": {
-    "loose": 3040,
-    "cib": 4598,
-    "new": 12749
-   },
-   "pct_1d": 0,
-   "pct_7d": 2.18,
-   "pct_30d": null,
-   "score": 2.18,
-   "spark": [
-    4999,
-    4923,
-    4847,
-    4674,
-    4500,
-    4500,
-    4500,
-    4500,
-    4500,
-    4500,
-    4500,
-    4500,
-    4500,
-    4598,
-    4598
+    6949,
+    6974,
+    6999,
+    7049,
+    7099,
+    7099,
+    7099,
+    6999,
+    6999,
+    6999,
+    7060,
+    7060,
+    7060,
+    7060,
+    7060
    ]
   },
   {
@@ -925,7 +859,7 @@
    "headline_condition": "cib",
    "price_cents": 7447,
    "prices": {
-    "loose": 4000,
+    "loose": 3999,
     "cib": 7447,
     "new": 17250
    },
@@ -958,7 +892,7 @@
    "headline_condition": "cib",
    "price_cents": 9513,
    "prices": {
-    "loose": 5995,
+    "loose": 5898,
     "cib": 9513
    },
    "pct_1d": 0.14,
@@ -988,13 +922,13 @@
    "title": "Star Wars Rogue Squadron III: Rebel Strike",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 2599,
+   "price_cents": 2697,
    "prices": {
     "loose": 1749,
-    "cib": 2599,
+    "cib": 2697,
     "new": 7900
    },
-   "pct_1d": 1.96,
+   "pct_1d": 5.81,
    "pct_7d": 0.04,
    "pct_30d": null,
    "score": 0.04,
@@ -1017,130 +951,102 @@
    ]
   },
   {
-   "id": "amazing-island-gamecube",
-   "title": "Amazing Island",
+   "id": "custom-robo-gamecube",
+   "title": "Custom Robo",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 3499,
+   "price_cents": 9500,
    "prices": {
-    "loose": 2398,
-    "cib": 3499,
-    "new": 12397
+    "loose": 4499,
+    "cib": 9500,
+    "new": 19990
    },
-   "pct_1d": 0,
+   "pct_1d": 5.56,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    3399,
-    3399,
-    3399,
-    3449,
-    3499,
-    3499,
-    3499,
-    3499,
-    3499,
-    3499,
-    3499,
-    3499,
-    3499,
-    3499,
-    3499
+    8999,
+    9250,
+    8999,
+    8999,
+    8999,
+    8999,
+    8999,
+    9500,
+    9500,
+    10000,
+    9500,
+    9500,
+    9500,
+    9500,
+    9500
    ]
   },
   {
-   "id": "animaniacs-the-great-edgar-hunt-gamecube",
-   "title": "Animaniacs: The Great Edgar Hunt",
-   "platform": "gamecube",
-   "headline_condition": "loose",
-   "price_cents": 10539,
-   "prices": {
-    "loose": 10539
-   },
-   "pct_1d": 0,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    10539,
-    10539,
-    10539,
-    10539,
-    10539,
-    10539,
-    10539,
-    10539,
-    10539,
-    10539,
-    10539,
-    10539,
-    10539,
-    10539,
-    10539
-   ]
-  },
-  {
-   "id": "auto-modellista-gamecube",
-   "title": "Auto Modellista",
-   "platform": "gamecube",
-   "headline_condition": "loose",
-   "price_cents": 7995,
-   "prices": {
-    "loose": 7995
-   },
-   "pct_1d": 0,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    7995,
-    7995,
-    7995,
-    7995,
-    7995,
-    7995,
-    7995,
-    7995,
-    7995,
-    7995,
-    7995,
-    7995,
-    7995,
-    7995,
-    7995
-   ]
-  },
-  {
-   "id": "metroid-prime-gamecube",
-   "title": "Metroid Prime",
+   "id": "f-zero-gx-gamecube",
+   "title": "F-Zero GX",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 3099,
+   "price_cents": 9997,
    "prices": {
-    "loose": 2067,
-    "cib": 3099
+    "loose": 5999,
+    "cib": 9997,
+    "new": 28750
    },
-   "pct_1d": 3.3,
+   "pct_1d": 0.99,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    2999,
-    3000,
-    3000,
-    3025,
-    3000,
-    3000,
-    3000,
-    3000,
-    3000,
-    3050,
-    3050,
-    3050,
-    3000,
-    3000,
-    3000
+    9999,
+    10000,
+    9999,
+    9999,
+    9999,
+    9999,
+    9999,
+    9999,
+    9999,
+    9999,
+    9999,
+    9999,
+    9999,
+    9999,
+    9999
+   ]
+  },
+  {
+   "id": "mega-man-anniversary-collection-gamecube",
+   "title": "Mega Man Anniversary Collection",
+   "platform": "gamecube",
+   "headline_condition": "cib",
+   "price_cents": 2197,
+   "prices": {
+    "loose": 1499,
+    "cib": 2197,
+    "new": 11700
+   },
+   "pct_1d": 0.09,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    2195,
+    2196,
+    2197,
+    2198,
+    2197,
+    2197,
+    2195,
+    2195,
+    2195,
+    2195,
+    2195,
+    2195,
+    2195,
+    2195,
+    2195
    ]
   },
   {
@@ -1148,12 +1054,12 @@
    "title": "Prince of Persia: The Sands of Time",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 2499,
+   "price_cents": 2500,
    "prices": {
     "loose": 1800,
-    "cib": 2499
+    "cib": 2500
    },
-   "pct_1d": 0.08,
+   "pct_1d": 0.12,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
@@ -1173,6 +1079,35 @@
     2499,
     2497,
     2497
+   ]
+  },
+  {
+   "id": "the-grim-adventures-of-billy-and-mandy-gamecube",
+   "title": "The Grim Adventures of Billy & Mandy",
+   "platform": "gamecube",
+   "headline_condition": "loose",
+   "price_cents": 4200,
+   "prices": {
+    "loose": 4200
+   },
+   "pct_1d": 1.23,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    4149,
+    4149,
+    4149,
+    4149,
+    4149,
+    4149,
+    4149,
+    4149,
+    4149,
+    4149,
+    4149,
+    4149,
+    4149
    ]
   },
   {
@@ -1208,35 +1143,36 @@
    ]
   },
   {
-   "id": "mario-party-6-gamecube",
-   "title": "Mario Party 6",
+   "id": "kirby-air-ride-gamecube",
+   "title": "Kirby Air Ride",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 12999,
+   "price_cents": 9248,
    "prices": {
-    "loose": 7500,
-    "cib": 12999
+    "loose": 6500,
+    "cib": 9248,
+    "new": 47500
    },
-   "pct_1d": 0.02,
-   "pct_7d": -0.01,
+   "pct_1d": 2.76,
+   "pct_7d": -0.04,
    "pct_30d": null,
-   "score": -0.01,
+   "score": -0.04,
    "spark": [
-    12999,
-    12999,
-    12999,
-    12999,
-    12999,
-    12999,
-    12999,
-    13000,
-    13000,
-    13000,
-    13000,
-    13000,
-    13000,
-    13000,
-    12999
+    9999,
+    9999,
+    9999,
+    9999,
+    9999,
+    9749,
+    9749,
+    9499,
+    9499,
+    9497,
+    9497,
+    9497,
+    9497,
+    9495,
+    9495
    ]
   },
   {
@@ -1246,7 +1182,7 @@
    "headline_condition": "cib",
    "price_cents": 7995,
    "prices": {
-    "loose": 5697,
+    "loose": 5648,
     "cib": 7995
    },
    "pct_1d": 6.6,
@@ -1269,6 +1205,70 @@
     8000,
     8000,
     7995
+   ]
+  },
+  {
+   "id": "mario-party-5-gamecube",
+   "title": "Mario Party 5",
+   "platform": "gamecube",
+   "headline_condition": "cib",
+   "price_cents": 7995,
+   "prices": {
+    "loose": 5295,
+    "cib": 7995
+   },
+   "pct_1d": 1.28,
+   "pct_7d": -0.05,
+   "pct_30d": null,
+   "score": -0.05,
+   "spark": [
+    7995,
+    7996,
+    7995,
+    7996,
+    7997,
+    7999,
+    7999,
+    7999,
+    7999,
+    7997,
+    7997,
+    7997,
+    7995,
+    7995,
+    7995
+   ]
+  },
+  {
+   "id": "the-simpsons-hit-and-run-gamecube",
+   "title": "The Simpsons: Hit & Run",
+   "platform": "gamecube",
+   "headline_condition": "cib",
+   "price_cents": 10775,
+   "prices": {
+    "loose": 8495,
+    "cib": 10775
+   },
+   "pct_1d": 2.13,
+   "pct_7d": -0.47,
+   "pct_30d": null,
+   "score": -0.47,
+   "spark": [
+    10525,
+    10763,
+    10550,
+    10775,
+    10550,
+    10550,
+    10550,
+    10550,
+    10525,
+    10500,
+    10500,
+    10360,
+    10360,
+    10500,
+    10500
    ]
   },
   {
@@ -1304,98 +1304,100 @@
    ]
   },
   {
-   "id": "super-smash-bros-melee-gamecube",
-   "title": "Super Smash Bros. Melee",
+   "id": "battalion-wars-gamecube",
+   "title": "Battalion Wars",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 8449,
+   "price_cents": 4150,
    "prices": {
-    "loose": 5500,
-    "cib": 8449
+    "loose": 2450,
+    "cib": 4150,
+    "new": 8500
    },
-   "pct_1d": 3.1,
-   "pct_7d": -2.34,
+   "pct_1d": 3.75,
+   "pct_7d": -3.61,
    "pct_30d": null,
-   "score": -2.34,
+   "score": -3.61,
    "spark": [
-    8000,
-    8075,
-    8150,
-    8225,
-    8300,
-    8300,
-    8499,
-    8499,
-    8499,
-    8499,
-    8499,
-    8499,
-    8499,
-    8300,
-    8300
+    4299,
+    4299,
+    4299,
+    4299,
+    4299,
+    4150,
+    4150,
+    4150,
+    4150,
+    4150,
+    4150,
+    4150,
+    4150,
+    4000,
+    4000
    ]
   },
   {
-   "id": "alien-hominid-gamecube",
-   "title": "Alien Hominid",
+   "id": "sonic-heroes-gamecube",
+   "title": "Sonic Heroes",
    "platform": "gamecube",
-   "headline_condition": "loose",
-   "price_cents": 6498,
+   "headline_condition": "cib",
+   "price_cents": 4295,
    "prices": {
-    "loose": 6498
+    "loose": 2999,
+    "cib": 4295
    },
-   "pct_1d": 0,
-   "pct_7d": -4,
+   "pct_1d": 1.11,
+   "pct_7d": -4.53,
    "pct_30d": null,
-   "score": -4,
+   "score": -4.53,
    "spark": [
-    6500,
-    6500,
-    6500,
-    6500,
-    6500,
-    6500,
-    6250,
-    6250,
-    6250,
-    6250,
-    6250,
-    6000,
-    6000,
-    6000,
-    6000
+    4499,
+    4499,
+    4499,
+    4499,
+    4499,
+    4499,
+    4499,
+    4499,
+    4499,
+    4499,
+    4499,
+    4499,
+    4497,
+    4495,
+    4295
    ]
   },
   {
-   "id": "baldurs-gate-dark-alliance-gamecube",
-   "title": "Baldur's Gate: Dark Alliance",
+   "id": "godzilla-destroy-all-monsters-melee-gamecube",
+   "title": "Godzilla: Destroy All Monsters Melee",
    "platform": "gamecube",
    "headline_condition": "cib",
-   "price_cents": 4196,
+   "price_cents": 6299,
    "prices": {
-    "loose": 2725,
-    "cib": 4196
+    "loose": 4499,
+    "cib": 6299
    },
-   "pct_1d": 0,
-   "pct_7d": -4.74,
+   "pct_1d": 3.28,
+   "pct_7d": -4.69,
    "pct_30d": null,
-   "score": -4.74,
+   "score": -4.69,
    "spark": [
-    3998,
-    3998,
-    3998,
-    3998,
-    3998,
-    3998,
-    4196,
-    4196,
-    4196,
-    4196,
-    4196,
-    3997,
-    3997,
-    3997,
-    3997
+    6150,
+    6275,
+    6399,
+    6449,
+    6499,
+    6499,
+    6499,
+    6399,
+    6399,
+    6299,
+    6099,
+    6099,
+    6099,
+    6099,
+    6099
    ]
   },
   {
@@ -1455,38 +1457,6 @@
     7000,
     7000,
     7000,
-    7000
-   ]
-  },
-  {
-   "id": "mario-party-4-gamecube",
-   "title": "Mario Party 4",
-   "platform": "gamecube",
-   "headline_condition": "cib",
-   "price_cents": 7000,
-   "prices": {
-    "loose": 4649,
-    "cib": 7000
-   },
-   "pct_1d": 0.01,
-   "pct_7d": -12.47,
-   "pct_30d": null,
-   "score": -12.47,
-   "spark": [
-    7500,
-    7500,
-    7500,
-    7748,
-    7995,
-    7995,
-    7997,
-    7997,
-    7997,
-    7995,
-    7995,
-    7992,
-    7992,
-    7992,
     7000
    ]
   }

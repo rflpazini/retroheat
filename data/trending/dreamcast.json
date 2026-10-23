@@ -96,13 +96,13 @@
    "title": "Carrier",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 8900,
+   "price_cents": 8950,
    "prices": {
     "loose": 2800,
-    "cib": 8900,
+    "cib": 8950,
     "new": 11999
    },
-   "pct_1d": 0,
+   "pct_1d": 0.56,
    "pct_7d": 18.67,
    "pct_30d": null,
    "score": 18.67,
@@ -156,37 +156,6 @@
    ]
   },
   {
-   "id": "sonic-shuffle-dreamcast",
-   "title": "Sonic Shuffle",
-   "platform": "dreamcast",
-   "headline_condition": "cib",
-   "price_cents": 9500,
-   "prices": {
-    "cib": 9500
-   },
-   "pct_1d": 2.72,
-   "pct_7d": 11.76,
-   "pct_30d": null,
-   "score": 11.76,
-   "spark": [
-    8500,
-    8000,
-    7500,
-    7500,
-    7500,
-    7500,
-    7500,
-    8500,
-    8500,
-    8500,
-    8500,
-    9500,
-    9500,
-    9500,
-    9500
-   ]
-  },
-  {
    "id": "metropolis-street-racer-dreamcast",
    "title": "Metropolis Street Racer",
    "platform": "dreamcast",
@@ -223,12 +192,12 @@
    "title": "Sonic Adventure 2",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 20438,
+   "price_cents": 19400,
    "prices": {
     "loose": 14500,
-    "cib": 20438
+    "cib": 19400
    },
-   "pct_1d": -4.38,
+   "pct_1d": -9.24,
    "pct_7d": 9.62,
    "pct_30d": null,
    "score": 9.62,
@@ -280,6 +249,37 @@
     7997,
     7997,
     7997
+   ]
+  },
+  {
+   "id": "sonic-shuffle-dreamcast",
+   "title": "Sonic Shuffle",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 8500,
+   "prices": {
+    "cib": 8500
+   },
+   "pct_1d": -8.09,
+   "pct_7d": 8.8,
+   "pct_30d": null,
+   "score": 8.8,
+   "spark": [
+    8500,
+    8000,
+    7500,
+    7500,
+    7500,
+    7500,
+    7500,
+    8500,
+    8500,
+    8500,
+    8500,
+    9500,
+    9500,
+    9500,
+    9248
    ]
   },
   {
@@ -369,11 +369,11 @@
    "title": "Daytona USA",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 11099,
+   "price_cents": 10999,
    "prices": {
-    "cib": 11099
+    "cib": 10999
    },
-   "pct_1d": 0.91,
+   "pct_1d": 0,
    "pct_7d": 5.71,
    "pct_30d": null,
    "score": 5.71,
@@ -459,6 +459,37 @@
    ]
   },
   {
+   "id": "star-wars-episode-i-racer-dreamcast",
+   "title": "Star Wars Episode I: Racer",
+   "platform": "dreamcast",
+   "headline_condition": "loose",
+   "price_cents": 2099,
+   "prices": {
+    "loose": 2099
+   },
+   "pct_1d": 0,
+   "pct_7d": 4.95,
+   "pct_30d": null,
+   "score": 4.95,
+   "spark": [
+    2050,
+    2050,
+    2050,
+    2050,
+    2050,
+    2000,
+    2000,
+    2000,
+    2049,
+    2049,
+    2099,
+    2099,
+    2099,
+    2099,
+    2099
+   ]
+  },
+  {
    "id": "pen-pen-triicelon-dreamcast",
    "title": "Pen Pen TriIcelon",
    "platform": "dreamcast",
@@ -496,13 +527,13 @@
    "title": "Alien Front Online",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 3097,
+   "price_cents": 2999,
    "prices": {
     "loose": 2499,
-    "cib": 3097,
+    "cib": 2999,
     "new": 8000
    },
-   "pct_1d": 0,
+   "pct_1d": -3.16,
    "pct_7d": 3.27,
    "pct_30d": null,
    "score": 3.27,
@@ -748,28 +779,35 @@
    ]
   },
   {
-   "id": "toy-story-2-dreamcast",
-   "title": "Toy Story 2: Buzz Lightyear to the Rescue",
+   "id": "max-steel-covert-missions-dreamcast",
+   "title": "Max Steel: Covert Missions",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 8799,
+   "price_cents": 3250,
    "prices": {
-    "loose": 2367,
-    "cib": 8799
+    "loose": 1500,
+    "cib": 3250
    },
-   "pct_1d": -1.12,
-   "pct_7d": 1.14,
+   "pct_1d": 8.33,
+   "pct_7d": 0.03,
    "pct_30d": null,
-   "score": 1.14,
+   "score": 0.03,
    "spark": [
-    7649,
-    8224,
-    8799,
-    8799,
-    8799,
-    8899,
-    8899,
-    8899
+    2999,
+    2999,
+    2999,
+    2999,
+    2999,
+    2999,
+    2999,
+    2999,
+    2999,
+    2999,
+    2999,
+    3000,
+    3000,
+    3000,
+    3000
    ]
   },
   {
@@ -854,35 +892,6 @@
     2999,
     2999,
     2999
-   ]
-  },
-  {
-   "id": "buzz-lightyear-of-star-command-dreamcast",
-   "title": "Buzz Lightyear of Star Command",
-   "platform": "dreamcast",
-   "headline_condition": "loose",
-   "price_cents": 2150,
-   "prices": {
-    "loose": 2150
-   },
-   "pct_1d": 0,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    2150,
-    2150,
-    2150,
-    2150,
-    2150,
-    2150,
-    2150,
-    2150,
-    2150,
-    2150,
-    2150,
-    2150,
-    2150
    ]
   },
   {
@@ -1013,35 +1022,36 @@
    ]
   },
   {
-   "id": "tokyo-xtreme-racer-dreamcast",
-   "title": "Tokyo Xtreme Racer",
+   "id": "seventh-cross-evolution-dreamcast",
+   "title": "Seventh Cross Evolution",
    "platform": "dreamcast",
    "headline_condition": "cib",
-   "price_cents": 3448,
+   "price_cents": 4499,
    "prices": {
-    "loose": 6500,
-    "cib": 3448
+    "loose": 1699,
+    "cib": 4499,
+    "new": 5000
    },
-   "pct_1d": 1.41,
+   "pct_1d": 0.04,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    3448,
-    3448,
-    3448,
-    3448,
-    3448,
-    3448,
-    3400,
-    3400,
-    3400,
-    3400,
-    3275,
-    3275,
-    3275,
-    3275,
-    3400
+    4499,
+    4499,
+    4499,
+    4499,
+    4499,
+    4499,
+    4499,
+    4748,
+    4748,
+    4748,
+    4748,
+    4748,
+    4748,
+    4748,
+    4748
    ]
   },
   {
@@ -1075,6 +1085,70 @@
     3298,
     3298,
     3298
+   ]
+  },
+  {
+   "id": "house-of-the-dead-2-dreamcast",
+   "title": "The House of the Dead 2",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 3850,
+   "prices": {
+    "loose": 1922,
+    "cib": 3850
+   },
+   "pct_1d": 1.4,
+   "pct_7d": -0.05,
+   "pct_30d": null,
+   "score": -0.05,
+   "spark": [
+    3995,
+    3995,
+    3995,
+    3897,
+    3799,
+    3799,
+    3799,
+    3799,
+    3799,
+    3799,
+    3795,
+    3795,
+    3795,
+    3795,
+    3797
+   ]
+  },
+  {
+   "id": "shenmue-dreamcast",
+   "title": "Shenmue",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 5499,
+   "prices": {
+    "loose": 3999,
+    "cib": 5499
+   },
+   "pct_1d": 0.92,
+   "pct_7d": -0.93,
+   "pct_30d": null,
+   "score": -0.93,
+   "spark": [
+    5000,
+    5250,
+    5499,
+    5500,
+    5500,
+    5500,
+    5500,
+    5500,
+    5399,
+    5399,
+    5499,
+    5499,
+    5399,
+    5449,
+    5449
    ]
   },
   {
@@ -1143,6 +1217,38 @@
    ]
   },
   {
+   "id": "virtua-fighter-3tb-dreamcast",
+   "title": "Virtua Fighter 3tb",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 3950,
+   "prices": {
+    "loose": 2181,
+    "cib": 3950
+   },
+   "pct_1d": 2.52,
+   "pct_7d": -3.68,
+   "pct_30d": null,
+   "score": -3.68,
+   "spark": [
+    4000,
+    4000,
+    4000,
+    4000,
+    4000,
+    4000,
+    4000,
+    4000,
+    3950,
+    3950,
+    3705,
+    3705,
+    3705,
+    3705,
+    3853
+   ]
+  },
+  {
    "id": "alone-in-the-dark-the-new-nightmare-dreamcast",
    "title": "Alone in the Dark: The New Nightmare",
    "platform": "dreamcast",
@@ -1171,6 +1277,68 @@
     7400,
     6999,
     6999
+   ]
+  },
+  {
+   "id": "sega-bass-fishing-2-dreamcast",
+   "title": "Sega Bass Fishing 2",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 11565,
+   "prices": {
+    "cib": 11565
+   },
+   "pct_1d": 2.59,
+   "pct_7d": -4.34,
+   "pct_30d": null,
+   "score": -4.34,
+   "spark": [
+    11785,
+    11785,
+    11785,
+    11785,
+    11785,
+    11785,
+    11785,
+    11785,
+    11670,
+    11670,
+    11273,
+    11273,
+    11273,
+    11273,
+    11273
+   ]
+  },
+  {
+   "id": "ecw-anarchy-rulz-dreamcast",
+   "title": "ECW Anarchy Rulz",
+   "platform": "dreamcast",
+   "headline_condition": "cib",
+   "price_cents": 25170,
+   "prices": {
+    "cib": 25170
+   },
+   "pct_1d": 5.27,
+   "pct_7d": -5,
+   "pct_30d": null,
+   "score": -5,
+   "spark": [
+    25170,
+    25170,
+    25170,
+    25170,
+    25170,
+    25170,
+    25170,
+    25170,
+    25170,
+    25170,
+    23911,
+    23911,
+    23911,
+    23911,
+    23911
    ]
   },
   {
@@ -1212,7 +1380,7 @@
    "headline_condition": "cib",
    "price_cents": 4499,
    "prices": {
-    "loose": 2400,
+    "loose": 2399,
     "cib": 4499,
     "new": 12494
    },
