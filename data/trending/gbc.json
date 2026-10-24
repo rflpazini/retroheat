@@ -1,6 +1,6 @@
 {
  "board": "gbc",
- "as_of": "2026-10-23",
+ "as_of": "2026-10-24",
  "entries": [
   {
    "id": "xena-warrior-princess-gbc",
@@ -12,9 +12,9 @@
     "loose": 19999
    },
    "pct_1d": 0,
-   "pct_7d": 75.01,
+   "pct_7d": 150.02,
    "pct_30d": null,
-   "score": 75.01,
+   "score": 150.02,
    "spark": [
     13999,
     13999,
@@ -30,7 +30,8 @@
     13999,
     13999,
     13999,
-    13999
+    13999,
+    19999
    ]
   },
   {
@@ -61,6 +62,7 @@
     12490,
     12490,
     15450,
+    15450,
     15450
    ]
   },
@@ -88,6 +90,7 @@
     69999,
     69999,
     70000,
+    82997,
     82997,
     82997,
     82997,
@@ -123,6 +126,7 @@
     2500,
     2899,
     2899,
+    2899,
     2899
    ]
   },
@@ -154,6 +158,7 @@
     4375,
     4375,
     4999,
+    4999,
     4999
    ]
   },
@@ -166,7 +171,7 @@
    "prices": {
     "loose": 7000
    },
-   "pct_1d": 0.03,
+   "pct_1d": 0,
    "pct_7d": 11.97,
    "pct_30d": null,
    "score": 11.97,
@@ -185,40 +190,40 @@
     6995,
     6998,
     6998,
+    6998,
     6998
    ]
   },
   {
-   "id": "zelda-oracle-of-seasons-gbc",
-   "title": "The Legend of Zelda: Oracle of Seasons",
+   "id": "rayman-gbc",
+   "title": "Rayman",
    "platform": "gbc",
-   "headline_condition": "cib",
-   "price_cents": 24998,
+   "headline_condition": "loose",
+   "price_cents": 2199,
    "prices": {
-    "loose": 7150,
-    "cib": 24998,
-    "new": 62900
+    "loose": 2199
    },
    "pct_1d": 0,
-   "pct_7d": 11.1,
+   "pct_7d": 9.95,
    "pct_30d": null,
-   "score": 11.1,
+   "score": 9.95,
    "spark": [
-    22499,
-    22500,
-    22499,
-    22499,
-    22499,
-    22499,
-    22499,
-    22500,
-    23748,
-    23748,
-    24995,
-    24995,
-    24995,
-    24998,
-    24998
+    1999,
+    1999,
+    1999,
+    1999,
+    1999,
+    1999,
+    1999,
+    2000,
+    2000,
+    2000,
+    2000,
+    2000,
+    2000,
+    2000,
+    2100,
+    2199
    ]
   },
   {
@@ -231,7 +236,7 @@
     "loose": 6999,
     "cib": 21500
    },
-   "pct_1d": -7.53,
+   "pct_1d": 0,
    "pct_7d": 8.14,
    "pct_30d": null,
    "score": 8.14,
@@ -250,6 +255,7 @@
     21500,
     21500,
     23250,
+    23250,
     23250
    ]
   },
@@ -260,7 +266,7 @@
    "headline_condition": "cib",
    "price_cents": 27995,
    "prices": {
-    "loose": 7295,
+    "loose": 7148,
     "cib": 27995,
     "new": 69995
    },
@@ -283,6 +289,7 @@
     27995,
     27995,
     27995,
+    27995,
     27995
    ]
   },
@@ -293,11 +300,11 @@
    "headline_condition": "cib",
    "price_cents": 17499,
    "prices": {
-    "loose": 3497,
+    "loose": 3499,
     "cib": 17499,
     "new": 210000
    },
-   "pct_1d": -2.78,
+   "pct_1d": 0,
    "pct_7d": 5.88,
    "pct_30d": null,
    "score": 5.88,
@@ -313,38 +320,106 @@
     17999,
     17999,
     17999,
+    17999,
     17999
    ]
   },
   {
-   "id": "rayman-gbc",
-   "title": "Rayman",
+   "id": "robopon-sun-version-gbc",
+   "title": "Robopon: Sun Version",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 2199,
+   "price_cents": 8999,
    "prices": {
-    "loose": 2199
+    "loose": 8999
    },
    "pct_1d": 0,
-   "pct_7d": 5,
+   "pct_7d": 5.29,
    "pct_30d": null,
-   "score": 5,
+   "score": 5.29,
    "spark": [
-    1999,
-    1999,
-    1999,
-    1999,
-    1999,
-    1999,
-    1999,
-    2000,
-    2000,
-    2000,
-    2000,
-    2000,
-    2000,
-    2000,
-    2100
+    8999,
+    8886,
+    8773,
+    8773,
+    8773,
+    8773,
+    8773,
+    8773,
+    8547,
+    8547,
+    8773,
+    8773,
+    8999,
+    8999,
+    8999,
+    8999
+   ]
+  },
+  {
+   "id": "zelda-oracle-of-seasons-gbc",
+   "title": "The Legend of Zelda: Oracle of Seasons",
+   "platform": "gbc",
+   "headline_condition": "cib",
+   "price_cents": 24998,
+   "prices": {
+    "loose": 7000,
+    "cib": 24998,
+    "new": 62900
+   },
+   "pct_1d": 0,
+   "pct_7d": 5.26,
+   "pct_30d": null,
+   "score": 5.26,
+   "spark": [
+    22499,
+    22500,
+    22499,
+    22499,
+    22499,
+    22499,
+    22499,
+    22500,
+    23748,
+    23748,
+    24995,
+    24995,
+    24995,
+    24998,
+    24998,
+    24998
+   ]
+  },
+  {
+   "id": "dragon-warrior-monsters-2-cobis-journey-gbc",
+   "title": "Dragon Warrior Monsters 2: Cobi's Journey",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 5749,
+   "prices": {
+    "loose": 5749
+   },
+   "pct_1d": -4.17,
+   "pct_7d": 4.55,
+   "pct_30d": null,
+   "score": 4.55,
+   "spark": [
+    5499,
+    5607,
+    5714,
+    5714,
+    5714,
+    5714,
+    5714,
+    5499,
+    5499,
+    5499,
+    5249,
+    5249,
+    5499,
+    5499,
+    5499,
+    5749
    ]
   },
   {
@@ -352,11 +427,11 @@
    "title": "Mario Golf",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 3470,
+   "price_cents": 3650,
    "prices": {
-    "loose": 3470
+    "loose": 3650
    },
-   "pct_1d": -8.66,
+   "pct_1d": 5.19,
    "pct_7d": 4.29,
    "pct_30d": null,
    "score": 4.29,
@@ -371,6 +446,7 @@
     3500,
     3500,
     3500,
+    3650,
     3650,
     3650,
     3650,
@@ -406,6 +482,7 @@
     12999,
     12999,
     12999,
+    12999,
     12999
    ]
   },
@@ -418,7 +495,7 @@
    "prices": {
     "loose": 5500
    },
-   "pct_1d": -3.51,
+   "pct_1d": 0,
    "pct_7d": 3.66,
    "pct_30d": null,
    "score": 3.66,
@@ -437,6 +514,7 @@
     5700,
     5700,
     5700,
+    5700,
     5700
    ]
   },
@@ -445,11 +523,11 @@
    "title": "Batman Beyond: Return of the Joker",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 2295,
+   "price_cents": 2248,
    "prices": {
-    "loose": 2295
+    "loose": 2248
    },
-   "pct_1d": 2.09,
+   "pct_1d": -2.05,
    "pct_7d": 3.36,
    "pct_30d": null,
    "score": 3.36,
@@ -468,7 +546,40 @@
     2200,
     2200,
     2248,
+    2248,
     2248
+   ]
+  },
+  {
+   "id": "mega-man-xtreme-2-gbc",
+   "title": "Mega Man Xtreme 2",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 5499,
+   "prices": {
+    "loose": 5499
+   },
+   "pct_1d": 0,
+   "pct_7d": 2.94,
+   "pct_30d": null,
+   "score": 2.94,
+   "spark": [
+    5100,
+    5150,
+    5100,
+    5100,
+    5100,
+    5100,
+    5100,
+    5100,
+    5100,
+    5100,
+    5100,
+    5199,
+    5199,
+    5100,
+    5199,
+    5250
    ]
   },
   {
@@ -476,12 +587,12 @@
    "title": "Pokémon Silver",
    "platform": "gbc",
    "headline_condition": "cib",
-   "price_cents": 35000,
+   "price_cents": 36625,
    "prices": {
-    "loose": 7499,
-    "cib": 35000
+    "loose": 7500,
+    "cib": 36625
    },
-   "pct_1d": -2.78,
+   "pct_1d": 4.64,
    "pct_7d": 2.86,
    "pct_30d": null,
    "score": 2.86,
@@ -500,100 +611,40 @@
     36000,
     36000,
     36000,
+    36000,
     36000
    ]
   },
   {
-   "id": "robopon-sun-version-gbc",
-   "title": "Robopon: Sun Version",
+   "id": "perfect-dark-gbc",
+   "title": "Perfect Dark",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 8999,
+   "price_cents": 3550,
    "prices": {
-    "loose": 8999
+    "loose": 3550
    },
-   "pct_1d": 0,
-   "pct_7d": 2.58,
+   "pct_1d": -8.95,
+   "pct_7d": 2.01,
    "pct_30d": null,
-   "score": 2.58,
+   "score": 2.01,
    "spark": [
-    8999,
-    8886,
-    8773,
-    8773,
-    8773,
-    8773,
-    8773,
-    8773,
-    8547,
-    8547,
-    8773,
-    8773,
-    8999,
-    8999,
-    8999
-   ]
-  },
-  {
-   "id": "mega-man-xtreme-2-gbc",
-   "title": "Mega Man Xtreme 2",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 5499,
-   "prices": {
-    "loose": 5499
-   },
-   "pct_1d": 7.82,
-   "pct_7d": 1.94,
-   "pct_30d": null,
-   "score": 1.94,
-   "spark": [
-    5100,
-    5150,
-    5100,
-    5100,
-    5100,
-    5100,
-    5100,
-    5100,
-    5100,
-    5100,
-    5100,
-    5199,
-    5199,
-    5100,
-    5199
-   ]
-  },
-  {
-   "id": "pokemon-pinball-gbc",
-   "title": "Pokémon Pinball",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 2799,
-   "prices": {
-    "loose": 2799
-   },
-   "pct_1d": 5.66,
-   "pct_7d": 1.92,
-   "pct_30d": null,
-   "score": 1.92,
-   "spark": [
-    2550,
-    2525,
-    2500,
-    2525,
-    2500,
-    2500,
-    2500,
-    2550,
-    2500,
-    2500,
-    2500,
-    2500,
-    2500,
-    2550,
-    2599
+    3992,
+    3751,
+    3509,
+    3509,
+    3509,
+    3509,
+    3509,
+    3509,
+    3480,
+    3480,
+    3450,
+    3450,
+    3350,
+    3350,
+    3350,
+    3550
    ]
   },
   {
@@ -624,6 +675,7 @@
     1299,
     1299,
     1299,
+    1299,
     1299
    ]
   },
@@ -636,7 +688,7 @@
    "prices": {
     "loose": 7499
    },
-   "pct_1d": -2.61,
+   "pct_1d": 0,
    "pct_7d": 1.35,
    "pct_30d": null,
    "score": 1.35,
@@ -654,6 +706,7 @@
     7499,
     7499,
     7499,
+    7600,
     7600,
     7600
    ]
@@ -688,7 +741,40 @@
     97500,
     97500,
     97500,
+    99995,
     99995
+   ]
+  },
+  {
+   "id": "wendy-every-witch-way-gbc",
+   "title": "Wendy: Every Witch Way",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 12650,
+   "prices": {
+    "loose": 12650
+   },
+   "pct_1d": 0,
+   "pct_7d": 1.2,
+   "pct_30d": null,
+   "score": 1.2,
+   "spark": [
+    12500,
+    12500,
+    12500,
+    12500,
+    12500,
+    12500,
+    12500,
+    12500,
+    12500,
+    12500,
+    12500,
+    12500,
+    12500,
+    12500,
+    12500,
+    12650
    ]
   },
   {
@@ -719,69 +805,40 @@
     4262,
     4262,
     4274,
+    4274,
     4274
    ]
   },
   {
-   "id": "grand-theft-auto-2-gbc",
-   "title": "Grand Theft Auto 2",
+   "id": "pokemon-gold-gbc",
+   "title": "Pokémon Gold",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 5000,
+   "price_cents": 7020,
    "prices": {
-    "loose": 5000
+    "loose": 7020
    },
-   "pct_1d": 0,
-   "pct_7d": 0.16,
+   "pct_1d": 0.29,
+   "pct_7d": 0.01,
    "pct_30d": null,
-   "score": 0.16,
+   "score": 0.01,
    "spark": [
-    4999,
-    4999,
-    4999,
-    4999,
-    4999,
-    4992,
-    4992,
-    4992,
-    4999,
-    5000,
-    5000,
-    5000,
-    5000,
-    5000,
-    5000
-   ]
-  },
-  {
-   "id": "sabrina-zapped-gbc",
-   "title": "Sabrina the Animated Series: Zapped!",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 1610,
-   "prices": {
-    "loose": 1610
-   },
-   "pct_1d": 0.63,
-   "pct_7d": 0.13,
-   "pct_30d": null,
-   "score": 0.13,
-   "spark": [
-    1595,
-    1598,
-    1600,
-    1599,
-    1598,
-    1598,
-    1598,
-    1598,
-    1600,
-    1600,
-    1610,
-    1610,
-    1610,
-    1600,
-    1600
+    7249,
+    7224,
+    7199,
+    7160,
+    7124,
+    7120,
+    7000,
+    6999,
+    6999,
+    6999,
+    7124,
+    7124,
+    7124,
+    7040,
+    7000,
+    7000
    ]
   },
   {
@@ -793,11 +850,12 @@
    "prices": {
     "loose": 4124
    },
-   "pct_1d": 3.1,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
+    4000,
     4000,
     4000,
     4000,
@@ -816,63 +874,67 @@
    ]
   },
   {
-   "id": "azure-dreams-gbc",
-   "title": "Azure Dreams",
+   "id": "blaster-master-enemy-below-gbc",
+   "title": "Blaster Master: Enemy Below",
    "platform": "gbc",
-   "headline_condition": "cib",
-   "price_cents": 25500,
+   "headline_condition": "loose",
+   "price_cents": 5824,
    "prices": {
-    "cib": 25500
+    "loose": 5824
    },
    "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    25500,
-    25500,
-    25500,
-    25500,
-    25500,
-    25500,
-    25500,
-    25500,
-    25500,
-    25500,
-    25500,
-    25500,
-    25500,
-    25500,
-    25500
+    6249,
+    6186,
+    6249,
+    6249,
+    6249,
+    6249,
+    6249,
+    6249,
+    5824,
+    5824,
+    5824,
+    5824,
+    5824,
+    5824,
+    5824,
+    5824
    ]
   },
   {
-   "id": "bionic-commando-elite-forces-gbc",
-   "title": "Bionic Commando: Elite Forces",
+   "id": "bomberman-max-red-challenger-gbc",
+   "title": "Bomberman Max: Red Challenger",
    "platform": "gbc",
-   "headline_condition": "cib",
-   "price_cents": 12999,
+   "headline_condition": "loose",
+   "price_cents": 1800,
    "prices": {
-    "loose": 3449,
-    "cib": 12999
+    "loose": 1800
    },
    "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    13249,
-    13249,
-    13249,
-    13249,
-    13249,
-    13249,
-    13249,
-    13249,
-    13249,
-    13249,
-    13249,
-    13249
+    1800,
+    1800,
+    1800,
+    1800,
+    1799,
+    1799,
+    1799,
+    1800,
+    1800,
+    1800,
+    1800,
+    1800,
+    1800,
+    1800,
+    1800,
+    1800
    ]
   },
   {
@@ -890,6 +952,7 @@
    "pct_30d": null,
    "score": 0,
    "spark": [
+    17000,
     17000,
     17000,
     17000,
@@ -935,102 +998,137 @@
     3999,
     3999,
     3999,
+    3999,
     3999
    ]
   },
   {
-   "id": "dragon-warrior-iii-gbc",
-   "title": "Dragon Warrior III",
+   "id": "deja-vu-i-and-ii-gbc",
+   "title": "Déjà Vu I & II",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 6148,
+   "prices": {
+    "loose": 6148
+   },
+   "pct_1d": 0,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    6000,
+    6000,
+    6000,
+    6000,
+    6000,
+    6148,
+    6148,
+    6148,
+    6148,
+    6148,
+    6148,
+    6148,
+    6148,
+    6148,
+    6148,
+    6148
+   ]
+  },
+  {
+   "id": "dexters-laboratory-robot-rampage-gbc",
+   "title": "Dexter's Laboratory: Robot Rampage",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 1175,
+   "prices": {
+    "loose": 1175
+   },
+   "pct_1d": 0,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    1158,
+    1158,
+    1158,
+    1158,
+    1158,
+    1158,
+    1158,
+    1175,
+    1175,
+    1175,
+    1150,
+    1150,
+    1150,
+    1150,
+    1175,
+    1175
+   ]
+  },
+  {
+   "id": "donkey-kong-country-gbc",
+   "title": "Donkey Kong Country",
    "platform": "gbc",
    "headline_condition": "cib",
-   "price_cents": 21000,
+   "price_cents": 8499,
    "prices": {
-    "loose": 6499,
-    "cib": 21000,
-    "new": 45000
+    "loose": 2595,
+    "cib": 8499
    },
-   "pct_1d": 9.09,
+   "pct_1d": 0,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    19250,
-    19250,
-    19250,
-    19250,
-    19250,
-    19250,
-    19250,
-    19250,
-    19250,
-    19250,
-    19250,
-    19250,
-    19250,
-    19250,
-    19250
+    8499,
+    8499,
+    8499,
+    8499,
+    8499,
+    8499,
+    8499,
+    8499,
+    8499,
+    8499,
+    8499,
+    8499,
+    8499,
+    8499,
+    8499,
+    8499
    ]
   },
   {
-   "id": "magical-drop-gbc",
-   "title": "Magical Drop",
+   "id": "hamtaro-ham-hams-unite-gbc",
+   "title": "Hamtaro: Ham-Hams Unite!",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 4950,
+   "price_cents": 4495,
    "prices": {
-    "loose": 4950
+    "loose": 4495
    },
-   "pct_1d": 1.02,
+   "pct_1d": 4.56,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    4900,
-    4900,
-    4900,
-    4900,
-    4900,
-    4900,
-    4900,
-    4900,
-    4900,
-    4900,
-    4900,
-    4900,
-    4900,
-    4900,
-    4900
-   ]
-  },
-  {
-   "id": "mega-man-xtreme-gbc",
-   "title": "Mega Man Xtreme",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 5700,
-   "prices": {
-    "loose": 5700
-   },
-   "pct_1d": 14,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    4999,
-    4999,
-    4999,
-    4999,
-    4999,
-    4999,
-    4999,
-    4999,
-    4999,
-    4999,
-    4999,
-    4999,
-    4999,
-    4999,
-    4999
+    4290,
+    4293,
+    4290,
+    4290,
+    4290,
+    4295,
+    4295,
+    4299,
+    4299,
+    4299,
+    4299,
+    4299,
+    4299,
+    4299,
+    4299,
+    4299
    ]
   },
   {
@@ -1038,11 +1136,11 @@
    "title": "Tomb Raider: Curse of the Sword",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 2100,
+   "price_cents": 2200,
    "prices": {
-    "loose": 2100
+    "loose": 2200
    },
-   "pct_1d": 5,
+   "pct_1d": 4.76,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
@@ -1052,6 +1150,7 @@
     2000,
     2000,
     2000,
+    2100,
     2100,
     2100,
     2100,
@@ -1065,6 +1164,38 @@
    ]
   },
   {
+   "id": "dragon-ball-z-legendary-super-warriors-gbc",
+   "title": "Dragon Ball Z: Legendary Super Warriors",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 2498,
+   "prices": {
+    "loose": 2498
+   },
+   "pct_1d": 0,
+   "pct_7d": -0.04,
+   "pct_30d": null,
+   "score": -0.04,
+   "spark": [
+    2500,
+    2500,
+    2500,
+    2500,
+    2500,
+    2499,
+    2499,
+    2499,
+    2499,
+    2499,
+    2499,
+    2499,
+    2499,
+    2499,
+    2499,
+    2498
+   ]
+  },
+  {
    "id": "bomberman-max-blue-champion-gbc",
    "title": "Bomberman Max: Blue Champion",
    "platform": "gbc",
@@ -1074,9 +1205,9 @@
     "loose": 2497
    },
    "pct_1d": 0,
-   "pct_7d": -0.04,
+   "pct_7d": -0.08,
    "pct_30d": null,
-   "score": -0.04,
+   "score": -0.08,
    "spark": [
     2500,
     2500,
@@ -1092,162 +1223,135 @@
     2499,
     2499,
     2498,
-    2498
+    2498,
+    2497
    ]
   },
   {
-   "id": "legend-of-the-river-king-2-gbc",
-   "title": "Legend of the River King 2",
+   "id": "survival-kids-gbc",
+   "title": "Survival Kids",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 9990,
+   "price_cents": 19000,
    "prices": {
-    "loose": 9990
+    "loose": 19000
    },
-   "pct_1d": 0.45,
-   "pct_7d": -0.45,
+   "pct_1d": 5.56,
+   "pct_7d": -1.37,
    "pct_30d": null,
-   "score": -0.45,
+   "score": -1.37,
    "spark": [
-    10000,
-    10000,
-    10000,
-    10000,
-    10000,
-    9995,
-    9995,
-    9990,
-    9990,
-    9990,
-    9990,
-    9990,
-    9990,
-    9945,
-    9945
+    19250,
+    18875,
+    18500,
+    18500,
+    18500,
+    18250,
+    18250,
+    18250,
+    18250,
+    18250,
+    18250,
+    18250,
+    18250,
+    18000,
+    18000,
+    18000
    ]
   },
   {
-   "id": "dragon-warrior-monsters-gbc",
-   "title": "Dragon Warrior Monsters",
+   "id": "bionic-commando-elite-forces-gbc",
+   "title": "Bionic Commando: Elite Forces",
    "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 3349,
+   "headline_condition": "cib",
+   "price_cents": 12999,
    "prices": {
-    "loose": 3349
-   },
-   "pct_1d": 1.52,
-   "pct_7d": -1.47,
-   "pct_30d": null,
-   "score": -1.47,
-   "spark": [
-    3399,
-    3424,
-    3399,
-    3399,
-    3399,
-    3399,
-    3399,
-    3399,
-    3349,
-    3349,
-    3349,
-    3349,
-    3349,
-    3349,
-    3349
-   ]
-  },
-  {
-   "id": "ghosts-n-goblins-gbc",
-   "title": "Ghosts 'n Goblins",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 12599,
-   "prices": {
-    "loose": 12599
-   },
-   "pct_1d": 4.13,
-   "pct_7d": -2.02,
-   "pct_30d": null,
-   "score": -2.02,
-   "spark": [
-    11999,
-    11999,
-    11999,
-    11999,
-    11999,
-    12349,
-    12349,
-    12349,
-    12349,
-    12349,
-    12349,
-    12349,
-    12349,
-    12099,
-    12099
-   ]
-  },
-  {
-   "id": "perfect-dark-gbc",
-   "title": "Perfect Dark",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 3899,
-   "prices": {
-    "loose": 3899
-   },
-   "pct_1d": 9.83,
-   "pct_7d": -4.53,
-   "pct_30d": null,
-   "score": -4.53,
-   "spark": [
-    3992,
-    3751,
-    3509,
-    3509,
-    3509,
-    3509,
-    3509,
-    3509,
-    3480,
-    3480,
-    3450,
-    3450,
-    3350,
-    3350,
-    3350
-   ]
-  },
-  {
-   "id": "blaster-master-enemy-below-gbc",
-   "title": "Blaster Master: Enemy Below",
-   "platform": "gbc",
-   "headline_condition": "loose",
-   "price_cents": 5824,
-   "prices": {
-    "loose": 5824
+    "loose": 3449,
+    "cib": 12999
    },
    "pct_1d": 0,
-   "pct_7d": -6.8,
+   "pct_7d": -1.89,
    "pct_30d": null,
-   "score": -6.8,
+   "score": -1.89,
    "spark": [
-    6249,
-    6186,
-    6249,
-    6249,
-    6249,
-    6249,
-    6249,
-    6249,
-    5824,
-    5824,
-    5824,
-    5824,
-    5824,
-    5824,
-    5824
+    13249,
+    13249,
+    13249,
+    13249,
+    13249,
+    13249,
+    13249,
+    13249,
+    13249,
+    13249,
+    13249,
+    13249,
+    12999
+   ]
+  },
+  {
+   "id": "pocket-bomberman-gbc",
+   "title": "Pocket Bomberman",
+   "platform": "gbc",
+   "headline_condition": "cib",
+   "price_cents": 9750,
+   "prices": {
+    "loose": 1999,
+    "cib": 9750
+   },
+   "pct_1d": 2.63,
+   "pct_7d": -2.56,
+   "pct_30d": null,
+   "score": -2.56,
+   "spark": [
+    9500,
+    9625,
+    9750,
+    9750,
+    9750,
+    9750,
+    9750,
+    9750,
+    9750,
+    9500,
+    9500,
+    9500,
+    9500,
+    9500,
+    9500,
+    9500
+   ]
+  },
+  {
+   "id": "conkers-pocket-tales-gbc",
+   "title": "Conker's Pocket Tales",
+   "platform": "gbc",
+   "headline_condition": "loose",
+   "price_cents": 2175,
+   "prices": {
+    "loose": 2175
+   },
+   "pct_1d": 0,
+   "pct_7d": -3.33,
+   "pct_30d": null,
+   "score": -3.33,
+   "spark": [
+    2299,
+    2275,
+    2250,
+    2225,
+    2250,
+    2250,
+    2250,
+    2250,
+    2250,
+    2250,
+    2250,
+    2250,
+    2250,
+    2250,
+    2200,
+    2175
    ]
   },
   {
@@ -1278,38 +1382,34 @@
     18000,
     18000,
     18000,
+    18000,
     18000
    ]
   },
   {
-   "id": "magi-nation-gbc",
-   "title": "Magi Nation",
+   "id": "aliens-thanatos-encounter-gbc",
+   "title": "Aliens: Thanatos Encounter",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 3499,
+   "price_cents": 5396,
    "prices": {
-    "loose": 3499
+    "loose": 5396
    },
-   "pct_1d": 1.45,
-   "pct_7d": -8,
+   "pct_1d": 0,
+   "pct_7d": -9.28,
    "pct_30d": null,
-   "score": -8,
+   "score": -9.28,
    "spark": [
-    3200,
-    3200,
-    3200,
-    3200,
-    3200,
-    3499,
-    3499,
-    3749,
-    3749,
-    3749,
-    3749,
-    3449,
-    3449,
-    3449,
-    3449
+    5948,
+    5948,
+    5948,
+    5948,
+    5948,
+    5948,
+    5948,
+    5948,
+    5948,
+    5396
    ]
   },
   {
@@ -1317,11 +1417,11 @@
    "title": "Harvest Moon 2 GBC",
    "platform": "gbc",
    "headline_condition": "loose",
-   "price_cents": 4150,
+   "price_cents": 4490,
    "prices": {
-    "loose": 4150
+    "loose": 4490
    },
-   "pct_1d": 4.01,
+   "pct_1d": 8.19,
    "pct_7d": -11.53,
    "pct_30d": null,
    "score": -11.53,
@@ -1337,6 +1437,7 @@
     4510,
     4510,
     4220,
+    3990,
     3990,
     3990,
     3990,
