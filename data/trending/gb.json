@@ -40,7 +40,7 @@
    "headline_condition": "cib",
    "price_cents": 17498,
    "prices": {
-    "loose": 2391,
+    "loose": 2399,
     "cib": 17498
    },
    "pct_1d": 0,
@@ -133,11 +133,11 @@
    "title": "DuckTales",
    "platform": "gb",
    "headline_condition": "loose",
-   "price_cents": 2200,
+   "price_cents": 2225,
    "prices": {
-    "loose": 2200
+    "loose": 2225
    },
-   "pct_1d": 0,
+   "pct_1d": 1.14,
    "pct_7d": 10,
    "pct_30d": null,
    "score": 10,
@@ -258,12 +258,12 @@
    "title": "Metroid II: Return of Samus",
    "platform": "gb",
    "headline_condition": "cib",
-   "price_cents": 29999,
+   "price_cents": 28999,
    "prices": {
     "loose": 4299,
-    "cib": 29999
+    "cib": 28999
    },
-   "pct_1d": -0.83,
+   "pct_1d": -4.14,
    "pct_7d": 4.13,
    "pct_30d": null,
    "score": 4.13,
@@ -352,11 +352,11 @@
    "title": "Operation C",
    "platform": "gb",
    "headline_condition": "loose",
-   "price_cents": 3450,
+   "price_cents": 3471,
    "prices": {
-    "loose": 3450
+    "loose": 3471
    },
-   "pct_1d": 4.58,
+   "pct_1d": 5.21,
    "pct_7d": 2.91,
    "pct_30d": null,
    "score": 2.91,
@@ -385,7 +385,7 @@
    "headline_condition": "cib",
    "price_cents": 17999,
    "prices": {
-    "loose": 3550,
+    "loose": 3500,
     "cib": 17999
    },
    "pct_1d": 0,
@@ -541,7 +541,7 @@
    "headline_condition": "cib",
    "price_cents": 41245,
    "prices": {
-    "loose": 7839,
+    "loose": 7997,
     "cib": 41245
    },
    "pct_1d": 2.17,
@@ -573,7 +573,7 @@
    "headline_condition": "cib",
    "price_cents": 12499,
    "prices": {
-    "loose": 2098,
+    "loose": 2133,
     "cib": 12499,
     "new": 19997
    },
@@ -666,11 +666,11 @@
    "title": "Legend of the River King",
    "platform": "gb",
    "headline_condition": "loose",
-   "price_cents": 7961,
+   "price_cents": 7526,
    "prices": {
-    "loose": 7961
+    "loose": 7526
    },
-   "pct_1d": 0,
+   "pct_1d": -5.46,
    "pct_7d": 0.48,
    "pct_30d": null,
    "score": 0.48,
@@ -697,12 +697,12 @@
    "title": "Pokémon Red",
    "platform": "gb",
    "headline_condition": "cib",
-   "price_cents": 50599,
+   "price_cents": 50000,
    "prices": {
-    "loose": 7499,
-    "cib": 50599
+    "loose": 7500,
+    "cib": 50000
    },
-   "pct_1d": 1.2,
+   "pct_1d": 0,
    "pct_7d": 0.4,
    "pct_30d": null,
    "score": 0.4,
@@ -727,11 +727,11 @@
    "title": "Teenage Mutant Ninja Turtles II: Back from the Sewers",
    "platform": "gb",
    "headline_condition": "loose",
-   "price_cents": 2399,
+   "price_cents": 2447,
    "prices": {
-    "loose": 2399
+    "loose": 2447
    },
-   "pct_1d": 0.08,
+   "pct_1d": 2.09,
    "pct_7d": 0.08,
    "pct_30d": null,
    "score": 0.08,
@@ -754,15 +754,46 @@
    ]
   },
   {
+   "id": "balloon-kid-gb",
+   "title": "Balloon Kid",
+   "platform": "gb",
+   "headline_condition": "loose",
+   "price_cents": 1800,
+   "prices": {
+    "loose": 1800
+   },
+   "pct_1d": 0,
+   "pct_7d": 0.06,
+   "pct_30d": null,
+   "score": 0.06,
+   "spark": [
+    1800,
+    1800,
+    1800,
+    1800,
+    1800,
+    1799,
+    1799,
+    1799,
+    1799,
+    1799,
+    1799,
+    1799,
+    1799,
+    1799,
+    1800
+   ]
+  },
+  {
    "id": "kirbys-block-ball-gb",
    "title": "Kirby's Block Ball",
    "platform": "gb",
    "headline_condition": "loose",
-   "price_cents": 3000,
+   "price_cents": 3050,
    "prices": {
-    "loose": 3000
+    "loose": 3050
    },
-   "pct_1d": 0,
+   "pct_1d": 1.67,
    "pct_7d": 0.03,
    "pct_30d": null,
    "score": 0.03,
@@ -843,190 +874,98 @@
    ]
   },
   {
-   "id": "beavis-and-butt-head-gb",
-   "title": "Beavis and Butt-Head",
-   "platform": "gb",
-   "headline_condition": "loose",
-   "price_cents": 6541,
-   "prices": {
-    "loose": 6541
-   },
-   "pct_1d": 0,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    6250,
-    6250,
-    6250,
-    6250,
-    6250,
-    6250,
-    6250,
-    6250,
-    6250,
-    6250,
-    6250,
-    6250,
-    6250,
-    6250,
-    6250
-   ]
-  },
-  {
-   "id": "blaster-master-boy-gb",
-   "title": "Blaster Master Boy",
-   "platform": "gb",
-   "headline_condition": "loose",
-   "price_cents": 9698,
-   "prices": {
-    "loose": 9698
-   },
-   "pct_1d": 0,
-   "pct_7d": 0,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    9698,
-    9698,
-    9698,
-    9698,
-    9698,
-    9698,
-    9698,
-    9698,
-    9698,
-    9698,
-    9698,
-    9698,
-    9698,
-    9698,
-    9698
-   ]
-  },
-  {
-   "id": "bomberman-gb",
-   "title": "Bomberman GB",
+   "id": "legend-of-zelda-links-awakening-gb",
+   "title": "The Legend of Zelda: Link's Awakening",
    "platform": "gb",
    "headline_condition": "cib",
-   "price_cents": 14999,
+   "price_cents": 28200,
    "prices": {
-    "loose": 2199,
-    "cib": 14999
+    "loose": 4500,
+    "cib": 28200
    },
-   "pct_1d": 0,
+   "pct_1d": 4.44,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    14999,
-    14999,
-    14999,
-    14999,
-    14999,
-    14999,
-    14999,
-    14999,
-    14999,
-    14999,
-    14999,
-    14999,
-    14999,
-    14999,
-    14999
+    27000,
+    27000,
+    27000,
+    27000,
+    27000,
+    27000,
+    27000,
+    27000,
+    27000,
+    27000,
+    27000,
+    27000,
+    27000,
+    27000,
+    27000
    ]
   },
   {
-   "id": "bonks-revenge-gb",
-   "title": "Bonk's Revenge",
+   "id": "mystical-ninja-starring-goemon-gb",
+   "title": "Mystical Ninja Starring Goemon",
    "platform": "gb",
    "headline_condition": "loose",
-   "price_cents": 6999,
+   "price_cents": 6200,
    "prices": {
-    "loose": 6999
+    "loose": 6200
    },
-   "pct_1d": 0,
+   "pct_1d": 0.4,
    "pct_7d": 0,
    "pct_30d": null,
    "score": 0,
    "spark": [
-    6999,
-    6999,
-    6999,
-    6999,
-    6999,
-    6999,
-    6999,
-    6999,
-    6999,
-    6999,
-    6999,
-    6999,
-    6999,
-    6999,
-    6999
+    6350,
+    6350,
+    6350,
+    6350,
+    6350,
+    6350,
+    6350,
+    6200,
+    6200,
+    6200,
+    6200,
+    6200,
+    6200,
+    6200,
+    6200
    ]
   },
   {
-   "id": "pokemon-blue-gb",
-   "title": "Pokémon Blue",
+   "id": "wario-land-super-mario-land-3-gb",
+   "title": "Wario Land: Super Mario Land 3",
    "platform": "gb",
-   "headline_condition": "loose",
-   "price_cents": 6500,
+   "headline_condition": "cib",
+   "price_cents": 13499,
    "prices": {
-    "loose": 6500
+    "loose": 2979,
+    "cib": 13499
    },
-   "pct_1d": 0.02,
-   "pct_7d": 0,
+   "pct_1d": 1.89,
+   "pct_7d": -1.85,
    "pct_30d": null,
-   "score": 0,
+   "score": -1.85,
    "spark": [
-    6499,
-    6484,
-    6499,
-    6499,
-    6499,
-    6499,
-    6499,
-    6499,
-    6499,
-    6499,
-    6499,
-    6499,
-    6498,
-    6498,
-    6499
-   ]
-  },
-  {
-   "id": "batman-return-of-the-joker-gb",
-   "title": "Batman: Return of the Joker",
-   "platform": "gb",
-   "headline_condition": "loose",
-   "price_cents": 4100,
-   "prices": {
-    "loose": 4100
-   },
-   "pct_1d": 0,
-   "pct_7d": -2.38,
-   "pct_30d": null,
-   "score": -2.38,
-   "spark": [
-    4000,
-    4100,
-    4200,
-    4200,
-    4200,
-    4200,
-    4200,
-    4200,
-    4200,
-    4200,
-    4200,
-    4200,
-    4100,
-    4100,
-    4100
+    12999,
+    13124,
+    13249,
+    13249,
+    13249,
+    13499,
+    13499,
+    13499,
+    13499,
+    13499,
+    13499,
+    13249,
+    13249,
+    13249,
+    13249
    ]
   },
   {
@@ -1061,97 +1000,129 @@
    ]
   },
   {
-   "id": "beetlejuice-gb",
-   "title": "Beetlejuice",
+   "id": "donkey-kong-land-gb",
+   "title": "Donkey Kong Land",
    "platform": "gb",
-   "headline_condition": "loose",
-   "price_cents": 8499,
+   "headline_condition": "cib",
+   "price_cents": 8999,
    "prices": {
-    "loose": 8499
+    "loose": 1899,
+    "cib": 8999
    },
-   "pct_1d": 0,
-   "pct_7d": -5.56,
+   "pct_1d": 3.45,
+   "pct_7d": -2.7,
    "pct_30d": null,
-   "score": -5.56,
+   "score": -2.7,
    "spark": [
+    9249,
+    9974,
+    9999,
+    9624,
+    9249,
+    9249,
+    9249,
+    9249,
+    9249,
+    9249,
+    9199,
     8999,
     8999,
-    8999,
-    8999,
-    8999,
-    8999,
-    8999,
-    8999,
-    8999,
-    8999,
-    8999,
-    8999,
-    8999,
-    8499,
-    8499
+    8699,
+    8999
    ]
   },
   {
-   "id": "castlevania-ii-belmonts-revenge-gb",
-   "title": "Castlevania II: Belmont's Revenge",
+   "id": "aerostar-gb",
+   "title": "Aerostar",
+   "platform": "gb",
+   "headline_condition": "loose",
+   "price_cents": 5499,
+   "prices": {
+    "loose": 5499
+   },
+   "pct_1d": 9.98,
+   "pct_7d": -4.53,
+   "pct_30d": null,
+   "score": -4.53,
+   "spark": [
+    5347,
+    5347,
+    5347,
+    5347,
+    5347,
+    5347,
+    5499,
+    5499,
+    5499,
+    5499,
+    5347,
+    5347,
+    5250,
+    5250,
+    5250
+   ]
+  },
+  {
+   "id": "super-mario-land-gb",
+   "title": "Super Mario Land",
+   "platform": "gb",
+   "headline_condition": "cib",
+   "price_cents": 9797,
+   "prices": {
+    "loose": 2125,
+    "cib": 9797
+   },
+   "pct_1d": 8.87,
+   "pct_7d": -4.84,
+   "pct_30d": null,
+   "score": -4.84,
+   "spark": [
+    9995,
+    9995,
+    9995,
+    9995,
+    9995,
+    10295,
+    10295,
+    10295,
+    10295,
+    10295,
+    10047,
+    10047,
+    10595,
+    9797,
+    9797
+   ]
+  },
+  {
+   "id": "itchy-and-scratchy-in-miniature-golf-madness-gb",
+   "title": "Itchy & Scratchy in Miniature Golf Madness",
    "platform": "gb",
    "headline_condition": "loose",
    "price_cents": 7000,
    "prices": {
     "loose": 7000
    },
-   "pct_1d": 0,
-   "pct_7d": -6.67,
+   "pct_1d": 0.73,
+   "pct_7d": -6.71,
    "pct_30d": null,
-   "score": -6.67,
+   "score": -6.71,
    "spark": [
-    7250,
-    7250,
-    7250,
-    7250,
-    7250,
-    7250,
-    7500,
-    7500,
-    7500,
-    7250,
-    7000,
-    7000,
-    7000,
-    7000,
-    7000
-   ]
-  },
-  {
-   "id": "castlevania-the-adventure-gb",
-   "title": "Castlevania: The Adventure",
-   "platform": "gb",
-   "headline_condition": "cib",
-   "price_cents": 17499,
-   "prices": {
-    "loose": 2000,
-    "cib": 17499
-   },
-   "pct_1d": 0,
-   "pct_7d": -6.67,
-   "pct_30d": null,
-   "score": -6.67,
-   "spark": [
-    18999,
-    19249,
-    19499,
-    19499,
-    19499,
-    19499,
-    18749,
-    18749,
-    18749,
-    18499,
-    17499,
-    17499,
-    17499,
-    17499,
-    17499
+    7449,
+    7449,
+    7449,
+    7449,
+    7449,
+    7449,
+    7449,
+    7449,
+    7449,
+    7449,
+    7399,
+    7399,
+    7399,
+    6949,
+    6949
    ]
   },
   {
@@ -1192,7 +1163,7 @@
    "headline_condition": "cib",
    "price_cents": 9999,
    "prices": {
-    "loose": 2899,
+    "loose": 2875,
     "cib": 9999
    },
    "pct_1d": 6.37,
@@ -1246,37 +1217,6 @@
     8000,
     8000,
     8250
-   ]
-  },
-  {
-   "id": "aerostar-gb",
-   "title": "Aerostar",
-   "platform": "gb",
-   "headline_condition": "loose",
-   "price_cents": 5000,
-   "prices": {
-    "loose": 5000
-   },
-   "pct_1d": 0,
-   "pct_7d": -9.07,
-   "pct_30d": null,
-   "score": -9.07,
-   "spark": [
-    5347,
-    5347,
-    5347,
-    5347,
-    5347,
-    5347,
-    5499,
-    5499,
-    5499,
-    5499,
-    5347,
-    5347,
-    5250,
-    5250,
-    5000
    ]
   }
  ]
