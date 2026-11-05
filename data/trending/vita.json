@@ -497,12 +497,12 @@
    "title": "The Sly Collection",
    "platform": "vita",
    "headline_condition": "loose",
-   "price_cents": 5498,
+   "price_cents": 5000,
    "prices": {
-    "loose": 5498,
+    "loose": 5000,
     "new": 8086
    },
-   "pct_1d": 0,
+   "pct_1d": -9.06,
    "pct_7d": 3.74,
    "pct_30d": 9.96,
    "score": 6.23,
@@ -590,7 +590,7 @@
    "headline_condition": "cib",
    "price_cents": 2000,
    "prices": {
-    "loose": 1417,
+    "loose": 1412,
     "cib": 2000
    },
    "pct_1d": 0,
@@ -633,12 +633,12 @@
    "title": "Zero Escape: The Nonary Games",
    "platform": "vita",
    "headline_condition": "loose",
-   "price_cents": 6750,
+   "price_cents": 7000,
    "prices": {
-    "loose": 6750,
+    "loose": 7000,
     "new": 8888
    },
-   "pct_1d": 0,
+   "pct_1d": 3.7,
    "pct_7d": 3.85,
    "pct_30d": 8.43,
    "score": 5.68,
@@ -680,7 +680,7 @@
    "headline_condition": "cib",
    "price_cents": 1900,
    "prices": {
-    "loose": 1595,
+    "loose": 1593,
     "cib": 1900
    },
    "pct_1d": 0,
@@ -902,12 +902,12 @@
    "title": "Senran Kagura: Shinovi Versus",
    "platform": "vita",
    "headline_condition": "loose",
-   "price_cents": 5999,
+   "price_cents": 5525,
    "prices": {
-    "loose": 5999,
-    "new": 11000
+    "loose": 5525,
+    "new": 10998
    },
-   "pct_1d": 9.07,
+   "pct_1d": 0.45,
    "pct_7d": 9.74,
    "pct_30d": -7.17,
    "score": 2.97,
@@ -950,7 +950,7 @@
    "price_cents": 6547,
    "prices": {
     "loose": 6547,
-    "new": 6799
+    "new": 6255
    },
    "pct_1d": 0,
    "pct_7d": 0,
@@ -1127,12 +1127,12 @@
    "title": "Danganronpa 2: Goodbye Despair",
    "platform": "vita",
    "headline_condition": "loose",
-   "price_cents": 3599,
+   "price_cents": 3647,
    "prices": {
-    "loose": 3599,
+    "loose": 3647,
     "new": 7500
    },
-   "pct_1d": 0,
+   "pct_1d": 1.33,
    "pct_7d": 1.38,
    "pct_30d": 1.38,
    "score": 1.38,
@@ -1216,13 +1216,13 @@
    "title": "Call of Duty: Black Ops Declassified",
    "platform": "vita",
    "headline_condition": "cib",
-   "price_cents": 3495,
+   "price_cents": 3599,
    "prices": {
     "loose": 1899,
-    "cib": 3495,
+    "cib": 3599,
     "new": 7997
    },
-   "pct_1d": 0,
+   "pct_1d": 2.98,
    "pct_7d": 0,
    "pct_30d": 1.33,
    "score": 0.53,
@@ -1299,6 +1299,51 @@
     4800,
     4800,
     4800
+   ]
+  },
+  {
+   "id": "dragons-crown-vita",
+   "title": "Dragon's Crown",
+   "platform": "vita",
+   "headline_condition": "loose",
+   "price_cents": 2565,
+   "prices": {
+    "loose": 2565,
+    "new": 13330
+   },
+   "pct_1d": 0.83,
+   "pct_7d": -0.77,
+   "pct_30d": 1.7,
+   "score": 0.22,
+   "spark": [
+    2522,
+    2511,
+    2500,
+    2500,
+    2500,
+    2500,
+    2500,
+    2500,
+    2544,
+    2544,
+    2544,
+    2544,
+    2544,
+    2522,
+    2522,
+    2522,
+    2544,
+    2585,
+    2585,
+    2585,
+    2585,
+    2693,
+    2693,
+    2693,
+    2565,
+    2565,
+    2565,
+    2565
    ]
   },
   {
@@ -1437,6 +1482,46 @@
    ]
   },
   {
+   "id": "danganronpa-trigger-happy-havoc-vita",
+   "title": "Danganronpa: Trigger Happy Havoc",
+   "platform": "vita",
+   "headline_condition": "cib",
+   "price_cents": 4750,
+   "prices": {
+    "loose": 3800,
+    "cib": 4750,
+    "new": 10250
+   },
+   "pct_1d": 5.56,
+   "pct_7d": 0,
+   "pct_30d": null,
+   "score": 0,
+   "spark": [
+    4750,
+    4750,
+    4750,
+    4750,
+    4750,
+    4750,
+    4750,
+    4999,
+    5000,
+    5000,
+    5000,
+    5000,
+    4750,
+    4750,
+    4750,
+    4750,
+    4750,
+    4750,
+    4750,
+    4750,
+    4750,
+    4750
+   ]
+  },
+  {
    "id": "death-mark-vita",
    "title": "Death Mark",
    "platform": "vita",
@@ -1503,50 +1588,6 @@
     4949,
     4949,
     4949
-   ]
-  },
-  {
-   "id": "shantae-half-genie-hero-vita",
-   "title": "Shantae: Half-Genie Hero",
-   "platform": "vita",
-   "headline_condition": "loose",
-   "price_cents": 4150,
-   "prices": {
-    "loose": 4150
-   },
-   "pct_1d": 9.24,
-   "pct_7d": 3.79,
-   "pct_30d": -7.22,
-   "score": -0.62,
-   "spark": [
-    4250,
-    4250,
-    4250,
-    4250,
-    4250,
-    4250,
-    4250,
-    3999,
-    3999,
-    3999,
-    3799,
-    3799,
-    3799,
-    3799,
-    3799,
-    3799,
-    3999,
-    3999,
-    3999,
-    3799,
-    3799,
-    3799,
-    3799,
-    3799,
-    3799,
-    3799,
-    3799,
-    3943
    ]
   },
   {
@@ -1636,51 +1677,6 @@
     4000,
     4000,
     4000
-   ]
-  },
-  {
-   "id": "dragon-quest-builders-vita",
-   "title": "Dragon Quest Builders",
-   "platform": "vita",
-   "headline_condition": "loose",
-   "price_cents": 1333,
-   "prices": {
-    "loose": 1333,
-    "new": 10450
-   },
-   "pct_1d": 0,
-   "pct_7d": -1.19,
-   "pct_30d": -1.55,
-   "score": -1.33,
-   "spark": [
-    1354,
-    1357,
-    1359,
-    1359,
-    1359,
-    1359,
-    1349,
-    1349,
-    1349,
-    1354,
-    1354,
-    1354,
-    1354,
-    1354,
-    1354,
-    1354,
-    1349,
-    1349,
-    1349,
-    1349,
-    1349,
-    1349,
-    1349,
-    1333,
-    1333,
-    1333,
-    1333,
-    1333
    ]
   },
   {
@@ -1817,46 +1813,6 @@
    ]
   },
   {
-   "id": "danganronpa-trigger-happy-havoc-vita",
-   "title": "Danganronpa: Trigger Happy Havoc",
-   "platform": "vita",
-   "headline_condition": "cib",
-   "price_cents": 4500,
-   "prices": {
-    "loose": 3800,
-    "cib": 4500,
-    "new": 10250
-   },
-   "pct_1d": 0,
-   "pct_7d": -5.26,
-   "pct_30d": null,
-   "score": -5.26,
-   "spark": [
-    4750,
-    4750,
-    4750,
-    4750,
-    4750,
-    4750,
-    4750,
-    4999,
-    5000,
-    5000,
-    5000,
-    5000,
-    4750,
-    4750,
-    4750,
-    4750,
-    4750,
-    4750,
-    4750,
-    4750,
-    4750,
-    4500
-   ]
-  },
-  {
    "id": "persona-4-dancing-all-night-vita",
    "title": "Persona 4: Dancing All Night",
    "platform": "vita",
@@ -1902,6 +1858,57 @@
    ]
   },
   {
+   "id": "persona-4-golden-vita",
+   "title": "Persona 4 Golden",
+   "platform": "vita",
+   "headline_condition": "cib",
+   "price_cents": 4100,
+   "prices": {
+    "loose": 3400,
+    "cib": 4100,
+    "new": 16573
+   },
+   "pct_1d": 1.23,
+   "pct_7d": -5.81,
+   "pct_30d": -18.98,
+   "score": -11.08,
+   "spark": [
+    4999,
+    4550,
+    4200,
+    4200,
+    4200,
+    4200,
+    4450,
+    4450,
+    4450,
+    4400,
+    4400,
+    4400,
+    4400,
+    4400,
+    4400,
+    4400,
+    4100,
+    4100,
+    4300,
+    4100,
+    4300,
+    4300,
+    4100,
+    4050,
+    4050,
+    4050,
+    4050,
+    4050
+   ],
+   "annotation": {
+    "date": "2021-03-29",
+    "note": "The PS Vita store closure announcement made physical carts the only lasting way to own Vita games.",
+    "source_url": "https://www.retrotechlab.com/ps-vita-price-guide-2026/"
+   }
+  },
+  {
    "id": "criminal-girls-invite-only-vita",
    "title": "Criminal Girls: Invite Only",
    "platform": "vita",
@@ -1938,52 +1945,6 @@
     6504,
     6504,
     6504
-   ]
-  },
-  {
-   "id": "freedom-wars-vita",
-   "title": "Freedom Wars",
-   "platform": "vita",
-   "headline_condition": "cib",
-   "price_cents": 1725,
-   "prices": {
-    "loose": 1500,
-    "cib": 1725,
-    "new": 2496
-   },
-   "pct_1d": 15,
-   "pct_7d": -11.54,
-   "pct_30d": -30.97,
-   "score": -19.31,
-   "spark": [
-    2499,
-    2475,
-    2450,
-    2350,
-    2249,
-    1999,
-    1950,
-    1950,
-    1950,
-    1950,
-    1950,
-    1975,
-    1975,
-    1975,
-    1975,
-    1975,
-    1975,
-    1950,
-    1950,
-    1950,
-    1950,
-    1950,
-    1950,
-    1725,
-    1725,
-    1725,
-    1725,
-    1725
    ]
   }
  ]
