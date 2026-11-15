@@ -101,7 +101,7 @@
    "headline_condition": "cib",
    "price_cents": 18298,
    "prices": {
-    "loose": 2400,
+    "loose": 2395,
     "cib": 18298
    },
    "pct_1d": 0,
@@ -184,7 +184,7 @@
    "headline_condition": "cib",
    "price_cents": 11000,
    "prices": {
-    "loose": 1761,
+    "loose": 1795,
     "cib": 11000
    },
    "pct_1d": 0,
@@ -506,11 +506,11 @@
    "title": "Operation C",
    "platform": "gb",
    "headline_condition": "loose",
-   "price_cents": 3495,
+   "price_cents": 3499,
    "prices": {
-    "loose": 3495
+    "loose": 3499
    },
-   "pct_1d": 0,
+   "pct_1d": 0.11,
    "pct_7d": 5.94,
    "pct_30d": 5.94,
    "score": 5.94,
@@ -876,12 +876,12 @@
    "title": "Pokémon Red",
    "platform": "gb",
    "headline_condition": "cib",
-   "price_cents": 50299,
+   "price_cents": 50599,
    "prices": {
-    "loose": 7499,
-    "cib": 50299
+    "loose": 7465,
+    "cib": 50599
    },
-   "pct_1d": -3.36,
+   "pct_1d": -2.79,
    "pct_7d": 1.88,
    "pct_30d": 3.52,
    "score": 2.53,
@@ -925,7 +925,7 @@
    "headline_condition": "cib",
    "price_cents": 4250,
    "prices": {
-    "loose": 1217,
+    "loose": 1253,
     "cib": 4250,
     "new": 21248
    },
@@ -1156,11 +1156,11 @@
    "title": "Beavis and Butt-Head",
    "platform": "gb",
    "headline_condition": "loose",
-   "price_cents": 6464,
+   "price_cents": 6997,
    "prices": {
-    "loose": 6464
+    "loose": 6997
    },
-   "pct_1d": 0,
+   "pct_1d": 8.25,
    "pct_7d": 0,
    "pct_30d": 3.71,
    "score": 1.48,
@@ -1290,53 +1290,6 @@
    ]
   },
   {
-   "id": "alleyway-gb",
-   "title": "Alleyway",
-   "platform": "gb",
-   "headline_condition": "cib",
-   "price_cents": 5597,
-   "prices": {
-    "loose": 1039,
-    "cib": 5597
-   },
-   "pct_1d": 0,
-   "pct_7d": -2.64,
-   "pct_30d": 6.65,
-   "score": 1.07,
-   "spark": [
-    5248,
-    5248,
-    5248,
-    5248,
-    5248,
-    5495,
-    5495,
-    5495,
-    5495,
-    5495,
-    5495,
-    5499,
-    5747,
-    5749,
-    5749,
-    5749,
-    5749,
-    5749,
-    5749,
-    5749,
-    5749,
-    5749,
-    5749,
-    5749,
-    5695,
-    5597,
-    5597,
-    5597,
-    5597,
-    5597
-   ]
-  },
-  {
    "id": "batman-the-animated-series-gb",
    "title": "Batman: The Animated Series",
    "platform": "gb",
@@ -1390,7 +1343,7 @@
    "headline_condition": "cib",
    "price_cents": 8399,
    "prices": {
-    "loose": 1848,
+    "loose": 1800,
     "cib": 8399
    },
    "pct_1d": 7.68,
@@ -1513,7 +1466,7 @@
    "headline_condition": "cib",
    "price_cents": 14999,
    "prices": {
-    "loose": 1995,
+    "loose": 1979,
     "cib": 14999
    },
    "pct_1d": 0,
@@ -1647,6 +1600,53 @@
    ]
   },
   {
+   "id": "yoshi-gb",
+   "title": "Yoshi",
+   "platform": "gb",
+   "headline_condition": "cib",
+   "price_cents": 5999,
+   "prices": {
+    "loose": 1123,
+    "cib": 5999
+   },
+   "pct_1d": 7.12,
+   "pct_7d": 0.98,
+   "pct_30d": -8.04,
+   "score": -2.63,
+   "spark": [
+    5600,
+    5600,
+    5600,
+    5600,
+    5600,
+    5600,
+    5600,
+    5600,
+    5600,
+    5600,
+    5600,
+    5600,
+    5600,
+    5600,
+    5600,
+    5200,
+    5200,
+    4999,
+    4999,
+    4999,
+    4999,
+    4999,
+    5100,
+    5100,
+    5100,
+    5100,
+    5150,
+    5049,
+    5049,
+    5150
+   ]
+  },
+  {
    "id": "castlevania-ii-belmonts-revenge-gb",
    "title": "Castlevania II: Belmont's Revenge",
    "platform": "gb",
@@ -1743,11 +1743,11 @@
    "title": "Tetris",
    "platform": "gb",
    "headline_condition": "loose",
-   "price_cents": 1752,
+   "price_cents": 1799,
    "prices": {
-    "loose": 1752
+    "loose": 1799
    },
-   "pct_1d": 3.12,
+   "pct_1d": 5.89,
    "pct_7d": -5.51,
    "pct_30d": -8.16,
    "score": -6.57,
@@ -1782,35 +1782,6 @@
     1697,
     1699,
     1699
-   ]
-  },
-  {
-   "id": "bionic-commando-gb",
-   "title": "Bionic Commando",
-   "platform": "gb",
-   "headline_condition": "loose",
-   "price_cents": 3413,
-   "prices": {
-    "loose": 3413
-   },
-   "pct_1d": 0,
-   "pct_7d": -6.67,
-   "pct_30d": null,
-   "score": -6.67,
-   "spark": [
-    4099,
-    4099,
-    4099,
-    3974,
-    3849,
-    3749,
-    3749,
-    3689,
-    3630,
-    3573,
-    3518,
-    3518,
-    3499
    ]
   },
   {
@@ -1866,7 +1837,7 @@
    "headline_condition": "cib",
    "price_cents": 10295,
    "prices": {
-    "loose": 2000,
+    "loose": 2100,
     "cib": 10295
    },
    "pct_1d": 11.32,
