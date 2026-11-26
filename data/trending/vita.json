@@ -148,7 +148,7 @@
    "headline_condition": "cib",
    "price_cents": 4699,
    "prices": {
-    "loose": 2448,
+    "loose": 2499,
     "cib": 4699,
     "new": 6865
    },
@@ -380,12 +380,12 @@
    "title": "Danganronpa 2: Goodbye Despair",
    "platform": "vita",
    "headline_condition": "loose",
-   "price_cents": 3998,
+   "price_cents": 3999,
    "prices": {
-    "loose": 3998,
+    "loose": 3999,
     "new": 6749
    },
-   "pct_1d": 0,
+   "pct_1d": 0.03,
    "pct_7d": 8.2,
    "pct_30d": 11.09,
    "score": 9.35,
@@ -521,7 +521,7 @@
    "headline_condition": "cib",
    "price_cents": 3799,
    "prices": {
-    "loose": 2299,
+    "loose": 2267,
     "cib": 3799,
     "new": 7500
    },
@@ -616,7 +616,7 @@
    "price_cents": 7275,
    "prices": {
     "loose": 7275,
-    "new": 8495
+    "new": 8000
    },
    "pct_1d": 0,
    "pct_7d": 3.93,
@@ -988,11 +988,11 @@
    "title": "Silent Hill: Book of Memories",
    "platform": "vita",
    "headline_condition": "loose",
-   "price_cents": 7752,
+   "price_cents": 7999,
    "prices": {
-    "loose": 7752
+    "loose": 7999
    },
-   "pct_1d": 0,
+   "pct_1d": 3.19,
    "pct_7d": 3.37,
    "pct_30d": 3.37,
    "score": 3.37,
@@ -1081,12 +1081,12 @@
    "title": "The Sly Collection",
    "platform": "vita",
    "headline_condition": "loose",
-   "price_cents": 5276,
+   "price_cents": 5000,
    "prices": {
-    "loose": 5276,
+    "loose": 5000,
     "new": 7741
    },
-   "pct_1d": 0,
+   "pct_1d": -5.23,
    "pct_7d": 5.52,
    "pct_30d": -0.45,
    "score": 3.13,
@@ -1130,7 +1130,7 @@
    "headline_condition": "cib",
    "price_cents": 1918,
    "prices": {
-    "loose": 1654,
+    "loose": 1709,
     "cib": 1918
    },
    "pct_1d": 0,
@@ -1177,7 +1177,7 @@
    "headline_condition": "cib",
    "price_cents": 7498,
    "prices": {
-    "loose": 6095,
+    "loose": 6085,
     "cib": 7498,
     "new": 10000
    },
@@ -1219,54 +1219,6 @@
    ]
   },
   {
-   "id": "muramasa-rebirth-vita",
-   "title": "Muramasa Rebirth",
-   "platform": "vita",
-   "headline_condition": "cib",
-   "price_cents": 9000,
-   "prices": {
-    "loose": 6143,
-    "cib": 9000,
-    "new": 10496
-   },
-   "pct_1d": 8.47,
-   "pct_7d": -0.01,
-   "pct_30d": 5.87,
-   "score": 2.34,
-   "spark": [
-    8297,
-    8297,
-    8297,
-    8297,
-    8297,
-    8999,
-    8999,
-    8999,
-    8999,
-    8999,
-    8999,
-    8297,
-    8999,
-    8999,
-    8999,
-    8999,
-    9000,
-    9000,
-    9000,
-    9000,
-    9000,
-    9000,
-    9000,
-    9000,
-    9000,
-    9000,
-    8999,
-    8999,
-    8999,
-    8999
-   ]
-  },
-  {
    "id": "akibas-trip-undead-and-undressed-vita",
    "title": "Akiba's Trip: Undead & Undressed",
    "platform": "vita",
@@ -1274,7 +1226,7 @@
    "price_cents": 3494,
    "prices": {
     "loose": 3494,
-    "new": 9999
+    "new": 8998
    },
    "pct_1d": 0,
    "pct_7d": 2.58,
@@ -1311,6 +1263,53 @@
     3488,
     3494,
     3494
+   ]
+  },
+  {
+   "id": "rayman-legends-vita",
+   "title": "Rayman Legends",
+   "platform": "vita",
+   "headline_condition": "loose",
+   "price_cents": 2497,
+   "prices": {
+    "loose": 2497,
+    "new": 4067
+   },
+   "pct_1d": 0.08,
+   "pct_7d": -0.04,
+   "pct_30d": 0.08,
+   "score": 0.01,
+   "spark": [
+    2495,
+    2495,
+    2495,
+    2495,
+    2495,
+    2495,
+    2495,
+    2495,
+    2495,
+    2497,
+    2497,
+    2497,
+    2497,
+    2497,
+    2498,
+    2498,
+    2498,
+    2498,
+    2498,
+    2498,
+    2498,
+    2498,
+    2498,
+    2497,
+    2497,
+    2497,
+    2497,
+    2497,
+    2497,
+    2497
    ]
   },
   {
@@ -1358,26 +1357,6 @@
     1999,
     1999,
     1999
-   ]
-  },
-  {
-   "id": "danganronpa-another-episode-ultra-despair-girls-vita",
-   "title": "Danganronpa Another Episode: Ultra Despair Girls",
-   "platform": "vita",
-   "headline_condition": "cib",
-   "price_cents": 3699,
-   "prices": {
-    "loose": 4000,
-    "cib": 3699,
-    "new": 5495
-   },
-   "pct_1d": 0,
-   "pct_7d": null,
-   "pct_30d": null,
-   "score": 0,
-   "spark": [
-    3699,
-    3699
    ]
   },
   {
@@ -1454,7 +1433,7 @@
    "headline_condition": "cib",
    "price_cents": 8475,
    "prices": {
-    "loose": 9117,
+    "loose": 8739,
     "cib": 8475
    },
    "pct_1d": 0,
@@ -1470,49 +1449,50 @@
    ]
   },
   {
-   "id": "djmax-technika-tune-vita",
-   "title": "DJMax Technika Tune",
+   "id": "hakuoki-edo-blossoms-vita",
+   "title": "Hakuoki: Edo Blossoms",
    "platform": "vita",
    "headline_condition": "loose",
-   "price_cents": 4800,
+   "price_cents": 6599,
    "prices": {
-    "loose": 4800
+    "loose": 6599,
+    "new": 4299
    },
-   "pct_1d": 0,
+   "pct_1d": 27.03,
    "pct_7d": 0,
    "pct_30d": 0,
    "score": 0,
    "spark": [
-    4800,
-    4800,
-    4800,
-    4800,
-    4800,
-    4800,
-    4800,
-    4800,
-    4800,
-    4800,
-    4800,
-    4800,
-    4800,
-    4800,
-    4800,
-    4800,
-    4800,
-    4800,
-    4800,
-    4800,
-    4800,
-    4800,
-    4800,
-    4800,
-    4800,
-    4800,
-    4800,
-    4800,
-    4800,
-    4800
+    5195,
+    5195,
+    5195,
+    5195,
+    5195,
+    5195,
+    5195,
+    5195,
+    5195,
+    5195,
+    5195,
+    5195,
+    5195,
+    5195,
+    5195,
+    5195,
+    5195,
+    5195,
+    5195,
+    5195,
+    5195,
+    5195,
+    5195,
+    5195,
+    5195,
+    5195,
+    5195,
+    5195,
+    5195,
+    5195
    ]
   },
   {
@@ -1609,52 +1589,6 @@
     4900,
     4900,
     4900
-   ]
-  },
-  {
-   "id": "dragon-quest-builders-vita",
-   "title": "Dragon Quest Builders",
-   "platform": "vita",
-   "headline_condition": "loose",
-   "price_cents": 1320,
-   "prices": {
-    "loose": 1320
-   },
-   "pct_1d": 0,
-   "pct_7d": 0,
-   "pct_30d": -2.15,
-   "score": -0.86,
-   "spark": [
-    1349,
-    1349,
-    1349,
-    1349,
-    1333,
-    1333,
-    1333,
-    1333,
-    1333,
-    1333,
-    1333,
-    1333,
-    1320,
-    1320,
-    1320,
-    1320,
-    1320,
-    1310,
-    1310,
-    1310,
-    1310,
-    1320,
-    1320,
-    1320,
-    1320,
-    1320,
-    1320,
-    1320,
-    1320,
-    1320
    ]
   },
   {
@@ -1800,60 +1734,13 @@
    ]
   },
   {
-   "id": "dungeon-travelers-2-vita",
-   "title": "Dungeon Travelers 2: The Royal Library & the Monster Seal",
-   "platform": "vita",
-   "headline_condition": "loose",
-   "price_cents": 6095,
-   "prices": {
-    "loose": 6095,
-    "new": 6255
-   },
-   "pct_1d": 0,
-   "pct_7d": 0,
-   "pct_30d": -6.9,
-   "score": -2.76,
-   "spark": [
-    6547,
-    6547,
-    6547,
-    6547,
-    6547,
-    6547,
-    6547,
-    6547,
-    6547,
-    6547,
-    6547,
-    6547,
-    6547,
-    6547,
-    6547,
-    6095,
-    6095,
-    6095,
-    6095,
-    6095,
-    6095,
-    6095,
-    6095,
-    6095,
-    6095,
-    6095,
-    6095,
-    6095,
-    6095,
-    6095
-   ]
-  },
-  {
    "id": "demon-gaze-vita",
    "title": "Demon Gaze",
    "platform": "vita",
    "headline_condition": "cib",
    "price_cents": 2699,
    "prices": {
-    "loose": 2569,
+    "loose": 2544,
     "cib": 2699,
     "new": 7499
    },
@@ -1946,12 +1833,12 @@
    "title": "Atelier Shallie Plus: Alchemists of the Dusk Sea",
    "platform": "vita",
    "headline_condition": "loose",
-   "price_cents": 10497,
+   "price_cents": 10997,
    "prices": {
-    "loose": 10497,
-    "new": 13084
+    "loose": 10997,
+    "new": 12499
    },
-   "pct_1d": 0,
+   "pct_1d": 4.76,
    "pct_7d": -8.7,
    "pct_30d": -4.56,
    "score": -7.04,
@@ -1989,6 +1876,99 @@
    ]
   },
   {
+   "id": "hakuoki-kyoto-winds-vita",
+   "title": "Hakuoki: Kyoto Winds",
+   "platform": "vita",
+   "headline_condition": "loose",
+   "price_cents": 2500,
+   "prices": {
+    "loose": 2500,
+    "new": 3948
+   },
+   "pct_1d": 25,
+   "pct_7d": 0,
+   "pct_30d": -19.97,
+   "score": -7.99,
+   "spark": [
+    2499,
+    2499,
+    2499,
+    2499,
+    2499,
+    2499,
+    2499,
+    2499,
+    2499,
+    2499,
+    2499,
+    2499,
+    2499,
+    2499,
+    2250,
+    2250,
+    2250,
+    2250,
+    2250,
+    2250,
+    2000,
+    2000,
+    2000,
+    2000,
+    2000,
+    2000,
+    2000,
+    2000,
+    2000,
+    2000
+   ]
+  },
+  {
+   "id": "dead-or-alive-5-plus-vita",
+   "title": "Dead or Alive 5 Plus",
+   "platform": "vita",
+   "headline_condition": "loose",
+   "price_cents": 4748,
+   "prices": {
+    "loose": 4748
+   },
+   "pct_1d": 0,
+   "pct_7d": -11.99,
+   "pct_30d": -20.85,
+   "score": -15.54,
+   "spark": [
+    5999,
+    5697,
+    5395,
+    5395,
+    5395,
+    5395,
+    5395,
+    5697,
+    5697,
+    5697,
+    5697,
+    5697,
+    5697,
+    5800,
+    5800,
+    5800,
+    5598,
+    5447,
+    5447,
+    5447,
+    5395,
+    5395,
+    5395,
+    5395,
+    5195,
+    5195,
+    4995,
+    4995,
+    4748,
+    4748
+   ]
+  },
+  {
    "id": "bad-apple-wars-vita",
    "title": "Bad Apple Wars",
    "platform": "vita",
@@ -1996,7 +1976,7 @@
    "price_cents": 4652,
    "prices": {
     "loose": 4652,
-    "new": 5849
+    "new": 6199
    },
    "pct_1d": 0,
    "pct_7d": -18.76,
@@ -2033,6 +2013,53 @@
     4652,
     4652,
     4652
+   ]
+  },
+  {
+   "id": "hyperdimension-neptunia-re-birth1-vita",
+   "title": "Hyperdimension Neptunia Re;Birth1",
+   "platform": "vita",
+   "headline_condition": "loose",
+   "price_cents": 4500,
+   "prices": {
+    "loose": 4500,
+    "new": 8510
+   },
+   "pct_1d": 42.9,
+   "pct_7d": -22.22,
+   "pct_30d": -26.7,
+   "score": -24.01,
+   "spark": [
+    4999,
+    4999,
+    4999,
+    4999,
+    4999,
+    4775,
+    4775,
+    4775,
+    4775,
+    4775,
+    4775,
+    4742,
+    4742,
+    4742,
+    4742,
+    5499,
+    5499,
+    5499,
+    5499,
+    4775,
+    4775,
+    4500,
+    4500,
+    4050,
+    3500,
+    3500,
+    3500,
+    3500,
+    3500,
+    3500
    ]
   }
  ]
